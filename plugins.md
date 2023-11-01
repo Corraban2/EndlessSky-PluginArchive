@@ -6462,9 +6462,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Arion/icon.png' height='100'></img><br>
 
 
-[Arion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Arion.zip) | 2.96 mb | 2023-10-30 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Arion/) <br>
+[Arion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Arion.zip) | 2.96 mb | 2023-11-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Arion/) <br>
 Author: Spectre907YT | Category: Races <br>
-[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2023-10-30) <br>
+[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2023-11-01) <br>
 
 >Adds a faction (or 2) that supplies real life fighters and other interesting stuff.
 >
@@ -8247,9 +8247,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Blended Ships/icon.png' height='100'></img><br>
 
 
-[Blended.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Blended.Ships.zip) | 4.16 mb | 2023-10-29 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Blended%20Ships/) <br>
+[Blended.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Blended.Ships.zip) | 5.05 mb | 2023-11-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Blended%20Ships/) <br>
 Author: mOctave | Category: Ships <br>
-[https://github.com/mOctave/blended-ships](https://github.com/mOctave/blended-ships) (last commit 2023-10-29) <br>
+[https://github.com/mOctave/blended-ships](https://github.com/mOctave/blended-ships) (last commit 2023-11-01) <br>
 
 >Blended Ships is the realistic spliced ship plugin. All these ships have thumbnails, believeable stats, and actual potential uses! There is also a greater variety of civilian ships available, to support various playstyles.
 >
@@ -8868,9 +8868,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### IJN Yamato
 
 
-[IJN.Yamato.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/IJN.Yamato.zip) | 986.89 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/IJN%20Yamato/) <br>
+[IJN.Yamato.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/IJN.Yamato.zip) | 997.68 kb | 2023-11-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/IJN%20Yamato/) <br>
 Author: Hiloki Zheng | Category: Ships <br>
-[https://github.com/hilokiyz/IJN-Yamato-Endless-Sky](https://github.com/hilokiyz/IJN-Yamato-Endless-Sky) (last commit 2021-05-27) <br>
+[https://github.com/hilokiyz/IJN-Yamato-Endless-Sky](https://github.com/hilokiyz/IJN-Yamato-Endless-Sky) (last commit 2023-10-31) <br>
 
 >Bringing the biggest WW2 Battleship ever made in Endless Sky
 >
@@ -11453,9 +11453,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Cromha Expansion/icon.png' height='100'></img><br>
 
 
-[Cromha.Expansion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Cromha.Expansion.zip) | 114.71 mb | 2023-09-20 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Cromha%20Expansion/) <br>
+[Cromha.Expansion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Cromha.Expansion.zip) | 114.85 mb | 2023-11-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Cromha%20Expansion/) <br>
 Author: OcelotWalrus | Category: Story <br>
-[https://github.com/OcelotWalrus/Cromha-Expansion-plugin](https://github.com/OcelotWalrus/Cromha-Expansion-plugin) (last commit 2023-09-20) <br>
+[https://github.com/OcelotWalrus/Cromha-Expansion-plugin](https://github.com/OcelotWalrus/Cromha-Expansion-plugin) (last commit 2023-11-01) <br>
 
 >Adds a new civilization to the Korath Space (now named the 'Empire Space'): The Cromha Empire. Also known as 'The Empire', it is a government that dirige a huge part of the north of the Milky Way. It also a very high advanced government, that has kind of remixed outfits and ships from other vanilla governments. They are human but don't directly have contact with human Merchants, they have contact with the Syndicate, the Republic but they don't allow them to enter their territory.
 
