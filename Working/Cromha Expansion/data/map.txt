@@ -166,15 +166,15 @@ system Meftarkata
 			period 29.428
 
 planet "Elek Kartani"
-	attributes colonny factory korath military oil uninhabited
+	attributes colony factory korath military oil uninhabited
 	landscape land/Elek_kartani
-	description "This planet is a huge industry and oil refinery. It was at first and Empire colonny but they became an Mineria colonny a decade ago. It is one of the most important factory in the Cromha Empire."
+	description "This planet is a huge industry and oil refinery. It was at first and Empire colony but they became an Mineria colony a decade ago. It is one of the most important factory in the Cromha Empire."
 	description "The deserts here are home to an unusual number of plant species, which have adapted to survive the occasional catastrophic flash floods."
 	spaceport "The spaceport is just enough big for 2 Empire Destroyers. You will find lots of dilithum seller or illegal outfits dealers. Some Empire Rebels are hiding on this planet since the security is very low."
 	government Uninhabited
 
 planet "Mefterk Refinery"
-	attributes colonny korath military research station
+	attributes colony korath military research station
 	landscape land/Mefterk_refinery
 	description "The Mefterk Refinery is a huge refinery in the Empire-Korath space. It one of the principal outpost in the Korath-Empire space to produce refinned oil and refinned silver."
 	spaceport ""
@@ -424,7 +424,7 @@ system Astroid
 planet Mineria
 	attributes "empire space" factory inhabited mining north oil urban
 	landscape land/Mineria
-	description "One of the biggest  and the richest minner colonnies planet."
+	description "One of the biggest  and the richest minner colonies planet."
 	spaceport "Mineria was found back in the 29th siecle. Humans decided to install a minner colonie only 3 years after the discover of the precious metals that are in the planet. It's because of this metals that Mineria is now the center of economy of all north-part of the galaxy. It is connected to almost all most important planets by hyperspace link so all the cargo can be delivred in short times. There is a lot of aliens on this planet, beware of them."
 	shipyard Advanced-freighters-shipyard
 	shipyard Advanced-interceptors-shipyard
@@ -797,8 +797,8 @@ system Lifdot
 			distance 1930.992
 			period 110
 			object Crodust
-				sprite planet/fg_terrestrial2
-					scale 2.4
+				sprite planet/crodust
+					scale 1.1
 				distance 765.01
 				period 600
 				object
@@ -1487,7 +1487,7 @@ planet "Dragon Station"
 	outfitter Basic-ammo-outfitter
 
 planet "For Lastru"
-	attributes korath military minning oil
+	attributes korath military mining oil
 	landscape land/badlands7
 	description "This planet is full of great red tainted canyons. It has insane paysages."
 	description "Long ago, this planet was home to several Korath oil mining settlements, but now all that remains visible are the tops of a few dozen of the tallest buildings. Everything else has been buried by sandstorms."
@@ -1638,8 +1638,8 @@ system Eshkoshtar
 			period 24.797
 
 planet "Esayaku Fen"
-	add attributes colonny factory military oil
-	description "This planet is a huge industry and oil refinery. It was at first and Empire colonny but they became an Mineria colonny a decade ago. It is one of the most important factory in the Cromha Empire."
+	add attributes colony factory military oil
+	description "This planet is a huge industry and oil refinery. It was at first and Empire colony but they became an Mineria colony a decade ago. It is one of the most important factory in the Cromha Empire."
 	description "The deserts here are home to an unusual number of plant species, which have adapted to survive the occasional catastrophic flash floods."
 	spaceport "The spaceport is just enough big for 2 Empire Destroyers. You will find lots of dilithum seller or illegal outfits dealers. Some Empire Rebels are hiding on this planet since the security is very low."
 	government "Mineria Colonies"
@@ -1654,9 +1654,9 @@ planet "Esayaku Fen"
 	security 0.5
 
 planet "Fen Station"
-	attributes colonny korath military station
+	attributes colony korath military station
 	landscape land/station4
-	description "This station is here to contain multiples Empire fleets to defend the Esayaku colonnies in case some Kor Mereti or Kor Sestor happen to attack this system."
+	description "This station is here to contain multiples Empire fleets to defend the Esayaku colonies in case some Kor Mereti or Kor Sestor happen to attack this system."
 	spaceport "Most of the station is a spaceport, technicly it's more a spacial dock than a station."
 	outfitter Base-outfitter
 	outfitter Basic-ammo-outfitter
@@ -1723,14 +1723,14 @@ system Fornarep
 planet "Alarfarat Refinery"
 	attributes korath military research station
 	landscape land/station16
-	description "The Alarfarat station, when it was found, was totally destroyed, it was an old Kor Mereti station. The Empire decided to make this an outpost the defend the miner colonnies on Alarfarat. But this station is also a refinery for the Alarfarat miner colonny."
+	description "The Alarfarat station, when it was found, was totally destroyed, it was an old Kor Mereti station. The Empire decided to make this an outpost the defend the miner colonies on Alarfarat. But this station is also a refinery for the Alarfarat miner colony."
 	spaceport ""
 	outfitter Base-outfitter
 	security 0
 
 planet "Sek Alarfarat"
-	add attributes colonny colony mining oil
-	description "Recently, a minnin colonny got installed on this planet rich in uranium, due to urnanium asteroids that usually crash into the planet. All uranium is sent to the Alarfarat Refinery station by small mineria convoits."
+	add attributes colony mining oil
+	description "Recently, a minnin colony got installed on this planet rich in uranium, due to urnanium asteroids that usually crash into the planet. All uranium is sent to the Alarfarat Refinery station by small mineria convoits."
 	spaceport ""
 	government "Mineria Colonies"
 	remove security
@@ -1802,7 +1802,7 @@ system Seketra
 
 planet "Seleptra Nak"
 	add attributes mining oil
-	spaceport "The spaceport is very small and there is only a several ships. Most of the poeple who lives here are colonnies of Mineria that moved here a century ago probably with a H class Empire World Ship."
+	spaceport "The spaceport is very small and there is only a several ships. Most of the poeple who lives here are colonies of Mineria that moved here a century ago probably with a H class Empire World Ship."
 	government "Mineria Colonies"
 	outfitter Base-outfitter
 
@@ -2349,9 +2349,9 @@ system Irn'o
 				period 55
 
 planet "Est Lifdot"
-	attributes colonny factory "far empire space" inhabited military oil rich
+	attributes colony factory "far empire space" inhabited military oil rich
 	landscape land/fog10
-	description "Est Lifdot is know to be a high tropical planet. Like Lifdot, it is full of verdure. This planet is an huge miner colonny, that extract Titanium, Uranium and  quatalant, the materials needed for building Empire Atomic Engines. There is also 3 greats engines factories, the only place where the Empire Atomic Engines are builded."
+	description "Est Lifdot is know to be a high tropical planet. Like Lifdot, it is full of verdure. This planet is an huge miner colony, that extract Titanium, Uranium and  quatalant, the materials needed for building Empire Atomic Engines. There is also 3 greats engines factories, the only place where the Empire Atomic Engines are builded."
 	spaceport ""
 	shipyard Advanced-freighters-shipyard
 	shipyard Base-shipyard
@@ -4177,7 +4177,7 @@ system "Io Salu"
 	habitable 3200
 	belt 1145
 	asteroids "large rock" 5 3
-	minables metallic 15 5
+	minables "" 15 5
 	minables fossil 7 4
 	trade Clothing 318
 	trade Electronics 707
@@ -4944,30 +4944,6 @@ planet Alfyim
 		fleet "Small Southern Pirates" 8
 
 system Postverta
-	object
-		sprite star/m8
-		period 10
-	object
-		sprite planet/desert7
-		distance 439
-		period 316.657
-	object Fertriery
-		sprite planet/fog0
-		distance 814
-		period 799.52
-		object
-			sprite planet/dust4
-			distance 202
-			period 21
-	object
-		sprite planet/rock10
-		distance 1208
-		period 1445.41
-	object "Ssil Vida"
-		sprite planet/sheragi_postverta
-			scale 0.5
-		distance 1408
-		period 1818.85
 
 system Celeborim
 	pos 190.616 -638.553
@@ -5205,7 +5181,7 @@ planet "Ya Drawf"
 planet Min'sta
 	attributes empire "empire space" military oil
 	landscape land/Salkdot
-	description "Min'sta is too hot to live in but it is habited my a small colonny of Mineria that lives in the undergrounds of the planet. While they live under, huge solar panels collect data about the super nova and produce huge amount of fuel with it, which is directly transfered to the Salkfdot Shipyardord spaceport to be refinned. Since it is very hot there is no spaceport even if it is inhabited."
+	description "Min'sta is too hot to live in but it is habited my a small colony of Mineria that lives in the undergrounds of the planet. While they live under, huge solar panels collect data about the super nova and produce huge amount of fuel with it, which is directly transfered to the Salkfdot Shipyardord spaceport to be refinned. Since it is very hot there is no spaceport even if it is inhabited."
 	spaceport " "
 	government "Mineria Colonies"
 	bribe 0.1
@@ -5401,9 +5377,9 @@ planet "Alr Hideout"
 	security 0
 
 planet "Farka Colons"
-	attributes korath mining minning oil
+	attributes korath mining oil
 	landscape land/canyon4
-	description "Farka Colons is an huge Mineria colonny that is based on refined oil exportation. The oil is produced and refined at the same place that let the colonny gain way more money that other oil colonny like this. this isone of the greatest Mineria colonny"
+	description "Farka Colons is an huge Mineria colony that is based on refined oil exportation. The oil is produced and refined at the same place that let the colony gain way more money that other oil colony like this. this isone of the greatest Mineria colony"
 	spaceport "From the spaceport you can see huge buildings and at the very far of the city, far coulds you can see desertic hills with huge oil mining station. This planet seems to be exploited a lot."
 	government "Mineria Colonies"
 	bribe 1
@@ -5739,7 +5715,7 @@ system "Kor Flas"
 			sprite planet/rock3
 			distance 148
 			period 68.06
-	object "Fallut Colonny"
+	object "Fallut colony"
 		sprite planet/forest6-b
 		distance 1304
 		period 702.907
@@ -5760,10 +5736,10 @@ system "Kor Flas"
 			distance 291
 			period 129.914
 
-planet "Fallut Colonny"
-	attributes colonny core mining oil
+planet "Fallut colony"
+	attributes colony core mining oil
 	landscape land/forest3
-	description "The Fallut Colonny is Mineria colonny based on extracting ancients asteroids that arrived on that planet. The people on this colonny studies these old asteroids to understand more the start of this galaxy."
+	description "The Fallut colony is Mineria colony based on extracting ancients asteroids that arrived on that planet. The people on this colony studies these old asteroids to understand more the start of this galaxy."
 	spaceport "The spaceport is principally a oil collection dock."
 	government "Mineria Colonies"
 	shipyard Base-shipyard
@@ -5779,7 +5755,7 @@ planet "Fallut Colonny"
 planet "Fallut Dragoon"
 	attributes core empire oil station
 	landscape land/station20
-	description "The Fallut Dragoon station is principally a communication station. Bacause the Cronha Empire refuse to send police fleet in these far systems, the Fallut Colonny have to send messages everytime they need a Mineria fleet to transport them commodities or cargo, to communicate search result or in case of any attack."
+	description "The Fallut Dragoon station is principally a communication station. Bacause the Cronha Empire refuse to send police fleet in these far systems, the Fallut colony have to send messages everytime they need a Mineria fleet to transport them commodities or cargo, to communicate search result or in case of any attack."
 	spaceport "The spaceport is blue."
 	government "Cromha Empire"
 	outfitter Base-outfitter
@@ -6056,8 +6032,8 @@ system Alf'kra
 	fleet "Light Far Remnant Defense" 2000
 	fleet "Small Far Remnant" 1350
 	fleet "Large Far Remnant" 1700
-	fleet sheragi-fleet 1300
-	fleet sheragi-transport 1200
+	fleet "" 1300
+	fleet "" 1200
 	object
 		sprite star/x-dwarf
 		distance 115.163
@@ -6132,8 +6108,8 @@ system Alf'hul
 	fleet "Light Far Remnant Defense" 2000
 	fleet "Small Far Remnant" 1350
 	fleet "Large Far Remnant" 1700
-	fleet sheragi-fleet 1500
-	fleet sheragi-transport 1200
+	fleet "" 1500
+	fleet "" 1200
 	object
 		sprite planet/browndwarf-t-rougeorange
 		distance 251
@@ -6602,7 +6578,6 @@ system Phurad
 
 system Mirzam
 	government "Lumbarian Empire"
-	haze _menu/haze-brown
 	add link Lastama
 	add link Lumbaria
 	add link Sipha
@@ -6631,8 +6606,12 @@ system Mirzam
 		period 252.293
 	object
 		sprite planet/io
-		distance 1523.47
+		distance 1515.365
 		period 723.767
+		object "Lumbarian 7-KJ Base"
+			sprite "planet/asteroid base"
+				scale 0.7
+			distance 274.114
 	object
 		sprite planet/gas14-b
 		distance 2805.76
@@ -6673,7 +6652,6 @@ system Canopus
 
 system Mebsuta
 	government "Lumbarian Empire"
-	haze _menu/haze-brown
 	add fleet "Small Northern Merchants" 600
 	add fleet "Large Northern Merchants" 1500
 	add fleet "Large L Navy" 1500
@@ -6877,29 +6855,6 @@ system Arneb
 	government "Lumbarian Empire"
 	add fleet "Large L Navy" 800
 	add fleet "Small L Navy" 400
-	object
-		sprite star/f5
-		period 10
-	object
-		sprite planet/venus
-		distance 206
-		period 28.558
-	object
-		sprite planet/cloud6-b
-		distance 546.25
-		period 123.314
-	object
-		sprite planet/desert8
-		distance 829.46
-		period 230.739
-	object Haven
-		sprite planet/forest6
-		distance 1264.82
-		period 434.481
-	object
-		sprite planet/io
-		distance 4062.31
-		period 2500.84
 
 planet Haven
 	tribute 500
@@ -7589,7 +7544,7 @@ system Jlka
 	minables gold 1 2.433
 	minables iron 1 2.643
 	fleet Ayym 1200
-	fleet sheragi-fleet 1200
+	fleet "" 1200
 	fleet Luminaza 1200
 	object
 		sprite star/a3
@@ -7652,8 +7607,8 @@ system Hulki
 	trade Metal 299
 	trade Plastic 506
 	fleet Ayym 1200
-	fleet sheragi-fleet 1200
-	fleet sheragi-transport 900
+	fleet "" 1200
+	fleet "" 900
 	object
 		sprite star/b-dwarf
 		period 10
@@ -7684,10 +7639,10 @@ planet Sher'kla
 	description "Sher'kla is the very last planet of the Sentar galaxy that is habited by the Sheragi. It is a peaceful place to live."
 	spaceport TODO
 	government Sheragi
-	outfitter "Sheragi Basic"
+	outfitter ""
 	tribute 750
 		threshold 12000
-		fleet sheragi-fleet 15
+		fleet "" 15
 
 system Almatar
 	pos 10438.968 1260.837
@@ -7717,8 +7672,8 @@ system Almatar
 	trade Metal 278
 	trade Plastic 540
 	fleet Ayym 1200
-	fleet sheragi-fleet 1200
-	fleet sheragi-transport 900
+	fleet "" 1200
+	fleet "" 900
 	object
 		sprite star/f5
 		period 10
@@ -7757,10 +7712,10 @@ planet Sher'alla
 	description TODO
 	spaceport TODO
 	government Sheragi
-	outfitter "Sheragi Advanced"
+	outfitter ""
 	tribute 750
 		threshold 12000
-		fleet sheragi-fleet 15
+		fleet "" 15
 
 system Fartapli
 	pos 10375.376 1324.356
@@ -7788,8 +7743,8 @@ system Fartapli
 	trade Metal 251
 	trade Plastic 510
 	fleet Ayym 1200
-	fleet sheragi-fleet 1200
-	fleet sheragi-transport 900
+	fleet "" 1200
+	fleet "" 900
 	object
 		sprite planet/browndwarf-t-rouge
 		distance 445.5
@@ -7841,13 +7796,13 @@ planet Sher'fallup
 	landscape land/bwerner6
 	description "Sher'fallup is mostly a Sheragi military and research basement"
 	spaceport TODO
-	shipyard "Sheragi Advanced"
-	shipyard "Sheragi Basic"
-	outfitter "Sheragi Advanced"
-	outfitter "Sheragi Basic"
+	shipyard ""
+	shipyard ""
+	outfitter ""
+	outfitter ""
 	tribute 850
 		threshold 15000
-		fleet sheragi-fleet 23
+		fleet "" 23
 
 system Krista
 	pos 10299.043 1272.615
@@ -7876,8 +7831,8 @@ system Krista
 	trade Metal 251
 	trade Plastic 510
 	fleet Ayym 1200
-	fleet sheragi-fleet 1200
-	fleet sheragi-transport 900
+	fleet "" 1200
+	fleet "" 900
 	object
 		sprite planet/browndwarf-y-rougeorange
 		distance 250
@@ -7930,9 +7885,9 @@ planet Sher'gallion
 	description "Sher'gallion is a peaceful Sheragi planet which is a nice place to live."
 	spaceport TODO
 	government Sheragi
-	outfitter "Sheragi Basic"
+	outfitter ""
 	tribute 350
-		fleet sheragi-fleet 8
+		fleet "" 8
 
 planet Retilie
 	spaceport TODO
@@ -9748,38 +9703,6 @@ planet "Alma Refinery"
 
 system "Ae Il A-3"
 	add fleet "Small L Colony Navy" 1700
-	object
-		sprite star/k-supergiant
-		distance 369.692
-		period 200
-	object
-		sprite star/g-supergiant
-		distance 825.197
-		period 200
-		offset 180
-	object
-		sprite star/g-giant
-		distance 2701.42
-		period 360
-		offset 40
-		object
-			sprite star/g0
-			distance 300
-			period 60
-			offset 20
-	object
-		sprite planet/browndwarf-l-rouge
-		distance 9784.96
-		period 1100
-		offset 270
-		object
-			sprite planet/lava4-b
-			distance 533.815
-			period 160
-	object
-		sprite planet/gas1
-		distance 32407.6
-		period 18609.5
 
 system "Ae Il H-24"
 	add fleet "Small L Colony Navy" 1100
@@ -10088,4 +10011,11 @@ system Lucina
 			sprite planet/dust1-b
 			distance 263
 			period 14.067
+
+planet "Lumbarian 7-KJ Base"
+	attributes "requires: empire detonator mission active"
+	landscape land/asteroid0
+	description "The secret lumbarian base that contains many military labs."
+	government "Lumbarian Empire"
+	"required reputation" -1000000
 

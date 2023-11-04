@@ -1,7 +1,7 @@
 mission "Empire: Assist Ring2"
 	landing
 	name "Empire: Assist Ring"
-	description "An Empire Rebels fleet stationned in the Lim Ort system are coming to the Ring Wartrue system to attack the Empire Ringworld. Stay in the Ring Wartrue system until the rebels fleet come then engage combat. After destroying the fleet, land on <planet> to get your payment of <payment>."
+	description "An Empire Rebels fleet is staying stationary in the Lim Ort system and are willing to come to the Ring Wartrue system and attack the Empire Ringworld. Stay in the Ring Wartrue system until the rebels fleet come then engage combat. After destroying the fleet, land on <planet> to get your payment of <payment>."
 	source
 		government "Cromha Empire"
 		not attributes uninhabited
@@ -10,8 +10,8 @@ mission "Empire: Assist Ring2"
 		has "Empire: Bring Resources 2: done"
 	on offer
 		conversation
-			`You enter the planet spaceport when you recieve a message from the Black Manta scentists: they whant you to collect minerals again.`
-			`	"A Rebels fleet stationned in the Lim Ort system are coming to the Ring Wartrue system to attack the Empire Ringworld. Stay in the Ring Wartrue system until the rebels fleet come and,engage combat. After destroying the fleet, land on <planet> to get your payment of <payment>."`
+			`You enter the planet spaceport when you receive a message from the Black Manta scentists: they whant you to collect minerals again.`
+			`	"A Rebels fleet is staying stationary in the Lim Ort system and are wiling to come to the Ring Wartrue system and attack the Empire Ringworld. Stay in the Ring Wartrue system until the rebels fleet come and,engage combat. After destroying the fleet, land on <planet> to get your payment of <payment>."`
 				accept
 	on complete
 		payment
@@ -22,13 +22,16 @@ mission "Empire: Assist Ring2"
 		government "Empire Rebels"
 		fleet empire-rebels-raiders-fleet
 		fleet empire-rebels-raiders-fleet
+		fleet empire-rebels-raiders-fleet
+		fleet empire-rebels-raiders-fleet
+		fleet empire-rebels-raiders-fleet
 		personality target coward disables plunders
 		system "Lim Ort"
 
 mission "Empire: Repair Empire Ringworld"
 	landing
 	name "Empire: Repair Empire Ringworld"
-	description "The Empire Ringworld got heavly endomaged since the attack of the rebels. Help to repair the Empire Ringworld by collecting these following materials: 10 tons of Quatalant, 15 tons of Iron and 15 Phasic Rifles. Then land on <destination>."
+	description "The Empire Ringworld got heavily damaged since the attack of the rebels. Help to repair the Empire Ringworld by collecting these following materials: 10 tons of Quatalant, 15 tons of Iron and 15 Phasic Rifles. Then land on <destination>."
 	source
 		government "Cromha Empire"
 		not attributes uninhabited
@@ -39,10 +42,10 @@ mission "Empire: Repair Empire Ringworld"
 		event "Empire Ringworld broken"
 		conversation
 			`You land on <planet> and get your payment of 500000 credits for defending the Empire Ringworld.`
-			`	But as you exiting of your ship you see lots of mans and aliens trying to repair to station. You understand that the station got heavly endommaged becase of the combat between Rebels and the Empire Ringworld defenses fleets.`
-			`	You try to approach some guy to ask about what appened:`
-			`	"Hi Sir. Could you tell me about what appened?" You say.`
-			`	"Hi, Captain <last>. Since the last combat with the Empire Rebels, the Empire Ringworld got heavly endommaged as you see. the B, C and E ring has break points. Some circuits are endommaged too but that's not a big deal."`
+			`	But as you exiting of your ship you see lots of mans and aliens trying to repair to station. You understand that the station got heavily damaged because of the combat between Rebels and the Empire Ringworld defenses fleets.`
+			`	You try to approach some guy to ask about what happened:`
+			`	"Hi Sir. Could you tell me about what happened?" You say.`
+			`	"Hi, Captain <last>. Since the last combat with the Empire Rebels, the Empire Ringworld got heavily damaged as you see. the B, C and E ring has break points. Some circuits are damaged too but that's not a big deal."`
 			`	"How can i help you in any way?"`
 			`	"To Repair the B ring we need some materials and stuff. If you could get 10 tons of Quatalant, 15 tons of Iron and 15 Phasic Rifles it'll be great. Bring them back to me in the Empire Ring Station."`
 			`	"Sure, it'll be right back"`
@@ -56,7 +59,7 @@ mission "Empire: Repair Empire Ringworld"
 		outfit Iron -15
 		require "Phasic Rifle" 15
 		outfit "Phasic Rifle" -15
-		log "Empire" "You helped repearing the Empire Ringworld."
+		log "Empire" "You helped repairing the Empire Ringworld by collecting multiple materials and hand to hand weapons."
 		conversation
 			`You land on <planet> with all the materials. It's time to depose the materials to the man of the last time. You search him in the whole spaceport but don't find him. You decide so to depose it to one of the Empire Authorities guy. He pays you <payment>.`
 		payment
@@ -78,12 +81,12 @@ mission "Empire: Visit Pugs"
 	on offer
 		conversation
 			`Recently The Empire has been trying to make an alliance with the Pugs, to share their both technologies. Pugs has contacted the Cromha Empire to ask their help:`
-			`	The Pugs are currently missing of materials. They asked The Empire to bring 145 tons of Titanium, 95 tons of Silicon and 75 Jump Drives. The Empire wants you to escort an huge Mineria Colonies convoit to <destination> before the date of <date>. There will be some Empire Rebels and Bounties in your way. Payment is <payment>.`
+			`	The Pugs are currently missing of materials. They asked The Empire to bring 145 tons of Titanium, 95 tons of Silicon and 75 Jump Drives. The Empire wants you to escort an huge Mineria Colonies covet to <destination> before the date of <date>. There will be some Empire Rebels and Bounties in your way. Payment is <payment>.`
 				accept
 	on visit
 		dialog "The whole fleet is not still here. Wait for them then land on <planet>."
 	on abort
-		dialog "The Empire will not be happy that you aborded the mission. they fine you 10000000 credits."
+		dialog "The Empire will not be happy that you aborted the mission. they fine you 10000000 credits."
 		fine 10000000
 	on complete
 		payment
@@ -129,7 +132,7 @@ mission "Empire: Visit Pugs"
 
 mission "Empire: Tech Testing2"
 	name "Empire: Tech Testing"
-	description "The Empire Navy has been designing a new generation of thruster and steering. Install them on your ship, go for a battle with Empire Rebels in the Gorvi system. Go back to <destination> andget your payment of <payment>."
+	description "The Empire Navy has been designing a new generation of thruster and steering. Install them on your ship, go for a battle with Empire Rebels in the Gorvi system. Go back to <destination> and get your payment of <payment>."
 	landing
 	source
 		government "Cromha Empire"
@@ -139,7 +142,7 @@ mission "Empire: Tech Testing2"
 	destination Crodust
 	on offer
 		conversation
-			`Recently The Empire Navy has been designing a new generatiuon of thrusters and steerings.`
+			`Recently The Empire Navy has been designing a new generation of thrusters and steering.`
 			`	Install them on your ship, then, go for a battle with Empire Rebels in the Gorvi system. Go back to <destination> to get your payment.`
 				accept
 	on accept
@@ -158,7 +161,7 @@ mission "Empire: Tech Testing2"
 			`The Empire Navy thanks you for testing these new generations engines. They payed you <payment> and offers you an Empire Dragon with the new generation engines installed on it.`
 		"reputation: Cromha Empire" += 50
 		"empire jobs" += 1
-		log "Empire" "You tested insanes new generation Empire engines. After completing your mission, the Empire Navy gived you an Empire Wardragon with new generation engines installed on it!"
+		log "Empire" "You tested insane new generation Empire engines. After completing your mission, the Empire Navy gave you an Empire Wardragon with new generation engines installed on it!"
 	npc kill
 		government "Empire Rebels"
 		personality target staying coward
@@ -177,7 +180,7 @@ mission "Empire: Collect Data"
 			`When you land on the Black Manta Spacial Dock to get news about the Black Manta, you see an empire scientist greeting you from to outside of your ship. You open your ship's gate and late to guy enter.`
 			`	"Hi! Great to see you" he says. He his the last guy who asked you to do some mission about Void Sprites in the Ember Waste.`
 			`	"Hi! Nice to meet to you!"`
-			`	"Will you like to do some missions for The Empire again? We would like you to furtivly collect data about Remnants engines and give us the data for <payment>. It's for enhance the new generation engines."`
+			`	"Will you like to do some missions for The Empire again? We would like you to furtively collect data about Remnants engines and give us the data for <payment>. It's for enhance the new generation engines."`
 			choice
 				`	"Sure!"`
 					accept
@@ -191,7 +194,7 @@ mission "Empire: Collect Data"
 			`	"So, what you'll have to do is this: enter the Polerius system in the Ember Waste. You'll need to search for a ship named 'The Great Die-Off'. Scan him and land back to the Black Manta Spacial Dock."`
 			`He leaves your ship.`
 	on decline
-		dialog "He leaves the ship with disapointment"
+		dialog "He leaves the ship with disappointment"
 	on abort
 		launch
 		conversation "empire imprisonment"
@@ -199,19 +202,19 @@ mission "Empire: Collect Data"
 		payment 7500000
 		payment
 		"reputation: Cromha Empire" += 50
-		"reputation: Remnant (empre mission)" += 5000000
+		"reputation: Remnant (empire mission)" += 5000000
 		"empire jobs" += 1
 		log "Empire" "You scanned an Remnant ship to collect data about its engines for The Empire."
 		dialog "You get your payment of <payment>"
 	npc "scan outfits"
-		government "Remnant (empre mission)"
+		government "Remnant (empire mission)"
 		personality staying target coward
 		ship "Peregrine" "The Great Die-Off"
 		system "Polerius"
 
-mission "Empire: Colonny Import Giriba"
-	name "Empire: Colonny Import"
-	description "Escort safely an fleet of Mineria Colonies and some merchants to <destination>. They will be setting up the first colonny of The Empire in the Ember Waste. Payment is <payment>."
+mission "Empire: colony Import Giriba"
+	name "Empire: Colony Import"
+	description "Escort safely an fleet of Mineria Colonies and some merchants to <destination>. They will be setting up the first colony of The Empire in the Ember Waste. Payment is <payment>."
 	landing
 	to offer
 		has "Empire: Collect Data: done"
@@ -231,8 +234,8 @@ mission "Empire: Colonny Import Giriba"
 		"reputation: Cromha Empire" += 15
 		"reputation: Mineria Colonies" += 170
 		"empire jobs" += 1
-		set "giribia colonny import" 1
-		log "Empire" "You escorted an fleet of Mineria Colonies and some merchants to set up a minning colonny on Osaeli in the Giribea system. It will be the first Empire colonny in the Ember Waste."
+		set "giribia colony import" 1
+		log "Empire" "You escorted an fleet of Mineria Colonies and some merchants to set up a miner colony on Osaeli in the Giribea system. It will be the first Empire colony in the Ember Waste."
 		dialog "You get your payment of <payment>"
 	
 	npc accompany save
@@ -252,7 +255,7 @@ mission "Empire: Defense Sabriset From Kor Sestor"
 	landing
 	destination "Dragon Station"
 	to offer
-		has "Empire: Colonny Import Giriba: done"
+		has "Empire: colony Import Giriba: done"
 	source
 		government "Cromha Empire" "Mineria Colonies"
 		not attributes uninhabited station
@@ -293,7 +296,7 @@ mission "Empire: Defense Sabriset From Kor Sestor"
 
 mission "Empire: Station Escort Meftarkata"
 	name "Empire: Station Escort"
-	description "Escort an amovible Empire station to Meftarkata then land on Elek Kartani to get your payment of <payment>."
+	description "Escort an mobile Empire station to Meftarkata then land on Elek Kartani to get your payment of <payment>."
 	landing
 	source
 		government "Cromha Empire"
@@ -303,8 +306,8 @@ mission "Empire: Station Escort Meftarkata"
 	destination "Elek Kartani"
 	on offer
 		conversation
-			`You're about to land on the planet spaceport, you get hailed by some Empire Corvette YLL'E. Hend sends you this message:`
-			`	"Please escort us and the amovible to <destination>. When want to import a amovible station to the Meftarkata system but there will be Empire Rebels and Kor Mereti fleets on our way. Everyone in The Empire heard about you and your courageous fleet. Please make us pass to this system with the amovible station intact and you'll get well recompensed. More Empire fleets will come from Crodust, lifdot to help us in the mission.`
+			`You're about to land on the planet spaceport, you get hailed by some Empire Corvette YLL'E. They sends you this message:`
+			`	"Please escort us and the mobile to <destination>. When want to import a mobile station to the Meftarkata system but there will be Empire Rebels and Kor Mereti fleets on our way. Everyone in The Empire heard about you and your courageous fleet. Please make us pass to this system with the mobile station intact and you'll get well recompensed. More Empire fleets will come from Crodust, Lifdot to help us in the mission.`
 			choice
 				`	Send an hail back and say you'll help them`
 					launch
@@ -344,7 +347,7 @@ mission "Empire: Station Escort Meftarkata"
 		"reputation: Cromha Empire" += 30
 		"reputation: Mineria Colonies" += 35
 		"empire jobs" += 1
-		log "Empire" "You escorted an Empire amovible station to the Meftarkata system and gained a Disruption RV-170 Thruster and a Disruption RV-175 Steering engine."
+		log "Empire" "You escorted an Empire mobile station to the Meftarkata system and gained a Disruption RV-170 Thruster and a Disruption RV-175 Steering engine."
 		dialog "You get your payment of <payment> and new disruptions engines (RV-170 and RV-175)"
 
 mission "Empire: Caltalytic Tear Transport1"
@@ -363,7 +366,7 @@ mission "Empire: Caltalytic Tear Transport1"
 	on offer
 		log "Empire" "The Cromha Empire entrusted you a secret weapon so you can transport it to the Weila Station, Los Faros."
 		conversation
-			`As you land you recieve an hail from the tower of control of the spaceport. It says "The Cromha Empire has an important mission for you. We want you to transport in your cargo a secret outfit that we cannot tell you what is it yet. If you transport it to <destination> without being caught by any Korath fleet of any faction, we will pay you <payment>. No Empire fleet will escort you, we need to keep this secret from any space faction, even or allies."`
+			`As you land you receive an hail from the tower of control of the spaceport. It says "The Cromha Empire has an important mission for you. We want you to transport in your cargo a secret outfit that we cannot tell you what is it yet. If you transport it to <destination> without being caught by any Korath fleet of any faction, we will pay you <payment>. No Empire fleet will escort you, we need to keep this secret from any space faction, even or allies."`
 			choice
 				`	Send back a hail to accept`
 					accept
@@ -414,7 +417,7 @@ mission "Empire: Caltalytic Tear Transport2"
 		payment
 		payment 500000000
 		outfit "Caltalytic Tear Secret" -1
-		dialog "You got payed 1B credits and The Empire inform you that the weapon is now avaible in the outfitter."
+		dialog "You got payed 1B credits and The Empire inform you that the weapon is now available in the outfitter."
 		log "Empire" "You helped the Cromha Empire to create the Caltalytic Tear. It is a destructive Secondary Weapon that can kill any Korath Destroyer in a few seconds. You also got payed 1B credits. Thanks to you, now the Empire Seakraken have these powerful weapons installed on them."
 		event "Caltalytic Tear Appears"
 	npc evade
@@ -435,3 +438,200 @@ mission "Empire: Caltalytic Tear Transport2"
 		system
 			distance 2 3
 		fleet "Kor Efret Home" 6
+
+mission "Empire: Get Stolen Detonator Engine Prototype"
+	name "Empire: Get Stolen Prototype"
+	description "Go to the Lumbarian 7-KJ Base, Mirzam and get back a stolen Empire prototype."
+	landing
+	source
+		government "Cromha Empire"
+	to offer
+		has "Empire: Caltalytic Tear Transport2: done"
+	destination "Lumbarian 7-KJ Base"
+	on offer
+		conversation
+			`When landing on <origin>, you slowly dock to the spaceport and right after get a hail from a Empire Navy ship, it's an Empire Hydra. They seems to be cloaked because you can't find them in the sky.`
+			choice
+				`Hail back`
+					goto next
+				`Don't hail back.`
+					decline
+			label next
+			`"Hey! We need you to land on the Lumbarian 7-KJ Base, Mirzam. It's an asteroid base and you'll need to get back a stolen prototype engine." The right after close the signal and you cannot hail them back. They did not gave you any information about how looks the prototype and where is that 'asteroid base'.`
+				accept
+	on accept
+		"empire detonator mission active" += 1
+		outfit "Empire Detonator Attribute Secret" 1
+	on complete
+		outfit "Empire Detonator Engine Secret" 1
+		outfit "Empire Detonator Attribute Secret" -1
+		"reputation: Lumbarian Empire" -= 1000000000000
+		log "Empire" "You got back a stolen prototype of an empire engine detained in a secret Lumbarian Empire military lab."
+	npc
+		government "Lumbarian Empire"
+		personality staying
+		system "Mirzam"
+		fleet "Lumbarian Cruiser"
+		fleet "Large L Navy"
+		fleet "Large L Navy"
+		fleet "Large L Navy"
+		fleet "Small L Navy"
+		fleet "Small L Navy"
+		fleet "Small L Navy"
+		fleet "Small L Navy"
+		fleet "Small L Navy"
+
+mission "Empire: Evade Lumbarian Fleets"
+	name "Empire: Evade Lumbarian Navy"
+	description "Evade from the Lumbarian Navy then land on Crodust, Lifdot to get your payment of <payment>."
+	landing
+	to offer
+		has "Empire: Get Stolen Detonator Engine Prototype: done"
+	destination "Crodust"
+	on offer
+		"empire detonator mission active" -= 1
+		conversation
+			`You finally land on the Lumbarian 7-KJ Asteroid Base despites the huge Lumbarian Navy fleets staying near. You land and furtively open the blast door of your ship and leave the ship to enter the closest military lab.`
+			choice
+				`next`
+					goto next
+			label next
+			`You put some C4 on the military lab principal door and you tell your crews to prepare. The C4 explode and let the big door all open. You enter and search for a room with the prototype. After fights with Lumbarian militaries troops, you finally find the prototype and get back to your ship and immediately leave the planet.`
+				launch
+	on complete
+		payment
+		payment 17000000
+		outfit "Empire Detonator Engine Secret" -1
+		dialog "You succedeed on your mission. They Cromha Empire are really impressed of your work. They paid you <payment>."
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system "Lumbaria"
+		fleet "Lumbarian Cruiser"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Small L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Small L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Small L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Large L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Large L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Large L Navy"
+
+mission "Empire: Transport Prototype Detonator Engine"
+	name "Empire: Transport Prototype Engine"
+	description "Transport in your cargo a prototype lifdot industries lab engine to <destination> in the Cromha Rim. Do not get scan by any Lumabarian Empire Navy ship on your way."
+	landing
+	to offer
+		has "Empire: Evade Lumbarian Fleets: done"
+		random < 8
+	source
+		government "Cromha Empire" "Mineria Colonies" "Quarg"
+	destination "Stilfa"
+	on offer
+		conversation
+			`After landing on <origin>, you again receive a message from the Empire Workforces. A pop-up opens in your ship's computer dashboard screen:`
+			`	"EMPIRE WORKFORCES:`
+			`	Captain <first> <last>, please consider this extremely important missions that we can only give to you;`
+			`	as you know, we are currently designing a prototype for a engine, more particularry an afterburner, since you got it back from an secret Lumbarian military lab in the Mirzan system. Well, we need you to secretly transport the almost finished prototype in your cargo, to <destination> in the Cromha Rim.`
+			` The only information that we can tell about going to <destination>, is that you'll first need to get to the Minkar system, in the far north of the Rim space.`
+			`	Please, accept this mission, you'll be extremely well recompensed by us and the Quargs.`
+			choice
+				`Click on accept.`
+					accept
+				`Close the pop-up.`
+					decline
+				`Click on deny.`
+					decline
+	on accept
+		dialog "Right after clicking on 'accept', the prototype outfit get teleported right into your cargo."
+		outfit "Empire Detonator Engine Secret" 1
+	on enter Minkar
+		dialog "You get a message on a empire top-secret freequences and loose the signal right after receiving: 't**s ju** **nnel wil* make you ***er the **omha r*m'. The message seems to be crypted and only a few letters are able to be de-crypted."
+	on complete
+		conversation
+			`You finnaly land on <destination>, and decide to get some rest while waiting for some empire authorities to come to you. You play a game for about 01:38 hours. It's not empire authorities who come to your blast door but Quargs, 3 quargs to be accurate.`
+			`You open your blast door to let them enter. They greet you and then unplug the prototype engine from your systems and unload it from your cargo. They leave an say bye. You want to ask them for the payment but they're already way far from your ship.`
+			`But when looking at your cargo camera, you can see a crate who seems to contains money and a particular quarg outfit who seems to be a weapon or a anti-missile turret. You go check and you can find 3M credits in the crate as well as a 'Doomscythe', who seems to be an extreme quarg weapon.`
+		payment
+		payment 3000000
+		outfit Doomscythe 1
+		outfit "Empire Detonator Engine Secret" -1
+		log "Empire" "You successfully secretely transported an prototype of an empire engine to a secret region of the space, the Cromha Rim, even if there were huge Lumbarian and Rebels fleets on your way."
+	npc evade
+		government "Empire Rebels"
+		personality target hunting daring plunders vindictive ramming appeasing
+		system
+			distance 1 3
+		fleet empire-rebels-raiders
+		fleet empire-rebels-raiders
+	npc evade
+		government "Empire Rebels"
+		personality target hunting daring plunders vindictive ramming appeasing
+		system
+			distance 1 3
+		fleet empire-rebels-raiders
+		fleet empire-rebels-raiders
+	npc evade
+		government "Empire Rebels"
+		personality target hunting daring plunders vindictive ramming appeasing
+		system
+			distance 1 3
+		fleet empire-rebels-merchants
+		fleet empire-rebels-merchants
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Small L Navy"
+		fleet "Small L Navy"
+		fleet "Large L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Small L Navy"
+		fleet "Small L Navy"
+		fleet "Large L Navy"
+	npc evade
+		government "Lumbarian Empire"
+		personality target
+		system
+			distance 1 3
+		fleet "Lumbarian Cruiser"
+	npc
+		government "Quarg"
+		system "Kalisto"
+		personality staying
+		fleet "Quarg Protectionist"
+		fleet "Large Quarg"
+		fleet "Quarg"
