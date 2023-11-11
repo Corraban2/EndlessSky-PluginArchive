@@ -74,6 +74,7 @@ Files:
  images/thumbnail/quarg gtuhanai*
  images/thumbnail/quarg skylark*
  images/thumbnail/quarg kaukas*
+ images/ship/quarg zilant*
  images/outfit/guz gatling nuke
  images/outfit/guz nuker turret
  images/hardpoint/guz nuker turret
@@ -88,7 +89,7 @@ Files:
  images/ship/remnant hobby
  images/thumbnail/remnant hobby
 Copyright: DarcyManoel
-License:GPL-3-or-later
+License: GPL-3-or-later
 
 https://creativecommons.org/licenses/by-sa/4.0/
 
