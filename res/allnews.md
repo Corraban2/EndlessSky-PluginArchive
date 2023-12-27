@@ -1,3 +1,5 @@
+2023-12-27 | updated Plugin 'Amphibious-Ships' by Zoura | [ships](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#ships)<br>
+2023-12-27 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2023-12-26 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2023-12-25 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2023-12-24 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
