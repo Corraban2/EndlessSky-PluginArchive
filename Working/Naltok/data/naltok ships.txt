@@ -33,6 +33,7 @@ ship "Mackerel"
 		"heat capacity" 512
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 20
 			"shield damage" 250
@@ -79,6 +80,7 @@ ship "Marlin"
 		"heat capacity" 1068
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 64
 			"shield damage" 840
@@ -129,6 +131,7 @@ ship "Sturgeon"
 		"heat capacity" 1596
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 154
 			"shield damage" 2040
@@ -182,6 +185,7 @@ ship "Herring"
 		"heat capacity" 252
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 8
 			"shield damage" 110
@@ -244,6 +248,7 @@ ship "Conger"
 		"heat capacity" 584
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 28
 			"shield damage" 350
@@ -300,6 +305,7 @@ ship "Flounder"
 		"heat capacity" 1792
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 72
 			"shield damage" 1020
@@ -353,6 +359,7 @@ ship "Grouper"
 		"heat capacity" 1044
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 169
 			"shield damage" 2390
@@ -408,6 +415,7 @@ ship "Guppy"
 		"heat capacity" 288
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 17
 			"shield damage" 230
@@ -454,6 +462,7 @@ ship "Tetra"
 		"heat capacity" 326
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 21
 			"shield damage" 270
@@ -513,6 +522,7 @@ ship "Archerfish"
 		"heat capacity" 520
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 42
 			"shield damage" 540
@@ -561,6 +571,7 @@ ship "Piranha"
 		"heat capacity" 760
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 55
 			"shield damage" 700
@@ -582,7 +593,7 @@ ship "Piranha"
 	gun "Shell-Splitter Launcher"
 	gun "Shell-Splitter Launcher"
 	gun
-	turret "Triple Breaker Turret"
+	turret "Sky-Shredder"
 	description `The Piranha is the oldest Naltok warship design in service, and was the first to employ the biotechnological hull construction which is now standard on all their ships. Rather than metals, Naltok ships are built from a community of mineralising bacteria grown onto an inert frame. This allows them to continually repair themselves in combat, but comes at the cost of a substantially higher mass than conventional metal or composite hulls and limits the effectiveness of their shield projectors.`
 
 ship "Piranha" "Piranha (Scanning)"
@@ -695,6 +706,7 @@ ship "Barracuda"
 		"heat capacity" 880
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 68
 			"shield damage" 900
@@ -758,6 +770,7 @@ ship "Albacore"
 		"heat capacity" 920
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 72
 			"shield damage" 1020
@@ -817,6 +830,7 @@ ship "Moray"
 		"heat capacity" 1192
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 108
 			"shield damage" 1430
@@ -829,7 +843,8 @@ ship "Moray"
 		"Steel-Render" 2
 		"Shell-Splitter Launcher"
 		"Shell-Splitter Torpedo" 11
-		"Breaker" 2
+		"Strike-Needler Pod" 2
+		"Strike-Needle" 64
 
 		"Stream Generator"
 		"Lake Battery"
@@ -840,8 +855,8 @@ ship "Moray"
 		`"Gecko" Ion Thruster`
 		
 
-	gun "Breaker"
-	gun "Breaker"
+	gun "Strike-Needler Pod"
+	gun "Strike-Needler Pod"
 	gun "Shell-Splitter Launcher"
 		angle 180
 	turret "Sky-Shredder"
@@ -875,6 +890,7 @@ ship "Pike"
 		"heat capacity" 1768
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 193
 			"shield damage" 2630
@@ -960,11 +976,12 @@ ship "Mola"
 		"fuel capacity" 400
 		"cargo space" 24
 		"outfit space" 752
-		"weapon capacity" 136
+		"weapon capacity" 104
 		"engine capacity" 196
 		"heat capacity" 2288
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 178
 			"shield damage" 2280
@@ -972,8 +989,8 @@ ship "Mola"
 			"hit force" 3420
 	outfits
 		"Shell-Splitter Launcher"
-		"Shell-Splitter Tube" 20
-		"Shell-Splitter Torpedo" 91
+		"Shell-Splitter Tube" 22
+		"Shell-Splitter Torpedo" 99
 		"Membrane-class Anti-Missile" 4
 
 		"Stream Generator"
@@ -1042,6 +1059,7 @@ ship "Kaluga"
 		"heat capacity" 2600
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 242
 			"shield damage" 3120
@@ -1103,12 +1121,13 @@ ship "Lamprey"
 		"mass" 64
 		"drag" .67
 		"heat dissipation" .215
-		"outfit space" 104
+		"outfit space" 96
 		"weapon capacity" 41
-		"engine capacity" 37
+		"engine capacity" 40
 		"heat capacity" 168
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 8
 			"shield damage" 120
@@ -1143,10 +1162,11 @@ ship "Remora"
 		"heat dissipation" .225
 		"outfit space" 112
 		"weapon capacity" 28
-		"engine capacity" 27
+		"engine capacity" 24
 		"heat capacity" 168
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 12
 			"shield damage" 170
@@ -1160,7 +1180,7 @@ ship "Remora"
 		"Spring Cell"
 		`"Agama" Ion Thruster`
 		`"Agama" Ion Steering`
-		"Puddle Battery"
+		"Pond Battery"
 
 	gun "Breaker"
 	gun "Breaker"
@@ -1174,14 +1194,14 @@ ship "Minnow"
 	thumbnail "thumbnail/naltok minnow"
 	attributes
 		category "Drone"
-		"cost" 71300
+		"cost" 128000
 		"hull" 1200
 		"hull repair rate" .2
 		"hull energy" .05
 		"hull heat" .15
 		"automaton" 1
 		"mass" 40
-		"drag" .52
+		"drag" .57
 		"heat dissipation" .24
 		"cargo space" 32
 		"outfit space" 61
@@ -1190,6 +1210,7 @@ ship "Minnow"
 		"heat capacity" 101
 		"high shield permeability" .4
 		"low shield permeability" .4
+		"cooling inefficiency" 3
 		weapon
 			"blast radius" 4
 			"shield damage" 60
