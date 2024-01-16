@@ -15,8 +15,8 @@ ship "Mackerel"
 	attributes
 		category "Transport"
 		"cost" 1320000
-		"shields" 1000
-		"hull" 4100
+		"shields" 1200
+		"hull" 3900
 		"hull repair rate" .5
 		"hull energy" .125
 		"hull heat" .375
@@ -62,8 +62,8 @@ ship "Marlin"
 		licenses 
 			"Ministry of Transport"
 		"cost" 4330000
-		"shields" 2700
-		"hull" 14100
+		"shields" 3200
+		"hull" 13600
 		"hull repair rate" 1.1
 		"hull energy" .275
 		"hull heat" .825
@@ -88,7 +88,8 @@ ship "Marlin"
 			"hit force" 1260
 	outfits
 		"Breaker" 2
-		"Membrane-class Anti-Missile" 3
+		"Membrane-class Anti-Missile" 2
+		"Capsid-class Anti-Missile"
 		"Swamp Shield Generator" 2
 		"Stream Generator"
 		"Pond Battery"
@@ -113,8 +114,8 @@ ship "Sturgeon"
 		licenses
 			"Ministry of War"
 		"cost" 14172000
-		"shields" 4800
-		"hull" 36100
+		"shields" 5800
+		"hull" 35100
 		"hull repair rate" 2.9
 		"hull energy" .725
 		"hull heat" 2.175
@@ -167,8 +168,8 @@ ship "Herring"
 	attributes
 		category "Light Freighter"
 		"cost" 462000
-		"shields" 400
-		"hull" 1900
+		"shields" 500
+		"hull" 1800
 		"hull repair rate" .25
 		"hull energy" .0625
 		"hull heat" .1875
@@ -230,8 +231,8 @@ ship "Conger"
 		licenses 
 			"Ministry of Transport"
 		"cost" 2486000
-		"shields" 900
-		"hull" 6100
+		"shields" 1100
+		"hull" 5900
 		"hull repair rate" .6
 		"hull energy" .15
 		"hull heat" .45
@@ -287,8 +288,8 @@ ship "Flounder"
 	attributes
 		category "Heavy Freighter"
 		"cost" 7731000
-		"shields" 1900
-		"hull" 18600
+		"shields" 2300
+		"hull" 18200
 		"hull repair rate" 1.2
 		"hull energy" .3
 		"hull heat" .9
@@ -341,8 +342,8 @@ ship "Grouper"
 		"capture class" "xochira novelty"
 		category "Utility"
 		"cost"
-		"shields" 4100
-		"hull" 19800
+		"shields" 4900
+		"hull" 19000
 		"hull repair rate" 2.05
 		"hull energy" .5125
 		"hull heat" 1.5375
@@ -356,7 +357,7 @@ ship "Grouper"
 		"outfit space" 584
 		"weapon capacity" 136
 		"engine capacity" 188
-		"heat capacity" 1044
+		"heat capacity" 1544
 		"high shield permeability" .4
 		"low shield permeability" .4
 		"cooling inefficiency" 3
@@ -397,8 +398,8 @@ ship "Guppy"
 	attributes
 		category "Interceptor"
 		"cost" 381000
-		"shields" 1100
-		"hull" 4200
+		"shields" 1300
+		"hull" 4000
 		"hull repair rate" 0.8
 		"hull energy" .2
 		"hull heat" .6
@@ -444,8 +445,8 @@ ship "Tetra"
 	attributes
 		category "Interceptor"
 		"cost" 837000
-		"shields" 1300
-		"hull" 5300
+		"shields" 1800
+		"hull" 4800
 		"hull repair rate" 0.95
 		"hull energy" .2375
 		"hull heat" .7125
@@ -459,7 +460,7 @@ ship "Tetra"
 		"outfit space" 218
 		"weapon capacity" 62
 		"engine capacity" 80
-		"heat capacity" 326
+		"heat capacity" 346
 		"high shield permeability" .4
 		"low shield permeability" .4
 		"cooling inefficiency" 3
@@ -504,8 +505,8 @@ ship "Archerfish"
 		licenses 
 			"Xochira"
 		"cost" 1896000
-		"shields" 2200
-		"hull" 8700
+		"shields" 2500
+		"hull" 8200
 		"hull repair rate" 1.1
 		"hull energy" .275
 		"hull heat" .825
@@ -553,8 +554,8 @@ ship "Piranha"
 	attributes
 		category "Light Warship"
 		"cost" 2344000
-		"shields" 3200
-		"hull" 12400
+		"shields" 3800
+		"hull" 11800
 		"hull repair rate" 1.6
 		"hull energy" .4
 		"hull heat" 1.2
@@ -688,8 +689,8 @@ ship "Barracuda"
 	attributes
 		category "Medium Warship"
 		"cost" 4742000
-		"shields" 4200
-		"hull" 17600
+		"shields" 5200
+		"hull" 16600
 		"hull repair rate" 2.3
 		"hull energy" .575
 		"hull heat" 1.725
@@ -752,8 +753,8 @@ ship "Albacore"
 		licenses 
 			"Xochira"
 		"cost" 4143000
-		"shields" 4700
-		"hull" 18600
+		"shields" 5400
+		"hull" 17800
 		"hull repair rate" 2.1
 		"hull energy" .525
 		"hull heat" 1.575
@@ -812,8 +813,8 @@ ship "Moray"
 	attributes
 		category "Medium Warship"
 		"cost" 5163000
-		"shields" 5600
-		"hull" 28100
+		"shields" 6600
+		"hull" 27200
 		"hull repair rate" 2.8
 		"hull energy" .7
 		"hull heat" 2.1
@@ -827,7 +828,7 @@ ship "Moray"
 		"outfit space" 536
 		"weapon capacity" 264
 		"engine capacity" 104
-		"heat capacity" 1192
+		"heat capacity" 1160
 		"high shield permeability" .4
 		"low shield permeability" .4
 		"cooling inefficiency" 3
@@ -872,22 +873,22 @@ ship "Pike"
 		"capture class" "naltok capital"
 		category "Heavy Warship"
 		"cost" 27678000
-		"shields" 6300
-		"hull" 41700
-		"hull repair rate" 3.1
-		"hull energy" .775
-		"hull heat" 2.325
+		"shields" 7600
+		"hull" 37200
+		"hull repair rate" 3.2
+		"hull energy" .8
+		"hull heat" 2.4
 		"required crew" 42
-		"bunks" 56
-		"mass" 960
-		"drag" 10.3
+		"bunks" 52
+		"mass" 896
+		"drag" 10.1
 		"heat dissipation" .1
 		"fuel capacity" 600
-		"cargo space" 216
-		"outfit space" 808
+		"cargo space" 256
+		"outfit space" 792
 		"weapon capacity" 312
 		"engine capacity" 224
-		"heat capacity" 1768
+		"heat capacity" 1688
 		"high shield permeability" .4
 		"low shield permeability" .4
 		"cooling inefficiency" 3
@@ -963,15 +964,15 @@ ship "Mola"
 		licenses
 			"Ministry of War"
 		"cost" 21236000
-		"shields" 6100
-		"hull" 37600
-		"hull repair rate" 2.9
-		"hull energy" .725
-		"hull heat" 2.175
-		"required crew" 56
+		"shields" 7200
+		"hull" 36400
+		"hull repair rate" 2.8
+		"hull energy" .7
+		"hull heat" 2.1
+		"required crew" 54
 		"bunks" 68
 		"mass" 1536
-		"drag" 15.2
+		"drag" 14.8
 		"heat dissipation" .085
 		"fuel capacity" 400
 		"cargo space" 24
@@ -1041,8 +1042,8 @@ ship "Kaluga"
 			"Xochira"
 			"Xochira Military"
 		"cost" 33723000
-		"shields" 8600
-		"hull" 56400
+		"shields" 10400
+		"hull" 54600
 		"hull repair rate" 3.9
 		"hull energy" .975
 		"hull heat" 2.925
@@ -1066,12 +1067,10 @@ ship "Kaluga"
 			"hull damage" 1560
 			"hit force" 4880
 	outfits
-		"Steel-Render" 1
-		"Sky-Shredder" 4
-		"Membrane-class Anti-Missile" 2
+		"Sky-Shredder" 5
+		"Capsid-class Anti-Missile" 2
 		"Halt-Swarm Launcher" 6
-		"Halt-Swarm Missile" 416
-		"Halt-Swarm Rack" 1
+		"Halt-Swarm Missile" 384
 
 		"Estuary Reactor"
 		"Puddle Battery"
@@ -1111,8 +1110,8 @@ ship "Lamprey"
 		licenses 
 			"Xochira"
 		"cost" 317800
-		"shields" 300
-		"hull" 2200
+		"shields" 400
+		"hull" 2100
 		"hull repair rate" .4
 		"hull energy" .1
 		"hull heat" .3
@@ -1124,7 +1123,7 @@ ship "Lamprey"
 		"outfit space" 96
 		"weapon capacity" 41
 		"engine capacity" 40
-		"heat capacity" 168
+		"heat capacity" 160
 		"high shield permeability" .4
 		"low shield permeability" .4
 		"cooling inefficiency" 3
@@ -1150,15 +1149,15 @@ ship "Remora"
 	attributes
 		category "Fighter"
 		"cost" 201000
-		"shields" 600
-		"hull" 2800
+		"shields" 800
+		"hull" 2600
 		"hull repair rate" .6
 		"hull energy" .15
 		"hull heat" .45
 		"required crew" 1
 		"bunks" 1
 		"mass" 56
-		"drag" .76
+		"drag" .82
 		"heat dissipation" .225
 		"outfit space" 112
 		"weapon capacity" 28
@@ -1207,7 +1206,7 @@ ship "Minnow"
 		"outfit space" 60
 		"weapon capacity" 14
 		"engine capacity" 24
-		"heat capacity" 101
+		"heat capacity" 100
 		"high shield permeability" .4
 		"low shield permeability" .4
 		"cooling inefficiency" 3
