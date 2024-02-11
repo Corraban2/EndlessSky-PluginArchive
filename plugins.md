@@ -2370,7 +2370,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Spacefarer.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Spacefarer.zip) | 220.79 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Spacefarer/) <br>
 Author: samrocketman | Category: Gameplay <br>
-[https://github.com/samrocketman/Spacefarer](https://github.com/samrocketman/Spacefarer) (last commit 2023-02-04) <br>
+[https://github.com/samrocketman/Spacefarer](https://github.com/samrocketman/Spacefarer) (last commit 2024-02-11) <br>
 
 >One Jump Drive; No ship capturing; No plundering installed outfits.
 >
@@ -4360,9 +4360,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Zoura's Outfits Expanded
 
 
-[Zoura.s.Outfits.Expanded.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Zoura.s.Outfits.Expanded.zip) | 251.96 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Zoura's%20Outfits%20Expanded/) <br>
+[Zoura.s.Outfits.Expanded.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Zoura.s.Outfits.Expanded.zip) | 1.56 mb | 2024-02-11 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Zoura's%20Outfits%20Expanded/) <br>
 Author: Zoura | Category: Outfits <br>
-[https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded](https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded) (last commit 2023-06-27) <br>
+[https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded](https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded) (last commit 2024-02-11) <br>
 
 >Expands outfit variety across all castes of vanilla Endless Sky.
 
@@ -14974,9 +14974,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Sounds Of Endless Sky
 
 
-[Sounds.Of.Endless.Sky.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Sounds.Of.Endless.Sky.zip) | 51.51 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Sounds%20Of%20Endless%20Sky/) <br>
+[Sounds.Of.Endless.Sky.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Sounds.Of.Endless.Sky.zip) | 51.59 mb | 2024-02-11 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Sounds%20Of%20Endless%20Sky/) <br>
 Author: samrocketman | Category: N/A <br>
-[https://github.com/samrocketman/sounds-of-endless-sky](https://github.com/samrocketman/sounds-of-endless-sky) (last commit 2023-03-05) <br>
+[https://github.com/samrocketman/sounds-of-endless-sky](https://github.com/samrocketman/sounds-of-endless-sky) (last commit 2024-02-11) <br>
 
 >This is a plugin aiming to provide music for Endless Sky as well as remaster the audio to balance it.
 >
