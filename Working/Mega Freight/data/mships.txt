@@ -1336,11 +1336,13 @@ ship "FG-6 Startrain"
 		"mass" 1000
 		"drag" 10
 		"heat dissipation" .55
-		"fuel capacity" 600
+		"fuel capacity" 800
 		"cargo space" 320
 		"outfit space" 380
 		"weapon capacity" 180
 		"engine capacity" 85
+		"mgf fast unload" -5
+		"mgf fast unload slot" 5
 		weapon
 			"blast radius" 140
 			"shield damage" 1200
@@ -1360,7 +1362,9 @@ ship "FG-6 Startrain"
 		"X3200 Ion Steering"
 		"X3700 Ion Thruster"
 		"Scram Drive"
-		
+
+		"MGF: Fast Unloading" 5
+
 	turret -19 -116
 	turret 19 -116
 	turret 0 -99
@@ -1501,7 +1505,60 @@ ship "FG-7 Conveyor" "FG-7 Conveyor-A"
 		"frame rate" 0
 	thumbnail "thumbnail/mgf conveyor-a"
 
-# 8 reserved for a small ship, 9 for Exporter, the ship carried by Exchanger.
+ship "FG-8 Shipment"
+	sprite "ship/mgf shipment"
+	thumbnail "thumbnail/mgf shipment thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 1180000
+		"shields" 1800
+		"hull" 3000
+		"required crew" 4
+		"bunks" 7
+		"mass" 500
+		"drag" 7
+		"heat dissipation" .6
+		"fuel capacity" 600
+		"cargo space" 256
+		"outfit space" 240
+		"weapon capacity" 80
+		"engine capacity" 70
+		"mgf fast unload" -7
+		"mgf fast unload slot" 7
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Proton Turret"
+		"Heavy Anti-Missile Turret"
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		"Laser Rifle" 3
+		
+		"X2200 Ion Steering"
+		"X2700 Ion Thruster"
+		"Hyperdrive"
+
+		"MGF: Fast Unloading" 7
+		
+	turret 0 -57 
+	turret 0 41 "Heavy Anti-Missile Turret"
+	engine 0 67.5 
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion medium"
+	description `Smallest and cheapest cargo ship currently made by Freight Galactic. Though not as well armed as their typical product, it can carry decent amount of cargo for the size. The ship is also installed with equipment to independently and rapidly unload its container for faster operation at port.`
+
+# 9 for Exporter, the ship carried by Exchanger.
 
 ship "FG-10 Exchanger"
 	sprite "ship/mgf exchanger"
@@ -1905,7 +1962,8 @@ ship "SMM-111 Bagger"
 		"Bagger Excavator" 3
 		"Proton Turret" 2
 		"Quad Blaster Turret" 2
-		"Heavy Anti-Missile Turret" 5
+		"Heavy Anti-Missile Turret" 4
+		"Tractor Beam"
 		
 		"Fission Reactor" 2
 		"Liquid Nitrogen Cooler"
@@ -1923,7 +1981,7 @@ ship "SMM-111 Bagger"
 	gun 0 -371
 	gun 0 -371
 	gun 0 -371
-	turret 0 -136 "Heavy Anti-Missile Turret"
+	turret 0 -136 "Tractor Beam"
 	turret -40 -96
 	turret 40 -96
 	turret -40 -50 "Heavy Anti-Missile Turret"
@@ -2069,7 +2127,8 @@ ship "EM-8A Armadillo"
 	outfits
 		"Espion Mining Laser" 4
 		"Proton Turret" 1
-		"Blaster Turret" 2
+		"Blaster Turret"
+		"Tractor Beam"
 		"Heavy Anti-Missile Turret" 2
 		
 		"Fission Reactor"
@@ -2087,7 +2146,7 @@ ship "EM-8A Armadillo"
 	gun 38.5 -162.5
 	gun 38.5 -162.5
 	turret 0 -111.5 "Proton Turret"
-	turret -34.5 -91
+	turret -34.5 -91 "Tractor Beam"
 	turret 34.5 -91 "Heavy Anti-Missile Turret"
 	turret -35 91 "Heavy Anti-Missile Turret"
 	turret 35 91
@@ -2158,7 +2217,7 @@ ship "EM-28F Wombat"
 		"fuel capacity" 1600
 		"cargo space" 1800
 		"outfit space" 8955
-		"weapon capacity" 1049
+		"weapon capacity" 1059
 		"engine capacity" 368
 		"hull repair rate" .2
 		"repair delay" 300
@@ -2177,7 +2236,8 @@ ship "EM-28F Wombat"
 		"Meteor Missile" 120
 		
 		"Proton Turret" 10
-		"Quad Blaster Turret" 4
+		"Quad Blaster Turret" 2
+		"Espion Heavy Tractor" 2
 		"Heavy Anti-Missile Turret" 6
 		
 		"Fission Reactor" 4
@@ -2194,8 +2254,8 @@ ship "EM-28F Wombat"
 		
 	turret -36 -272.5 "Proton Turret"
 	turret 36 -272.5 "Proton Turret"
-	turret -36 -209.5 "Quad Blaster Turret"
-	turret 36 -209.5 "Quad Blaster Turret"
+	turret -36 -209.5 "Espion Heavy Tractor"
+	turret 36 -209.5 "Espion Heavy Tractor"
 	turret -76.5 -250.5 "Proton Turret"
 	turret 76.5 -250.5 "Proton Turret"
 	turret -76.5 -186 "Heavy Anti-Missile Turret"
@@ -2764,6 +2824,7 @@ ship "Nasprite"
 	"final explode" "final explosion large"
 	description `Nasprite is a modernization of a dated armoured freighter design from the first turf war made to withstand combat and long travel. Though originates from the core, most of these are now found operating around the Dirt Belt.`
 	
+#TODO: Fast unload
 ship "CK50T Stahbar"
 	sprite "ship/mgf stahbar"
 	thumbnail "thumbnail/mgf stahbar thumb"
@@ -4986,7 +5047,7 @@ ship `DSSN-C40 Dulumi`
 		"LP288a Battery Pack"
 		"D41-HY Shield Generator"
 		"Laser Rifle" 12
-		"Luxury Accomodations"
+		"Luxury Accommodations"
 		
 		"X4700 Ion Thruster"
 		"X4200 Ion Steering"
@@ -5407,6 +5468,85 @@ ship "UA-10 Porter"
 	engine 11.5 -3.5 
 	explode "tiny explosion" 15
 	description `The Porter is a small drone for assisting in cargo unloading operation of the Syndicate new freighter the G-Class, it is especially useful on less equipped worlds. The drone also comes with an anti-missile turret to assist in defense as merchant captains often deploy their all their fighters and drones in combat, even if those ships would be useless in a fight.`
+
+ship "J-Class Container Feeder"
+	sprite "ship/mgf syn jclass"
+	thumbnail "thumbnail/mgf syn jclass thumb"
+	attributes
+		category "Pocket Heavy Freighter"
+		"cost" 8500000
+		"shields" 3300
+		"hull" 7800
+		"required crew" 4
+		"bunks" 4
+		"mass" 800
+		"drag" 12.5
+		"heat dissipation" .65
+		"fuel capacity" 200
+		"cargo space" 734
+		"outfit space" 350
+		"weapon capacity" 32
+		"engine capacity" 120
+		"mgf fast unload" -10
+		"mgf fast unload slot" 10
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		
+		"NT-200 Nucleovoltaic"
+		"LP144a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"X3700 Ion Thruster"
+		"X4200 Ion Steering"
+		"X1100 Ion Reverse Thruster" 2
+		"Hyperdrive"
+
+		"MGF: Fast Unloading" 10
+		
+	engine -30.5 167 
+	engine 30.5 167 
+	"steering engine" 48 -169.5 
+		zoom .2
+		angle 270
+		left
+	"steering engine" -48 -169.5 
+		zoom .2
+		angle 90
+		right
+	"steering engine" -50 111.5 
+		zoom .2
+		angle 90
+		left
+	"steering engine" 50 111.5 
+		zoom .2
+		angle 270
+		right
+	"reverse engine" 42.5 -173 
+		zoom .2
+		angle 10
+	"reverse engine" -42.5 -173 
+		zoom .2
+		angle -10
+	"reverse engine" 50 108 
+		zoom .2
+		angle 20
+	"reverse engine" -50 108 
+		zoom .2
+		angle -20
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description `A compact freighter designed to be carried and assist the K-Class unload its containers. Purpose-built to quickly latch on to entire block of Syndicate containers, it can rapidly transport up to 64 containers between the mothership and the spaceport at a time permitting unmatched unloading rate on the market.`
+	description `With attachment plate capable of being raised and lowered, it is also capable of carrying general cargo for short-distance haul. Though, due to entire lack of armament it is rarely seen flying between systems.`
 
 ship "K-Class Ultra Container Ship"
 	sprite "ship/mgf syn kclass ultra container"
@@ -5978,6 +6118,53 @@ ship "EMS-28 Niessbarkurier"
 	"final explode" "final explosion small"
 	description `A specialized chemical tanker for carrying edible liquid with food grade tanks and pumps each individually equipped with dedicated refrigeration system. Unlike other tankers with minimal armament, this ship comes with enough turret mounts to rival even warships to deter pirates who seems to took interest in raiding and capturing these vessels.`
 
+ship "Typ115 Qiongsha"
+	sprite "ship/mgf ccs qiongsha"
+	thumbnail "thumbnail/mgf ccs qiongsha thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 350000
+		"shields" 600
+		"hull" 1200
+		"required crew" 1
+		"bunks" 2
+		"mass" 95
+		"drag" 2.3
+		"heat dissipation" .8
+		"fuel capacity" 300
+		"cargo space" 95
+		"outfit space" 120
+		"weapon capacity" 13
+		"engine capacity" 40
+		"mgf fast unload" -5
+		"mgf fast unload slot" 5
+		weapon
+			"blast radius" 16
+			"shield damage" 160
+			"hull damage" 80
+			"hit force" 240
+	outfits
+		"Baochai CIWS Turret"
+
+		"nGVF-BB Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
+		"Hyperdrive"
+
+		"MGF: Fast Unloading" 5
+		
+	turret 0 42.5 
+	engine 11.5 68 
+	engine -11.5 68 
+	leak "leak" 60 50
+	explode "tiny explosion" 10
+	explode "small explosion" 10
+	description `CCS Corp. entry for budget freighter market. A small step up from the Syndicate Star Barge, the Qiongsha offers almost double the cargo capacity as well as benefits of containerized cargo. The Qiongsha is an ideal ship for a captain looking for something with more capacity than a Star Barge but without the money to buy a Freighter.`
+	description `	With the low cost and high capacity the price is paid elsewhere. The container carrier is designed to the barest minimum required to fly and meet safety standard. It's said to be even more difficult to fly and land than the Syndicate Freighter by some captains due to location of the cockpit and cheap sensors. Minimal durability and defense while carrying more cargo also make it an even more attractive target for pirates, so much so that many insurance companies refuses to cover it outside specific safe zone.`
+
 ship "Typ124 Lianyungang"
 	sprite "ship/mgf ccs lianyungang"
 		"frame rate" 12
@@ -6289,8 +6476,8 @@ ship "LPC-2 Atletha Wreckage"
 		
 		"B-type 1k Oil Tank" 4
 		
-		"X5700 Ion Thruster"
-		"X5200 Ion Steering"
+		"X3700 Ion Thruster"
+		"X4200 Ion Steering"
 		
 	turret -32.5 -157 
 	turret 32.5 -157 
@@ -6407,7 +6594,7 @@ ship "EP-2 Marmot"
 		"drag" .8
 		"heat dissipation" .9
 		"cargo space" 40
-		"outfit space" 120
+		"outfit space" 100
 		"weapon capacity" 38
 		"engine capacity" 51
 		"asteroid scan power" 20

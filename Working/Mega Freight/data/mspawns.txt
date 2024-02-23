@@ -509,7 +509,7 @@ mission "MGF: Pirate Drone Bombers"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: Pirate Drone Bombers"
 	on accept
@@ -542,7 +542,7 @@ mission "MGF: Southern Merchant Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: Southern Merchant Upgrade I"
 	on accept
@@ -604,7 +604,7 @@ mission "MGF: Southern Merchant Upgrade II"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement III"
+		has "event: MGF: Pirate Advancement III"
 	on offer
 		event "MGF: Southern Merchant Upgrade II"
 	on accept
@@ -689,7 +689,7 @@ mission "MGF: Southern Merchant Upgrade III"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement IV"
+		has "event: MGF: Pirate Advancement IV"
 	on offer
 		event "MGF: Southern Merchant Upgrade III"
 	on accept
@@ -759,11 +759,55 @@ event "MGF: Southern Merchant Upgrade III"
 			"Leviathan (EPS-1)"
 			"Quicksilver (EPB3-2)" 2
 
+mission "MGF: Southern Merchant Use Feiyu"
+	invisible
+	landing
+	to offer
+		has "event: MGF: Pirate Advancement IV"
+	on offer
+		event "MGF: Southern Merchant Use Feiyu"
+	on accept
+		fail
+
+event "MGF: Southern Merchant Use Feiyu"
+	fleet "Large Southern Merchants"
+		add variant 2
+			"FUe02a Gebrant III (Feiyu)"
+			"Falcon (Heavy)"
+			"PF-80 Intrepid (Swordfish)"
+		add variant 2
+			"FUe02a Gebrant II (Feiyu)" 2
+			"Falcon"
+		add variant 4
+			"FUe02a Gebrant (Feiyu)" 2
+			"PF-80 Intrepid (Plasma Engine)"
+		add variant 4
+			"FUe02a Gebrant (Feiyu)" 2
+			"CSE-6 Steward"
+			"Xencar (Particle)" 6
+		add variant 5
+			"FG-5 Bluewhale (Feiyu Turret)" 2
+			"CSE-6 Steward" 2
+			"Xencar (Particle)" 12
+
+		add variant 4
+			"FG-7 Conveyor (Feiyu Turret)" 3
+			"CS-24 Garrison" #18
+			"Xencar (Particle)" 42
+
+		add variant 10
+			"QYG-60 Sandiq (Feiyu Turret)" 2
+			"Bastion (Feiyu)"
+		add variant 4
+			"SV80-n Catirfel (Feiyu)"
+			"CSE-6 Steward"
+			"Xencar (Particle)" 6
+
 mission "MGF: Northern Merchant Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: Northern Merchant Upgrade I"
 	on accept
@@ -850,7 +894,7 @@ mission "MGF: Northern Merchant Upgrade II"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement III"
+		has "event: MGF: Pirate Advancement III"
 	on offer
 		event "MGF: Northern Merchant Upgrade II"
 	on accept
@@ -906,6 +950,16 @@ event "MGF: Northern Merchant Upgrade II"
 			"CS-24 Garrison" #18
 			"Dagger" 18
 
+mission "MGF: Northern Merchant Upgrade III"
+	invisible
+	landing
+	to offer
+		has "event: MGF: Pirate Advancement IV"
+	on offer
+		event "MGF: Northern Merchant Upgrade III"
+	on accept
+		fail
+
 event "MGF: Northern Merchant Upgrade III"
 	fleet "Small Northern Merchants"
 		add variant 2
@@ -933,12 +987,65 @@ event "MGF: Northern Merchant Upgrade III"
 			"SV80-n Catirfel (Proton)" 2
 			"Leviathan (Particle Chaser)"
 		
+		add variant 25
+			"QYG-60 Sandiq (Quad Blaster)"
+			"QYG-60 Sandiq (Feiyu Turret)"
+		add variant 6
+			"QYG-60 Sandiq (Feiyu Turret)" 2
+			"Typ057 Lanzhou (Triple J13s)"
+			"Typ064 Xuchang (Missile)"
+		add variant 6
+			"QYG-60 Sandiq (Feiyu Turret)" 2
+			"Typ057 Lanzhou (Triple J13s)"
+			"Typ064 Xuchang (Proton Turret)"
+		add variant 4
+			"FG-5 Bluewhale (Feiyu Turret)"
+			"Typ064 Xuchang (Missile)"
+			"Typ064 Xuchang (Anti Missile)"
+		add variant 4
+			"FG-5 Bluewhale (Feiyu Turret)"
+			"Typ064 Xuchang (Missile)"
+			"Typ064 Xuchang (Proton Turret)"
+		add variant 4
+			"FG-5 Bluewhale (Feiyu Turret)" 2
+			"Leviathan (Particle Chaser)"
+		add variant 4
+			"FG-5 Bluewhale (Feiyu Turret)" 2
+			"Leviathan (EPS-1)"
+		
+		add variant 4
+			"SV80-n Catirfel (Feiyu)" 2
+			"Leviathan (Particle Chaser)"
+		add variant 2
+			"SV80-n Catirfel (Feiyu)" 3
+			"Leviathan (Particle Chaser)"
+			"Typ064 Xuchang (Missile)" 2
+		add variant 20
+			"FUe02a Gebrant (Feiyu)" 3
+			"Firebird (Plasma)"
+			"Typ064 Xuchang (Proton Turret)"
+		add variant 15
+			"FUe02a Gebrant II (Feiyu)"
+			"Headhunter"
+			"Berserker"
+		add variant 10
+			"FUe02a Gebrant III (Feiyu)"
+			"Firebird"
+			"Typ064 Xuchang (Missile)"
+		add variant 5
+			"FUe02a Gebrant III (Feiyu)"
+			"Leviathan (Particle Chaser)"
+		add variant 5
+			"FUe02a Gebrant III (Feiyu)" 2
+			"Leviathan (Particle Chaser)"
+			"Headhunter (Particle)" 2
+
 
 mission "MGF: Navilel Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement III"
+		has "event: MGF: Pirate Advancement III"
 		has "event: mgf: navilel released" 
 		has "event: mgf: early kaga deployed"
 	on offer
@@ -992,7 +1099,7 @@ mission "MGF: LunaWine Escort Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: LunaWine Escort Upgrade I"
 	on accept
@@ -1029,7 +1136,7 @@ mission "MGF: NGK HeavyFreight Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement III"
+		has "event: MGF: Pirate Advancement III"
 	on offer
 		event "MGF: NGK HeavyFreight Upgrade I"
 	on accept
@@ -1081,7 +1188,7 @@ mission "MGF: NGK LightFreight Swapout I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: NGK LightFreight Swapout I"
 	on accept
@@ -1120,7 +1227,7 @@ mission "MGF: NGK LightFreight Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: NGK LightFreight Upgrade I" 14
 	on accept
@@ -1183,7 +1290,7 @@ mission "MGF: NGK LightFreight Upgrade II"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement III"
+		has "event: MGF: Pirate Advancement III"
 	on offer
 		event "MGF: NGK LightFreight Upgrade II" 14
 	on accept
@@ -1284,7 +1391,7 @@ mission "MGF: NGK LightFreight Upgrade III"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement IV"
+		has "event: MGF: Pirate Advancement IV"
 	on offer
 		event "MGF: NGK LightFreight Upgrade III" 30
 	on accept
@@ -1388,7 +1495,7 @@ mission "MGF: NGK Kanran Decommissioned"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement IV"
+		has "event: MGF: Pirate Advancement IV"
 	on offer
 		event "MGF: NGK Kanran Decommissioned" 4320 #~12 years
 	on accept
@@ -1516,7 +1623,7 @@ mission "MGF: NGK H-Class Upgrade I"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement III"
+		has "event: MGF: Pirate Advancement III"
 		has "event: mgf: h-class development"
 	on offer
 		event "MGF: NGK H-Class Upgrade I"
@@ -2413,6 +2520,25 @@ event "mgf: guangzhou escort exchanger"
 			"Finch" 36
 			"Typ012 Guangzhou"
 	
+mission "MGF: Pirate Guangzhou"
+	landing
+	invisible
+	to offer
+		has "event: mgf: guangzhou on sale"
+	on offer
+		event "mgf: pirate use guangzhou" 2165 #Times taken for it to be common enough.
+		fail
+
+event "mgf: pirate use guangzhou"
+	fleet "Large Core Pirate"
+		add variant 1
+			"Typ012 Guangzhou"
+			"Splinter (Proton)" 2
+			"Typ064 Xuchang"
+			"Quicksilver" 2
+			"Wasp (Gatling)"
+			"Wasp (Javelin)" 2
+
 mission "MGF: Galaxy Station Begin"
 	landing
 	invisible
@@ -2784,6 +2910,8 @@ mission "MGF: K-Class on sale trigger"
 		fail
 
 event "mgf: k-class on sale"
+	shipyard "Syndicate Advanced"
+		"J-Class Container Feeder"
 	shipyard "Syndicate Advanced EX"
 		add "K-Class Ultra Container Ship"
 	planet "Ourea Naval Arsenal"
@@ -2811,7 +2939,20 @@ event "mgf: k-class on sale"
 			"Leviathan (NGK Escort)" 2
 			"L-VC28 Zuikaku"
 			"Xencar (NGK)" 20
-			
+
+mission "MGF: J-Class on sale"
+	landing
+	invisible
+	to offer
+		has "event: mgf: k-class on sale"
+	on offer
+		event "mgf: j-class on sale"
+	on accept
+		fail
+
+event "mgf: j-class on sale"
+	shipyard "Syndicate Advanced"
+		"J-Class Container Feeder"
 
 mission "MGF: K-Class Post-Lucerne"
 	landing
@@ -2872,6 +3013,7 @@ mission "MGF: Mieusbar overdue"
 		"days since epoch" > 1100429 + 156
 	on offer
 		event "mgf: mieusbar released"
+		fail
 
 mission "MGF: G-class overdue"
 	landing
@@ -2882,6 +3024,7 @@ mission "MGF: G-class overdue"
 		"days since epoch" > 1100429 + 105
 	on offer
 		event "mgf: g-class released"
+		fail
 
 mission "MGF: H-class development overdue"
 	landing
@@ -2903,6 +3046,7 @@ mission "MGF: Ialmuslati overdue"
 		"days since epoch" > 1100429 + 324
 	on offer
 		event "mgf: ialmuslati released"
+		fail
 
 mission "MGF: Pirate Advancement V overdue"
 	landing
@@ -2913,6 +3057,7 @@ mission "MGF: Pirate Advancement V overdue"
 		"days since epoch" > 1100429 + 1856
 	on offer
 		event "MGF: Pirate Advancement V"
+		fail
 
 mission "MGF: Pirate Advancement IV overdue"
 	landing
@@ -2923,6 +3068,7 @@ mission "MGF: Pirate Advancement IV overdue"
 		"days since epoch" > 1100429 + 1491
 	on offer
 		event "MGF: Pirate Advancement IV"
+		fail
 
 mission "MGF: Pirate Advancement III overdue"
 	landing
@@ -2933,6 +3079,7 @@ mission "MGF: Pirate Advancement III overdue"
 		"days since epoch" > 1100429 + 1126
 	on offer
 		event "MGF: Pirate Advancement III"
+		fail
 
 mission "MGF: Pirate Advancement II overdue"
 	landing
@@ -2943,6 +3090,7 @@ mission "MGF: Pirate Advancement II overdue"
 		"days since epoch" > 1100429 + 760
 	on offer
 		event "MGF: Pirate Advancement II"
+		fail
 
 mission "MGF: Pirate Advancement I overdue"
 	landing
@@ -2953,6 +3101,7 @@ mission "MGF: Pirate Advancement I overdue"
 		"days since epoch" > 1100429 + 395
 	on offer
 		event "MGF: Pirate Advancement I"
+		fail
 
 mission "MGF: Tonazqi overdue"
 	landing
@@ -2963,6 +3112,7 @@ mission "MGF: Tonazqi overdue"
 		"days since epoch" > 1100429 + 177
 	on offer
 		event "mgf: tonazqi released"
+		fail
 
 #=========================Event Additions
 
@@ -3343,6 +3493,7 @@ mission "MGF: FW Converted Supercarrier 2"
 	deadline 1
 	to offer
 		has "event: initial deployment 4"
+		has "event: mgf: fw converted warships 2-2"
 	on offer
 		event "mgf: fw converted supercarrier 2"
 		
@@ -3667,7 +3818,7 @@ mission "MGF: Ugyr's Sanctuary Appears"
 	invisible
 	landing
 	to offer
-		has "MGF: Pirate Advancement II"
+		has "event: MGF: Pirate Advancement II"
 	on offer
 		event "MGF: Ugyr's Sanctuary Appears"
 	on accept
