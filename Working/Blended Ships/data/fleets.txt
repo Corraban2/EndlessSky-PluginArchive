@@ -11,6 +11,8 @@
 # You should have received a copy of the GNU Affero General Public License along with
 # this program. If not, see <https://www.gnu.org/licenses/>.
 
+# Merchant Fleets
+
 fleet "Small Southern Merchants"
 	add variant
 		"Rawalpindi"
@@ -35,6 +37,16 @@ fleet "Large Southern Merchants"
 	add variant
 		"Rawalpindi"
 		"Grackle"
+
+fleet "Small Core Merchants"
+	add variant 10
+		"Catamaran"
+
+fleet "Paradise Merchants"
+	add variant 5
+		"Catamaran"
+
+# Military Organizations
 
 fleet "Small Free Worlds"
 	add variant
@@ -85,6 +97,30 @@ fleet "Large Militia"
 fleet "Small Deep Security"
 	add variant
 		"Grackle"
+
+fleet "Large Deep Security"
+	add variant 3
+		"Sunthief"
+
+fleet "Republic Logistics"
+	add variant
+		"Star General"
+		"Gunboat"
+	add variant
+		"Star General"
+		"Frigate"
+	add variant
+		"Star General"
+		"Rainmaker"
+	add variant
+		"Star General" 2
+		"Cruiser"
+	add variant
+		"Star General" 2
+		"Gunboat" 2
+		"Rainmaker"
+
+# Independent Groups and Pirates
 
 fleet "Small Southern Pirates"
 	add variant 5
@@ -139,6 +175,47 @@ fleet "Large Southern Pirates"
 		"Grackle"
 		"Sparrow"
 
+fleet "Small Northern Pirates"
+	add variant 2
+		"Sunthief"
+	add variant 2
+		"Sunthief"
+		"Berserker"
+	add variant
+		"Sunthief"
+		"Fury"
+	add variant
+		"Sunthief"
+		"Corvette"
+	add variant
+		"Sunthief"
+		"Corvette (Speedy)"
+	add variant
+		"Sunthief" 2
+
+fleet "Large Northern Pirates"
+	add variant 5
+		"Freighter" 3
+		"Sunthief"
+	add variant 2
+		"Behemoth" 2
+		"Sunthief"
+	add variant
+		"Bulk Freighter"
+		"Sunthief"
+	add variant
+		"Bactrian"
+		"Sunthief"
+	add variant 2
+		"Star Queen"
+		"Sunthief"
+
+fleet "Bounty Hunters"
+	add variant 2
+		"Grackle"
+	add variant 2
+		"Sunthief"
+
 fleet "Small Independent"
 	add variant
 		"Grackle"
@@ -178,23 +255,65 @@ fleet "Large Independent"
 		"Sparrow" 2
 		"Fury (Gatling)"
 
-fleet "Republic Logistics"
-	add variant
-		"Star General"
-		"Gunboat"
-	add variant
-		"Star General"
-		"Frigate"
-	add variant
-		"Star General"
-		"Rainmaker"
-	add variant
-		"Star General" 2
-		"Cruiser"
-	add variant
-		"Star General" 2
-		"Gunboat" 2
-		"Rainmaker"
+# New Pleasure Craft Fleets
+
+fleet "Pleasure Craft"
+	government "Merchant"
+	names "civilian"
+	cargo 2
+	personality
+		confusion 50
+		timid frugal appeasing surveillance
+	variant 8
+		"Hyperlight Shuttle"
+	variant 5
+		"Flivver Lo-V"
+	variant 2
+		"Hyperlight Shuttle" 2
+	variant 2
+		"Hyperlight Shuttle"
+		"Flivver Lo-V"
+	variant
+		"Flivver Lo-V" 3
+
+fleet "Pleasure Craft Transport"
+	government "Merchant"
+	names "civilian"
+	cargo 3
+	personality
+		confusion 30
+		timid frugal appeasing
+	variant
+		"Caterpillar"
+		"Hyperlight Shuttle" 12
+	variant
+		"Berserker"
+		"Caterpillar"
+		"Hyperlight Shuttle" 12
+	variant
+		"Sparrow"
+		"Caterpillar"
+		"Hyperlight Shuttle" 8
+		"Flivver Lo-V" 4
+	variant
+		"Caterpillar"
+		"Hyperlight Shuttle" 4
+		"Flivver Lo-V" 8
+	variant
+		"Berserker"
+		"Caterpillar"
+		"Hyperlight Shuttle" 4
+		"Flivver Lo-V" 8
+	variant
+		"Caterpillar"
+		"Flivver Lo-V" 12
+	variant
+		"Headhunter"
+		"Caterpillar"
+		"Hyperlight Shuttle" 5
+		"Flivver Lo-V" 2
+
+# Alien Fleets
 
 fleet "Small Hai Merchant (Human)"
 	add variant
@@ -231,17 +350,116 @@ fleet "Model 2 Swarm"
 	variant 1
 		"Model 2" 6
 
+# Add Fleets to Systems
+
+system Adhara
+	add fleet "Pleasure Craft" 2500
+	add fleet "Pleasure Craft Transport" 4500
+
+system Aldebaran
+	add fleet "Pleasure Craft" 1500
+	add fleet "Pleasure Craft Transport" 4000
+
+system Alheka
+	add fleet "Pleasure Craft" 3500
+
+system Alhena
+	add fleet "Pleasure Craft" 1500
+	add fleet "Pleasure Craft Transport" 3000
+
+system "Alpha Centauri"
+	add fleet "Pleasure Craft" 4000
+
+system Alphard
+	add fleet "Pleasure Craft" 1500
+	add fleet "Pleasure Craft Transport" 3500
+
+system Aludra
+	add fleet "Pleasure Craft" 2500
+	add fleet "Pleasure Craft Transport" 4000
+
+system Betelgeuse
+	add fleet "Pleasure Craft" 3000
+	add fleet "Pleasure Craft Transport" 5000
+
+system Canopus
+	add fleet "Pleasure Craft" 3000
+
+system Capella
+	add fleet "Pleasure Craft" 2000
+
+system Castor
+	add fleet "Pleasure Craft" 1000
+	add fleet "Pleasure Craft Transport" 2500
+
+system "Chimitarp"
+	add fleet "Model 2 Swarm" 2000
+
+system Dubhe
+	add fleet "Pleasure Craft" 2500
+	add fleet "Pleasure Craft Transport" 4000
+
+system Elnath
+	add fleet "Pleasure Craft" 3000
+
+system "Epsilon Leonis"
+	add fleet "Pleasure Craft" 2000
+	add fleet "Pleasure Craft Transport" 3000
+
+system "Faronektu"
+	add fleet "Model 2 Swarm" 2000
+
+system Gomeisa
+	add fleet "Pleasure Craft" 4000
+
+system Kursa
+	add fleet "Pleasure Craft" 2500
+
+system Mebsuta
+	add fleet "Pleasure Craft" 6000
+
 system "Mekislepti"
 	add fleet "Model 2 Swarm" 2000
 
-system "Chimitarp"
+system Miaplacidus
+	add fleet "Pleasure Craft" 2500
+
+system Naos
+	add fleet "Pleasure Craft" 2500
+	add fleet "Pleasure Craft Transport" 3500
+
+system Nihal
+	add fleet "Pleasure Craft" 4000
+
+system Phact
+	add fleet "Pleasure Craft" 2500
+
+system Phurad
+	add fleet "Pleasure Craft" 2500
+
+system Pollux
+	add fleet "Pleasure Craft" 2000
+
+system "Sepetrosk"
 	add fleet "Model 2 Swarm" 2000
 
 system "Similisti"
 	add fleet "Model 2 Swarm" 1500
 
-system "Faronektu"
-	add fleet "Model 2 Swarm" 2000
+system Sirius
+	add fleet "Pleasure Craft" 3000
 
-system "Sepetrosk"
-	add fleet "Model 2 Swarm" 2000
+system Sol
+	add fleet "Pleasure Craft" 2500
+
+system Talita
+	add fleet "Pleasure Craft" 2000
+
+system Tejat
+	add fleet "Pleasure Craft" 2500
+
+system Wazn
+	add fleet "Pleasure Craft" 2000
+
+system Zosma
+	add fleet "Pleasure Craft" 3500
