@@ -6461,7 +6461,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Arion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Arion.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Arion/) <br>
 Author: Spectre907YT | Category: Races <br>
-[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-03-06) <br>
+[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-03-10) <br>
 
 >Adds a faction (or 2) that supplies real life fighters and other interesting stuff.
 >
@@ -6472,19 +6472,15 @@ Author: Spectre907YT | Category: Races <br>
 
 An Endless Sky plugin that adds a variety of things to endless sky, including: 
 
-- Real life fighters
+- Real life fighters and bombers
   
-- Real life bombers
-  
-- Ace combat super planes
-  
-- Xenonauts fighters
+- Fighters from some other games
   
 - A bunch of new H2H weapons based on real life weapons
   
 - Advanced outfits
   
-- Specialized weapons
+- Powerful and unique weapons
   
 - Superweapons
   
@@ -6494,7 +6490,7 @@ An Endless Sky plugin that adds a variety of things to endless sky, including:
   
 - ETC
 
-To get access to some of the content visit Earth, Valhalla, Hephaestus or Bourne. Perhaps helping them out by doing some jobs and mission is a good idea. You can also just have a high combat rating or finish the main campaign (although you should probably just visit the mentioned planets).
+To get access to the content visit Earth, Valhalla, Hephaestus or Bourne. Perhaps helping them out by doing some jobs and missions is a good idea. You could also just have a high combat rating or finish the main campaign (although i reccomend just visiting the previously planets first for more content).
 
 There are also some bonus content if you have the lost in midnight, mega freight, czartraks ships, amphibious ships, altera or navycampaign (by kestrel1110) plugin. To access the bonus content, move the respective files from the bonus file to the data file.
 
