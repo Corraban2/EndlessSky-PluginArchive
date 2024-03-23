@@ -1,3 +1,7 @@
+2024-03-23 | new Plugin 'Weapon Ranges' by EjoThims | [gameplay](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#gameplay)<br>
+2024-03-23 | updated Plugin 'captureable.person.ships' by zuckung | [Cheats](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#Cheats)<br>
+2024-03-23 | updated Plugin 'expert.crew.members' by zuckung | [Outfits](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#Outfits)<br>
+2024-03-23 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2024-03-22 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2024-03-21 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2024-03-20 | updated Plugin 'Naltok' by Quantumshark | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
