@@ -407,7 +407,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Dragonflame.Fabrication.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Dragonflame.Fabrication.zip) | 1.58 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Dragonflame%20Fabrication/) <br>
 Author: Galaucus | Category: Cheats <br>
-[https://github.com/Galaucus/Dragonflame-Fabrication](https://github.com/Galaucus/Dragonflame-Fabrication) (last commit 2020-09-07) <br>
+[https://github.com/Galaucus/Dragonflame-Fabrication](https://github.com/Galaucus/Dragonflame-Fabrication)  <br>
 
 >A post-Emerald Sword mission chain that allows Kraz to manufacture a replacement Dragonflame Cannon.
 >
@@ -1070,7 +1070,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [World.Forge.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/World.Forge.zip) | 576.1 kb | 2024-02-03 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/World%20Forge/) <br>
 Author: Amazinite | Category: Cheats <br>
-[https://github.com/EndlessSkyCommunity/world-forge](https://github.com/EndlessSkyCommunity/world-forge) (last commit 2024-02-03) <br>
+[https://github.com/EndlessSkyCommunity/world-forge](https://github.com/EndlessSkyCommunity/world-forge) (last commit 2024-04-01) <br>
 
 >"This plugin was made to allow content creators to have access to all outfits in a single place, for the purpose of designing and testing outfit loadouts for new ships. Of course, it can also be used by people who want to ruin the game for themselves by getting a massive fleet without needing to work for it."
 >World Forge does this as well, but extends this: not only all outfits in one place, but sorted by race additionally, a way to change the swizzle(derived from ProjectRunabout), a easy way to add own outfits and ships into the existing scheme, and  missions to change your reputation with factions! 
@@ -1696,7 +1696,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [galactic.capital.investment.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/galactic.capital.investment.zip) | 2.16 mb | 2024-03-31 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/galactic.capital.investment/) <br>
 Author: zuckung | Category: Gameplay <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2024-03-31) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins)  <br>
 
 >Implements a short mission chain that enables repeatable job board investment opportunities which result in small daily income. Available in human, quarg and hai space starting with 2 million credits cash and going up to 100 million credits. See the readme for details.
 >(inspired by a-alhusaini's investment bank plugin)
@@ -9110,7 +9110,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Lampyrid.Start.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lampyrid.Start.zip) | 41.0 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lampyrid%20Start/) <br>
 Author: Zitchas | Category: Ships <br>
-[https://github.com/Zitchas/ES_Lampyrid_Start](https://github.com/Zitchas/ES_Lampyrid_Start) (last commit 2022-02-27) <br>
+[https://github.com/Zitchas/ES_Lampyrid_Start](https://github.com/Zitchas/ES_Lampyrid_Start)  <br>
 
 >Alternate start with Lampyrid ship.
 >
@@ -10741,7 +10741,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [The.Peacebringer.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Peacebringer.zip) | 4.45 kb | 2023-10-05 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Peacebringer/) <br>
 Author: Polaria1 | Category: Ships <br>
-[https://github.com/Polaria1/The-Peacebringer](https://github.com/Polaria1/The-Peacebringer) (last commit 2023-10-02) <br>
+[https://github.com/Polaria1/The-Peacebringer](https://github.com/Polaria1/The-Peacebringer)  <br>
 
 >End-game flagship with *jazz hands* modularity! 
 
@@ -11893,7 +11893,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [ES.Callisto.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/ES.Callisto.zip) | 298.14 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/ES%20Callisto/) <br>
 Author: mOctave | Category: Story <br>
-[https://github.com/mOctave/es-callisto](https://github.com/mOctave/es-callisto) (last commit 2023-03-21) <br>
+[https://github.com/mOctave/es-callisto](https://github.com/mOctave/es-callisto)  <br>
 
 >This is a very small plugin that adds Callisto as a landable location in Sol, and provides backstory as to why it is currently abandoned. More may be added to this plugin in the future, but I might also just leave it at this.
 
