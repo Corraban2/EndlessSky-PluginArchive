@@ -70,6 +70,7 @@ DevStarts|2023-02-05
 Different Galaxy Plugin|2021-03-02
 Disable Author Ships|2022-06-04
 Donut 512|2023-06-03
+Dragonflame Fabrication|2020-09-07
 easier harvesting|2017-05-28
 Easier Korath Automatons|2020-05-08
 EfretiMissions|2023-02-16
@@ -93,6 +94,7 @@ Enki-Station|2018-03-11
 Epic Outfits|2020-11-07
 Epic Trucker|2020-07-29
 ES Andromeda|2018-01-09
+ES Callisto|2023-03-21
 ES Compatability Plugin|2023-07-09
 ES Dawn|2022-10-03
 ES-Galactic-Exploration|2023-08-10
@@ -114,6 +116,7 @@ Free Kitten|2018-12-31
 Galactic Couriers|2019-12-03
 Galactic War hi-dpi|2022-11-12
 Galactic War|2024-01-23
+galactic.capital.investment|2024-03-31
 Galaxias|2023-03-22
 Gander|2023-01-07
 Gatling Ammo Fix|2019-11-17
@@ -139,6 +142,7 @@ kor.efret.shipyard|2023-10-17
 Korath Automation Upgrade|2018-06-29
 KorExiles PA|2022-01-25
 Kraz Cybernetics Evolution|2017-05-15
+Lampyrid Start|2024-04-02
 Landing Fees and Tax|2017-02-22
 Legendary Pirates|2021-06-16
 Lemurias Extra ES Stuff|2023-07-06
@@ -173,7 +177,7 @@ Modular Haulers|2021-05-27
 More Ships Plugin|2020-05-31
 more.boarding.missions|2024-03-15
 MultiTech Extra Light|2017-05-13
-Naltok|2024-03-21
+Naltok|2024-04-02
 Navy Campaign|2024-02-01
 Navy Conscript|2018-09-18
 New Droid Regime|2017-11-13
@@ -259,6 +263,7 @@ The Enclave|2022-07-31
 The Forgotten|2017-06-06
 The Heroes|2016-09-08
 The Legacy|2020-08-02
+The Peacebringer|2023-10-02
 The Swarm Project|2016-09-23
 TheronEpic Omnis|2020-11-07
 TheronEpics Ships|2020-11-07
