@@ -10,7 +10,60 @@
 
 
 
-# Anti-Ionic Plating is installed on the Storm Seeker Reborn.
+###################################################
+#
+# Weapons
+#
+###################################################
+
+outfit "Thunderhead Pod"
+	category "Secondary Weapons"
+	licenses
+		"Wanderer Outfits"
+	cost 150000
+	thumbnail "outfit/thunderhead pod"
+	"mass" 7
+	"outfit space" -13
+	"weapon capacity" -13
+	"gun ports" -1
+	"thunderhead capacity" 1
+	weapon
+		sprite "projectile/thunderhead"
+			"no repeat"
+			"frame rate" .1
+		sound "thunderhead"
+		ammo "Thunderhead Missile"
+		icon "icon/thunderhead"
+		"submunition" "Thunderhead" 5
+		"split range" 600
+		"fire effect" "meteor fire"
+		"die effect" "missile death"
+		"hit effect" "medium explosion"
+		"inaccuracy" 10
+		"velocity" 4
+		"lifetime" 400
+		"reload" 95
+		"firing energy" 18
+		"firing heat" 36
+		"acceleration" 1.1
+		"drag" .1
+		"turn" 2
+		"homing" 4
+		"infrared tracking" .9
+		"radar tracking" .6
+		"missile strength" 12
+		"stream"
+	description "A primitive version of the modern Thunderhead Launcher. The Thunderhead Pod is almost entirely dependent on external ammunition storage, resulting in a slower rate of fire. Unlike the modern launchers, these pods do not fire simultaneously when multiples are installed on a ship."
+
+
+
+###################################################
+#
+# Systems
+#
+###################################################
+
+
 outfit "Anti-Ionic Plating"
 	category "Systems"
 	thumbnail "outfit/anti-ionic plating"
@@ -36,7 +89,6 @@ outfit "Armament Pacifier"
 	description "When faced with the threat of being boarded, Wanderer crews may place this device onto the attacking ship. Using an Armament Pacifier is unlikely to help the defending crew. However, any ship this is installed on will have trouble using its weapons to attack other ships."
 	description "	If you find this installed on your ship, get rid of it as soon as possible!"
 
-# Unlocked after a series of missions after showing the Quarg ringworld debris to the Wanderers
 outfit "Wanderer Advanced Cooling"
 	category "Systems"
 	licenses

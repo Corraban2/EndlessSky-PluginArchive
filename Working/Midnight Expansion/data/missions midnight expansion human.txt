@@ -27,17 +27,16 @@ mission "Midnight Expansion: Add Garbage Scows"
 	invisible
 	on offer
 		event "add garbage scows"
+		set "added ccor garbage scows"
 		fail
 
 event "add garbage scows"
-	shipyard "Common Freighters"
-		add "Garbage Scow"
 	shipyard "Advanced Northern Pirates"
 		add "Garbage Scow"
 	shipyard "Advanced Core Pirates"
 		add "Garbage Scow"
 	shipyard "Advanced Southern Pirates"
-		add "Garbage Scow (Jammer)"
+		add "Garbage Scow"
 	fleet "Large Northern Merchants"
 		add variant 1
 			"Garbage Scow"
@@ -52,8 +51,13 @@ event "add garbage scows"
 			"Garbage Scow (Turbo)"
 		add variant 1
 			"Modified Garbage Scow"
-			"Rancor (Berserker)"
-			"Rancor (Turbo Blaster)"
+			"Rancor (Turbo Blaster)" 2
+	fleet "Large CCOR"
+		add variant 1
+			"Garbage Scow (Stinger)"
+		add variant 1
+			"Modified Garbage Scow (Quad Blaster)"
+			"Berserker (Limit Break)" 2
 	fleet "pirate raid"
 		add variant 1
 			"Garbage Scow (Stinger)"
@@ -64,6 +68,24 @@ event "add garbage scows"
 		add variant 1
 			"Garbage Scow (Stinger)"
 
+mission "Midnight Expansion: Add CCOR Garbage Scows"
+	landing
+	invisible
+	to offer
+		has "event: add garbage scows"
+		not "added ccor garbage scows"
+	on offer
+		event "add ccor garbage scows"
+		fail
+
+event "add ccor garbage scows"
+	fleet "Large CCOR"
+		add variant 1
+			"Garbage Scow (Stinger)"
+		add variant 1
+			"Modified Garbage Scow (Quad Blaster)"
+			"Berserker (Limit Break)" 2
+
 mission "Midnight Expansion: Update Garbage Scows"
 	landing
 	invisible
@@ -71,17 +93,20 @@ mission "Midnight Expansion: Update Garbage Scows"
 		has "event: war begins"
 	on offer
 		event "update garbage scows"
+		set "added raid modified garbage scows"
 		fail
 
 event "update garbage scows"
+	shipyard "Common Freighters"
+		add "Garbage Scow"
 	shipyard "Dirt Belt Pirates"
 		add "Modified Garbage Scow (Quad Blaster)"
 	shipyard "Advanced Northern Pirates"
 		remove "Garbage Scow"
-		add "Modified Garbage Scow (Heavy)"
+		add "Modified Garbage Scow (Quad Blaster)"
 	shipyard "Advanced Core Pirates"
 		remove "Garbage Scow"
-		add "Modified Garbage Scow (Proton)"
+		add "Modified Garbage Scow (Quad Blaster)"
 	shipyard "Advanced Southern Pirates"
 		remove "Garbage Scow (Jammer)"
 		add "Modified Garbage Scow (Quad Blaster)"
@@ -96,14 +121,39 @@ event "update garbage scows"
 			"Garbage Scow (Proton)"
 		add variant 1
 			"Modified Garbage Scow (Proton)"
-			"Hawk (Stinger)" 2
+			"Stingray (Proton)" 2
 	fleet "Large Southern Pirates"
 		add variant 1
 			"Garbage Scow (Quad Blaster)"
 		add variant 1
 			"Modified Garbage Scow (Quad Blaster)"
-			"Hawk (Stinger)"
-			"Fury (Bomber Limit Break)"
+			"Hawk (Stinger)" 2
+	fleet "pirate raid"
+		add variant 1
+			"Modified Garbage Scow (Quad Blaster)"
+	fleet "pirate raid (rivals)"
+		add variant 1
+			"Modified Garbage Scow (Quad Blaster)"
+
+mission "Midnight Expansion: Add Raid Modified Garbage Scows"
+	landing
+	invisible
+	to offer
+		has "event: update garbage scows"
+		not "added raid modified garbage scows"
+	on offer
+		event "add raid modified garbage scows"
+		fail
+
+event "add raid modified garbage scows"
+	fleet "pirate raid"
+		add variant 1
+			"Modified Garbage Scow (Quad Blaster)"
+	fleet "pirate raid (rivals)"
+		add variant 1
+			"Modified Garbage Scow (Quad Blaster)"
+
+
 
 mission "Midnight Expansion: Bounty Hunting (Boarding, Stinger Missile)"
 	assisting
@@ -665,13 +715,8 @@ mission "Midnight Scum & Villainy 1A"
 		has "main plot completed"
 		not "Midnight Scum & Villainy 1B: active"
 		not "Midnight Scum & Villainy 1B: done"
-		or
-			and
-				not "Randomize Midnight Scum & Villainy 1A"
-				random < 70
-			and
-				has "Randomize Midnight Scum & Villainy 1A"
-				random < 5
+		not "Midnight Scum & Villainy 1B: failed"
+		random < 70 - ( "Randomize Midnight Scum & Villainy 1A" * 65 )
 	on offer
 		conversation
 			`A freighter captain approaches you. Gesturing at your ship, he says, "If that's the <ship>, then you must be Captain <first> <last>. I'm organizing a convoy through the Northern passage to reach <destination> by <date>, and you're welcome to join us."`
@@ -759,19 +804,15 @@ mission "Midnight Scum & Villainy 1B"
 		has "main plot completed"
 		not "Midnight Scum & Villainy 1A: active"
 		not "Midnight Scum & Villainy 1A: done"
-		or
-			and
-				not "Randomize Midnight Scum & Villainy 1B"
-				random < 70
-			and
-				has "Randomize Midnight Scum & Villainy 1B"
-				random < 5
+		not "Midnight Scum & Villainy 1A: failed"
+		random < 70 - ( "Randomize Midnight Scum & Villainy 1B" * 65 )
 	on offer
 		conversation
 			`A transport captain approaches you. Gesturing at your ship, she says, "If that's the <ship>, then you must be Captain <first> <last>. I'm traveling through the Northern passage to reach <destination> by <date>, and would like for you to escort us."`
 			choice
 				`	"Sure, there's safety in numbers."`
 				`	"Sorry, I'm headed in a different direction."`
+					goto refuse
 			`	"My name's Lia Skystrider, captain of the Tomboy Princess. Truth be told, I wasn't certain a war hero would be willing to take on a civilian escort job. I'm glad I was wrong. See you in orbit." Lia leaves to make preparations for launch.`
 				accept
 			label refuse

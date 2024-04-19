@@ -114,19 +114,19 @@ mission "Scrapyard Kor Sestor Hostile to Hai"
 
 event "Kor Sestor Hostile to Hai"
 	government "Kor Sestor"
-		"attitude toward"
-			"Kor Mereti" -.01
-			"Wanderer" -.01
-			"Republic" -.01
-			"Merchant" -.01
-			"Navy (Oathkeeper)" -.01
-			"Syndicate" -.01
+		add "attitude toward"
 			"Hai" -.01
 			"Hai Merchant" -.01
 			"Hai Merchant (Human)" -.01
 			"Hai Merchant (Sympathizers)" -.01
 			"Hai (Unfettered)" -.01
 			"Hai (Wormhole Access)" -.01
+#			"Kor Mereti" -.01
+#			"Wanderer" -.01
+#			"Republic" -.01
+#			"Merchant" -.01
+#			"Navy (Oathkeeper)" -.01
+#			"Syndicate" -.01
 
 
 
@@ -225,6 +225,41 @@ mission "Scrapyard Bore Fah Attack"
 
 
 
+mission "Scrapyard Sera Natta Expeditionary Fleet"
+	landing
+	invisible
+	destination Olohoa
+	to offer
+		has "event: Sestor Expeditionary Fleets"
+	on offer
+		event "scrapyard sestor expeditionary fleets bunrodea update"
+	on enter "Sera Natta"
+		dialog `It's a Kor Sestor expedtionary fleet. They can not be allowed to land!`
+	npc kill
+		system "Sera Natta"
+		government "Kor Sestor"
+		personality target waiting staying
+		fleet
+			names "kor sestor"
+			variant
+				"Grakerat 572"
+				"Tercheldar 150" 4
+				"Skoretak 13" 8
+		dialog `The Sestor fleet has been defeated. You should check <planet> for any signs of a Sestor incursion.`
+	on complete
+		dialog "Fortunately, there are no signs that the Sestor have landed on <planet>..."
+
+event "scrapyard sestor expeditionary fleets bunrodea update"
+	system "Sera Natta"
+		add fleet "Kor Sestor Expedition" 80000
+	government "Kor Sestor"
+		add "attitude toward"
+			"Bunrodea" -0.01
+			"Bunrodea (Erabu)" -0.01
+			"Bunrodea (Megasa)" -0.01
+			"Bunrodea (Guard)" -0.01
+
+
 
 mission "Scrapyard Persitar Fleet Wreck"
 	landing
@@ -267,10 +302,11 @@ mission "Scrapyard Exploring the Persitar Wreck"
 	on offer
 		"Scrapyard Threat Level" ++
 		event "Blight Shadows Nest In Persitar"
-		outfit "Obsolete Transceiver" 10000
+		set "blight shadow persitar patched"
+		outfit "Obsolete Transceiver" 5000
 		conversation
 			scene "outfit/obsolete transceiver"
-			`While exploring the derelict, you find several crates of Obsolete Transceivers. While there's no practical use for them, they can be sold for scrap. You also find black slime splattered all over one of the damaged areas of the ship. As you are loading the transceivers onto your ship, something bangs on the hull of the derelict...`
+			`While exploring the derelict, you find several crates of Obsolete Transceivers. While there's no practical use for them, they can be sold for scrap. You also find black slime splattered all over one of the damaged areas of the ship. As you are loading the transceivers into your cargo hold, something bangs on the hull of the derelict...`
 				accept
 	npc kill
 		government "Invasive Predator"
@@ -298,6 +334,7 @@ mission "Scrapyard Patch: Blight Shadows Nest In Persitar"
 	invisible
 	to offer
 		has "event: Blight Shadows Nest In Persitar"
+		not "blight shadow persitar patched"
 	on offer
 		event "Patch: Blight Shadows Nest In Persitar"
 		fail
@@ -305,6 +342,56 @@ mission "Scrapyard Patch: Blight Shadows Nest In Persitar"
 event "Patch: Blight Shadows Nest In Persitar"
 	system Persitar
 		remove fleet "Large Blight Shadow" 1000
+
+mission "Scrapyard Persitar Wreck Distress Signal"
+	landing
+	invisible
+	repeat
+	deadline 7
+	source "Persitar Wreck"
+	to offer
+		has "event: Blight Shadows Nest In Persitar"
+		random < 5
+	npc kill
+		government "Kor Sestor"
+		system Persitar
+		personality waiting heroic vindictive
+		fleet "Kor Sestor Expedition"
+	npc kill
+		to spawn
+			random < 25
+		government "Kor Sestor"
+		system Persitar
+		personality waiting heroic vindictive
+		fleet "Kor Sestor Expedition"
+	npc kill
+		to spawn
+			random < 5
+		government "Kor Sestor"
+		system Persitar
+		personality waiting heroic vindictive
+		fleet "Kor Sestor Expedition"
+
+mission "Scrapyard Obsolete Transmitter Distress Signal"
+	landing
+	invisible
+	repeat
+	deadline 7
+	source
+		attributes uninhabited
+		not attributes korath scrapyard
+	to offer
+		has "outfit (installed): Obsolete Transmitter"
+		random < 1
+	on enter
+		conversation
+			scene "outfit/obsolete transmitter"
+			`The Obsolete Transmitter suddenly sends out a pulse...`
+	npc kill
+		government "Kor Sestor"
+		system Persitar
+		personality waiting heroic vindictive
+		fleet "Kor Sestor Expedition"
 
 
 
@@ -345,7 +432,7 @@ mission "Scrapyard Stakoshstar 1"
 			variant
 				"Grakerat 572"
 				"Tercheldar 150" 4
-				"Skoretak 13" 8
+				"Skoretak 13" 14
 				"Stakoshtar 187"
 		conversation
 			scene "ship/stakoshtar 187/stakoshtar"
@@ -375,17 +462,124 @@ mission "Scrapyard Stakoshstar Expeditions"
 		has "event: stakoshtar in prakacha'a"
 	on offer
 		event "Stakoshstar Expeditions"
+		set "stakoshstar expeditions patched"
 		fail
 
 event "Stakoshstar Expeditions"
 	fleet "Kor Sestor Expedition"
-		add variant 1
+		add variant 6
 			"Grakerat 572"
-			"Tercheldar 150" 4
-			"Skoretak 13" 8
+			"Tercheldar 150" 6
+			"Skoretak 13" 14
 			"Stakoshtar 187(SD)"
-		add variant 1
+		add variant 5
 			"Grakerat 572"
-			"Tercheldar 150" 4
-			"Skoretak 13" 8
+			"Tercheldar 150" 6
+			"Skoretak 13" 16
 			"Stakoshtar 187(SD)" 2
+
+mission "Scrapyard Stakoshstar Expeditions Patch"
+	landing
+	invisible
+	to offer
+		has "event: Stakoshstar Expeditions"
+		not "stakoshstar expeditions patched"
+	on offer
+		event "Stakoshstar Expeditions"
+		fail
+
+
+
+mission "Scrapyard Ae Il B-11 Expeditionary Fleet"
+	landing
+	invisible
+	to offer
+		has "event: Stakoshstar Expeditions"
+	on enter "Ae Il B-11"
+		dialog `It's a large Kor Sestor expedtionary fleet. They can not be allowed to land!`
+	npc kill
+		system "Ae Il B-11"
+		government "Kor Sestor"
+		personality target waiting staying
+		fleet
+			names "kor sestor"
+			variant
+				"Grakerat 572"
+				"Tercheldar 150" 6
+				"Skoretak 13" 16
+				"Stakoshtar 187(SD)" 2
+		on kill
+			dialog `The Sestor fleet has been defeated. The uninhabited planets in this isolated system don't show any signs of a Sestor incursion...`
+			fail
+
+
+
+mission "Scrapyard Forgotten Toys"
+	landing
+	invisible
+	source "Sopi Lefarkata"
+	to offer
+		random < 70 - ( "scrapyard forgotten toys deferred" * 60 )
+		has "event: Sestor Expeditionary Fleets"
+	on offer
+		conversation
+			`You find a large cave entrance with some Sestor wreckage strewn about the entrance. It is large enough for the <ship> to fly in...`
+			choice
+				`	(Fly in.)`
+				`	(No, too risky.)`
+					goto risky
+			`	You take the <ship> in. This appears to be a former Sestor base. There are wrecked ships scattered about. Perhaps they went haywire when the Exiles shut down the central computers that controlled them. They don't appear to have been picked through by the Scrappers. But after a moment, you notice they broken hull of a Rano'erek lying among the wreckage. What will you do?`
+			choice
+				`	(Move closer to investigate.)`
+				`	(Get out of here.)`
+					goto escape
+			`	Taking the <ship> in closer, you note the scorch marks on the hull of the wrecked Rano'erek resembles damage done by Thermal Repeaters. Suddenly, a jumble of Sestor wreckage shifts and a ship rises from underneath! Then several more ships rise up, shaking off the detritus of wrecked Sestor ships that concealed them. These appear to be the same types of ships that were in the Sestor expeditionary fleet! They target your ship menacingly...`
+			choice
+				`	(Open fire!)`
+					goto cavein
+				`	(Get out of here.)`
+			`	You turn the <ship> around and flee. The ancient Sestor ships pursue you out of the cave and into space!`
+				accept
+			label risky
+			action
+				set "scrapyard forgotten toys deferred"
+			`	The wreckage at the entrance seems like a bad omen warning you to stay away. You ignore the cave entrance and find a different place to land.`
+				defer
+			label escape
+			action
+				set "scrapyard forgotten toys deferred"
+			`	The wrecked Rano'erek must have been destroyed by something and you've decided not to risk waiting for whatever that is to return. You turn the <ship> around and fly out.`
+				defer
+			label cavein
+			`	You fire on the hostile ships and they fire back. Several explode and the roof of the cave collapses, burying the <ship> under several tons of rock! The power goes out, plunging everything into darkness. Blind and buried alive, it is only a matter of time before you run out of oxygen...`
+				die
+	on enter
+		dialog "These ships don't appear to be accompanied by a Grakerat 572. Perhaps they've gone rogue."
+	npc kill
+		government "Kor Sestor"
+		personality target launching heroic vindictive opportunistic
+			confusion 30
+		fleet
+			names "kor sestor"
+			cargo 2
+			commodities Metal "Heavy Metals"
+			variant
+				"Tercheldar 150 (Tormentor)" 3
+				"Skoretak 13" 6
+	npc kill
+		government "Kor Sestor"
+		personality target waiting heroic vindictive opportunistic
+			confusion 30
+		fleet
+			names "kor sestor"
+			cargo 2
+			commodities Metal "Heavy Metals"
+			variant
+				"Tercheldar 150 (Tormentor)"
+				"Skoretak 13" 2
+		on kill
+			set "Scrapyard Forgotten Toys: done"
+			"Scrapyard Threat Level" ++
+			clear "scrapyard forgotten toys deferred"
+			dialog "The larger ships in the rogue ancient Sestor fleet were outfitted with different weapons than the ones carried when accompanying a Grakerat 572..."
+			fail

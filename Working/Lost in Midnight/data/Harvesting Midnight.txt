@@ -30,8 +30,7 @@ outfit "Pyrite"
 	"mass" 1
 	"installable" -1
 	"minable" 1
-	description `Also known as Fool's Gold, Pyrite is a common component in the manufacture of photovoltaic panels. It also used in magnetic data storage technologies and non-rechargeable batteries.`
-	description `	Fool's Gold is sometimes mistaken for Gold by people not familiar with the differences between the two minerals.`
+	description `Also known as Fool's Gold, Pyrite is a common component in the manufacture of photovoltaic panels. It is also used in magnetic data storage technologies and non-rechargeable batteries.`
 
 minable "quantumium"
 	sprite "asteroid/quantumium/spin"
@@ -51,7 +50,6 @@ outfit "Quantumium"
 	"mass" 0.2
 	"outfit space" -2
 	"quantum keystone" 1
-	"minable" 0
 	description "The raw ore used to make Quantum Keystones. Since it has not been processed, it occupies more space than a Quantum Keystone does."
 
 minable "fossil"

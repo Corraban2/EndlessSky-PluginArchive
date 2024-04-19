@@ -20,13 +20,12 @@
 
 mission "Ship Sale: Marauder Arrow (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 3102000
 		random < 1
-		"credits" > 2990000
 	on offer
 		conversation
 			scene "thumbnail/marrows"
@@ -36,20 +35,23 @@ mission "Ship Sale: Marauder Arrow (Used)"
 				`	"Not interested in buying a ship right now."`
 					defer
 
-			`	The seller says "This Arrow has had numerous modifications to its hull and internal systems to make more room for outfits - mostly with combat in mind. More shields, weapons, engines, outfit space, and a turret mount nearly push this ship into classification as a light warship, and definitely make it one of the heaviest interceptors you're likely to find. The price is 2,990,000."`
+			`	The seller says "This Arrow has had numerous modifications to its hull and internal systems to make more room for outfits - mostly with combat in mind. More shields, weapons, engines, outfit space, and a turret mount nearly push this ship into classification as a light warship, and definitely make it one of the heaviest interceptors you're likely to find. The price is 3,102,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Arrow (Used): offered"
 				"Midnight Market" ++
-				payment -2990000
+				payment -3102000
 				give ship "Marauder Arrow (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -67,7 +69,7 @@ mission "Ship Sale: Marauder Arrow (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,242,500 credits."`
+			`	"How about we meet halfway? 2,326,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -76,26 +78,36 @@ mission "Ship Sale: Marauder Arrow (Used)"
 					goto shootout
 
 			action
-				payment -2242500
+				clear "Ship Sale: Marauder Arrow (Used): offered"
+				payment -2326500
 				give ship "Marauder Arrow (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 2 )
-
+			action
+				clear "Ship Sale: Marauder Arrow (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Arrow (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Arrow (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Arrow (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Arrow (Used Engines): offered"
+				set "Ship Sale: Marauder Arrow (Used Weapons): offered"
+				set "Ship Sale: Marauder Arrow (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Arrow.`
 
@@ -114,13 +126,12 @@ mission "Ship Sale: Marauder Arrow (Negotiate Used)"
 
 mission "Ship Sale: Marauder Arrow (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 3489000
 		random < 1
-		"credits" > 3385000
 	on offer
 		conversation
 			scene "thumbnail/marrowe"
@@ -130,20 +141,23 @@ mission "Ship Sale: Marauder Arrow (Used Engines)"
 				`	"Not interested in buying a ship right now."`
 					defer
 
-			`	The seller says "With expanded engine mounts, this Arrow seems more like an oversized missile than a ship. The beefed-up engines, a little extra outfit capacity, extra shield emitters, and thicker hull plating make this vessel a very competent interceptor. The price is 3,385,000."`
+			`	The seller says "With expanded engine mounts, this Arrow seems more like an oversized missile than a ship. The beefed-up engines, a little extra outfit capacity, extra shield emitters, and thicker hull plating make this vessel a very competent interceptor. The price is 3,489,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Arrow (Used Engines): offered"
 				"Midnight Market" ++
-				payment -3385000
+				payment -3489000
 				give ship "Marauder Arrow (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -161,7 +175,7 @@ mission "Ship Sale: Marauder Arrow (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,538,750 credits."`
+			`	"How about we meet halfway? 2,616,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -170,25 +184,35 @@ mission "Ship Sale: Marauder Arrow (Used Engines)"
 					goto shootout
 
 			action
-				payment -2538750
+				clear "Ship Sale: Marauder Arrow (Used Engines): offered"
+				payment -2616750
 				give ship "Marauder Arrow (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 2 )
-
+			action
+				clear "Ship Sale: Marauder Arrow (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Arrow (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Arrow (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Arrow (Used Engines)"
+			label block
+			action
+				set "Ship Sale: Marauder Arrow (Used Engines): offered"
+				set "Ship Sale: Marauder Arrow (Used Weapons): offered"
+				set "Ship Sale: Marauder Arrow (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
 
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Arrow.`
@@ -208,13 +232,12 @@ mission "Ship Sale: Marauder Arrow (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Arrow (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 3005000
 		random < 1
-		"credits" > 2981000
 	on offer
 		conversation
 			scene "thumbnail/marroww"
@@ -223,21 +246,24 @@ mission "Ship Sale: Marauder Arrow (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The weapons systems on this Arrow have been enhanced to the point of competing with Lionheart's Headhunter, although it can still outrun all but the fastest ships, if things get a little too hairy. The price is 2,981,000."`
+
+			`	The seller says "The weapons systems on this Arrow have been enhanced to the point of competing with Lionheart's Headhunter, although it can still outrun all but the fastest ships, if things get a little too hairy. The price is 3,005,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Arrow (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -2981000
+				payment -3005000
 				give ship "Marauder Arrow (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -255,7 +281,7 @@ mission "Ship Sale: Marauder Arrow (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,235,750 credits."`
+			`	"How about we meet halfway? 2,253,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -264,26 +290,36 @@ mission "Ship Sale: Marauder Arrow (Used Weapons)"
 					goto shootout
 
 			action
-				payment -2235750
+				clear "Ship Sale: Marauder Arrow (Used Weapons): offered"
+				payment -2253750
 				give ship "Marauder Arrow (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 2 )
-
+			action
+				clear "Ship Sale: Marauder Arrow (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Arrow (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Arrow (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Arrow (Used Weapons)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Arrow (Used Engines): offered"
+				set "Ship Sale: Marauder Arrow (Used Weapons): offered"
+				set "Ship Sale: Marauder Arrow (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Arrow.`
 	
@@ -304,13 +340,12 @@ mission "Ship Sale: Marauder Arrow (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Bounder (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 3490000
 		random < 1
-		"credits" > 3432000
 	on offer
 		conversation
 			scene "thumbnail/mbounders"
@@ -319,21 +354,24 @@ mission "Ship Sale: Marauder Bounder (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Megaparsec Bounder has been modified from a courier-scout into a heavy escort interceptor - currently the largest in the class. A little extra outfit space, reinforced turret mounts, a new gun port in front of the pilot, and additional shield emitters grant this former transport both fearsome speed and armament. The price is 3,432,000."`
+
+			`	The seller says "This Megaparsec Bounder has been modified from a courier-scout into a heavy escort interceptor - currently the largest in the class. A little extra outfit space, reinforced turret mounts, a new gun port in front of the pilot, and additional shield emitters grant this former transport both fearsome speed and armament. The price is 3,490,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Bounder (Used): offered"
 				"Midnight Market" ++
-				payment -3432000
+				payment -3490000
 				give ship "Marauder Bounder (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -351,7 +389,7 @@ mission "Ship Sale: Marauder Bounder (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,574,000 credits."`
+			`	"How about we meet halfway? 2,617,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -360,26 +398,36 @@ mission "Ship Sale: Marauder Bounder (Used)"
 					goto shootout
 
 			action
-				payment -2574000
+				clear "Ship Sale: Marauder Bounder (Used): offered"
+				payment -2617500
 				give ship "Marauder Bounder (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 2 )
-
+			action
+				clear "Ship Sale: Marauder Bounder (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Bounder (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Bounder (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Bounder (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Bounder (Used Engines): offered"
+				set "Ship Sale: Marauder Bounder (Used Weapons): offered"
+				set "Ship Sale: Marauder Bounder (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Bounder.`
 	
@@ -398,13 +446,12 @@ mission "Ship Sale: Marauder Bounder (Negotiate Used)"
 
 mission "Ship Sale: Marauder Bounder (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 3898000
 		random < 1
-		"credits" > 3840000
 	on offer
 		conversation
 			scene "thumbnail/mboundere"
@@ -413,21 +460,24 @@ mission "Ship Sale: Marauder Bounder (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The previous owner of this Bounder has modified an already fast courier-scout into an even faster heavy escort interceptor with some truly enormous engines, giving it incredible maneuverability for its size. The price is 3,840,000."`
+
+			`	The seller says "The previous owner of this Bounder has modified an already fast courier-scout into an even faster heavy escort interceptor with some truly enormous engines, giving it incredible maneuverability for its size. The price is 3,898,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Bounder (Used Engines): offered"
 				"Midnight Market" ++
-				payment -3840000
+				payment -3898000
 				give ship "Marauder Bounder (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -445,7 +495,7 @@ mission "Ship Sale: Marauder Bounder (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,880,000 credits."`
+			`	"How about we meet halfway? 2,923,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -454,25 +504,35 @@ mission "Ship Sale: Marauder Bounder (Used Engines)"
 					goto shootout
 
 			action
-				payment -2880000
+				clear "Ship Sale: Marauder Bounder (Used Engines): offered"
+				payment -2923500
 				give ship "Marauder Bounder (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 2 )
-			
+			action
+				clear "Ship Sale: Marauder Bounder (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Bounder (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Bounder (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Bounder (Used Engines)"
+			label block
+			action
+				set "Ship Sale: Marauder Bounder (Used Engines): offered"
+				set "Ship Sale: Marauder Bounder (Used Weapons): offered"
+				set "Ship Sale: Marauder Bounder (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
 
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Bounder.`
@@ -492,13 +552,12 @@ mission "Ship Sale: Marauder Bounder (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Bounder (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 3504000
 		random < 1
-		"credits" > 3397000
 	on offer
 		conversation
 			scene "thumbnail/mbounderw"
@@ -507,21 +566,24 @@ mission "Ship Sale: Marauder Bounder (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Simultaneously the deadliest and most graceful interceptor in the galaxy, this former Bounder courier-scout has been equipped with incredibly powerful weapons for a ship of its size. The price is 3,397,000."`
+
+			`	The seller says "Simultaneously the deadliest and most graceful interceptor in the galaxy, this former Bounder courier-scout has been equipped with incredibly powerful weapons for a ship of its size. The price is 3,504,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Bounder (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -3397000
+				payment -3504000
 				give ship "Marauder Bounder (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -539,7 +601,7 @@ mission "Ship Sale: Marauder Bounder (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,547,750 credits."`
+			`	"How about we meet halfway? 2,628,000 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -548,26 +610,36 @@ mission "Ship Sale: Marauder Bounder (Used Weapons)"
 					goto shootout
 
 			action
-				payment -2547750
+				clear "Ship Sale: Marauder Bounder (Used Weapons): offered"
+				payment -2628000
 				give ship "Marauder Bounder (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 2 )
-			
+			action
+				clear "Ship Sale: Marauder Bounder (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Bounder (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Bounder (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Bounder (Used Weapons)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Bounder (Used Engines): offered"
+				set "Ship Sale: Marauder Bounder (Used Weapons): offered"
+				set "Ship Sale: Marauder Bounder (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Bounder.`
 	
@@ -588,13 +660,12 @@ mission "Ship Sale: Marauder Bounder (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Falcon (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 22711000
 		random < 1
-		"credits" > 22558000
 	on offer
 		conversation
 			scene "thumbnail/mfalcons"
@@ -603,21 +674,24 @@ mission "Ship Sale: Marauder Falcon (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Tarazed Falcon has been heavily modified by some very dedicated craftsmen. The hull is riddled with extra shield emitters and expanded equipment bays, adding bulk and definitely voiding the warranty. The price is 22558,000."`
+
+			`	The seller says "This Tarazed Falcon has been heavily modified by some very dedicated craftsmen. The hull is riddled with extra shield emitters and expanded equipment bays, adding bulk and definitely voiding the warranty. The price is 22,711,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Falcon (Used): offered"
 				"Midnight Market" ++
-				payment -22558000
+				payment -22711000
 				give ship "Marauder Falcon (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -635,7 +709,7 @@ mission "Ship Sale: Marauder Falcon (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 16,918,500 credits."`
+			`	"How about we meet halfway? 17,033,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -644,25 +718,35 @@ mission "Ship Sale: Marauder Falcon (Used)"
 					goto shootout
 
 			action
-				payment -16918500
+				clear "Ship Sale: Marauder Falcon (Used): offered"
+				payment -17033250
 				give ship "Marauder Falcon (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 43 )
-			
+			action
+				clear "Ship Sale: Marauder Falcon (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Falcon (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Falcon (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Falcon (Used)"
+			label block
+			action
+				set "Ship Sale: Marauder Falcon (Used Engines): offered"
+				set "Ship Sale: Marauder Falcon (Used Weapons): offered"
+				set "Ship Sale: Marauder Falcon (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
 
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Falcon.`
@@ -684,13 +768,12 @@ mission "Ship Sale: Marauder Falcon (Negotiate Used)"
 
 mission "Ship Sale: Marauder Falcon (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 24701000
 		random < 1
-		"credits" > 24360000
 	on offer
 		conversation
 			scene "thumbnail/mfalcone"
@@ -699,21 +782,24 @@ mission "Ship Sale: Marauder Falcon (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Whoever modified this Falcon clearly valued speed above all else. Major sections of the hull have been reconfigured to accommodate the largest possible engines. If hot-rodding across the galaxy in a 1000-ton warship that handles like a Flivver is your dream, look no further. The price is 24,360,000."`
+
+			`	The seller says "Whoever modified this Falcon clearly valued speed above all else. Major sections of the hull have been reconfigured to accommodate the largest possible engines. If hot-rodding across the galaxy in a 1000-ton warship that handles like a Flivver is your dream, look no further. The price is 24,701,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Falcon (Used Engines): offered"
 				"Midnight Market" ++
-				payment -24360000
+				payment -24701000
 				give ship "Marauder Falcon (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -731,7 +817,7 @@ mission "Ship Sale: Marauder Falcon (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 18,270,000 credits."`
+			`	"How about we meet halfway? 18,525,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -740,26 +826,36 @@ mission "Ship Sale: Marauder Falcon (Used Engines)"
 					goto shootout
 
 			action
-				payment -18270000
+				clear "Ship Sale: Marauder Falcon (Used Engines): offered"
+				payment -18525750
 				give ship "Marauder Falcon (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 43 )
-			
+			action
+				clear "Ship Sale: Marauder Falcon (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Falcon (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Falcon (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Falcon (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Falcon (Used Engines): offered"
+				set "Ship Sale: Marauder Falcon (Used Weapons): offered"
+				set "Ship Sale: Marauder Falcon (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Falcon.`
 	
@@ -778,13 +874,12 @@ mission "Ship Sale: Marauder Falcon (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Falcon (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 22229000
 		random < 1
-		"credits" > 21930000
 	on offer
 		conversation
 			scene "thumbnail/mfalconw"
@@ -793,21 +888,24 @@ mission "Ship Sale: Marauder Falcon (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Whoever modified this Falcon clearly believed that firepower was everything. Two additional gun ports have been integrated into the hull, and the ship's interior space has been reconfigured to accommodate nearly any set of weapons you can imagine. The price is 21,930,000."`
+
+			`	The seller says "Whoever modified this Falcon clearly believed that firepower was everything. Two additional gun ports have been integrated into the hull, and the ship's interior space has been reconfigured to accommodate nearly any set of weapons you can imagine. The price is 22,229,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Falcon (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -21930000
+				payment -22229000
 				give ship "Marauder Falcon (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -825,7 +923,7 @@ mission "Ship Sale: Marauder Falcon (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 16,447,500 credits."`
+			`	"How about we meet halfway? 16,671,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -834,25 +932,35 @@ mission "Ship Sale: Marauder Falcon (Used Weapons)"
 					goto shootout
 
 			action
-				payment -16447500
+				clear "Ship Sale: Marauder Falcon (Used Weapons): offered"
+				payment -16671750
 				give ship "Marauder Falcon (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 43 )
-
+			action
+				clear "Ship Sale: Marauder Falcon (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Marauder Falcon (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Falcon (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Falcon (Used Weapons)"
+			label block
+			action
+				set "Ship Sale: Marauder Falcon (Used Engines): offered"
+				set "Ship Sale: Marauder Falcon (Used Weapons): offered"
+				set "Ship Sale: Marauder Falcon (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
 
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Falcon.`
@@ -874,13 +982,12 @@ mission "Ship Sale: Marauder Falcon (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Firebird (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 12072000
 		random < 1
-		"credits" > 11875000
 	on offer
 		conversation
 			scene "thumbnail/mfirebirds"
@@ -890,20 +997,23 @@ mission "Ship Sale: Marauder Firebird (Used)"
 				`	"Not interested in buying a ship right now."`
 					defer
 
-			`	The seller says "By the looks of the modification that have taken place, I suspect that this ship contains no original parts. With extra shield emitters, hull plating, and outfit space, this half-millennium-old design is finding new life with its heavy modification. The price is 11,875,000."`
+			`	The seller says "By the looks of the modification that have taken place, I suspect that this ship contains no original parts. With extra shield emitters, hull plating, and outfit space, this half-millennium-old design is finding new life with its heavy modification. The price is 12,072,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Firebird (Used): offered"
 				"Midnight Market" ++
-				payment -11875000
+				payment -12072000
 				give ship "Marauder Firebird (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -921,7 +1031,7 @@ mission "Ship Sale: Marauder Firebird (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 8,906,250 credits."`
+			`	"How about we meet halfway? 9,054,000 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -930,29 +1040,39 @@ mission "Ship Sale: Marauder Firebird (Used)"
 					goto shootout
 
 			action
-				payment -8906250
+				clear "Ship Sale: Marauder Firebird (Used): offered"
+				payment -9054000
 				give ship "Marauder Firebird (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 10 )
-			
+			action
+				clear "Ship Sale: Marauder Firebird (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Firebird (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Firebird (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Firebird (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Firebird (Used Engines): offered"
+				set "Ship Sale: Marauder Firebird (Used Weapons): offered"
+				set "Ship Sale: Marauder Firebird (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Firebird.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -968,13 +1088,12 @@ mission "Ship Sale: Marauder Firebird (Negotiate Used)"
 
 mission "Ship Sale: Marauder Firebird (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 12310000
 		random < 1
-		"credits" > 12119000
 	on offer
 		conversation
 			scene "thumbnail/mfirebirde"
@@ -983,21 +1102,24 @@ mission "Ship Sale: Marauder Firebird (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "One of the biggest complaints about Betelgeuse's venerable classic from younger pilots is that it's heavy and slow. A previous owner of this ship also believed so, and has fitted another engine port, in addition to setting aside more space for outfits and giving the old ship some new hull plating and shield emitters. The price is 12,119,000."`
+
+			`	The seller says "One of the biggest complaints about Betelgeuse's venerable classic from younger pilots is that it's heavy and slow. A previous owner of this ship also believed so, and has fitted another engine port, in addition to setting aside more space for outfits and giving the old ship some new hull plating and shield emitters. The price is 12,310,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Firebird (Used Engines): offered"
 				"Midnight Market" ++
-				payment -12119000
+				payment -12310000
 				give ship "Marauder Firebird (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1015,7 +1137,7 @@ mission "Ship Sale: Marauder Firebird (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 9,089,250 credits."`
+			`	"How about we meet halfway? 9,232,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1024,26 +1146,36 @@ mission "Ship Sale: Marauder Firebird (Used Engines)"
 					goto shootout
 
 			action
-				payment -9089250
+				clear "Ship Sale: Marauder Firebird (Used Engines): offered"
+				payment -9232500
 				give ship "Marauder Firebird (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 10 )
-			
+			action
+				clear "Ship Sale: Marauder Firebird (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Firebird (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Firebird (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Firebird (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Firebird (Used Engines): offered"
+				set "Ship Sale: Marauder Firebird (Used Weapons): offered"
+				set "Ship Sale: Marauder Firebird (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Firebird.`
 	
@@ -1062,13 +1194,12 @@ mission "Ship Sale: Marauder Firebird (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Firebird (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 12134000
 		random < 1
-		"credits" > 11937000
 	on offer
 		conversation
 			scene "thumbnail/mfirebirdw"
@@ -1077,21 +1208,24 @@ mission "Ship Sale: Marauder Firebird (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Firebird is known to have one of the heaviest armaments possible for a warship of its size, and this modified version makes it even heavier. With more outfit space, giant gun ports, extra hull plating, and more shield emitters, this blast from the past will make its targets history. The price is 11,937,000."`
+
+			`	The seller says "The Firebird is known to have one of the heaviest armaments possible for a warship of its size, and this modified version makes it even heavier. With more outfit space, giant gun ports, extra hull plating, and more shield emitters, this blast from the past will make its targets history. The price is 12,134,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Firebird (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -11937000
+				payment -12134000
 				give ship "Marauder Firebird (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1109,7 +1243,7 @@ mission "Ship Sale: Marauder Firebird (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 8,952,750 credits."`
+			`	"How about we meet halfway? 9,100,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1118,26 +1252,36 @@ mission "Ship Sale: Marauder Firebird (Used Weapons)"
 					goto shootout
 
 			action
-				payment -8952750
+				clear "Ship Sale: Marauder Firebird (Used Weapons): offered"
+				payment -9100500
 				give ship "Marauder Firebird (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 10 )
-			
+			action
+				clear "Ship Sale: Marauder Firebird (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Firebird (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Firebird (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Firebird (Used Weapons)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Firebird (Used Engines): offered"
+				set "Ship Sale: Marauder Firebird (Used Weapons): offered"
+				set "Ship Sale: Marauder Firebird (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Firebird.`
 	
@@ -1158,13 +1302,12 @@ mission "Ship Sale: Marauder Firebird (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Leviathan (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 19411000
 		random < 1
-		"credits" > 19185000
 	on offer
 		conversation
 			scene "thumbnail/mleviathans"
@@ -1173,21 +1316,24 @@ mission "Ship Sale: Marauder Leviathan (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Betelgeuse Shipyards Leviathan has been in service for a long time, and captains have had some very interesting ideas about how to modify them for optimum performance. This one has had the hull surface completely stripped and replaced, with the new layout containing more shield projectors per square meter. The price is 19,185,000."`
+
+			`	The seller says "The Betelgeuse Shipyards Leviathan has been in service for a long time, and captains have had some very interesting ideas about how to modify them for optimum performance. This one has had the hull surface completely stripped and replaced, with the new layout containing more shield projectors per square meter. The price is 19,411,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Leviathan (Used): offered"
 				"Midnight Market" ++
-				payment -19185000
+				payment -19411000
 				give ship "Marauder Leviathan (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1205,7 +1351,7 @@ mission "Ship Sale: Marauder Leviathan (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 14,388,750 credits."`
+			`	"How about we meet halfway? 14,558,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1214,26 +1360,36 @@ mission "Ship Sale: Marauder Leviathan (Used)"
 					goto shootout
 
 			action
-				payment -14388750
+				clear "Ship Sale: Marauder Leviathan (Used): offered"
+				payment -14558250
 				give ship "Marauder Leviathan (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 48 )
-			
+			action
+				clear "Ship Sale: Marauder Leviathan (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Leviathan (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Leviathan (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Leviathan (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Leviathan (Used Engines): offered"
+				set "Ship Sale: Marauder Leviathan (Used Weapons): offered"
+				set "Ship Sale: Marauder Leviathan (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Leviathan.`
 	
@@ -1252,13 +1408,12 @@ mission "Ship Sale: Marauder Leviathan (Negotiate Used)"
 
 mission "Ship Sale: Marauder Leviathan (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 21711000
 		random < 1
-		"credits" > 21545000
 	on offer
 		conversation
 			scene "thumbnail/mleviathane"
@@ -1267,21 +1422,24 @@ mission "Ship Sale: Marauder Leviathan (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "As if the Leviathan wasn't a terrifying enough ship already, this one has been heavily modified with special attention paid to the engine capacity, enabling it to bring its guns to bear even faster. The price is 21,545,000."`
+
+			`	The seller says "As if the Leviathan wasn't a terrifying enough ship already, this one has been heavily modified with special attention paid to the engine capacity, enabling it to bring its guns to bear even faster. The price is 21,711,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Leviathan (Used Engines): offered"
 				"Midnight Market" ++
-				payment -21545000
+				payment -21711000
 				give ship "Marauder Leviathan (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1299,7 +1457,7 @@ mission "Ship Sale: Marauder Leviathan (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 16,158,750 credits."`
+			`	"How about we meet halfway? 16,283,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1308,26 +1466,36 @@ mission "Ship Sale: Marauder Leviathan (Used Engines)"
 					goto shootout
 
 			action
-				payment -16158750
+				clear "Ship Sale: Marauder Leviathan (Used Engines): offered"
+				payment -16283250
 				give ship "Marauder Leviathan (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 48 )
-			
+			action
+				clear "Ship Sale: Marauder Leviathan (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Leviathan (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Leviathan (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Leviathan (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Leviathan (Used Engines): offered"
+				set "Ship Sale: Marauder Leviathan (Used Weapons): offered"
+				set "Ship Sale: Marauder Leviathan (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Leviathan.`
 	
@@ -1346,13 +1514,12 @@ mission "Ship Sale: Marauder Leviathan (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Leviathan (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 19411000
 		random < 1
-		"credits" > 19185000
 	on offer
 		conversation
 			scene "thumbnail/mleviathanw"
@@ -1361,21 +1528,24 @@ mission "Ship Sale: Marauder Leviathan (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Leviathan once belonged to an infamous pirate captain whose name has been lost to the ages. It's had so much custom work done to it that can hardly even be considered the same ship; the weapons capacity, in particular, has been massively increased. The price is 19,185,000."`
+
+			`	The seller says "This Leviathan once belonged to an infamous pirate captain whose name has been lost to the ages. It's had so much custom work done to it that can hardly even be considered the same ship; the weapons capacity, in particular, has been massively increased. The price is 19,411,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Leviathan (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -19185000
+				payment -19411000
 				give ship "Marauder Leviathan (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1393,7 +1563,7 @@ mission "Ship Sale: Marauder Leviathan (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 14,388,750 credits."`
+			`	"How about we meet halfway? 14,558,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1402,26 +1572,36 @@ mission "Ship Sale: Marauder Leviathan (Used Weapons)"
 					goto shootout
 
 			action
-				payment -14388750
+				clear "Ship Sale: Marauder Leviathan (Used Weapons): offered"
+				payment -14558250
 				give ship "Marauder Leviathan (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 48 )
-			
+			action
+				clear "Ship Sale: Marauder Leviathan (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Leviathan (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Leviathan (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Leviathan (Used Weapons)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Leviathan (Used Engines): offered"
+				set "Ship Sale: Marauder Leviathan (Used Weapons): offered"
+				set "Ship Sale: Marauder Leviathan (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Leviathan.`
 	
@@ -1442,13 +1622,12 @@ mission "Ship Sale: Marauder Leviathan (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Manta (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 6669000
 		random < 1
-		"credits" > 6782000
 	on offer
 		conversation
 			scene "thumbnail/mmantas"
@@ -1457,21 +1636,24 @@ mission "Ship Sale: Marauder Manta (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "After the Syndicate released their Vanguard Heavy Warship, the Manta fell somewhat out of favor due to its lack of ability to mount any anti-missile turrets. The owner of this Manta rectified that, added some extra armor plating and shield emitters, and rearranged some of the internals to yield a little more outfit space. Dry tonnage alone keeps it from being classified as a heavy warship. The price is 6,782,000."`
+
+			`	The seller says "After the Syndicate released their Vanguard Heavy Warship, the Manta fell somewhat out of favor due to its lack of ability to mount any anti-missile turrets. The owner of this Manta rectified that, added some extra armor plating and shield emitters, and rearranged some of the internals to yield a little more outfit space. Dry tonnage alone keeps it from being classified as a heavy warship. The price is 6,669,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Manta (Used): offered"
 				"Midnight Market" ++
-				payment -6782000
+				payment -6669000
 				give ship "Marauder Manta (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1489,7 +1671,7 @@ mission "Ship Sale: Marauder Manta (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 4,858,500 credits."`
+			`	"How about we meet halfway? 5,001,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1498,26 +1680,36 @@ mission "Ship Sale: Marauder Manta (Used)"
 					goto shootout
 
 			action
-				payment -4858500
+				clear "Ship Sale: Marauder Manta (Used): offered"
+				payment -5001750
 				give ship "Marauder Manta (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 7 )
-			
+			action
+				clear "Ship Sale: Marauder Manta (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Manta (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Manta (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Manta (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Manta (Used Engines): offered"
+				set "Ship Sale: Marauder Manta (Used Weapons): offered"
+				set "Ship Sale: Marauder Manta (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Manta.`
 	
@@ -1536,13 +1728,12 @@ mission "Ship Sale: Marauder Manta (Negotiate Used)"
 
 mission "Ship Sale: Marauder Manta (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 6823000
 		random < 1
-		"credits" > 6632000
 	on offer
 		conversation
 			scene "thumbnail/mmantae"
@@ -1551,22 +1742,25 @@ mission "Ship Sale: Marauder Manta (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "A previous owner of this Manta has gone to great lengths to make sure they could bring all six gun ports to bear in a hurry, and chase down smaller warships. Style was not lost on that captain, and a forked tail yielded a little more space for shield projectors in an area that would have been destabilized by engine exhaust. If its dry tonnage were any higher, it would be classified as a heavy warship. The price is 6,632,000."`
+
+			`	The seller says "A previous owner of this Manta has gone to great lengths to make sure they could bring all six gun ports to bear in a hurry, and chase down smaller warships. Style was not lost on that captain, and a forked tail yielded a little more space for shield projectors in an area that would have been destabilized by engine exhaust. If its dry tonnage were any higher, it would be classified as a heavy warship. The price is 6,823,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Manta (Used Engines): offered"
 				"Midnight Market" ++
-				payment -6632000
+				payment -6823000
 				give ship "Marauder Manta (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1584,7 +1778,7 @@ mission "Ship Sale: Marauder Manta (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 4,974,000 credits."`
+			`	"How about we meet halfway? 5,117,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1593,29 +1787,39 @@ mission "Ship Sale: Marauder Manta (Used Engines)"
 					goto shootout
 
 			action
-				payment -4974000
+				clear "Ship Sale: Marauder Manta (Used Engines): offered"
+				payment -5117250
 				give ship "Marauder Manta (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 7 )
-			
+			action
+				clear "Ship Sale: Marauder Manta (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Manta (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Manta (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Manta (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Manta (Used Engines): offered"
+				set "Ship Sale: Marauder Manta (Used Weapons): offered"
+				set "Ship Sale: Marauder Manta (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Manta.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -1631,13 +1835,12 @@ mission "Ship Sale: Marauder Manta (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Manta (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 6732000
 		random < 1
-		"credits" > 6782000
 	on offer
 		conversation
 			scene "thumbnail/mmantaw"
@@ -1646,21 +1849,24 @@ mission "Ship Sale: Marauder Manta (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Manta has undergone extensive modification, featuring extra hull plating, shield emitters, weapon space, and even a turret mount. Whoever modified it seems to have forgotten to include dedicated space for the power systems, as they're crammed in and around everything else like an afterthought. If its dry tonnage were any higher, it would be classified as a heavy warship. The price is 6,782,000."`
+
+			`	The seller says "This Manta has undergone extensive modification, featuring extra hull plating, shield emitters, weapon space, and even a turret mount. Whoever modified it seems to have forgotten to include dedicated space for the power systems, as they're crammed in and around everything else like an afterthought. If its dry tonnage were any higher, it would be classified as a heavy warship. The price is 6,732,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Manta (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -6782000
+				payment -6732000
 				give ship "Marauder Manta (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1678,7 +1884,7 @@ mission "Ship Sale: Marauder Manta (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 5,086,500 credits."`
+			`	"How about we meet halfway? 5,049,000 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1687,28 +1893,39 @@ mission "Ship Sale: Marauder Manta (Used Weapons)"
 					goto shootout
 
 			action
-				payment -5086500
+				clear "Ship Sale: Marauder Manta (Used Weapons): offered"
+				payment -5049000
 				give ship "Marauder Manta (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 7 )
-			
+			action
+				clear "Ship Sale: Marauder Manta (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Manta (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Manta (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Manta (Used Weapons)"
-		
+
+			label block
+			action
+				set "Ship Sale: Marauder Manta (Used Engines): offered"
+				set "Ship Sale: Marauder Manta (Used Weapons): offered"
+				set "Ship Sale: Marauder Manta (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Manta.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -1726,13 +1943,12 @@ mission "Ship Sale: Marauder Manta (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Quicksilver (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 4265000
 		random < 1
-		"credits" > 3970000
 	on offer
 		conversation
 			scene "thumbnail/mquicksilvers"
@@ -1741,21 +1957,24 @@ mission "Ship Sale: Marauder Quicksilver (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Megaparsec Quicksilver is a bit of a hotrod, being a little faster, with extra shield projectors, hull plating, and an extra bunk. This aftermarket model also features a turret mount, perhaps in an answer to Lionheart's Headhunter. The shop that built this ship is sure to see more customers. The price is 3,970,000."`
+
+			`	The seller says "This Megaparsec Quicksilver is a bit of a hotrod, being a little faster, with extra shield projectors, hull plating, and an extra bunk. This aftermarket model also features a turret mount, perhaps in an answer to Lionheart's Headhunter. The shop that built this ship is sure to see more customers. The price is 4,265,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Quicksilver (Used): offered"
 				"Midnight Market" ++
-				payment -3970000
+				payment -4265000
 				give ship "Marauder Quicksilver (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1773,7 +1992,7 @@ mission "Ship Sale: Marauder Quicksilver (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,111,000 credits."`
+			`	"How about we meet halfway? 3,198,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1782,26 +2001,36 @@ mission "Ship Sale: Marauder Quicksilver (Used)"
 					goto shootout
 
 			action
-				payment -3111000
+				clear "Ship Sale: Marauder Quicksilver (Used): offered"
+				payment -3198750
 				give ship "Marauder Quicksilver (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 4 )
-			
+			action
+				clear "Ship Sale: Marauder Quicksilver (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Quicksilver (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Quicksilver (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Quicksilver (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Quicksilver (Used Engines): offered"
+				set "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
+				set "Ship Sale: Marauder Quicksilver (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Quicksilver.`
 	
@@ -1820,13 +2049,12 @@ mission "Ship Sale: Marauder Quicksilver (Negotiate Used)"
 
 mission "Ship Sale: Marauder Quicksilver (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 4371000
 		random < 1
-		"credits" > 4296000
 	on offer
 		conversation
 			scene "thumbnail/mquicksilvere"
@@ -1835,21 +2063,24 @@ mission "Ship Sale: Marauder Quicksilver (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Quicksilver has even more space available for engine use - and even another thruster port! It's also got a few extra shield projectors, more hull plating, and another bunk. This aftermarket model also features a turret mount, perhaps in response to Lionheart's Headhunter. Whoever modified this ship wanted to chase their prey down with vicious speed. The price is 4,296,000."`
+
+			`	The seller says "This Quicksilver has even more space available for engine use - and even another thruster port! It's also got a few extra shield projectors, more hull plating, and another bunk. This aftermarket model also features a turret mount, perhaps in response to Lionheart's Headhunter. Whoever modified this ship wanted to chase their prey down with vicious speed. The price is 4,371,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Quicksilver (Used Engines): offered"
 				"Midnight Market" ++
-				payment -4296000
+				payment -4371000
 				give ship "Marauder Quicksilver (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1867,7 +2098,7 @@ mission "Ship Sale: Marauder Quicksilver (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,222,000 credits."`
+			`	"How about we meet halfway? 3,278,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1876,29 +2107,36 @@ mission "Ship Sale: Marauder Quicksilver (Used Engines)"
 					goto shootout
 
 			action
-				payment -3222000
+				clear "Ship Sale: Marauder Quicksilver (Used Engines): offered"
+				payment -3278250
 				give ship "Marauder Quicksilver (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 4 )
-			
+			action
+				clear "Ship Sale: Marauder Quicksilver (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Quicksilver (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Quicksilver (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-				
-	on decline
-		"Midnight Market" ++
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Quicksilver (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Quicksilver (Used Engines): offered"
+				set "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
+				set "Ship Sale: Marauder Quicksilver (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Quicksilver.`
 	
@@ -1917,13 +2155,12 @@ mission "Ship Sale: Marauder Quicksilver (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Quicksilver (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 4087000
 		random < 1
-		"credits" > 3970000
 	on offer
 		conversation
 			scene "thumbnail/mquicksilverw"
@@ -1932,21 +2169,24 @@ mission "Ship Sale: Marauder Quicksilver (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Quicksilver has even bigger gun ports. It's also got a few extra shield emitters, more hull plating, and an extra bunk. Outfitted right, this aftermarket model could be even faster than a stock model, bringing a couple of extra cannons and a turret to a fight in more menacing mimicry of Lionheart's Headhunter. The price is 3,970,000."`
+
+			`	The seller says "This Quicksilver has even bigger gun ports. It's also got a few extra shield emitters, more hull plating, and an extra bunk. Outfitted right, this aftermarket model could be even faster than a stock model, bringing a couple of extra cannons and a turret to a fight in more menacing mimicry of Lionheart's Headhunter. The price is 4,087,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -3970000
+				payment -4087000
 				give ship "Marauder Quicksilver (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -1964,7 +2204,7 @@ mission "Ship Sale: Marauder Quicksilver (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 2,977,500 credits."`
+			`	"How about we meet halfway? 3,065,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -1973,25 +2213,36 @@ mission "Ship Sale: Marauder Quicksilver (Used Weapons)"
 					goto shootout
 
 			action
-				payment -2977500
+				clear "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
+				payment -3065250
 				give ship "Marauder Quicksilver (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 4 )
-			
+			action
+				clear "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Quicksilver (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Quicksilver (Used Weapons)"
-		
+
+			label block
+			action
+				set "Ship Sale: Marauder Quicksilver (Used Engines): offered"
+				set "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
+				set "Ship Sale: Marauder Quicksilver (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Quicksilver.`
 	
@@ -2012,13 +2263,12 @@ mission "Ship Sale: Marauder Quicksilver (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Raven (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 6995000
 		random < 1
-		"credits" > 6750000
 	on offer
 		conversation
 			scene "thumbnail/mravens"
@@ -2027,21 +2277,22 @@ mission "Ship Sale: Marauder Raven (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Whoever modified this Raven has given more heft to an agile and elegant vessel. They've added a turret and some apparently-flimsy bulkheads over extra shield emitters and outfit space. If it weren't for the wings, the central hull would barely be recognizable as Lionheart's original under the patchwork that has made an already deadly warship even more so. The price is 6,750,000."`
+
+			`	The seller says "Whoever modified this Raven has given more heft to an agile and elegant vessel. They've added a turret and some apparently-flimsy bulkheads over extra shield emitters and outfit space. If it weren't for the wings, the central hull would barely be recognizable as Lionheart's original under the patchwork that has made an already deadly warship even more so. The price is 6,995,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
-			action
 				"Midnight Market" ++
-				payment -6750000
+				payment -6995000
 				give ship "Marauder Raven (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2059,7 +2310,7 @@ mission "Ship Sale: Marauder Raven (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 5,133,750 credits."`
+			`	"How about we meet halfway? 5,246,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2068,26 +2319,36 @@ mission "Ship Sale: Marauder Raven (Used)"
 					goto shootout
 
 			action
-				payment -5133750
+				clear "Ship Sale: Marauder Raven (Used): offered"
+				payment -5246250
 				give ship "Marauder Raven (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 7 )
-			
+			action
+				clear "Ship Sale: Marauder Raven (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Raven (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Raven (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Raven (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Raven (Used Engines): offered"
+				set "Ship Sale: Marauder Raven (Used Weapons): offered"
+				set "Ship Sale: Marauder Raven (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Raven.`
 	
@@ -2106,13 +2367,12 @@ mission "Ship Sale: Marauder Raven (Negotiate Used)"
 
 mission "Ship Sale: Marauder Raven (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 7202000
 		random < 1
-		"credits" > 7005000
 	on offer
 		conversation
 			scene "thumbnail/mravene"
@@ -2121,21 +2381,24 @@ mission "Ship Sale: Marauder Raven (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Lionheart's elegant Raven has gained popularity with pirates because of its agility. This one appears to have been modified for even more of the latter at the expense of the former, and the central hull can only be recognized as a Raven because of the wings. A third engine bay, more outfit space, additional shield emitters, and a turret make this already deadly warship appear even more frightening. The price is 7,005,000."`
+
+			`	The seller says "Lionheart's elegant Raven has gained popularity with pirates because of its agility. This one appears to have been modified for even more of the latter at the expense of the former, and the central hull can only be recognized as a Raven because of the wings. A third engine bay, more outfit space, additional shield emitters, and a turret make this already deadly warship appear even more frightening. The price is 7,202,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Raven (Used Engines): offered"
 				"Midnight Market" ++
-				payment -7005000
+				payment -7202000
 				give ship "Marauder Raven (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2153,7 +2416,7 @@ mission "Ship Sale: Marauder Raven (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 5,253,750 credits."`
+			`	"How about we meet halfway? 5,401,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2162,32 +2425,39 @@ mission "Ship Sale: Marauder Raven (Used Engines)"
 					goto shootout
 
 			action
-				payment -5253750
+				clear "Ship Sale: Marauder Raven (Used Engines): offered"
+				payment -5401500
 				give ship "Marauder Raven (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 7 )
-			
+			action
+				clear "Ship Sale: Marauder Raven (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Raven (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Raven (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-				
-	on decline
-		"Midnight Market" ++
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Raven (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Raven (Used Engines): offered"
+				set "Ship Sale: Marauder Raven (Used Weapons): offered"
+				set "Ship Sale: Marauder Raven (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Raven.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -2203,13 +2473,12 @@ mission "Ship Sale: Marauder Raven (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Raven (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 6924000
 		random < 1
-		"credits" > 6750000
 	on offer
 		conversation
 			scene "thumbnail/mravenw"
@@ -2218,21 +2487,24 @@ mission "Ship Sale: Marauder Raven (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "A former owner of this ship apparently didn't like the lithe Raven, and has added so much more to it - more weapons, more shields, and more outfit capacity - that the central hull can only be recognized because of the wings. Besides adding a turret, this ship has enormous gun ports, making you wonder how much more deadly you could possibly make a warship this small. The price is 6,750,000."`
+
+			`	The seller says "A former owner of this ship apparently didn't like the lithe Raven, and has added so much more to it - more weapons, more shields, and more outfit capacity - that the central hull can only be recognized because of the wings. Besides adding a turret, this ship has enormous gun ports, making you wonder how much more deadly you could possibly make a warship this small. The price is 6,924,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Raven (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -6750000
+				payment -6924000
 				give ship "Marauder Raven (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2250,7 +2522,7 @@ mission "Ship Sale: Marauder Raven (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 5,062,500 credits."`
+			`	"How about we meet halfway? 5,193,000 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2259,26 +2531,36 @@ mission "Ship Sale: Marauder Raven (Used Weapons)"
 					goto shootout
 
 			action
-				payment -5062500
+				clear "Ship Sale: Marauder Raven (Used Weapons): offered"
+				payment -5193000
 				give ship "Marauder Raven (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 7 )
-			
+			action
+				clear "Ship Sale: Marauder Raven (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Raven (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Raven (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Raven (Used Weapons)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Raven (Used Engines): offered"
+				set "Ship Sale: Marauder Raven (Used Weapons): offered"
+				set "Ship Sale: Marauder Raven (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Raven.`
 	
@@ -2299,13 +2581,12 @@ mission "Ship Sale: Marauder Raven (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Splinter (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 10587000
 		random < 1
-		"credits" > 10511000
 	on offer
 		conversation
 			scene "thumbnail/msplinters"
@@ -2314,21 +2595,24 @@ mission "Ship Sale: Marauder Splinter (Used)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Splinter is the largest warship produced by Megaparsec. Apparently someone wanted a bit more out of it, and has covered large sections of the hull with extra shield emitters and hull plating. Much of the stock cargo space has been converted to outfit, weapons, and engines space; coupled with a streamlining of existing internal systems, it makes this warship an agile and flexible war machine. The price is 10,511,000."`
+
+			`	The seller says "The Splinter is the largest warship produced by Megaparsec. Apparently someone wanted a bit more out of it, and has covered large sections of the hull with extra shield emitters and hull plating. Much of the stock cargo space has been converted to outfit, weapons, and engines space; coupled with a streamlining of existing internal systems, it makes this warship an agile and flexible war machine. The price is 10,587,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Splinter (Used): offered"
 				"Midnight Market" ++
-				payment -10511000
+				payment -10587000
 				give ship "Marauder Splinter (Used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2346,7 +2630,7 @@ mission "Ship Sale: Marauder Splinter (Used)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 7,831,500 credits."`
+			`	"How about we meet halfway? 7,940,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2355,29 +2639,36 @@ mission "Ship Sale: Marauder Splinter (Used)"
 					goto shootout
 
 			action
-				payment -7831500
+				clear "Ship Sale: Marauder Splinter (Used): offered"
+				payment -7940250
 				give ship "Marauder Splinter (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 8 )
-			
+			action
+				clear "Ship Sale: Marauder Splinter (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Splinter (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Splinter (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-				
-	on decline
-		"Midnight Market" ++
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Splinter (Used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Splinter (Used Engines): offered"
+				set "Ship Sale: Marauder Splinter (Used Weapons): offered"
+				set "Ship Sale: Marauder Splinter (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Splinter.`
 	
@@ -2388,7 +2679,6 @@ mission "Ship Sale: Marauder Splinter (Used)"
 
 mission "Ship Sale: Marauder Splinter (Negotiate Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
@@ -2397,13 +2687,12 @@ mission "Ship Sale: Marauder Splinter (Negotiate Used)"
 		
 mission "Ship Sale: Marauder Splinter (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 10934000
 		random < 1
-		"credits" > 10789000
 	on offer
 		conversation
 			scene "thumbnail/msplintere"
@@ -2412,21 +2701,24 @@ mission "Ship Sale: Marauder Splinter (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "You're not likely to find a sub-kiloton warship faster or more deadly than this one. Large sections of the hull have been covered with extra hull plating and shield emitters. Much of the cargo space has been converted to outfit space, a great deal of which is at the rear of the ship, which features a new engine port. The price is 10,789,000."`
+
+			`	The seller says "You're not likely to find a sub-kiloton warship faster or more deadly than this one. Large sections of the hull have been covered with extra hull plating and shield emitters. Much of the cargo space has been converted to outfit space, a great deal of which is at the rear of the ship, which features a new engine port. The price is 10,934,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Splinter (Used Engines): offered"
 				"Midnight Market" ++
-				payment -10789000
+				payment -10934000
 				give ship "Marauder Splinter (Used Engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2444,7 +2736,7 @@ mission "Ship Sale: Marauder Splinter (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 8,091,750 credits."`
+			`	"How about we meet halfway? 8,200,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2453,26 +2745,36 @@ mission "Ship Sale: Marauder Splinter (Used Engines)"
 					goto shootout
 
 			action
-				payment -8091750
+				clear "Ship Sale: Marauder Splinter (Used Engines): offered"
+				payment -8200500
 				give ship "Marauder Splinter (Used Engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 8 )
-			
+			action
+				clear "Ship Sale: Marauder Splinter (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Splinter (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Splinter (Used Engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Splinter (Used Engines)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Splinter (Used Engines): offered"
+				set "Ship Sale: Marauder Splinter (Used Weapons): offered"
+				set "Ship Sale: Marauder Splinter (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Splinter.`
 	
@@ -2491,13 +2793,12 @@ mission "Ship Sale: Marauder Splinter (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Splinter (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
+		"credits" > 10734000
 		random < 1
-		"credits" > 10511000
 	on offer
 		conversation
 			scene "thumbnail/msplinterw"
@@ -2506,21 +2807,24 @@ mission "Ship Sale: Marauder Splinter (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "This Splinter has had extensive modification to its weapons space, with two new forward hard points on either side of the bridge. Large sections of the hull are covered with extra shield emitters and hull plating. Much of the stock cargo space has been converted to space for outfits, weapons, and engines; coupled with a streamlining of existing internal systems, it makes the prospect of meeting this flexible war machine in an uninhabited system seem pretty unappealing. The price is 10,511,000."`
+
+			`	The seller says "This Splinter has had extensive modification to its weapons space, with two new forward hard points on either side of the bridge. Large sections of the hull are covered with extra shield emitters and hull plating. Much of the stock cargo space has been converted to space for outfits, weapons, and engines; coupled with a streamlining of existing internal systems, it makes the prospect of meeting this flexible war machine in an uninhabited system seem pretty unappealing. The price is 10,734,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Splinter (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -10511000
+				payment -10734000
 				give ship "Marauder Splinter (Used Weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2538,7 +2842,7 @@ mission "Ship Sale: Marauder Splinter (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 7,883,250 credits."`
+			`	"How about we meet halfway? 8,050,500 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2547,26 +2851,36 @@ mission "Ship Sale: Marauder Splinter (Used Weapons)"
 					goto shootout
 
 			action
-				payment -7883250
+				clear "Ship Sale: Marauder Splinter (Used Weapons): offered"
+				payment -8050500
 				give ship "Marauder Splinter (Used Weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 8 )
-			
+			action
+				clear "Ship Sale: Marauder Splinter (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Splinter (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Splinter (Used Weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Splinter (Used Weapons)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Splinter (Used Engines): offered"
+				set "Ship Sale: Marauder Splinter (Used Weapons): offered"
+				set "Ship Sale: Marauder Splinter (Used): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Splinter.`
 	
@@ -2581,6 +2895,305 @@ mission "Ship Sale: Marauder Splinter (Negotiate Used Weapons)"
 	source
 		attributes "pirate"
 	to offer
+		never
+
+
+
+# ----- CCOR -----
+
+
+
+mission "Ship Sale: Enforcer"
+	invisible
+	minor
+	source
+		attributes "dirt belt pirate" "ccor"
+	to offer
+		"credits" > 1161000
+		random < 1
+	on offer
+		conversation
+			scene "thumbnail/enforcer"
+			`You notice someone trying to sell a used ship, an Enforcer.`
+			choice
+				`	"Tell me more about this ship."`
+				`	"Not interested in buying a ship right now."`
+					defer
+
+			`	The seller says "The Enforcer boasts an armament of four gun ports and a turreted mount, all packed on a small but defensible frame that was powerful for its time. The price is 1,161,000."`
+			choice
+				`	"Sounds good. I'll buy it!`
+				`	"That's way too much. I'll pay half that."`
+					goto negotiate
+				`	"I'll pass on this offer for now."`
+					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "purchase"
+			action
+				clear "Ship Sale: Enforcer: offered"
+				"Midnight Market" ++
+				payment -1161000
+				give ship "Enforcer (Used)"
+			`	"Thank you for your purchase!"`
+				decline
+
+			label negotiate
+			branch "deal"
+				random < "Midnight Market"
+			`	"Sorry, I can't budge on the price."`
+			choice
+				`	"Alright. I'll buy it.`
+					goto purchase
+				`	"That's way too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "deal"
+			`	"How about we meet halfway? 870,750 credits."`
+			choice
+				`	"It's a deal. I'll buy it!`
+				`	"That's still too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			action
+				clear "Ship Sale: Enforcer: offered"
+				payment -870750
+				give ship "Enforcer (Used)"
+			`	"Thank you for your purchase."`
+				decline
+
+			label shootout
+			branch "victory"
+				random < ( "flagship required crew" - 4 )
+			action
+				clear "Ship Sale: Enforcer: offered"
+			`	You try to take the ship by force, but die during the shootout.`
+				die
+
+			label victory
+			action
+				clear "Ship Sale: Enforcer: offered"
+				"Midnight Market" -= 3
+				give ship "Enforcer (Used)"
+			`	You and your crew manage to overpower the owner's crew and steal the ship!`
+				accept
+
+			label block
+			action
+				set "Ship Sale: Enforcer: offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
+	on enter
+		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Enforcer.`
+	
+	npc kill
+		government "Bounty Hunter"
+		personality waiting staying vindictive coward
+		fleet "Hired Guns" 3
+
+
+
+mission "Ship Sale: Modified Hogshead"
+	invisible
+	minor
+	source
+		attributes "dirt belt pirate" "ccor"
+	to offer
+		"credits" > 4882000
+		random < 1
+	on offer
+		conversation
+			scene "thumbnail/modified hogshead-thumb"
+			`You notice someone trying to sell a used ship, a Hogshead. It looks like it's been heavily modified.`
+			choice
+				`	"Tell me more about this ship."`
+				`	"Not interested in buying a ship right now."`
+					defer
+
+			`	The seller says "Over half the passenger space on this Hogshead has been gutted to make room for more shield emitters and weapon systems to power the two additional gun ports. Thick armored plating has been welded over the passenger viewports and other vulnerable areas of the hull, making the ship heavier, but more durable. The price is 4,882,000."`
+			choice
+				`	"Sounds good. I'll buy it!`
+				`	"That's way too much. I'll pay half that."`
+					goto negotiate
+				`	"I'll pass on this offer for now."`
+					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "purchase"
+			action
+				clear "Ship Sale: Modified Hogshead: offered"
+				"Midnight Market" ++
+				payment -4882000
+				give ship "Modified Hogshead (Used)"
+			`	"Thank you for your purchase!"`
+				decline
+
+			label negotiate
+			branch "deal"
+				random < "Midnight Market"
+			`	"Sorry, I can't budge on the price."`
+			choice
+				`	"Alright. I'll buy it.`
+					goto purchase
+				`	"That's way too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "deal"
+			`	"How about we meet halfway? 3,661,500 credits."`
+			choice
+				`	"It's a deal. I'll buy it!`
+				`	"That's still too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			action
+				clear "Ship Sale: Modified Hogshead: offered"
+				payment -3661500
+				give ship "Modified Hogshead (Used)"
+			`	"Thank you for your purchase."`
+				decline
+
+			label shootout
+			branch "victory"
+				random < ( "flagship required crew" - 24 )
+			action
+				clear "Ship Sale: Modified Hogshead: offered"
+			`	You try to take the ship by force, but die during the shootout.`
+				die
+
+			label victory
+			action
+				clear "Ship Sale: Modified Hogshead: offered"
+				"Midnight Market" -= 3
+				give ship "Modified Hogshead (Used)"
+			`	You and your crew manage to overpower the owner's crew and steal the ship!`
+				accept
+
+			label block
+			action
+				set "Ship Sale: Modified Hogshead: offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
+	on enter
+		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Hogshead.`
+	
+	npc kill
+		government "Bounty Hunter"
+		personality waiting staying vindictive coward
+		fleet "Hired Guns" 3
+
+
+
+mission "Ship Sale: Saber"
+	invisible
+	minor
+	source
+		attributes "dirt belt pirate" "ccor"
+	to offer
+		"credits" > 3000000
+		random < 1
+	on offer
+		conversation
+			scene "thumbnail/saber"
+			`You notice someone trying to sell a used ship, an Saber.`
+			choice
+				`	"Tell me more about this ship."`
+				`	"Not interested in buying a ship right now."`
+					defer
+
+			`	The seller says "This medium warship was one of the powerhouses of military might in its time, armed to the teeth with five gun ports in the nose and a dorsal turret mount to fire at anything not in front of it. The price is 3,000,000."`
+			choice
+				`	"Sounds good. I'll buy it!`
+				`	"That's way too much. I'll pay half that."`
+					goto negotiate
+				`	"I'll pass on this offer for now."`
+					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "purchase"
+			action
+				clear "Ship Sale: Saber: offered"
+				"Midnight Market" ++
+				payment -3000000
+				give ship "Saber (Used)"
+			`	"Thank you for your purchase!"`
+				decline
+
+			label negotiate
+			branch "deal"
+				random < "Midnight Market"
+			`	"Sorry, I can't budge on the price."`
+			choice
+				`	"Alright. I'll buy it.`
+					goto purchase
+				`	"That's way too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "deal"
+			`	"How about we meet halfway? 2,250,000 credits."`
+			choice
+				`	"It's a deal. I'll buy it!`
+				`	"That's still too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			action
+				clear "Ship Sale: Saber: offered"
+				payment -2250000
+				give ship "Saber (Used)"
+			`	"Thank you for your purchase."`
+				decline
+
+			label shootout
+			branch "victory"
+				random < ( "flagship required crew" - 17 )
+			action
+				clear "Ship Sale: Saber: offered"
+			`	You try to take the ship by force, but die during the shootout.`
+				die
+
+			label victory
+			action
+				clear "Ship Sale: Saber: offered"
+				"Midnight Market" -= 3
+				give ship "Saber (Used)"
+			`	You and your crew manage to overpower the owner's crew and steal the ship!`
+				accept
+
+			label block
+			action
+				set "Ship Sale: Saber: offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
+	on enter
+		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Saber.`
+	
+	npc kill
+		government "Bounty Hunter"
+		personality waiting staying vindictive coward
+		fleet "Hired Guns" 3
 
 
 
@@ -2588,14 +3201,13 @@ mission "Ship Sale: Marauder Splinter (Negotiate Used Weapons)"
 
 mission "Ship Sale: Marauder Hauler (Used A)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "north pirate"
 	to offer
-		random < 1
-		"credits" > 4064000
 		has "event: Grudge Legacy"
+		"credits" > 3505000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/marauder hauler A-thumb"
@@ -2604,21 +3216,24 @@ mission "Ship Sale: Marauder Hauler (Used A)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler took the standard Southbound Shipyards cargo container and cut it down to half its size. The price is 4,064,000."`
+
+			`	The seller says "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler took the standard Southbound Shipyards cargo container and cut it down to half its size. The price is 3,505,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Hauler (Used A): offered"
 				"Midnight Market" ++
-				payment -4064000
+				payment -3505000
 				give ship "Marauder Hauler (used)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2636,7 +3251,7 @@ mission "Ship Sale: Marauder Hauler (Used A)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,048,000 credits."`
+			`	"How about we meet halfway? 2,628,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2645,29 +3260,39 @@ mission "Ship Sale: Marauder Hauler (Used A)"
 					goto shootout
 
 			action
-				payment -3048000
+				clear "Ship Sale: Marauder Hauler (Used A): offered"
+				payment -2628750
 				give ship "Marauder Hauler (used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 3 )
-			
+			action
+				clear "Ship Sale: Marauder Hauler (Used A): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Hauler (Used A): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Hauler (used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Hauler (used)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Hauler (Used A): offered"
+				set "Ship Sale: Marauder Hauler (Used B): offered"
+				set "Ship Sale: Marauder Hauler (Used C): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Hauler.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -2683,14 +3308,13 @@ mission "Ship Sale: Marauder Hauler (Negotiate Used A)"
 
 mission "Ship Sale: Marauder Hauler (Used B)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "core pirate"
 	to offer
-		random < 1
-		"credits" > 4034000
 		has "event: Grudge Legacy"
+		"credits" > 3505000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/marauder hauler B-thumb"
@@ -2699,21 +3323,24 @@ mission "Ship Sale: Marauder Hauler (Used B)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler used the hull of a Syndicate Star Barge as the base for this modification. The price is 4,034,000."`
+
+			`	The seller says "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler used the hull of a Syndicate Star Barge as the base for this modification. The price is 3,505,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Hauler (Used B): offered"
 				"Midnight Market" ++
-				payment -4034000
+				payment -3505000
 				give ship "Marauder Hauler (used B)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2731,7 +3358,7 @@ mission "Ship Sale: Marauder Hauler (Used B)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,025,500 credits."`
+			`	"How about we meet halfway? 2,628,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2740,25 +3367,36 @@ mission "Ship Sale: Marauder Hauler (Used B)"
 					goto shootout
 
 			action
-				payment -3025500
+				clear "Ship Sale: Marauder Hauler (Used B): offered"
+				payment -2628750
 				give ship "Marauder Hauler (used B)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 3 )
-			
+			action
+				clear "Ship Sale: Marauder Hauler (Used B): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Marauder Hauler (Used B): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Hauler (used B)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Hauler (used B)"
-		
+
+			label block
+			action
+				set "Ship Sale: Marauder Hauler (Used A): offered"
+				set "Ship Sale: Marauder Hauler (Used B): offered"
+				set "Ship Sale: Marauder Hauler (Used C): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Hauler.`
 	
@@ -2777,14 +3415,13 @@ mission "Ship Sale: Marauder Hauler (Negotiate Used B)"
 
 mission "Ship Sale: Marauder Hauler (Used C)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "south pirate"
 	to offer
-		random < 1
-		"credits" > 4094000
 		has "event: Grudge Legacy"
+		"credits" > 3505000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/marauder hauler C-thumb"
@@ -2793,21 +3430,24 @@ mission "Ship Sale: Marauder Hauler (Used C)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler used the hull of a Boxwing as the base for this modification. The price is 4,094,000."`
+
+			`	The seller says "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler used the hull of a Boxwing as the base for this modification. The price is 3,505,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Hauler (Used C): offered"
 				"Midnight Market" ++
-				payment -4094000
+				payment -3505000
 				give ship "Marauder Hauler (used C)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2825,7 +3465,7 @@ mission "Ship Sale: Marauder Hauler (Used C)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,070,500 credits."`
+			`	"How about we meet halfway? 2,628,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2834,26 +3474,36 @@ mission "Ship Sale: Marauder Hauler (Used C)"
 					goto shootout
 
 			action
-				payment -3070500
+				clear "Ship Sale: Marauder Hauler (Used C): offered"
+				payment -2628750
 				give ship "Marauder Hauler (used C)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 3 )
-			
+			action
+				clear "Ship Sale: Marauder Hauler (Used C): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Hauler (Used C): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Hauler (used C)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Hauler (used C)"
-		
+			label block
+			action
+				set "Ship Sale: Marauder Hauler (Used A): offered"
+				set "Ship Sale: Marauder Hauler (Used B): offered"
+				set "Ship Sale: Marauder Hauler (Used C): offered"
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Hauler.`
 	
@@ -2872,14 +3522,13 @@ mission "Ship Sale: Marauder Hauler (Negotiate Used C)"
 
 mission "Ship Sale: Marauder Hauler (Used Engines)"
 	invisible
-	repeat
 	minor
 	source
-		attributes "pirate"
+		attributes "dirt belt pirate"
 	to offer
-		random < 1
-		"credits" > 4238000
 		has "event: Grudge Legacy"
+		"credits" > 3895000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/marauder hauler E-thumb"
@@ -2888,21 +3537,24 @@ mission "Ship Sale: Marauder Hauler (Used Engines)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The previous owner of this Hauler reconfigured it to focus on speed by completely eliminating the central cargo container and boosting the engines. It seems wrong to classify this as a freighter due to its lack of cargo space. The price is 4,238,000."`
+
+			`	The seller says "The previous owner of this Hauler reconfigured it to focus on speed by completely eliminating the central cargo container and boosting the engines. It seems wrong to classify this as a freighter due to its lack of cargo space. The price is 3,895,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Hauler (Used Engines): offered"
 				"Midnight Market" ++
-				payment -4238000
+				payment -3895000
 				give ship "Marauder Hauler (used engines)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -2920,7 +3572,7 @@ mission "Ship Sale: Marauder Hauler (Used Engines)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,178,500 credits."`
+			`	"How about we meet halfway? 2,921,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -2929,29 +3581,35 @@ mission "Ship Sale: Marauder Hauler (Used Engines)"
 					goto shootout
 
 			action
-				payment -3178500
+				clear "Ship Sale: Marauder Hauler (Used Engines): offered"
+				payment -2921250
 				give ship "Marauder Hauler (used engines)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 3 )
-			
+			action
+				clear "Ship Sale: Marauder Hauler (Used Engines): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Hauler (Used Engines): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Hauler (used engines)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Hauler (used engines)"
-		
+			label block
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Hauler.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -2967,14 +3625,14 @@ mission "Ship Sale: Marauder Hauler (Negotiate Used Engines)"
 
 mission "Ship Sale: Marauder Hauler (Used Weapons)"
 	invisible
-	repeat
 	minor
 	source
-		attributes "pirate"
+		attributes "dirt belt pirate"
 	to offer
-		random < 1
-		"credits" > 4337000
 		has "event: Grudge Legacy"
+		has "event: war begins"
+		"credits" > 3801000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/marauder hauler W-thumb"
@@ -2983,21 +3641,24 @@ mission "Ship Sale: Marauder Hauler (Used Weapons)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The previous owner of this Hauler chose to replace the central cargo unit with an additional weapons platform. With this radical change to the ship's functionality one could argue that this model should be considered a completely different ship instead of a mere variant. The price is 4,337,000."`
+
+			`	The seller says "The previous owner of this Hauler chose to replace the central cargo unit with an additional weapons platform. With this radical change to the ship's functionality one could argue that this model should be considered a completely different ship instead of a mere variant. The price is 3,801,000."`
 			choice
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Marauder Hauler (Used Weapons): offered"
 				"Midnight Market" ++
-				payment -4337000
+				payment -3801000
 				give ship "Marauder Hauler (used weapons)"
 			`	"Thank you for your purchase!"`
 				decline
@@ -3015,7 +3676,7 @@ mission "Ship Sale: Marauder Hauler (Used Weapons)"
 					goto shootout
 
 			label "deal"
-			`	"How about we meet halfway? 3,252,750 credits."`
+			`	"How about we meet halfway? 2,850,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -3024,29 +3685,35 @@ mission "Ship Sale: Marauder Hauler (Used Weapons)"
 					goto shootout
 
 			action
-				payment -3252750
+				clear "Ship Sale: Marauder Hauler (Used Weapons): offered"
+				payment -2850750
 				give ship "Marauder Hauler (used weapons)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 3 )
-			
+			action
+				clear "Ship Sale: Marauder Hauler (Used Weapons): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 				
 			label victory
+			action
+				clear "Ship Sale: Marauder Hauler (Used Weapons): offered"
+				"Midnight Market" -= 3
+				give ship "Marauder Hauler (used weapons)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Marauder Hauler (used weapons)"
-		
+			label block
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Hauler.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -3069,10 +3736,12 @@ mission "Ship Sale: Modified Argosy (Screams of Madness)"
 	source
 		attributes "pirate"
 	to offer
-		random < 1
-		"credits" > 3405000
-		"Midnight Market" >= 20
 		has "Cartography: Midnight's Lost Orphan: declined"
+		or
+			has "main plot completed"
+			"Midnight Market" >= 20
+		"credits" > 3347000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/modified argosy"
@@ -3081,18 +3750,18 @@ mission "Ship Sale: Modified Argosy (Screams of Madness)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for transporting prisoners... The price is 3,405,000."`
+
+			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for transporting prisoners... The price is 3,347,000."`
 			choice
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
 				`	"My gun says I can take this ship for free."`
 					goto shootout
-				
+
 			label negotiate
-			`	"How about we meet halfway? 2,553,750 credits."`
+			`	"How about we meet halfway? 2,510,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -3100,38 +3769,37 @@ mission "Ship Sale: Modified Argosy (Screams of Madness)"
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
-			`	"Thank you for your purchase!"`
+			action
+				"Midnight Market" ++
+				payment -2510250
+				give ship "Modified Argosy (used slaver)" "Screams of Madness"
+				outfit "Alien Torture Device" 1
 			scene "outfit/alien torture device"
+			`	"Thank you for your purchase!"`
 			`	While checking out your new ship, you find a strange device in an overlooked corner of the Brig. Might be worth taking a closer look at it the next time you visit an outfitter.`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 5 )
-			
+			action
+				clear "Ship Sale: Modified Argosy (Screams of Madness): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
-			`	You and your crew manage to overpower the owner's crew and steal the ship!`
+			action
+				"Midnight Market" -= 3
+				give ship "Modified Argosy (used slaver)" "Screams of Madness"
+				outfit "Alien Torture Device" 1
 			scene "outfit/alien torture device"
+			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 			`	While checking out your new ship, you find a strange device in an overlooked corner of the Brig. Might be worth taking a closer look at it the next time you visit an outfitter.`
 				accept
-				
-	on decline
-		"Midnight Market" ++
-		payment -2553750
-		give ship "Modified Argosy (used slaver)" "Screams of Madness"
-		outfit "Alien Torture Device" 1
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Modified Argosy (used slaver)" "Screams of Madness"
-		outfit "Alien Torture Device" 1
-		
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Argosy.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -3139,16 +3807,12 @@ mission "Ship Sale: Modified Argosy (Screams of Madness)"
 
 mission "Ship Sale: Modified Argosy (Negotiate Used Slaver)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
-		or
-			has "Ship Sale: Modified Argosy (Screams of Madness): declined"
-			has "Ship Sale: Modified Argosy (Screams of Madness): done"
+		"credits" > 3347000
 		random < 1
-		"credits" > 3330000
 	on offer
 		conversation
 			scene "thumbnail/modified argosy"
@@ -3157,18 +3821,20 @@ mission "Ship Sale: Modified Argosy (Negotiate Used Slaver)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for transporting prisoners... The price is 3,330,000."`
+
+			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for transporting prisoners... The price is 3,347,000."`
 			choice
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
-				
+
 			label negotiate
-			`	"How about we meet halfway? 2,497,500 credits."`
+			`	"How about we meet halfway? 2,510,250 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -3176,33 +3842,37 @@ mission "Ship Sale: Modified Argosy (Negotiate Used Slaver)"
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
+			action
+				clear "Ship Sale: Modified Argosy (Negotiate Used Slaver): offered"
+				payment -2510250
+				"Midnight Market" += 2
+				give ship "Modified Argosy (used slaver)"
 			`	"Thank you for your purchase!"`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 5 )
-			
+			action
+				clear "Ship Sale: Modified Argosy (Negotiate Used Slaver): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Modified Argosy (Negotiate Used Slaver): offered"
+				"Midnight Market" -= 3
+				give ship "Modified Argosy (used slaver)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-				
-	on decline
-		"Midnight Market" ++
-		payment -2497500
-		"Midnight Market" += 2
-		give ship "Modified Argosy (used slaver)"
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Modified Argosy (used slaver)"
-		
+			label block
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Argosy.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -3215,10 +3885,12 @@ mission "Ship Sale: Modified Argosy (Screams of Insanity)"
 	source
 		attributes "pirate"
 	to offer
-		random < 1
-		"credits" > 3535000
-		"Midnight Market" >= 20
 		has "Cartography: Midnight's Lost Orphan: declined"
+		or
+			has "main plot completed"
+			"Midnight Market" >= 20
+		"credits" > 3477000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/modified argosy"
@@ -3227,18 +3899,18 @@ mission "Ship Sale: Modified Argosy (Screams of Insanity)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for evading cargo inspectors... The price is 3,535,000."`
+
+			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for evading cargo inspectors... The price is 3,477,000."`
 			choice
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
 				`	"My gun says I can take this ship for free."`
 					goto shootout
-				
+
 			label negotiate
-			`	"How about we meet halfway? 2,651,250 credits."`
+			`	"How about we meet halfway? 2,607,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -3246,37 +3918,37 @@ mission "Ship Sale: Modified Argosy (Screams of Insanity)"
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
-			`	"Thank you for your purchase!"`
+			action
+				"Midnight Market" ++
+				payment -2607750
+				give ship "Modified Argosy (used smuggler)" "Screams of Insanity"
+				outfit "Almachian Brain Maggots" 1
 			scene "outfit/almachian brain maggots"
+			`	"Thank you for your purchase!"`
 			`	While checking out your new ship, you find a jar of worm-like creatures in an overlooked corner of the cargo hold. Might be worth analyzing them the next time you visit an outfitter.`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 5 )
-			
+			action
+				clear "Ship Sale: Modified Argosy (Screams of Insanity): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
-			`	You and your crew manage to overpower the owner's crew and steal the ship!`
+			action
+				"Midnight Market" -= 3
+				give ship "Modified Argosy (used smuggler)" "Screams of Insanity"
+				outfit "Almachian Brain Maggots" 1
 			scene "outfit/almachian brain maggots"
+			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 			`	While checking out your new ship, you find a jar of worm-like creatures in an overlooked corner of the cargo hold. Might be worth analyzing them the next time you visit an outfitter.`
 				accept
-				
-	on decline
-		payment -2651250
-		give ship "Modified Argosy (used smuggler)" "Screams of Insanity"
-		outfit "Almachian Brain Maggots" 1
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Modified Argosy (used smuggler)" "Screams of Insanity"
-		outfit "Almachian Brain Maggots" 1
-		
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Argosy.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -3284,16 +3956,12 @@ mission "Ship Sale: Modified Argosy (Screams of Insanity)"
 
 mission "Ship Sale: Modified Argosy (Negotiate Used Smuggler)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "pirate"
 	to offer
-		or
-			has "Ship Sale: Modified Argosy (Screams of Insanity): declined"
-			has "Ship Sale: Modified Argosy (Screams of Insanity): done"
+		"credits" > 3477000
 		random < 1
-		"credits" > 3460000
 	on offer
 		conversation
 			scene "thumbnail/modified argosy"
@@ -3302,18 +3970,20 @@ mission "Ship Sale: Modified Argosy (Negotiate Used Smuggler)"
 				`	"Tell me more about this ship."`
 				`	"Not interested in buying a ship right now."`
 					defer
-			
-			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for evading cargo inspectors... The price is 3,460,000."`
+
+			`	The seller says "The Argosy has long been a favorite ship for independent spacefarers, who have come up with many tricks for modifying them to be more suitable to their purposes. The previous owner of this ship configured it for evading cargo inspectors... The price is 3,477,000."`
 			choice
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"I'll pass on this offer for now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
-				
+
 			label negotiate
-			`	"How about we meet halfway? 2,595,000 credits."`
+			`	"How about we meet halfway? 2,607,750 credits."`
 			choice
 				`	"It's a deal. I'll buy it!`
 				`	"That's still too much. I'm not interested."`
@@ -3321,32 +3991,38 @@ mission "Ship Sale: Modified Argosy (Negotiate Used Smuggler)"
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
+			action
+				clear "Ship Sale: Modified Argosy (Negotiate Used Smuggler): offered"
+				payment -2607750
+				"Midnight Market" += 2
+				give ship "Modified Argosy (used smuggler)"
 			`	"Thank you for your purchase!"`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 5 )
-			
+			action
+				clear "Ship Sale: Modified Argosy (Negotiate Used Smuggler): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
-				
+
 			label victory
+			action
+				clear "Ship Sale: Modified Argosy (Negotiate Used Smuggler): offered"
+				"Midnight Market" -= 3
+				give ship "Modified Argosy (used smuggler)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
-				
-	on decline
-		payment -2595000
-		"Midnight Market" += 2
-		give ship "Modified Argosy (used smuggler)"
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Modified Argosy (used smuggler)"
-		
+			label block
+			action
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Argosy.`
-	
+
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -3358,105 +4034,15 @@ mission "Ship Sale: Modified Argosy (Negotiate Used Smuggler)"
 
 
 
-mission "Ship Sale: Patrolboat (Used)"
-	invisible
-	repeat
-	minor
-	source
-		attributes "north pirate" "dirt belt pirate"
-	to offer
-		random < 1
-		"credits" >= 4216000
-		has "event: war begins"
-	on offer
-		conversation
-			scene "thumbnail/patrolboat-thumb"
-			`You notice someone trying to sell a used ship, a Patrolboat.`
-			choice
-				`	"Tell me more about this ship."`
-				`	"Not interested in buying a ship right now."`
-					defer
-
-			`	The seller says "The Patrolboat is an old ship that previously performed the role which the modern Gunboat fulfills. The main reason the Navy replaced it was the lack of a turret mount. Some retired Patrolboats have found a new role as merchant escorts or bounty hunters. The price is 4,216,000."`
-			choice
-				`	"Sounds good. I'll buy it!`
-				`	"That's way too much. I'll pay half that."`
-					goto negotiate
-				`	"I'm not interested."`
-					defer
-				`	"My gun says I can take this ship for free."`
-					goto shootout
-
-			label "purchase"
-			action
-				"Midnight Market" ++
-				payment -4216000
-				give ship "Patrolboat (Used)"
-			`	"Thank you for your purchase!"`
-				decline
-
-			label negotiate
-			branch "deal"
-				random < "Midnight Market"
-			`	"Sorry, I can't budge on the price."`
-			choice
-				`	"Alright. I'll buy it.`
-					goto purchase
-				`	"That's way too much. I'm not interested."`
-					defer
-				`	"My gun says I can take this ship for free."`
-					goto shootout
-
-			label "deal"
-			`	"How about we meet halfway? 3,162,000 credits."`
-			choice
-				`	"It's a deal. I'll buy it!`
-				`	"That's still too much. I'm not interested."`
-					defer
-				`	"My gun says I can take this ship for free."`
-					goto shootout
-
-			action
-				payment -3162000
-				give ship "Patrolboat (Used)"
-			`	"Thank you for your purchase!"`
-				decline
-
-			label shootout
-			branch "victory"
-				random < ( "flagship required crew" - 8 )
-
-			`	You try to take the ship by force, but die during the shootout.`
-				die
-
-			label victory
-			`	You and your crew manage to overpower the owner's crew and steal the ship!`
-				accept
-
-	on accept
-		"Midnight Market" -= 3
-		give ship "Patrolboat (Used)"
-		
-	on enter
-		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Patrolboat.`
-
-	npc kill
-		government "Bounty Hunter"
-		personality waiting staying vindictive coward
-		fleet "Hired Guns" 3
-
-
-
 mission "Ship Sale: Missileboat (Used)"
 	invisible
-	repeat
 	minor
 	source
 		attributes "north pirate" "dirt belt pirate"
 	to offer
-		random < 1
-		"credits" >= 2340000
 		has "event: war begins"
+		"credits" >= 2340000
+		random < 1
 	on offer
 		conversation
 			scene "thumbnail/missileboat-thumb"
@@ -3471,13 +4057,16 @@ mission "Ship Sale: Missileboat (Used)"
 				`	"Sounds good. I'll buy it!`
 				`	"That's way too much. I'll pay half that."`
 					goto negotiate
-				`	"I'm not interested."`
+				`	"Not interested in buying this right now."`
 					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
 				`	"My gun says I can take this ship for free."`
 					goto shootout
 
 			label "purchase"
 			action
+				clear "Ship Sale: Missileboat (Used): offered"
 				"Midnight Market" ++
 				payment -2340000
 				give ship "Missileboat (Used)"
@@ -3506,26 +4095,32 @@ mission "Ship Sale: Missileboat (Used)"
 					goto shootout
 
 			action
+				clear "Ship Sale: Missileboat (Used): offered"
 				payment -1755000
 				give ship "Missileboat (Used)"
-			`	"Thank you for your purchase!"`
+			`	"Thank you for your purchase."`
 				decline
 
 			label shootout
 			branch "victory"
 				random < ( "flagship required crew" - 8 )
-
+			action
+				clear "Ship Sale: Missileboat (Used): offered"
 			`	You try to take the ship by force, but die during the shootout.`
 				die
 
 			label victory
+			action
+				clear "Ship Sale: Missileboat (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Missileboat (Used)"
 			`	You and your crew manage to overpower the owner's crew and steal the ship!`
 				accept
 
-	on accept
-		"Midnight Market" -= 3
-		give ship "Missileboat (Used)"
-		
+			label block
+			`	You have no interest in this type of ship and leave.`
+				decline
+
 	on enter
 		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Missileboat.`
 
@@ -3536,3 +4131,142 @@ mission "Ship Sale: Missileboat (Used)"
 
 
 
+mission "Ship Sale: Patrolboat (Used)"
+	invisible
+	minor
+	source
+		attributes "north pirate" "dirt belt pirate"
+	to offer
+		has "event: war begins"
+		"credits" >= 4216000
+		random < 1
+	on offer
+		conversation
+			scene "thumbnail/patrolboat-thumb"
+			`You notice someone trying to sell a used ship, a Patrolboat.`
+			choice
+				`	"Tell me more about this ship."`
+				`	"Not interested in buying a ship right now."`
+					defer
+
+			`	The seller says "The Patrolboat is an old ship that previously performed the role which the modern Gunboat fulfills. The main reason the Navy replaced it was the lack of a turret mount. Some retired Patrolboats have found a new role as merchant escorts or bounty hunters. The price is 4,216,000."`
+			choice
+				`	"Sounds good. I'll buy it!`
+				`	"That's way too much. I'll pay half that."`
+					goto negotiate
+				`	"I'll pass on this offer for now."`
+					defer
+				`	"I'm not interested in this type of ship."`
+					goto block
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "purchase"
+			action
+				clear "Ship Sale: Patrolboat (Used): offered"
+				"Midnight Market" ++
+				payment -4216000
+				give ship "Patrolboat (Used)"
+			`	"Thank you for your purchase!"`
+				decline
+
+			label negotiate
+			branch "deal"
+				random < "Midnight Market"
+			`	"Sorry, I can't budge on the price."`
+			choice
+				`	"Alright. I'll buy it.`
+					goto purchase
+				`	"That's way too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			label "deal"
+			`	"How about we meet halfway? 3,162,000 credits."`
+			choice
+				`	"It's a deal. I'll buy it!`
+				`	"That's still too much. I'm not interested."`
+					defer
+				`	"My gun says I can take this ship for free."`
+					goto shootout
+
+			action
+				clear "Ship Sale: Patrolboat (Used): offered"
+				payment -3162000
+				give ship "Patrolboat (Used)"
+			`	"Thank you for your purchase."`
+				decline
+
+			label shootout
+			branch "victory"
+				random < ( "flagship required crew" - 8 )
+			action
+				clear "Ship Sale: Patrolboat (Used): offered"
+			`	You try to take the ship by force, but die during the shootout.`
+				die
+
+			label victory
+			action
+				clear "Ship Sale: Patrolboat (Used): offered"
+				"Midnight Market" -= 3
+				give ship "Patrolboat (Used)"
+			`	You and your crew manage to overpower the owner's crew and steal the ship!`
+				accept
+
+			label block
+			`	You have no interest in this type of ship and leave.`
+				decline
+
+	on enter
+		dialog `Looks like the used ship dealer's friends were waiting to pay you back for stealing that Patrolboat.`
+
+	npc kill
+		government "Bounty Hunter"
+		personality waiting staying vindictive coward
+		fleet "Hired Guns" 3
+
+
+
+# Refreshing offers after changing ship sales to non-repeatable; Buying or Stealing clears offer for non-uniques.
+mission "Midnight Ship Sale Refresh"
+	landing
+	invisible
+	on offer
+		clear "Ship Sale: Marauder Arrow (Used Engines): offered"
+		clear "Ship Sale: Marauder Arrow (Used Weapons): offered"
+		clear "Ship Sale: Marauder Arrow (Used): offered"
+		clear "Ship Sale: Marauder Bounder (Used Engines): offered"
+		clear "Ship Sale: Marauder Bounder (Used Weapons): offered"
+		clear "Ship Sale: Marauder Bounder (Used): offered"
+		clear "Ship Sale: Marauder Falcon (Used Engines): offered"
+		clear "Ship Sale: Marauder Falcon (Used Weapons): offered"
+		clear "Ship Sale: Marauder Falcon (Used): offered"
+		clear "Ship Sale: Marauder Firebird (Used Engines): offered"
+		clear "Ship Sale: Marauder Firebird (Used Weapons): offered"
+		clear "Ship Sale: Marauder Firebird (Used): offered"
+		clear "Ship Sale: Marauder Hauler (Used A): offered"
+		clear "Ship Sale: Marauder Hauler (Used B): offered"
+		clear "Ship Sale: Marauder Hauler (Used C): offered"
+		clear "Ship Sale: Marauder Hauler (Used Engines): offered"
+		clear "Ship Sale: Marauder Hauler (Used Weapons): offered"
+		clear "Ship Sale: Marauder Leviathan (Used Engines): offered"
+		clear "Ship Sale: Marauder Leviathan (Used Weapons): offered"
+		clear "Ship Sale: Marauder Leviathan (Used): offered"
+		clear "Ship Sale: Marauder Manta (Used Engines): offered"
+		clear "Ship Sale: Marauder Manta (Used Weapons): offered"
+		clear "Ship Sale: Marauder Manta (Used): offered"
+		clear "Ship Sale: Marauder Quicksilver (Used Engines): offered"
+		clear "Ship Sale: Marauder Quicksilver (Used Weapons): offered"
+		clear "Ship Sale: Marauder Quicksilver (Used): offered"
+		clear "Ship Sale: Marauder Raven (Used Engines): offered"
+		clear "Ship Sale: Marauder Raven (Used Weapons): offered"
+		clear "Ship Sale: Marauder Raven (Used): offered"
+		clear "Ship Sale: Marauder Splinter (Used Engines): offered"
+		clear "Ship Sale: Marauder Splinter (Used Weapons): offered"
+		clear "Ship Sale: Marauder Splinter (Used): offered"
+		clear "Ship Sale: Missileboat (Used): offered"
+		clear "Ship Sale: Modified Argosy (Negotiate Used Slaver): offered"
+		clear "Ship Sale: Modified Argosy (Negotiate Used Smuggler): offered"
+		clear "Ship Sale: Patrolboat (Used): offered"
+		fail

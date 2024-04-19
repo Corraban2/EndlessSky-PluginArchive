@@ -27,6 +27,10 @@ phrase "asteroid names"
 		"greek alphabet"
 		
 ship "Rogue Asteroid" "Mysterious Asteroid"
+	"never disabled"
+	outfits
+		"Asteroid Collision?"
+	turret 0 0 "Asteroid Collision?"
 	bay "Fighter" 0 0 
 	bay "Fighter" 0 0 
 	bay "Fighter" 0 0 
@@ -39,8 +43,10 @@ ship "Rogue Asteroid"
 	noun "asteroid"
 	sprite "asteroid/fossil/spin"
 		"frame rate" 10
+		"scale" 2
 	"never disabled"
 	attributes
+		category "Light Freighter"
 		"fuel capacity" 1
 		"hull" 20000
 		"mass" 1000
@@ -59,10 +65,10 @@ ship "Rogue Asteroid"
 	outfits
 		"Asteroid Collision?"
 	turret 0 0 "Asteroid Collision?"
-	explode "small explosion" 25
-	explode "medium explosion" 35
-	explode "large explosion" 45
-	explode "huge explosion" 30
+	explode "tiny explosion" 5
+	explode "smoke" 40
+	explode "bolide" 40
+	explode "asteroid crunch large"
 
 
 
@@ -72,19 +78,44 @@ outfit "Asteroid Collision?"
 	"turret mounts" -1
 	"unplunderable" 1
 	weapon
+		sprite "projectile/meteoroid"
 		"turret turn" 180
+		"fire effect" "smoke"
 		"hit effect" "asteroid collision"
-		"hit effect" "bolide"
-		"inaccuracy" .4
-		"velocity" 2
-		"lifetime" 1
-		"reload" 1
-		"hit force" 3
-		"shield damage" 6
-		"hull damage" 13
+		"die effect" "flotsam death"
+		sound "asteroid crunch medium"
+		"inaccuracy" 50
+		"velocity" 0.2
+		"random velocity" 0.1
+		"lifetime" 50
+		"reload" 150
+		"burst count" 3
+		"burst reload" 45
+		"hit force" 30
+		"submunition" "meteorite chunk" 3
+
+outfit "meteorite chunk"
+	weapon
+		sprite "projectile/meteoroid"
+		"fire effect" "flotsam death"
+		"hit effect" "asteroid collision"
+		"die effect" "flotsam death"
+		sound "asteroid crunch small"
+		"inaccuracy" 100
+		"velocity" 0.3
+		"random velocity" 0.2
+		"lifetime" 850
+		"hit force" 10
+		"shield damage" 45
+		"hull damage" 90
 
 effect "asteroid collision"
-	sound "hull impact"
+	sprite "effect/sidewinder fire"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 9
+	"random velocity" 2
+	sound "asteroid crunch small"
 
 
 
@@ -1459,6 +1490,7 @@ outfit "Unknown Element"
 	thumbnail "outfit/harvested unknown"
 	"flotsam sprite" "effect/flotsam mysterious comet"
 	"mass" 1
+	"flotsam chance" 1
 	"installable" -1
 	description "This doesn't match anything in your ship's database. It could be very valuable to the right person."
 
@@ -1482,6 +1514,43 @@ fleet "Mysterious Comet"
 	outfitters "Unknown Element"
 	variant
 		"Mysterious Comet"
+
+ship "Comet" "Mysterious Comet (Specimen)"
+	swizzle 3
+	sprite "ship/shooting star/shooting star"
+	"never disabled"
+	attributes
+		category "Phenomenon"
+		"hull" 10000
+		"mass" 1000
+		"drag" 10
+		"heat dissipation" .1
+		"automaton" 1
+		"required crew" 0
+		"bunks" 0
+		"cargo space" 15
+		"afterburner thrust" 1.0
+		"afterburner effect" "mystery dust"
+		"turn" 100
+		"afterburner energy" 1
+		"turning energy" 1
+		"fuel capacity" 200
+		"jump drive" 1
+		"jump effect" "invisible jump"
+		"jump in sound" "ion tiny"
+		"jump out sound" "ion tiny"
+		"energy generation" 3
+		"inscrutable" 1
+		"atmosphere scan" 100
+		"fuel generation" .01
+	outfits
+		"Unknown Element"
+	engine 0 0
+		over
+	explode "smoke" 30
+	explode "bolide" 30
+	explode "asteroid crunch medium"
+
 
 
 mission "Unknown Element: Sundive 1"
@@ -1553,8 +1622,13 @@ mission "Unknown Element: Sundive 2"
 		government "Uninhabited"
 		system "Deneb"
 		personality target waiting staying surveillance mute
-		fleet "Mysterious Comet"
-		dialog `You've destroyed the mysterious comet. Collect any pieces that surived and head for <destination> to deliver the Unknown Element.`
+		"cargo settings"
+			cargo 1
+			outfitters "Unknown Element"
+		ship "Mysterious Comet (Specimen)" "???"
+		conversation
+			scene "scene/scene-mysterious comet"
+			`You've destroyed the mysterious comet. Collect any pieces that surived and head for <destination> to deliver the Unknown Element.`
 	on abort
 		dialog `You abandon the search for the Mysterious Comet.`
 	on complete
@@ -1692,7 +1766,7 @@ mission "Unknown Element: Cargo Bay 3"
 	on complete
 		payment 10000
 		log "People" "Dr. Seth Baxter" `Somehow, Dr. Baxter was transformed into the strange creature that destroyed his office. The Unknown Element might have something to do with it.`
-		log "People" "Dr. Langstrom" `A chemist who tried to deliver some Unknown Element to Alexandria. An unfortunate encounter with the creature formerly known as Seth Baxter caused her to lose her cargo.`
+		log "Minor People" "Dr. Langstrom" `A chemist who tried to deliver some Unknown Element to Alexandria. An unfortunate encounter with the creature formerly known as Seth Baxter caused her to lose her cargo.`
 		conversation
 			scene "scene/scene-empty box"
 			`You drop off Dr. Langstrom and receive a payment of <payment>. It's not much, but you did lose her cargo. On the other hand, that's probably better than her turning into a bug eyed monster and wrecking her office.`

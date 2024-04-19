@@ -129,7 +129,7 @@ outfit "Energy Cannon"
 		"hull damage" 1.467
 		"cluster"
 		"submunition" "Energy Cannon Blast"
-	description "A relic from the Alpha War, Energy Cannons fell into disuse once the war ended. Occasionally they can still be found outfitted on older ships. They have a longer range than Energy Blasters and are more powerful. But they have a slower rate of fire and the effectiveness of the projectiles diminishes the more distant the target."
+	description "A relic from the Alpha War, Energy Cannons fell into disuse once the war ended. Occasionally they can still be found outfitted on older ships. They are more powerful than Energy Blasters and cover a longer range. But their rate of fire is slower and the effectiveness of the projectiles diminishes the more distant the target."
 #damage per second equal to Twin Modified Blaster
 
 outfit "Energy Cannon Turret"
@@ -165,7 +165,7 @@ outfit "Energy Cannon Blast"
 	weapon
 		sprite "projectile/energy cannon sub"
 		"hit effect" "energy cannon sub impact"
-		"inaccuracy" 3
+#		"inaccuracy" 3
 		"lifetime" 18
 		"shield damage" 5.2
 		"hull damage" 4.4
@@ -176,7 +176,7 @@ outfit "Residual Energy Cannon Blast"
 	weapon
 		sprite "projectile/energy cannon sub"
 		"hit effect" "energy cannon sub impact"
-		"inaccuracy" 3
+#		"inaccuracy" 3
 		"lifetime" 24
 		"shield damage" 8
 		"hull damage" 4.4
@@ -187,7 +187,7 @@ outfit "Half Energy Cannon Blast"
 	weapon
 		sprite "projectile/mod blaster"
 		"hit effect" "blaster impact"
-		"inaccuracy" 2
+#		"inaccuracy" 2
 		"lifetime" 18
 		"shield damage" 2.6
 		"hull damage" 2.2
@@ -198,7 +198,7 @@ outfit "Half Residual Energy Cannon Blast"
 	weapon
 		sprite "projectile/blaster"
 		"hit effect" "blaster impact"
-		"inaccuracy" 1
+#		"inaccuracy" 1
 		"lifetime" 6
 		"shield damage" 10.6
 		"hull damage" 6.6
@@ -206,7 +206,7 @@ outfit "Half Residual Energy Cannon Blast"
 
 effect "energy cannon impact"
 	sprite "effect/blaster impact"
-		"scale" 2
+		"scale" 4
 		"no repeat"
 		"frame rate" 30
 	"lifetime" 7
@@ -215,7 +215,7 @@ effect "energy cannon impact"
 
 effect "energy cannon sub impact"
 	sprite "effect/blaster impact"
-		"scale" 1.5
+		"scale" 2
 		"no repeat"
 		"frame rate" 30
 	"lifetime" 7
@@ -392,6 +392,7 @@ outfit "Isochronal Laser"
 		"firing heat" 4.2
 		"shield damage" 2.55
 		"hull damage" 3.6
+		"cluster"
 	description "The Isochronal Laser was a failed attempt by Tarazed to recreate the Skylances installed on Quarg ships. While their engineers managed to create a powerful beam, they were unable to keep it stable."
 	description "	These were never adopted for widespread use and Tarazed was eventually forced to stop production of them due to poor sales. Ships in the South can sometimes be found with these rare weapons installed. However the vast majority of Isochronal Lasers are still held by Tarazed itself."
 
@@ -420,6 +421,7 @@ outfit "Isochronal Laser Turret"
 		"firing heat" 8.4
 		"shield damage" 5.1
 		"hull damage" 7.2
+		"cluster"
 	description "The Isochronal Laser was a failed attempt by Tarazed to recreate the Skylances installed on Quarg ships. While their engineers managed to create a powerful beam, they were unable to keep it stable."
 	description "	This turreted version of the Isochronal Laser appeals to a very niche market of pilots who want an upgrade to Deep Sky's Laser Turret, but lack the space for Heavy Lasers on their ships."
 
@@ -455,8 +457,9 @@ outfit "Kludge Blaster"
 		"firing heat" 22.5
 		"shield damage" 13.2
 		"hull damage" 8.8
+		"minable damage" 10.6
 		"cluster"
-	description "What started out as a failed pirate attempt at modifying an Energy Blaster, eventually gained widespread popularity with new starship pilots in search of a budget alternative weapon suited for mining asteroids. Although they can occasionally still be found installed on low end pirate raiders, Kludge Blasters are also available at many legitimate outfitters across the galaxy."
+	description "Kludge Blasters started out as a failed attempt at modifying an Energy Blaster. Pirate captains short on cash due to botched raid attempts, smuggling jobs gone wrong, or an unlucky night at the card tables might resort to mounting Kludge Blasters onto their ship instead of more effective weapons. Despite their shady origins, Kludge Blasters eventually gained widespread popularity with new starship pilots in search of a budget alternative mining weapon and are available at many legitimate outfitters across the galaxy."
 	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 outfit "Twin Kludge Blaster"
@@ -468,7 +471,7 @@ outfit "Twin Kludge Blaster"
 	"weapon capacity" -10
 	"gun ports" -1
 	weapon
-		sound "mod blaster"
+		sound "blaster-ver8"
 		"submunition" "Kludge Submunition"
 			"offset" 1 0
 			"facing" 0.45
@@ -495,6 +498,38 @@ outfit "Kludge Submunition"
 		"lifetime" 48
 		"shield damage" 13.2
 		"hull damage" 8.8
+		"minable damage" 10.6
+
+outfit "Triple Kludge Blaster"
+	category "Guns"
+	cost 30000
+	thumbnail "outfit/triple kludge blaster"
+	"mass" 15
+	"outfit space" -15
+	"weapon capacity" -15
+	"gun ports" -1
+	weapon
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" 0 0
+			"facing" 0
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.45
+		"hit effect" "kludge impact" 3
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 19.5
+		"firing heat" 69
+		"cluster"
+	description "In an effort to maximize the effectiveness of the Kludge Blaster, overzealous weaponsmiths have found a way to squeeze three of them into a single gun port. This increases the damage yield at the cost of increased heat buildup."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 outfit "Kludge Blaster Turret"
 	category "Turrets"
@@ -509,12 +544,12 @@ outfit "Kludge Blaster Turret"
 		"hardpoint sprite" "hardpoint/kludge blaster turret"
 		"hardpoint offset" 9.
 		"turret turn" 3.5
-		sound "mod blaster"
+		sound "blaster-ver8"
 		"submunition" "Kludge Submunition"
-			"offset" 0 0
+			"offset" 1 0
 			"facing" 0.45
 		"submunition" "Kludge Submunition"
-			"offset" 0 0
+			"offset" -1 0
 			"facing" -0.45
 		"hit effect" "kludge impact" 2
 		"inaccuracy" 4
@@ -525,7 +560,7 @@ outfit "Kludge Blaster Turret"
 		"firing energy" 13
 		"firing heat" 45
 		"cluster"
-	description "Pirate captains short on cash due to botched raid attempts, smuggling jobs gone wrong, or an unlucky night at the card tables might resort to mounting Kludge Blasters onto their ship instead of more effective weapons. Unlike other blaster turrets, both barrels of the Kludge Blaster Turret fire simultaneously. It was hoped that launching the projectiles in a volley would help compensate for the weapon's slow rate of fire."
+	description "Unlike other blaster turrets, both barrels of the Kludge Blaster Turret fire simultaneously. It was hoped that launching the projectiles in a volley would help compensate for the weapon's slow rate of fire."
 	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 outfit "Quad Kludge Blaster Turret"
@@ -541,9 +576,9 @@ outfit "Quad Kludge Blaster Turret"
 		"hardpoint sprite" "hardpoint/quad kludge blaster turret"
 		"hardpoint offset" 9.
 		"turret turn" 3
-		sound "mod blaster"
+		sound "blaster-ver8"
 		"submunition" "Kludge Submunition"
-			"offset" 1 0
+			"offset" 2 0
 			"facing" 0.45
 		"submunition" "Kludge Submunition"
 			"offset" 1 0
@@ -552,7 +587,7 @@ outfit "Quad Kludge Blaster Turret"
 			"offset" -1 0
 			"facing" -0.3
 		"submunition" "Kludge Submunition"
-			"offset" -1 0
+			"offset" -2 0
 			"facing" -0.45
 		"hit effect" "kludge impact" 4
 		"inaccuracy" 4
@@ -564,6 +599,50 @@ outfit "Quad Kludge Blaster Turret"
 		"firing heat" 90
 		"cluster"
 	description "While the Kludge Blaster is considered a poor man's weapon among pirates, tinkerers continue to see potential in connecting several of them together. All four Kludge Blasters mounted on this turret fire at the same time, launching a deadly volley of projectiles towards the target."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Hex Kludge Blaster Turret"
+	category "Turrets"
+	cost 180000
+	thumbnail "outfit/hex kludge blaster turret"
+	"mass" 32
+	"outfit space" -32
+	"weapon capacity" -32
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		"hardpoint sprite" "hardpoint/quad kludge blaster turret"
+		"hardpoint offset" 9.
+		"turret turn" 2.5
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 3 0
+			"facing" 0.6
+		"submunition" "Kludge Submunition"
+			"offset" 2 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.3
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.3
+		"submunition" "Kludge Submunition"
+			"offset" -2 0
+			"facing" -0.45
+		"submunition" "Kludge Submunition"
+			"offset" -3 0
+			"facing" -0.6
+		"hit effect" "kludge impact" 6
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 39
+		"firing heat" 138
+		"cluster"
+	description "Overzealous weaponsmiths crafted this arrangement of six Kludge Blasters clustered onto a single turret mount. This increases the damage yield at the cost of increased heat buildup. As with other Kludge Blaster configurations, all six fire at the same time, launching a deadly volley of projectiles towards the target."
 	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 effect "kludge impact"
@@ -646,6 +725,7 @@ outfit "Particle Burst Turret"
 
 
 outfit "Plasma Cluster Cannon"
+	"display name" "Plasma Charge Cannon"
 	category "Guns"
 	cost 209000
 	thumbnail "outfit/plasma cluster cannon"
@@ -669,7 +749,7 @@ outfit "Plasma Cluster Cannon"
 		"hull damage" 50
 		"heat damage" 680
 		"cluster"
-	description `The Plasma Cluster Cannon has been modified to take advantage of the concentrated firing mount. The power of each shot has increased at the expense of increasing the weapon's charge up time.`
+	description `The Plasma Charge Cannon has been modified to take advantage of the concentrated firing mount. The power and range of each shot has increased at the expense of increasing the weapon's charge up time.`
 	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 effect "plasma cluster explosion"
@@ -858,14 +938,13 @@ outfit "Stinger Missile Launcher"
 		"turn" 2
 		"homing" 1
 		"radar tracking" .65
-		"shield damage" 30
-		"discharge damage" 8.7
+		"shield damage" 900
 		"hull damage" 60
 		"corrosion damage" 10
 		"hit force" 60
 		"missile strength" 6
 	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are one example of this. Devoloped during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
-	description "	After splattering the target with its dangerous payload, the residue will continue to drain the shields or corrode the hull for some time after the initial impact."
+	description "	If it is able to get past the shields and splatter the target with its dangerous payload, the residue will continue to corrode the hull for some time after the initial impact."
 
 outfit "Stinger Missile Pod"
 	category "Secondary Weapons"
@@ -900,14 +979,13 @@ outfit "Stinger Missile Pod"
 		"turn" 2
 		"homing" 1
 		"radar tracking" .65
-		"shield damage" 30
-		"discharge damage" 8.7
+		"shield damage" 900
 		"hull damage" 60
 		"corrosion damage" 10
 		"hit force" 60
 		"missile strength" 6
-	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are one example of this. Devoloped during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
-	description "	After splattering the target with its dangerous payload, the residue will continue to drain the shields or corrode the hull for some time after the initial impact."
+	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are one example of this. Devoloped during the early turf wars, the materials used to make them are readily available and there is no shortage of suppliers."
+	description "	If it is able to get past the shields and splatter the target with its dangerous payload, the residue will continue to corrode the hull for some time after the initial impact."
 	description "	Pods enable fighters and other light craft to carry small quantities of rockets into battle while retaining enough space for other weapons. Large ships are better off with full-size launchers."
 
 effect "stinger splatter"
@@ -1068,6 +1146,36 @@ outfit "Thermo Detonator"
 
 effect "fail sound"
 	sound "fail"
+
+
+
+outfit "Tri Laser Turret"
+	category "Turrets"
+	cost 231000
+	thumbnail "outfit/tri laser turret"
+	"mass" 30
+	"outfit space" -30
+	"weapon capacity" -30
+	"turret mounts" -1
+	"required crew" 1
+	"unique" 1
+	weapon
+		sprite "projectile/3x laser"
+			"frame rate" 1
+		"hardpoint sprite" "hardpoint/tri laser turret"
+		"hardpoint offset" -0.5 8.
+		sound "laser"
+		"hit effect" "beam laser impact"
+		"inaccuracy" .5
+		"turret turn" 3.5
+		"velocity" 300
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 1.995
+		"firing heat" 4.8
+		"shield damage" 3
+		"hull damage" 3.9
+	description "The Tri Laser Turret was an early attempt to produce a more powerful laser turret. Deep Sky abandoned it with the development of the Heavy Laser."
 
 
 

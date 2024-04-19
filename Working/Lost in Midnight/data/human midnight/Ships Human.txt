@@ -80,6 +80,70 @@ ship "Battle Barge"
 	description "From a distance, this looks like a bulk freighter or container transport. But the Battle Barge is a pirate war ship. What might be mistaken for cargo bays are actually twelve armored battle stations. Each one is capable of mounting a turret for offense or defense, making this ship a formidable mobile weapons platform."
 
 
+# CCOR modified Saber
+ship "Broadsword"
+	sprite "ship/broadsword"
+	thumbnail "thumbnail/broadsword-thumb"
+	attributes
+		category "Utility"
+		"cost" 3300000
+		"shields" 4600
+		"hull" 2600
+		"required crew" 18
+		"bunks" 27
+		"mass" 370
+		"drag" 6
+		"heat dissipation" .56
+		"fuel capacity" 700
+		"cargo space" 10
+		"outfit space" 290
+		"weapon capacity" 105
+		"engine capacity" 90
+		weapon
+			"blast radius" 72
+			"shield damage" 720
+			"hull damage" 360
+			"hit force" 1080
+	outfits
+		"Beam Laser" 3
+		"Laser Turret"
+		Torpedo 51
+		"Torpedo Pod" 2
+		"Torpedo Storage Rack" 3
+
+		"LP072a Battery Pack"
+		"nGVF-CC Fuel Cell"
+		"D41-HY Shield Generator"
+		"Small Radar Jammer"
+		"Tactical Scanner"
+		"Laser Rifle" 3
+
+		"X3200 Ion Steering"
+		"X3700 Ion Thruster"
+		Hyperdrive
+
+	engine 0 105
+	gun -10.5 -105 "Beam Laser"
+	gun 0 -105 "Beam Laser"
+	gun 10.5 -105 "Beam Laser"
+	gun -5 -104 "Torpedo Pod"
+	gun 5 -104 "Torpedo Pod"
+	turret 0 27.5 "Laser Turret"
+	bay "Fighter" -44 17 
+		under
+	bay "Fighter" 44 17 
+		under
+	leak "leak" 60 60
+	leak "flame" 40 80
+	leak "big leak" 40 20
+	explode "tiny explosion" 10
+	explode "small explosion" 24
+	explode "medium explosion" 28
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+	description "Long ago, a captain asked the head shipwright of Grendel Station to add an external fighter bay to the original Saber's hull. It didn't take long before the shipyard extended this modification with a second bay to create the Broadsword. This design is most commonly found in remote pirate systems on the outer rim."
+
+
 
 # can be sold in systems with fuel refiery stations after completing missions
 ship "Cannikin"
@@ -193,6 +257,55 @@ ship "Deuterium Tanker"
 
 
 
+# Gremlins become available in shipyards after completing certain missions.
+ship "Gremlin"
+	sprite "ship/gremlin"
+	thumbnail "thumbnail/gremlin-thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 1080000
+		"shields" 2000
+		"hull" 1800
+		"required crew" 1
+		"bunks" 3
+		"mass" 180
+		"drag" 3.2
+		"heat dissipation" .8
+		"fuel capacity" 400
+		"cargo space" 80
+		"outfit space" 260
+		"weapon capacity" 0
+		"engine capacity" 80
+		weapon
+			"blast radius" 28
+			"shield damage" 280
+			"hull damage" 140
+			"hit force" 420
+	outfits
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"Supercapacitor"
+		"D41-HY Shield Generator"
+		"Fuel Pod" 2
+		"Cargo Expansion"
+		"Small Radar Jammer"
+
+		Afterburner
+		"X2700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+	engine -27.5 35
+	engine 27.5 35
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 15
+	explode "small explosion" 20
+	explode "medium explosion" 10
+	"final explode" "final explosion small"
+	description "Betelgeuse Shipyards Gremlin has seen limited adoption among merchant fleets. It has become especially popular among smugglers, who've created alternative configurations using Interference Plating."
+
+
+
 # The Hauler VI becomes available in shipyards six months after completing its related Black Market mission chain.
 ship "Hauler VI"
 	sprite "ship/hauler vi"
@@ -254,53 +367,414 @@ ship "Hauler VI"
 	description `Some captains refer to this ship as the Hauler IV plus II in reference to the inconvenience of loading or unloading the two upper cargo compartments in non low gravity environments.`
 
 
-
-# Gremlins become available in shipyards after completing certain missions.
-ship "Gremlin"
-	sprite "ship/gremlin"
-	thumbnail "thumbnail/gremlin-thumb"
+# Dirtbelt pirate modified Enforcer
+ship "Heavy Enforcer"
+	sprite "ship/heavy enforcer"
+	thumbnail "thumbnail/heavy enforcer-thumb"
 	attributes
-		category "Light Freighter"
-		"cost" 1080000
-		"shields" 2000
-		"hull" 1800
-		"required crew" 1
-		"bunks" 3
-		"mass" 180
-		"drag" 3.2
-		"heat dissipation" .8
+		category "Light Warship"
+		"cost" 530000
+		"shields" 2700
+		"hull" 1300
+		"required crew" 3
+		"bunks" 5
+		"mass" 140
+		"drag" 3.1
+		"heat dissipation" .77
 		"fuel capacity" 400
-		"cargo space" 80
-		"outfit space" 260
-		"weapon capacity" 0
-		"engine capacity" 80
+		"cargo space" 15
+		"outfit space" 220
+		"weapon capacity" 55
+		"engine capacity" 70
 		weapon
-			"blast radius" 28
-			"shield damage" 280
-			"hull damage" 140
-			"hit force" 420
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
 	outfits
-		"nGVF-DD Fuel Cell"
-		"LP072a Battery Pack"
-		"Supercapacitor"
+		"Energy Blaster" 2
+		"Blaster Turret"
+		"Meteor Missile Pod" 2
+		"Meteor Missile Box" 4
+		"Meteor Missile" 74
+
+		"LP036a Battery Pack"
+		"nGVF-CC Fuel Cell"
 		"D41-HY Shield Generator"
-		"Fuel Pod" 2
-		"Cargo Expansion"
 		"Small Radar Jammer"
 
-		Afterburner
+		"Greyhound Plasma Steering"
+		"Greyhound Plasma Thruster"
+		Hyperdrive
+
+	engine 0 39
+	engine 14 37
+		zoom .5
+	engine -14 37
+		zoom .5
+	gun -11 -52 "Energy Blaster"
+	gun 11 -52 "Energy Blaster"
+	gun -5.5 -48 "Meteor Missile Pod"
+	gun 5.5 -48 "Meteor Missile Pod"
+	turret 0 -0.5 "Blaster Turret"
+	leak "leak" 40 30
+	leak "flame" 50 60
+	explode "tiny explosion" 10
+	explode "small explosion" 14
+	explode "medium explosion" 6
+	description `The Heavy Enforcers used by Dirtbelt pirates have their engines upgraded to offset the increased weight from adding heavy armor plating and extra shield emitters.`
+
+
+
+ship "Heavy Freighter"
+	sprite "ship/heavy freighter"
+	thumbnail "thumbnail/heavy freighter-thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 1460000
+		"shields" 3800
+		"hull" 3800
+		"required crew" 3
+		"bunks" 7
+		"mass" 440
+		"drag" 6.1
+		"heat dissipation" .6
+		"fuel capacity" 600
+		"cargo space" 300
+		"outfit space" 280
+		"weapon capacity" 110
+		"engine capacity" 70
+		weapon
+			"blast radius" 70
+			"shield damage" 700
+			"hull damage" 380
+			"hit force" 1100
+	outfits
+		"Blaster Turret" 2
+		"Heavy Anti-Missile Turret" 2
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D14-RN Shield Generator"
+		
 		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
+		"X2200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
 		"Scram Drive"
-	engine -27.5 35
-	engine 27.5 35
+		
+	engine -10 144 
+	engine 10 144 
+	turret 0 -105 "Blaster Turret"
+	turret 0 -54 "Heavy Anti-Missile Turret"
+	turret 0 51 "Heavy Anti-Missile Turret"
+	turret 0 117 "Blaster Turret"
 	leak "leak" 60 50
 	leak "flame" 50 80
 	explode "tiny explosion" 15
-	explode "small explosion" 20
-	explode "medium explosion" 10
+	explode "small explosion" 35
+	explode "medium explosion" 25
 	"final explode" "final explosion small"
-	description "Betelgeuse Shipyards Gremlin has seen limited adoption among merchant fleets. It has become especially popular among smugglers, who've created alternative configurations using Interference Plating."
+	description "The Freighter is designed by the Syndicate to be an efficient means of carrying cargo from system to system, but is so slow and difficult to land that most pilots hate flying them."
+	description "	The Heavy Freighter, with its increased cargo capacity, is more durable and better defended than the regular Syndicate Freighter. But this makes it an even slower and less maneuverable ship."
+
+
+
+# developed by Core pirates, adopted by merchants during FW war
+ship "Heavy Hauler"
+	sprite "ship/heavy hauler i"
+	thumbnail "thumbnail/heavy hauler i-thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 1573000
+		"shields" 2900
+		"hull" 3900
+		"required crew" 3
+		"bunks" 12
+		"mass" 260
+		"drag" 10.5
+		"heat dissipation" .67
+		"fuel capacity" 400
+		"cargo space" 110
+		"outfit space" 350
+		"weapon capacity" 140
+		"engine capacity" 80
+		"cargo scan opacity" 5
+		weapon
+			"blast radius" 60
+			"shield damage" 600
+			"hull damage" 300
+			"hit force" 900
+	outfits
+		"Quad Blaster Turret" 2
+		"Heavy Anti-Missile Turret" 2
+		"Meteor Missile" 29
+		"Meteor Missile Box"
+		"Meteor Missile Pod" 2
+
+		"LP072a Battery Pack"
+		"S3 Thermionic"
+		"D41-HY Shield Generator"
+		"Small Radar Jammer"
+		"Laser Rifle"
+
+		"Capybara Reverse Thruster"
+		"Greyhound Plasma Thruster"
+		"Impala Plasma Steering"
+		Hyperdrive
+
+	engine -45 122.5
+	engine 45 122.5
+	gun -14.5 -92.5
+	gun 14.5 -92.5
+	turret -21.5 -48 "Quad Blaster Turret"
+	turret 21.5 -48 "Heavy Anti-Missile Turret"
+	turret -18.5 78.5 "Heavy Anti-Missile Turret"
+	turret 18.5 78.5 "Quad Blaster Turret"
+	leak "leak" 60 50
+	leak "flame" 50 80
+	leak "big leak" 90 30
+	explode "tiny explosion" 20
+	explode "small explosion" 35
+	explode "medium explosion" 20
+	explode "large explosion" 5
+	"final explode" "final explosion medium"
+	description "While Southbound Shipyards was developing the Nest, pirates near the galactic Core were modifying the cargo container of a salvaged Hauler with armor plating and shield emitters. This gave rise to Heavy Haulers."
+	description "	Although the thick armor plating is not impervious to scanners, it increases the time it takes to complete a scan of the Heavy Hauler's cargo container."
+
+
+
+ship "Heavy Hauler II"
+	sprite "ship/heavy hauler ii"
+	thumbnail "thumbnail/heavy hauler ii-thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 2574000
+		"shields" 3700
+		"hull" 5600
+		"required crew" 3
+		"bunks" 12
+		"mass" 380
+		"drag" 11.5
+		"heat dissipation" .67
+		"fuel capacity" 400
+		"cargo space" 220
+		"outfit space" 350
+		"weapon capacity" 140
+		"engine capacity" 80
+		"cargo scan opacity" 10
+		weapon
+			"blast radius" 80
+			"shield damage" 800
+			"hull damage" 400
+			"hit force" 1200
+	outfits
+		"Meteor Missile Pod" 2
+		"Meteor Missile" 59
+		"Meteor Missile Box" 3
+		"Quad Blaster Turret" 2
+		"Heavy Anti-Missile Turret" 2
+		
+		"S3 Thermionic"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		"Small Radar Jammer"
+		"Laser Rifle"
+		
+		"Greyhound Plasma Thruster"
+		"Impala Plasma Steering"
+		"Capybara Reverse Thruster"
+		"Hyperdrive"
+		
+	engine -45 159.5
+	engine 45 159.5
+	gun -14.5 -129.5
+	gun 14.5 -129.5
+	turret -21.5 -84.5 "Quad Blaster Turret"
+	turret 21.5 -84.5 "Heavy Anti-Missile Turret"
+	turret -18.5 115.5 "Heavy Anti-Missile Turret"
+	turret 18.5 115.5 "Quad Blaster Turret"
+	leak "leak" 60 50
+	leak "flame" 40 80
+	leak "big leak" 80 30
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 30
+	explode "large explosion" 15
+	"final explode" "final explosion medium"
+	description "As interstellar travel became increasingly dangerous, merchant captains began commissioning their own Heavy Hauler modifications."
+	description "	Although the thick armor plating is not impervious to scanners, it increases the time it takes to complete a scan of the Heavy Hauler's cargo containers."
+
+
+
+ship "Heavy Hauler III"
+	sprite "ship/heavy hauler iii"
+	thumbnail "thumbnail/heavy hauler iii-thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 3586000
+		"shields" 4500
+		"hull" 7300
+		"required crew" 3
+		"bunks" 12
+		"mass" 500
+		"drag" 12.5
+		"heat dissipation" .67
+		"fuel capacity" 400
+		"cargo space" 330
+		"outfit space" 350
+		"weapon capacity" 140
+		"engine capacity" 80
+		"cargo scan opacity" 15
+		weapon
+			"blast radius" 100
+			"shield damage" 1000
+			"hull damage" 500
+			"hit force" 1500
+	outfits
+		"Meteor Missile Pod" 2
+		"Meteor Missile" 59
+		"Meteor Missile Box" 3
+		"Quad Blaster Turret" 2
+		"Heavy Anti-Missile Turret" 2
+		
+		"S3 Thermionic"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		"Small Radar Jammer"
+		"Laser Rifle"
+		
+		"Greyhound Plasma Thruster"
+		"Impala Plasma Steering"
+		"Capybara Reverse Thruster"
+		"Hyperdrive"
+
+	engine -45 196.5
+	engine 45 196.5
+	gun -14.5 -166.5
+	gun 14.5 -166.5
+	turret -21.5 -122 "Quad Blaster Turret"
+	turret 21.5 -122 "Heavy Anti-Missile Turret"
+	turret -18.5 152.5 "Heavy Anti-Missile Turret"
+	turret 18.5 152.5 "Quad Blaster Turret"
+	leak "leak" 50 50
+	leak "flame" 40 80
+	leak "big leak" 80 30
+	explode "small explosion" 15
+	explode "medium explosion" 30
+	explode "large explosion" 20
+	explode "huge explosion" 5
+	"final explode" "final explosion large"
+	description "It wasn't long before demand for Heavy Hauler conversions lead to them being offered in shipyards."
+	description "	Although the thick armor plating is not impervious to scanners, it increases the time it takes to complete a scan of the Heavy Hauler's cargo containers."
+
+
+
+ship "Light Freighter"
+	sprite "ship/light freighter"
+	thumbnail "thumbnail/light freighter-thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 400000
+		"shields" 900
+		"hull" 1500
+		"required crew" 1
+		"bunks" 3
+		"mass" 140
+		"drag" 2.3
+		"heat dissipation" .8
+		"fuel capacity" 300
+		"cargo space" 100
+		"outfit space" 150
+		"weapon capacity" 40
+		"engine capacity" 40
+		weapon
+			"blast radius" 24
+			"shield damage" 240
+			"hull damage" 120
+			"hit force" 360
+	outfits
+		"Blaster Turret"
+		"Anti-Missile Turret"
+
+		"nGVF-BB Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"Fuel Pod"
+		
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
+		"Hyperdrive"
+		
+	engine -8 64 
+	engine 8 64 
+	turret 0 -47 "Blaster Turret"
+	turret 0 36 "Anti-Missile Turret"
+	leak "leak" 65 55
+	explode "tiny explosion" 15
+	explode "small explosion" 15
+	"final explode" "final explosion small"
+	description "The Syndicate's Light Freighter is a suprisingly affordable and versatile upgrade from the Star Barge. Unfortunately, many shipyards that are supposed to carry it have trouble keeping it in stock due to high demand."
+
+
+
+# Dirtbelt pirate modified Saber
+ship "Longsword"
+	sprite "ship/longsword"
+	thumbnail "thumbnail/longsword-thumb"
+	attributes
+		category "Medium Warship"
+		"cost" 2420000
+		"shields" 5000
+		"hull" 2800
+		"required crew" 15
+		"bunks" 27
+		"mass" 380
+		"drag" 6.5
+		"heat dissipation" .5
+		"fuel capacity" 600
+		"cargo space" 15
+		"outfit space" 290
+		"weapon capacity" 115
+		"engine capacity" 90
+		weapon
+			"blast radius" 78
+			"shield damage" 780
+			"hull damage" 390
+			"hit force" 1170
+	outfits
+		"Beam Laser" 5
+		"Anti-Missile Turret"
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile Rack" 2
+		"Sidewinder Missile" 54
+
+		"LP072a Battery Pack"
+		"S3 Thermionic"
+		"D41-HY Shield Generator"
+		"Laser Rifle" 5
+
+		"X3200 Ion Steering"
+		"X3700 Ion Thruster"
+		Hyperdrive
+
+	engine 0 105
+	gun -10.5 -105 "Beam Laser"
+	gun 0 -105 "Beam Laser"
+	gun 10.5 -105 "Beam Laser"
+	gun -5 -104 "Beam Laser"
+	gun 5 -104 "Beam Laser"
+	gun -37 62 "Sidewinder Missile Pod"
+	gun 37 62 "Sidewinder Missile Pod"
+	turret 0 27.5 "Anti-Missile Turret"
+	leak "leak" 60 60
+	leak "flame" 40 80
+	leak "big leak" 40 20
+	explode "tiny explosion" 10
+	explode "small explosion" 24
+	explode "medium explosion" 28
+	explode "large explosion" 10
+	"final explode" "final explosion medium"
+	description "The Longsword is the result of the Saber's evolution among Dirtbelt pirates. The two additional gun ports on the Longsword's aft section are primarily used for the purpose of adding long range missiles."
 
 
 
@@ -549,9 +1023,9 @@ ship "Rancor"
 		"Meteor Missile Pod" 2
 		"Meteor Missile Box" 2
 		"Meteor Missile" 44
-		"LP036a Battery Pack"
-		"nGVF-CC Fuel Cell"
+		"Modified nGVF-CC Fuel Cell"
 		"Modified D23-QP Shielding"
+		"Blaster Pistol"
 		"X1200 Ion Steering"
 		"X1700 Ion Thruster"
 		"Hyperdrive"
@@ -819,6 +1293,58 @@ ship "Starcadia"
 
 
 
+ship "Stingray"
+	sprite "ship/stingray"
+	thumbnail "thumbnail/stingray-thumb"
+	attributes
+		category "Interceptor"
+		"cost" 650000
+		"shields" 2200
+		"hull" 800
+		"required crew" 2
+		"bunks" 4
+		"mass" 150
+		"drag" 2.4
+		"heat dissipation" .8
+		"fuel capacity" 400
+		"cargo space" 20
+		"outfit space" 200
+		"weapon capacity" 50
+		"engine capacity" 60
+		weapon
+			"blast radius" 30
+			"shield damage" 300
+			"hull damage" 150
+			"hit force" 450
+	outfits
+		"Particle Cannon"
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile" 54
+		"Sidewinder Missile Rack"
+		
+		"KP-6 Photovoltaic Panel" 2
+		"nGVF-CC Fuel Cell"
+		"LP036a Battery Pack"
+		"D23-QP Shield Generator"
+		"Small Radar Jammer"
+		
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+
+	engine -13.5 21.5 
+	engine 13.5 21.5 
+	gun 0 -59 "Particle Cannon"
+	gun -13.5 -35.5 "Sidewinder Missile Pod"
+	gun 13.5 -35.5 "Sidewinder Missile Pod"
+	leak "leak" 60 50
+	explode "tiny explosion" 15
+	explode "small explosion" 5
+	"final explode" "final explosion small"
+	description "With a hull weighing in at 150 tons, Megaparsec's Stingray is among the heaviest interceptors in the galaxy. They were once deployed by Syndicate security forces to escort freighter convoys and patrol trade routes, but the Syndicate has since replaced it with the more economically friendly Wasp. While some Stingrays can still be found protecting private merchant fleets or mining asteroids, many have found their way into the hands of pirates."
+
+
+
 # Available in the south after certain missions
 ship "Striker Drone"
 	sprite "ship/striker drone"
@@ -968,8 +1494,6 @@ ship "Amalgam"
 		"LP036a Battery Pack"
 		"Liquid Metal Hull"
 		"Liquid Nitrogen Cooler"
-		"Sniper Rifle"
-		"Laser Rifle" 4
 		
 		"A370 Atomic Thruster"
 		"A375 Atomic Steering"
@@ -1189,6 +1713,7 @@ ship "Executive Guard"
 		"LP288a Battery Pack"
 		"Large Radar Jammer"
 		"Laser Rifle" 51
+		"Blaster Pistol"
 		"Liquid Helium Cooler"
 		"Luxury Accommodations"
 		"Medical Bay"
@@ -1280,7 +1805,7 @@ ship "Hipparion"
 		"KP-6 Photovoltaic Panel"
 		"LP036a Battery Pack"
 		"LP072a Battery Pack"
-		"RT-I Radiothermal"
+		"Modified RT-I Radiothermal"
 		"Modified D14-RN Shielding"
 		"Modified D23-QP Shielding"
 		"Modified D41-HY Shielding"
@@ -1299,6 +1824,7 @@ ship "Hipparion"
 		"Engineering Room"
 		"Medical Bay"
 		"Antique Rifle"
+		"Blaster Pistol" 2
 		
 		"Afterburner"
 		"X1200 Ion Steering"
@@ -1510,10 +2036,10 @@ ship "Kestrel Prototype" "Kestrel Prototype (Void Rifle)"
 
 
 # The Liberator is a unique prototype developed during the Oathbreaker reign of terror.
-
 ship "Liberator"
 	sprite "ship/liberator"
 		"delay" 2
+	thumbnail "thumbnail/liberator-thumb"
 	attributes
 		category "Heavy Warship"
 		licenses
@@ -1558,27 +2084,27 @@ ship "Liberator"
 		"Orca Plasma Steering"
 		"Hyperdrive"
 		
-	engine -26.5 178
-	engine 26.5 178
-	gun -1.5 -170.5 "Plasma Cluster Cannon"
+	engine -26 176 
+	engine 26 176 
+	gun 0 -167 "Plasma Cluster Cannon"
 		parallel
-	gun -1 -170.5 "Plasma Cluster Cannon"
+	gun -0.5 -167 "Plasma Cluster Cannon"
 		parallel
-	gun -0.5 -170.5 "Plasma Cluster Cannon"
+	gun 0.5 -167 "Plasma Cluster Cannon"
 		parallel
-	gun 0 -170.5 "Plasma Cluster Cannon"
+	gun -1 -167 "Plasma Cluster Cannon"
 		parallel
-	gun 0.5 -170.5 "Plasma Cluster Cannon"
+	gun 1 -167 "Plasma Cluster Cannon"
 		parallel
-	gun 1 -170.5 "Plasma Cluster Cannon"
+	gun -1.5 -167 "Plasma Cluster Cannon"
 		parallel
-	gun 1.5 -170.5 "Plasma Cluster Cannon"
+	gun 1.5 -167 "Plasma Cluster Cannon"
 		parallel
-	turret -27 -168 "Quad Blaster Turret"
-	turret 26.5 -168 "Heavy Anti-Missile Turret"
-	turret 0 61.5 
-	turret -39.5 114 "Heavy Anti-Missile Turret"
-	turret 39.5 114 "Quad Blaster Turret"
+	turret -39 -165 "Quad Blaster Turret"
+	turret 39 -165 "Heavy Anti-Missile Turret"
+	turret 0 65 
+	turret -39 118 "Heavy Anti-Missile Turret"
+	turret 39 118 "Quad Blaster Turret"
 	leak "leak" 40 50
 	leak "flame" 20 80
 	leak "big leak" 80 30
@@ -1591,7 +2117,6 @@ ship "Liberator"
 	description "The Liberator is a new warship that was originally designed by Southbound Shipyards to replace the Skein. Rumor has it that the project scope shifted focus during development when a ship of alien origin was discovered at the edges of the Rim. As a result, the planned fighter bays were scrapped in favor of the concentrated fire mount. This design crams all of the ship's gun ports into a single central location, allowing multiple smaller guns to emulate the effect of having a single larger one. This negatively impacts the ship's cooling efficiency and increases the amount of work maintenance crews have to put in for guns not mounted on the edge of the cluster."
 
 # The Vindicator is the Liberator in a timeline where it wasn't developed during the Oathbreaker reign of terror.
-
 ship "Liberator" "Vindicator"
 	"display name" "Vindicator"
 	description "The Vindicator is a new warship that was originally designed by Southbound Shipyards to replace the Skein. Rumor has it that the project scope shifted focus during development when a ship of alien origin was discovered at the edges of the Rim. As a result, the planned fighter bays were scrapped in favor of the concentrated fire mount. This design crams all of the ship's gun ports into a single central location, allowing multiple smaller guns to emulate the effect of having a single larger one. This negatively impacts the ship's cooling efficiency and increases the amount of work maintenance crews have to put in for guns not mounted on the edge of the cluster."
@@ -1599,59 +2124,62 @@ ship "Liberator" "Vindicator"
 
 
 # The Mastodon can be stolen in a Double Cross mission.
-
 ship "Mastodon"
 	sprite "ship/mastodon"
+	"crew" 460
 	attributes
 		category "Utility"
 		cost 27030000
-		shields 35000
-		hull 17200
-		"required crew" 140
-		"bunks" 560
-		"mass" 1735
-		"drag" 24
-		"heat dissipation" .5
+		shields 31500
+		hull 18500
+		"required crew" 180
+		"bunks" 460
+		"mass" 1776
+		"drag" 26
+		"heat dissipation" .4
 		"fuel capacity" 800
-		"cargo space" 765
-		"outfit space" 764
-		"weapon capacity" 128
-		"engine capacity" 241
+		"cargo space" 690
+		"outfit space" 763
+		"weapon capacity" 182
+		"engine capacity" 203
 		weapon
-			"blast radius" 400
-			"shield damage" 8000
-			"hull damage" 4000
-			"hit force" 12000
+			"blast radius" 500
+			"shield damage" 5000
+			"hull damage" 2500
+			"hit force" 7500
 	outfits
-		"Anti-Missile Turret" 2
-		"Antique Rifle"
-		Barracks 4
 		"Blaster Turret" 6
-		"Broadband Amplifier"
-		"Cargo Scanner"
+		"Anti-Missile Turret" 2
+		"Meteor Missile" 150
+		"Meteor Missile Box" 2
+		"Twin Meteor Launcher" 2
 		"Fission Reactor"
 		"KP-6 Photovoltaic Array"
 		"LP288a Battery Pack"
-		"Large Radar Jammer"
-		"Laser Rifle" 147
-		"Luxury Accommodations"
-		"Medical Bay"
-		"Meteor Missile" 44
-		"Meteor Missile Box" 2
-		"Meteor Missile Pod" 2
 		"Modified D14-RN Shielding"
 		"Modified D23-QP Shielding"
 		"Modified D41-HY Shielding"
-		"Modified D67-TM Shielding"
-		"Modified D94-YV Shielding"
-		"Orca Plasma Steering"
+		"D67-TM Shield Generator"
+		"D94-YV Shield Generator"
+		"Broadband Amplifier"
+		"Cargo Scanner"
+		"Engineering Room"
+		"Large Radar Jammer"
+		"Luxury Accommodations"
 		"Outfit Scanner"
+		"Outfits Expansion" 2
 		Ramscoop
-		"Scram Drive"
-		"Security Station (Staffed)" 2
 		"Small Radar Jammer"
 		"Tactical Scanner"
-		"Tyrant Plasma Thruster"
+		"Medical Bay"
+		"Antique Rifle"
+		"Blaster Pistol" 2
+		"Laser Rifle" 147
+		"Security Station (Staffed)"
+		"Volcano Afterburner"
+		"X4200 Ion Steering"
+		"X5700 Ion Thruster"
+		"Scram Drive"
 	engine -51.5 208
 		zoom .4
 	engine -15.5 208
@@ -1666,10 +2194,10 @@ ship "Mastodon"
 	"steering engine" 56.5 208
 		zoom .5
 		left
-	gun -57.5 -111 "Meteor Missile Pod"
-	gun 57.5 -111 "Meteor Missile Pod"
-	turret 24 -121.5 "Anti-Missile Turret"
-	turret -4.5 -104 "Blaster Turret"
+	gun -57.5 -111 "Twin Meteor Launcher"
+	gun 57.5 -111 "Twin Meteor Launcher"
+	turret 24 -121.5 "Blaster Turret"
+	turret -4.5 -104 "Anti-Missile Turret"
 	turret -36.5 -75.5 "Blaster Turret"
 	turret 72 -20.5 "Blaster Turret"
 	turret -36.5 21.5 "Blaster Turret"
@@ -1739,14 +2267,14 @@ ship "Parade Float"
 
 
 
-# Plexus is the predecessor to the original design of the Liberator/Vindicator
-
+# Plexus is the original design intended for the Liberator/Vindicator
 ship "Plexus"
 	plural "Plexuses"
 	sprite "ship/plexus"
 		"delay" 2
+	thumbnail "thumbnail/plexus-thumb"
 	attributes
-		category "Heavy Warship"
+		category "Utility"
 		licenses
 			"Militia"
 		"cost" 13090000
@@ -1754,12 +2282,12 @@ ship "Plexus"
 		"hull" 8100
 		"required crew" 101
 		"bunks" 147
-		"mass" 788
+		"mass" 710
 		"drag" 19.6
 		"heat dissipation" .65
 		"fuel capacity" 600
-		"cargo space" 100
-		"outfit space" 690
+		"cargo space" 110
+		"outfit space" 720
 		"weapon capacity" 275
 		"engine capacity" 190
 		weapon
@@ -1779,28 +2307,24 @@ ship "Plexus"
 		"Liquid Nitrogen Cooler"
 		"Cargo Scanner"
 		"Outfit Scanner"
-		"Outfits Expansion" 2
 		"Tactical Scanner"
-		
-		"Fragmentation Grenades" 50
-		"Laser Rifle" 100
-		"Security Station (Staffed)"
+		"Laser Rifle" 45
 		
 		"Orca Plasma Thruster"
 		"Orca Plasma Steering"
 		"Hyperdrive"
 		
-	engine -26.5 178
-	engine 26.5 178
-	turret -27 -168 "Plasma Turret"
-	turret 26.5 -168 "Heavy Anti-Missile Turret"
-	turret 0 61.5 "Plasma Turret"
-	turret -39.5 114 "Heavy Anti-Missile Turret"
-	turret 39.5 114 "Plasma Turret"
-	bay "Fighter" 0 -170
-	bay "Fighter" 0 -170
-	bay "Fighter" 0 -170
-	bay "Fighter" 0 -170
+	engine -26 176 
+	engine 26 176 
+	turret -39 -165 "Plasma Turret"
+	turret 39 -165 "Heavy Anti-Missile Turret"
+	turret 0 65 "Plasma Turret"
+	turret -39 118 "Heavy Anti-Missile Turret"
+	turret 39 118 "Plasma Turret"
+	bay "Fighter" 0 -145 
+	bay "Fighter" 0 -145 
+	bay "Fighter" 0 -145 
+	bay "Fighter" 0 -145 
 	leak "leak" 40 50
 	leak "flame" 20 80
 	leak "big leak" 80 30
@@ -1839,7 +2363,6 @@ ship "Plexus" "Plexus (Korath)"
 
 
 # Science Drones appear in or trigger Hackerz missions
-
 ship "Science Drone" "Hacker Drone"
 	sprite "ship/science drone"
 	attributes
@@ -1879,6 +2402,7 @@ ship "Science Drone" "Hacker Drone"
 # Can also be used as a timer ship.
 ship "Phantom Drone Launcher"
 	"never disabled"
+#	sprite "ship/cloaked"
 	attributes
 		"heat dissipation" 1
 		"hull" 1
@@ -1916,7 +2440,6 @@ ship "Phantom Drone Launcher" "Phantom Drone Timer"
 
 
 # The Shield Fortress is a unique ship that can be captured in an Oathbreakers mission.
-
 ship "Shield Fortress"
 	plural "Shield Fortresses"
 	sprite "ship/shield fortress"
@@ -1955,16 +2478,18 @@ ship "Shield Fortress"
 		"Hai Gorge Batteries"
 		"Ion Cannon" 4
 		"Jump Drive"
-		"Laser Rifle" 31
+		"Large Radar Jammer"
+		"Laser Rifle" 32
 		"Liquid Helium Cooler"
 		"Medical Bay"
 		"Nuclear Missile" 4
-		"Outfits Expansion" 3
+		"Outfits Expansion" 4
 		"Pug Zapper"
 		"Pulse Rifle" 75
 		"Pulse Turret" 2
 		Ramscoop
-		"Security Station (Staffed)" 2
+		"Security Station (Staffed)"
+		"Tactical Scanner"
 	engine -42.5 135
 	engine 42.5 135
 	"steering engine" -42.5 135
@@ -2010,7 +2535,7 @@ ship "Star Explorer"
 		"frame rate" 2
 		"delay" 4
 	attributes
-		category "Medium Warship"
+		category "Utility"
 		"cost" 11000000
 		"shields" 5600
 		"hull" 7000
@@ -2341,6 +2866,7 @@ ship "War Hauler"
 	outfits
 		"Anti-Missile Turret" 2
 		"Antique Rifle" 3
+		"Blaster Pistol" 6
 		"D41-HY Shield Generator" 3
 		"Energy Cannon Turret" 6
 		"Fission Reactor"
@@ -2415,65 +2941,75 @@ ship "Metropolis"
 		"cost" 27060000
 		"shields" 41300
 		"hull" 20400
-		"required crew" 168
-		"bunks" 581
-		"mass" 2221
-		"drag" 26.9
-		"heat dissipation" .5
+		"required crew" 170
+		"bunks" 580
+		"mass" 2222
+		"drag" 16.3
+		"heat dissipation" .4
 		"fuel capacity" 900
-		"cargo space" 1032
+		"cargo space" 990
 		"outfit space" 837
 		"weapon capacity" 345
 		"engine capacity" 194
 		"atmosphere scan" 100
 		weapon
-			"blast radius" 780
-			"shield damage" 7800
-			"hull damage" 3900
-			"hit force" 11700
+			"blast radius" 620
+			"shield damage" 6200
+			"hull damage" 3100
+			"hit force" 9300
 	outfits
+		"Anti-Missile Turret" 2
+		"Blaster Turret" 4
+		"Quad Blaster Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		"Heavy Rocket" 34
 		"Heavy Rocket Pod" 2
-		"Heavy Rocket" 54
-		"Heavy Rocket Rack" 5
-		"Quad Blaster Turret" 5
-		"Heavy Anti-Missile Turret" 6
-		
-		"Fusion Reactor"
-		"LP144a Battery Pack" 2
-		"Modified D94-YV Shielding"
-		"Outfits Expansion"
-		"Large Radar Jammer"
-		"Ramscoop" 1
+		"Heavy Rocket Rack" 3
+
+		"Fission Reactor"
+		"LP036a Battery Pack" 2
+		"LP072a Battery Pack"
+		"NT-200 Nucleovoltaic"
+		"S3 Thermionic"
+		"Modified D23-QP Shielding" 2
+		"S-270 Regenerator"
+		"Asteroid Scanner"
+		"Cargo Scanner"
 		"Engineering Room"
+		"Interference Plating"
+		"Large Radar Jammer"
+		"Outfit Scanner"
+		Ramscoop
+		"Small Radar Jammer"
+		"Smuggler's Hideaway"
+		"Tactical Scanner"
 		"Medical Bay"
-		"Laser Rifle" 45
-		
-		"Volcano Afterburner"
-		"X4700 Ion Thruster"
-		"X5200 Ion Steering"
-		"Hyperdrive"
-	cargo
-		"Fusion Reactor" 2
-		"LP144a Battery Pack"
-		"D14-RN Shield Generator"
-		"D41-HY Shield Generator" 2
-		"D67-TM Shield Generator"
-		"Large Radar Jammer" 2
-		"Ramscoop" 2
-		"X4700 Ion Thruster" 2
-		"X5200 Ion Steering" 2
-		"Hyperdrive" 2
+		"Security Station" 3
+		"Antique Rifle"
+		"Blaster Pistol"
+		"Sniper Rifle"
+		"Laser Rifle" 60
+
+		"Ionic Afterburner"
+		"Volcano Afterburner" 2
+		"A255 Atomic Steering"
+		"Greyhound Plasma Steering"
+		"X2200 Ion Steering"
+		"Chipmunk Plasma Thruster"
+		"A120 Atomic Thruster"
+		"X1700 Ion Thruster"
+		Hyperdrive 3
 
 	engine -12 370.5
 	engine 25.5 371
 	gun -38.5 -309 "Heavy Rocket Pod"
 	gun 42.5 -310.5 "Heavy Rocket Pod"
-	turret 21 -263.5 "Heavy Anti-Missile Turret"
-	turret -7 -244.5 "Heavy Anti-Missile Turret"
-	turret -13.5 -118.5 "Quad Blaster Turret"
-	turret 4.5 -87 "Heavy Anti-Missile Turret"
-	turret 76.5 30 "Quad Blaster Turret"
-	turret -38 57.5 "Heavy Anti-Missile Turret"
+	turret 21 -263.5 "Anti-Missile Turret"
+	turret -7 -244.5 "Anti-Missile Turret"
+	turret -13.5 -118.5 "Blaster Turret"
+	turret 4.5 -87 "Blaster Turret"
+	turret 76.5 30 "Blaster Turret"
+	turret -38 57.5 "Blaster Turret"
 	turret 39 126 "Quad Blaster Turret"
 	turret -34.5 188 "Quad Blaster Turret"
 	turret 46.5 238 "Heavy Anti-Missile Turret"
@@ -2493,10 +3029,10 @@ ship "Metropolis"
 	explode "large explosion" 135
 	explode "huge explosion" 90
 	"final explode" "final explosion large"
-	description `Among the largest models of all city ships, a Metropolis is formed through the combination of three smaller city ships. An emergency separation feature is supposed to allow the three ships to act independently. However, that feature is currently malfunctioning with this particular Metropolis ship. Perhaps one day, you will find an engineer who can figure out how to unfreeze the binding clamps without destroying the ship in the process.`
+	description `Among the largest models of all city ships, a Metropolis is formed through the combination of three smaller utility ships. An emergency separation feature is supposed to allow the three ships to act independently. However, that feature is currently malfunctioning with this particular Metropolis ship. Perhaps one day, you will find an engineer who can figure out how to unfreeze the binding clamps without destroying the ship in the process.`
 
 
-# The District, Prefecture, and Municipality ships can only be acquired by aborting final delivery of each ship during Metropolis missions.
+# The District, Prefecture, and Municipality ships are NPC escorts that appear during Metropolis missions. Capturing them fails the mission.
 
 ship "District"
 	sprite "ship/metro district"
@@ -2506,12 +3042,12 @@ ship "District"
 		"shields" 14400
 		"hull" 7100
 		"required crew" 59
-		"bunks" 203
+		"bunks" 202
 		"mass" 775
 		"drag" 13.3
 		"heat dissipation" .4
-		"fuel capacity" 600
-		"cargo space" 348
+		"fuel capacity" 300
+		"cargo space" 334
 		"outfit space" 573
 		"weapon capacity" 184
 		"engine capacity" 194
@@ -2521,32 +3057,28 @@ ship "District"
 			"shield damage" 2600
 			"hull damage" 1300
 			"hit force" 3900
-
 	outfits
-		"Quad Blaster Turret" 3
 		"Heavy Anti-Missile Turret" 2
-		
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"D67-TM Shield Generator"
-		"D14-RN Shield Generator"
-		"Outfits Expansion"
-		"Large Radar Jammer"
-		"Ramscoop"
-		"Laser Rifle" 15
-		"Engineering Room"
+		"Quad Blaster Turret" 3
 
-		"Volcano Afterburner"
-		"X4700 Ion Thruster"
-		"X5200 Ion Steering"
-		"Hyperdrive"
-		
+		"Fission Reactor"
+		"LP072a Battery Pack"
+		"S-270 Regenerator"
+		"Engineering Room"
+		"Security Station"
+		"Blaster Pistol"
+		"Laser Rifle" 20
+
+		"Ionic Afterburner"
+		"X1700 Ion Thruster"
+		"X2200 Ion Steering"
+		Hyperdrive
 	engine -23 144.5
 	engine 14 144.5
 	turret 28 -99.5 "Quad Blaster Turret"
 	turret -45.5 -37 "Quad Blaster Turret"
-	turret 34.5 12.5 "Heavy Anti-Missile Turret" 2
-	turret -25.5 59 "Heavy Anti-Missile Turret" 2
+	turret 34.5 12.5 "Heavy Anti-Missile Turret"
+	turret -25.5 59 "Heavy Anti-Missile Turret"
 	turret 27.5 88.5 "Quad Blaster Turret"
 	bay "Fighter" -5.5 -3.5 over
 	leak "leak" 30 50
@@ -2557,8 +3089,7 @@ ship "District"
 	explode "large explosion" 45
 	explode "huge explosion" 30
 	"final explode" "final explosion large"
-	description "The District ship comprises the aft portion of a Metropolis ship. It features the most outfit and cargo space of the three sections as well as the most weapons. While it does not have a proper fighter bay, a small landing pad on the roof is outfitted with a docking port and clamps, allowing a support fighter to latch onto its back. The afterburner provides additional thrust to jumpstart movement for the bulk of a Metropolis ship in its combined form."
-
+	description "The District ship comprises the aft portion of a Metropolis ship. It features the most outfit and cargo space of the three sections as well as the most weapons support. While it does not have a proper fighter bay, a small landing pad on the roof is outfitted with a docking port and clamps, allowing a support fighter to latch onto its back."
 
 ship "Prefecture"
 	sprite "ship/metro prefecture"
@@ -2569,11 +3100,11 @@ ship "Prefecture"
 		"hull" 6800
 		"required crew" 56
 		"bunks" 194
-		"mass" 741
+		"mass" 742
 		"drag" 12.7
 		"heat dissipation" .4
-		"fuel capacity" 600
-		"cargo space" 344
+		"fuel capacity" 300
+		"cargo space" 330
 		"outfit space" 543
 		"weapon capacity" 147
 		"engine capacity" 179
@@ -2583,29 +3114,29 @@ ship "Prefecture"
 			"shield damage" 2600
 			"hull damage" 1300
 			"hit force" 3900
-
 	outfits
-		"Quad Blaster Turret" 2
-		"Heavy Anti-Missile Turret" 2
-		
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"D41-HY Shield Generator" 2
+		"Quad Blaster Turret" 4
+
+		"LP036a Battery Pack"
+		"S3 Thermionic"
+		"Modified D23-QP Shielding"
 		"Large Radar Jammer"
-		"Ramscoop"
 		"Medical Bay"
-		"Laser Rifle" 15
-		
-		"X4700 Ion Thruster"
-		"X5200 Ion Steering"
-		"Hyperdrive"
-		
+		"Security Station"
+		"Antique Rifle"
+		"Laser Rifle" 20
+
+		"Volcano Afterburner"
+		"Chipmunk Plasma Thruster"
+		"Greyhound Plasma Steering"
+		Hyperdrive
+
 	engine -10 133.5
 	engine 27.5 133.5
-	turret -11.5 -108.5 "Quad Blaster Turret"
-	turret 6.5 -77.5 "Heavy Anti-Missile Turret"
-	turret 78 41 "Quad Blaster Turret"
-	turret -37 67.5 "Heavy Anti-Missile Turret"
+	turret -11.5 -108.5
+	turret 6.5 -77.5
+	turret 78 41
+	turret -37 67.5
 	bay "Fighter" -64 -2
 	bay "Fighter" 34 -51
 	leak "leak" 30 50
@@ -2616,7 +3147,7 @@ ship "Prefecture"
 	explode "large explosion" 45
 	explode "huge explosion" 30
 	"final explode" "final explosion large"
-	description "The Prefecture comprises the center portion of a Metropolis ship. It includes two fighter bays along with a good portion of cargo and outfit space. Four turrets provide a mix of offense and defense."
+	description "The Prefecture comprises the center portion of a Metropolis ship. It includes two fighter bays along with a good portion of cargo and outfit space. Four turrets provide a platform for offensive weaponry."
 
 ship "Municipality"
 	sprite "ship/metro municipality"
@@ -2630,8 +3161,8 @@ ship "Municipality"
 		"mass" 705
 		"drag" 12.1
 		"heat dissipation" .4
-		"fuel capacity" 600
-		"cargo space" 340
+		"fuel capacity" 300
+		"cargo space" 326
 		"outfit space" 523
 		"weapon capacity" 114
 		"engine capacity" 179
@@ -2643,28 +3174,37 @@ ship "Municipality"
 			"hull damage" 1300
 			"hit force" 3900
 	outfits
+		"Anti-Missile Turret" 2
+		"Heavy Rocket" 34
 		"Heavy Rocket Pod" 2
-		"Heavy Rocket" 54
-		"Heavy Rocket Rack" 5
-		"Heavy Anti-Missile Turret" 2
-		
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"Modified D94-YV Shielding"
-		"Large Radar Jammer"
-		"Ramscoop"
-		"Laser Rifle" 15
-		
-		"X4700 Ion Thruster"
-		"X5200 Ion Steering"
-		"Hyperdrive"
-		
+		"Heavy Rocket Rack" 3
+
+		"LP036a Battery Pack"
+		"NT-200 Nucleovoltaic"
+		"Modified D23-QP Shielding"
+		"Asteroid Scanner"
+		"Cargo Scanner"
+		"Interference Plating"
+		"Outfit Scanner"
+		Ramscoop
+		"Small Radar Jammer"
+		"Smuggler's Hideaway"
+		"Tactical Scanner"
+		"Security Station"
+		"Sniper Rifle"
+		"Laser Rifle" 20
+
+		"Volcano Afterburner"
+		"A120 Atomic Thruster"
+		"A255 Atomic Steering"
+		Hyperdrive
+
 	engine -13 131.5
 	engine 24 131
 	gun -36.5 -71 "Heavy Rocket Pod"
 	gun 44 -71.5 "Heavy Rocket Pod"
-	turret 22.5 -25.5 "Heavy Anti-Missile Turret"
-	turret -5.5 -7 "Heavy Anti-Missile Turret"
+	turret 22.5 -25.5 "Anti-Missile Turret"
+	turret -5.5 -7 "Anti-Missile Turret"
 	bay "Fighter" 8 41.5
 	bay "Drone" -46 56.5
 	bay "Drone" -47 79

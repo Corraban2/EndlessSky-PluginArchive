@@ -1097,7 +1097,7 @@ mission "Gathering Specimens: Remnant Ionic Leech"
 	invisible
 	source Viminal
 	to offer
-		has "Gathering Specimens: Ionic Leech: active"
+		has "Gathering Specimens: Remnant: active"
 		has "Remnant: Face to Maw 2: done"
 	on offer
 		require "Leech Specimen"
@@ -1235,11 +1235,12 @@ mission "Gathering Specimens: Remnant Research"
 		has "Gathering Specimens: Remnant Nova Firefly: declined"
 		has "Gathering Specimens: Remnant Star Gazer: declined"
 	on offer
-		dialog `You find Taely preparing to board a ship. She signs, "Your contributions to the junior engineering research project have caused quite a stir. I'm off to attend another meeting regarding some new development based on it. We might have some results soon."`
-	on accept
 		event "Gathering Specimens: Remnant Research" 14
 		fail "Gathering Specimens: Remnant"
-		fail
+		conversation
+			scene "scene/scene-specimens"
+			`You find Taely preparing to board a ship. She signs, "Your contributions to the junior engineering research project have caused quite a stir. I'm off to attend another meeting regarding some new development based on it. We might have some results soon."`
+				decline
 
 
 mission "Gathering Specimens: Remnant B"
@@ -1455,11 +1456,12 @@ mission "Gathering Specimens: Remnant Research B"
 		has "Gathering Specimens: Remnant Nova Firefly B: declined"
 		has "Gathering Specimens: Remnant Star Gazer B: declined"
 	on offer
-		dialog `You find Prefect Chilia preparing to board a ship. He sings, "Your contributions to the junior weapons research project have caused quite a stir. I'm off to attend another meeting regarding some new development based on it. We might have some results soon."`
-	on accept
 		event "Gathering Specimens: Remnant Research" 14
 		fail "Gathering Specimens: Remnant B"
-		fail
+		conversation
+			scene "scene/scene-specimens"
+			`You find Prefect Chilia preparing to board a ship. He sings, "Your contributions to the junior weapons research project have caused quite a stir. I'm off to attend another meeting regarding some new development based on it. We might have some results soon."`
+				decline
 
 event "Gathering Specimens: Remnant Research"
 
@@ -1507,18 +1509,6 @@ mission "Gathering Specimens: Remnant Conclusion"
 			scene "scene/scene-raptorweapons"
 			`	Prefect Chilia arrives with a team ready to install the weapons systems. As you watch them unload the crates, you wonder how the different specimens contributed to each weapon's design.`
 			`	It doesn't take long for the team to finish. "The Raptor is ready for testing. May the Embers burn bright for you, captain!" he sings.`
-			
-ship "Raptor Prototype" "Raptor Prototype (unarmed)"
-	outfits
-		"Aeon Cell"
-		"Crystal Capacitor" 2
-		"Thermoelectric Cooler" 3
-		"Quantum Key Stone"
-		"Tuning Rifle" 15
-
-		"Smelter-Class Thruster"
-		"Smelter-Class Steering"
-		"Scram Drive"
 
 
 
@@ -1546,7 +1536,9 @@ mission "Gathering Specimens: Wanderer Ionic Research 1"
 		outfit "Leech Specimen" -1
 		clear "Gathering Specimens: Ionic Leech: offered"
 		event "Storm Seeker Reborn" 30
-		dialog `Sobari Tele'ek thanks you for delivering the specimen.`
+		conversation
+			scene "outfit/ionic leech specimen"
+			`Sobari Tele'ek thanks you for delivering the specimen.`
 
 event "Storm Seeker Reborn"
 
@@ -1578,38 +1570,13 @@ mission "Gathering Specimens: Wanderer Ionic Research 3"
 			choice
 				`	(Study the new ship.)`
 			
-			scene "thumbnail/storm seeker reborn-thumb"			
+			scene "thumbnail/storm seeker reborn-thumb"
 			`	"The Storm Seeker, [reborn, remade]. This is the [conclusion, result] of the ionic [research, investigation] you [helped, aided] Sobari Tele'ek with. It's an [ancient, historical] design updated with an ionic [resistant, protective] hull. Unfortunately, with the mass [construction, production] of the Hurricanes, the Wanderer leaders decided that the Storm Seeker won't be [desireable, necessary]. Only this experimental [exam, test] model was [created, produced]. Rather than let it be [trashed, scrapped], Sobari Tele'ek has decided to let you have it. This [vessel, ship] could not exist without your [support, contribution]."`
 			`	You thank the Wanderers for the gift given in recognition of you support and promise to put it to good use.`
 				accept
 	on accept
 		give ship "Storm Seeker Reborn" "Storm Seeker"
 		fail
-
-ship "Storm Seeker" "Storm Seeker Reborn"
-	sprite "ship/storm seeker reborn"
-	thumbnail "thumbnail/storm seeker reborn-thumb"
-	add attributes
-		"integrated systems" -1
-	outfits
-		"Sunbeam" 6
-		"White Sun Reactor"
-		"Bright Cloud Shielding"
-		"Dark Storm Shielding"
-		"Wanderer Ramscoop"
-		"Anti-Ionic Plating"
-		"Type 1 Radiant Thruster"
-		"Type 2 Radiant Thruster"
-		"Type 3 Radiant Steering"
-		"Hyperdrive"
-	engine -33 85.5
-	engine 30.5 85.5
-	gun -29.5 -37.5
-	gun 29 -37.5
-	gun -65 -22.5
-	gun 63 -22.5
-	gun -58 -15.5
-	gun 56.5 -15.5
 
 
 

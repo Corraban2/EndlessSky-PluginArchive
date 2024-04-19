@@ -651,6 +651,41 @@ mission "Holiday: Saint Nick"
 
 
 
+mission "Stranded In Paradise: Erin Epilogue"
+	job
+	name "Passenger transport to <planet>"
+	description "Bring <fare> to <destination>. Payment is <payment>."
+	passengers 1
+	to offer
+		random < 70
+		has "Stranded In Paradise 2: offered"
+		has "free worlds plot completed"
+	source
+		attributes "rim" "south"
+		not government "Pirate"
+	destination "Winter"
+	on visit
+		dialog phrase "generic passenger on visit"
+	on accept
+		conversation
+			`This client looks somewhat familiar, but you're not sure where you've seen her before. After studying your face for a moment she asks,"Are you Captain <last>?"`
+			choice
+				`	"That's me. But have we met before?"`
+			`	"I'm Erin. Erin Burnbeck! I'm pretty sure you're the same captain that helped my family get back home after the war started. Those were scary times..."`
+			`	You remember transporting the Burnbecks back during those early days of the war. Shirley and Darren were worried for their family back then. But seeing Erin all grown up now is a reminder that a lot has happened since then.`
+			choice
+				`	"So you're headed to <destination>?"`
+			`	"Yup!" She beams with pride, "I got a teaching job at the Conservatory there." Ijs and Katya set up that institution.`
+			choice
+				`	"Congratulations! I know some of the people in charge there. I'm sure you'll fare well."`
+			`	"I sure hope so!" Erin brings her luggage aboard and you show her to her bunk.`
+				accept
+	on complete
+		payment
+		payment 500
+		dialog "Erin pays you <payment> after you arrive at <planet>. She says farewell and you wish her luck with her new job at the Conservatory."
+
+
 
 ##########################
 # Jobs that repeat
@@ -758,7 +793,7 @@ mission "Bounty Hunting (Big, Hidden Dirtbelt)"
 
 mission "Bounty Hunting (Secret Prototype)"
 	name "Stolen prototype near <system>"
-	description "A heavy warship known as the <npc> has stolen a secret prototype near the <system> system. Recover the cargo and return it to <planet> for payment (<payment>)"
+	description "A heavy warship known as the <npc> has stolen a secret prototype near the <system> system. Disable the ship and recover the prototype. Then return it to <planet> for payment (<payment>)"
 	repeat
 	job
 	deadline 30
@@ -792,7 +827,7 @@ mission "Bounty Hunting (Secret Prototype)"
 	on fail
 		dialog `[MISSION FAILED]: You failed to recover the Secret Prototype before destroying the <npc>.`
 	on visit
-		dialog "You still havn't recovered Secret Prototype from the <npc>."
+		dialog "You still havn't disabled the <npc> and recovered the Secret Prototype."
 	on complete
 		outfit "Secret Prototype" -1
 		payment 1500000
@@ -826,8 +861,10 @@ mission "Bounty Hunting (Smuggler)"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		attributes "rim" "south" "north" "dirt belt" "core" "frontier"
 		distance 2 6
+	on accept
+		"reputation: Bounty (Disguised)" >?= 1
 	npc board
-		government "Bounty"
+		government "Bounty (Disguised)"
 		personality timid fleeing uninterested entering target
 		fleet
 			names "civilian"
@@ -838,8 +875,13 @@ mission "Bounty Hunting (Smuggler)"
 				"Modified Argosy (Shields Smuggler)"
 			variant
 				"Modified Firebird (Smuggler)"
-		dialog "You blast your way onto the ship and confine the captain to your ship's brig. Time to deliver them to <planet>."
+			variant
+				"Modified Enforcer (Smuggler)"
+		on board
+			"reputation: Bounty (Disguised)" >?= 1
+			dialog "You blast your way onto the ship and confine the captain to your ship's brig. Time to deliver them to <planet>."
 	on complete
+		"reputation: Bounty (Disguised)" >?= 1
 		payment 350000
 		dialog "The government of <planet> gratefully pays you <payment> for helping to stop the flow of illegal smuggling through their region of space."
 
@@ -1411,6 +1453,8 @@ mission "Militia: Joint Operations (Sparrow)"
 		conversation
 			branch assist
 				random < 80
+			action
+				fail "Militia: Joint Operations (Sparrow)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1419,14 +1463,14 @@ mission "Militia: Joint Operations (Sparrow)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia small"
 			variant
@@ -1458,6 +1502,8 @@ mission "Militia: Joint Operations (Hawk)"
 		conversation
 			branch assist
 				random < 80
+			action
+				fail "Militia: Joint Operations (Hawk)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1466,14 +1512,14 @@ mission "Militia: Joint Operations (Hawk)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia small"
 			variant
@@ -1507,6 +1553,8 @@ mission "Militia: Joint Operations (Fury)"
 		conversation
 			branch assist
 				random < 80
+			action
+				fail "Militia: Joint Operations (Fury)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1515,14 +1563,14 @@ mission "Militia: Joint Operations (Fury)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia small"
 			variant
@@ -1557,6 +1605,8 @@ mission "Militia: Joint Operations (Argosy)"
 		conversation
 			branch assist
 				random < 70
+			action
+				fail "Militia: Joint Operations (Argosy)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1565,14 +1615,14 @@ mission "Militia: Joint Operations (Argosy)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia small"
 			variant
@@ -1607,11 +1657,13 @@ mission "Militia: Joint Operations (Osprey)"
 	to offer
 		has "license: Militia"
 		"reputation: Militia" >= 10
-		random < 30
+		random < 20
 	on accept
 		conversation
 			branch assist
 				random < 70
+			action
+				fail "Militia: Joint Operations (Osprey)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1620,14 +1672,14 @@ mission "Militia: Joint Operations (Osprey)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia capital"
 			variant
@@ -1663,6 +1715,8 @@ mission "Militia: Joint Operations (Bastion)"
 		conversation
 			branch assist
 				random < 60
+			action
+				fail "Militia: Joint Operations (Bastion)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1671,14 +1725,14 @@ mission "Militia: Joint Operations (Bastion)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia capital"
 			variant
@@ -1714,6 +1768,8 @@ mission "Militia: Joint Operations (Falcon)"
 		conversation
 			branch assist
 				random < 50
+			action
+				fail "Militia: Joint Operations (Falcon)"
 			`You send a request for reinforcements to the <npc>. The reply is short: "Negative, Captain <last>. We are under strict orders not to abandon our position. <npc>, out."`
 				defer
 			label assist
@@ -1722,14 +1778,14 @@ mission "Militia: Joint Operations (Falcon)"
 				accept
 	npc
 		government "Pirate"
-		personality entering plunders harvests
+		personality waiting plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
 		government "Militia"
 		system
 			distance 2
-		personality escort heroic
+		personality escort entering heroic
 		fleet
 			names "militia capital"
 			variant
@@ -2460,6 +2516,50 @@ mission "Navy: Captured Ship"
 
 
 
+mission "Quicksilver Mixup (Midnight Job) [1]"
+	job
+	repeat
+	deadline 20
+	name "Misposted Mail Delivery"
+	description "Deliver <tons> of misposted mail from <origin> to <planet> and then come back by <date> with the return shipment. You will be paid <payment> after you return from <planet>."
+	source "Silver"
+	stopover "Quicksilver"
+	cargo "misposted mail" 25 40
+	to offer
+		has "Quicksilver Mixup 3: done"
+		not "Quicksilver Mixup (Midnight Job) [2]: active"
+		random < "day"
+	on stopover
+		dialog `You contact the spaceport authorities and they direct you to the respective landing pad, where the post office staff is already waiting. They transfer the cargo and you prepare to head back to <origin>.`
+	on visit
+		dialog `You have reached <planet>, but your escort carrying the misposted mail has not arrived. Better depart and wait for your escorts to arrive in this star system.`
+	on complete
+		payment 100000
+		dialog `The postmaster's office thanks you for handling the misposted mail before handing you the credit chip for payment.`
+
+mission "Quicksilver Mixup (Midnight Job) [2]"
+	job
+	repeat
+	deadline 20
+	name "Misposted Mail Delivery"
+	description "Deliver <tons> of misposted mail from <origin> to <planet> and then come back by <date> with the return shipment. You will be paid <payment> after you return from <planet>."
+	source "Quicksilver"
+	stopover "Silver"
+	cargo "misposted mail" 25 40
+	to offer
+		has "Quicksilver Mixup 3: done"
+		not "Quicksilver Mixup (Midnight Job) [1]: active"
+		random < ( 31 - "day" )
+	on stopover
+		dialog `You contact the spaceport authorities and they direct you to the respective landing pad, where the post office staff is already waiting. They transfer the cargo and you prepare to head back to <origin>.`
+	on visit
+		dialog `You have reached <planet>, but your escort carrying the misposted mail has not arrived. Better depart and wait for your escorts to arrive in this star system.`
+	on complete
+		payment 100000
+		dialog `The postmaster's office thanks you for handling the misposted mail before handing you the credit chip for payment.`
+
+
+
 mission "Raider Bounty"
 	job
 	repeat
@@ -2599,12 +2699,12 @@ mission "Sketchy Cargo [Geminus]"
 	description "Deliver <tons> of cargo to <destination> by <date>. Payment is <payment>."
 	cargo "unlabeled cargo" 25 3 .05
 	to offer
-		random < 15
 		or
 			"year" < 3014
 			and
 				"year" = 3014
 				"month" < 6
+		random < 15
 	source
 		attributes "core"
 		attributes "frontier"
@@ -2626,12 +2726,12 @@ mission "Sketchy Cargo [Martini]"
 	description "Deliver <tons> of cargo to <destination> by <date>. Payment is <payment>."
 	cargo "unlabeled cargo" 25 3 .05
 	to offer
-		random < 15
 		or
 			"year" < 3014
 			and
 				"year" = 3014
 				"month" < 6
+		random < 15
 	source
 		attributes "core"
 		attributes "frontier"
@@ -2760,23 +2860,35 @@ mission "Stealing From Rival Smugglers"
 		"combat rating" > 200
 	source
 		government "Pirate"
-	cargo "Smuggled Cargo" 1
+	on accept
+		"reputation: Bounty (Disguised)" >?= 1
 	npc board
-		government "Bounty"
+		government "Bounty (Disguised)"
 		personality timid fleeing uninterested entering target
 		fleet
 			names "civilian"
 			outfitters "Contraband"
 			variant
-				"Modified Clipper (Smuggler)"
+				"Modified Clipper (Smuggled Cargo)"
 			variant
-				"Modified Argosy (Shields Smuggler)"
+				"Modified Argosy (Smuggled Cargo)"
 			variant
-				"Modified Firebird (Smuggler)"
-		dialog "You blast your way onto the ship and steal the smuggled cargo. Deliver it to <planet>."
+				"Modified Firebird (Smuggled Cargo)"
+			variant
+				"Modified Enforcer (Smuggled Cargo)"
+		dialog "Take the Smuggled Cargo from the <npc>'s cargo. Then deliver it to <planet>."
 	on complete
+		"reputation: Bounty (Disguised)" >?= 1
+		outfit "Smuggled Cargo" -1
 		payment 350000
 		dialog "The pirates of <planet> take the smuggled cargo from your cargo hold and pay you <payment>."
+
+outfit "Smuggled Cargo"
+	category "Special"
+	cost 0
+	thumbnail "outfit/unknown"
+	"mass" 1
+	description "Cargo stolen from a smuggler which has caught the interest of a pirate warlord."
 
 
 
@@ -2820,12 +2932,12 @@ mission "Syndicate Uranium Mining [medium]"
 		attributes outfitter
 	to offer
 		not "event: war begins"
-		random < 2
 		or
 			"year" < 3014
 			and
 				"year" = 3014
 				"month" < 5
+		random < 2
 	on complete
 		"mining jobs done" ++
 		outfit "Uranium" -20
@@ -2869,7 +2981,7 @@ mission "Pirate Sabotage: Shield Suppressor (Republic)"
 	name "Pirate Sabotage"
 	description "The <npc> has been harassing pirates near <system>. Sneak a Shield Suppressor onto the ship to sabotage their defenses. Return to <planet> for payment. (<payment>)."
 	source
-		attributes "north pirate" "dirtbelt pirate"
+		attributes "north pirate" "dirt belt pirate"
 		not attributes uninhabited
 	to offer
 		"reputation: Republic" > 0

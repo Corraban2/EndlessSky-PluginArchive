@@ -70,7 +70,8 @@ outfit "Energy Absorber?"
 		"fuel damage" 6
 		"shield damage" 12
 		"hull damage" 1
-		"disruption damage" 1
+		"disruption damage" .12
+		"discharge damage" .24
 
 
 
@@ -81,7 +82,7 @@ ship "Blight Shadow"
 	"never disabled"
 	attributes
 		"automaton" 1
-		category "Fighter"
+		category "Light Warship"
 		"shields" 1800
 		"hull" 3600
 		"crew equivalent" 6
@@ -97,8 +98,8 @@ ship "Blight Shadow"
 		"shield generation" 1
 		"shield energy" 1
 		"depleted shield delay" 200
-		"hull repair rate" 2
-		"hull protection" 1
+		"hull repair rate" 3
+		"hull protection" 2
 		"corrosion protection" 3
 		"corrosion resistance" 1
 		"heat protection" 1
@@ -123,7 +124,8 @@ ship "Blight Shadow"
 		"cooling energy" -1
 		weapon
 			"blast radius" 50
-			"corrosion damage" 2.7
+			"discharge damage" 5
+			"corrosion damage" 2.5
 			"hit force" -400
 	outfits
 		"Energy Absorber?" 1
@@ -132,20 +134,6 @@ ship "Blight Shadow"
 	explode "green blood" 25
 	"final explode" "green blood"
 	description "An invasive species from beyond our galaxy. They primarily survive by absorbing various forms of energy."
-
-
-ship "Blight Shadow" "Blight Hatchling"
-	"never disabled"
-	add attributes
-		"shields" -1800
-		"shield generation" -1
-		"shield energy" -1
-		"depleted shield delay" -200
-		"hull repair rate" 1
-		"hull energy" .5
-		"hull protection" -0.5
-		"active cooling" -0.06
-		"cooling energy" 0.5
 
 
 fleet "Small Blight Shadow"
@@ -181,6 +169,69 @@ fleet "Large Blight Shadow"
 	variant 5
 		"Blight Shadow" 12
 
+
+
+ship "Blight Hatchling"
+	noun "creature"
+	sprite "ship/blight shadow/blight shadow"
+		"rewind"
+		"scale" .5
+	"never disabled"
+	attributes
+		"automaton" 1
+		category "Fighter"
+		"shields" 900
+		"hull" 1800
+		"crew equivalent" 3
+		"mass" 115
+		"drag" 2.15
+		"heat dissipation" 1.3
+		"cargo space" 0
+		"thrust" 24
+		"thrusting energy" .1
+		"reverse thrust" 36
+		"reverse thrusting energy" .1
+		"turn" 800
+		"shield generation" 0.5
+		"shield energy" 1
+		"depleted shield delay" 200
+		"hull repair rate" 2
+		"hull energy" .5
+		"hull protection" 1
+		"corrosion protection" 3
+		"corrosion resistance" 1
+		"heat protection" 1
+		"heat resistance" 3
+		"scramble protection" 3
+		"scramble resistance" 1
+		"energy capacity" 1000
+		"fuel capacity" 600
+		"cloak" .01
+		"cloaking energy" .2
+		"cloaking fuel" .1
+		"inscrutable" 1
+		"gaslining" 1
+		"jump drive" 1
+		"jump speed" 1
+		"jump effect" "jump drive black"
+		"jump in sound" "jump in red"
+		"jump out sound" "jump out red"
+		"ramscoop" 1
+		"solar collection" 2
+		"active cooling" 0.6
+		"cooling energy" -0.5
+		weapon
+			"blast radius" 25
+			"discharge damage" 2.5
+			"corrosion damage" 1.25
+			"hit force" -200
+	outfits
+		"Energy Absorber?" 1
+	gun 0 -8 "Energy Absorber?"
+	leak "green blood" 10 15
+	explode "green blood" 15
+	"final explode" "green blood"
+	description "A recently hatched Blight Shadow."
 
 
 fleet "Small Blight Hatchling"
@@ -659,6 +710,7 @@ fleet "Infested Scrap"
 	names "blight shadow"
 	government "Invasive Predator"
 	cargo 6
+	commodities "Metal" "Heavy Metals" "Electronics"
 	outfitters "Korath Basics"
 	personality disables unconstrained mute
 	variant 6
@@ -696,7 +748,7 @@ ship "Blight Mutation"
 	"never disabled"
 	attributes
 		"automaton" 1
-		category "Light Warship"
+		category "Medium Warship"
 		"shields" 3600
 		"hull" 7200
 		"crew equivalent" 12
@@ -712,8 +764,8 @@ ship "Blight Mutation"
 		"shield generation" 2
 		"shield energy" 2
 		"depleted shield delay" 200
-		"hull repair rate" 3
-		"hull protection" 1
+		"hull repair rate" 4
+		"hull protection" 2
 		"corrosion protection" 3
 		"corrosion resistance" 1
 		"heat protection" 1
@@ -738,8 +790,9 @@ ship "Blight Mutation"
 		"cooling energy" -2
 		weapon
 			"blast radius" 100
-			"corrosion damage" 5.4
-			"hit force" -810
+			"discharge damage" 10
+			"corrosion damage" 5
+			"hit force" -800
 	outfits
 		"Energy Drainer?"
 		"Blight Defense?"
@@ -772,7 +825,8 @@ outfit "Energy Drainer?"
 		"fuel damage" 36
 		"shield damage" 36
 		"hull damage" 6
-		"disruption damage" 6
+		"disruption damage" .36
+		"discharge damage" .72
 
 
 effect "energy drainer impact"
@@ -868,8 +922,8 @@ ship "Blight Horror"
 		"shield generation" 4
 		"shield energy" 4
 		"depleted shield delay" 200
-		"hull repair rate" 4
-		"hull protection" 1
+		"hull repair rate" 5
+		"hull protection" 2
 		"corrosion protection" 3
 		"corrosion resistance" 1
 		"heat protection" 1
@@ -893,9 +947,10 @@ ship "Blight Horror"
 		"active cooling" 0.48
 		"cooling energy" -4
 		weapon
-			"blast radius" 210
-			"corrosion damage" 10.8
-			"hit force" -1620
+			"blast radius" 200
+			"discharge damage" 20
+			"corrosion damage" 10
+			"hit force" -1600
 	outfits
 		"Energy Absorber?" 2
 		"Energy Drainer?"
@@ -929,7 +984,7 @@ outfit "Blood Lightning?"
 		icon "icon/blightning"
 		"hit effect" "blood lightning impact"
 		"fire effect" "blood sparks"
-		"target effect" "blood sparks"
+		"target effect" "blood sparks" 60
 		"inaccuracy" .3
 		"turret turn" 180
 		"velocity" 320
@@ -939,7 +994,7 @@ outfit "Blood Lightning?"
 		"energy damage" -3
 		"shield damage" 8.7
 		"hull damage" 11.1
-		"scrambling damage" 1
+		"scrambling damage" .2
 	description "The red lightning generated from this organ will slightly recharge the batteries of a ship struck by it. This is accompanied by a weapon jamming effect similar to, but different from, ionization."
 
 
@@ -953,16 +1008,15 @@ effect "blood sparks"
 	"random spin" 10
 	"random velocity" 1
 
-
 effect "blood lightning impact"
 	sprite "effect/blood spark"
 		"no repeat"
 		"frame rate" 30
 	sound "ion impact"
-	"lifetime" 9
+	"lifetime" 1
 	"random angle" 360
 	"random spin" 30
-	"random velocity" 2
+	"random velocity" 1
 	"velocity scale" .05
 
 
@@ -1015,8 +1069,8 @@ ship "Blight Terror"
 		"shield generation" 4
 		"shield energy" 4
 		"depleted shield delay" 200
-		"hull repair rate" 4
-		"hull protection" 1
+		"hull repair rate" 5
+		"hull protection" 2
 		"corrosion protection" 3
 		"corrosion resistance" 1
 		"heat protection" 1
@@ -1041,8 +1095,9 @@ ship "Blight Terror"
 		"cooling energy" -4
 		weapon
 			"blast radius" 430
-			"corrosion damage" 21.6
-			"hit force" -3240
+			"discharge damage" 43
+			"corrosion damage" 21.5
+			"hit force" -3200
 	outfits
 		"Energy Absorber?" 4
 		"Energy Drainer?"

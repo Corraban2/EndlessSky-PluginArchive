@@ -29,11 +29,13 @@ event "midnight earth retirement inheritance timer"
 mission "Midnight Earth Retirement Inheritance"
 	landing
 	deadline
+	deadline 1
 	name "Funeral on <planet>"
 	description "Travel to <destination> by <date> and participate in the funeral of Charles, who you previously transported to <planet> for retirement."
 	source
 		attributes "near earth"
 		attributes spaceport
+		not planet Earth
 	destination Earth
 	to offer
 		has "event: midnight earth retirement inheritance timer"
@@ -105,6 +107,7 @@ mission "Titania: Syndicate Stock Vote"
 		government "Syndicate"
 	to offer
 		has "main plot completed"
+		has "outfit (all): Syndicate Stock (Preferred)"
 		random < 70
 	on offer
 		conversation
@@ -129,7 +132,6 @@ mission "Titania: Syndicate Stock Vote"
 			scene "outfit/syndicate stock p"
 			action
 				event "titania: syndicate bonds issued"
-				event "titania: syndicate bonds matured" 3650
 			`	You vote to fund the creation of a new space station in the Eteron system through the use of corporate bonds.`
 				decline
 			label no
@@ -141,33 +143,7 @@ event "titania: syndicate bonds issued"
 	outfitter "Syndicate Stock"
 		add "Syndicate Bond (Titania)"
 
-event "titania: syndicate bonds matured"
 
-mission "Titania: Syndicate Bond Mature"
-	outfitter
-	minor
-	invisible
-	repeat
-	source
-		government "Syndicate"
-	to offer
-		has "event: titania: syndicate bonds matured"
-		random < 70
-	on offer
-		require "Syndicate Bond (Titania)" 1
-		conversation
-			scene "outfit/syndicate bond"
-			`One of you Syndicate Bonds has reached maturity. Reclaim the principal plus interest? (1,500,000,000 credits)`
-			choice
-				`	(Reclaim your credits.)`
-				`	(Not now.)`
-					defer
-			scene "outfit/syndicate bond"
-			action
-				outfit "Syndicate Bond (Titania)" -1
-				payment 1500000000
-			`	You trade in your bond, adding 1,500,000,000 credits into your account.`
-				decline
 
 mission "Titania: Syndicate Republic Bribery"
 	minor
@@ -217,15 +193,31 @@ mission "Titania: Syndicate Republic Bribery"
 			label end
 			`	"You've made the right choice." The man heads towards the <ship>'s landing pad...`
 				accept
+	on abort
+		event "titania bond cancel"
+		event "titania: syndicate bonds matured" 3600
+		"reputation: Syndicate" -= 1000
+		dialog "You've become an enemy of the Syndicate after pushing their agent out of your airlock."
+	on fail
+		event "titania bond cancel"
+		event "titania: syndicate bonds matured" 3600
+		"reputation: Syndicate" -= 1000
+		dialog "You've become an enemy of the Syndicate after their agent died while riding on one of your ships."
 	on complete
 		event "titania syndicate enters eteron" 30
 		event "titania station construction a" 90
 		event "titania station construction b" 180
 		event "titania station construction c" 270
 		event "titania station construction d" 360
+		event "titania: syndicate bonds matured" 3600
+		set "titania docking bay patched"
 		"reputation: Syndicate" += 10
 		payment 150000
 		dialog `During the trip, the Syndicate agent doesn't speak much other than to express confidence in the future financial performance of the Syndicate. As soon as you land, he hands you a payment of <payment> and promises to tell his superiors of your assistance before heading towards Parliament.`
+
+event "titania bond cancel"
+	outfitter "Syndicate Stock"
+		remove "Syndicate Bond (Titania)"
 
 event "titania syndicate enters eteron"
 	outfitter "Syndicate Stock"
@@ -241,20 +233,13 @@ event "titania station construction a"
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
-			object
-				sprite planet/dust1-b
-				distance 244
-				period 15.3766
-			object
-				sprite planet/mercury
-				distance 366
-				period 28.2485
 		add object
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
 			object
 				sprite planet/station5ver8a
+					scale 0.5
 				distance 122
 				period 25
 			object
@@ -274,24 +259,13 @@ event "titania station construction b"
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
-			object
-				sprite planet/station5ver8a
-				distance 122
-				period 25
-			object
-				sprite planet/dust1-b
-				distance 244
-				period 15.3766
-			object
-				sprite planet/mercury
-				distance 366
-				period 28.2485
 		add object
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
 			object
 				sprite planet/station5ver8b
+					scale 0.5
 				distance 122
 				period 25
 			object
@@ -311,24 +285,13 @@ event "titania station construction c"
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
-			object
-				sprite planet/station5ver8b
-				distance 122
-				period 25
-			object
-				sprite planet/dust1-b
-				distance 244
-				period 15.3766
-			object
-				sprite planet/mercury
-				distance 366
-				period 28.2485
 		add object
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
 			object "Titania Station"
 				sprite planet/station5ver8c
+					scale 0.5
 				distance 122
 				period 25
 			object
@@ -347,24 +310,13 @@ event "titania station construction d"
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
-			object "Titania Station"
-				sprite planet/station5ver8c
-				distance 122
-				period 25
-			object
-				sprite planet/dust1-b
-				distance 244
-				period 15.3766
-			object
-				sprite planet/mercury
-				distance 366
-				period 28.2485
 		add object
 			sprite planet/uranus
 			distance 1126.76
 			period 1302.08
 			object "Titania Station"
 				sprite planet/station5ver8
+					scale 0.5
 				distance 122
 				period 25
 			object
@@ -381,6 +333,13 @@ event "titania station construction d"
 		music ambient/machinery
 		description `Titania Station is a deuterium refinery owned and operated by the Syndicate, and aside from a few docking bays for visiting ships to use in an emergency, the rest of the station is sealed off to non-employees. The structure was hastily constructed using a modified blueprint of Oberon Station. Other than the fresh coat of paint, this station is almost indistinguishable from its predecessor.`
 		description `	The Syndicate has spent decades trying to persuade the Republic Parliament to cede control of the Eteron system and its lucrative mining and harvesting rights. Economic hardships endured by the Republic during the war is certain to have played a role in convincing more than a few Councilors to welcome these lobbying efforts.`
+		port "Docking Bay"
+			description `A computer terminal at the docking bay allows communications with the station crew. Anyone using this system must watch an advertisement for Syndicate products and services before proceeding.`
+			recharges
+				shields
+				energy
+			services
+				"job board"
 		"required reputation" 10
 		bribe 0.03
 		security 0.4
@@ -388,9 +347,122 @@ event "titania station construction d"
 			threshold 2000
 			fleet "Small Syndicate" 5
 
+event "titania: syndicate bonds matured"
+
+
+
+mission "Titania Station Docking Bay Patch"
+	landing
+	invisible
+	to offer
+		has "event: titania station construction d"
+		not "titania docking bay patched"
+	on offer
+		event "titania station docking bay patch"
+		fail
+
+event "titania station docking bay patch"
+	planet "Titania Station"
+		add port "Docking Bay"
+			description `A computer terminal at the docking bay allows communications with the station crew. Anyone using this system must watch an advertisement for Syndicate products and services before proceeding.`
+			recharges
+				shields
+				energy
+			services
+				"job board"
+
+
+mission "Titania: Syndicate Bond Mature"
+	outfitter
+	minor
+	invisible
+	repeat
+	source
+		government "Syndicate"
+	to offer
+		has "event: titania: syndicate bonds matured"
+		random < 70
+	on offer
+		require "Syndicate Bond (Titania)" 1
+		conversation
+			scene "outfit/syndicate bond"
+			`One of you Syndicate Bonds has reached maturity. Reclaim the principal plus interest? (1,500,000,000 credits)`
+			choice
+				`	(Reclaim your credits.)`
+				`	(Not now.)`
+					defer
+			scene "outfit/syndicate bond"
+			action
+				outfit "Syndicate Bond (Titania)" -1
+				payment 1500000000
+			`	You trade in your bond, adding 1,500,000,000 credits into your account.`
+				decline
+
+
+
+mission "Titania Announce Construction 1"
+	landing
+	invisible
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Neutral" "Independent"
+		attributes spaceport
+	to offer
+		has "event: titania station construction a"
+		not "event: titania station construction b"
+	on offer
+		conversation
+			scene "planet/station5ver8a"
+			`You receive a notification from the Syndicate: "Construction on Titania Station has begun in the Eteron System! Staging of construction materials will be at Kraken Station in the Caph System."`
+				decline
+
+mission "Titania Announce Construction 2"
+	landing
+	invisible
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Neutral" "Independent"
+		attributes spaceport
+	to offer
+		has "event: titania station construction b"
+		not "event: titania station construction c"
+	on offer
+		conversation
+			scene "planet/station5ver8b"
+			`You receive a notification from the Syndicate: "Construction of the core section for Titania Station in the Eteron System is complete!"`
+				decline
+
+mission "Titania Announce Construction 3"
+	landing
+	invisible
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Neutral" "Independent"
+		attributes spaceport
+	to offer
+		has "event: titania station construction c"
+		not "event: titania station construction d"
+	on offer
+		conversation
+			scene "planet/station5ver8c"
+			`You receive a notification from the Syndicate: "Construction of the main habitat sections for Titania Station in the Eteron System is complete! Delivery of construction materials can now be accepted at the station."`
+				decline
+
+mission "Titania Announce Construction 4"
+	landing
+	invisible
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Neutral" "Independent"
+		attributes spaceport
+	to offer
+		has "event: titania station construction d"
+	on offer
+		conversation
+			scene "planet/station5ver8"
+			`You receive a notification from the Syndicate: "With the construction of the outer docking bays complete, Titania Station in the Eteron System is officially open for business!"`
+				decline
+
+
 
 mission "Titania: Bulk Rush Delivery [Kraken, Job A]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	job
 	repeat
 	deadline
@@ -413,7 +485,7 @@ mission "Titania: Bulk Rush Delivery [Kraken, Job A]"
 		dialog phrase "generic cargo delivery payment"
 
 mission "Titania: Bulk Rush Delivery [Kraken, Job B]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	job
 	repeat
 	deadline
@@ -436,7 +508,7 @@ mission "Titania: Bulk Rush Delivery [Kraken, Job B]"
 		dialog phrase "generic cargo delivery payment"
 
 mission "Titania: Bulk Rush Delivery [Kraken, Job C]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	job
 	repeat
 	deadline
@@ -459,7 +531,7 @@ mission "Titania: Bulk Rush Delivery [Kraken, Job C]"
 		dialog phrase "generic cargo delivery payment"
 
 mission "Titania: Bulk Rush Delivery [Titania, Job A]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	job
 	repeat
 	deadline
@@ -489,7 +561,7 @@ mission "Titania: Bulk Rush Delivery [Titania, Job A]"
 		dialog phrase "generic cargo delivery payment"
 
 mission "Titania: Bulk Rush Delivery [Titania, Job B]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	job
 	repeat
 	deadline
@@ -519,7 +591,7 @@ mission "Titania: Bulk Rush Delivery [Titania, Job B]"
 		dialog phrase "generic cargo delivery payment"
 
 mission "Titania: Bulk Rush Delivery [Titania, Job C]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	job
 	repeat
 	deadline
@@ -550,7 +622,7 @@ mission "Titania: Bulk Rush Delivery [Titania, Job C]"
 		dialog phrase "generic cargo delivery payment"
 
 mission "Titania: Bulk Rush Delivery [Titania, Spaceport]"
-	name "Bulk Rush delivery to <planet>"
+	name "Construction Supplies to <planet>"
 	deadline
 	description "Deliver <cargo> to <destination> by <date>. Payment is <payment>."
 	minor

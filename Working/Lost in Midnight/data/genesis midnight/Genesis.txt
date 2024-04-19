@@ -118,6 +118,7 @@ outfitter "Genesis Advanced"
 	"Cryostasis Pod"
 	"Genesis Fission"
 	"Genesis Mining Laser"
+	"Frozen Shard Turret"
 	"Icicle Gun"
 
 
@@ -216,64 +217,7 @@ mission "First Contact: Genesis"
 			scene "scene/scene-genesisspace"
 			`It was a hard battle, but the inhabitants of Genesis are now free to explore the vast potential of space. People are celebrating in the streets all over the planet. Though they do not share a language with you, their gratitude is unmistakeable. This is the beginning of a new era for them.`
 
-ship "Thunder Maker" "Thunder Maker B"
-	add attributes
-		"self destruct" .1
-	outfits
-		"Thunderhead Launcher" 13
-		"Thunderhead Storage Array" 13
-		"Thunderhead Missile" 740
-		"White Sun Reactor"
-		"Dark Storm Shielding" 2
-		"Wanderer Heat Sink"
-		"Type 1 Radiant Thruster"
-		"Type 4 Radiant Steering"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	
-ship "Thunder Maker" "Thunder Maker C"
-	add attributes
-		"self destruct" -.1
-	outfits
-		"Thunderhead Launcher" 11
-		"Thunderhead Storage Array" 11
-		"Thunderhead Missile" 700
-		"White Sun Reactor"
-		"Dark Storm Shielding" 2
-		"Wanderer Heat Sink"
-		"Type 1 Radiant Thruster"
-		"Type 4 Radiant Steering"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	gun "Thunderhead Launcher"
-	gun
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun "Thunderhead Launcher"
-	gun 
-	
+
 event "Genesis Space Exploration"
 	system Genesis
 		add fleet "Genesis Space" 6000
@@ -489,6 +433,8 @@ event "Genesis Cryoships Deployed"
 	fleet "Genesis Space"
 		add variant 1
 			"Genesis Spacecraft (Icicle)"
+		add variant 1
+			"Genesis Spacecraft (Laser)"
 	fleet "Genesis Transports"
 		add variant 1
 			"Genesis Logistic (Icicle)"
@@ -589,8 +535,6 @@ event "genesis advanced suppliers patch"
 	fleet "Genesis Transports"
 		add variant 1
 			"Genesis Logistic (Icicle)"
-		add variant 1
-			"Genesis Transport (Laser)"
 
 mission "Genesis Patch Revelation3"
 	landing
@@ -658,7 +602,7 @@ event "Genesis Revelation patch3"
 				offset 196.692
 	planet "Revelations"
 		attributes midnight genesis
-		landscape land/sivael0
+		landscape land/station1ver8
 		description `The inhabitants of Genesis have deployed this space station on the edge of their solar system to study conditions in deep space.`
 		"required reputation" 1
 	planet Revelation

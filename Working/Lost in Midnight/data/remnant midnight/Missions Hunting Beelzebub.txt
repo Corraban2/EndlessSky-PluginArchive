@@ -8,9 +8,6 @@
 
 
 
-
-
-
 mission "Hunting Beelzebub: Modified Kestrel 1"
 	passengers 1
 	minor
@@ -43,9 +40,10 @@ mission "Hunting Beelzebub: Modified Kestrel 1"
 			has "Remnant: Deep Surveillance: failed"
 			has "Remnant: Scanning Tolerances: done"
 		or
-			has "event: kestrel available: more weapons"
+			has "event: kestrel available: more bays"
 			has "event: kestrel available: more engines"
 			has "event: kestrel available: more shields"
+			has "event: kestrel available: more weapons"
 		or
 			and
 				not "ignored paris"
@@ -136,7 +134,6 @@ mission "Hunting Beelzebub: Modified Kestrel 2"
 			scene "thumbnail/kestrel"
 			`You bump into Tom near the spaceport entrance. "I got a tip that the <npc> will be arriving soon. We should get into orbit."`
 				accept
-
 	on enter Sargas
 		dialog `The "Dreams of Darkness" is actually two Kestrels! That would explain how they've been spotted in systems that are impossible to travel between with a normal Hyperdrive. Tom says to capture both ships.`
 	npc
@@ -148,6 +145,15 @@ mission "Hunting Beelzebub: Modified Kestrel 2"
 			variant
 				"Shadow Hawk (B)" 4
 				"Finch (Inhibitor)" 4
+	npc capture
+		to spawn
+			has "event: kestrel available: more bays"
+		government "Bounty"
+		system Sargas
+		personality target entering staying plunders
+		ship "Modified Kestrel (Remnant Engines)" "Dreams of Darkness"
+		ship "Modified Kestrel (Remnant Weapons)" "Dreams of Darkness"
+		dialog `Both Kestrels were captured. Paris asks you to land on <planet>.`
 	npc capture
 		to spawn
 			has "event: kestrel available: more weapons"
@@ -216,7 +222,11 @@ mission "Hunting Beelzebub: Modified Bactrian 1"
 			has "Remnant: Deep Surveillance: failed"
 		or
 			has "defeated scar's legion"
+			has "hr defeated scar's legion"
 			has "Pirate Troubles [4]: done"
+			has "Hai Reveal: Pirate Troubles [4]: done"
+			has "Pirate Troubles [4]: declined"
+			has "Hai Reveal: Pirate Troubles [4]: declined"
 		or
 			and
 				not "ignored paris"
@@ -319,10 +329,12 @@ mission "Hunting Beelzebub: Modified Bactrian 2"
 			`	"Alright, some of my navy contacts suggested the Cosmic Horror might be hiding there, but they have yet to find the location of Scar's Hideout. Can you take me to it?"`
 			choice
 				`	(Agree to take Tom to Scar's Hideout.)`
-					accept
 				`	(Refuse to take Tom to Scar's Hideout.)`
-					decline
-			
+					goto refuse
+			`	"Thank you. I won't ask how you know the hideout's location. I probably wouldn't be able to find it without your help."`
+				accept
+			label refuse
+			`	"I understand you must have your reasons for not doing so. Thanks for taking me this far. I'll find my own way there myself." Tom leaves, his face set with determination.`
 	on enter Danoa
 		dialog `The "Cosmic Horror" is here! Tom's information about them using Scar's Hideout was correct. He asks you to capture the ship.`
 	npc
@@ -359,8 +371,8 @@ mission "Hunting Beelzebub: Modified Bactrian 2"
 
 mission "Hunting Beelzebub: Inhibitor Blaster 1"
 	landing
-	name "Inhibitor Blaster"
-	description "Bring an Inhibitor Blaster to Taely for examination. (It must be installed on your flagship or carried in cargo.)"
+	name "Modified Inhibitor"
+	description "Bring an Modified Inhibitor to Taely for examination. (It must be installed on your flagship or carried in cargo.)"
 	destination "Viminal"
 	to offer
 		or
@@ -375,10 +387,10 @@ mission "Hunting Beelzebub: Inhibitor Blaster 2"
 		has "Hunting Beelzebub: Inhibitor Blaster 1: done"
 	on offer
 		require "Inhibitor Blaster"
-		log `Brought an Inhibitor Blaster to the Remnant for analysis. The weapon was found on a pirate ship while trying to track down the notorious pirate, Beelzebub.`
+		log `Brought an Modified Inhibitor to the Remnant for analysis. The weapon was found on a pirate ship while trying to track down the notorious pirate, Beelzebub.`
 		conversation
 			scene "outfit/inhibitor blaster"
-			`Taely is already waiting when you open the hatch of your ship. The Remnant's scans probably flagged the Inhibitor Blaster as an item of interest. Her expression is grim as she signs, "Where did you get those modified Inhibitors?" After telling her that they were installed on a human pirate ship you captured while hunting down Beelzebub, she indicates she wants one for examination. From the hand signals she's using, this isn't a request. Remnant work crews start hauling one away before you even realize that they'd taken possession of it.`
+			`Taely is already waiting when you open the hatch of your ship. The Remnant's scans probably flagged the Modified Inhibitor as an item of interest. Her expression is grim as she signs, "Where did you get those Modified Inhibitors?" After telling her that they were installed on a human pirate ship you captured while hunting down Beelzebub, she indicates she wants one for examination. From the hand signals she's using, this isn't a request. Remnant work crews start hauling one away before you even realize that they'd taken possession of it.`
 				decline
 	on decline
 		outfit "Inhibitor Blaster" -1
@@ -390,8 +402,8 @@ event "modified inhibitor analysis"
 
 mission "Hunting Beelzebub: Inhibitor Blaster Reminder"
 	landing
-	name "Inhibitor Blaster"
-	description "Visit Taely on <destination> to see if she's learned anything from the analysis of the Inhibitor Blaster."
+	name "Modified Inhibitor"
+	description "Visit Taely on <destination> to see if she's learned anything from the analysis of the Modified Inhibitor."
 	source
 		attributes "ka'het" "remnant"
 		not planet Viminal
@@ -403,7 +415,7 @@ mission "Hunting Beelzebub: Inhibitor Blaster Reminder"
 		not "Hunting Beelzebub: Modified Bactrian 1: active"
 		not "Hunting Beelzebub: Modified Bactrian 2: active"
 	on offer
-		dialog `It's been awhile since Taely took the Inhibitor Blaster for analysis. Perhaps she has learned some new information.`
+		dialog `It's been awhile since Taely took the Modified Inhibitor for analysis. Perhaps she has learned some new information.`
 
 mission "Hunting Beelzebub: Prefect Perfid"
 	landing
@@ -420,10 +432,10 @@ mission "Hunting Beelzebub: Prefect Perfid"
 	on offer
 		outfit "Inhibitor Blaster" 1
 		log "People" "Beelzebub" `Beelzebub was formerly Prefect Perfid of the Remnant. He is considered a "Deserter" who has abandoned the Remnant to live the life of a pirate.`
-		log `Taely has made Inhibitor Blasters available at Remnant outfitters. Rather than simply slowing a pursuer while making an escape, this weapon is more suited to entrapping prey.`
+		log `Taely has made Modified Inhibitors available at Remnant outfitters. Rather than simply slowing a pursuer while making an escape, this weapon is more suited to entrapping prey.`
 		conversation
 			scene "outfit/inhibitor blaster"
-			`You are greeted by a Remnant security force when you exit your ship. They indicate that your participation in a meeting regarding the recent technology sample you delivered is required. After a short walk through the spaceport you find yourself at a firing range where Taely is demonstrating the Inhibitor Blaster to Prefect Chilia and Torza.`
+			`You are greeted by a Remnant security force when you exit your ship. They indicate that your participation in a meeting regarding the recent technology sample you delivered is required. After a short walk through the spaceport you find yourself at a firing range where Taely is demonstrating the Modified Inhibitor to Prefect Chilia and Torza.`
 			`	Torza is the first to respond, signing, "This came from a human pirate ship?"`
 			`	Taely signs, "Yes. <first>, what was the name of the pirate you were hunting?"`
 			`	Not knowing the hand gestures for his name, you clearly state:`
@@ -436,7 +448,7 @@ mission "Hunting Beelzebub: Prefect Perfid"
 				`	"Made? You mean it was not stolen?"`
 			scene "outfit/inhibitor cannon"
 			scene "outfit/inhibitor blaster"
-			`	"There can be no doubt," Taely signs. "The serial numbers do not match anything that has passed through our outfitters. Every attribute matches the Inhibitor Cannon other than the firing synchronizer. Our Inhibitor Cannons are designed so a ship can fire a volley and flee while the target is inhibited. With the synchronizer gone, a battery of Inhibitor Blasters fires in a steady stream. This setup is ideal for immobilizing and entrapping, a strategy fit for someone who has no intention of fleeing the target: a pirate. This was made by someone with a precise understanding of not only how the Remnant Inhibitor Cannon works, but how the Remnant use it and why that is not ideal for how a pirate would use it."`
+			`	"There can be no doubt," Taely signs. "The serial numbers do not match anything that has passed through our outfitters. Every attribute matches the Inhibitor Cannon other than the firing synchronizer. Our Inhibitor Cannons are designed so a ship can fire a volley and flee while the target is inhibited. With the synchronizer gone, a battery of Modified Inhibitors fires in a steady stream. This setup is ideal for immobilizing and entrapping, a strategy fit for someone who has no intention of fleeing the target: a pirate. This was made by someone with a precise understanding of not only how the Remnant Inhibitor Cannon works, but how the Remnant use it and why that is not ideal for how a pirate would use it."`
 			`	"It must be 'him'," Chilia signs. There is a sense of sadness in his gestures.`
 			`	"You mean to suggest," Torza signs. There is hint of disbelief in his gestures.`
 			choice
@@ -445,7 +457,7 @@ mission "Hunting Beelzebub: Prefect Perfid"
 			`	Chilia begins to sing a sad song. It tells the tale of a Remant Prefect who lead a surveillance mission in human space. When confronted by pirates, the Prefect decided to fight rather than flee. After capturing the pirate ship, he chose to remain behind instead of returning to Remnant space.`
 			`	Torza punches a wall then signs, "He should never have been allowed to remain there."`
 			`	Chilia responds, signing "Our people are not prisoners. It is rare, but occasionally one of us does end up living amongst the ancestral humans." Chilia turns to you. "Captain <last>. Prefect Perfid, Beelzebub, has abandoned life as a Remnant to live as a Pirate. We leave his fate in your capable hands." That almost sounds like an assassination order.`
-			`	While Chilia was singing earlier, Taely was preparing the Inhibitor Blaster for transportation to your ship. She signs, "I have instructed our outfitters to supply you with more of these if you request them. Perhaps they will be useful when you confront Beelzebub."`
+			`	While Chilia was singing earlier, Taely was preparing the Modified Inhibitor for transportation to your ship. She signs, "I have instructed our outfitters to supply you with more of these if you request them. Perhaps they will be useful when you confront Beelzebub."`
 			``
 			`If you're going to hunt down Beelzebub, it might be a good idea to team up with Lieutenant Paris of Deep Security. He should be on <destination>.`
 				accept
@@ -728,7 +740,7 @@ mission "Hunting Beelzebub: Lares Camping 2"
 		
 mission "Hunting Beelzebub: Rum Cellar"
 	name "Hunting Beelzebub: Rum Cellar"
-	description "Head for <destination>, where some pirates purchased Inhibitor Blasters."
+	description "Head for <destination>, where some pirates purchased Modified Inhibitors."
 	source Lares
 	destination "Rum Cellar"
 	to offer
@@ -756,11 +768,11 @@ mission "Hunting Beelzebub: Rum Cellar"
 				"Shadow Osprey (B)"
 		conversation
 			scene "outfit/inhibitor blaster"
-			`This ship is armed with Inhibitor Blasters. You managed to capture the captain who says he got the Inhibitors from Rum Cellar. Whether or not you spare the crew is up to you.`
+			`This ship is armed with Modified Inhibitors. You managed to capture the captain who says he got the Inhibitors from Rum Cellar. Whether or not you spare the crew is up to you.`
 
 mission "Hunting Beelzebub: Underworld"
 	name "Hunting Beelzebub: Underworld"
-	description "Go the underworld of <destination> where a meeting was arranged for you to purchase Inhibitor Blasters."
+	description "Go the underworld of <destination> where a meeting was arranged for you to purchase Modified Inhibitors."
 	source "Rum Cellar"
 	destination "Naihe Qiao"
 	to offer
@@ -773,7 +785,7 @@ mission "Hunting Beelzebub: Underworld"
 	on offer
 		conversation
 			scene "outfit/inhibitor blaster"
-			`While performing maintenance on your ship, a man in a garish green suit approaches you. "This is the <ship>, isn't it? It's quite famous. Would you happen to be interested in purchasing Inhibitor Blasters? They would be a fine addition to your arsenal."`
+			`While performing maintenance on your ship, a man in a garish green suit approaches you. "This is the <ship>, isn't it? It's quite famous. Would you happen to be interested in purchasing Modified Inhibitors? They would be a fine addition to your arsenal."`
 			choice
 				`	(Agree to purchase some.)`
 				`	(Not now.)`
@@ -813,7 +825,7 @@ mission "Hunting Beelzebub: Ember Nightmare"
 				launch
 	on enter
 		conversation
-			scene "ship/ember nightmare/ember nightmare"			
+			scene "ship/ember nightmare/ember nightmare"
 			`You receive a hail. "Did you think I wouldn't notice you snooping around my business? This is a fitting place for you to pass on to the next life." The transmission came from a ship that looks like a heavily modified Albatross. The red glowing lights nestled within the shadows of the ship match the description of the Ember Nightmare. That's Beelzebub's ship. The Ember Nightmare jumps away as a fleet of dark warships and interceptors swarm around you.`
 			`	Paris growls, "Forget these guys. We need to chase after Beelzebub!" He must have fled to one of the nearby systems...`
 	on enter Terminus
@@ -873,6 +885,19 @@ mission "Hunting Beelzebub: Ember Nightmare"
 				"Finch (Inhibitor)" 4
 	npc
 		to spawn
+			has "event: kestrel available: more bays"
+			not "Hunting Beelzebub: Modified Kestrel 1: offered"
+		government "Phenomenon (dangerous)"
+		system Terminus
+		personality waiting staying plunders heroic unconstrained marked mute
+		ship "Modified Kestrel (Remnant Engines)" "Dreams of Darkness"
+		ship "Modified Kestrel (Remnant Weapons)" "Dreams of Darkness"
+		fleet
+			names "pirate"
+			variant
+				"Finch (Inhibitor)" 4
+	npc
+		to spawn
 			has "event: kestrel available: more weapons"
 			not "Hunting Beelzebub: Modified Kestrel 1: offered"
 		government "Phenomenon (dangerous)"
@@ -880,6 +905,10 @@ mission "Hunting Beelzebub: Ember Nightmare"
 		personality waiting staying plunders heroic unconstrained marked mute
 		ship "Modified Kestrel (Remnant Shields)" "Dreams of Darkness"
 		ship "Modified Kestrel (Remnant Engines)" "Dreams of Darkness"
+		fleet
+			names "pirate"
+			variant
+				"Finch (Inhibitor)" 4
 	npc
 		to spawn
 			has "event: kestrel available: more engines"
@@ -889,6 +918,10 @@ mission "Hunting Beelzebub: Ember Nightmare"
 		personality waiting staying plunders heroic unconstrained marked mute
 		ship "Modified Kestrel (Remnant Shields)" "Dreams of Darkness"
 		ship "Modified Kestrel (Remnant Weapons)" "Dreams of Darkness"
+		fleet
+			names "pirate"
+			variant
+				"Finch (Inhibitor)" 4
 	npc
 		to spawn
 			has "event: kestrel available: more shields"
@@ -898,6 +931,35 @@ mission "Hunting Beelzebub: Ember Nightmare"
 		personality waiting staying plunders heroic unconstrained marked mute
 		ship "Modified Kestrel (Remnant Weapons)" "Dreams of Darkness"
 		ship "Modified Kestrel (Remnant Engines)" "Dreams of Darkness"
+		fleet
+			names "pirate"
+			variant
+				"Finch (Inhibitor)" 4
+	npc
+		to spawn
+			or
+				has "event: kestrel available: more engines"
+				has "event: kestrel available: more shields"
+				has "event: kestrel available: more weapons"
+		government "Phenomenon (dangerous)"
+		system Terminus
+		personality waiting staying plunders heroic unconstrained marked mute
+		ship "Modified Kestrel (Remnant Bays)" "Dreams of Darkness"
+		fleet
+			names "pirate"
+			variant
+				"Finch (Inhibitor)" 6
+	npc
+		to spawn
+			has "event: kestrel available: more bays"
+		government "Phenomenon (dangerous)"
+		system Terminus
+		personality waiting staying plunders heroic unconstrained marked mute
+		ship "Modified Kestrel (Remnant Shields)" "Dreams of Darkness"
+		fleet
+			names "pirate"
+			variant
+				"Finch (Inhibitor)" 2
 	npc kill
 		government "Nemesis"
 		system Terminus
@@ -971,6 +1033,7 @@ ship "Ember Nightmare"
 		"Systems Core (Large)"
 		"Thermoelectric Cooler" 4
 		"Outfits Expansion" 2
+		"Barracks" 2
 		"Quantum Key Stone"
 		"Engineering Room"
 		"Tuning Rifle" 42
@@ -1027,66 +1090,59 @@ ship "Ember Nightmare"
 
 
 
-ship "Modified Kestrel"
-	sprite "ship/kestrel"
-	thumbnail "thumbnail/kestrel"
-	attributes
-		category "Heavy Warship"
-		"cost" 14700000
-		"shields" 19400
-		"hull" 7200
-		"required crew" 64
-		"bunks" 128
-		"mass" 740
-		"drag" 11
-		"heat dissipation" .6
-		"fuel capacity" 500
-		"cargo space" 120
-		"outfit space" 810
-		"weapon capacity" 390
-		"engine capacity" 210
-		weapon
-			"blast radius" 260
-			"shield damage" 2600
-			"hull damage" 1300
-			"hit force" 3900
+ship "Kestrel" "Modified Kestrel (Remnant Bays)"
+	"display name" "Modified Kestrel"
+	sprite "ship/kestrelc"
+	thumbnail "thumbnail/kestrelc"
+	add attributes
+		"mass" 60
+		"weapon capacity" -20
 	outfits
-		"Particle Cannon" 4
-		"Torpedo Launcher" 2
-		"Torpedo" 60
-		"Heavy Laser Turret" 4
-		
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"D94-YV Shield Generator"
+		"Aeon Cell"
+		"Cargo Scanner" 2
+		"Crystal Capacitor"
+		"D94-YV Shield Generator" 2
+		"Epoch Cell"
+		"Forge-Class Thruster"
+		"Fragmentation Grenades" 32
+		Hyperdrive
+		"Inhibitor Blaster" 4
+		"KP-6 Photovoltaic Panel" 3
+		"Laser Rifle" 32
 		"Liquid Nitrogen Cooler"
+		"Medical Bay"
+		"Outfit Scanner" 2
+		"Outfits Expansion"
+		"Point Defense Turret" 2
+		"Security Station (Staffed)"
+		"Smelter-Class Steering"
 		"Tactical Scanner" 2
-		
-		"Orca Plasma Thruster"
-		"Orca Plasma Steering"
-		"Hyperdrive"
-	engine -14 177
-	engine 14 177
-	bay "Fighter" -46 106 under
-	bay "Fighter" 46 106 under
-	gun -75 57 "Torpedo Launcher"
-	gun 75 57 "Torpedo Launcher"
-	gun -53 61 "Particle Cannon"
-	gun 53 61 "Particle Cannon"
-	gun -31 66 "Particle Cannon"
-	gun 31 66 "Particle Cannon"
-	turret -7 -4 "Heavy Laser Turret"
-	turret 7 -4 "Heavy Laser Turret"
-	turret -23 14 "Heavy Laser Turret"
-	turret 23 14 "Heavy Laser Turret"
-	explode "small explosion" 25
-	explode "medium explosion" 35
-	explode "large explosion" 45
-	explode "huge explosion" 30
-	"final explode" "final explosion large"
-	description "Several years ago, while visiting a sweat lodge in search of spiritual renewal, Tarazed's chief ship designer fell into a trance and journeyed to a reality separate from our own. There he saw visions of a strange and elegant starship. Returning to his work with renewed purpose, he spent the next seven years making the Kestrel a reality."
+		"Thrasher Turret" 2
+		"Tuning Rifle" 32
+	gun -73.5 46 "Inhibitor Blaster"
+	gun 73.5 46 "Inhibitor Blaster"
+	gun -29.5 52 "Inhibitor Blaster"
+	gun 29.5 52 "Inhibitor Blaster"
+	turret -8 -10.5 "Thrasher Turret"
+	turret 8 -10.5 "Thrasher Turret"
+	turret -20.5 9 "Point Defense Turret"
+	turret 20.5 9 "Point Defense Turret"
+	bay "Fighter" -46 106
+		"launch effect" "human internal"
+	bay "Fighter" 46 106
+		"launch effect" "human internal"
+	bay "Fighter" -62 78
+		"launch effect" "human internal"
+	bay "Fighter" 62 78
+		"launch effect" "human internal"
+	bay "Fighter" -56 70
+		"launch effect" "human internal"
+	bay "Fighter" 56 70
+		"launch effect" "human internal"
+	description "Featuring more fighter bays, this Kestrel has been altered from the retail version to serve as a fighter carrier."
 
-ship "Modified Kestrel" "Modified Kestrel (Remnant Engines)"
+ship "Kestrel" "Modified Kestrel (Remnant Engines)"
+	"display name" "Modified Kestrel"
 	sprite "ship/kestrele"
 	thumbnail "thumbnail/kestrele"
 	add attributes
@@ -1120,9 +1176,10 @@ ship "Modified Kestrel" "Modified Kestrel (Remnant Engines)"
 	turret "Thrasher Turret"
 	turret "Point Defense Turret"
 	turret "Point Defense Turret"
-	description "Featuring more engine space and extra fuel capacity, his Kestrel has been altered from the retail version to emphasize speed over all else."
+	description "Featuring more engine space and extra fuel capacity, this Kestrel has been altered from the retail version to emphasize speed over all else."
 
-ship "Modified Kestrel" "Modified Kestrel (Remnant Shields)"
+ship "Kestrel" "Modified Kestrel (Remnant Shields)"
+	"display name" "Modified Kestrel"
 	sprite "ship/kestrels"
 	thumbnail "thumbnail/kestrels"
 	add attributes
@@ -1158,7 +1215,8 @@ ship "Modified Kestrel" "Modified Kestrel (Remnant Shields)"
 	turret "Point Defense Turret"
 	description "Featuring additional shield emitters and a reinforced hull, this Kestrel has been altered from the retail version to emphasize defense over all else."
 
-ship "Modified Kestrel" "Modified Kestrel (Remnant Weapons)"
+ship "Kestrel" "Modified Kestrel (Remnant Weapons)"
+	"display name" "Modified Kestrel"
 	sprite "ship/kestrelw"
 	thumbnail "thumbnail/kestrelw"
 	add attributes

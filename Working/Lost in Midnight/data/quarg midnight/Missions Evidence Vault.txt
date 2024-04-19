@@ -55,6 +55,8 @@ mission "Vault Weapon Pulse Rifle"
 				fail "Vault Weapon Pulse Rifle"
 			scene "outfit/hai rifle"
 			`The pirate captain wielded an exotic rifle... This must be the weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 mission "Vault Weapon Ion Pulse Shotgun"
 	minor
@@ -85,7 +87,7 @@ mission "Vault Weapon Ion Pulse Shotgun"
 	npc capture
 		government Bounty
 		system
-			distance 2
+			distance 1
 		personality target waiting staying timid vindictive
 		ship "Marauder Leviathan (Ion Pulse Shotgun)" "Seeds of Doom"
 		conversation
@@ -94,6 +96,8 @@ mission "Vault Weapon Ion Pulse Shotgun"
 				fail "Vault Weapon Ion Pulse Shotgun"
 			scene "outfit/ion pulse shotgun"
 			`The pirate captain wielded an exotic shotgun... This must be another weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 mission "Vault Weapon Tuning Rifle"
 	minor
@@ -140,6 +144,8 @@ mission "Vault Weapon Tuning Rifle"
 				fail "Vault Weapon Tuning Rifle"
 			scene "outfit/remnant rifle"
 			`The pirate captain wielded an exotic rifle... This must be the weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 mission "Vault Weapon Reverberator Rifle"
 	minor
@@ -176,6 +182,8 @@ mission "Vault Weapon Reverberator Rifle"
 				fail "Vault Weapon Reverberator Rifle"
 			scene "outfit/reverberator rifle"
 			`The pirate captain wielded an exotic rifle... This must be another weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 mission "Vault Weapon Thermal Repeater Rifle"
 	minor
@@ -222,6 +230,56 @@ mission "Vault Weapon Thermal Repeater Rifle"
 				fail "Vault Weapon Thermal Repeater Rifle"
 			scene "outfit/korath rifle"
 			`The pirate captain wielded an exotic rifle... This must be the weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
+
+mission "Vault Weapon Lasher Pistol"
+	minor
+	name "<npc>"
+	description "A pirate ship named <npc> may be in possession of an exotic weapon stolen from Farpoint's evidence vault. Find the ship and capture the weapon before the authorities do."
+	source
+		government Syndicate
+	to offer
+		"combat rating" > 8000
+		random < 70
+	on offer
+		conversation
+			scene "thumbnail/quicksilver"
+			`The crew of a Syndicate Quicksilver is receiving their orders before boarding their ship. Listen in?`
+			choice
+				`	(Listen as they receive their orders.)`
+				`	(Ignore them.)`
+					decline
+			`	"Whoever raided the evidence vault on Farpoint stole some very exotic weapons. We suspect one of them is being used by the captain of a pirate ship named the Hell Scourge, which has been known to operate in the area. The crew that captures this ship and recovers the stolen weapon can expect bonus pay with their next scheduled credit deposit."`
+			`	"Aye!" They accept their orders and board their ship. If you find the Hell Scourge before they do, you could take the stolen weapon for your own use...`
+			choice
+				`	(Search for the Hell Scourge.)`
+					accept
+				`	(Don't get involved.)`
+					decline
+	npc
+		government Republic
+		personality waiting staying surveillance uninterested
+			confusion 10
+		ship "Quicksilver" "S-21A3"
+	npc
+		government Pirate
+		personality entering plunders harvests
+		fleet "pirate raid"
+	npc capture
+		government Bounty
+		system
+			distance 1
+		personality target waiting staying timid vindictive
+		ship "Marauder Protector (Lasher Pistol)" "Hell Scourge"
+		conversation
+			action
+				set "Vault Weapon Level 1"
+				fail "Vault Weapon Lasher Pistol"
+			scene "outfit/lasher pistol"
+			`The pirate captain wielded an exotic pistol... This must be the weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 mission "Vault Weapon Meltdown Cannon"
 	minor
@@ -258,6 +316,8 @@ mission "Vault Weapon Meltdown Cannon"
 				fail "Vault Weapon Meltdown Cannon"
 			scene "outfit/meltdown cannon"
 			`The pirate captain wielded an exotic cannon... This must be another weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 mission "Vault Weapon Enforcer Confrontation Gear"
 	minor
@@ -304,52 +364,8 @@ mission "Vault Weapon Enforcer Confrontation Gear"
 				fail "Vault Weapon Enforcer Confrontation Gear"
 			scene "outfit/enforcer confrontation gear"
 			`The pirate captain wielded an exotic weapon... This must be the weapon that was stolen from the evidence vault on Farpoint.`
-
-mission "Vault Weapon Lasher Pistol"
-	minor
-	name "<npc>"
-	description "A pirate ship named <npc> may be in possession of an exotic weapon stolen from Farpoint's evidence vault. Find the ship and capture the weapon before the authorities do."
-	source
-		government Syndicate
-	to offer
-		has "Vault Weapon Level 1"
-		random < 50
-	on offer
-		conversation
-			scene "thumbnail/quicksilver"
-			`The crew of a Syndicate Quicksilver is receiving their orders before boarding their ship. Listen in?`
-			choice
-				`	(Listen as they receive their orders.)`
-				`	(Ignore them.)`
-					decline
-			`	"Whoever raided the evidence vault on Farpoint stole some very exotic weapons. We suspect one of them is being used by the captain of a pirate ship named the Hell Scourge, which has been known to operate in the area. The crew that captures this ship and recovers the stolen weapon can expect bonus pay with their next scheduled credit deposit."`
-			`	"Aye!" They accept their orders and board their ship. If you find the Hell Scourge before they do, you could take the stolen weapon for your own use...`
-			choice
-				`	(Search for the Hell Scourge.)`
-					accept
-				`	(Don't get involved.)`
-					decline
-	npc
-		government Republic
-		personality waiting staying surveillance uninterested
-			confusion 10
-		ship "Quicksilver" "S-21A3"
-	npc
-		government Pirate
-		personality entering plunders harvests
-		fleet "pirate raid"
-	npc capture
-		government Bounty
-		system
-			distance 1
-		personality target waiting staying timid vindictive
-		ship "Marauder Protector (Lasher Pistol)" "Hell Scourge"
-		conversation
-			action
-				set "Vault Weapon Level 2"
-				fail "Vault Weapon Lasher Pistol"
-			scene "outfit/lasher pistol"
-			`The pirate captain wielded an exotic pistol... This must be the weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 
 
@@ -665,9 +681,11 @@ mission "Vault Weapon Quash 5"
 			scene "outfit/graviton generator"
 			`When the dying captain fell in battle, he dropped the Quarg Graviton Generator. It lies just out of his reach, but he still spends the last of his strength in a futile attempt to reach it.`
 			choice
-				`	(Grab the weapon.)`
+				`	(Examine the weapon.)`
 			scene "planet/forest0-b"
 			`	You've confirmed that the device stolen from the mining cartel is actually the Quarg Graviton Generator stolen from Farpoint. Before deciding what to do with it, you might consider returning to <origin> and collecting the bounty on the Diabolos.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 	on complete
 		payment 1000000
 
@@ -798,6 +816,8 @@ mission "Vault Weapon Lasher Rifle"
 				fail "Vault Weapon Lasher Rifle"
 			scene "outfit/lasher rifle"
 			`The pirate captain wielded an exotic rifle... This must be another weapon that was stolen from the evidence vault on Farpoint.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 
 
 
@@ -838,14 +858,14 @@ mission "Vault Weapon Insurgent Subjugation Gear"
 		government "Quarg"
 		system Enif
 		personality waiting surveillance
-		ship "Quarg Skylark (Scanner)" "Quorok"
+		ship "Quarg Skythrush (Scanner)" "Quorok"
 	npc evade
 		to spawn
 			has "transporting insurgent subjugation gear"
 		government "Quarg"
 		system destination
 		personality waiting surveillance
-		ship "Quarg Wardragon (Scanner)" "Qualrog"
+		ship "Quarg Warkite (Scanner)" "Qualrog"
 	npc
 		government "Bounty"
 		system Ablodab
@@ -871,9 +891,13 @@ mission "Vault Weapon Insurgent Subjugation Gear"
 				set "transporting insurgent subjugation gear"
 			scene "planet/forest0-b"
 			`	You've decided to deliver the weapon back to the evidence vault on Farpoint. As long as the Quarg don't catch you with it, it should be fine.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 				accept
 			label keep
 			`	You've decided to keep the weapon for yourself. If the Quarg catch you with it, they might turn hostile.`
+			``
+			`	(The stolen weapon is installed on the captured ship.)`
 			action
 				"reputation: Republic" <?= 0
 				fail "Vault Weapon Insurgent Subjugation Gear"

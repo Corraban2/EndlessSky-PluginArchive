@@ -11,6 +11,41 @@
 
 
 
+################################################
+#
+# Weapons
+#
+################################################
+
+
+outfit "Scavenger Turret"
+	category "Turrets"
+	cost 84000
+	thumbnail "outfit/scavenger turret"
+	"mass" 24
+	"outfit space" -24
+	"weapon capacity" -24
+	"turret mounts" -1
+	weapon
+		"hardpoint sprite" "hardpoint/scavenger turret"
+		"hardpoint offset" 6.
+		sound "tractor beam"
+		"hit effect" "scavenger tractor beam"
+		"tractor beam" 8
+		"velocity" 350
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 1.6
+		"firing heat" 2.8
+	description "Some Korath Exiles still use these antiquated devices in their efforts to scavenge for raw materials."
+
+effect "scavenger tractor beam"
+	sprite "effect/scavenger tractor beam"
+		"frame rate" 3.5
+	"lifetime" 1
+	"velocity scale" 1
+
+
 outfit "Shock-Strike Turret"
 	category "Turrets"
 	cost 841000
@@ -48,6 +83,24 @@ outfit "Shock-Strike Turret"
 	description "This weapon adds an ionic charge to Grab-Strike projectiles, further incapacitating the targeted ship to prevent it from escaping."
 
 
+################################################
+#
+# Systems
+#
+################################################
+
+
+outfit "Microbot Corroder"
+	category "Systems"
+	cost 10000
+	thumbnail "outfit/microbot corroder"
+	"mass" .1
+	"thrusting corrosion" .1
+	"turning corrosion" .1
+	"reverse thrusting corrosion" .1
+	"afterburner corrosion" .1
+	description "Vindictive Korath boarding crews will attach this to the hull of an enemy ship. The Microbot Corroder creates microbots programmed to break down the hull of the ship it's installed on into raw materials which are then used to create more microbots."
+	description "	If you find this installed on your ship, get rid of it as soon as possible!"
 
 outfit "Botanical Garden"
 	category "Systems"
@@ -79,18 +132,6 @@ outfit "Korath Scanner"
 	"tactical scan power" 9
 	"radar jamming" 6
 	description "Korath ships rarely rely on scanning technologies, preferring to shoot first and plunder later. The rare ship that does need it likely has one of these bulky systems installed."
-
-outfit "Microbot Corroder"
-	category "Systems"
-	cost 10000
-	thumbnail "outfit/microbot corroder"
-	"mass" .1
-	"thrusting corrosion" .1
-	"turning corrosion" .1
-	"reverse thrusting corrosion" .1
-	"afterburner corrosion" .1
-	description "Vindictive Korath boarding crews will attach this to the hull of an enemy ship. The Microbot Corroder creates microbots programmed to break down the hull of the ship it's installed on into raw materials which are then used to create more microbots."
-	description "	If you find this installed on your ship, get rid of it as soon as possible!"
 
 outfit "Microbot Fabricator"
 	category "Systems"
@@ -166,21 +207,6 @@ outfit "Shield Diluter"
 	description "Shield Diluters utilize shield disruption technology to enable other weapons to penetrate the shields of the ship they are installed on. Kor Efret boarding crews occasionally attach these to the hull of an enemy ship."
 	description "	If you find this installed on your ship, get rid of it as soon as possible!"
 
-outfit "Systems Core (Huge)"
-	plural "Systems Cores (Huge)"
-	category "Systems"
-	cost 22687500
-	thumbnail "outfit/huge systems core"
-	"mass" 156
-	"outfit space" -156
-	"energy capacity" 20800
-	"shield generation" 11.7
-	"shield energy" 16.9
-	"hull repair rate" 1.6
-	"hull energy" 1.6
-	"hull heat" 2.4
-	description `This huge bank of computers, shield generators, and repair stations are designed to be used on massive World Ships and Space Stations.`
-
 outfit "Systems Core (Damaged)"
 	category "Systems"
 	cost 4575000
@@ -199,9 +225,29 @@ outfit "Systems Core (Damaged)"
 	"unplunderable" 1
 	description `Despite massive damage, this hybrid shield generator computer system is still operational to some degree.`
 
+outfit "Systems Core (Huge)"
+	plural "Systems Cores (Huge)"
+	category "Systems"
+	cost 22687500
+	thumbnail "outfit/huge systems core"
+	"mass" 156
+	"outfit space" -156
+	"energy capacity" 20800
+	"shield generation" 11.7
+	"shield energy" 16.9
+	"hull repair rate" 1.6
+	"hull energy" 1.6
+	"hull heat" 2.4
+	description `This huge bank of computers, shield generators, and repair stations are designed to be used on massive World Ships and Space Stations.`
 
 
-# part of Evidence Vault missions
+################################################
+#
+# Hand to Hand
+#
+################################################
+
+
 outfit "Meltdown Cannon"
 	category "Hand to Hand"
 	cost 530000
@@ -213,95 +259,10 @@ outfit "Meltdown Cannon"
 	"unique" 1
 
 
-
 ##################
 # deprecated
 ##################
 
-# Fireswarms were moved to Midnight Scrapyard
-# keeping this here for old pilots who don't have the other plugin installed
-
-outfit "Korath Fireswarm Nest"
-	category "Ammunition"
-	cost 27400
-	thumbnail "outfit/korath fireswarm nest"
-	"mass" 3
-	"outfit space" -6
-	"fireswarm capacity" 10
-	ammo "Korath Fireswarm"
-	"energy generation" 0.2
-	"heat generation" 1
-
-outfit "Korath Fireswarm"
-	category "Ammunition"
-	cost 7600
-	thumbnail "outfit/korath fireswarm"
-	"mass" 0.3
-	"fireswarm capacity" -1
-	"energy capacity" 35
-
-outfit "Korath Fireswarm Launcher"
-	category "Secondary Weapons"
-	cost 1937000
-	thumbnail "outfit/korath fireswarm launcher"
-	"mass" 22
-	"outfit space" -28
-	"weapon capacity" -28
-	"gun ports" -1
-	"fireswarm capacity" 20
-	weapon
-		sprite "projectile/fireswarm"
-			"frame rate" 4
-			"random start frame"
-		sound "rocket-ver8"
-		ammo "Korath Fireswarm"
-		icon "icon/fireswarm"
-		"hit effect" "large explosion" 10
-		"hit effect" "huge explosion"
-		"die effect" "piercer fire"
-		"velocity" 4
-		"velocity override" 16
-		"lifetime" 10
-		"reload" 120
-		"burst reload" 30
-		"burst count" 3
-		"firing energy" 151
-		"firing heat" 211
-		"acceleration" 0.6
-		"drag" .1
-		"infrared tracking" .7
-		"optical tracking" .9
-		"homing" 4
-		"turn" 4.6
-		"hit force" 100
-		"split range" 60
-		"missile strength" 60
-		submunition "Fireswarm Submunition" 10
-		"cluster"
-
-outfit "Fireswarm Submunition"
-	weapon
-		sprite "projectile/fireswarm submunition"
-			"frame rate" 2
-			"random start frame"
-		sound "javelin"
-		"hit effect" "medium explosion" 10
-		"hit effect" "large explosion"
-		"die effect" "small explosion"
-		"velocity" 3
-		"lifetime" 160
-		"acceleration" 1.6
-		"drag" .1
-		"turn" 2
-		"inaccuracy" 5
-		"homing" 4
-		"infrared tracking" .5
-		"optical tracking" .7
-		"shield damage" 95
-		"hull damage" 95
-		"heat damage" 180
-		"burn damage" 1
-		"corrosion damage" 0.2
-		"hit force" 40
-		"missile strength" 6
-
+# "Korath Fireswarm Nest" were moved to Midnight Scrapyard
+# "Korath Fireswarm" were moved to Midnight Scrapyard
+# "Korath Fireswarm Launcher" were moved to Midnight Scrapyard

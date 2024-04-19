@@ -76,7 +76,7 @@ start
 	conversation "Time Skip intro" 
 	account
 		credits 450000
-		score 400
+		score 800
 	set "license: Pilot's"
 	set "Time Skip start"
 	set "Intro [0]: offered"
@@ -88,6 +88,7 @@ conversation "Time Skip intro"
 	scene "planet/wormhole"
 	`You wake up in your old home on New Boston, your head reeling from a pounding headache. The last thing you remember was traveling through a  wormhole. The rest of your memories are fuzzy. As the pain and dizzyness fade away, you check the date and realize you've traveled back in time! It's a few months after you recall buying your first ship. Checking your possessions, the only noteworthy item you have right now is your pilot's license. The bank indicates you have 450,000 credits and no outstanding loans. But as far as you can tell, you don't have a single ship to your name. It seems this is an alternate time line.`
 	`	With no clue how you got here and no guidance for returning to your original time line, you set out for the shipyard.`
+	``
 	`	A sales clerk approaches you and offers her assistance. You ask to see the ships available for sale and introduce yourself:`
 	name
 	scene "scene/scene-basic ships"
@@ -162,7 +163,7 @@ mission "Time Skip Map"
 	invisible
 	to offer
 		has "Time Skip start"
-		not "global: "
+#		not "global: "
 	on offer
 		outfit "Local Map"
 		conversation
@@ -178,7 +179,7 @@ mission "Time Skip Mapping"
 		government "Republic" "Syndicate" "Free Worlds" "Pirate" "Independent" "Neutral"
 	to offer
 		has "Time Skip start"
-		random < 10
+		random < 20
 	on offer
 		require "Local Map" 0
 		outfit "Local Map"
@@ -199,7 +200,7 @@ start
 	description `Job History: textile mill`
 	description `Ship: Modified Berserker`
 	description `	This interceptor is outfitted for mining and has a weapon more powerful at close range.`
-	thumbnail "thumbnail/berserker"
+	thumbnail "thumbnail/modified berserker-thumb"
 	date 16 11 3013
 	system "Rutilicus"
 	planet "New Boston"
@@ -220,7 +221,7 @@ start
 		sprite "ship/blood rage"
 			"delay" 4
 			"frame rate" 6
-		thumbnail "thumbnail/berserker"
+		thumbnail "thumbnail/modified berserker-thumb"
 		"swizzle" 0
 		attributes
 			category "Interceptor"
@@ -440,13 +441,7 @@ mission "Mining: Iron Challenge [Blood Rage]"
 	npc accompany save
 		government "Merchant"
 		personality target mining harvests marked
-		fleet
-			names "civilian"
-			cargo 0
-			variant 1
-				"Sparrow"
-			variant 1
-				"Fury (Miner)"
+		ship "Fury (Atomic Miner)" "Blood Iron"
 	on complete
 		outfit "Iron" -20
 		payment 42000
@@ -990,7 +985,7 @@ mission "Free Worlds Espionage [Mata Hari]"
 			has "Corporate espionage [1]: done"
 			has "Corporate espionage [2]: done"
 		"reputation: Free Worlds" >= 0
-		has "war begins"
+		has "event: war begins"
 		not "chosen sides"
 		random < 70
 	source
@@ -2371,7 +2366,7 @@ mission "Guncraft VIII"
 			`	After snooping around <planet>'s spaceport, you get a lead: the <npc> usually operates in Syndicate space. It's not much, but it's a start.`
 				accept
 	on accept
-		log "People" "Ceska" `A gunsmith named after her mother's favorite gun. She was killed by the captain of the Silent Assassin after she modified the Guncraft VIII to fire Atomic Bullets.`
+		log "Minor People" "Ceska" `A gunsmith named after her mother's favorite gun. She was killed by the captain of the Silent Assassin after she modified the Guncraft VIII to fire Atomic Bullets.`
 		outfit "Guncraft VII" -1
 	on defer
 		set "Randomize Guncraft VIII"

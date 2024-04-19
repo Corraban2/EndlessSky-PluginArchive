@@ -234,13 +234,23 @@ mission "Blue Ridge 2"
 	source Longjump
 	to offer
 		has "license: Militia"
-		has "Blue Ridge 1: offered"
-		not "Blue Ridge 1: declined"
+		has "Blue Ridge 1: done"
 		"credits" >= 6000000
 	on offer
 		conversation
 			scene "outfit/militia license"
-			`You visit the Museum of Space Exploration to place a bid on the Blue Ridge, the ship Han Sizer used to explore the Southern Rim. To prove your eligibility, you show the receptionist your Militia license.`
+			`The Museum of Space Exploration on <origin> is hosting an auction for the Blue Ridge, the ship Han Sizer used to explore the Southern Rim. They are only accepting bids from militia members. Do you want to check it out?`
+			choice
+				`	(Visit the Museum of Space Exploration.)`
+					goto visit
+				`	(I'm not interested in this.)`
+			action
+				log `Decided to ignore the auction of the "Blue Ridge," the ship once used by Han Sizer to explore the galactic rim.`
+			`	You've decided to ignore the auction of the Blue Ridge.`
+				decline
+			label visit
+			scene "ship/hipparion"
+			`	You visit the Museum of Space Exploration to see how the auction on the Blue Ridge is progressing. To prove your eligibility, you show the receptionist your Militia license.`
 			`	"Your license checks out," she says after looking you up in the computer system. "You have perfect timing Captain <last>! The auction ends today. Once bidding hit a million credits, we started only accepting bids in increments of 100,000 credits to help limit the auction to serious bidders only. The current bid is at 5,900,000 credits. Would you like to place a bid for 6,000,000 credits?"`
 			choice
 				`	(Bid 6,000,000 credits.)`
@@ -251,8 +261,15 @@ mission "Blue Ridge 2"
 				`	(Bid 6,000,000 credits.)`
 					goto win
 				`	(Do not bid.)`
-					decline
+			action
+				log `Decided not to place any bids on the "Blue Ridge," the Hipparion once used by Han Sizer to explore the galactic rim.`
+			`	You leave the Museum of Space Exploration without placing any bid on the Blue Ridge.`
+				decline
 			label win
+			action
+				payment -6000000
+				give ship "Hipparion" "Blue Ridge"
+				log `Purchased the "Blue Ridge," the Hipparion once used by Han Sizer to explore the galactic rim. The ship was lacking a Hyperdrive. Supposedly, it was removed for security. But maybe there's more to it than that...`
 			`	"I've placed your bid into the system," she says. "Come back once the Museum closes to learn the result."`
 			choice
 				`	(Return later.)`
@@ -263,12 +280,8 @@ mission "Blue Ridge 2"
 				`	"Why isn't there a Hyperdrive?"`
 			scene "outfit/unknown"
 			`	She grins and answers, "It's for security, so thieves can't just take the ship and flee the system." It sounds like a reasonable explanation.`
-			`	But then she leans in and whispers conspiratorially, "There are rumors that Han Sizer got ahold of some alien device, like the ones the Quarg use instead of a Hyperdrive. Supposedly the government confiscated it after he died." She leans back, "But whether that's true or not, who can say?" She smiles mishieviously and you wonder if that's just a story they tell museum guests to enhance the legend of Han Sizer.`
+			`	But then she leans in and whispers conspiratorially, "There are rumors that Han Sizer got ahold of some alien device, like the ones the Quarg use instead of a Hyperdrive. Supposedly, the government confiscated it after he died." She leans back, "But whether that's true or not, who can say?" She smiles mishieviously and you wonder if that's just a story they tell museum guests to enhance the legend of Han Sizer.`
 				decline
-	on decline
-		payment -6000000
-		give ship "Hipparion" "Blue Ridge"
-		log `Purchased the "Blue Ridge," the Hipparion once used by Han Sizer to explore the galactic rim. The ship was lacking a Hyperdrive. Supposedly, it was removed for security. But maybe there's more to it than that...`
 
 
 
@@ -294,13 +307,13 @@ mission "Bounty Hunting: Angry Chicken"
 					goto share
 				`	"You should stick to safer jobs like hauling garbage."`
 			label scowl
-				`	The man scowls at you. "I didn't ask for your advice." He walks away.`
+			`	The man scowls at you. "I didn't ask for your advice." He walks away.`
 				decline
 			label share
 			`	He gives you a skeptical look. "What do you know about bounty hunting?"`
 			choice
 				`	"It's dangerous work."`
-			scene "ship/rancor"
+			scene "thumbnail/rancor-thumb"
 			`	"That's okay. I have a tough ship, a Rancor."`
 			`	You've heard stories about them. The Rancor was originally a pirate vessel, and many were used in the early turf wars. The Alpha War was the beginning of the Rancor's decline as faster interceptors quickly outpaced and outmaneuvered this relatively slower ship. Today it is seen as a relic of the past, most noteworthy for influencing the design of the Fury.`
 			choice
@@ -1366,7 +1379,7 @@ mission "Midnight Tanker Shipyard Poseidos"
 			`	It's an advertisement for a local shipyard located on an island a short distance away from where you are now.`
 			choice
 				`	"Poseidos has a shipyard?"`
-			`	You place the flier in your pocket as the man explains, "Not for long if I can't get more customers. We're a small operation, focused on new pilots and a niche market of fuel logistics suppliers. I'm hoping someone who knows his way around the nearby star systems can distribute these fliers at the spaceports on nearby planets. I have enough fliers for <stopovers>."`
+			`	You place the flier in your pocket as the man explains, "Not for long if I can't get more customers. We're a small operation, focused on new pilots and a niche market of fuel logistics suppliers. I'm hoping someone who knows their way around the nearby star systems can distribute these fliers at the spaceports on nearby planets. I have enough fliers for <stopovers>."`
 			choice
 				`	"I'll help you keep the shipyard open."`
 					goto end
@@ -2615,5 +2628,63 @@ ship "Protector" "Protector Test-PTATS"
 	turret "Proton Turret-ATS"
 	turret "Anti-Missile Turret"
 
+
+
+mission "Southern Fiance (Parker, Perlman, Hoakes) 1"
+	landing
+	invisible
+	to offer
+		has "Southern Fiance 1: offered"
+		not "event: carl elected governor"
+	on offer
+		set "Southern Fiance 4: offered"
+		set "Southern Fiance 5: offered"
+		set "Southern Fiance 6: offered"
+		fail
+
+mission "Southern Fiance (Parker, Perlman, Hoakes) 2"
+	landing
+	invisible
+	source
+		government "Free Worlds"
+	to offer
+		has "Southern Fiance 3: declined"
+		has "Southern Fiance (Parker, Perlman, Hoakes) 1: failed"
+	on offer
+		conversation
+			`You receive a message: "Greetings <first> <last>. Our lawfirm, Parker, Perlman, and Hoakes, is currently preparing a class-action lawsuit against Carl Ardwright-Chamberlain for abuses of his governmental authority." You recall that Carl is the husband of Tom, the man you brought south from the Core. "Can you confirm that the spaceport controller diverted your ship to an alternate landing pad and detained you against your will during your last visit to Cornucopia? If so, you may be eligible to receive damages if the lawsuit is successful." The message confinues with additional legal details.`
+			choice
+				`	(Confirm the accusation against Carl.)`
+				`	(Deny the accusation against Carl.)`
+					goto deny
+			action
+				set "joined Parker, Perlman, Hoakes lawsuit"
+				log "Minor People" "Parker, Perlman, and Hoakes" `A southern lawfirm that filed a class action lawsuit against Carl Ardwright-Chamberlain for abusing his government power to illegally divert and detain pilots at Cornucopia's spaceport.`
+			`	You do recall being redirected to an alternate landing pad where Carl and Tom were waiting for you. Although they invited you to dinner, you felt refusing their invitation was not an option you could take. After submitting this testimony, you join the plaintiffs. These are other clients working with the lawfirm. They claim that Carl has abused his government position to delay and detain pilots at the spaceport. The record of your testimonial message is all that they require. No additonal action on your part is needed. Expect a message from Parker, Perlman, and Hoakes once the court proceedings have concluded.`
+				decline
+			label deny
+			action
+				clear "Southern Fiance 4: offered"
+				clear "Southern Fiance 5: offered"
+				clear "Southern Fiance 6: offered"
+			`	You do recall being redirected to an alternate landing pad where Carl and Tom were waiting, however you deny being detained against your will. If they were hoping for someone to testify against Carl, they'll have to find a different client.`
+				decline
+
+mission "Southern Fiance (Parker, Perlman, Hoakes) 3"
+	landing
+	invisible
+	source
+		government "Free Worlds"
+	to offer
+		has "joined Parker, Perlman, Hoakes lawsuit"
+		has "event: carl elected governor"
+	on offer
+		clear "joined Parker, Perlman, Hoakes lawsuit"
+		payment 20000
+		log "Minor People" "Tom and Carl" `Carl Ardwright-Chamberlain was forced out of his bid for the governorship of Cornucopia due to his involvement with a scandal in which Syndicate shipments arranged by his husband, Tom Ardwright-Chamberlain, were being given preferential priority at the spaceport by detaining other pilots.`
+		conversation
+			`In the spaceport, you notice a news bulletin announcing Carl Ardwright-Chamberlain dropping out of the governor's race on Cornucopia. Apparently, he was involved with a scandal in which Syndicate shipments arranged by his husband, Tom Ardwright-Chamberlain, were being given preferential priority at the spaceport by detaining other pilots.`
+			`	Shortly afterward, you receive a message: "Greetings <first> <last>. Our lawfirm, Parker, Perlman, and Hoakes, has successfully concluded our lawsuit against Carl Ardwright-Chamberlain. As one of the plaintiffs, you are entitled to a portion of the financial judgement. After subtracting legal fees, your share has been calculated at <payment>, which has been deposited to your account. Parker, Perlman, and Hoakes thanks you for your participation.`
+				decline
 
 
