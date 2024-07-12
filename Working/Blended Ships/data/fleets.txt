@@ -41,6 +41,40 @@ fleet "Large Southern Merchants"
 fleet "Small Core Merchants"
 	add variant 10
 		"Catamaran"
+	add variant 10
+		"Trident"
+	add variant 3
+		"Trident"
+		"Wasp"
+	add variant 5
+		"Freighter"
+		"Hornet"
+	add variant 5
+		"Bounder (Luxury)"
+		"Hornet"
+
+fleet "Large Core Merchants"
+	add variant 5
+		"Trident"
+	add variant 5
+		"Trident" 2
+		"Quicksilver"
+	add variant 10
+		"Container Transport (Short Haul)"
+		"Wasp (Proton)"
+		"Hornet"
+	add variant 5
+		"Container Transport"
+		"Hornet" 2
+	add variant 3
+		"Container Transport (Heavy)"
+		"Hornet" 2
+	add variant 4
+		"Bulk Freighter"
+		"Hornet" 2
+	add variant 2
+		"Bulk Freighter (Blaster)"
+		"Hornet" 2
 
 fleet "Paradise Merchants"
 	add variant 5
@@ -121,6 +155,15 @@ fleet "Republic Logistics"
 		"Rainmaker"
 
 # Independent Groups and Pirates
+
+fleet "Small Core Pirates"
+	add variant 4
+		"Hornet"
+
+fleet "Large Core Pirates"
+	add variant 1
+		"Quicksilver"
+		"Hornet" 3
 
 fleet "Small Southern Pirates"
 	add variant 5
@@ -215,6 +258,8 @@ fleet "Bounty Hunters"
 		"Grackle"
 	add variant 2
 		"Sunthief"
+	add variant 1
+		"Hornet" 2
 
 fleet "Small Independent"
 	add variant
@@ -275,6 +320,16 @@ fleet "Pleasure Craft"
 		"Flivver Lo-V"
 	variant
 		"Flivver Lo-V" 3
+	variant 2
+		"Partisan"
+	variant
+		"Partisan"
+		"Hyperlight Shuttle"
+	variant
+		"Partisan"
+		"Flivver Lo-V"
+	variant
+		"Partisan" 2
 
 fleet "Pleasure Craft Transport"
 	government "Merchant"
@@ -312,6 +367,23 @@ fleet "Pleasure Craft Transport"
 		"Caterpillar"
 		"Hyperlight Shuttle" 5
 		"Flivver Lo-V" 2
+	variant
+		"Caterpillar"
+		"Hyperlight Shuttle" 4
+		"Flivver Lo-V" 4
+		"Partisan" 4
+	variant
+		"Sparrow"
+		"Caterpillar"
+		"Hyperlight Shuttle" 3
+		"Flivver Lo-V" 2
+		"Partisan" 7
+	variant
+		"Berserker"
+		"Caterpillar"
+		"Hyperlight Shuttle" 4
+		"Flivver Lo-V" 6
+		"Partisan" 2
 
 # Alien Fleets
 
