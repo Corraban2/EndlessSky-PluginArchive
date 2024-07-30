@@ -10,8 +10,8 @@ ship "Aplomado"
 		"hull" 5800
 		"required crew" 65
 		"bunks" 100
-		"mass" 710
-		"drag" 6.9
+		"mass" 2420
+		"drag" 11.9
 		"heat dissipation" .4
 		"fuel capacity" 800
 		"cargo space" 150
@@ -43,9 +43,17 @@ ship "Aplomado"
 	gun -16.5 -119.5
 	gun 16.5 -119.5
 	turret -21.5 -51.5 "Proton Turret"
+		angle -50
+		arc -90 50
 	turret 21.5 -51.5 "Proton Turret"
+		angle 50
+		arc -50 90
 	turret -58.5 1.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -125 90
 	turret 58.5 1.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -90 125
 	turret 0 16 "Heavy Anti-Missile Turret"
 	turret 0 104 "Heavy Anti-Missile Turret"
 	engine -18 147.5
@@ -84,8 +92,8 @@ ship "Eleonorae"
 		"hull" 5300
 		"required crew" 55
 		"bunks" 70
-		"mass" 585
-		"drag" 6.5
+		"mass" 1870
+		"drag" 11.5
 		"heat dissipation" .6
 		"fuel capacity" 800
 		"cargo space" 10
@@ -120,12 +128,24 @@ ship "Eleonorae"
 	gun -45.5 -27.5 "Plasma Cannon"
 	gun 45.5 -27.5 "Plasma Cannon"
 	turret -19.5 -31 
+		angle -30
+		arc -130 30
 	turret 19.5 -31 
+		angle 30
+		arc -30 130
 	turret 0 44 "Heavy Anti-Missile Turret"
 	turret -46 46 
+		angle -90
+		arc -88 120
 	turret 46 46 
+		angle 90
+		arc -120 88
 	turret -49 80.5 
+		angle -90
+		arc -140 100
 	turret 49 80.5 
+		angle 90
+		arc -100 140
 	engine -20 156 
 	engine 20 156 
 	leak "leak" 30 50
@@ -148,8 +168,8 @@ ship "Battle Bulk"
 		"hull" 9100
 		"required crew" 50
 		"bunks" 120
-		"mass" 970
-		"drag" 17.4
+		"mass" 1940
+		"drag" 21.4
 		"heat dissipation" .45
 		"fuel capacity" 600
 		"cargo space" 25
@@ -187,17 +207,41 @@ ship "Battle Bulk"
 	turret 30 175 
 	
 	turret -59 -92.5
+		angle -90
+		arc -40 40
 	turret 59 -92.5
+		angle 90
+		arc -40 40
 	turret -59 -46.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -40 40
 	turret 59 -46.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -40 40
 	turret -59 1
+		angle -90
+		arc -40 40
 	turret 59 1
+		angle 90
+		arc -40 40
 	turret -59 47.5
+		angle -90
+		arc -40 40
 	turret 59 47.5
+		angle 90
+		arc -40 40
 	turret -59 94 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -40 40
 	turret 59 94 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -40 40
 	turret -59 141
+		angle -90
+		arc -40 40
 	turret 59 141
+		angle 90
+		arc -40 40
 	
 	leak "leak" 40 50
 	leak "flame" 30 80
@@ -219,13 +263,13 @@ ship "Battle Behemoth"
 		"hull" 7800
 		"required crew" 20
 		"bunks" 34
-		"mass" 670
-		"drag" 11.7
+		"mass" 1340
+		"drag" 18.7
 		"heat dissipation" .4
 		"fuel capacity" 1000
 		"cargo space" 250
-		"outfit space" 780
-		"weapon capacity" 540
+		"outfit space" 680
+		"weapon capacity" 440
 		"engine capacity" 120
 		weapon
 			"blast radius" 140
@@ -283,7 +327,7 @@ ship "PAS-2 Bulwark"
 		"required crew" 42
 		"bunks" 70
 		"mass" 8018
-		"drag" 13.5
+		"drag" 22.5
 		"heat dissipation" .45
 		"fuel capacity" 1200
 		"cargo space" 25
@@ -313,39 +357,105 @@ ship "PAS-2 Bulwark"
 		"Scram Drive"
 		
 	turret 0 -197 "Heavy Anti-Missile Turret"
+		"angle" 0
+		"arc" -110 110
 	turret 0 -176.5 "Anti-Missile Turret"
+		"angle" 0
+		"arc" -110 110
 	turret 0 36
+		"angle" 0
+		"arc" -110 110
 	turret -21.5 -175 "Proton Turret"
+		"angle" -90
+		"arc" -90 110
 	turret 21.5 -175 "Proton Turret"
+		"angle" 90
+		"arc" -110 90
 	turret -21.5 58 "Heavy Anti-Missile Turret"
+		"angle" -75
+		"arc" -90 110
 	turret 21.5 58 "Heavy Anti-Missile Turret"
+		"angle" 75
+		"arc" -110 90
 	turret -24 105 "Proton Turret"
+		"angle" -90
+		"arc" -90 90
 	turret 24 105 "Proton Turret"
+		"angle" 90
+		"arc" -90 90
 	turret -24 114.5
+		"angle" -90
+		"arc" -90 90
 	turret 24 114.5
+		"angle" 90
+		"arc" -90 90
 	turret -24 126.5 "Heavy Anti-Missile Turret"
+		"angle" -120
+		"arc" -110 90
 	turret 24 126.5 "Heavy Anti-Missile Turret"
+		"angle" 120
+		"arc" -110 90
 	
 	turret -43.5 -115
+		angle -90
+		"arc" -45 45
 	turret 43.5 -115
+		angle 90
+		"arc" -45 45
 	turret -43.5 -49.5
+		angle -90
+		"arc" -45 45
 	turret 43.5 -49.5
+		angle 90
+		"arc" -45 45
 	turret -43.5 17
+		angle -90
+		"arc" -45 45
 	turret 43.5 17
+		angle 90
+		"arc" -45 45
 	turret -70 17
+		angle -90
+		"arc" -45 45
 	turret 70 17
+		angle 90
+		"arc" -45 45
 	turret -70 -48.5
+		angle -90
+		"arc" -45 45
 	turret 70 -48.5
+		angle 90
+		"arc" -45 45
 	turret -70 -116
+		angle -90
+		"arc" -45 45
 	turret 70 -116
+		angle 90
+		"arc" -45 45
 	turret -58 -82
+		angle -90
+		"arc" -45 45
 	turret 58 -82
+		angle 90
+		"arc" -45 45
 	turret -58 -16
+		angle -90
+		"arc" -45 45
 	turret 58 -16
+		angle 90
+		"arc" -45 45
 	turret -80 -16
+		angle -90
+		"arc" -45 45
 	turret 80 -16
+		angle 90
+		"arc" -45 45
 	turret -80 -83.5
+		angle -90
+		"arc" -45 45
 	turret 80 -83.5
+		angle 90
+		"arc" -45 45
 	engine 0 253.5
 		zoom 1
 		angle 0
@@ -384,7 +494,7 @@ ship "PCS-4 Castle"
 		"required crew" 76
 		"bunks" 100
 		"mass" 11820
-		"drag" 28
+		"drag" 29
 		"heat dissipation" .65
 		"fuel capacity" 1200
 		"cargo space" 50
@@ -412,22 +522,56 @@ ship "PCS-4 Castle"
 		"Scram Drive"
 		
 	turret -36.5 -266 "Heavy Anti-Missile Turret"
+		angle -15
+		arc -105 150
 	turret 36.5 -266 "Heavy Anti-Missile Turret"
+		angle 15
+		arc -105 150
 	turret 0 -173
+		angle 0
+		arc -165 165
 	turret -25.5 -89.5
+		angle -45
+		arc -75 40
 	turret 25.5 -89.5
+		angle 45
+		arc -40 75
 	turret -25 -68 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -80 40
 	turret 25 -68 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -40 80
 	turret -56 12
+		angle -90
+		arc -100 100
 	turret 56 12
+		angle 90
+		arc -100 100
 	turret -29 63 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -5 85
 	turret 29 63 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -85 5
 	turret -36 144
+		angle -90
+		arc -52 62
 	turret 36 144
+		angle 90
+		arc -62 52
 	turret -40 225
+		angle -90
+		arc -62 82
 	turret 40 225
+		angle 90
+		arc -62 82
 	turret -63 285 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -110 89
 	turret 63 285 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -89 110
 	bay "Fighter" -95 12
 		"launch effect" "human internal"
 		left
@@ -706,7 +850,7 @@ ship "CS-24 Garrison"
 		"hull" 11200
 		"required crew" 120
 		"bunks" 310
-		"mass" 5514
+		"mass" 6514
 		"drag" 18.4
 		"heat dissipation" .5
 		"fuel capacity" 1200
@@ -740,19 +884,43 @@ ship "CS-24 Garrison"
 		"Scram Drive"
 		
 	turret -32 -168
+		angle -30
+		arc -95 40
 	turret 32 -168
+		angle 30
+		arc -40 95
 	turret -45 -142 "Heavy Anti-Missile Turret"
+		angle -30
+		arc -95 40
 	turret 45 -142 "Heavy Anti-Missile Turret"
+		angle 30
+		arc -40 95
 	turret -57 -112.5
+		angle -30
+		arc -95 40
 	turret 57 -112.5
+		angle 30
+		arc -40 95
 	gun -31 -231.5
 	gun 31 -231.5
 	turret -106.5 10.5
+		angle -90
+		arc -73 73
 	turret 106.5 10.5
+		angle 90
+		arc -73 73
 	turret -83.5 10.5
+		angle -90
+		arc -80 80
 	turret 83.5 10.5
+		angle 90
+		arc -80 80
 	turret 0 67.5 "Heavy Anti-Missile Turret"
+		angle 180
+		arc -150 150
 	turret 0 144.5
+		angle 180
+		arc -170 170
 	bay "Fighter" 0 -239.5
 		"launch effect" "human internal"
 	bay "Fighter" 0 -239.5
@@ -816,7 +984,7 @@ ship "CS-24 Garrison"
 
 ship "CSE-6 Steward"
 	sprite "ship/mgf steward"
-	thumbnail "thumbnail/mgf steward"
+	thumbnail "thumbnail/mgf steward thumb"
 	attributes
 		category "Medium Warship"
 		"cost" 6800000
@@ -824,7 +992,7 @@ ship "CSE-6 Steward"
 		"hull" 5300
 		"required crew" 45
 		"bunks" 150
-		"mass" 1514
+		"mass" 2271
 		"drag" 14.3
 		"heat dissipation" .5
 		"fuel capacity" 800
@@ -871,13 +1039,29 @@ ship "CSE-6 Steward"
 	gun -36.5 -115
 	gun 36.5 -115
 	turret -24 25.5 "Proton Turret"
+		angle -20
+		arc -133 80
 	turret 24 25.5 "Proton Turret"
+		angle 20
+		arc -80 133
 	turret -29.5 38 "Heavy Anti-Missile Turret"
+		angle -20
+		arc -133 80
 	turret 29.5 38 "Heavy Anti-Missile Turret"
+		angle 20
+		arc -80 133
 	turret -39.5 71.5
+		angle -90
+		arc -160 145
 	turret 39.5 71.5
+		angle 90
+		arc -145 160
 	turret -36.5 95 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -160 145
 	turret 36.5 95 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -145 160
 	engine 0 181.5
 		zoom 1
 		angle 0
@@ -891,6 +1075,93 @@ ship "CSE-6 Steward"
 	explode "huge explosion" 20
 	description `Steward is an escort carrier with decent firepower. While it can handle most threat up to a medium warship by itself. Its small complement of fighters can assist defending far end of convoys from small attacks, but anything more than a few interceptors will be troubling.`
 
+
+ship "CSE-6 Steward" "CSE-6 Steward (GX)"
+	sprite "ship/mgf gx steward"
+	thumbnail "thumbnail/mgf gx steward thumb"
+	"swizzle" 0
+	attributes
+		category "Heavy Warship"
+		"cost" 6800000
+		"shields" 7200
+		"hull" 4300
+		"required crew" 45
+		"bunks" 65
+		"mass" 2171
+		"drag" 14.
+		"heat dissipation" .5
+		"fuel capacity" 800
+		"cargo space" 50
+		"outfit space" 670
+		"weapon capacity" 350
+		"engine capacity" 180
+		"acceleration multiplier" .02
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"GE-250 Mass Driver" 2
+		"GE-22 Mini-Driver Turret" 4
+		"Heavy Anti-Missile Turret" 2
+		
+		"Breeder Reactor"
+		"Water Coolant System"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Laser Rifle" 40
+		
+		"Orca Plasma Steering"
+		"Orca Plasma Thruster"
+		"Hyperdrive"
+		
+	gun -36.5 -169 
+	gun 36.5 -169 
+	turret -27 -9 
+		angle -20
+		arc -133 80
+	turret 27 -9 
+		angle 20
+		arc -80 133
+	turret -37.5 29.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -160 145
+	turret 37.5 29.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -145 160
+	turret -37 48.5 
+		angle -90
+		arc -160 145
+	turret 37 48.5 
+		angle 90
+		arc -145 160
+	bay "Fighter" 0 -67.5 
+		"launch effect" "human internal"
+	bay "Fighter" 0 -67.5 
+		"launch effect" "human internal"
+	bay "Fighter" 0 -67.5 
+		"launch effect" "human internal"
+	bay "Fighter" 0 -67.5 
+		"launch effect" "human internal"
+	bay "Fighter" 0 -67.5 
+		"launch effect" "human internal"
+	bay "Fighter" 0 -67.5 
+		"launch effect" "human internal"
+	engine -39.5 133 
+		zoom .7
+	engine 39.5 133 
+		zoom .7
+	engine 0 152.5 
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	description `This is a modified variant of the Steward used by Galactic Express providing their fleet fighter-carrying capability.`
+
 ship "AP-22 Fusillade"
 	sprite "ship/mgf syn fusillade"
 	thumbnail "thumbnail/mgf syn fusillade thumb"
@@ -903,7 +1174,7 @@ ship "AP-22 Fusillade"
 		"hull" 16800
 		"required crew" 185
 		"bunks" 246
-		"mass" 5405
+		"mass" 11250
 		"drag" 16.8
 		"heat dissipation" .4
 		"fuel capacity" 800
@@ -1056,7 +1327,7 @@ ship "AP-7 Sentinel"
 		"hull" 9200
 		"required crew" 46
 		"bunks" 82
-		"mass" 885
+		"mass" 1150
 		"drag" 10.1
 		"heat dissipation" .5
 		"fuel capacity" 500
@@ -1731,8 +2002,8 @@ ship "Sparrow" "Sparrow (Ugyr)"
 		"hull" 410
 		"required crew" 1
 		"bunks" 2
-		"mass" 50
-		"drag" .85
+		"mass" 60
+		"drag" .95
 		"heat dissipation" .8
 		"fuel capacity" 300
 		"cargo space" 15
@@ -1774,8 +2045,8 @@ ship "Star Barge" "Star Barge (Ugyr)"
 		"hull" 1150
 		"required crew" 1
 		"bunks" 3
-		"mass" 70
-		"drag" 1.75
+		"mass" 85
+		"drag" 2.3
 		"heat dissipation" .8
 		"fuel capacity" 300
 		"cargo space" 10
@@ -1815,7 +2086,7 @@ ship "Star Barge" "Star Barge (Bare, Q-Bomb)"
 		"hull" 750
 		"required crew" 1
 		"bunks" 3
-		"mass" 60
+		"mass" 70
 		"drag" 1.25
 		"heat dissipation" .9
 		"fuel capacity" 300
@@ -1916,7 +2187,7 @@ ship "Culverin Class"
 		"hull" 9800
 		"required crew" 86
 		"bunks" 160
-		"mass" 1205
+		"mass" 2485
 		"drag" 15.4
 		"heat dissipation" .45
 		"fuel capacity" 700
@@ -1987,6 +2258,7 @@ ship "Culverin Class"
 	gun 82.5 59.5
 		angle 24
 	turret 0 -116.5
+		arc -155 155
 	turret 0 -82
 	
 	turret -6 -23.5 "Spearfish VLS Array"
@@ -2038,7 +2310,7 @@ ship "Spetum Class"
 		"hull repair rate" .4
 		"required crew" 525
 		"bunks" 822
-		"mass" 5805
+		"mass" 10805
 		"drag" 20.4
 		"heat dissipation" .4
 		"fuel capacity" 800
@@ -2084,20 +2356,44 @@ ship "Spetum Class"
 	gun -46.5 -363.5
 	gun 46.5 -363.5
 	turret 0 -201.5 "V85 Railgun Turret"
+		arc -165 165
 	turret 0 -87.5 "V85 Railgun Turret"
+		arc -155 155
 	turret 0 -19 "V85 Railgun Turret"
+		arc -155 155
 	
 	turret -102 243
+		angle -45
+		arc -145 90
 	turret 102 243
+		angle 45
+		arc -90 145
 	
 	turret -21 -174 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -145 60
 	turret 21 -174 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -60 145
+
 	turret -95 25
+		angle -90
+		arc -100 100
 	turret 95 25
+		angle 90
+		arc -100 100
 	turret -95 52.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -100 100
 	turret 95 52.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -100 100
 	turret -95 79
+		angle -90
+		arc -100 100
 	turret 95 79
+		angle 90
+		arc -100 100
 	engine -54 398
 		zoom 1.2
 		angle 0
@@ -2410,7 +2706,7 @@ ship "Ranseur Class"
 		"hull repair rate" 2.8
 		"required crew" 550
 		"bunks" 820
-		"mass" 5955
+		"mass" 12855
 		"drag" 22.8
 		"heat dissipation" .4
 		"fuel capacity" 800
@@ -2779,8 +3075,8 @@ ship "Dulle Griet Class"
 		"hull" 14800
 		"required crew" 260
 		"bunks" 360
-		"mass" 2805
-		"drag" 17.6
+		"mass" 4807
+		"drag" 37.6
 		"heat dissipation" .45
 		"fuel capacity" 800
 		"cargo space" 20
@@ -2958,8 +3254,8 @@ ship "Grose Bochse Class"
 		"hull" 16200
 		"required crew" 220
 		"bunks" 330
-		"mass" 3185
-		"drag" 17.6
+		"mass" 5685
+		"drag" 37.6
 		"heat dissipation" .42
 		"fuel capacity" 800
 		"cargo space" 20
@@ -3049,8 +3345,8 @@ ship "Claymore Class"
 		"hull repair rate" .7
 		"required crew" 1450
 		"bunks" 2652
-		"mass" 41985
-		"drag" 434
+		"mass" 171985
+		"drag" 1634
 		"heat dissipation" .45
 		"fuel capacity" 2800
 		"cargo space" 850
@@ -3101,9 +3397,9 @@ ship "Claymore Class"
 		"Security Station" 8
 		"Tactical Scanner" 2
 		
-		"X5700 Ion Thruster" 2
+		"X5700 Ion Thruster" 4
 		"X3700 Ion Thruster"
-		"X5200 Ion Steering" 2
+		"X5200 Ion Steering" 4
 		"X4200 Ion Steering"
 		"Scram Drive"
 		
@@ -3298,8 +3594,8 @@ ship "Lucerne Class"
 		"hull repair rate" .6
 		"required crew" 1550
 		"bunks" 2200
-		"mass" 135685
-		"drag" 340
+		"mass" 195685
+		"drag" 1540
 		"heat dissipation" .45
 		"fuel capacity" 2800
 		"cargo space" 1680
@@ -4447,8 +4743,8 @@ ship "Lucerne Class" "Lucerne Class MkII"
 		"hull repair rate" 1
 		"required crew" 1450
 		"bunks" 2200
-		"mass" 135685
-		"drag" 334
+		"mass" 205685
+		"drag" 1540
 		"heat dissipation" .45
 		"fuel capacity" 2800
 		"cargo space" 1600
@@ -5324,28 +5620,11 @@ ship "Lucerne Class" "Lucerne Class MkII"
 	description `In addition they also refitted the drone bay for larger warships allowing it to carry a complement of Gunboats and Frigates.`
 
 ship "Frigate" "Frigate (Mark II, Pocket)"
-	attributes
+	add attributes
 		category "Pocket Medium Warship"
-		licenses
-			Navy
-		"cost" 5200000
-		"shields" 8000
-		"hull" 2500
-		"required crew" 21
-		"bunks" 44
-		"mass" 310
-		"drag" 5.2
-		"heat dissipation" .7
-		"fuel capacity" 0
-		"cargo space" 15
-		"outfit space" 480
-		"weapon capacity" 230
-		"engine capacity" 100
-		weapon
-			"blast radius" 100
-			"shield damage" 1000
-			"hull damage" 500
-			"hit force" 1500
+		"outfit space" 425
+		"weapon capacity" 188
+		"engine capacity" 72
 	outfits
 		"Particle Cannon" 4
 		"Anti-Missile Turret"
@@ -5369,35 +5648,14 @@ ship "Frigate" "Frigate (Mark II, Pocket)"
 ship "Gunboat" "Gunboat (Mark II, Pocket)"
 	attributes
 		category "Pocket Light Warship"
-		licenses
-			Navy
-		"cost" 3200000
-		"shields" 5800
-		"hull" 1400
-		"required crew" 7
-		"bunks" 12
-		"mass" 150
-		"drag" 3.1
-		"heat dissipation" .8
-		"fuel capacity" 0
-		"cargo space" 10
-		"outfit space" 354
-		"weapon capacity" 142
-		"engine capacity" 90
-		weapon
-			"blast radius" 72
-			"shield damage" 720
-			"hull damage" 360
-			"hit force" 1080
 	outfits
 		"Electron Beam" 2
 		"Electron Turret"
 		"Fission Reactor"
 		"LP036a Battery Pack"
-		"Supercapacitor" 3
+		"Supercapacitor" 2
 		"D41-HY Shield Generator"
 		"Water Coolant System"
-		"Brig"
 		"A250 Atomic Thruster"
 		"A255 Atomic Steering"
 	description `Carried variant of the Gunboat with hyperspace capability removed for other systems.`
@@ -5405,25 +5663,6 @@ ship "Gunboat" "Gunboat (Mark II, Pocket)"
 ship "Rainmaker" "Rainmaker (Mark II, Pocket)"
 	attributes
 		category "Pocket Light Warship"
-		licenses
-			Navy
-		"cost" 1580000
-		"shields" 3500
-		"hull" 1200
-		"required crew" 3
-		"bunks" 7
-		"mass" 180
-		"drag" 3.8
-		"heat dissipation" .6
-		"cargo space" 25
-		"outfit space" 284
-		"weapon capacity" 110
-		"engine capacity" 50
-		weapon
-			"blast radius" 40
-			"shield damage" 400
-			"hull damage" 200
-			"hit force" 600
 	outfits
 		"Energy Blaster" 2
 		"Sidewinder Missile Launcher" 4
@@ -5450,8 +5689,8 @@ ship "CK80Tp Death Harmonica"
 		"hull" 24880
 		"required crew" 84
 		"bunks" 162
-		"mass" 8759
-		"drag" 59.7
+		"mass" 14890
+		"drag" 64.7
 		"heat dissipation" .4
 		"fuel capacity" 1200
 		#"cargo space" 6800 #5100 front, 850*2 rear
@@ -5533,12 +5772,12 @@ ship "PCS-5 Citadel"
 		"hull" 20800
 		"required crew" 188
 		"bunks" 241
-		"mass" 8025
+		"mass" 12025
 		"drag" 58.5
 		"heat dissipation" .45
 		"fuel capacity" 1200
 		"cargo space" 120
-		"outfit space" 1128
+		"outfit space" 1150
 		"weapon capacity" 388
 		"engine capacity" 219
 		"radar jamming" 30
@@ -5552,7 +5791,7 @@ ship "PCS-5 Citadel"
 	outfits
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 4
-		"Proton Turret" 5
+		"Proton Turret" 6
 		
 		"Fusion Reactor"
 		"Fission Reactor" 2
@@ -5571,16 +5810,40 @@ ship "PCS-5 Citadel"
 		"Scram Drive"
 	
 	turret 253.5 -223.5 "Proton Turret"
+		angle 90
+		arc -120 120
 	turret -253.5 -223.5 "Proton Turret"
+		angle -90
+		arc -120 120
 	turret 253.5 -171 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -120 120
 	turret -253.5 -171 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -120 120
 	turret 253.5 -118 
+		angle 90
+		arc -120 120
 	turret -253.5 -118 
+		angle -90
+		arc -120 120
 	turret 194.5 -8 "Proton Turret"
+		angle 45
+		arc -110 110
 	turret -194.5 -8 "Proton Turret"
+		angle -45
+		arc -110 110
 	turret 232 29 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -110 110
 	turret -232 29 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -110 110
+	turret 0 40 "Proton Turret"
+		arc -145 145
 	turret 0 275.5 "Proton Turret"
+		angle 180
+		arc -165 165
 	bay "Pocket Medium Warship" -105 -152 
 		over
 	bay "Pocket Medium Warship" 105 -152 
@@ -5946,8 +6209,8 @@ ship "SWV4 Ravelin"
 		"hull" 4700
 		"required crew" 17
 		"bunks" 40
-		"mass" 580
-		"drag" 10.3
+		"mass" 1210
+		"drag" 16.5
 		"heat dissipation" .5
 		"fuel capacity" 200 #For flamers maybe
 		"cargo space" 10
@@ -6007,8 +6270,8 @@ ship "TCM-23 Harrier"
 		"hull" 1600
 		"required crew" 9
 		"bunks" 24
-		"mass" 260
-		"drag" 5.8
+		"mass" 630
+		"drag" 8.9
 		"heat dissipation" .8
 		"fuel capacity" 600
 		"cargo space" 40
@@ -6076,8 +6339,8 @@ ship "F-VC56 Kaga"
 		"hull" 19500
 		"required crew" 340
 		"bunks" 680
-		"mass" 6684
-		"drag" 23.3
+		"mass" 13368
+		"drag" 29.3
 		"heat dissipation" .5
 		"fuel capacity" 1200
 		"cargo space" 150
@@ -6123,63 +6386,151 @@ ship "F-VC56 Kaga"
 		
 	#Small turrets
 	turret 159.5 -39.5 "Anti-Missile Turret"
+		angle 45
+		arc -55 125
 	turret -159.5 -39.5 "Anti-Missile Turret"
+		angle -45
+		arc -125 55
 	turret 159.5 -20.5 
+		angle 45
+		arc -55 125
 	turret -159.5 -20.5 
+		angle -45
+		arc -125 55
 
 	turret 132 6.5 "Anti-Missile Turret"
+		angle 45
+		arc -65 95
 	turret -132 6.5 "Anti-Missile Turret"
+		angle -45
+		arc -95 65
 	turret 132 24.5 "K4-Ms-S Particle Turret"
+		angle 45
+		arc -65 95
 	turret -132 24.5 "K4-Ms-S Particle Turret"
+		angle -45
+		arc -95 65
 
 	turret 26 20.5 
+		arc -85 147
 	turret -26 20.5 
+		arc -147 85
 	turret 26 40 "K3-K-S Particle Turret"
+		arc -85 140
 	turret -26 40 "K3-K-S Particle Turret"
+		arc -140 85
 
 	turret 137 97 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -140 75
 	turret -137 97 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -75 140
 
 	turret 87.5 96 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -115 60
 	turret -87.5 96 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -60 115
 	turret 87.5 119 
+		angle 90
+		arc -110 55
 	turret -87.5 119 
+		angle -90
+		arc -55 110
 	turret 87.5 140 "K3-K-S Particle Turret"
+		angle 90
+		arc -100 50
 	turret -87.5 140 "K3-K-S Particle Turret"
+		angle -90
+		arc -50 100
 
 	#engine
 	turret 170.5 256 "Anti-Missile Turret"
+		angle 90
+		arc -90 80
 	turret -170.5 256 "Anti-Missile Turret"
+		angle -90
+		arc -80 90
 	turret 170.5 277 "K3-K-S Particle Turret"
+		angle 90
+		arc -80 80
 	turret -170.5 277 "K3-K-S Particle Turret"
+		angle -90
+		arc -80 80
 	turret 170.5 299 "Anti-Missile Turret"
+		angle 90
+		arc -80 90
 	turret -170.5 299 "Anti-Missile Turret"
+		angle -90
+		arc -90 80
 
+	#next-to-bridge
 	turret 36 81.5 "Anti-Missile Turret"
+		angle 90
+		arc 150 50
 	turret -36 81.5 "Anti-Missile Turret"
+		angle -90
+		arc -50 150
 	turret 36 103.5 "K3-K-S Particle Turret"
+		angle 90
+		arc 150 50
 	turret -36 103.5 "K3-K-S Particle Turret"
+		angle -90
+		arc -50 150
 	turret 36 124 "K4-Ms-S Particle Turret"
+		angle 90
+		arc 150 50
 	turret -36 124 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -50 150
 	turret 36 145.5 
+		angle 90
+		arc 150 50
 	turret -36 145.5 
+		angle -90
+		arc -50 150
 
 	#aft
 	turret 20.5 304 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -100 100
 	turret -20.5 304 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -100 100
 	turret 20.5 323 
+		angle 90
+		arc -100 100
 	turret -20.5 323 
+		angle -90
+		arc -100 100
 	#medium turrets
 	turret 100.5 60.5 "K3-K Particle Turret"
+		arc -30 160
 	turret -100.5 60.5 "K3-K Particle Turret"
+		arc -160 30
+	#engines
 	turret 166.5 228 "K3-K Particle Turret"
+		angle 90
+		arc -110 77
 	turret -166.5 228 "K3-K Particle Turret"
+		angle -90
+		arc -110 77
 	turret 166 326.5 "K3-K Particle Turret"
+		angle 90
+		arc -77 110
 	turret -166 326.5 "K3-K Particle Turret"
+		angle -90
+		arc -77 110
 	#large turrets
 	turret 0 -26.5 "H6-Gy Oscillator Turret"
+		angle 0
+		arc -140 140
 	turret -100 -3.5 "H6-Gy Oscillator Turret"
+		arc -165 30
 	turret 100 -3.5 "H6-Gy Oscillator Turret"
+		arc -30 165
 	turret 0 225.5 "H6-Gy Oscillator Turret"
 	#Forward guns
 	gun 147 -71.5 "Torpedo Launcher"
@@ -6442,9 +6793,269 @@ ship "F-VC56 Kaga"
 	description `Initially a plan pitched to the Republic Navy as they seek a new fleet carrier with enough capacity for 80 fighters now brought back into development as they realized the looming threat of aliens from all sides and funding to spare. Though the original plan was already considerably expensive, the additional development and modernization for new goal rise the cost through the roof.`
 	description `Unlike its predecessors Zuiho and Zuikaku the Kaga was not designed for mercantile escort (and for advertisement) and deterrence with most threat being large pirate fleet where it still have to be somewhat economically viable to build and operate. Kaga Class is designed for greatest chance of victory in combat against potentially more advanced alien with capacity for 90 fighters spread across 3 flight decks for rapid deployment and recovery along with a large array of cutting-edge armaments to out gun any alien warship it may find.`
 	
-#ship "F-VC38e Shokaku" #export fleetcarrier
-	#description `MJK export fleetcarrier. Though minimal in firepower itself, it is capable of supporting large amount of fighters.`
-	#description `Unlike the highly advanced, expensive, and restricted Kaga-class, Shokaku is designed to be vastly simpler to build and maintain allow it to be operated by organizations more concerned with budget but still want a highly capable fleetcarrier.`
+	#Fleet-Vessel,Carrier
+ship "F-VC38e Shokaku" #export fleetcarrier
+	sprite "ship/mgf ngk shokaku"
+	thumbnail "thumbnail/mgf ngk shokaku thumb"
+	attributes
+		category "Heavy Warship"
+		"cost" 25800000
+		"shields" 26000
+		"hull" 17500
+		"required crew" 220
+		"bunks" 410
+		"mass" 10368
+		"drag" 34.5
+		"heat dissipation" .5
+		"fuel capacity" 1000
+		"cargo space" 120
+		"outfit space" 2060
+		"weapon capacity" 800
+		"engine capacity" 320
+		"hull repair rate" .7
+	outfits
+		"K2-K-S Particle Turret" 12
+		"Quad Blaster Turret" 6
+		"Heavy Anti-Missile Turret" 6
+
+		"LP576a Battery Pack"
+		"Fusion Reactor" 3
+		"D94-YV Shield Generator" 2
+		"Laser Rifle" 120
+		"Hyperdrive"
+		
+		"X5700 Ion Thruster"
+		"X3700 Ion Thruster"
+		"X5200 Ion Steering"
+		"X4200 Ion Steering"
+
+	#front med
+	turret 49 -367.5 "K2-K-S Particle Turret"
+	turret -49 -367.5 "K2-K-S Particle Turret"
+	turret 83.5 -289.5 "K2-K-S Particle Turret"
+		angle 85
+		arc -90 90
+	turret -83.5 -289.5 "K2-K-S Particle Turret"
+		angle -85
+		arc -90 90
+	turret 89 -226.5 "K2-K-S Particle Turret"
+		angle 85
+		arc -90 90
+	turret -89 -226.5 "K2-K-S Particle Turret"
+		angle -85
+		arc -90 90
+	gun 130 27.5 
+	gun -130 27.5 
+	gun 141.5 100 
+	gun -141.5 100 
+	#front small
+	turret 111.5 -98.5 "Heavy Anti-Missile Turret" 
+		angle 90
+		arc -120 90
+	turret -111.5 -98.5 "Heavy Anti-Missile Turret" 
+		angle -90
+		arc -90 120
+	turret 111.5 -66.5 "Quad Blaster Turret" 
+		angle 90
+		arc -90 90
+	turret -111.5 -66.5 "Quad Blaster Turret" 
+		angle -90
+		arc -90 90
+	turret 111.5 -32.5 "Quad Blaster Turret" 
+		angle 90
+		arc -90 90
+	turret -111.5 -32.5 "Quad Blaster Turret"
+		angle -90
+		arc -90 90
+	turret 111.5 0.5 "Heavy Anti-Missile Turret" 
+		angle 90
+		arc -90 90
+	turret -111.5 0.5 "Heavy Anti-Missile Turret" 
+		angle -90
+		arc -90 90
+	#mid small
+	turret 114.5 55 "Quad Blaster Turret" 
+		angle 90
+		arc -90 90
+	turret -114.5 55 "Quad Blaster Turret" 
+		angle -90
+		arc -90 90
+	turret 114.5 87.5 "Heavy Anti-Missile Turret" 
+		angle 90
+		arc -90 90
+	turret -114.5 87.5 "Heavy Anti-Missile Turret" 
+		angle -90
+		arc -90 90
+	#mid med
+	turret 76.5 14 "K2-K-S Particle Turret"
+		angle 90
+		arc -90 90
+	turret -76.5 14 "K2-K-S Particle Turret"
+		angle -90
+		arc -90 90
+	turret 76.5 47 "K2-K-S Particle Turret"
+		angle 90
+		arc -90 90
+	turret -76.5 47 "K2-K-S Particle Turret"
+		angle -90
+		arc -90 90
+	#aft med
+	turret 0 291.5 "K2-K-S Particle Turret"
+		angle 180
+		arc -165 165
+	turret 0 325.5 "K2-K-S Particle Turret"
+		angle 180
+		arc -150 150
+	engine -100 404.5 
+	engine 100 404.5 
+	engine -54 404.5 
+	engine 54 404.5 
+	engine -24 404 
+	engine 24 404 
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+		
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -62 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" 31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	bay "Fighter" -31 -90.5 
+		"launch effect" "zuikaku fighter launch"
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 30
+	explode "mgf explosion spark" 90
+	explode "nuke explosion" 2
+	description `MJK export fleetcarrier. Though not as advanced and lacked the firepower of carriers used by their internal security, it carries the most amount of fighter compared to other carrier available to the public.`
+	description `Unlike the highly advanced, expensive, and restricted Kaga-class, Shokaku is designed to be vastly simpler to build and maintain allow it to be operated by organizations more concerned with budget but still want a highly capable fleetcarrier.`
 
 	#Light-Vessel,Carrier
 ship "L-VC28 Zuikaku"
@@ -6457,7 +7068,7 @@ ship "L-VC28 Zuikaku"
 		"hull" 12100
 		"required crew" 140
 		"bunks" 350
-		"mass" 4584
+		"mass" 9168
 		"drag" 18.3
 		"heat dissipation" .65
 		"fuel capacity" 1800
@@ -6501,11 +7112,19 @@ ship "L-VC28 Zuikaku"
 	gun -109 -48.5 
 		over
 	turret 69 -44 "K3-K Particle Turret"
+		arc -90 166
 	turret -69 -44 "K3-K Particle Turret"
+		arc -166 90
 	turret 45.5 26.5 "K3-K Particle Turret"
+		arc -30 125
 	turret -45.5 26.5 "K3-K Particle Turret"
+		arc -125 30
 	turret 80 94 "Heavy Anti-Missile Turret"
+		angle 55
+		arc -90 90
 	turret -80 94 "Heavy Anti-Missile Turret"
+		angle -55
+		arc -90 90
 	turret 0 216.5 
 	bay "Fighter" -70.5 -276 
 		"launch effect" "zuikaku fighter launch"
@@ -6575,7 +7194,7 @@ ship "E-VC14 Zuiho"
 		"hull" 6800
 		"required crew" 50
 		"bunks" 120
-		"mass" 1720
+		"mass" 2680
 		"drag" 14.5
 		"heat dissipation" .7
 		"fuel capacity" 1200
@@ -6616,12 +7235,23 @@ ship "E-VC14 Zuiho"
 	gun -35.5 -150 "Torpedo Launcher"
 	gun 35.5 -150 "Torpedo Launcher"
 	turret 0 -9 
+		arc -160 160
 	turret 27 -3 
+		arc -25 135
 	turret -27 -3 
+		arc -135 25
 	turret 36.5 37 "Anti-Missile Turret"
+		angle 90
+		arc -110 90
 	turret -36.5 37 "Anti-Missile Turret"
+		angle -90
+		arc -90 110
 	turret 36.5 56.5 
+		angle 90
+		arc -90 90
 	turret -36.5 56.5 
+		angle -90
+		arc -90 90
 	turret 0 123.5 
 	gun 66 51.5 
 		angle 90
@@ -6709,6 +7339,7 @@ ship "S-FS06 Reisen"
 	gun -0.5 -17.5
 	turret 0 -11 "Reisen Sidehull"
 		under
+		arc -35 35
 	engine 0 39 
 	explode "tiny explosion" 15
 	explode "small explosion" 5
@@ -6726,8 +7357,8 @@ ship "H-BS140 Yamato"
 		"hull" 22500
 		"required crew" 372
 		"bunks" 620
-		"mass" 9784
-		"drag" 24.5
+		"mass" 14676
+		"drag" 28.9
 		"heat dissipation" .5
 		"fuel capacity" 1200
 		"cargo space" 60
@@ -6769,24 +7400,60 @@ ship "H-BS140 Yamato"
 
 	#tiny
 	turret 59.5 32 "T2L Pulse Turret"
+		angle 90
+		arc -90 90
 	turret -59.5 32 "T2L Pulse Turret"
+		angle -90
+		arc -90 90
 	turret 59.5 44 "T2L Pulse Turret"
+		angle 90
+		arc -90 90
 	turret -59.5 44 "T2L Pulse Turret"
+		angle -90
+		arc -90 90
 	turret 59.5 57 "T2L Pulse Turret"
+		angle 90
+		arc -90 90
 	turret -59.5 57 "T2L Pulse Turret"
+		angle -90
+		arc -90 90
 	turret 59.5 70 "T2L Pulse Turret"
+		angle 90
+		arc -90 90
 	turret -59.5 70 "T2L Pulse Turret"
+		angle -90
+		arc -90 90
 	turret 59.5 82.5 "T2L Pulse Turret"
+		angle 90
+		arc -90 90
 	turret -59.5 82.5 "T2L Pulse Turret"
+		angle -90
+		arc -90 90
 
 	turret 44.5 40 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -90 90
 	turret -44.5 40 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -90 90
 	turret 44.5 55 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -90 90
 	turret -44.5 55 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -90 90
 	turret 44.5 71 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -90 90
 	turret -44.5 71 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -90 90
 	turret 44.5 87.5 "K4-Ms-S Particle Turret"
+		angle 90
+		arc -90 90
 	turret -44.5 87.5 "K4-Ms-S Particle Turret"
+		angle -90
+		arc -90 90
 
 	turret 47.5 122 "Q4L Pulse Anti-Missile"
 	turret -47.5 122 "Q4L Pulse Anti-Missile"
@@ -6799,49 +7466,123 @@ ship "H-BS140 Yamato"
 	turret -24.5 130.5 "T2L Pulse Turret"
 
 	turret 19.5 -334.5 "Q4L Pulse Anti-Missile"
+		angle 35
+		arc -90 90
 	turret -19.5 -334.5 "Q4L Pulse Anti-Missile"
+		angle -35
+		arc -90 90
 	turret 21.5 -321.5 "K4-Ms-S Particle Turret"
+		angle 35
+		arc -90 90
 	turret -21.5 -321.5 "K4-Ms-S Particle Turret"
+		angle -35
+		arc -90 90
 
 	turret 28.5 -40 "Q4L Pulse Anti-Missile"
+		angle 35
+		arc -90 90
 	turret -28.5 -40 "Q4L Pulse Anti-Missile"
+		angle -35
+		arc -90 90
 	turret 30.5 -26.5 "K4-Ms-S Particle Turret"
+		angle 35
+		arc -90 90
 	turret -30.5 -26.5 "K4-Ms-S Particle Turret"
+		angle -35
+		arc -90 90
 
 	turret 26 46 "Q4L Pulse Anti-Missile"
+		angle 90
+		arc -75 75
 	turret -26 46 "Q4L Pulse Anti-Missile"
+		angle -90
+		arc -75 75
 	turret 26 58.5 "T2L Pulse Turret"
+		angle 90
+		arc -75 75
 	turret -26 58.5 "T2L Pulse Turret"
+		angle -90
+		arc -75 75
 	turret 26 72 "T2L Pulse Turret"
+		angle 90
+		arc -75 75
 	turret -26 72 "T2L Pulse Turret"
+		angle -90
+		arc -75 75
 	turret 26 84 "T2L Pulse Turret"
+		angle 90
+		arc -75 75
 	turret -26 84 "T2L Pulse Turret"
+		angle -90
+		arc -75 75
 	turret 26 98 "Q4L Pulse Anti-Missile"
+		angle 90
+		arc -75 75
 	turret -26 98 "Q4L Pulse Anti-Missile"
+		angle -90
+		arc -75 75
 
 	turret 53 152.5 "K4-Ms-S Particle Turret"
+		angle 135
+		arc -75 75
 	turret -53 152.5 "K4-Ms-S Particle Turret"
+		angle -135
+		arc -75 75
 	turret 46.5 163.5 "Q4L Pulse Anti-Missile"
+		angle 135
+		arc -75 75
 	turret -46.5 163.5 "Q4L Pulse Anti-Missile"
+		angle -135
+		arc -75 75
 
+	#rear?
 	turret 30.5 391.5 "K4-Ms-S Particle Turret"
+		angle 135
+		arc -50 90
 	turret -30.5 391.5 "K4-Ms-S Particle Turret"
+		angle -135
+		arc -90 50
 	turret 29.5 403 "K4-Ms-S Particle Turret"
+		angle 135
+		arc -50 90
 	turret -29.5 403 "K4-Ms-S Particle Turret"
+		angle -135
+		arc -90 50
 	turret 29 417 "Q4L Pulse Anti-Missile"
+		angle 135
+		arc -50 90
 	turret -29 417 "Q4L Pulse Anti-Missile"
+		angle -135
+		arc -90 50
 	
 	turret 0 -22 "Q4L Pulse Anti-Missile"
+		angle -110 110
 
 	turret 30 9 "T2L Pulse Turret"
+		angle 90
+		arc -75 75
 	turret -30 9 "T2L Pulse Turret"
+		angle -90
+		arc -75 75
 	turret 30 21.5 "Q4L Pulse Anti-Missile"
+		angle 90
+		arc -75 75
 	turret -30 21.5 "Q4L Pulse Anti-Missile"
+		angle -90
+		arc -75 75
 
 	turret 47.5 -4.5 "T2L Pulse Turret"
+		angle 90
+		arc -75 75
 	turret -47.5 -4.5 "T2L Pulse Turret"
+		angle -90
+		arc -75 75
 	turret 47.5 8.5 "Q4L Pulse Anti-Missile"
+		angle 90
+		arc -75 75
 	turret -47.5 8.5 "Q4L Pulse Anti-Missile"
+		angle -90
+		arc -75 75
 
 	bay "Fighter" 59 316 
 		angle 176.05
@@ -6883,11 +7624,21 @@ ship "H-BS140 Yamato"
 
 	#main
 	turret 0 -204.5 "T3-S-T Heavy Shock Turret"
+		angle 0
+		arc -150 150
 	turret 0 -112.5 "T3-S-T Heavy Shock Turret"
+		angle 0
+		arc -150 150
 	turret 0 226.5 "T3-S-T Heavy Shock Turret"
+		angle 180
+		arc -150 150
 	#sec
 	turret 0 -50.5 "T2-A-T Shock Turret"
+		angle 0
+		arc -145 145
 	turret 0 158.5 "T2-A-T Shock Turret"
+		angle 180
+		arc -145 145
 
 	engine 0 546 
 		zoom 1.3
@@ -7019,7 +7770,7 @@ ship "E-FD23 Kanran"
 		"hull" 2400
 		"required crew" 16
 		"bunks" 30
-		"mass" 420
+		"mass" 840
 		"drag" 7.8
 		"heat dissipation" .7
 		"fuel capacity" 500
@@ -7053,10 +7804,18 @@ ship "E-FD23 Kanran"
 	gun 11.5 -125 
 	gun -11.5 -125 
 	turret 0 -74 
+		arc -170 170
 	turret 0 -51.5 
+		arc -170 170
 	turret 0 76 
+		angle 180
+		arc -160 160
 	turret -7 -26 "Anti-Missile Turret"
+		angle -45
+		arc -115 125
 	turret 7 -26 "Anti-Missile Turret"
+		angle 45
+		arc -125 115
 	"reverse engine" 56.5 77.5 
 		angle 3.5
 		zoom .4
@@ -7131,27 +7890,51 @@ ship "PAS-3 Barbette"
 		"Scram Drive"
 		
 	turret 0 -343 "Heavy Anti-Missile Turret"
+		arc -145 145
 	turret -29 -324 
+		angle -45
+		arc -122 100
 	turret 29 -324 
+		angle 45
+		arc -100 122
 	turret -51.5 125 
+		angle -90
+		arc -90 90
 	turret 51.5 125 
+		angle 90
+		arc -90 90
 	turret -57 164 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	turret 57 164 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret 0 283.5 
+		angle 180
+		arc -130 130
 	gun -41 -382.5 
 	gun 41 -382.5 
 	gun -53 -376.5 "Torpedo Launcher"
 	gun 53 -376.5 "Torpedo Launcher"
 	turret 0 -261.5 "LbrC-1 Jaivana Turret"
+		arc -160 160
 	turret 0 -187 "LbrC-1 Jaivana Turret"
+		arc -160 160
 	turret 0 -106 "LbrC-1 Jaivana Turret"
+		arc -160 160
 	turret 0 -31.5 "LbrC-1 Jaivana Turret"
+		arc -160 160
 	turret 0 49.5 "LbrC-1 Jaivana Turret"
+		arc -160 160
 	turret 0 124 "LbrC-1 Jaivana Turret"
+		arc -160 160
 	
 	turret 0 -225 
+		arc -150 150
 	turret 0 -69 
+		arc -150 150
 	turret 0 86.5 
+		arc -150 150
 	engine -64 380.5 
 	engine 64 380.5 
 	engine 0 394.5 
@@ -7234,7 +8017,7 @@ ship "GKS-48 Zummenstoss"
 		"hull" 12000
 		"required crew" 68
 		"bunks" 80
-		"mass" 1585
+		"mass" 3170
 		"drag" 14.8
 		"heat dissipation" .4
 		"fuel capacity" 800
@@ -7268,11 +8051,23 @@ ship "GKS-48 Zummenstoss"
 	gun 17 -171.5 "NW40 Hagel Cannon"
 	gun -17 -171.5 "NW40 Hagel Cannon"
 	turret 43.5 -136 "NW40z Hagel Turret"
+		angle 45
+		arc -135 135
 	turret -43.5 -136 "NW40z Hagel Turret"
+		angle -45
+		arc -135 135
 	turret 43 -86.5 "NW40z Hagel Turret"
+		angle 45
+		arc -135 135
 	turret -43 -86.5 "NW40z Hagel Turret"
+		angle -45
+		arc -135 135
 	turret 43 -33.5 "NW40z Hagel Turret"
+		angle 45
+		arc -135 135
 	turret -43 -33.5 "NW40z Hagel Turret"
+		angle -45
+		arc -135 135
 	turret 0 54.5 "NW40z Hagel Turret"
 	engine -64.5 185 
 		zoom .8
@@ -7281,11 +8076,23 @@ ship "GKS-48 Zummenstoss"
 	engine -44 178.5 
 	engine 44 178.5 
 	turret 42.5 -48 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -135 135
 	turret -42.5 -48 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -135 135
 	turret 41.5 43.5 "Blaster Turret"
+		angle 45
+		arc -90 90
 	turret -41.5 43.5 "Blaster Turret"
+		angle -45
+		arc -90 90
 	turret 69.5 155.5 "Blaster Turret"
+		angle 90
+		arc -90 145
 	turret -69.5 155.5 "Blaster Turret"
+		angle -90
+		arc -145 90
 	leak "leak" 30 50
 	leak "flame" 30 80
 	leak "big leak" 30 30
@@ -7307,7 +8114,7 @@ ship "Typ012 Guangzhou"
 		"hull" 18000
 		"required crew" 254
 		"bunks" 340
-		"mass" 7585
+		"mass" 15170
 		"drag" 22.8
 		"heat dissipation" .4
 		"fuel capacity" 1200
@@ -7340,40 +8147,97 @@ ship "Typ012 Guangzhou"
 		"Hyperdrive"
 		
 	turret 0 -228.5 "J520 Quad Zhizhe Turret"
+		arc -140 140
 	turret 0 -162.5 "J520 Quad Zhizhe Turret"
+		arc -140 140
 	turret 0 -96.5 "J520 Quad Zhizhe Turret"
+		arc -140 140
 	turret 0 -21.5 "J520 Quad Zhizhe Turret"
+		arc -120 120
 	turret 0 32 "J520 Quad Zhizhe Turret"
+		arc -120 120
 	turret 0 245 "J520 Quad Zhizhe Turret"
+		angle 180
+		arc -120 120
 	turret 0 295.5 "J520 Quad Zhizhe Turret"
+		angle 180
+		arc -120 120
 
 	turret 62.5 -264 "J13 Leiqiang Turret"
+		angle 90
+		arc -45 45
 	turret -62.5 -264 "J13 Leiqiang Turret"
+		angle -90
+		arc -45 45
 	turret 62.5 -217 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -45 45
 	turret -62.5 -217 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -45 45
 	turret 62.5 -169 "J13 Leiqiang Turret"
+		angle 90
+		arc -45 45
 	turret -62.5 -169 "J13 Leiqiang Turret"
+		angle -90
+		arc -45 45
 
 	turret 88 -51.5 "J13 Leiqiang Turret"
+		angle 90
+		arc -45 45
 	turret -88 -51.5 "J13 Leiqiang Turret"
+		angle -90
+		arc -45 45
 	turret 88 -3 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -45 45
 	turret -88 -3 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -45 45
 	turret 88 44 "J13 Leiqiang Turret"
+		angle 90
+		arc -45 45
 	turret -88 44 "J13 Leiqiang Turret"
+		angle -90
+		arc -45 45
 
 	turret 99 115 
+		angle 90
+		arc -90 45
 	turret -99 115 
+		angle -90
+		arc -45 90
 	turret 99 138.5 "Anti-Missile Turret"
+		angle 90
+		arc -45 45
 	turret -99 138.5 "Anti-Missile Turret"
+		angle -90
+		arc -45 45
 	turret 99 161.5 
+		angle 90
+		arc -45 90
 	turret -99 161.5 
+		angle -90
+		arc -90 45
 
 	turret 38.5 199 
+		angle 90
+		arc -90 45
 	turret -38.5 199 
+		angle -90
+		arc -45 90
 	turret 38.5 221.5 "Anti-Missile Turret"
+		angle 90
+		arc -45 45
 	turret -38.5 221.5 "Anti-Missile Turret"
+		angle -90
+		arc -45 45
 	turret 38.5 244.5 "J13 Leiqiang Turret"
+		angle 90
+		arc -45 90
 	turret -38.5 244.5 "J13 Leiqiang Turret"
+		angle -90
+		arc -90 45
 
 	engine 29.5 354 
 	engine -29.5 354 
@@ -7423,7 +8287,7 @@ ship "Typ057 Lanzhou"
 		"hull" 5800
 		"required crew" 25
 		"bunks" 43
-		"mass" 805
+		"mass" 1125
 		"drag" 12.5
 		"heat dissipation" .45
 		"fuel capacity" 800
@@ -7452,9 +8316,15 @@ ship "Typ057 Lanzhou"
 		"Hyperdrive"
 		
 	turret 0 -117.5 "J13s Dual Leiqiang Turret"
+		arc -175 175
 	turret 0 -82 "J13s Dual Leiqiang Turret"
+		arc -175 175
 	turret 20.5 35.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -135 135
 	turret -20.5 35.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -135 135
 	gun 23.5 -151 
 	gun -23.5 -151 
 	gun 37 -101.5 
@@ -7488,7 +8358,7 @@ ship "Typ064 Xuchang"
 		"hull" 2900
 		"required crew" 12
 		"bunks" 24
-		"mass" 205
+		"mass" 350
 		"drag" 5.5
 		"heat dissipation" .45
 		"fuel capacity" 600
@@ -7516,7 +8386,9 @@ ship "Typ064 Xuchang"
 		"X3200 Ion Steering"
 
 	turret 0 -58 "J13 Leiqiang Turret"
+		arc -175 175
 	turret 0 -20 "J13 Leiqiang Turret"
+		arc -175 175
 	gun 10.5 -104.5 
 	gun -10.5 -104.5 
 
@@ -7648,37 +8520,62 @@ ship "KM50T Stetnel"
 	gun 49 -177 
 	gun 55 -159 
 	turret -6.5 -160.5 "Proton Turret"
+		arc -70 145
 	turret -64.5 -150.5 
+		angle -75
+		arc -120 100
 	turret 9 -92.5 "Quad Blaster Turret"
+		arc -173 160 #TODO make it blindspot when available
 	turret 50 -89.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -35 90
 	turret 64.5 -11 "Proton Turret"
+		angle 90
+		arc -110 50
 	turret 64.5 21.5 "Quad Blaster Turret"
+		angle 90
+		arc -50 50
 	turret 64.5 55 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -50 110
 	turret 9 110.5 "Proton Turret"
+		angle 180
 
 	turret -71 -85 "Proton Turret"
+		angle -90
+		arc -55 55
 	turret -71 -52.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -55 55
 	turret -71 -20 "Proton Turret"
+		angle -90
+		arc -55 55
 	turret -41 -70.5 "Proton Turret"
+		angle -90
+		arc -55 55
 	turret -41 -38 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -55 55
 	turret -41 -5 "Proton Turret"
+		angle -90
+		arc -55 55
 	bay "Fighter" -80.5 61 
-		angle 90
+		angle -90
 		"launch effect" "human internal"
 	bay "Fighter" -80.5 61 
-		angle 90
+		angle -90
 		"launch effect" "human internal"
 	bay "Fighter" -80.5 61 
-		angle 90
+		angle -90
 		"launch effect" "human internal"
 	bay "Fighter" -80.5 61 
-		angle 90
+		angle -90
 		"launch effect" "human internal"
 	bay "Fighter" -80.5 61 
-		angle 90
+		angle -90
 		"launch effect" "human internal"
 	bay "Fighter" -80.5 61 
-		angle 90
+		angle -90
 		"launch effect" "human internal"
 	engine -38.5 226.5 
 	engine 38.5 226.5 
@@ -7701,8 +8598,8 @@ ship "GX-77 Xpulse"
 		"hull" 2100
 		"required crew" 10
 		"bunks" 20
-		"mass" 210
-		"drag" 5.1
+		"mass" 800
+		"drag" 15.1
 		"heat dissipation" .6
 		"fuel capacity" 1200
 		"cargo space" 10
@@ -7733,9 +8630,15 @@ ship "GX-77 Xpulse"
 
 	gun 0 -133 
 	turret 0 13.5 "GE-22 Mini-Driver Turret"
+		arc -160 160
 	turret 0 38.5 
+		arc -130 130
 	turret 18 80 "GE-22 Mini-Driver Turret"
+		angle 90
+		arc -110 150
 	turret -18 80 "GE-22 Mini-Driver Turret"
+		angle -90
+		arc -150 110
 	engine 26.5 125.5 
 		zoom .7
 	engine -26.5 125.5 
@@ -7753,6 +8656,1066 @@ ship "GX-77 Xpulse"
 	explode "huge explosion" 10
 	"final explode" "final explosion medium"
 	description `The Xpulse is a original custom-build warship for Galactic Express. It features a spinal-mounted mass driver as its primary weapon and deterrent. Derived from their early research on mass driver for interplanetary cargo delivery. `
+
+ship "AKH-8C Mlitgante"
+	sprite "ship/mgf mlitgante combat"
+	thumbnail "thumbnail/mgf mlitgante combat thumb"
+	attributes
+		category "Light Warship"
+		"cost" 9800000
+		"shields" 3200
+		"hull" 2500
+		"required crew" 4
+		"bunks" 10
+		"mass" 580
+		"drag" 5.5
+		"heat dissipation" .6
+		"fuel capacity" 600
+		"cargo space" 10
+		"outfit space" 440
+		"weapon capacity" 150
+		"engine capacity" 180
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"G22 Particle Cannon" 2
+		"Proton Turret"
+		"Blaster Turret"
+		"Heavy Anti-Missile Turret" 1
+		
+		"Fission Reactor"
+		"LP036a Battery Pack"
+		"D41-HY Shield Generator"
+		"Laser Rifle" 7
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+		
+	gun 22 -25.5 
+	gun -22 -25.5 
+	turret 0 0 "Heavy Anti-Missile Turret"
+	turret -22 -12 
+		angle -30
+		arc -125 65
+	turret 22 -12 
+		angle 30
+		arc -65 125
+	engine -44 41 
+		angle 46.4
+		scale .8
+	engine 44 41 
+		angle -46.4
+		scale .8
+	engine -29.5 56 
+		angle 29.6
+	engine 29.5 56 
+		angle -29.6
+	leak "leak" 40 60
+	leak "flame" 60 120
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description `A conversion of the tow ship into a very agile warship by removing the bulky tow system and other salvaging tools in favor of two gun ports for additional firepower.`
+	description `First few of these were converted on rare occasion where the Ankulah station needed to rapidly replenish its force after a major pirate attack. Though later on a small number of them were built as more pilots became interested in it.`
+
+ship "Enforcer" "Enforcer (Ankulah)"
+	sprite "ship/mgf enforcer ankulah"
+	thumbnail "thumbnail/mgf enforcer ankulah thumb"
+	add attributes
+		"cost" 220000
+		"shields" 100
+		"hull" 300
+		"mass" 20
+		"drag" .2
+		"heat dissipation" .02
+		"weapon capacity" 10
+		weapon
+			"blast radius" 34
+			"shield damage" 340
+			"hull damage" 170
+			"hit force" 510
+	outfits
+		"Modified Blaster" 4
+		"Proton Turret"
+		
+		"nGVF-CC Fuel Cell"
+		"LP036a Battery Pack"
+		"D41-HY Shield Generator"
+		"KP-6 Photovoltaic Panel" 2
+		
+		"Chipmunk Plasma Thruster"
+		"Greyhound Plasma Steering"
+		"Hyperdrive"
+	description `The Enforcer, although an outdated combat ship, crews of Ankulah station must make do with whatever they have. This result in some of the salvaged Enforcers being repaired and "modernized" by the crews to be used in their defense fleet.`
+
+ship "MGF: Pirate Galley"
+	"display name" "Pirate Galley"
+	sprite "ship/mgf pirate galley-a"
+	thumbnail "thumbnail/mgf pirate galley-a thumb"
+	attributes
+		category "Heavy Warship"
+		"cost" 10100000
+		"shields" 6200
+		"hull" 10500
+		"required crew" 85
+		"bunks" 150
+		"mass" 5590
+		"drag" 26
+		"heat dissipation" .4
+		"fuel capacity" 600
+		"cargo space" 240
+		"outfit space" 1477
+		"weapon capacity" 1043
+		"engine capacity" 180
+		"shield generation multiplier" -.25
+		"hull repair multiplier" .3
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Heavy Anti-Missile Turret" 2
+		"V2000 Basilisk Turret" 6
+		"V2000 Basilisk Shell" 540
+		"Vkan Revolver Cannon Turret" 4
+		"V2000 Basilisk" 3
+		"V2000 Basilisk Shell" 270
+		
+		"Fission Reactor" 2
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Laser Rifle" 20
+		"MGF: Laser Rifle (Defective)" 60
+		"MGF: Makeshift Laser Machinegun" 30
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Scram Drive"
+	#TODO: overclocked reactor;
+	turret 5 -121.5 "Heavy Anti-Missile Turret"
+		arc -145 145
+	turret 9 94.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -120 120
+	turret -65.5 -76.5 "V2000 Basilisk Turret" 
+		angle -90
+		arc -80 80
+	turret -65.5 -35.5 "V2000 Basilisk Turret" 
+		angle -90
+		arc -80 80
+	turret -65.5 5.5 "V2000 Basilisk Turret" 
+		angle -90
+		arc -80 80
+	turret -65.5 46.5 "V2000 Basilisk Turret" 
+		angle -90
+		arc -80 80
+	turret -46.5 -14.5 "V2000 Basilisk Turret" 
+		angle -90
+		arc -80 80
+	turret -46.5 27.5 "V2000 Basilisk Turret" 
+		angle -90
+		arc -80 80
+	turret 13.5 -87.5 "Vkan Revolver Cannon Turret"
+	turret 13.5 -63.5 "Vkan Revolver Cannon Turret"
+	turret 20 3 "Vkan Revolver Cannon Turret"
+	turret 20 26.5 "Vkan Revolver Cannon Turret"
+	gun 66.5 -213.5 
+	gun 50.5 -208 
+	gun 94 -147.5 
+	engine -44.5 206 
+	engine 44.5 206 
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 30
+	explode "mgf explosion spark" 90
+	description `Pirate Galley is less of a ship but rather a class of scraps quickly cobbled together into what could barely be called a ship by some pirates. Other than questionable quality, it's characterized by large amount of weapon installation and horrid shielding efficiency. Creation of these scrap heaps appear to be desperate solution to larger and more heavily armed merchant convoys.`
+
+ship "MGF: Pirate Galley" "MGF: Pirate Galley-B"
+	"display name" "Pirate Galley"
+	sprite "ship/mgf pirate galley-b"
+	thumbnail "thumbnail/mgf pirate galley-b thumb"
+	add attributes
+		"shields" 700
+		"hull" -1500
+		"drag" -4
+		"mass" -500
+		"cargo space" -220
+		"outfit space" 1072
+		"weapon capacity" 971
+		"engine capacity" 60
+	outfits
+		"Heavy Anti-Missile Turret" 2
+		"V2000 Dual Basilisk Turret" 8
+		"V2000 Basilisk Shell" 720
+		"Stormhold Carronade Turret" 4
+		"Vkan Revolver Cannon Turret" 2
+		"V2000 Basilisk" 3
+		"V2000 Basilisk Shell" 270
+		"Torpedo Launcher" 2
+		"Torpedo" 40
+		
+		"Fission Reactor" 3
+		"LP576a Battery Pack"
+		"D94-YV Shield Generator"
+		"Laser Rifle" 20
+		"MGF: Laser Rifle (Defective)" 60
+		"MGF: Makeshift Laser Machinegun" 25
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Scram Drive"
+
+	turret 43 -77.5 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 62.5 -40 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 80.5 -4.5 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 99 33 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 54.5 -13.5 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 73 23.5 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 22.5 -66 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	turret 33 -44 "V2000 Dual Basilisk Turret"
+		angle 65
+		arc -80 80
+	gun -45 -206.5 
+	gun -62 -185 
+	turret -19.5 -106.5 "Heavy Anti-Missile Turret"
+	turret -19.5 -82.5 "Vkan Revolver Cannon Turret"
+	turret 14 -30.5 "Stormhold Carronade Turret"
+		angle 65
+		arc -90 90
+	turret 28.5 -3 "Stormhold Carronade Turret"
+		angle 65
+		arc -90 90
+	turret 45 31 "Stormhold Carronade Turret"
+		angle 65
+		arc -90 90
+	turret 72.5 103 "Stormhold Carronade Turret"
+		angle 65
+		arc -90 90
+	gun 40 -134.5 "V2000 Basilisk"
+		angle 65
+	gun 40 -122 "V2000 Basilisk"
+		angle 65
+	gun 54.5 -117 "V2000 Basilisk"
+		angle 65
+	turret -59 72.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -70 70
+	turret -59 96.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -70 70
+	engine -61.5 207 
+	engine 61.5 207 
+	engine -19.5 214.5 
+	engine 19.5 214.5 
+
+ship "MGF: Pirate Galley" "MGF: Pirate Galley-C"
+	"display name" "Pirate Galley"
+	sprite "ship/mgf pirate galley-c"
+	thumbnail "thumbnail/mgf pirate galley-c thumb"
+	add attributes
+		"shields" 200
+		"hull" 1400
+		"required crew" 16
+		"bunks" -30
+		"drag" -4
+		"mass" 100
+		"cargo space" 180
+		"outfit space" -377
+		"weapon capacity" -450
+	outfits
+		"Heavy Anti-Missile Turret" 2
+		"G22 Particle Turret" 4
+		"Stormhold Carronade Turret"
+		"Vkan Revolver Cannon Turret" 2
+		"V2000 Basilisk"
+		"V2000 Basilisk Shell" 90
+		
+		"Fission Reactor" 3
+		"LP576a Battery Pack"
+		"D94-YV Shield Generator"
+		"Laser Rifle" 20
+		"MGF: Laser Rifle (Defective)" 60
+		"MGF: Makeshift Laser Machinegun" 40
+		
+		"Orca Plasma Thruster"
+		"Impala Plasma Steering"
+		"Scram Drive"
+
+	gun 0 -211 
+	turret 0 -118.5 "Stormhold Carronade Turret"
+		arc -145 145
+	turret 0 -72.5 "Heavy Anti-Missile Turret"
+	turret 0 -48.5 "Vkan Revolver Cannon Turret"
+	turret 0 -7 "Vkan Revolver Cannon Turret"
+	turret 0 17 "Heavy Anti-Missile Turret"
+	turret -72 -14.5 "G22 Particle Turret"
+		angle -90
+		arc -80 80
+	turret 72 -14.5 "G22 Particle Turret"
+		angle 90
+		arc -80 80
+	turret -72 27 "G22 Particle Turret"
+		angle -90
+		arc -80 80
+	turret 72 27 "G22 Particle Turret"
+		angle 90
+		arc -80 80
+	bay "Drone" -92.5 -76.5 
+		angle -90
+	bay "Drone" 92.5 -76.5 
+		angle 90
+	bay "Drone" -92.5 -35 
+		angle -90
+	bay "Drone" 92.5 -35 
+		angle 90
+	bay "Drone" -92.5 5 
+		angle -90
+	bay "Drone" 92.5 5 
+		angle 90
+	bay "Drone" -92.5 47.5 
+		angle -90
+	bay "Drone" 92.5 47.5 
+		angle 90
+	engine -50 194.5 
+	engine 50 194.5 
+	engine 0 213 
+		zoom 1.3
+
+ship "MGF: Pirate Galley" "MGF: Pirate Galley-D"
+	"display name" "Pirate Galley"
+	sprite "ship/mgf pirate galley-d"
+	thumbnail "thumbnail/mgf pirate galley-d thumb"
+	add attributes
+		"shields" 1200
+		"required crew" 4
+		"bunks" -20
+		"drag" 4
+		"mass" 300
+		"cargo space" -120
+		"outfit space" 250
+		"weapon capacity" 200
+	outfits
+		"Heavy Anti-Missile Turret" 3
+		"G22 Particle Turret" 2
+		"Torandor Cannon Turret" 2
+		"Vkan Revolver Cannon Turret" 3
+		"V2000 Basilisk" 4
+		"V2000 Basilisk Shell" 300
+		
+		"Fission Reactor" 3
+		"LP576a Battery Pack"
+		"D94-YV Shield Generator"
+		"Laser Rifle" 50
+		"MGF: Laser Rifle (Defective)" 30
+		"MGF: Makeshift Laser Machinegun" 50
+		
+		"Orca Plasma Thruster"
+		"Impala Plasma Steering"
+		"Scram Drive"
+
+	gun 47 -208.5 
+	gun 37 -192.5 
+	gun -57.5 -177.5 
+	gun 90.5 -107.5
+	turret 0 -120.5 "Heavy Anti-Missile Turret"
+		arc -135 135
+	
+	turret 36 -87 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -90 90
+	turret 36 -63.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
+	turret -29 -42.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -90 90
+	turret -29 -18.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
+	turret -82.5 22.5 "G22 Particle Turret"
+		angle -90
+		arc -85 90
+	turret -75.5 54 "G22 Particle Turret"
+		angle -90
+		arc -80 80 
+	turret 41 94.5 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -90 90
+	
+	turret 0 -73 "Torandor Cannon Turret"
+		arc -145 145
+	turret 0 3.5 "Torandor Cannon Turret"
+		arc -145 145
+
+	engine -34.5 206.5 
+	engine 34.5 206.5 
+
+ship "MGF: Pirate Galley" "MGF: Pirate Galley-E"
+	"display name" "Pirate Galley"
+	sprite "ship/mgf pirate galley-e"
+	thumbnail "thumbnail/mgf pirate galley-e thumb"
+	add attributes
+		"shields" 2200
+		"hull" 6000
+		"required crew" 4
+		"bunks" -20
+		"drag" 7
+		"mass" 600
+		"cargo space" 50
+		"outfit space" 151
+	outfits
+		"Heavy Anti-Missile Turret" 4
+		"G22 Particle Turret" 3
+		"Torandor Cannon Turret"
+		"Vkan Revolver Cannon Turret" 4
+		"Quad Blaster Turret" 2
+		"V2000 Basilisk" 3
+		"V2000 Basilisk Shell" 270
+		
+		"Fission Reactor" 3
+		"LP576a Battery Pack"
+		"D94-YV Shield Generator" 2
+		"Laser Rifle" 50
+		"MGF: Laser Rifle (Defective)" 30
+		"MGF: Makeshift Laser Machinegun" 45
+		
+		"Orca Plasma Thruster"
+		"Impala Plasma Steering"
+		"Scram Drive"
+
+	gun -47 -193.5 
+	gun -36 -193.5 
+	gun 47.5 -207 
+	turret 0 -132 "Vkan Revolver Cannon Turret"
+		arc -125 125
+	turret 18.5 -86.5 "Vkan Revolver Cannon Turret"
+		angle 45
+		arc -90 90
+	turret 19.5 -58 "Vkan Revolver Cannon Turret"
+		angle 45
+		arc -90 90
+	turret 72.5 88 "G22 Particle Turret"
+		angle 90
+		arc -75 95
+	turret -33 -83.5 "G22 Particle Turret"
+		angle -90
+		arc -75 75
+	turret -61 -52.5 "G22 Particle Turret"
+		angle -90
+		arc -75 75
+	turret -57.5 108 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -90 75
+	turret 57.5 -44 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -110 85
+	turret 57.5 -20 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -85 85
+	turret -41 -23 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -85 110
+	turret -41 0.5 
+		angle -90
+		arc -110 85
+	turret 57.5 20.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -85 85
+	turret 57.5 45
+		angle 90
+		arc -85 85 
+	turret 0 -8.5 "Torandor Cannon Turret"
+	engine -49 190 
+	engine 49 190 
+	engine -18.5 204 
+	engine 18.5 204 
+
+ship "MGF: Pirate Galleon"
+	"display name" "Pirate Galleon"
+	sprite "ship/mgf pirate galleon-a"
+	thumbnail "thumbnail/mgf pirate galleon-a thumb"
+	attributes
+		category "Heavy Warship"
+		"cost" 10100000
+		"shields" 9600
+		"hull" 15300
+		"required crew" 185
+		"bunks" 320
+		"mass" 9590
+		"drag" 32
+		"heat dissipation" .4
+		"fuel capacity" 800
+		"cargo space" 240
+		"outfit space" 3583
+		"weapon capacity" 2948
+		"engine capacity" 200
+		"shield generation multiplier" -.2
+		"hull repair multiplier" .3
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Heavy Anti-Missile Turret" 6
+		"Torandor Cannon Turret" 5
+		"V2000 Dual Basilisk Turret" 4
+		"V2000 Basilisk Shell" 360
+		"Vkan Revolver Cannon Turret" 11
+		"V2000 Basilisk" 4
+		"V2000 Basilisk Shell" 360
+		
+		"Fission Reactor" 3
+		"LP576a Battery Pack" 2
+		"D94-YV Shield Generator"
+		"Laser Rifle" 140
+		"MGF: Laser Rifle (Defective)" 160
+		"MGF: Makeshift Laser Machinegun" 90
+		"Fragmentation Grenades" 80
+		
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Scram Drive"
+
+	gun -22 -288.5 
+	gun 22 -288.5 
+	gun -68 -266.5 
+	gun 68 -266.5 
+
+	turret 0 -220.5 "Vkan Revolver Cannon Turret"
+		arc -120 120
+	turret 25.5 -139 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -75 75 
+	turret -21 -125.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -75 75
+	turret -21 -88.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -75 75
+	turret 0 204.5 "Vkan Revolver Cannon Turret"
+		angle 180
+		arc -120 120
+	
+	turret -76.5 -110.5 "V2000 Dual Basilisk Turret"
+		angle -90
+		arc -85 90
+	turret -93 -73 "V2000 Dual Basilisk Turret"
+		angle -90
+		arc -85 85 
+	turret -58.5 103 "V2000 Dual Basilisk Turret"
+		angle -90
+		arc -85 90
+	turret 100.5 173.5 "V2000 Dual Basilisk Turret"
+		angle 90
+		arc -90 110
+
+	turret -60.5 -54 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
+	turret -60 -31.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -90 90
+	turret 30 -53.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -75 75
+	turret 30 -32.5 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -75 75
+	turret -60 10 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -80 80
+	turret -60 32 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -80 80
+	turret 37.5 62.5 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -80 80
+	turret 37.5 84.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -80 80
+	turret -60.5 154.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
+	turret -60.5 175.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -90 90
+	turret 64.5 161 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
+	turret 64.5 182.5 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -90 90
+
+	turret 0 -169 "Torandor Cannon Turret"
+		arc -145 145
+	turret 36.5 -99 "Torandor Cannon Turret"
+		angle 45
+		arc -80 80
+	turret 36.5 17 "Torandor Cannon Turret"
+		angle 45
+		arc -45 80
+	turret -16 -42 "Torandor Cannon Turret"
+		arc -90 90
+	turret -16 75.5 "Torandor Cannon Turret"
+		arc -90 90
+	
+	engine -65.5 287 
+	engine 65.5 287 
+	engine -33.5 289.5 
+	engine 33.5 289.5 
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 30
+	explode "mgf explosion spark" 90
+	description `A larger variant of the Pirate Galleys. These Galleons can pack a larger array of armaments and are usually quite a lot tougher than Pirate Galley making it much more of a threat to shipping. While it could be easily defeated by modern warships, it can be a disaster for most merchant fleets lacking such heavy escort.`
+
+ship "MGF: Pirate Galleon" "MGF: Pirate Galleon-B"
+	"display name" "Pirate Galleon"
+	sprite "ship/mgf pirate galleon-b"
+	thumbnail "thumbnail/mgf pirate galleon-b thumb"
+	add attributes
+		"shields" -1000
+		"hull" 4000
+		"required crew" 60
+		"bunks" 40
+		"mass" 1290
+		"cargo space" -120
+		"outfit space" 602
+		"weapon capacity" 541
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Heavy Anti-Missile Turret" 6
+		"Torandor Cannon Turret"
+		"V2000 Basilisk Turret" 17
+		"V2000 Basilisk Shell" 360
+		"Stormhold Carronade Turret" 6
+		"Vkan Revolver Cannon Turret" 8
+		"V2000 Basilisk" 8
+		"V2000 Basilisk Shell" 720
+		"Sidewinder Missile Launcher" 8
+		"Sidewinder Missile" 365
+		
+		"Fission Reactor" 3
+		"LP576a Battery Pack" 3
+		"D94-YV Shield Generator"
+		"Laser Rifle" 148
+		"MGF: Laser Rifle (Defective)" 140
+		"MGF: Makeshift Laser Machinegun" 80
+		"Fragmentation Grenades" 80
+
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Scram Drive"
+		
+	turret 0 -169 "Torandor Cannon Turret"
+		arc -145 145
+	gun -22.5 -288.5 "V2000 Basilisk"
+	gun 22.5 -288.5 "V2000 Basilisk"
+	gun -54.5 -266 "V2000 Basilisk"
+	gun -78 -254.5 "V2000 Basilisk"
+	turret 0 -220 "Heavy Anti-Missile Turret"
+		arc -125 125
+	turret -39 -138.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -90 90
+	turret -39 -106 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -90 90
+	turret 0 204 "Vkan Revolver Cannon Turret"
+		angle 180
+		arc -145 145
+	gun 107 -208 "V2000 Basilisk"
+		angle 90
+	gun 104.5 -194.5 "V2000 Basilisk"
+		angle 90
+	gun 112.5 -183 "V2000 Basilisk"
+		angle 90
+	gun 104 -168 "V2000 Basilisk"
+		angle 90
+	turret 91.5 -130.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 75 -112 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 91.5 -94 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 75 -75.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 92.5 -57 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 74.5 -37.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 92 -20.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 75.5 0 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 94 14 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 81.5 37 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80 
+	turret 102 50.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 88.5 72 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 109 86 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 96 108.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 115.5 122.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret 100.5 173.5 "V2000 Basilisk Turret"
+		angle 90
+		arc -80 80
+	turret -92.5 9.5 "V2000 Basilisk Turret"
+		angle -90
+		arc -80 80
+	gun -99 -91.5 
+		angle -90
+	gun -99 -91.5 
+		angle -90
+	gun -99 -78.5 
+		angle -90
+	gun -99 -78.5 
+		angle -90
+	gun -99 -54 
+		angle -90
+	gun -99 -54 
+		angle -90
+	gun -99 -41 
+		angle -90
+	gun -99 -41 
+		angle -90
+	turret 37 -127 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -85 85 
+	turret 37 -105.5 "Vkan Revolver Cannon Turret"
+		angle 90
+		arc -85 85
+	turret 47 -65.5 "Stormhold Carronade Turret"
+		angle 90
+		arc -90 85
+	turret 47 -41 "Stormhold Carronade Turret"
+		angle 90
+		arc -85 85
+	turret 47 -17 "Stormhold Carronade Turret"
+		angle 90
+		arc -85 85
+	turret 52.5 24 "Stormhold Carronade Turret"
+		angle 90
+		arc -85 85 
+	turret 56 47 "Stormhold Carronade Turret"
+		angle 90
+		arc -85 85
+	turret 61.5 71.5 "Stormhold Carronade Turret"
+		angle 85
+		arc -80 85
+	turret 60.5 104.5 "Vkan Revolver Cannon Turret"
+		angle 85
+		arc -80 85
+	turret 66 125 "Heavy Anti-Missile Turret"
+		angle 85
+		arc -80 85
+	engine -65.5 287.5 
+	engine 65.5 287.5 
+	engine -32.5 289.5 
+	engine 32.5 289.5 
+	turret -60.5 -58 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -85 85
+	turret -60.5 -37 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -85 85
+	turret -55.5 46.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -85 85
+	turret -55.5 68.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -85 85
+	turret -60.5 154.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -85 85
+	turret -60.5 176.5 "Vkan Revolver Cannon Turret"
+		angle -90
+		arc -85 85
+
+ship "KS-13 Molot"
+	sprite "ship/mgf kdb molot"
+	thumbnail "thumbnail/mgf kdb molot thumb"
+	attributes
+		category "Light Warship"
+		"cost" 450000
+		"shields" 1100
+		"hull" 2600
+		"required crew" 3
+		"bunks" 4
+		"mass" 270
+		"drag" 3.6
+		"heat dissipation" .5
+		"fuel capacity" 300
+		"cargo space" 20
+		"outfit space" 210
+		"weapon capacity" 52
+		"engine capacity" 60
+		weapon
+			"blast radius" 34
+			"shield damage" 340
+			"hull damage" 170
+			"hit force" 510
+	outfits
+		"ShiKv-86 Gun" 5
+		
+		"nGVF-DD Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"RD-550 Plasma Thruster"
+		"RD-550 Plasma Steering"
+		"Hyperdrive"
+
+	gun -10.5 -64 
+	gun 10.5 -64 
+	gun -21.5 -61.5 
+	gun 21.5 -61.5 
+	gun 0 -37 
+	engine -19 57.5 
+		angle 25.4
+		zoom .6
+	engine 19 57.5 
+		angle -25.4
+		zoom .6
+	engine 0 64 
+	leak "leak" 40 30
+	leak "flame" 50 60
+	explode "tiny explosion" 8
+	explode "small explosion" 12
+	explode "medium explosion" 4
+	description `Ancient patrol and raiding ship from KDB. It's far from comfortable even for its' time with internal space taken up buy layers or armor and systems. It earned a reputation of being fast and reliable thanks to its' RD-550 engines allowing it to out maneuver most other ship of the time and out gun their enemies with five frontal guns.`
+	description `	Although way past its' intended lifetime, a few of these can still be seen in active service with upgraded equipment. Some of which saw service through every conflict the KDB have ever been involved in.`
+
+ship "KS-13 Molot" "KS-13 Molot (Modernized)"
+	sprite "ship/mgf kdb molot"
+	thumbnail "thumbnail/mgf kdb molot thumb"
+	attributes
+		category "Light Warship"
+		"cost" 650000
+		"shields" 1500
+		"hull" 2400
+		"required crew" 3
+		"bunks" 4
+		"mass" 270
+		"drag" 3.6
+		"heat dissipation" .5
+		"fuel capacity" 400
+		"cargo space" 15
+		"outfit space" 210
+		"weapon capacity" 56
+		"engine capacity" 60
+	outfits
+		"ShiKv-190 Gun" 4
+		
+		"RT-I Radiothermal"
+		"LP036a Battery Pack"
+		"D23-QP Shield Generator"
+		"Water Coolant System"
+		
+		"RD-550 Plasma Thruster"
+		"RD-550 Plasma Steering"
+		"Hyperdrive"
+	description `This is one of the Molot that were modernized to serve in KDB's private force, the Reshetka. With far more improved shield emitter and matrix combined with its' traditionally heavy armour and new weapon makes it a threat even to modern ships again.`
+
+ship "KS-13 Molot" "KS-13 Molot (ERA)"
+	sprite "ship/mgf kdb molot era"
+	thumbnail "thumbnail/mgf kdb molot era thumb"
+	add attributes
+		"cost" 20000
+		"shields" -100
+		"hull" 500
+		"mass" 60
+		"drag" .9
+		"heat dissipation" -.05
+		"threshold percentage" .15
+		"engine capacity" -10
+	outfits
+		"ShiKv-86 Gun" 5
+		
+		"nGVF-DD Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"RD-550 Plasma Thruster"
+		"RD-550 Plasma Steering"
+		"Hyperdrive"
+	description `A variant of the Molot with reactive armour installed. Hailing from dire time of the Alpha War. Though it's questionable how much more effective these ships are but at very least they're very though for the size.`
+
+ship "ICV-136 Starlight"
+	sprite "ship/mgf bws starlight"
+	thumbnail "thumbnail/mgf bws starlight thumb"
+	attributes
+		category "Interceptor"
+		"cost" 620000
+		"shields" 2600
+		"hull" 400
+		"required crew" 1
+		"bunks" 2
+		"mass" 100
+		"drag" 2.1
+		"heat dissipation" .79
+		"fuel capacity" 600
+		"cargo space" 5
+		"outfit space" 200
+		"weapon capacity" 35
+		"engine capacity" 66
+		"radar jamming" 2
+		weapon
+			"blast radius" 30
+			"shield damage" 300
+			"hull damage" 150
+			"hit force" 450
+	outfits
+		"Energy Blaster" 2
+		"Javelin Mini Pod" 2
+		"Javelin" 60
+		"Anti-Missile Turret"
+		
+		"nGVF-CC Fuel Cell"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"X3700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+		
+	turret 0 -3.5 
+	gun -16.5 -5.5 "Energy Blaster"
+	gun 16.5 -5.5 "Energy Blaster"
+	gun -23.5 -1.5 
+	gun 23.5 -1.5 
+	engine -7 28 
+	engine 7 28 
+	leak "leak" 60 50
+	leak "flame" 80 80
+	explode "tiny explosion" 10
+	explode "small explosion" 15
+	"final explode" "final explosion small"
+	description "Light and fast interceptor from Bellwing with a turret mount giving it option for missile defense or even more firepower. Due to it's versatility, it's popular among both bounty hunters and militias alike."
+
+ship "Vanguard" "Vanguard (Pocket)"
+	attributes
+		category "Pocket Heavy Warship"
+		"cost" 7200000
+		"shields" 9800
+		"hull" 6000
+		"required crew" 23
+		"bunks" 45
+		"mass" 1030
+		"drag" 12
+		"heat dissipation" .4
+		"fuel capacity" 0
+		"cargo space" 50
+		"outfit space" 592
+		"weapon capacity" 250
+		"engine capacity" 120
+		weapon
+			"blast radius" 160
+			"shield damage" 1600
+			"hull damage" 800
+			"hit force" 2400
+	outfits
+		"Proton Gun" 7
+		"Heavy Anti-Missile Turret"
+
+		"Fusion Reactor"
+		"LP072a Battery Pack"
+		"D67-TM Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Laser Rifle" 4
+		
+		"X3700 Ion Thruster"
+		"X4200 Ion Steering"
+	description `To complement the recent K-Class Ultra Container ship, Syndiated Systems also released a new variant of the Vanguard designed to be carried abroad their newest vessel. With hyperspace capabilities removed in favor of improved potential firepower.`
+
+ship "Vanguard" "Vanguard (Pocket, NGK)"
+	sprite "ship/mgf ngk vanguard"
+	thumbnail "thumbnail/mgf ngk vanguard thumb"
+	attributes
+		category "Pocket Heavy Warship"
+		"cost" 8100000
+		"shields" 10000
+		"hull" 6000
+		"required crew" 21
+		"bunks" 40
+		"mass" 1130
+		"drag" 12
+		"heat dissipation" .4
+		"fuel capacity" 0
+		"cargo space" 20
+		"outfit space" 614
+		"weapon capacity" 266
+		"engine capacity" 140
+		"shield generation multiplier" .07
+		weapon
+			"blast radius" 160
+			"shield damage" 1600
+			"hull damage" 800
+			"hit force" 2400
+	outfits
+		"K3-K Particle Cannon" 7
+		"Heavy Anti-Missile Turret"
+
+		"Fusion Reactor"
+		"LP072a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Helium Cooler"
+		"NGK R11 Rifle" 30
+		"NGK R11 QAS" 20
+		
+		"X3700 Ion Thruster"
+		"X2700 Ion Thruster"
+		"X4200 Ion Steering"
+	description `To complement the recent K-Class Ultra Container ship, Syndiated Systems also released a new variant of the Vanguard designed to be carried abroad their newest vessel. With hyperspace capabilities removed in favor of improved potential firepower.`
 
 ship "AGT-31 Xencar"
 	sprite "ship/mgf xencar"
@@ -7798,3 +9761,80 @@ ship "AGT-31 Xencar"
 	explode "tiny explosion" 15
 	explode "small explosion" 5
 	description `Heavy fighter/bomber developed as more effective way to deter pirates, equipped with a powerful Atesac Plasma Cannon to make a quick work of enemy shields and chase the more cowardly pirates away.`
+
+ship "GX-21b Stardust"
+	sprite "ship/mgf gx stardust"
+	thumbnail "thumbnail/mgf gx stardust thumb"
+	"swizzle" 0
+	attributes
+		category "Fighter"
+		"cost" 72000
+		"shields" 850
+		"hull" 420
+		"required crew" 1
+		"bunks" 3
+		"mass" 40
+		"drag" .9
+		"heat dissipation" .9
+		"cargo space" 30
+		"outfit space" 120
+		"weapon capacity" 30
+		"engine capacity" 51
+		weapon
+			"blast radius" 12
+			"shield damage" 120
+			"hull damage" 60
+			"hit force" 180
+	outfits
+		"GE-PDS-6 Delivery System"
+		"PDS-6 Bomb Package" 12
+		"GE-HPDS-1 Delivery System"
+		"HPDS-1 Bomb Package" 4
+		
+		"nGVF-AA Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"Small Radar Jammer" 2
+		
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
+		
+	turret 0 7 
+	gun 0 33
+		"angle" 180
+	engine -13 33.5 
+	engine 13 33.5 
+	explode "tiny explosion" 15
+	explode "small explosion" 5
+	description `A bomber used by Galactic Express fleet. Adapted from an atmospheric cargo delivery fighter.`
+
+ship "Surveillance Drone" "Surveillance Drone (Kamikaze)"
+	attributes
+		category "Drone"
+		"cost" 50000
+		"hull" 300
+		"automaton" 1
+		"mass" 15
+		"drag" .50
+		"heat dissipation" .9
+		"outfit space" 53
+		"weapon capacity" 0
+		"engine capacity" 28
+		"self destruct" .7
+		weapon
+			"blast radius" 3
+			"shield damage" 30
+			"hull damage" 15
+			"hit force" 45
+	outfits
+		"4C-1 Detonator"
+		"KP-6 Photovoltaic Panel"
+		"LP036a Battery Pack"
+		
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
+		
+	gun 0 -5 "4C-1 Detonator"
+	engine -3 29
+	engine 3 29
+	"final explode" "final explosion small"

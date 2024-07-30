@@ -34,7 +34,7 @@ ship "FR-4 Dart"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "With goal of creating the smallest and cheapest spaceship possible. With everything reduced to the minimum, the FR-4 Dart was designed as an even cheaper alternative to the Betelgeuse Shuttle. Despite its' fragility this ship is fast enough to outrun nearly everything else in human space."
+	description "This was made with the goal of creating the smallest and cheapest spaceship possible. With everything reduced to the minimum, the FR-4 Dart was designed as an even cheaper alternative to the Betelgeuse Shuttle. Despite its' fragility, this ship is fast enough to outrun nearly everything else in human space."
 
 ship "Wisymton"
 	sprite "ship/mgf wisymton"
@@ -111,7 +111,7 @@ ship "Wisymton"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "A tugboat from early days of space trading made to transport cargo containers between ground and space when repulsor engines are still in its infancy and many ships from previous era still lack one or were not designed to enter atmosphere and land at all. With more freighters equipped with repulsor engines these tugboat roles changed to assisting these large and cumbersome ships to land, not unlike their sea-bound ancestor."
+	description "A tugboat from early days of space trading made to transport cargo containers between ground and space. Designed when repulsor engines were still in their infancy, many ships from the previous era still lack one or were not designed to enter the atmosphere at all. In modern times where all freighters come equipped with repulsor engines, the roles for these tugboats changed to assisting these large and cumbersome ships to land, not unlike their sea-bound ancestor."
 
 ship "Wisymton" "Wisymton (Light Freighter)"
 	attributes
@@ -287,37 +287,6 @@ ship "Wisymton" "Wisymton (Gold)"
 		
 	description `Rare Gold-plated variant commissioned by an unknown individual.`
 		
-ship "Surveillance Drone" "Surveillance Drone (Kamikaze)"
-	attributes
-		category "Drone"
-		"cost" 50000
-		"hull" 300
-		"automaton" 1
-		"mass" 15
-		"drag" .50
-		"heat dissipation" .9
-		"outfit space" 53
-		"weapon capacity" 0
-		"engine capacity" 28
-		"self destruct" .7
-		weapon
-			"blast radius" 3
-			"shield damage" 30
-			"hull damage" 15
-			"hit force" 45
-	outfits
-		"4C-1 Detonator"
-		"KP-6 Photovoltaic Panel"
-		"LP036a Battery Pack"
-		
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
-		
-	gun 0 -5 "4C-1 Detonator"
-	engine -3 29
-	engine 3 29
-	"final explode" "final explosion small"
-		
 ship "CF-50 Cart"
 	sprite "ship/mgf cart"
 	attributes
@@ -358,7 +327,7 @@ ship "CF-50 Cart"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "Small and cheap mining vessel as an alternative to the Tarazed Sparrow for pilots don't mind a little bit more waiting for more pay."
+	description "This is a small and cheap mining vessel designed as an alternative to the Tarazed Sparrow, for pilots don't mind a little bit of waiting for more pay."
 
 ship "CY-10 Dragonfly" #Base variant without carry.
 	sprite "ship/mgf dragonfly"
@@ -410,8 +379,8 @@ ship "CY-10 Dragonfly" #Base variant without carry.
 		under
 	explode "tiny explosion" 10
 	explode "small explosion" 15
-	description "Small and agile heavy-lift spacecraft. Can be used for transporting containers or as method of quickly delivering or recovering fighters. Also often used for lifting within atmosphere on various occasion including  assisting construction of tall buildings or delivering supplies to inaccessible area."
-	description `[Carry: Nothing, you shouldnt see or use this]`
+	description "This is a small and agile heavy-lift spacecraft. It can be used for transporting containers or as a method of quickly delivering or recovering fighters. It is also often used for lifting within atmosphere on various occasions, including assisting in the construction of tall buildings or delivering supplies to inaccessible areas."
+	description `	[Carries: Nothing, you shouldn't see or use this.]`
 	
 ship "CY-10 Dragonfly" "CY-10 (Fighter)"
 	gun -14 -75.5
@@ -433,8 +402,8 @@ ship "CY-10 Dragonfly" "CY-10 (Fighter)"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "Small and agile heavy-lift spacecraft. Can be used for transporting containers or as method of quickly delivering or recovering fighters. Also often used for lifting within atmosphere on various occasion including  assisting construction of tall buildings or delivering supplies to inaccessible area."
-	description `[Carry: 1 Fighter]`
+	description "This is a small and agile heavy-lift spacecraft. It can be used for transporting containers or as a method of quickly delivering or recovering fighters. Also, it is often used for lifting within atmosphere on various occasions, including assisting in the construction of tall buildings or delivering supplies to inaccessible areas."
+	description `	[Carries: 1 Fighter]`
 
 ship "CY-10 Dragonfly" "CY-10 (Drone)"
 	gun -14 -75.5
@@ -456,8 +425,8 @@ ship "CY-10 Dragonfly" "CY-10 (Drone)"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "Small and agile heavy-lift spacecraft. Can be used for transporting containers or as method of quickly delivering or recovering fighters. Also often used for lifting within atmosphere on various occasion including  assisting construction of tall buildings or delivering supplies to inaccessible area."
-	description `[Carry: 1 Drone]`
+	description "This is a small and agile heavy-lift spacecraft. It can be used for transporting containers or as a method of quickly delivering or recovering fighters. Also, it is often used for lifting within atmosphere on various occasions, including assisting in the construction of tall buildings or delivering supplies to inaccessible areas."
+	description `	[Carries: 1 Drone]`
 	
 ship "CY-10 Dragonfly" "CY-10 (Small Wreckage)"
 	add attributes
@@ -493,9 +462,9 @@ ship "CY-10 Dragonfly" "CY-10 (Small Wreckage)"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "Small and agile heavy-lift spacecraft. Can be used for transporting containers or as method of quickly delivering or recovering fighters. Also often used for lifting within atmosphere on various occasion including  assisting construction of tall buildings or delivering supplies to inaccessible area."
-	description `	This is a special variant modified by Ankulah crew to include a towing system to tow wreckages.`
-	description `[Carry: 1 Small Wreckage]`
+	description "This is a small and agile heavy-lift spacecraft. It can be used for transporting containers or as a method of quickly delivering or recovering fighters. Also, it is often used for lifting within atmosphere on various occasions, including assisting in the construction of tall buildings or delivering supplies to inaccessible areas."
+	description `	This is a special variant modified by the Ankulah crew to include a towing system for towing wreckages.`
+	description `	[Carries: 1 Small Wreckage]`
 
 ship "CH-6 Carrack"
 	sprite "ship/mgf carrack"
@@ -536,13 +505,29 @@ ship "CH-6 Carrack"
 		"Scram Drive"
 		
 	turret -47 -260
+		angle -50
+		arc -100 100
 	turret 47 -260 "Heavy Anti-Missile Turret"
+		angle 50
+		arc -100 100
 	turret -40 118 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -90 90
 	turret 40 118
+		angle 45
+		arc -90 90
 	turret -44 184
+		angle -90
+		arc -75 75
 	turret 44 184
+		angle 90
+		arc -75 75
 	turret -48 226
+		angle -90
+		arc -75 75
 	turret 48 226
+		angle 90
+		arc -75 75
 	turret 0 210 "Heavy Anti-Missile Turret"
 	engine -79 315.5
 		zoom 1
@@ -580,7 +565,7 @@ ship "CH-6 Carrack"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Carrack is an old heavy freighter for long range shipping dating back to early days of the Republic. It have bay for small complement of fighters to assist with landing and other task back in the days. In more recent time these bays are often carrying combat fighters to help defend the ship."
+	description "Carrack is an old heavy freighter for long range shipping, dating back to early days of the Republic. It has enough bays for a small complement of fighters, to assist with landing and other tasks, back in the days. In more recent times these bays often carry combat fighters to help defend the ship."
 	
 ship "CH-6 Carrack" "CH-6 Carrack (NBSL)"
 	sprite "ship/mgf nbsl carrack"
@@ -625,13 +610,29 @@ ship "CH-6 Carrack" "CH-6 Carrack (NBSL)"
 		"Scram Drive"
 		
 	turret -47 -260
+		angle -50
+		arc -100 100
 	turret 47 -260 
-	turret -40 118 
+		angle 50
+		arc -100 100
+	turret -40 118
+		angle -45
+		arc -90 90
 	turret 40 118
+		angle 45
+		arc -90 90
 	turret -44 184
+		angle -90
+		arc -75 75
 	turret 44 184
+		angle 90
+		arc -75 75
 	turret -48 226
+		angle -90
+		arc -75 75
 	turret 48 226
+		angle 90
+		arc -75 75
 	turret 0 210 "Heavy Anti-Missile Turret"
 	engine -79 315.5
 		zoom 1
@@ -661,7 +662,7 @@ ship "CH-6 Carrack" "CH-6 Carrack (NBSL)"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Customized Carrack freighter used by NBSL Group. It features greatly improved durability and weapon capacity as well as several other minor features to aid the crew during operation.`
+	description `A customized Carrack freighter used by NBSL Group. It features greatly improved durability and weapon capacity as well as several other minor features to aid the crew during operation.`
 
 ship "LCC-3 Sierra"
 	sprite "ship/mgf sierra tanker"
@@ -672,7 +673,7 @@ ship "LCC-3 Sierra"
 		"hull" 9700
 		"required crew" 25
 		"bunks" 30
-		"mass" 5220
+		"mass" 7830
 		"drag" 10.4
 		"heat dissipation" .6
 		"fuel capacity" 18000
@@ -700,10 +701,17 @@ ship "LCC-3 Sierra"
 		"Scram Drive"
 		
 	turret 0 -150.5
+		arc -175 175
 	turret 0 -12
+		arc -175 175
 	turret 0 49.5
+		arc -175 175
 	turret -52 79
+		angle -45
+		arc -150 150
 	turret 52 79
+		angle 45
+		arc -150 150
 	engine 38 259
 		zoom 1
 		angle 0
@@ -720,7 +728,7 @@ ship "LCC-3 Sierra"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Large hyperspace fuel tanker by Pioneer Heavy Industries. It is one of the latest fuel distribution tanker for transporting fuel from refineries to spaceports and non-refinery stations."
+	description "This is a large hyperspace fuel tanker by Pioneer Heavy Industries. It is one of the latest fuel distribution tanker for transporting fuel from refineries to spaceports and non-refinery stations."
 
 ship "RF-03 Gerlache"
 	sprite "ship/mgf gerlache"
@@ -732,7 +740,7 @@ ship "RF-03 Gerlache"
 		"hull" 8200
 		"required crew" 34
 		"bunks" 55
-		"mass" 4364
+		"mass" 6546
 		"drag" 12.4
 		"heat dissipation" .65
 		"fuel capacity" 8000
@@ -803,7 +811,7 @@ ship "RF-03 Gerlache"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Old fleet tanker ship dating from early days of space exploration where hyperdrives were much more inefficient and inhabited planets were few, it came with bays for smaller fuel distribution ships allowing fuel to be distributed among the fleet faster. It also comes with built-in ramscoop to slowly produce fuel as they travel. Very few are seen nowadays as the galaxy becomes more inhabited."
+	description "An old fleet tanker ship dating from early days of space exploration where hyperdrives were much more inefficient and inhabited planets were few, this came with bays for smaller fuel distribution ships, allowing fuel to be distributed among the fleet faster. It also comes with a built-in ramscoop to slowly produce fuel as it travels. Very few are seen nowadays as the galaxy becomes more inhabited."
 	
 ship "LGC-3 Mesa"
 	sprite "ship/mgf mesa"
@@ -815,7 +823,7 @@ ship "LGC-3 Mesa"
 		"hull" 7500
 		"required crew" 28
 		"bunks" 42
-		"mass" 4520
+		"mass" 5876
 		"drag" 11.8
 		"heat dissipation" .7
 		"fuel capacity" 1400
@@ -851,8 +859,11 @@ ship "LGC-3 Mesa"
 	gun -24 -205 
 	gun 24 -205 
 	turret 0 -129.5 "Proton Turret"
+		arc -175 175
 	turret 0 -64.5 "Heavy Anti-Missile Turret"
+		arc -172 172
 	turret 0 0.5 "Heavy Anti-Missile Turret"
+		arc -160 160
 	turret 0 111 "Proton Turret"
 	engine -53.5 191.5 
 		zoom .7
@@ -868,8 +879,8 @@ ship "LGC-3 Mesa"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A purpose-built gas tanker used for shipping large amount of gas in liquefied or compressed form across the galaxy. Relatively rare due to their specialized nature mostly running along few industrial worlds. Lightly armed but also less likely to attract pirate attention due to difficulty of storing and maintaining liquefied or compressed gas making it one of the least economical target for them. While pretty much useless in most situation, a gas tanker allows you to take special, very well paid jobs on some industrial planets.`
-	description `Due to nature of liquefied gas requiring extremely low temperature to maintain, any overheating can damage the tanks over time and eventually can cause it to burst. For that reason gas tanker captains must keep a close eye on their temperature at all time and make sure the temperature is alway below limit.`
+	description `A purpose-built gas tanker used for shipping large amount of gas in liquefied or compressed form across the galaxy. Relatively rare due to their specialized nature mostly running along a few industrial worlds. Lightly armed but also less likely to attract pirate attention due to difficulty of storing and maintaining liquefied or compressed gas, making it one of the least economical targets for them. While pretty much useless in most situations, a gas tanker allows you to take special, very well paid jobs on some industrial planets.`
+	description `	Due to nature of liquefied gas requiring extremely low temperature to maintain, any overheating can damage the tanks over time and eventually can cause it to burst. For that reason gas tanker captains must keep a close eye on their temperature at all time and make sure the temperature is always below the limit.`
 	
 ship "LXC-2 Strata"
 	sprite "ship/mgf strata"
@@ -881,14 +892,14 @@ ship "LXC-2 Strata"
 		"hull" 7800
 		"required crew" 22
 		"bunks" 36
-		"mass" 4180
+		"mass" 5434
 		"drag" 11.4
 		"heat dissipation" .7
 		"fuel capacity" 1400
 		"cargo space" 130
 		"outfit space" 450
 		"weapon capacity" 153
-		"engine capacity" 165
+		"engine capacity" 145
 		"u-type 1k chem tank" -8
 		"chem tank slot" 8
 		weapon
@@ -915,8 +926,13 @@ ship "LXC-2 Strata"
 	gun -23 -220 
 	gun 23 -220 
 	turret 0 -169 
+		arc -170 170
 	turret -28 73.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -110 110
 	turret 28 73.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -110 110
 	turret 0 119.5 
 	engine -60 203 
 		zoom .7
@@ -932,7 +948,7 @@ ship "LXC-2 Strata"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A purpose-built chemical tanker for shipping various industrial chemical including highly corrosive acids with efficiency unmatched by regular freighter. Due to their specialized nature these ships are also rarer and most often found in route between industrial planets or close by. With difficulty of maintaining transported chemical combined with requiring special port to unload the stored liquid (efficiently) these vessels are less preferred target for pirates. While not useful in general shipping between most worlds these ships profit of their extreme specialization to take on fewer but much more profitable jobs only offered on industrialized worlds.`
+	description `This is a purpose-built chemical tanker for shipping various industrial chemicals, including highly corrosive acids, with efficiency unmatched by regular freighters. Due to their specialized nature these ships are also rarer and most often found in route between industrial planets or close by. With the difficulty of efficiently maintaining transported chemicals combined with requiring special ports to unload the stored liquid, these vessels are less preferred target for pirates. While not useful in general shipping between most worlds, these ships profit of their extreme specialization to take on fewer but much more profitable jobs which are only offered on industrialized worlds.`
 
 ship "LVC-2 Sandura"
 	sprite "ship/mgf sandura"
@@ -944,7 +960,7 @@ ship "LVC-2 Sandura"
 		"hull" 7000
 		"required crew" 32
 		"bunks" 52
-		"mass" 2820
+		"mass" 3666
 		"drag" 10.5
 		"heat dissipation" .8
 		"fuel capacity" 700
@@ -974,9 +990,17 @@ ship "LVC-2 Sandura"
 		"Scram Drive"
 		
 	turret -40.5 -58.5 
-	turret 40.5 -58.5 
+		angle -90
+		arc -95 90
+	turret 40.5 -58.5
+		angle 90
+		arc -90 95
 	turret -40.5 36.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 95
 	turret 40.5 36.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -95 90
 	turret 0 104.5 "Proton Turret"
 	engine -76.5 206.5 
 	engine 76.5 206.5 
@@ -988,8 +1012,8 @@ ship "LVC-2 Sandura"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A specialized roll-on roll-off ship for efficiently transporting land vehicles in large number by having interior laid out akin to parking lot allowing vehicles to be driven on and off the ship by itself fast and easily without having to wait for cranes. Because the interior is essentially a large empty space other cargo can also be stored allowing it to be more flexible than other specialized ships like tankers.`
-	description `Because of the highly valuable cargo and relative lack of defences these ships relies heavily on escorts to protect it.`
+	description `A specialized roll-on roll-off ship for efficiently transporting land vehicles in large number, by having the interior laid out akin to parking lot, allowing vehicles to be driven on and off the ship by itself fast and easily without having to wait for cranes. Because the interior is essentially a large empty space, other cargo can also be stored, allowing it to be more flexible than other specialized ships like tankers.`
+	description `	Because of the highly valuable cargo and relative lack of defences these ships rely heavily on escorts for protection.`
 	
 ship "LPC-3 Lavaka"
 	sprite "ship/mgf lavaka"
@@ -1035,10 +1059,18 @@ ship "LPC-3 Lavaka"
 		"Scram Drive"
 		
 	turret -23.5 -254 "Proton Turret"
-	turret 23.5 -254 
+		arc -120 85
+	turret 23.5 -254
+		arc -85 120
 	turret -38 123 
+		angle -90
+		arc -120 120
 	turret 38 123 "Proton Turret"
+		angle 90
+		arc -120 120
 	turret 0 163.5 "Proton Turret"
+		angle 180
+		arc -160 160
 	gun -27.5 -271 
 	gun 27.5 -271 
 	gun -27.5 -271 
@@ -1059,7 +1091,7 @@ ship "LPC-3 Lavaka"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A large oil carrier designed and built by Pioneer Heavy Industries. Lavaka-class is designed to ship either crude oil or other petroleum products in bulk across large distance with unmatched efficiency. Lavaka-class is also one of the largest ship designed and built by Pioneer HI.`
+	description `A large oil carrier designed and built by Pioneer Heavy Industries, the Lavaka-class is designed to ship either crude oil or other petroleum products in bulk across large distance with unmatched efficiency. The Lavaka-class is also one of the largest ships that were designed and built by Pioneer HI.`
 	
 ship "LPC-2 Atletha"
 	sprite "ship/mgf atletha"
@@ -1113,10 +1145,17 @@ ship "LPC-2 Atletha"
 	gun -23 -266.5 
 	gun 23 -266.5 
 	turret 0 -186.5 
+		arc -150 150
 	turret 0 -139 "Quad Blaster Turret"
+		arc -160 160
 	turret 0 111.5 
+		arc -120 120
 	turret 35.5 169.5 "Blaster Turret"
+		angle 35
+		arc -55 150
 	turret -35.5 169.5 "Blaster Turret"
+		angle -35
+		arc -150 55
 	engine -30.5 246.5 
 	engine 30.5 246.5 
 	engine 0 266.5 
@@ -1126,7 +1165,7 @@ ship "LPC-2 Atletha"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A smaller predecessor to the Lavaka tanker. Though it is designed to carry both crude and product oil since the development of larger oil tankers most of Atletha-class in service now serve as product tanker.`
+	description `A smaller predecessor to the Lavaka tanker. Though it is designed to carry both crude and product oil, since the development of larger oil tankers most of Atletha-class in service now serve as product tanker.`
 
 ship "LAC-4 Lithalsa"
 	sprite "ship/mgf lithalsa"
@@ -1171,10 +1210,19 @@ ship "LAC-4 Lithalsa"
 		"Scram Drive"
 		
 	turret -37 105 "Heavy Anti-Missile Turret"
+		angle -20
+		arc -90 90
 	turret 37 105 "Heavy Anti-Missile Turret"
-	turret -48.5 140.5 
+		angle 20
+		arc -90 90
+	turret -48.5 140.5
+		angle -135
+		arc -110 175
 	turret 48.5 140.5 
+		angle 135
+		arc -175 110
 	turret 0 -179 "Quad Blaster Turret"
+		arc -170 170
 	gun -21 -206 
 	gun 21 -206 
 	engine -34.5 203.5 
@@ -1191,7 +1239,7 @@ ship "LAC-4 Lithalsa"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Specialized bitumen tanker with heated tanks to maintain the cargo liquidity and prevent it from solidifying. Though only a relatively small quantity of bitumen is required for most construction, several on going projects especially on developing worlds can require significant amount of bitumen. Because the service area for these ships often lack specialized discharge facilities the Lithalsa comes with it's own discharging system for unloading its cargo directly onto trucks or other transport to distribute it to the site.`
+	description `Lithalsa is a specialized bitumen tanker with heated tanks to maintain the cargo liquidity and prevent it from solidifying. Though only a relatively small quantity of bitumen is required for most construction, several on going projects especially on developing worlds can require significant amount of bitumen. Because the service area for these ships often lack specialized discharge facilities the Lithalsa comes with its' own discharging system for unloading its cargo directly onto trucks or other transports to distribute it to the site.`
 	
 ship "SMC-2 Kipuka"
 	sprite "ship/mgf kipuka"
@@ -1203,7 +1251,7 @@ ship "SMC-2 Kipuka"
 		"hull" 3800
 		"required crew" 3
 		"bunks" 6
-		"mass" 350
+		"mass" 550
 		"drag" 5.5
 		"heat dissipation" .7
 		"fuel capacity" 600
@@ -1234,7 +1282,10 @@ ship "SMC-2 Kipuka"
 		"Scram Drive"
 		
 	turret 0 -79.5 
+		arc -175 175
 	turret 0 74.5 
+		angle 180
+		arc -150 150
 	engine -20 105 
 	engine 20 105 
 	leak "leak" 40 50
@@ -1245,7 +1296,7 @@ ship "SMC-2 Kipuka"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Kipuka is a specialized type of chemical tanker dedicated to carrying molasses. To ensure easy flow of molasses when filling and discharging each tank is equipped with special temperature management system that can evenly heat the liquid across the tank to maintain low enough viscosity during unloading process. The ship also employs a slightly different loading system to minimize foaming as well as specialized sensor to avoid inaccuracies from said foaming of the cargo. Because of the additional requirement for tank cleaning these molasses tankers also comes equipped with special type of automatic tank cleaner to satisfy the requirement and reduce running cost.`
+	description `Kipuka is a specialized type of chemical tanker dedicated to carrying molasses. To ensure easy flow of molasses when filling and discharging, each tank is equipped with a special temperature management system that can evenly heat the liquid across the tank to maintain low enough viscosity during unloading process. The ship also employs a slightly different loading system to minimize foaming as well as specialized sensor to avoid inaccuracies from said foaming of the cargo. Because of the additional requirement for tank cleaning, these molasses tankers also come equipped with a special type of automatic tank cleaner to satisfy the requirement and reduce running cost.`
 
 ship "FG-5 Bluewhale"
 	sprite "ship/mgf bluewhale"
@@ -1290,18 +1341,44 @@ ship "FG-5 Bluewhale"
 		"MGF: Fast Unloading" 4
 		
 	turret 0 -197 "Heavy Anti-Missile Turret"
+		"angle" 0
+		"arc" -110 110
 	turret 0 -176.5
+		"angle" 0
+		"arc" -110 110
 	turret 0 36
+		"angle" 0
+		"arc" -110 110
 	turret -21.5 -175 "Proton Turret"
+		"angle" -90
+		"arc" -90 110
 	turret 21.5 -175 "Proton Turret"
+		"angle" 90
+		"arc" -110 90
 	turret -21.5 58 "Heavy Anti-Missile Turret"
+		"angle" -75
+		"arc" -90 110
 	turret 21.5 58 "Heavy Anti-Missile Turret"
+		"angle" 75
+		"arc" -110 90
 	turret -24 105 "Proton Turret"
+		"angle" -90
+		"arc" -90 90
 	turret 24 105 "Proton Turret"
+		"angle" 90
+		"arc" -90 90
 	turret -24 114.5
+		"angle" -90
+		"arc" -90 90
 	turret 24 114.5
+		"angle" 90
+		"arc" -90 90
 	turret -24 126.5 "Heavy Anti-Missile Turret"
+		"angle" -120
+		"arc" -110 90
 	turret 24 126.5 "Heavy Anti-Missile Turret"
+		"angle" 120
+		"arc" -110 90
 	engine 0 253.5
 		zoom 1.5
 		angle 0
@@ -1322,7 +1399,7 @@ ship "FG-5 Bluewhale"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Bluewhale is a massive freighter for hauling large amount of cargo across the galaxy. Due to its' cost these ship are often owned by freight companies rather than individuals. While it's capable of carrying much more cargo than most other freighters, one of the major complaint received from captains is that it can take very long to reach the innermost container. That said it is still far faster and easier than handling of bulk cargo."
+	description "Bluewhale is a massive freighter for hauling large amount of cargo across the galaxy. Due to its' cost these ships are often owned by freight companies rather than individuals. While it's capable of carrying much more cargo than most other freighters, one of the major complaints received from captains is that it can take very long to reach the innermost container. That said it is still far faster and easier than handling of bulk cargo."
 	
 ship "FG-5 Bluewhale" "FG-5 Bluewhale-A"
 	sprite "ship/mgf bluewhale-a"
@@ -1376,18 +1453,44 @@ ship "FG-5 Bluewhale" "FG-5 Bluewhale (GX)"
 		"MGF: Fast Unloading" 5
 		
 	turret 0 -197 "Heavy Anti-Missile Turret"
+		"angle" 0
+		"arc" -110 110
 	turret 0 -176.5
+		"angle" 0
+		"arc" -110 110
 	turret 0 36
+		"angle" 0
+		"arc" -110 110
 	turret -21.5 -175 "GE-22 Mini-Driver Turret"
+		"angle" -90
+		"arc" -90 110
 	turret 21.5 -175 "GE-22 Mini-Driver Turret"
+		"angle" 90
+		"arc" -110 90
 	turret -21.5 58 "Heavy Anti-Missile Turret"
+		"angle" -75
+		"arc" -90 110
 	turret 21.5 58 "Heavy Anti-Missile Turret"
+		"angle" 75
+		"arc" -110 90
 	turret -24 105 "GE-22 Mini-Driver Turret"
+		"angle" -90
+		"arc" -90 90
 	turret 24 105 "GE-22 Mini-Driver Turret"
+		"angle" 90
+		"arc" -90 90
 	turret -24 114.5
+		"angle" -90
+		"arc" -90 90
 	turret 24 114.5
+		"angle" 90
+		"arc" -90 90
 	turret -24 126.5 "Heavy Anti-Missile Turret"
+		"angle" -120
+		"arc" -110 90
 	turret 24 126.5 "Heavy Anti-Missile Turret"
+		"angle" 120
+		"arc" -110 90
 	engine 0 253.5
 		zoom 1.5
 		angle 0
@@ -1408,7 +1511,7 @@ ship "FG-5 Bluewhale" "FG-5 Bluewhale (GX)"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "This a special variant of the Bluewhale built for Galactic Express. Beside the unique livery, the ship is installed with improved model of cargo handling system as well as being equipped with additional support equipments allowing faster unloading than the standard variant. It is also slightly faster thanks to additional optimization and utilization of specially tuned engine controls."
+	description "This a special variant of the Bluewhale built for Galactic Express. Beside the unique livery, the ship is installed with an improved model of cargo handling systems as well as being equipped with additional support equipments, allowing faster unloading than the standard variant. It is also slightly faster, thanks to additional optimization and utilization of specially tuned engine controls."
 
 ship "SBS-12 Ossun"
 	sprite "ship/mgf ossun"
@@ -1449,20 +1552,45 @@ ship "SBS-12 Ossun"
 		"A525 Atomic Steering"
 		"A370 Atomic Thruster"
 		"Scram Drive"
-		
 	turret 0 -197 "Heavy Anti-Missile Turret"
+		"angle" 0
+		"arc" -110 110
 	turret 0 -176.5
+		"angle" 0
+		"arc" -110 110
 	turret 0 36
+		"angle" 0
+		"arc" -110 110
 	turret -21.5 -175 "Proton Turret"
+		"angle" -90
+		"arc" -90 110
 	turret 21.5 -175 "Proton Turret"
+		"angle" 90
+		"arc" -110 90
 	turret -21.5 58 "Heavy Anti-Missile Turret"
+		"angle" -75
+		"arc" -90 110
 	turret 21.5 58 "Heavy Anti-Missile Turret"
+		"angle" 75
+		"arc" -110 90
 	turret -24 105 "Proton Turret"
+		"angle" -90
+		"arc" -90 90
 	turret 24 105 "Proton Turret"
+		"angle" 90
+		"arc" -90 90
 	turret -24 114.5
+		"angle" -90
+		"arc" -90 90
 	turret 24 114.5
+		"angle" 90
+		"arc" -90 90
 	turret -24 126.5 "Heavy Anti-Missile Turret"
+		"angle" -120
+		"arc" -110 90
 	turret 24 126.5 "Heavy Anti-Missile Turret"
+		"angle" 120
+		"arc" -110 90
 	engine 0 253.5
 		zoom 1.5
 		angle 0
@@ -1483,18 +1611,18 @@ ship "SBS-12 Ossun"
 	explode "large explosion" 35
 	explode "huge explosion" 30
 	"final explode" "final explosion large"
-	description `The Ossun is a power station ship modified from the Bluewhale hull to serve as temporary power station for remote colonies or as additional source for area with high demand while a new stationary power plant is being built. Because it spent most of its operation on the ground very few of these ships can ever be seen flying around.`
+	description `The Ossun is a power station ship modified from the Bluewhale hull to serve as temporary power station for remote colonies or as an additional source for area with high demand while a new stationary power plant is being built. Because it spends most of its operation on the ground, very few of these ships can ever be seen flying around.`
 
 ship "FG-6 Startrain"
 	sprite "ship/mgf startrain"
-	thumbnail "thumbnail/mgf startrain"
+	thumbnail "thumbnail/mgf startrain thumb"
 	attributes
 		category "Heavy Freighter"
 		"cost" 2210000
 		"shields" 3200
-		"hull" 6880
+		"hull" 6080
 		"required crew" 6
-		"bunks" 14
+		"bunks" 10
 		"mass" 1000
 		"drag" 10
 		"heat dissipation" .55
@@ -1503,8 +1631,8 @@ ship "FG-6 Startrain"
 		"outfit space" 380
 		"weapon capacity" 180
 		"engine capacity" 85
-		"mgf fast unload" -5
-		"mgf fast unload slot" 5
+		"mgf fast unload" -7
+		"mgf fast unload slot" 7
 		weapon
 			"blast radius" 140
 			"shield damage" 1200
@@ -1525,16 +1653,21 @@ ship "FG-6 Startrain"
 		"X3700 Ion Thruster"
 		"Scram Drive"
 
-		"MGF: Fast Unloading" 5
+		"MGF: Fast Unloading" 7
 
-	turret -19 -116
-	turret 19 -116
-	turret 0 -99
-	turret 0 87
-	engine 0 135
-		zoom 1
-		angle 0
-		under
+	turret 0 -130 
+	turret -17 -116.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -145 50
+	turret 17 -116.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -50 145
+	turret 0 85.5 
+	engine -22.5 150.5 
+		zoom .5
+	engine 22.5 150.5 
+		zoom .5
+	engine 0 159.5 
 	leak "leak" 40 50
 	leak "flame" 30 80
 	leak "big leak" 50 30
@@ -1543,13 +1676,13 @@ ship "FG-6 Startrain"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
-	description `Startrain is a medium ranged freighter offered by Freight Galactic with more limited cargo capacity than other cargo ship from the same shipyard. In exchange, it is much faster to unload equating to shorter time in port and faster delivery.`
+	description `Startrain is a medium ranged freighter offered by Freight Galactic with more limited cargo capacity than other cargo ships from the same shipyard. In exchange, it is much faster to unload, equating to shorter time in port and faster deliveries.`
 	
 ship "FG-6 Startrain" "FG-6 Startrain-A"
 	sprite "ship/mgf startrain-a"
 		"random start frame" #For random cargo colour
 		"frame rate" 0
-	thumbnail "thumbnail/mgf startrain-a"
+	thumbnail "thumbnail/mgf startrain-a thumb"
 	
 ship "FG-7 Conveyor"
 	sprite "ship/mgf conveyor"
@@ -1594,22 +1727,56 @@ ship "FG-7 Conveyor"
 		"MGF: Fast Unloading" 7
 		
 	turret -36.5 -266 "Heavy Anti-Missile Turret"
+		angle -15
+		arc -105 150
 	turret 36.5 -266 "Heavy Anti-Missile Turret"
+		angle 15
+		arc -105 150
 	turret 0 -173
+		angle 0
+		arc -165 165
 	turret -25.5 -89.5
+		angle -45
+		arc -75 40
 	turret 25.5 -89.5
+		angle 45
+		arc -40 75
 	turret -25 -68 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -80 40
 	turret 25 -68 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -40 80
 	turret -56 12
+		angle -90
+		arc -100 100
 	turret 56 12
+		angle 90
+		arc -100 100
 	turret -29 63 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -5 85
 	turret 29 63 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -85 5
 	turret -36 144
+		angle -90
+		arc -52 62
 	turret 36 144
+		angle 90
+		arc -62 52
 	turret -40 225
+		angle -90
+		arc -62 82
 	turret 40 225
+		angle 90
+		arc -62 82
 	turret -63 285 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -110 89
 	turret 63 285 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -89 110
 	bay "Fighter" -95 12
 		"launch effect" "human internal"
 		left
@@ -1658,8 +1825,8 @@ ship "FG-7 Conveyor"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Conveyor is a massive freighter designed and build by Freight Galactic with special mechanism for quickly unloading cargo independent of port equipment and extra ports for resupplying theoretically allowing them to trade much faster than ships of similar size. In practice this is debatable as few ports can keep up with the sheer amount of cargo due to various other factors."
-	description `Conveyor is also capable of carrying a small squadron of fighters to protect itself, due to number of fighters carried almost matching entire capacity of the Navy Carrier there were attempts to have it restricted yet the CEO of the company simply told them to come get an actual carrier. It is rumoured that the company was responsible for the development of the more recent Spetum class carrier.`
+	description "The Conveyor is a massive freighter designed and built by Freight Galactic with a special mechanism for quickly unloading cargo, independent of port equipment. It also has extra ports for resupplying, theoretically allowing them to trade much faster than ships of similar size. In practice this is debatable as few ports can keep up with the sheer amount of cargo due to various other factors."
+	description `	The Conveyor is also capable of carrying a small squadron of fighters to protect itself, and due to number of fighters carried, almost matching entire capacity of the Navy Carrier there were attempts to have it restricted. However, the CEO of the company simply told them to come get an actual carrier. It is rumoured that the company was responsible for the development of the more recent Spetum class carrier.`
 	
 ship "FG-7 Conveyor" "FG-7 Conveyor-A"
 	sprite "ship/mgf conveyor-a"
@@ -1713,22 +1880,56 @@ ship "FG-7 Conveyor" "FG-7 Conveyor (GX)"
 		"MGF: Fast Unloading" 7
 		
 	turret -36.5 -266 "Heavy Anti-Missile Turret"
+		angle -15
+		arc -105 150
 	turret 36.5 -266 "Heavy Anti-Missile Turret"
+		angle 15
+		arc -105 150
 	turret 0 -173
+		angle 0
+		arc -165 165
 	turret -25.5 -89.5
+		angle -45
+		arc -75 40
 	turret 25.5 -89.5
+		angle 45
+		arc -40 75
 	turret -25 -68 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -80 40
 	turret 25 -68 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -40 80
 	turret -56 12
+		angle -90
+		arc -100 100
 	turret 56 12
+		angle 90
+		arc -100 100
 	turret -29 63 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -5 85
 	turret 29 63 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -85 5
 	turret -36 144
+		angle -90
+		arc -52 62
 	turret 36 144
-	turret 21.5 227 
-	turret -21.5 227 
+		angle 90
+		arc -62 52
+	turret -40 225
+		angle -90
+		arc -62 82
+	turret 40 225
+		angle 90
+		arc -62 82
 	turret -63 285 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -110 89
 	turret 63 285 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -89 110
 	bay "Fighter" -95 12
 		"launch effect" "human internal"
 		left
@@ -1777,7 +1978,7 @@ ship "FG-7 Conveyor" "FG-7 Conveyor (GX)"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "This a special variant of the Conveyor built for Galactic Express. In addition to improved cargo handling system and engine tuning of the Bluewhale, it's also advertised a safer hangar bay claiming to decrease chance of accident by fighter pilots."
+	description "This a special variant of the Conveyor built for Galactic Express. In addition to the improved cargo handling system and engine tuning from the Bluewhale, it also advertises safer hangar bays, claiming to decrease the chances of accidents by fighter pilots."
 
 ship "FG-8 Shipment"
 	sprite "ship/mgf shipment"
@@ -1785,15 +1986,16 @@ ship "FG-8 Shipment"
 	attributes
 		category "Light Freighter"
 		"cost" 1180000
-		"shields" 1800
-		"hull" 3000
+		"shields" 1900
+		"hull" 2900
 		"required crew" 4
 		"bunks" 7
 		"mass" 500
 		"drag" 7
 		"heat dissipation" .6
 		"fuel capacity" 600
-		"cargo space" 256 #idk where I got this number from, new calc is 96 tons
+		#"cargo space" 256 #idk where I got this number from, new calc is 96 tons
+		"cargo space" 128
 		"outfit space" 240
 		"weapon capacity" 80
 		"engine capacity" 70
@@ -1830,7 +2032,243 @@ ship "FG-8 Shipment"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
-	description `Smallest and cheapest cargo ship currently made by Freight Galactic. Though not as well armed as their typical product, it can carry decent amount of cargo for the size. The ship is also installed with equipment to independently and rapidly unload its container for faster operation at port.`
+	description `The smallest and cheapest cargo ship currently made by Freight Galactic. Though not as well armed as their typical product, it can carry decent amount of cargo for the size. The ship is also installed with equipment to independently and rapidly unload its container for faster operation at port.`
+
+ship "FG-11 Starcarrier"
+	sprite "ship/mgf starcarrier"
+		"random start frame" #For random cargo colour
+		"frame rate" 0
+	thumbnail "thumbnail/mgf starcarrier thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 15800000
+		"shields" 5600
+		"hull" 6800
+		"required crew" 15
+		"bunks" 28
+		"mass" 2150
+		"drag" 8.7
+		"heat dissipation" .45
+		"fuel capacity" 800
+		"cargo space" 792
+		"outfit space" 472
+		"weapon capacity" 200
+		"engine capacity" 100
+		"mgf fast unload" -5
+		"mgf fast unload slot" 5
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Blaster Turret" 2
+		"Proton Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		
+		"Fission Reactor"
+		"Water Coolant System"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Laser Rifle" 4
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+
+		"MGF: Fast Unloading" 5
+		
+	turret 35.5 -167 
+		angle 45
+		arc -90 130
+	turret -35.5 -167 
+		angle -45
+		arc -130 90
+	turret 0 -70 "Heavy Anti-Missile Turret"
+		arc -167 167
+	turret 0 -2.5 "Heavy Anti-Missile Turret"
+		arc -167 167
+	turret 0 57.5 "Proton Turret"
+		arc -167 167
+	turret 35.5 130 "Proton Turret"
+		angle 90
+		arc -110 160
+	turret -35.5 130 "Proton Turret"
+		angle -90
+		arc -160 110
+	engine 23 218.5 
+	engine -23 218.5 
+	engine 54.5 204 
+		zoom .5
+	engine -54.5 204 
+		zoom .5
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description `A mid-sized container ship offering both great capacity and the benefits of containerization.`
+
+ship "FG-11 Starcarrier" "FG-11 Starcarrier (GX)"
+	sprite "ship/mgf gx starcarrier"
+		"random start frame" #For random cargo colour
+		"frame rate" 0
+	thumbnail "thumbnail/mgf gx starcarrier thumb"
+	"swizzle" 0
+	attributes
+		category "Heavy Freighter"
+		"cost" 18800000
+		"shields" 5600
+		"hull" 6800
+		"required crew" 16
+		"bunks" 28
+		"mass" 2050
+		"drag" 8.5
+		"heat dissipation" .45
+		"fuel capacity" 800
+		"cargo space" 792
+		"outfit space" 470
+		"weapon capacity" 200
+		"engine capacity" 120
+		"mgf fast unload" -6
+		"mgf fast unload slot" 6
+		"acceleration multiplier" .02
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Blaster Turret" 2
+		"GE-22 Mini-Driver Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		
+		"Fission Reactor"
+		"LP036a Battery Pack"
+		"LP072a Battery Pack"
+		"D41-HY Shield Generator"
+		"Laser Rifle" 4
+		
+		"A520 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Scram Drive"
+
+		"MGF: Fast Unloading" 6
+		
+	turret 35.5 -167 
+		angle 45
+		arc -90 130
+	turret -35.5 -167 
+		angle -45
+		arc -130 90
+	turret 0 -70 "Heavy Anti-Missile Turret"
+		arc -167 167
+	turret 0 -2.5 "Heavy Anti-Missile Turret"
+		arc -167 167
+	turret 0 57.5 "GE-22 Mini-Driver Turret"
+		arc -167 167
+	turret 35.5 130 "GE-22 Mini-Driver Turret"
+		angle 90
+		arc -110 160
+	turret -35.5 130 "GE-22 Mini-Driver Turret"
+		angle -90
+		arc -160 110
+	engine 23 218.5 
+	engine -23 218.5 
+	engine 54.5 204 
+		zoom .5
+	engine -54.5 204 
+		zoom .5
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description `This a special variant of the Starcarrier built for Galactic Express, featuring improved engine tuning and cargo handling system.`
+
+ship "FG-11 Starcarrier" "FG-11 Starcarrier (NGK)"
+	sprite "ship/mgf ngk starcarrier"
+		"random start frame" #For random cargo colour
+		"frame rate" 0
+	thumbnail "thumbnail/mgf ngk starcarrier thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 15800000
+		"shields" 6000
+		"hull" 6900
+		"required crew" 15
+		"bunks" 22
+		"mass" 2250
+		"drag" 8.9
+		"heat dissipation" .42
+		"fuel capacity" 800
+		"cargo space" 792
+		"outfit space" 485
+		"weapon capacity" 225
+		"engine capacity" 100
+		"mgf fast unload" -5
+		"mgf fast unload slot" 5
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Blaster Turret" 2
+		"K2-K-S Particle Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		
+		"Fission Reactor"
+		"Water Coolant System"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Laser Rifle" 4
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+
+		"MGF: Fast Unloading" 5
+		
+	turret 35.5 -167 
+		angle 45
+		arc -90 130
+	turret -35.5 -167 
+		angle -45
+		arc -130 90
+	turret 0 -70 "Heavy Anti-Missile Turret"
+		arc -167 167
+	turret 0 -2.5 "Heavy Anti-Missile Turret"
+		arc -167 167
+	turret 0 57.5 "K2-K-S Particle Turret"
+		arc -167 167
+	turret 35.5 130 "K2-K-S Particle Turret"
+		angle 90
+		arc -110 160
+	turret -35.5 130 "K2-K-S Particle Turret"
+		angle -90
+		arc -160 110
+	engine 23 218.5 
+	engine -23 218.5 
+	engine 54.5 204 
+		zoom .5
+	engine -54.5 204 
+		zoom .5
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description `This is a slightly modified variant of the Starcarrier used by NGK fleets. It features improved durability and shielding as well as expanded offensive capability.`
 
 # 9 for Exporter, the ship carried by Exchanger.
 
@@ -2137,8 +2575,8 @@ ship "FG-10 Exchanger"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Inspired by the Syndicate H-class super container ship a smaller freighter development was halted in favor of an even larger freighter, and perhaps the largest freighter to ever be developed in human space. The hull of the smaller predecessor in development was modified and used as the Exchanger primary cargo arms that can be deployed to land and unload cargo as the Exchanger itself is too large to land on any port.`
-	description `To protect itself the ship carries vast array of armaments rivalling most warships as well as entire wings of fighters to protect itself. Though the sub cargo ships attached to the arms can be deployed they were stripped down too much to serve as effective combat ship on its own, in addition longer delay to deploy as they were not designed to be deployed for immediate actions.`
+	description `Inspired by the Syndicate H-class super container ship, a smaller freighter development was halted in favor of an even larger freighter, perhaps the largest freighter to ever be developed in human space. The hull of the smaller predecessor in development was modified and used as the Exchanger primary cargo arms that can be deployed to land and unload cargo, as the Exchanger itself is too large to land on any port.`
+	description `	To protect itself the ship carries a vast array of armaments rivalling most warships as well as entire wings of fighters to protect itself. Though the sub cargo ships attached to the arms can be deployed, they were stripped down too much to serve as effective combat ship on its' own. In addition there is also a longer delay to deploy, as they were not designed for immediate action.`
 
 ship "FTV-33 Acareus"
 	plural "FTV-33 Acareus"
@@ -2151,8 +2589,8 @@ ship "FTV-33 Acareus"
 		"hull" 8900
 		"required crew" 24
 		"bunks" 60
-		"mass" 4564
-		"drag" 18
+		"mass" 5564
+		"drag" 28
 		"heat dissipation" .55
 		"fuel capacity" 1200
 		"cargo space" 850
@@ -2190,22 +2628,55 @@ ship "FTV-33 Acareus"
 	gun -24 -131.5 
 	gun 24 -131.5 
 	turret -47.5 -68.5 "Proton Turret"
+		angle -10
+		arc -180 40
 	turret 47.5 -68.5 "Proton Turret"
+		angle 10
+		arc -40 180
 	turret -106.5 -77 "Heavy Anti-Missile Turret"
+		angle -20
+		arc -190 60
 	turret 106.5 -77 "Heavy Anti-Missile Turret"
+		angle 20
+		arc -60 190
 	turret -146 -35.5 "Proton Turret"
+		angle -60
+		arc -210 80
 	turret 146 -35.5 "Proton Turret"
+		angle 60
+		arc -80 210
 	
 	turret -17.5 -53.5 
+		angle -90
+		arc -75 90
 	turret 17.5 -53.5 
+		angle 90
+		arc -90 75
 	turret -18 -42 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -75 75
 	turret 18 -42 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -75 75
 	turret -18 -31 
+		angle -90
+		arc -100 75
 	turret 18 -31 
+		angle 90
+		arc -75 100
+
 	engine -179 33 
 	engine 179 33 
 	engine 0 127.5 
-	description `Fancy experimental freighter as more heavily armed alternative to the older Carrack. While relatively large number of containers are exposed for easier unloading, the unusual angle negates the benefit as ports are unable to utilize standardized automations to unload it and require manual unloading with smaller vehicles.`
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description `Fancy experimental freighter as more heavily armed alternative to the older Carrack. While a relatively large number of containers are exposed for easier unloading, the unusual angle negates the benefit as ports are unable to utilize standardized automations to unload it and require manual unloading with smaller vehicles.`
 	
 ship "SMM-111 Bagger"
 	sprite "ship/mgf bagger"
@@ -2217,8 +2688,8 @@ ship "SMM-111 Bagger"
 		"hull" 12800
 		"required crew" 85
 		"bunks" 350
-		"mass" 8114
-		"drag" 10.9
+		"mass" 11614
+		"drag" 70.9
 		"heat dissipation" .6
 		"fuel capacity" 800
 		"cargo space" 750
@@ -2256,14 +2727,31 @@ ship "SMM-111 Bagger"
 	gun 0 -371
 	gun 0 -371
 	turret 0 -136 "Tractor Beam"
+		arc -90 90
 	turret -40 -96
+		angle -90
+		arc -85 100
 	turret 40 -96
+		angle 90
+		arc -100 85
 	turret -40 -50 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -85 100
 	turret 40 -50 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -100 85
 	turret -58.5 98
+		angle -90
+		arc -135 135
 	turret 58.5 98
+		angle 90
+		arc -135 135
 	turret -82 153 "Heavy Anti-Missile Turret"
+		angle -85
+		arc -110 85
 	turret 82 153 "Heavy Anti-Missile Turret"
+		angle 85
+		arc -85 110
 	bay "Fighter" -37 -71
 		"launch effect" "human internal"
 		left
@@ -2308,7 +2796,7 @@ ship "SMM-111 Bagger"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Bagger is one of the largest mining vehicle ever made, in addition to that the Bagger is also capable of sorting and processing ores on-site along with machines to turn them into functional parts. It is essentially a mobile factory and an asteroid miner combined."
+	description "The Bagger is one of the largest mining vehicles ever made, and in addition to that the Bagger is also capable of sorting and processing ores on-site, along with machines to turn them into functional parts. It is essentially a mobile factory and an asteroid miner combined."
 	
 ship "HMM-190 Kotroger"
 	sprite "ship/mgf kotroger"
@@ -2320,7 +2808,7 @@ ship "HMM-190 Kotroger"
 		"hull" 13600
 		"required crew" 85
 		"bunks" 350
-		"mass" 7522
+		"mass" 14522
 		"drag" 10.9
 		"heat dissipation" .6
 		"fuel capacity" 800
@@ -2352,10 +2840,19 @@ ship "HMM-190 Kotroger"
 		"Hyperdrive"
 		
 	turret 0 -34.5 "Kotroger Excavator Turret"
+		arc -125 125
 	turret -134 95 
+		angle -45
+		arc -45 45
 	turret 134 95 
+		angle 45
+		arc -45 45
 	turret -140 180 
+		angle -135
+		arc -45 45
 	turret 140 180 
+		angle 135
+		arc -45 45
 	turret -81 250.5 "Proton Turret"
 	turret 81 250.5 "Proton Turret"
 	engine -49.5 315 
@@ -2368,7 +2865,7 @@ ship "HMM-190 Kotroger"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "The Kotroger is a terrestrial mining vehicle as well as spaceflight capability for rapidly hopping from planets to planets or even within the planet itself as each resource pool is drained as well as moving to assist excavation on other site or large construction project requiring earth to be moved in large amount. While not as economical as old-school ground-based excavators its primary strength lies in the extreme mobility compared to regular excavator where it could easily move itself from site to site and begin operation within the same day while regular ones may take days to weeks to disassemble, pack, and move and repeat in reverse at the new site, though it may be unnecessary on larger resource pool it allows the Kotroger to more economically extract resource from smaller pools of rarer materials that may otherwise be uneconomical for regular excavator to operate. Though it is not recommended by both the manufacturer and safety organizations the ship is built with extra heavy duty long-duration repulsor engines that can fire constantly for longer period which may allow it to temporary mine resources from less stable ground with repulsor engines active and minimize the weight it puts on the ground."
+	description "The Kotroger is a terrestrial mining vehicle with spaceflight capability for rapidly hopping from planets to planets or even within the planet itself as each resource pool is drained, as well as moving to assist excavation on other sites or large construction projects requiring earth to be moved in large amounts. While not as economical as old-school ground-based excavators, its primary strength lies in the extreme mobility compared to a regular excavator. It can easily move itself from site to site and begin operation within the same day, while regular ones may take days or weeks to disassemble, pack, and move, then repeat in reverse at the new site. Though it may be unnecessary on larger resource pools it allows the Kotroger to more economically extract resource from smaller pools of rarer materials that may otherwise be uneconomical for regular excavators to operate on. Though it is not recommended by both the manufacturer and safety organizations, the ship is built with extra heavy-duty long-duration repulsor engines that can fire constantly for longer periods which may allow it to temporarily mine resources from less stable terrain with repulsor engines active to minimize the pressure it puts on the ground."
 
 ship "EM-8A Armadillo"
 	sprite "ship/mgf epn armadillo"
@@ -2382,14 +2879,14 @@ ship "EM-8A Armadillo"
 		"hull" 8540
 		"required crew" 24
 		"bunks" 50
-		"mass" 1282
-		"drag" 14.3
+		"mass" 2482
+		"drag" 24.3
 		"heat dissipation" .5
 		"fuel capacity" 800
 		"cargo space" 450
 		"outfit space" 633
 		"weapon capacity" 276
-		"engine capacity" 183
+		"engine capacity" 167
 		"hull repair rate" .1
 		"repair delay" 300
 		"disabled repair delay" 600
@@ -2411,7 +2908,8 @@ ship "EM-8A Armadillo"
 		"D67-TM Shield Generator"
 		"Espion Value Detector" 2
 		
-		"Orca Plasma Steering"
+		"Impala Plasma Steering"
+		"Greyhound Plasma Steering"
 		"Orca Plasma Thruster"
 		"Hyperdrive"
 		
@@ -2420,10 +2918,19 @@ ship "EM-8A Armadillo"
 	gun 38.5 -162.5
 	gun 38.5 -162.5
 	turret 0 -111.5 "Proton Turret"
+		arc -90 90
 	turret -34.5 -91 "Tractor Beam"
+		angle -45
+		arc -135 90
 	turret 34.5 -91 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -90 135
 	turret -35 91 "Heavy Anti-Missile Turret"
+		angle -135
+		arc -90 135
 	turret 35 91
+		angle 135
+		arc -135 90
 	bay "Fighter" -27.5 -24
 		"launch effect" "human internal"
 	bay "Fighter" 27.5 -24
@@ -2471,7 +2978,7 @@ ship "EM-8A Armadillo"
 	explode "medium explosion" 25
 	explode "large explosion" 35
 	explode "huge explosion" 20
-	description `Espion-exclusive light mining carrier with sizeable squadron of drones and fighters for defending itself or help mining and collecting materials.`
+	description `Espion-exclusive light mining carrier with sizeable squadron of drones and fighters for defending itself, or help mining and collecting materials.`
 		
 ship "EM-28F Wombat"
 	sprite "ship/mgf epn wombat"
@@ -2485,7 +2992,7 @@ ship "EM-28F Wombat"
 		"hull" 53280
 		"required crew" 189
 		"bunks" 352
-		"mass" 7852
+		"mass" 17852
 		"drag" 26.3
 		"heat dissipation" .5
 		"fuel capacity" 1600
@@ -2526,19 +3033,45 @@ ship "EM-28F Wombat"
 		"Tyrant Reverse Thruster"
 		"Scram Drive"
 		
+	#core-front
 	turret -36 -272.5 "Proton Turret"
+		angle -45
+		arc -80 80
 	turret 36 -272.5 "Proton Turret"
+		angle 45
+		arc -80 80
 	turret -36 -209.5 "Espion Heavy Tractor"
+		angle -45
+		arc -80 80
 	turret 36 -209.5 "Espion Heavy Tractor"
+		angle 45
+		arc -80 80
 	turret -76.5 -250.5 "Proton Turret"
+		angle -45
+		arc -80 80
 	turret 76.5 -250.5 "Proton Turret"
+		angle 45
+		arc -80 80
 	turret -76.5 -186 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -80 80
 	turret 76.5 -186 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -80 80
 	
+	#core-aft
 	turret -76.5 81.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -75 75
 	turret 76.5 81.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -75 75
 	turret -76.5 146 "Proton Turret"
+		angle -90
+		arc -75 75
 	turret 76.5 146 "Proton Turret"
+		angle 90
+		arc -75 75
 	gun -83 -329.5 "Espion Mining Laser"
 	gun 83 -329.5 "Espion Mining Laser"
 	gun -83 -329.5 "Torpedo Launcher"
@@ -2547,14 +3080,31 @@ ship "EM-28F Wombat"
 	gun 83 -329.5 "Espion Mining Laser"
 	gun -83 -329.5 "Torpedo Launcher"
 	gun 83 -329.5 "Torpedo Launcher"
+	#sides
 	turret -528 -177.5 "Proton Turret"
+		angle -45
+		arc -90 90
 	turret 528 -177.5 "Proton Turret"
+		angle 45
+		arc -90 90
 	turret -528 -125.5 "Quad Blaster Turret"
+		angle -45
+		arc -90 90
 	turret 528 -125.5 "Quad Blaster Turret"
+		angle 45
+		arc -90 90
 	turret -532 3.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	turret 532 3.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret -532 68 "Proton Turret"
+		angle -90
+		arc -90 90
 	turret 532 68 "Proton Turret"
+		angle 90
+		arc -90 90
 	gun -503 -248 
 	gun 503 -248 
 	gun -503 -248 "Torpedo Launcher"
@@ -2844,7 +3394,7 @@ ship "EM-28F Wombat"
 	explode "medium explosion" 25
 	explode "large explosion" 35
 	explode "huge explosion" 20
-	description `Espion-exclusive mining carrier, or rather a mobile mining and refinery station to extract and process resources on the go as due to its large cargo holds it may spend much of its time in flight to collect a full cargo of resources. Due to its size and slowness the vessel is less than ideal for mining and collecting resources itself but instead relys and a sizeable fleet of fighters and drones to mine and collect resource for it. To protect their miners from harm as they operate far away from the mothership the Wombat also comes with space for 4 pocket light warships to guard the miners.`
+	description `Espion-exclusive mining carrier, or rather a mobile mining and refinery station to extract and process resources on the go as due to its large cargo holds it may spend much of its time in flight to collect a full cargo of resources. Because of its size and slowness, the vessel is less than ideal for mining and collecting resources itself, but instead relies on a sizable fleet of fighters and drones to mine and collect resources for it. To protect their miners from harm as they operate far away from the mothership, the Wombat also comes with space for 4 pocket light warships to guard the miners.`
 
 ship "SV-4450 Sovereign"
 	sprite "ship/mgf sovereign"
@@ -2854,16 +3404,16 @@ ship "SV-4450 Sovereign"
 		"cost" 44200000
 		"shields" 138200
 		"hull" 88000
-		"required crew" 180
+		"required crew" 380
 		"bunks" 2090
-		"mass" 14280
+		"mass" 34280
 		"drag" 26.1
 		"heat dissipation" .6
 		"fuel capacity" 2000
 		"cargo space" 1280
-		"outfit space" 3850
-		"weapon capacity" 1400
-		"engine capacity" 720
+		"outfit space" 3250
+		"weapon capacity" 1300
+		"engine capacity" 650
 		weapon
 			"blast radius" 580
 			"shield damage" 6600
@@ -2885,10 +3435,10 @@ ship "SV-4450 Sovereign"
 		"Laser Rifle" 1500
 		"Liquid Helium Cooler" 12
 		
-		"A520 Atomic Thruster"
-		"A860 Atomic Thruster" 
-		"A865 Atomic Steering" 
-		"AR120 Reverse Thruster" 4
+		"A520 Atomic Thruster" 2
+		"A860 Atomic Thruster" 2
+		"A865 Atomic Steering" 2
+		"AR120 Reverse Thruster" 8
 		"Hyperdrive"
 		
 	gun -15 -828.5
@@ -2898,27 +3448,68 @@ ship "SV-4450 Sovereign"
 	gun -63 -728.5
 	gun 63 -728.5
 	turret 0 -657.5 "G22 Particle Turret"
+		arc -145 145
 	turret -75 -518 "Proton Turret"
+		angle -45
+		arc -90 75
 	turret 75 -518 "Proton Turret"
+		angle 45
+		arc -75 90
 	turret 0 -435.5 "Heavy Anti-Missile Turret"
+		arc -170 170
 	turret 0 -280 "G22 Particle Turret"
-	turret -40 -122.5 "Heavy Anti-Missile Turret"
-	turret 40 -122.5 "Heavy Anti-Missile Turret"
-	turret -41 -167.5 "Proton Turret"
-	turret 41 -167.5 "Proton Turret"
-	turret -40 -334.5 "Proton Turret"
-	turret 40 -334.5 "Proton Turret"
+		arc -150 150
+	
 	turret -40 -380.5 "Proton Turret"
+		angle -90
+		arc -45 90
 	turret 40 -380.5 "Proton Turret"
+		angle 90
+		arc -90 45
+	turret -40 -334.5 "Proton Turret"
+		angle -90
+		arc -45 90
+	turret 40 -334.5 "Proton Turret"
+		angle 90
+		arc -90 45
+	turret -40 -167.5 "Proton Turret"
+		angle -90
+		arc -90 45
+	turret 40 -167.5 "Proton Turret"
+		angle 90
+		arc -45 90
+	turret -40 -122.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 45
+	turret 40 -122.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -45 90
+
 	turret -124.5 103 "Proton Turret"
+		angle -45
+		arc -120 45
 	turret 124.5 103 "Proton Turret"
+		angle 45
+		arc -45 120
 	turret -86 321.5 "Proton Turret"
+		angle -120
+		arc -40 100
 	turret 86 321.5 "Proton Turret"
+		angle 120
+		arc -100 40
 	
 	turret -97 456.5 "Proton Turret"
+		angle -50
+		arc -100 20
 	turret 97 456.5 "Proton Turret"
+		angle 50
+		arc -20 100
 	turret -26.5 544.5 "Heavy Anti-Missile Turret"
+		angle -135
+		arc -90 130
 	turret 26.5 544.5 "Heavy Anti-Missile Turret"
+		angle 135
+		arc -130 90
 	
 	bay "Fighter" -108.5 -387.5 left
 		"launch effect" "human internal"
@@ -3020,7 +3611,7 @@ ship "SV-4450 Sovereign"
 	explode "large explosion" 60
 	explode "huge explosion" 60
 	"final explode" "final explosion large"
-	description "Sovereign is a massive carrier and worldship of mysterious origins. It is said that this ship was designed many years ago for an expedition to outside of known space. No one knows the fate of the project and only the ships remains today in few private hands."
+	description "The Sovereign is a massive carrier and worldship of mysterious origins. It is said that this ship was designed many years ago for an expedition to outside of known space. No one knows the fate of the project and only the ships remain today in few private hands."
 
 ship "Nasprite"
 	sprite "ship/mgf nasprite"
@@ -3032,8 +3623,8 @@ ship "Nasprite"
 		"hull" 12500
 		"required crew" 36
 		"bunks" 100
-		"mass" 1605
-		"drag" 15.4
+		"mass" 3810
+		"drag" 17.4
 		"heat dissipation" .45
 		"fuel capacity" 800
 		"cargo space" 500
@@ -3149,13 +3740,26 @@ ship "CK50T Stahbar"
 	gun 49 -177 
 	gun 55 -159 
 	turret -6.5 -160.5 "Proton Turret"
+		arc -70 145
 	turret -64.5 -150.5 
+		angle -75
+		arc -120 100
 	turret 9 -92.5 "Quad Blaster Turret"
+		arc -173 160 #TODO make it blindspot when available
 	turret 50 -89.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -35 90
 	turret 64.5 -11 "Proton Turret"
+		angle 90
+		arc -110 50
 	turret 64.5 21.5 "Quad Blaster Turret"
+		angle 90
+		arc -50 50
 	turret 64.5 55 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -50 110
 	turret 9 110.5 "Proton Turret"
+		angle 180
 	engine -38.5 226.5 
 	engine 38.5 226.5 
 	explode "tiny explosion" 20
@@ -3164,7 +3768,7 @@ ship "CK50T Stahbar"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description `Large armoured freighter with decent armaments and plated with special material for scattering radar making it more difficult for radar-based missiles to lock-on. According to the company representative however, this feature was an accident as they're developing their coating.`
+	description `This is a large armoured freighter with decent armaments, which is also plated with special material for scattering radar, making it more difficult for radar-based missiles to lock-on. According to the company representative however, this feature was an accident as they were developing their coating.`
 	
 ship "CK40T Treibard"
 	sprite "ship/mgf treibard"
@@ -3216,10 +3820,16 @@ ship "CK40T Treibard"
 	gun 48.5 -193.5 
 	gun -28.5 -195 
 	turret 31.5 -167 "Quad Blaster Turret"
+		arc -45 180
 	turret -48.5 -148.5 "Quad Blaster Turret"
+		angle -45
+		arc -120 70
 	turret -8.5 -89 "Heavy Anti-Missile Turret"
 	turret 3 -8 "Proton Turret" 
+		arc -190 165
 	turret 56.5 51 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -120 120
 	turret 3 155 "Proton Turret" 
 	engine -36.5 236.5 
 	engine 36.5 236.5 
@@ -3229,7 +3839,7 @@ ship "CK40T Treibard"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description `Smaller and cheaper version of the company's CK50T Stahbar with improved anti-radar capability and lighter armament.`
+	description `Smaller and cheaper version of the company's CK50T Stahbar, with improved anti-radar capability and lighter armament.`
 	
 ship "CK80T Tlielart"
 	sprite "ship/mgf tlielart cargocargo"
@@ -3241,13 +3851,13 @@ ship "CK80T Tlielart"
 		"hull" 21880
 		"required crew" 42
 		"bunks" 162
-		"mass" 8459
+		"mass" 10459
 		"drag" 58.5
 		"heat dissipation" .4
 		"fuel capacity" 1200
 		"cargo space" 6800 #5100 front, 850*2 rear
 		"outfit space" 872
-		"weapon capacity" 348
+		"weapon capacity" 380
 		"engine capacity" 219
 		"radar jamming" 30
 		"scan interference" 12
@@ -3260,7 +3870,7 @@ ship "CK80T Tlielart"
 	outfits
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 4
-		"Proton Turret" 5
+		"Proton Turret" 6
 		
 		"Fusion Reactor"
 		"LP576a Battery Pack"
@@ -3273,16 +3883,40 @@ ship "CK80T Tlielart"
 		"Scram Drive"
 	
 	turret 253.5 -223.5 "Proton Turret"
+		angle 90
+		arc -110 110
 	turret -253.5 -223.5 "Proton Turret"
+		angle -90
+		arc -110 110
 	turret 253.5 -171 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -110 110
 	turret -253.5 -171 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -110 110
 	turret 253.5 -118 
+		angle 90
+		arc -110 110
 	turret -253.5 -118 
+		angle -90
+		arc -110 110
 	turret 194.5 -8 "Proton Turret"
+		angle 45
+		arc -90 90
 	turret -194.5 -8 "Proton Turret"
+		angle -45
+		arc -90 90
 	turret 232 29 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -90 90
 	turret -232 29 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -90 90
+	turret 0 40 "Proton Turret"
+		arc -145 145
 	turret 0 275.5 "Proton Turret"
+		angle 180
+		arc -165 165
 	engine -46.5 397 
 	engine 46.5 397 
 	explode "tiny explosion" 20
@@ -3291,8 +3925,8 @@ ship "CK80T Tlielart"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description `Massive freighter developed to carry as much cargo as possible, and did so exceeding the capacity of every other ship by far. Though unlike the other ship from MarStel Industries, it is very lightly armed relative to cargo capacity making it lacks the firepower to properly protect itself and neither did it have speed to dodge any raider. Due to such reason, it will require decent escort to safely travel.`
-	description `Though it carried more than most, if not all, freighter in human space the sheer amount of cargo that have to be unloaded will require ungodly amount of time, equipment, and manpower, which only get worse when loading cargo. Any less than well developed urban spaceport would struggle to service the ship and often will take a few days to complete the operation, if they ever require this much cargo in the first place. This results in the ship being not quite a popular choice in human space as few planets require this much cargo in a single delivery and fewer are capable of handling it.`
+	description `A massive freighter designed to carry as much cargo as possible, and did so exceedingly that it surpass the capacity of every other ships by far. Though unlike the other ships from MarStel Industries, it is very lightly armed relative to cargo capacity, making it lack the firepower to properly protect itself and neither does it have the speed to dodge any raider. Due to such reasons, it will require decent escort to safely travel.`
+	description `	Though it carries more than most, if not all, freighters in human space, the sheer amount of cargo that has to be unloaded requires ungodly amount of time, equipment, and manpower, which only gets worse when loading cargo. Any less than a well developed urban spaceport will struggle to service the ship and often will take a few days to complete the operation, if they ever require this much cargo in the first place. This results in the ship being not quite a popular choice in most of human space, as few planets require this much cargo in a single delivery and fewer capable of handling it.`
 
 ship "PF-80 Intrepid"
 	sprite "ship/mgf intrepid"
@@ -3304,8 +3938,8 @@ ship "PF-80 Intrepid"
 		"hull" 8560
 		"required crew" 24
 		"bunks" 56
-		"mass" 759
-		"drag" 11.2
+		"mass" 2018
+		"drag" 16.2
 		"heat dissipation" .5
 		"fuel capacity" 800
 		"cargo space" 400
@@ -3343,19 +3977,44 @@ ship "PF-80 Intrepid"
 	gun 29 -162
 	
 	turret 0 -131.5 "Proton Turret"
+		arc -100 100
 	turret -42 -101 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -110 45
 	turret 42 -101 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -45 110
 	
 	turret -45.5 -53.5
+		angle -45
+		arc -85 40
 	turret 45.5 -53.5
+		angle 45
+		arc -40 85
 	turret -49 -21.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -120 85
 	turret 49 -21.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -85 120
 	turret -84 46.5 "Proton Turret"
+		angle -90
+		arc -90 100
 	turret 84 46.5 "Proton Turret"
+		angle 90
+		arc -100 90
 	turret -81.5 69
+		angle -90
+		arc -100 90
 	turret 81.5 69
+		angle 90
+		arc -90 100
 	turret -49.5 77 
+		angle -45
+		arc -165 135
 	turret 49.5 77 
+		angle 45
+		arc -135 165
 	engine -61.5 174
 		zoom 1
 		under
@@ -3371,7 +4030,7 @@ ship "PF-80 Intrepid"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description `Intrepid is a recently developed protected freighter with heavy armour and decent firepower to hold off pirates on its own while also being fast enough to outrun heavier ships.`
+	description `The Intrepid is a recently developed protected freighter with heavy armour and decent firepower to hold off pirates on its own, while also being fast enough to outrun heavier ships.`
 	
 ship "FF-30 Volant"
 	sprite "ship/mgf volant"
@@ -3383,8 +4042,8 @@ ship "FF-30 Volant"
 		"hull" 1000
 		"required crew" 2
 		"bunks" 4
-		"mass" 125
-		"drag" 3.1
+		"mass" 325
+		"drag" 3.5
 		"heat dissipation" .65
 		"fuel capacity" 600
 		"cargo space" 140
@@ -3421,7 +4080,7 @@ ship "FF-30 Volant"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `A recently developed cheap and fast blockade runner for quickly flying past pirate infested area. Lightly protected and not designed for any combat.`
+	description `A recently developed cheap and fast blockade runner for quickly flying past pirate-infested areas. Lightly protected and not designed for any combat.`
 	
 ship "PT-60 Gallant"
 	sprite "ship/mgf gallant"
@@ -3474,17 +4133,40 @@ ship "PT-60 Gallant"
 	gun -29 -174 
 	gun 29 -174 
 	turret 0 -138.5 "Proton Turret"
+		arc -90 90
 	turret -57 -64.5 
+		angle -45
+		arc -110 23
 	turret 57 -64.5 
+		angle 45
+		arc -23 110
 	turret -66.5 4.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -90 24
 	turret 66.5 4.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -24 90
 	turret -66.5 36 
+		angle -90
+		arc -45 45
 	turret 66.5 36 
+		angle 90
+		arc -45 45
 	turret -66.5 68 
+		angle -135
+		arc -23 110
 	turret 66.5 68 
+		angle 135
+		arc -110 23
 	turret -31 57.5 "Proton Turret"
+		angle -90
+		arc -165 165
 	turret 31 57.5 "Proton Turret"
+		angle 90
+		arc -165 165
 	turret 0 134.5 "Proton Turret"
+		angle 180
+		arc -138 138
 	engine -54 174.5 
 	engine 54 174.5 
 	leak "leak" 40 50
@@ -3495,7 +4177,7 @@ ship "PT-60 Gallant"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Solomons Voidworks protected tanker ship for shipping crude oil and other petroleum products from and across the southern space. Heavily armoured and armed, the Gallant provides excellent protection against any pirates it might come across. While difficulty of handling bulk liquid cargo deter many pirates from stealing it, report of raid on oil tanker is not unheard of. It is suspected that they either have no other targets or it was an attempt to capture the entire ship.`
+	description `A Solomons Voidworks protected tanker ship for shipping crude oil and other petroleum products from and across the Southern space. Heavily armoured and armed, the Gallant provides excellent protection against any pirates it might come across. While the difficulty of handling bulk liquid cargo deters many pirates from stealing it, reports of raid on oil tankers are not unheard of. It is suspected that they either have no other targets or they were attempts to capture the entire ship.`
 	
 ship "PL-50 Impavid"
 	sprite "ship/mgf impavid"
@@ -3507,7 +4189,7 @@ ship "PL-50 Impavid"
 		"hull" 8300
 		"required crew" 36
 		"bunks" 56
-		"mass" 780
+		"mass" 2480
 		"drag" 14.2
 		"heat dissipation" .5
 		"fuel capacity" 800
@@ -3547,15 +4229,34 @@ ship "PL-50 Impavid"
 	gun -28 -162.5 
 	gun 28 -162.5 
 	turret 0 -110.5 "Proton Turret"
+		arc -100 100
 	turret -45 -101 "Quad Blaster Turret"
+		angle -45
+		arc -123 65
 	turret 45 -101 "Quad Blaster Turret"
+		angle 45
+		arc -65 123
 	turret -59 4 
+		angle -90
+		arc -45 90
 	turret 59 4 
+		angle 90
+		arc -90 45
 	turret -59 34 "Proton Turret"
+		angle -90
+		arc -70 70
 	turret 59 34 "Proton Turret"
+		angle 90
+		arc -70 70
 	turret -59 64 
+		angle -90
+		arc -90 45
 	turret 59 64 
+		angle 90
+		arc -45 90
 	turret 0 127 "Proton Turret"
+		angle 180
+		arc -155 155
 	engine -50 164.5 
 	engine 50 164.5 
 	leak "leak" 30 50
@@ -3567,8 +4268,8 @@ ship "PL-50 Impavid"
 	explode "large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description `A well defended livestock transport for shipping various live export from the southern worlds to their destination safely. Unlike its sea-bound ancestor which can simply have an open deck for air, cargo deck of spacefaring livestock transport require dedicated climate control system to ensure proper air circulation and comfortable ride for the animals as well as reduce the smell and gases for when the crew have to perform task within the cargo deck.` 
-	description `Freshly butchered meat is known to be highly preferred over frozen meat by the wealthy creating a lucrative trade route between the South and Paradise Planets for these specialized freighter.`
+	description `A well defended livestock transport for shipping various live exports from the southern worlds to their destination safely. Unlike its sea-bound ancestor which can simply have an open deck for air, the cargo decks of a spacefaring livestock transport require dedicated climate control systems to ensure proper air circulation and comfortable ride for the animals, as well as reduce the smells and gases for when the crew have to perform tasks within the cargo deck.` 
+	description `	Freshly butchered meat is known to be highly preferred over frozen meat by the wealthy, creating a lucrative trade route between the South and Paradise Planets for these specialized freighters.`
 
 ship "FC-022 Castello"
 	sprite "ship/mgf castello"
@@ -3580,7 +4281,7 @@ ship "FC-022 Castello"
 		"hull" 1480
 		"required crew" 5
 		"bunks" 12
-		"mass" 168
+		"mass" 368
 		"drag" 6.1
 		"heat dissipation" .75
 		"fuel capacity" 1000
@@ -3617,26 +4318,30 @@ ship "FC-022 Castello"
 	"steering engine" -45.5 -73.5 
 		zoom .5
 		angle 90
-		left
+		right
+		over
 	"steering engine" 45.5 -73.5 
 		zoom .5
 		angle 270
-		right
+		left
+		over
 	"steering engine" -45.5 74.5 
 		zoom .5
 		angle 90
 		left
+		over
 	"steering engine" 45.5 74.5 
 		zoom .5
 		angle 270
 		right
+		over
 	leak "leak" 60 50
 	leak "flame" 50 80
 	explode "tiny explosion" 10
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Reminiscent of refuelling barge used in older days before uses of replusor engines becomes more widespread with freighters where most freighters would park in orbit unloading cargo via tugboats and refueled by dedicated fuel barge like the Castello.`
+	description `Reminiscent of refuelling barges used in older days before uses of replusor engines became more widespread with freighters, when most ships would park in orbit unloading cargo via tugboats and refueled by dedicated fuel barges like the Castello.`
 	description `In modern times refuelling barges are occasionally used by some companies to rapidly refuel freighters mid-flight and extend their range without requiring the slow and cumbersome freighters to visit the port.`
 	
 ship "SKVS-2 Mudskipper"
@@ -3649,7 +4354,7 @@ ship "SKVS-2 Mudskipper"
 		"hull" 1100
 		"required crew" 2
 		"bunks" 4
-		"mass" 168
+		"mass" 268
 		"drag" 5.8
 		"heat dissipation" .8
 		"fuel capacity" 200
@@ -3684,7 +4389,7 @@ ship "SKVS-2 Mudskipper"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Small, lightly armed freighter for short-ranged shipping from earlier and more peaceful era. These are most often seen in more secure area of space as they lack of any effective defense against pirates nor the range to travel far beyond their homeport.`
+	description `Small, lightly armed freighter for short-ranged shipping from an earlier and more peaceful era. These are most often seen in more secure areas of space as they lack any effective defense against pirates nor the range to travel far beyond their homeport.`
 	
 ship "SKVS-3 Gudgeon"
 	sprite "ship/mgf gudgeon"
@@ -3696,7 +4401,7 @@ ship "SKVS-3 Gudgeon"
 		"hull" 1600
 		"required crew" 2
 		"bunks" 4
-		"mass" 288
+		"mass" 388
 		"drag" 6.7
 		"heat dissipation" .8
 		"fuel capacity" 300
@@ -3731,7 +4436,7 @@ ship "SKVS-3 Gudgeon"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Slightly larger version of the Mudskipper. The Gudgeon is possibly one of the most efficient cargo vessel around but also the most defenceless and slow for the size. Though few captains reported to enjoy piloting them, they all agreed it is one of the most robust and easy to maintain.`
+	description `Slightly larger version of the Mudskipper, the Gudgeon is possibly one of the most efficient cargo vessel around, but also the most defenceless and slow for its size. Though few captains enjoy piloting them, they all agree it is one of the most robust and easy to maintain.`
 	
 ship "SKVS-4 Minnow"
 	sprite "ship/mgf minnow"
@@ -3743,7 +4448,7 @@ ship "SKVS-4 Minnow"
 		"hull" 1100
 		"required crew" 2
 		"bunks" 4
-		"mass" 168
+		"mass" 268
 		"drag" 5.8
 		"heat dissipation" .8
 		"fuel capacity" 200
@@ -3781,8 +4486,8 @@ ship "SKVS-4 Minnow"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `A water tanker ship for transporting fresh water to nearby colonies or stations which are incapable of generating enough fresh water themselves. The Minnow itself is slow and lightly armed making it incapable of defending itself or escaping which makes it less ideal for travelling to frontier worlds alone with the raise of piracy.`
-	description `Now that most colony are developed enough to supply their own water these ships became much rarer as their need decreases. Now only a small number remains parked in systems that have stations for occasional resupply mission.`
+	description `A water tanker ship for transporting fresh water to nearby colonies or stations which are incapable of generating enough fresh water for themselves. The Minnow itself is slow and lightly armed making it incapable of defending itself or escaping from any threat, which makes it less ideal for travelling to frontier worlds alone with the rise of piracy.`
+	description `	Now that most colonies are developed enough to supply their own water, these ships have become much rarer as the need for them decreases. Only a small number remain parked in systems that have stations for occasional resupply mission.`
 	
 ship "CWC-2 Celestine"
 	sprite "ship/mgf celestine"
@@ -3794,7 +4499,7 @@ ship "CWC-2 Celestine"
 		"hull" 1200
 		"required crew" 2
 		"bunks" 6
-		"mass" 186
+		"mass" 286
 		"drag" 5.1
 		"heat dissipation" .8
 		"fuel capacity" 500
@@ -3836,8 +4541,8 @@ ship "CWC-2 Celestine"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Custom built wine tanker for the Luna Winery for transporting wine in bulk and preserving them in the most perfect condition with individual thermal control system for each tank to keep the heat as stable as possible.`
-	description `Because these ships are lightly armed, they rarely wander away from relative safety of heavily patrolled Paradise Planets.`
+	description `A custom-built wine tanker for the Luna Winery made to transport wine in bulk and preserve it in the most perfect condition, with individual thermal control system for each tank to keep the heat as stable as possible.`
+	description `	Because these ships are lightly armed, they rarely wander away from the relative safety of heavily patrolled Paradise Planets.`
 	
 ship "CJC-3 Citrus"
 	plural "CJC-3 Citrus"
@@ -3850,7 +4555,7 @@ ship "CJC-3 Citrus"
 		"hull" 1400
 		"required crew" 3
 		"bunks" 6
-		"mass" 284
+		"mass" 384
 		"drag" 6.5
 		"heat dissipation" .8
 		"fuel capacity" 800
@@ -3891,7 +4596,7 @@ ship "CJC-3 Citrus"
 	explode "medium explosion" 20
 	explode "large explosion" 10
 	"final explode" "final explosion medium"
-	description `Citrus-class is purpose designed and built as fruit juice tanker for the Solacer Group mainly for transporting frozen concentrated juice with minimal water content for maximum space efficiency. The concentrated juice would then be mixed with water and packaged at destionation facility to be distributed.`
+	description `The Citrus-class is a purpose built fruit juice tanker for the Solacer Group, mainly for transporting frozen concentrated juice with minimal water content for maximum space efficiency. The concentrated juice would then be mixed with water and packaged at destination facility to be distributed.`
 	
 ship "TQK-20 Qaytas" #Todo bigger bulk-in bag-out
 	plural "TQK-20 Qaytas"
@@ -3904,7 +4609,7 @@ ship "TQK-20 Qaytas" #Todo bigger bulk-in bag-out
 		"hull" 1600
 		"required crew" 6
 		"bunks" 8
-		"mass" 300
+		"mass" 400
 		"drag" 6.5
 		"heat dissipation" .75
 		"fuel capacity" 700
@@ -3942,7 +4647,7 @@ ship "TQK-20 Qaytas" #Todo bigger bulk-in bag-out
 	explode "medium explosion" 20
 	explode "large explosion" 10
 	"final explode" "final explosion medium"
-	description `A specialized bulk-in bag-out ship designed in cooperation between Vefrol Dockyards and Pioneer Heavy Industries for the Core Food Corperation for transportation of bulk sugar and in-ship bagging at destination to decrease port time during unloading allowing overall faster turnaround. The ship lacks of large cargo loading hatches to maintain a closed system free of contaminants and instead loaded via special sealed conveyor belts built into the ship. Its' built-in bagging facility utilize the latest technology for fast and highly efficient packaging operation. Bagged sugar can be unloaded at the port far faster than in bulk as well as having the benefit of being less reliant on specialized sugar unloading equipment and storage that most port does not have.`
+	description `A specialized bulk-in bag-out ship designed in cooperation between Vefrol Dockyards and Pioneer Heavy Industries for the Core Food Corporation. This is to allow transportation of bulk sugar and in-ship bagging at destination to decrease port time during unloading, resulting in overall faster turnaround. The ship lacks large cargo loading hatches to maintain a closed system free of contaminants and instead loads via special sealed conveyor belts built into the ship. Its' built-in bagging facilities utilize the latest technology for fast and highly efficient packaging operation. Bagged sugar can be unloaded at the port far faster than in bulk as well as having the benefit of being less reliant on specialized sugar unloading equipment and storage that most ports do not have.`
 
 ship "QYG-30 Qazan"
 	sprite "ship/mgf qazan"
@@ -3954,14 +4659,14 @@ ship "QYG-30 Qazan"
 		"hull" 1500
 		"required crew" 2
 		"bunks" 5
-		"mass" 167
-		"drag" 3.4
+		"mass" 347
+		"drag" 6.1
 		"heat dissipation" .75
 		"fuel capacity" 600
 		"cargo space" 120
 		"outfit space" 270
 		"weapon capacity" 80
-		"engine capacity" 120
+		"engine capacity" 100
 		weapon
 			"blast radius" 40
 			"shield damage" 400
@@ -3996,7 +4701,7 @@ ship "QYG-30 Qazan"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `A fast and well armoured freighter for medium range shipping. Preferred by some captain for greater manoeuvrability compared to Syndicate Freighter.`
+	description `A fast and well armoured freighter for medium-range shipping. Preferred by some captains for greater manoeuvrability compared to Syndicate Freighter.`
 		
 ship "QYG-60 Sandiq"
 	sprite "ship/mgf sandiq"
@@ -4008,14 +4713,14 @@ ship "QYG-60 Sandiq"
 		"hull" 2600
 		"required crew" 4
 		"bunks" 8
-		"mass" 312
-		"drag" 5.2
+		"mass" 576
+		"drag" 7.8
 		"heat dissipation" .75
 		"fuel capacity" 800
 		"cargo space" 270
 		"outfit space" 301
 		"weapon capacity" 122
-		"engine capacity" 164
+		"engine capacity" 124
 		weapon
 			"blast radius" 40
 			"shield damage" 400
@@ -4051,7 +4756,7 @@ ship "QYG-60 Sandiq"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Larger and longer ranged version of QYG-30 Qazan to fill in the gap between the Qazan and heavy freighter around the Core and North area.`
+	description `A larger and longer ranged version of the QYG-30 Qazan to fill in the gap between the Qazan and heavy freighters around the Core and North area.`
 	
 ship "QYG-30r Qazan"
 	sprite "ship/mgf qazan reefer"
@@ -4063,14 +4768,14 @@ ship "QYG-30r Qazan"
 		"hull" 1450
 		"required crew" 3
 		"bunks" 5
-		"mass" 175
+		"mass" 275
 		"drag" 3.4
 		"heat dissipation" .9
 		"fuel capacity" 600
 		"cargo space" 110
 		"outfit space" 270
 		"weapon capacity" 80
-		"engine capacity" 120
+		"engine capacity" 100
 		"refrigerated space" 110
 		weapon
 			"blast radius" 40
@@ -4106,23 +4811,23 @@ ship "QYG-30r Qazan"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Modified version of Qazan with refrigerated cargo holds to allow it to maintain the perfect temperature for carrying perishable goods over long distance without the need for individual refrigerated containers where more space is taken up for the individual cooling systems as well as cost for their maintenance. Due to the modification the cargo space is slightly reduced but still more efficient than carrying multiple refrigerated container.`
+	description `A modified version of the Qazan with refrigerated cargo holds to allow it to maintain the perfect temperature for carrying perishable goods over long distances without the need for individual refrigerated containers, where more space is taken up for the individual cooling systems as well as cost for their maintenance. Due to the modification the cargo space is slightly reduced but still more efficient than carrying multiple refrigerated containers.`
 	
 ship "QYG-70r Tonazqi"
 	sprite "ship/mgf tonazqi"
 	thumbnail "thumbnail/mgf tonazqi thumb"
 	attributes
-		category "Light Freighter"
+		category "Heavy Freighter"
 		"cost" 2650000
 		"shields" 4400
 		"hull" 2700
 		"required crew" 5
 		"bunks" 7
-		"mass" 350
+		"mass" 450
 		"drag" 5.8
 		"heat dissipation" 1.3
 		"fuel capacity" 800
-		"cargo space" 300
+		"cargo space" 330
 		"outfit space" 305
 		"weapon capacity" 125
 		"engine capacity" 175
@@ -4159,7 +4864,7 @@ ship "QYG-70r Tonazqi"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion medium"
-	description `A dedicated reefer ship for carrying and keeping perishable goods refrigerated in bulk over distance with dedicated cargo hold cooling systems as well as dedicated freezer section for storing cargo that requires even lower temperature to transport safely.`
+	description `A dedicated reefer ship for carrying and keeping perishable goods refrigerated in bulk over distance, with dedicated cargo hold cooling systems as well as a dedicated freezer section for storing cargo that requires an even lower temperature to transport safely.`
 	
 ship "LMS-43 Mullsammler"
 	sprite "ship/mgf mullsammler"
@@ -4171,7 +4876,7 @@ ship "LMS-43 Mullsammler"
 		"hull" 2200
 		"required crew" 3
 		"bunks" 6
-		"mass" 285
+		"mass" 385
 		"drag" 3.8
 		"heat dissipation" .6
 		"fuel capacity" 600
@@ -4226,7 +4931,7 @@ ship "LMS-43 Mullsammler"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `This ship was designed to collect garbage from various colonies in the days before they build their own garbage processing plant and with compactors these ships can collect several times more cargo than a regular freighter. Even after a processing plant was build on a planet these vessels are still used to collect garbage from various settlements scattered around the planet. The ship is equipped with six compactor to quickly load the garbage though practically the crew said three is more than enough for most small settlements this ship would be visiting and all compactors will only be utilized in more urban area.`
+	description `This ship was designed to collect garbage from various colonies in the days before they built their own garbage processing plants. With their compactors these ships can collect several times more cargo than a regular freighter. Even after a processing plant was built on a planet these vessels are still used to collect garbage from various settlements scattered around the planet. The ship is equipped with six compactors to quickly load the garbage, though practically the crew said three is more than enough for most small settlements this ship would be visiting and all compactors will only be utilized in more urban areas.`
 
 ship "AD-012C Iaphia"
 	sprite "ship/mgf iaphia"
@@ -4238,7 +4943,7 @@ ship "AD-012C Iaphia"
 		"hull" 1600
 		"required crew" 4
 		"bunks" 10
-		"mass" 158
+		"mass" 237
 		"drag" 3.6
 		"heat dissipation" .75
 		"fuel capacity" 600
@@ -4268,7 +4973,9 @@ ship "AD-012C Iaphia"
 	gun -12.5 -94.5 
 	gun 12.5 -94.5 
 	turret -19.5 11 
+		angle -45
 	turret 19.5 11 
+		angle 45
 	engine -20.5 56 
 	engine 20.5 56 
 	engine -49 79.5 
@@ -4281,7 +4988,7 @@ ship "AD-012C Iaphia"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `Expensive, fast, and fancy freighter designed for captains who prefer speed. Some captain of weathier origins also prefer it because for less boxy look compared to other freighters.`
+	description `An expensive, fast, and fancy freighter designed for captains who prefer speed. Some captains of weathier origins also prefer it because of the less boxy look compared to other freighters.`
 	
 ship "AD-019A Iabayi"
 	sprite "ship/mgf iabayi"
@@ -4293,7 +5000,7 @@ ship "AD-019A Iabayi"
 		"hull" 5800
 		"required crew" 10
 		"bunks" 26
-		"mass" 645
+		"mass" 867
 		"drag" 10.5
 		"heat dissipation" .6
 		"fuel capacity" 800
@@ -4328,11 +5035,23 @@ ship "AD-019A Iabayi"
 	gun -32.5 -174.5 
 	gun 32.5 -174.5 
 	turret -29.5 -45 
+		angle -45
+		arc -135 55
 	turret 29.5 -45 
+		angle 45
+		arc -55 135
 	turret -29.5 -24 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -135 55
 	turret 29.5 -24 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -55 135
 	turret -36 57 
+		angle 45
+		arc -145 50
 	turret 36 57 
+		angle 45
+		arc -50 145
 	engine -26 142 
 	engine 26 142 
 	engine -59 173 
@@ -4345,7 +5064,7 @@ ship "AD-019A Iabayi"
 	explode "large explosion" 20
 	explode "huge explosion" 5
 	"final explode" "final explosion large"
-	description `Larger fancy freighter for richer captains who might want to fly a ship with more cargo space than the Iaphia or travel longer distance.`
+	description `A larger fancy freighter for richer captains who might want to fly a ship with more cargo space than the Iaphia or travel longer distances.`
 	
 ship "AD-0032 Ialmuslati"
 	sprite "ship/mgf ialmuslati"
@@ -4359,7 +5078,7 @@ ship "AD-0032 Ialmuslati"
 		"hull" 1850
 		"required crew" 6
 		"bunks" 48
-		"mass" 243
+		"mass" 714
 		"drag" 5.2
 		"heat dissipation" .75
 		"fuel capacity" 600
@@ -4391,9 +5110,13 @@ ship "AD-0032 Ialmuslati"
 	gun -16.5 -117.5 
 	gun 16.5 -117.5 
 	turret -19.5 -64 "Quad Blaster Turret"
+		angle -45
 	turret 19.5 -64 "Quad Blaster Turret"
+		angle 45
 	turret -18.5 63.5 "Heavy Anti-Missile Turret"
+		angle -45
 	turret 18.5 63.5 "Heavy Anti-Missile Turret"
+		angle 45
 	engine -13.5 96 
 		zoom .6
 	engine 13.5 96
@@ -4406,8 +5129,8 @@ ship "AD-0032 Ialmuslati"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion medium"
-	description `Fast mid-sized transport offered by Najrmalas Shipworks seeing the few competitor. The Ialmuslati while expensive it offers more speed as well as business-class suite for better-paying customers.`
-	
+	description `A fast mid-sized transport offered by Najrmalas Shipworks as they saw the few competitors in the market. The Ialmuslati, while expensive, offers more speed, as well as a business-class suite for better-paying customers.`
+
 	#req|round10(bnk)|0
 ship "TS-650 Herrenbal"
 	sprite "ship/mgf herrenbal"
@@ -4419,7 +5142,7 @@ ship "TS-650 Herrenbal"
 		"hull" 2250
 		"required crew" 6
 		"bunks" 48
-		"mass" 187
+		"mass" 287
 		"drag" 5.5
 		"heat dissipation" .65
 		"fuel capacity" 600
@@ -4452,9 +5175,15 @@ ship "TS-650 Herrenbal"
 	gun -11.5 -77
 	gun 11.5 -77
 	turret 0 -44
+		arc -170 170
 	turret 0 -25 "Heavy Anti-Missile Turret"
+		arc -170 170
 	turret -14 59 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -90 140
 	turret 14 59 "Quad Blaster Turret"
+		angle 45
+		arc -140 90
 	engine -12 94
 		zoom 1
 		under
@@ -4469,7 +5198,7 @@ ship "TS-650 Herrenbal"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
-	description `A mid-sized transport to fill in the gap between Blackbird and Star Queen as well as serving as economy-class transport.`
+	description `A mid-sized transport to fill in the gap between Blackbird and Star Queen, as well as serving as an economy-class transport.`
 	
 ship "TS-CH0 Kratzbal"
 	sprite "ship/mgf kratzbal"
@@ -4481,7 +5210,7 @@ ship "TS-CH0 Kratzbal"
 		"hull" 3890
 		"required crew" 12
 		"bunks" 176
-		"mass" 452
+		"mass" 1252
 		"drag" 7.8
 		"heat dissipation" .65
 		"fuel capacity" 800
@@ -4519,14 +5248,29 @@ ship "TS-CH0 Kratzbal"
 	gun -26.5 -166
 	gun 26.5 -166
 	turret 0 -143.5 "Proton Turret"
+		arc -168 168
 	turret -12 -119 "Quad Blaster Turret"
+		angle -45
+		arc -130 45
 	turret 12 -119 "Quad Blaster Turret"
+		angle 45
+		arc -75 130
 	turret -23 -51.5 "Anti-Missile Turret"
+		angle -45
+		arc -135 40
 	turret 23 -51.5 "Anti-Missile Turret"
+		angle 45
+		arc -40 135
 	turret 0 20 "Proton Turret"
+		arc -145 145
 	turret 0 41.5 "Proton Turret"
+		arc -145 145
 	turret -18.5 96 "Blaster Turret"
+		angle -90
+		arc -145 90
 	turret 18.5 96 "Blaster Turret"
+		angle 90
+		arc -90 145
 	engine -38 162.5
 		zoom 1
 		under
@@ -4544,7 +5288,7 @@ ship "TS-CH0 Kratzbal"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
-	description `Fast and well-armed transport for hauling large amount of people across distance as non-luxury alternative to the Star Queen.`
+	description `A fast and well-armed transport for hauling large amounts of people across long distances as a non-luxury alternative to the Star Queen.`
 	
 ship "TS-1L260 Mieusbar"
 	sprite "ship/mgf mieusbar"
@@ -4558,7 +5302,7 @@ ship "TS-1L260 Mieusbar"
 		"hull" 9800
 		"required crew" 56
 		"bunks" 766
-		"mass" 4852
+		"mass" 5852
 		"drag" 22.2
 		"heat dissipation" .6
 		"fuel capacity" 1600
@@ -4599,22 +5343,55 @@ ship "TS-1L260 Mieusbar"
 	gun -57 -300.5 
 	gun 57 -300.5 
 	turret -62 -261.5 "Proton Turret"
+		angle -45
+		arc -121 75
 	turret 62 -261.5 "Proton Turret"
+		angle 45
+		arc -75 121
 	turret -62 -220.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -121 75
 	turret 62 -220.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -75 121
 	turret -78 -142 "Proton Turret"
+		angle -45
+		arc -121 75
 	turret 78 -142 "Proton Turret"
+		angle 45
+		arc -75 121
 	turret -78 -102 "Quad Blaster Turret"
+		angle -45
+		arc -121 75
 	turret 78 -102 "Quad Blaster Turret"
+		angle 45
+		arc -75 121
 	turret 0 -66 "Proton Turret"
+		arc -167 167
 	turret -79 98.5 "Proton Turret"
+		angle -45
+		arc -126 95
 	turret 79 98.5 "Proton Turret"
+		angle 45
+		arc -95 126
 	turret -79 132.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -160 135
 	turret 79 132.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -135 160
 	turret -133.5 132 "Quad Blaster Turret"
+		angle -90
+		arc -110 110
 	turret 133.5 132 "Quad Blaster Turret"
+		angle 90
+		arc -110 110
 	turret -133.5 165.5 "Quad Blaster Turret"
+		angle -90
+		arc -110 110
 	turret 133.5 165.5 "Quad Blaster Turret"
+		angle 90
+		arc -110 110
 	engine -97 285.5 
 	engine 97 285.5 
 	engine -37 306.5 
@@ -4629,7 +5406,7 @@ ship "TS-1L260 Mieusbar"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
-	description `Huge transport for mass transportation across vast distance. The development was partially sponsored by some of the southern worlds to provide means of cheap transportation for migrating workers and low-budget tourists specifically coming to the South and Rim.`
+	description `A huge liner for mass transportation across vast distances. The development was partially sponsored by some of the southern worlds in effort to provide cheaper transportation for migrating workers and low-budget tourists, specifically those coming to the southern area.`
 	
 	
 ship "AsK12-6 Celjurai"
@@ -4642,7 +5419,7 @@ ship "AsK12-6 Celjurai"
 		"hull" 1800
 		"required crew" 24
 		"bunks" 148
-		"mass" 452
+		"mass" 582
 		"drag" 8.6
 		"heat dissipation" .75
 		"fuel capacity" 600
@@ -4696,7 +5473,7 @@ ship "AsK12-6 Celjurai"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion medium"
-	description `Luxury sight-seeing transport offering larger view area for more people allowing transport companies to offer more exclusive seats.`
+	description `A luxury sight-seeing transport, offering larger view areas for more people. This allows transport companies to offer more exclusive seats and reap in extra profit at minimal cost.`
 
 ship "S-PT06 Harukaze"
 	sprite "ship/mgf harukaze"
@@ -4708,7 +5485,7 @@ ship "S-PT06 Harukaze"
 		"hull" 900
 		"required crew" 1
 		"bunks" 11
-		"mass" 100
+		"mass" 200
 		"drag" 1.5
 		"heat dissipation" .8
 		"fuel capacity" 600
@@ -4742,7 +5519,7 @@ ship "S-PT06 Harukaze"
 	explode "small explosion" 20
 	explode "mgf explosion spark" 30
 	"final explode" "final explosion small"
-	description "MJK Heavy Industries Harukaze was developed as a faster alternative to the Betelguese Heavy Shuttle also with improved protection as well as utilizing turret mount instead of fixed guns allowing it to defend itself while maneuvering out of harms way. The interior is also considered to be a bit fancier than most other transport but still not enough to attract wealthy passengers."
+	description "The MJK Heavy Industries Harukaze was developed as a faster alternative to the Betelguese Heavy Shuttle, also with improved protection as well as utilizing turret mounta instead of fixed guns, allowing it to defend itself while maneuvering out of harm's way. The interior is also considered to be a bit fancier than most other transports, but not quite fancy enough to attract more wealthy passengers."
 
 ship "CDB-6K Jupiter"
 	sprite "ship/mgf jupiter"
@@ -4787,13 +5564,28 @@ ship "CDB-6K Jupiter"
 		"Scram Drive"
 		
 	turret 0 -343 "Heavy Anti-Missile Turret"
+		arc -145 145
 	turret -29 -324 
+		angle -45
+		arc -122 100
 	turret 29 -324 
+		angle 45
+		arc -100 122
 	turret -51.5 125 
+		angle -90
+		arc -90 90
 	turret 51.5 125 
+		angle 90
+		arc -90 90
 	turret -57 164 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	turret 57 164 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret 0 283.5 
+		angle 180
+		arc -130 130
 	gun -41 -382.5 
 	gun 41 -382.5 
 	gun -53 -376.5 "Torpedo Launcher"
@@ -4810,7 +5602,7 @@ ship "CDB-6K Jupiter"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "A dry bulk carrier geared with derricks for unloading cargo in less-equipped ports in the earlier days of bulk interstellar trade. Unlike container ships these bulk carriers can be loaded with unpacked dry cargoes like ores and grain directly in their cargo bays and lessen the need for the cargo to be packaged from the destination."
+	description "A dry bulk carrier geared with derricks for unloading cargo in less-equipped ports, in the earlier days of bulk interstellar trade. Unlike container ships, these bulk carriers can be loaded with unpacked dry cargoes like ores and grain directly in their cargo bays, lessening the need for the cargo to be packaged from the destination."
 
 ship "CDB-12K Saturn"
 	sprite "ship/mgf saturn"
@@ -4856,17 +5648,36 @@ ship "CDB-12K Saturn"
 		"Scram Drive"
 		
 	turret 0 -347.5 
+		arc -140 140
 	turret -38 -346 "Heavy Anti-Missile Turret"
+		arc -160 70
 	turret 38 -346 "Heavy Anti-Missile Turret"
+		arc -70 160
 	turret -78 -327 
+		arc -160 50
 	turret 78 -327 
+		arc -50 160
 	turret -122 -134 
+		angle -90
+		arc -90 90
 	turret 122 -134 
+		angle 90
+		arc -90 90
 	turret -122 22 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	turret 122 22 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret -122 177 
+		angle -90
+		arc -90 90
 	turret 122 177 
+		angle 90
+		arc -90 90
 	turret 0 285 
+		angle 180
+		arc -130 130
 	gun -117.5 -356 
 	gun 117.5 -356 
 	gun -104 -361 
@@ -4885,7 +5696,7 @@ ship "CDB-12K Saturn"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "A class of even larger dry bulk carrier than the Jupiter as exports and demand grew. Though due to lack of unloading gears it can only operate at more equipped ports. In addition to its' bulk bays it can also carry significant amount of container allowing captains to earn additonal profit."
+	description "A class of even larger dry bulk carriers than the Jupiter as exports and demand grew. Unfortunately, due to the lack of unloading gears, it's operation is limited to fewer more well equipped ports. In addition to its' bulk bays it can also carry significant amount of containers, allowing captains to earn additional profit."
 	
 	#Freighter Powder
 ship "FPd45 Clinker"
@@ -4931,6 +5742,8 @@ ship "FPd45 Clinker"
 	turret 0 -163.5 
 	turret 0 -69.5 "Heavy Anti-Missile Turret"
 	turret 0 162.5 
+		angle 180
+		arc -175 175
 	engine -19 195 
 	engine 19 195 
 	leak "leak" 40 60
@@ -4941,8 +5754,8 @@ ship "FPd45 Clinker"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "A hatchless self-unloading cargo ship specialized for carrying and handling powdered cargoes like cement. Because of the specially designed cargo holds and loading and unloading systems for granulated cargo it cannot be used to transport any other kind of cargo."
-	description `The Clinker was built in response to growing demand for cement as small colonies grew into cities, though this model requires port-side facilities to properly unload directly to vehicles and will often only travel between ports with proper equipment.`
+	description "A hatchless self-unloading cargo ship specialized for carrying and handling powdered cargoes like cement. Because of the specially designed cargo holds and loading and unloading systems for granulated cargo, it cannot be used to transport any other kind of cargo."
+	description `	The Clinker was built in response to the growing demand for cement as small colonies grew into cities, though this model requires port-side facilities to properly unload directly to vehicles and will often only travel between ports with proper equipment.`
 	
 	#Freighter Aggregate
 ship "FAd36 Flint"
@@ -4987,6 +5800,8 @@ ship "FAd36 Flint"
 	turret 44.5 -145.5 
 	turret 0 11.5 "Heavy Anti-Missile Turret"
 	turret 0 157.5 "Blaster Turret"
+		angle 180
+		arc -175 175
 	engine -36.5 185.5 
 	engine 36.5 185.5 
 	leak "leak" 40 60
@@ -4997,9 +5812,9 @@ ship "FAd36 Flint"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Flint-class is purpose built bulk freighter for carrying aggregates. It is equipped with conveyor belt for loading and unloading to allow the vessel to operate independent of port equipment increasing the number of ports it can visit. As per requirement of some cargo the cargo hold of this ship is also equipped with moisture control system to maintain the most ideal condition for its cargo."
+	description "The Flint-class is a purpose-built bulk freighter for carrying aggregates. It is equipped with conveyor belts for loading and unloading to allow the vessel to operate independently of port equipment, increasing the number of ports it can visit. As per requirement of some cargo the cargo hold of this ship is also equipped with moisture control system to maintain the most ideal condition for its cargo."
 
-	#Note: Gebrant is not getting "fast unload" attr because it's already super cheap (if not too cheap).
+# Note: Gebrant is not getting "fast unload" attr because it's already super cheap (if not too cheap).
 	#Freighter Universal <> <model num> <pod variant>
 ship "FUe02a Gebrant"
 	sprite "ship/mgf gebrant i"
@@ -5049,7 +5864,7 @@ ship "FUe02a Gebrant"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "A general heavy freight pusher introduced before the forming of the Republic. Designed to clamp or deploy cargo containers in orbit where transporting it to the ground is handled by a tug, though with recent advancements basically all modern containers are equipped with their own landing gear allow the ship to detach the container at the port by self. Though not super popular like the Haulers it's still preferred by several captains for its versatility of being to able to quickly latch onto multiple type of cargo pods allow them to quickly adapt to whatever market demands."
+	description "A general heavy freight pusher introduced before the forming of the Republic. Designed to clamp or deploy cargo containers in orbit where transporting it to the ground is handled by a tug, though with recent advancements basically all modern containers are equipped with their own landing gear to allow the ship to detach the container at the port by itself. Though not super popular like the Haulers, it is still preferred by several captains for its versatility of being to able to quickly latch onto multiple types of cargo pods allow them to quickly adapt to whatever the market demands."
 	
 ship "FUe04a Gebrant II"
 	sprite "ship/mgf gebrant ii"
@@ -5099,7 +5914,7 @@ ship "FUe04a Gebrant II"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Gebrant with two cargo containers attached."
+	description "A Gebrant with two cargo containers attached."
 
 ship "FUe06a Gebrant III"
 	sprite "ship/mgf gebrant iii"
@@ -5148,7 +5963,7 @@ ship "FUe06a Gebrant III"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Three is generally considered the maximum this container model could be safely stacked without risk of snapping during turns. Though one of the cheapest and most efficient freighter around it's far less viable today as pirates can easily overwhelm the very lightly armed freighter forcing it to either operate within the safe area or with heavily armed escort."
+	description "Three containers is generally considered the maximum this container model can be safely stacked without risk of snapping during turns. Though one of the cheapest and most efficient freighters around it's far less viable today, as pirates can easily overwhelm the very lightly-armed freighter forcing it to either operate within the safe area or with heavily armed escorts."
 
 	#Small Radioactive Carrier
 ship "SRC-41C Curie"
@@ -5227,8 +6042,8 @@ ship "SRC-41C Curie"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion medium"
-	description `Curie-class is a purpose-built nuclear fuel carrier dedicated to transporting all sort of radioactive cargo like fresh nuclear fuel, spent nuclear fuel, and radioactive waste. With multiple redundancies for all critical systems from engines, cooling system, electrical systems to navigation systems as well as reinforced bulkheads to resist even the most extreme accident while keeping their cargo is intact. Though the bridge is visible it is reinforced with additional armour it is mainly only used for landing and on-ground operations like unloading the cargo, the ship's primary control room buried deep inside the ship also with another layer of armour around it, not unlike what one would've expected from a warship. With the requirement to keep the cargo cool all the time the ship is also built-in with dedicated cooling system for the cargo hold which is isolated from cooling system for the rest of the ship as well as having its own backup generator. Though all radioactive cargo comes with their own radiation shielding container, the material for this ship's cargo hold is also selected to provide decent amount of shielding as well.`
-	description `Another part of the ship's safety includes crews trained to handle radioactive cargo as well as responding to various forseeable incidents from collision, fire, to pirates boarding, in the most unlikely case that it occurs. In addition to that the ship is also equipped for in-flight repairs allowing the ship to perform rudimentary repair on itself if damaged though there's a small delay before the repair can begin and longer delay if the ship got disabled. Because all of these the ship's minimum crew is almost the same as chemical tankers of larger size and operating cost is one of the highest.`
+	description `The Curie-class is a purpose-built nuclear fuel carrier dedicated to transporting all sorts of radioactive cargo, like fresh nuclear fuel, spent nuclear fuel, and radioactive waste, with multiple redundancies for all critical systems, from engines, cooling system, electrical systems to navigation systems as well as reinforced bulkheads to resist even the most extreme accident while keeping their cargo intact. Though the bridge is visible, it is reinforced with additional armour and is mainly only used for landing and on-ground operations like unloading the cargo, with the ship's primary control room buried deep inside the ship, with another layer of armour around it, not unlike what one would have expected from a warship. With the requirement to keep the cargo cool all the time the ship also has a built-in dedicated cooling system for the cargo hold, which is isolated from the cooling systems for the rest of the ship as well as having its own backup generator. Though all radioactive cargo comes with its own radiation shielding container, the material for this ship's cargo hold is also selected to provide decent amount of shielding as well.`
+	description `	Another part of the ship's safety includes crews specially trained to handle radioactive cargo as well as responding to various foreseeable incidents, from collision, fire, and pirates boarding, in the most unlikely case that it occurs. In addition to that, the ship is also equipped for in-flight repairs, allowing the ship to perform rudimentary repairs on itself if damaged, though there is a small delay before the repair can begin and longer delay if the ship got disabled. Because all of these facts the ship's minimum crew is almost the same as chemical tankers of larger size and operating cost is one of the highest.`
 
 		#DSSN-[cateprefix][catalogNum] Rynchops->KR
 ship `DSSN-S90 Lynchyoseu`
@@ -5241,7 +6056,7 @@ ship `DSSN-S90 Lynchyoseu`
 		"hull" 3400
 		"required crew" 22
 		"bunks" 42
-		"mass" 865
+		"mass" 1065
 		"drag" 7.2
 		"heat dissipation" .65
 		"fuel capacity" 800
@@ -5272,9 +6087,15 @@ ship `DSSN-S90 Lynchyoseu`
 		"Hyperdrive"
 		
 	turret 0 -116.5 
+		arc -150 150
 	turret 0 -65 "Heavy Anti-Missile Turret"
+		arc -155 155
 	turret 22.5 47 
+		angle 90
+		arc -70 105
 	turret -22.5 47 
+		angle -90
+		arc -105 70
 	bay "Fighter" 29 83 
 		over
 		"launch effect" "human external"
@@ -5290,10 +6111,10 @@ ship `DSSN-S90 Lynchyoseu`
 	explode "medium explosion" 25
 	explode "large explosion" 35
 	explode "huge explosion" 20
-	description `DSSE Shipbuilding specialized fishing and fish processing vessel built to operate both in sea and space. It utilized a uniquely engineered multi-mode engine that can operate efficiently on both in sea, air, and vacuum.`
-	description `Unlike regular trawlers this vessel can use its repulsor engines to lift itself just above the water significantly increasing speed for the vessel allowing it to catch fish faster as well as being able to catch some faster exotic fishes called by some sailors "skimming". Due to these maneuvers the net was also designed to resist such speed and force as well as allowing it to hold much more fish than standard trawler nets. After which the captured fish can be quickly pulled inside the ship to be processed into fillet, block, canned or other forms as required before being sent to the frozen cargo holds to keep it from spoiling. Its ability to travel at higher speed in air also means the ship could travel between fishing spots far faster than standard water-bound fishing vessels though this is less often done as the extra strain means more maintenance later on which can be uneconomical if done too often. Another unique option for these vessels is allowing it to be very opportunistic in stormy worlds where they can quickly snatch up rare marine animals unique to that world during a small window of calm sea and bail out at the last minute before the heavy storm and high wave hit them.`
-	description `Its space capability is also often utilized by owner of these vessel to rapidly move them around between worlds as market demand shift and new specie of edible fishes were discovered or between known types due to random influences. In addition to solo operations these ships also have option of serving as mothership carry two additional ships to assist the operation on longer expeditions for more continuous supply of fish while processed products are offloaded to another reefer ship where the product is delivered to the port.`
-	description `Because of its adaptability and high efficiency these vessels are almost universally hated by local fishermens especially among worlds whose main export is marine products, to the point some worlds are considering to ban or greatly restrict usage of these ships.`
+	description `This is the DSSE Shipbuilding specialized fishing and fish processing vessel built to operate in both sea and space. It utilizes a uniquely engineered multi-mode engine that can operate efficiently both in sea, air, and vacuum.`
+	description `	Unlike regular trawlers, this vessel can use its repulsor engines to lift itself just above the water, significantly increasing speed for the vessel, which allows it to catch fish faster as well as being able to catch some faster exotic fishes with a method called by some sailors "skimming". Due to these maneuvers the net is also designed to resist such speed and force as well as allowing it to hold many more fish than standard trawler nets. The captured fish can be quickly pulled inside the ship to be processed into fillet, block, canned or other forms as required before being sent to the frozen cargo holds to keep it from spoiling. Its ability to travel at higher speed in air also means the ship can travel between fishing spots far faster than standard water-bound fishing vessels, though this is done less often, as the extra strain means more maintenance later on, which can be uneconomical if done too often. Another unique option for these vessels is that it can be very opportunistic in stormy worlds where they can quickly snatch up rare marine animals unique to that world during a small window of calm sea and bail out at the last minute before the heavy storms and high waves hit them.`
+	description `	Its space capability is also often utilized by owners of these vessels to rapidly move them around between worlds, as market demand shifts and new species of edible fish are discovered or between known types due to random influences. In addition to solo operations, these ships also have option of serving as mothership and carring two additional ships to assist the operation on longer expeditions for a more continuous supply of fish, while processed products are offloaded to another reefer ship whence the product is delivered to the port.`
+	description `	Because of its adaptability and high efficiency, these vessels are almost universally hated by local fishermen, especially among worlds whose main export is marine products, to the point some worlds are considering the possibility of banning or greatly restricting the usage of these ships.`
 
 ship `DSSN-C40 Dulumi`
 	sprite "ship/mgf dulumi"
@@ -5305,7 +6126,7 @@ ship `DSSN-C40 Dulumi`
 		"hull" 4100
 		"required crew" 23
 		"bunks" 126
-		"mass" 1560
+		"mass" 1960
 		"drag" 11.8
 		"heat dissipation" .62
 		"fuel capacity" 800
@@ -5351,7 +6172,7 @@ ship `DSSN-C40 Dulumi`
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Dulumi is a purpose-built boat and yacht carrier with single large bay that can hold most yacht except for the largest of luxury yacht. The ship is designed to park in the water where its cargo can float in and out with ease along with automatic adaptive support system to hold the boats up as the water is drained. It also have fancy passenger accomodation to serve as mini cruise liner while transporting owner and crew of these yacht as well as other passenger heading the same way.`
+	description `The Dulumi is a purpose-built boat and yacht carrier with a single large bay that can hold most yachts except for the largest of luxury yachts. The ship is designed to park in the water where its cargo can float in and out with ease along with an automatic adaptive support system to hold the boats up as the water is drained. It also has fancy passenger accomodations to serve as mini cruise liner while transporting the owner and crew of these yachts as well as other passenger heading the same way.`
 
 ship "G-Class Container Transport"
 	sprite "ship/mgf gclass container transport"
@@ -5363,7 +6184,7 @@ ship "G-Class Container Transport"
 		"hull" 10000
 		"required crew" 8
 		"bunks" 20
-		"mass" 2890
+		"mass" 5780
 		"drag" 17.6
 		"heat dissipation" .55
 		"fuel capacity" 1200
@@ -5429,8 +6250,8 @@ ship "G-Class Container Transport"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `To compete with the newer, more modern heavy freighters dominating the market the Syndicate stacked their Container Transport into a huge Heavy Container Transport tripling capacity but also slowing it down even further from its already despised slug-pace. Though with barely any additional crew requirement from its predecessor the G-Class Container Transport cargo-to-crew ratio is absolutely unmatched.`
-	description `Though still not the most capacious in the area, it can carry a pair of drones to either defend itself with or assist during unloading operation in less-equipped ports.`
+	description `To compete with the newer, more modern heavy freighters dominating the market, the Syndicate stacked their Container Transport into a huge Heavy Container Transport, tripling capacity but also slowing it down even further from its already despised slug-pace. With barely any additional crew requirement from its predecessor, the G-Class Container Transport cargo-to-crew ratio is absolutely unmatched.`
+	description `	Though still not the most capacious in the area, it can carry a pair of drones to either defend itself with or assist during unloading operations in less well-equipped ports.`
 
 ship "H-Class Super Container Ship"
 	sprite "ship/mgf syn hclass super container"
@@ -5442,7 +6263,7 @@ ship "H-Class Super Container Ship"
 		"hull" 52000
 		"required crew" 40
 		"bunks" 75
-		"mass" 12890
+		"mass" 18890
 		"drag" 25
 		"heat dissipation" .5
 		"fuel capacity" 2200
@@ -5479,226 +6300,270 @@ ship "H-Class Super Container Ship"
 	gun -22.5 -679.5 
 	gun 22.5 -679.5 
 
+	#Outer
 	turret 302.5 -517.5 "Heavy Anti-Missile Turret"
+		angle 45
+		arc -135 90
 	turret -302.5 -517.5 "Heavy Anti-Missile Turret"
+		angle -45
+		arc -90 135
 	turret 302.5 -264.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret -302.5 -264.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	turret 302.5 -10.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret -302.5 -10.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	turret 302.5 240 "Heavy Anti-Missile Turret"
+		angle 135
+		arc -90 135
 	turret -302.5 240 "Heavy Anti-Missile Turret"
+		angle -135
+		arc -135 90
 	
 	turret 48.5 -516 
+		angle 85
+		arc -90 90
 	turret -48.5 -516 
+		angle -85
+		arc -90 90
 	turret 48.5 -263.5 "Proton Turret"
+		angle 85
+		arc -90 90
 	turret -48.5 -263.5 "Proton Turret"
-	turret 48.5 -11 
+		angle -85
+		arc -90 90
+	turret 48.5 -11
+		angle 85
+		arc -90 90
 	turret -48.5 -11 
+		angle -85
+		arc -90 90
 	turret 48.5 242.5 "Proton Turret"
+		angle 85
+		arc -90 90
 	turret -48.5 242.5 "Proton Turret"
+		angle -85
+		arc -90 90
 
 	turret 58.5 484 
-	turret -58.5 484 
+		angle 90
+		arc -135 135
+	turret -58.5 484
+		angle -90
+		arc -135 135
 
 	turret 0 -515 "Proton Turret"
+		arc -175 175
 	turret 0 -262.5 "Proton Turret"
+		arc -175 175
 	turret 0 -11.5 "Proton Turret"
+		arc -175 175
 	turret 0 241 "Proton Turret"
+		arc -165 165
 	turret 0 342 "Proton Turret"
+		arc -145 145
 	turret 0 674 "Proton Turret"
+		angle 180
+		arc -120 120
 
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 445.5 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 445.5 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	bay "Drone" 310.5 521 
 		"launch effect" "human internal"
-		angle -90
+		angle 90
 	bay "Drone" -310.5 521 
 		"launch effect" "human internal"
-		angle 90
+		angle -90
 	
 
 	engine -93 700 
@@ -5711,7 +6576,7 @@ ship "H-Class Super Container Ship"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `This massive super container ship is the next step in Syndicate's attempt to regain dominance over heavy freighter market with over double the capacity of the previous largest freighter. Similarly to its predecessor, the G-Class Container Transport, it carried a fleet of drones to assist in unloading as well as allowing it to unload at smaller spaceport that may not be able to handle its size by simply parking in orbit and transport containers to surface with the ship's own drones and tugboats from the port instead. This allow the ship to visit most if not all ports without worrying about landing area or unloading gears delivering both large and small amount of cargo to various destination.`
+	description `This massive super container ship is the next step in the Syndicate's attempt to regain dominance over the heavy freighter market, with over double the capacity of the previous largest freighter. Similarly to its predecessor, the G-Class Container Transport, it carries a fleet of drones to assist in unloading, as well as allowing it to unload at smaller spaceports that may not be able to handle its size, by simply parking in orbit and transporting containers to surface with the ship's own drones and tugboats from the port instead. This allows the ship to visit most if not all ports without worrying about landing area or unloading gears delivering both large and small amount of cargo to various destination.`
 
 ship "UA-10 Porter"
 	sprite "ship/mgf porter"
@@ -5748,7 +6613,7 @@ ship "UA-10 Porter"
 	engine -11.5 -3.5 
 	engine 11.5 -3.5 
 	explode "tiny explosion" 15
-	description `The Porter is a small drone for assisting in cargo unloading operation of the Syndicate new freighter the G-Class, it is especially useful on less equipped worlds. The drone also comes with an anti-missile turret to assist in defense as merchant captains often deploy their all their fighters and drones in combat, even if those ships would be useless in a fight.`
+	description `The Porter is a small drone for assisting in the cargo unloading operation of the Syndicate new freighter the G-Class. It is especially useful on less equipped worlds. The drone also comes with an anti-missile turret to assist in defense as merchant captains often deploy all their fighters and drones in combat, even if those ships would be useless in a fight.`
 
 ship "J-Class Container Feeder"
 	sprite "ship/mgf syn jclass"
@@ -5760,14 +6625,14 @@ ship "J-Class Container Feeder"
 		"hull" 7800
 		"required crew" 4
 		"bunks" 4
-		"mass" 800
+		"mass" 1600
 		"drag" 12.5
 		"heat dissipation" .65
 		"fuel capacity" 200
 		"cargo space" 734
-		"outfit space" 350
+		"outfit space" 290
 		"weapon capacity" 32
-		"engine capacity" 120
+		"engine capacity" 110
 		"mgf fast unload" -10
 		"mgf fast unload slot" 10
 		weapon
@@ -5826,8 +6691,8 @@ ship "J-Class Container Feeder"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A compact freighter designed to be carried and assist the K-Class unload its containers. Purpose-built to quickly latch on to entire block of Syndicate containers, it can rapidly transport up to 64 containers between the mothership and the spaceport at a time permitting unmatched unloading rate on the market.`
-	description `With attachment plate capable of being raised and lowered, it is also capable of carrying general cargo for short-distance haul. Though, due to entire lack of armament it is rarely seen flying between systems.`
+	description `A compact freighter designed to be carried and assist the K-Class unload its containers. Purpose-built to quickly latch on to entire block of Syndicate containers, it can rapidly transport up to 64 containers between the mothership and the spaceport at a time, permitting an unmatched unloading rate on the market.`
+	description `	With an attachment plate capable of being raised and lowered, it is also capable of carrying general cargo for short-distance hauls. However, due to the entire lack of armament it is rarely seen flying between systems.`
 
 ship "K-Class Ultra Container Ship"
 	sprite "ship/mgf syn kclass ultra container"
@@ -5857,7 +6722,7 @@ ship "K-Class Ultra Container Ship"
 		"Sidewinder Missile Launcher" 20
 		"Sidewinder Missile" 900
 		"Quad Blaster Turret" 14
-		"Proton Turret" 21
+		"Proton Turret" 23
 		"Heavy Anti-Missile Turret" 18
 		"M6-ACS Artillery Turret" 4
 		
@@ -5871,15 +6736,45 @@ ship "K-Class Ultra Container Ship"
 		"X1100 Ion Reverse Thruster" 10
 		"Scram Drive"
 	turret 154.5 -1225.5 "Proton Turret" 
+		parallel #Parallel to force them to not converge and result in some weird angle.
+		angle 90
+		arc -90 90
 	turret -154.5 -1225.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 154.5 -834.5 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -154.5 -834.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 154.5 -451.5 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -154.5 -451.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 154.5 -72 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -154.5 -72 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 154.5 317 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -154.5 317 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	gun 65 -1595.5 
 	gun -65 -1595.5 
 	gun 65 -1595.5 
@@ -5890,20 +6785,58 @@ ship "K-Class Ultra Container Ship"
 	gun 65 -1595.5 
 	gun -65 -1595.5 
 	turret 522 -1228.5 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -522 -1228.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 522 -833.5 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -522 -833.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 522 -449.5 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -522 -449.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 522 -71 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -522 -71 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 	turret 522 325.5 "Proton Turret" 
+		parallel
+		angle 90
+		arc -90 90
 	turret -522 325.5 "Proton Turret" 
+		parallel
+		angle -90
+		arc -90 90
 
 	turret 306.5 661 "M6-ACS Artillery Turret"
+		angle 90
+		arc -100 100
 	turret -306.5 661 "M6-ACS Artillery Turret"
+		angle -90
+		arc -100 100
 	turret 484.5 661 "M6-ACS Artillery Turret"
+		angle 90
+		arc -100 100
 	turret -484.5 661 "M6-ACS Artillery Turret"
+		angle -90
+		arc -100 100
 	gun 428.5 -1598 
 	gun -428.5 -1598 
 	gun 529.5 -1598 
@@ -5924,21 +6857,69 @@ ship "K-Class Ultra Container Ship"
 	gun 529.5 -1598 
 	gun -529.5 -1598 
 	turret 511.5 -1135.5 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 -1135.5 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 -1063 
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 -1063 
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 -992.5 
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 -992.5 
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 -916.5 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 -916.5 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 20 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 20 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 90 
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 90 
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 165.5 
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 165.5 
+		parallel
+		angle -90
+		arc -90 90
 	turret 511.5 240 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -511.5 240 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	bay "Fighter" 242.5 769.5 
 		angle -90
 	bay "Fighter" -242.5 769.5 
@@ -6012,21 +6993,69 @@ ship "K-Class Ultra Container Ship"
 	bay "Fighter" -242.5 933.5 
 		angle 90
 	turret 142.5 -1136.5 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 -1136.5 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 -1070 
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 -1070 
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 -999.5 
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 -999.5 
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 -921 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 -921 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 23 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 23 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 89.5 
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 89.5 
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 173.5 
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 173.5 
+		parallel
+		angle -90
+		arc -90 90
 	turret 142.5 239 "Heavy Anti-Missile Turret"
+		parallel
+		angle 90
+		arc -90 90
 	turret -142.5 239 "Heavy Anti-Missile Turret"
+		parallel
+		angle -90
+		arc -90 90
 	bay "Fighter" 421 773 
 	bay "Fighter" -421 773 
 	bay "Fighter" 421 846 
@@ -6064,10 +7093,20 @@ ship "K-Class Ultra Container Ship"
 	bay "Fighter" 540 769 
 	bay "Fighter" -540 769 
 	turret 0 1428.5 "Proton Turret" 
-	turret 99 1588.5 "Heavy Anti-Missile Turret"
-	turret -99 1588.5 "Heavy Anti-Missile Turret"
-	turret 146 1518 
-	turret -146 1518 
+		angle 180
+		arc -90 90
+	turret 90 1580.5 "Heavy Anti-Missile Turret"
+		angle 180
+		arc -90 120
+	turret -90 1580.5 "Heavy Anti-Missile Turret"
+		angle -180
+		arc -120 90
+	turret 146 1518 "Proton Turret"
+		angle 150
+		arc -80 90
+	turret -146 1518 "Proton Turret"
+		angle -150
+		arc -90 80
 	bay "Pocket Heavy Warship" 94.5 814.5 
 		angle -90
 	bay "Pocket Heavy Warship" -94.5 814.5 
@@ -6109,8 +7148,16 @@ ship "K-Class Ultra Container Ship"
 		over
 	engine -103.5 1504 
 		over
-
-	description `This is the Syndicate take on superheavy freighter capable of carrying over a hundred times more than a regular Container Transport and three times more than its competitor. Due to its design the ship cannot land without a dedicated gear to accept them and is intended to stay in orbit instead while a fleet of transfer ship carried with it unload the cargo in bulk. Due to the size of its bay it can even carry heavy warships along side to protect itself.`
+	leak "leak" 40 60
+	leak "flame" 60 120
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	explode "nuke explosion" 4
+	"final explode" "final explosion large"
+	description `This is the Syndicate take on a superheavy freighter, capable of carrying over a hundred times more than a regular Container Transport and three times more than any of its competitors. Due to its design, the ship cannot land without dedicated gear to accept it and is intended to stay in orbit instead, while a fleet of transfer ships carried with it unload the cargo in bulk. Due to the size of its bays it can even carry heavy warships alongside to protect itself.`
 
 ship "SV80-n Catirfel"
 	sprite "ship/mgf catirfel"
@@ -6122,7 +7169,7 @@ ship "SV80-n Catirfel"
 		"hull" 8800
 		"required crew" 8
 		"bunks" 16
-		"mass" 1670
+		"mass" 3340
 		"drag" 15
 		"heat dissipation" .5
 		"fuel capacity" 1000
@@ -6155,10 +7202,18 @@ ship "SV80-n Catirfel"
 		"MGF: Fast Unloading" 5
 		
 	turret -64 -165 
+		angle -90
+		arc -95 95
 	turret 64 -165 
+		angle 90
+		arc -95 95
 	turret 0 -154 "Heavy Anti-Missile Turret"
 	turret -64.5 179 
+		angle -90
+		arc -95 95
 	turret 64.5 179 
+		angle 90
+		arc -95 95
 	turret 0 209 "Heavy Anti-Missile Turret"
 	engine -37 267 
 	engine 37 267 
@@ -6171,7 +7226,7 @@ ship "SV80-n Catirfel"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Catirfel first were built to statisfy a specific requirement for a shipping company before being mass produced and sold on public market. It offered overall improvement over the standard Syndicate Bulk Freighter. Each cargo pod can carry both regular break-bulk cargo and dry bulk cargo while also being detachable allowing more flexibility and faster port time. The ship also features a crane for assisting unloading operation on less equipped port, which can be retracted and hidden inside the hull to protect it from in-flight damage.`
+	description `Catirfels were first built to satisfy a specific requirement for a shipping company before being mass produced and sold on public market. It offered an overall improvement over the standard Syndicate Bulk Freighter. Each cargo pod can carry both regular break-bulk cargo and dry bulk cargo while also being detachable, allowing more flexibility and faster port time. The ship also features a crane for assisting unloading operations in less equipped ports, which can be retracted and hidden inside the hull to protect it from in-flight damage.`
 
 ship "SV40-n Navilel"
 	sprite "ship/mgf navilel"
@@ -6183,7 +7238,7 @@ ship "SV40-n Navilel"
 		"hull" 9800
 		"required crew" 10
 		"bunks" 18
-		"mass" 2140
+		"mass" 4280
 		"drag" 17
 		"heat dissipation" .5
 		"fuel capacity" 1000
@@ -6220,10 +7275,20 @@ ship "SV40-n Navilel"
 		
 	turret 17.5 -225.5 
 	turret 87.5 -217.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -110 90
 	turret -61 -205 
+		angle -45
+		arc -140 80
 	turret 64.5 -138 
+		angle 45
+		arc -30 130
 	turret 87 234.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret -95.5 268.5 
+		angle -90
+		arc -110 90
 	gun 123 -59.5 
 		angle 41.38
 	gun 123 -10.5 
@@ -6260,7 +7325,7 @@ ship "SV40-n Navilel"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A slightly bigger version of the Catirfel with all cargo pods arranged on the same side for ease of access and unloading at some port. The ship is also equipped with large array of missile launchers to deter pirates which are becoming stronger as time progress.`
+	description `A slightly bigger version of the Catirfel with all cargo pods arranged on the same side, for ease of access and unloading at port. The ship is also equipped with a large array of missile launchers to deter pirates, who are becoming stronger as time progress.`
 
 ship "TMS-64 Kernstoff"
 	sprite "ship/mgf kernstoff"
@@ -6272,7 +7337,7 @@ ship "TMS-64 Kernstoff"
 		"hull" 7000
 		"required crew" 14
 		"bunks" 28
-		"mass" 520
+		"mass" 720
 		"drag" 9.5
 		"heat dissipation" .75
 		"fuel capacity" 500
@@ -6335,8 +7400,8 @@ ship "TMS-64 Kernstoff"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion medium"
-	description `Purpose-built tritium carrier with special equipment to maintain stability of the tritium over some distance as well as multiple layers of protection to keep its cargo safe. Often used to deliver supplies to reactors or carry waste products from such reactors. Similarily to other vessel dedicated to carrying highly radioactive cargo it is built to the highest standard with multiple redundancies and reinforcement for every critical systems allowing the ship to survive and function while sustaining damage that would've disabled other ships of similar size.`
-	description `Unlike the Curie-class built by the Syndicate which heavily relies on escort to ward of pirates this ship is relatively heavily armed to allow it to defend itself to a degree but in most case still travel with escort to ensure security.`
+	description `A purpose-built tritium carrier with special equipment to maintain stability of the tritium over some distance, as well as multiple layers of protection to keep its cargo safe. Often used to deliver supplies to reactors or carry waste products from such reactors. Similarly to other vessels dedicated to carrying highly radioactive cargo, it is built to the highest standard with multiple redundancies and reinforcement for every critical systems allowing the ship to survive and function while sustaining damage that would've disabled other ships of similar size.`
+	description `	Unlike the Curie-class built by the Syndicate, which heavily relies on escort to ward off pirates this ship is relatively heavily armed to allow it to defend itself to a degree, but in most case still travels with escorts to ensure security.`
 
 ship "EMS-28 Niessbarkurier"
 	sprite "ship/mgf niessbarkurier"
@@ -6348,7 +7413,7 @@ ship "EMS-28 Niessbarkurier"
 		"hull" 1700
 		"required crew" 2
 		"bunks" 8
-		"mass" 195
+		"mass" 295
 		"drag" 4.8
 		"heat dissipation" .75
 		"fuel capacity" 600
@@ -6397,7 +7462,7 @@ ship "EMS-28 Niessbarkurier"
 	explode "small explosion" 30
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
-	description `A specialized chemical tanker for carrying edible liquid with food grade tanks and pumps each individually equipped with dedicated refrigeration system. Unlike other tankers with minimal armament, this ship comes with enough turret mounts to rival even warships to deter pirates who seems to took interest in raiding and capturing these vessels.`
+	description `A specialized chemical tanker for carrying edible liquid with food grade tanks and pumps each individually equipped with dedicated refrigeration system. Unlike other tankers with minimal armament, this ship comes with enough turret mounts to rival even warships and deter pirates who seem to take interest in raiding and capturing these vessels.`
 
 ship "Typ115 Qiongsha"
 	sprite "ship/mgf ccs qiongsha"
@@ -6443,8 +7508,8 @@ ship "Typ115 Qiongsha"
 	leak "leak" 60 50
 	explode "tiny explosion" 10
 	explode "small explosion" 10
-	description `CCS Corp. entry for budget freighter market. A small step up from the Syndicate Star Barge, the Qiongsha offers almost double the cargo capacity as well as benefits of containerized cargo. The Qiongsha is an ideal ship for a captain looking for something with more capacity than a Star Barge but without the money to buy a Freighter.`
-	description `	With the low cost and high capacity the price is paid elsewhere. The container carrier is designed to the barest minimum required to fly and meet safety standard. It's said to be even more difficult to fly and land than the Syndicate Freighter by some captains due to location of the cockpit and cheap sensors. Minimal durability and defense while carrying more cargo also make it an even more attractive target for pirates, so much so that many insurance companies refuses to cover it outside specific safe zone.`
+	description `The CCS Corp. entry for budget freighter market. A small step up from the Syndicate Star Barge, the Qiongsha offers almost double the cargo capacity as well as all the benefits of containerized cargo. The Qiongsha is an ideal ship for a captain looking for something with more capacity than a Star Barge but without the money to buy a Freighter.`
+	description `	With the low cost and high capacity the price is paid elsewhere. The container carrier is designed to the barest minimum required to fly and meet safety standards. It's said to be even more difficult to fly and land than the Syndicate Freighter by some captains, due to location of the cockpit and cheap sensors. Minimal durability and defense while carrying more cargo also make it an even more attractive target for pirates, so much so that many insurance companies refuse to cover it outside specific safe zones.`
 
 ship "Typ124 Lianyungang"
 	sprite "ship/mgf ccs lianyungang"
@@ -6491,17 +7556,42 @@ ship "Typ124 Lianyungang"
 		"MGF: Fast Unloading" 3
 		
 	turret -102 -420.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 180
 	turret 102 -420.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -180 90
 	turret -102 -390 
+		angle 90
+		arc -90 180
 	turret 102 -390 
+		angle -90
+		arc -180 90
 	turret -102 146 
+		angle 90
+		arc -90 180
 	turret 102 146 
+		angle -90
+		arc -180 90
 	turret -102 178 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 180
 	turret 102 178 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -180 90
+	#aft
 	turret 99.5 307 "Quad Blaster Turret"
+		angle 90
+		arc -90 90
 	turret -99.5 307 "Quad Blaster Turret"
+		angle -90
+		arc -90 90
 	turret 99.5 339.5 "Heavy Anti-Missile Turret"
+		angle 90
+		arc -90 90
 	turret -99.5 339.5 "Heavy Anti-Missile Turret"
+		angle -90
+		arc -90 90
 	engine 70 461 
 	engine -70 461 
 	engine 125 438.5 
@@ -6517,14 +7607,570 @@ ship "Typ124 Lianyungang"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `Latest heavy freighter from CCS Corp designed to be a solution to modern shipping. With increasing demand and raise of piracy the Lianyungang is an armoured freighter designed to handle both by being very heavily armoured to protect its cargo but also also rotate the cargo outward for unloading to provide fast and easy access to the containers unlike other armoured freighters which have to sacrifice either convienience or capacity for protection. `
+	description `The latest heavy freighter from CCS Corp. designed to be a solution to modern shipping. With the increasing demand and the raise of piracy, the Lianyungang is an armoured freighter designed to handle both by being very heavily armoured to protect its cargo but also able rotate the cargo outward for unloading to provide fast and easy access to the containers, unlike other armoured freighters which have to sacrifice either convienience or capacity for protection.`
+
+ship "F-HF51 Kinesaki"
+	sprite "ship/mgf kinesaki"
+	thumbnail "thumbnail/mgf kinesaki thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 2900000
+		"shields" 5500
+		"hull" 7800
+		"required crew" 12
+		"bunks" 32
+		"mass" 5220
+		"drag" 19.5
+		"heat dissipation" .3
+		"fuel capacity" 1200
+		"cargo space" 460
+		"outfit space" 570
+		"weapon capacity" 230
+		"engine capacity" 150
+		"mgf fast unload" -1
+		"mgf fast unload slot" 1
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Proton Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		
+		"Fission Reactor"
+		"LP288a Battery Pack"
+		"D94-YV Shield Generator"
+		"Laser Rifle" 18
+		
+		"X4700 Ion Thruster"
+		"X4200 Ion Steering"
+		"Hyperdrive"
+
+		"MGF: Fast Unloading" 1
+	turret 0 -190 
+		arc -145 145
+	turret 0 -166.5 "Heavy Anti-Missile Turret"
+		arc -135 135
+	turret 0 -68 "Heavy Anti-Missile Turret"
+		angle 180
+		arc -135 135
+	turret 0 141.5 
+	turret 0 196 
+		angle 180
+		arc -175 175
+	gun 27 -172.5 
+	gun -27 -172.5 
+	engine -13.5 239 
+	engine 13.5 239 
+	explode "small explosion" 15
+	explode "medium explosion" 35
+	explode "large explosion" 45
+	explode "huge explosion" 15
+	"final explode" "final explosion large"
+	description `Kinesaki is one of MJK Heavy Industries ancient freighter design developed shortly before the first turf war. For the time it was viewed as freighter of the future with rather comfortable living quarter compared to other freighter of the time. It's also known to be fairly capable in combat and contributes to significant amount of firepower in combat. There's even stories of some that served as powerful Q-Ship, one so lethal that few survived to tell the tale. Over time, Kinesaki-class were slowly phased out for newer, more efficient, and better protected cargo ships. Last of its' class was decommissioned from NGK fleet a few decades before the formation of the Republic.`
+	description `	Although outdated and largely outperformed by more modern ships, it is still good enough for few merchants and small companies to keep it in service. While unlikely due to sheer amount of it built over time, it's probable that some of these ships in service may well be over half-millenia old.`
+	description `	With the production of Kinesaki-class officially ceased centuries ago, most that are on sale right now are ancient stocks from since. With the condition varying from heavily repaired to basically brand new, suspiciously new even.`
+
+ship "C1-B Grainger"
+	sprite "ship/mgf grainger"
+	thumbnail "thumbnail/mgf grainger thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 1890000
+		"shields" 2000
+		"hull" 3100
+		"required crew" 5
+		"bunks" 8
+		"mass" 1410
+		"drag" 16.7
+		"heat dissipation" .25
+		"fuel capacity" 800
+		"cargo space" 310
+		"outfit space" 250
+		"weapon capacity" 60
+		"engine capacity" 70
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		#Modernized outfits
+		"Quad Blaster Turret"
+		"Heavy Anti-Missile Turret"
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Scram Drive"
+		
+	turret 0 -85.5 
+	turret 0 0.5 
+	engine 0 123 
+	engine -34.5 119 
+		scale .7
+	engine 34.5 119 
+		scale .7
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion small"
+	description `An ancient cargo ship in service before the Alpha War. Its' builder was one of the corporation that was merged into the Syndicate and since long forgotten. It was one of the backbone of interstellar ore trade as older freighters that lack repulsor engines are fading out. Many of this model were lost in the following instability and war and fades out of relevance due to its' fragility and lack sufficient weaponry to protect itself.`
+	description `	Due to sheer number built, a few of these relics survived until today, mostly in collector's warehouses or permanently grounded as housing for some early colonies. Though it's completely out-performed by modern freighters in every measure, a few can still be seen flying for various reason.`
+
+
+ship "ICT-300 Exofreighter"
+	sprite "ship/mgf bws exofreighter"
+	thumbnail "thumbnail/mgf bws exofreighter thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 930000
+		"shields" 4800
+		"hull" 1200
+		"required crew" 2
+		"bunks" 6
+		"mass" 230
+		"drag" 6.1
+		"heat dissipation" .9
+		"fuel capacity" 600
+		"cargo space" 82
+		"outfit space" 280
+		"weapon capacity" 90
+		"engine capacity" 80
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Blaster Turret" 2
+		"Heavy Anti-Missile Turret"
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"X3700 Ion Thruster"
+		"X2200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+		"Scram Drive"
+		
+	engine 27 15 
+	engine -27 15 
+	turret 0 -56.5 
+	turret 0 -14 "Heavy Anti-Missile Turret"
+	turret 0 54 
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion small"
+	description "A recent freighter from Bellwing. Although rather low capacity compared to other freighter of similar size, it boast far better shielding and greater speed."
+
+ship "ICT-450 Orion"
+	sprite "ship/mgf bws orion"
+	thumbnail "thumbnail/mgf bws orion thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 1830000
+		"shields" 6400
+		"hull" 2100
+		"required crew" 4
+		"bunks" 12
+		"mass" 420
+		"drag" 7.6
+		"heat dissipation" .85
+		"fuel capacity" 600
+		"cargo space" 146
+		"outfit space" 370
+		"weapon capacity" 130
+		"engine capacity" 100
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Quad Blaster Turret" 2
+		"Heavy Anti-Missile Turret" 2
+		
+		"S3 Thermionic"
+		"KP-6 Photovoltaic Panel" 6
+		"LP072a Battery Pack"
+		"D67-TM Shield Generator"
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+		"Scram Drive"
+		
+	turret 0 -84.5 
+	turret 0 -43 "Heavy Anti-Missile Turret"
+	turret 0 18 "Heavy Anti-Missile Turret"
+	turret 0 56 
+	engine -29 29.5 
+	engine 29 29.5 
+	engine -59.5 24.5 
+	engine 59.5 24.5 
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion small"
+	description "Bigger sister of Bellwing's Exofreighter. It utilizes some of the best and most efficient shield emitter to provide unmatched level of protection in the class."
+
+ #note: even num for non-combat, odd for combat ship
+ #KS, KST, or KT?
+ship "KS-32 Rogov"
+	sprite "ship/mgf kdb rogov"
+	thumbnail "thumbnail/mgf kdb rogov thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 1070000
+		"shields" 1800
+		"hull" 3500
+		"required crew" 3
+		"bunks" 10
+		"mass" 610
+		"drag" 11.0
+		"heat dissipation" .5
+		"fuel capacity" 500
+		"cargo space" 120
+		"outfit space" 340
+		"weapon capacity" 175
+		"engine capacity" 65
+		"threshold percentage" .13
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Meteor Missile Launcher" 4 #TODO custom missile launcher
+		"Meteor Missile" 120
+		"ShiKv-190 Turret" 3
+		"AK230 CIWS Turret" 3
+		
+		"nGVF-CC Fuel Cell"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+		"Scram Drive"
+		
+	gun -22.5 -19.5 
+	gun 22.5 -19.5 
+	gun -27 -13.5 
+	gun 27 -13.5 
+	turret 0 -47.5 
+		arc -145 145
+	turret 0 -3.5 "AK230 CIWS Turret"
+		arc -145 145
+	turret 0 34 
+	turret -20 55 "AK230 CIWS Turret"
+		angle -90
+		arc -90 90
+	turret 20 55 "AK230 CIWS Turret"
+		angle 90
+		arc -90 90
+	turret 0 78 
+		angle 180
+		arc -125 125
+	engine -29.5 96 
+		zoom .5
+	engine -12.5 96 
+	engine 29.5 96 
+		zoom .5
+	engine 12.5 96 
+
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion small"
+	description "A rugged and heavily armed freighter from KDB. Developed after the company found the Syndicate Freighter perfomance unsatisfactory. Although slower, Rogov-class is better protected and armed allowing it to stand up against attackers on its' own."
+
+ship "KS-46 Nikolayev"
+	sprite "ship/mgf kdb nikolayev"
+	thumbnail "thumbnail/mgf kdb nikolayev thumb"
+	attributes
+		category "Light Freighter"
+		"cost" 2070000
+		"shields" 2700
+		"hull" 6300
+		"required crew" 8
+		"bunks" 22
+		"mass" 1370
+		"drag" 25.0
+		"heat dissipation" .5
+		"fuel capacity" 600
+		"cargo space" 240
+		"outfit space" 390
+		"weapon capacity" 220
+		"engine capacity" 65
+		"threshold percentage" .12
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Meteor Missile Launcher" 4 #TODO custom missile launcher
+		"Meteor Missile" 120
+		"ShiKv-86 Turret" 5
+		"AK230 CIWS Turret" 5
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"RD-550 Plasma Thruster"
+		"RD-550 Plasma Steering"
+		"Hyperdrive"
+		
+	gun -35.5 -83 
+	gun 35.5 -83 
+	gun -53 -41 
+	gun 53 -41 
+	turret 0 -116.5 
+		arc -165 165
+	turret 21.5 -56 "AK230 CIWS Turret"
+		angle 90
+		arc -125 85
+	turret -21.5 -56 "AK230 CIWS Turret"
+		angle -90
+		arc -85 125
+	turret 21.5 45 
+		angle 90
+		arc -85 85
+	turret -21.5 45 
+		angle -90
+		arc -85 85
+	turret 21.5 72 "AK230 CIWS Turret"
+		angle 90
+		arc -85 85
+	turret -21.5 72 "AK230 CIWS Turret"
+		angle -90
+		arc -85 85
+	turret 0 16 "AK230 CIWS Turret"
+		arc -135 135
+	turret 0 57.5 
+	turret 0 101.5 
+		angle 180
+		arc -125 125
+	engine -47 130 
+	engine 47 130 
+	engine -18.5 136 
+	engine 18.5 136 
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion medium"
+	description "A heavily armed freighter emerging from period of instability shortly before the Alpha War. Equipped with array of weapons and defenses as well as heavy armour to ensure the safety of their cargo from pirates and privateer. Nikolayev-class providing warship level of firepower with capacity of freighter allows corporation's fleet to travel with less escort freeing up warships for other tasks. Due to it's design, armour and defence it's also occasionally used as troop transport and landing."
+	description `	While largely outdated, several of these can still be found in use for simple reason that it still works.`
+
+ship "KS-58 Vinograd"
+	sprite "ship/mgf kdb vinograd"
+	thumbnail "thumbnail/mgf kdb vinograd thumb"
+	attributes
+		category "Heavy Freighter"
+		"cost" 5070000
+		"shields" 4400
+		"hull" 8900
+		"required crew" 26
+		"bunks" 66
+		"mass" 2670
+		"drag" 29.0
+		"heat dissipation" .35
+		"fuel capacity" 800
+		"cargo space" 460
+		"outfit space" 610
+		"weapon capacity" 320
+		"engine capacity" 100
+		"threshold percentage" .11
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Meteor Missile Launcher" 6 #TODO custom missile launcher
+		"Meteor Missile" 180
+		"ShiKv-86 Turret" 8
+		"AK230 CIWS Turret" 7
+		
+		"Fission Reactor"
+		"LP144a Battery Pack"
+		"D41-HY Shield Generator"
+		
+		"RD-560 Plasma Thruster"
+		"RD-560 Plasma Steering"
+		"Hyperdrive"
+		
+	gun -36 -136.5 
+	gun 36 -136.5 
+	gun -55.5 -92 
+	gun 55.5 -92 
+	gun -69.5 -30 
+	gun 69.5 -30 
+	turret 0 -147.5 
+		arc -135 135
+	turret 0 -111 
+		arc -145 145
+	turret 0 -74.5 "AK230 CIWS Turret"
+		arc -145 145
+	turret 0 40 "AK230 CIWS Turret"
+		arc -135 135
+	turret 0 78 
+	turret 0 130.5 "AK230 CIWS Turret"
+		angle 180
+		arc -125 125
+	turret 0 152.5 
+		angle 180
+		arc -135 135
+	turret 29.5 -48.5 "AK230 CIWS Turret"
+		angle 90
+		arc -100 75
+	turret -29.5 -48.5 "AK230 CIWS Turret"
+		angle -90
+		arc -75 100
+	turret 29.5 73 
+		angle 90
+		arc -80 80
+	turret -29.5 73 
+		angle -90
+		arc -80 80
+	turret 29.5 95.5 "AK230 CIWS Turret"
+		angle 90
+		arc -80 80
+	turret -29.5 95.5 "AK230 CIWS Turret"
+		angle -90
+		arc -80 80
+	turret 29.5 119 
+		angle 90
+		arc -80 100
+	turret -29.5 119 
+		angle -90
+		arc -100 80
+	engine -31 184 
+	engine 31 184 
+	engine -53 185 
+		zoom .5
+	engine 53 185 
+		zoom .5
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "tiny explosion" 10
+	explode "small explosion" 30
+	explode "medium explosion" 20
+	"final explode" "final explosion medium"
+	description "Following the success of the Nikolayev-class, KDB designed another bigger armed freighter. Although only a few were completed before the Alpha War before production came to a halt because of it. The production resumed some period after the war but never to the scale it was originally intended to be. The construction of these vessel is largely stopped towards the formation of the Republic."
+	description `	Although very outdated, these vessels is somehow not entirely gone from active merchant fleets. A small number of them can also be found in service of some Dirt Belt and Southern planet mostly as part of reserve fleet.`
+
+ship "KS-58 Vinograd" "KS-58 Vinograd (Modernized)"
+	add attributes
+		"cost" 1000000
+		"shields" 1600
+		"hull" -300
+		"drag" -.5
+		"heat dissipation" .5
+	outfits
+		"Meteor Missile Launcher" 6
+		"Meteor Missile" 180
+		"ShiKv-190 Turret" 8
+		"AK230 CIWS Turret" 7
+		
+		"Breeder Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Cooling Ducts"
+		
+		"RD-560 Plasma Thruster"
+		"RD-560 Plasma Steering"
+		"Hyperdrive"
+	turret
+	turret
+	turret "AK230 CIWS Turret"
+	turret "AK230 CIWS Turret"
+	turret
+	turret "AK230 CIWS Turret"
+	turret
+	turret "AK230 CIWS Turret"
+	turret "AK230 CIWS Turret"
+	turret
+	turret
+	turret "AK230 CIWS Turret"
+	turret "AK230 CIWS Turret"
+	turret
+	turret
+	description "Following the success of the Nikolayev-class, KDB designed another bigger armed freighter. Although only a few were completed before the Alpha War before production came to a halt because of it. The production resumed some period after the war but never to the scale it was originally intended to be. The construction of these vessel is largely stopped towards the formation of the Republic."
+	description `	This is one of the few surviving Vinograd that was upgraded with modern shielding, outfits, and some refinement touches from centuries of experience.`
+
+ship "KS-58 Vinograd" "KS-58 Vinograd (Modernized, Combat)"
+	add attributes
+		"cost" 3000000
+		"shields" 3000
+		"hull" 600
+		"mass" 200
+		"cargo space" -300
+		"outfit space" 120
+		"weapon capacity" 35
+		"fuel capacity" 100
+		"drag" -.5
+		"heat dissipation" .5
+	outfits
+		"Torpedo Launcher" 4
+		"Torpedo" 120
+		"ShiKv-190 Turret" 8
+		"AK230 CIWS Turret" 7
+		
+		"Breeder Reactor"
+		"LP288a Battery Pack"
+		"D94-YV Shield Generator" 2
+		"Cooling Ducts"
+		
+		"RD-560 Plasma Thruster"
+		"RD-560 Plasma Steering"
+		"Hyperdrive"
+	turret
+	turret
+	turret "AK230 CIWS Turret"
+	turret "AK230 CIWS Turret"
+	turret
+	turret "AK230 CIWS Turret"
+	turret
+	turret "AK230 CIWS Turret"
+	turret "AK230 CIWS Turret"
+	turret
+	turret
+	turret "AK230 CIWS Turret"
+	turret "AK230 CIWS Turret"
+	turret
+	turret
+	description "Following the success of the Nikolayev-class, KDB designed another bigger armed freighter. Although only a few were completed before the Alpha War before production came to a halt because of it. The production resumed some period after the war but never to the scale it was originally intended to be. The construction of these vessel is largely stopped towards the formation of the Republic."
+	description `	This is one of the few surviving Vinograd that was upgraded with modern shielding, outfits, and some refinement touches from centuries of experience. This one with the intent of becoming a warship. Albeit slow, this warship conversion and modernization of the ancient freighter so far has proven to be a formidable foe. Capable of handling swarm of smaller ships and going toe to toe against a recent purpose-built warships.`
 
 ship "Behemoth" "Behemoth (ICS)"
 	sprite "ship/mgf ics behemoth"
 	thumbnail "thumbnail/mgf ics behemoth thumb"
 	attributes
 		category "Heavy Freighter"
-		"cost" 11200000
+		"cost" 13200000
 		"shields" 7700
 		"hull" 6800
 		"required crew" 14
@@ -6581,7 +8227,7 @@ ship "Behemoth" "Behemoth (ICS)"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `This Behemoth has been extensively modified for use by ICS. Other than slightly expanded cargo holds this variant have bays for carrying courier drones. This allows faster deliverly of packages to multiple location.`
+	description `This Behemoth has been extensively modified for use by ICS. Other than slightly expanded cargo holds this variant has bays for holding courier drones. This allows faster delivery of packages to multiple location.`
 
 ship "UDV-1 Packet"
 	sprite "ship/mgf ics packet"
@@ -6596,7 +8242,7 @@ ship "UDV-1 Packet"
 		"drag" .6
 		"heat dissipation" .9
 		"cargo space" 30
-		"outfit space" 60
+		"outfit space" 62
 		"weapon capacity" 5
 		"engine capacity" 40
 		weapon
@@ -6625,18 +8271,18 @@ ship "AKH-8 Mlitgante"
 	attributes
 		category "Utility"
 		"cost" 9600000
-		"shields" 4200
+		"shields" 3200
 		"hull" 2500
 		"required crew" 4
 		"bunks" 12
-		"mass" 310
+		"mass" 610
 		"drag" 5.6
 		"heat dissipation" .6
 		"fuel capacity" 600
 		"cargo space" 50
 		"outfit space" 380
 		"weapon capacity" 80
-		"engine capacity" 200
+		"engine capacity" 180
 		"tow system" -1
 		weapon
 			"blast radius" 140
@@ -6660,7 +8306,11 @@ ship "AKH-8 Mlitgante"
 		
 	turret 0 -11.5 
 	turret -25.5 -25.5 
+		angle -30
+		arc -125 65
 	turret 25.5 -25.5 
+		angle 30
+		arc -65 125
 	engine -50.5 34.5 
 		angle 46.4
 		scale .8
@@ -6691,7 +8341,7 @@ ship "AKH-8 Mlitgante"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "This is a compact tow ship developed and used by the crews of Ankulah station to tow in wreckage from around the system and other system nearby. With over half of its mass dedicated to engine area it can be packed with very powerful engines and pull even the largest wreckages around and do so economically."
+	description "This is a compact tow ship developed and used by the crews of Ankulah station to tow in wreckage from around the system and other systems nearby. With over half of its mass dedicated to engine area, it can be packed with very powerful engines and pull even the largest wreckages around and do so economically."
 
 ship "BTT06 Shuttle Wreckage"
 	sprite "ship/pirate scrapper" #placeholder
@@ -6726,6 +8376,46 @@ ship "BTT06 Shuttle Wreckage"
 	engine -6 30
 	engine 6 30
 	gun 0 -31
+
+ship "MGF: Enforcer Wreckage"
+	"display name" "Enforcer Wreckage"
+	sprite "ship/mgf wreckage enforcer" 
+	swizzle 0
+	attributes
+		category "Small Wreckage"
+		"cost" 230000
+		"hull" 430
+		"automaton" 1
+		"mass" 120
+		"drag" 3.3
+		"heat dissipation" .61
+		"fuel capacity" 0
+		"cargo space" 30
+		"outfit space" 210
+		"weapon capacity" 55
+		"engine capacity" 60
+		weapon
+			"blast radius" 34
+			"shield damage" 340
+			"hull damage" 170
+			"hit force" 510
+	outfits
+		"Energy Blaster" 3
+
+		"nGVF-CC Fuel Cell"
+		"LP036a Battery Pack"
+		
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+
+	engine 0 39
+	gun -11 -52
+	gun 11 -52
+	gun -5.5 -48
+	gun 5.5 -48
+	turret 0 -0.5
+	explode "smoke" 5
 
 
 ship "BTT34 Ziz Wreckage"
@@ -6769,6 +8459,48 @@ ship "BTT34 Ziz Wreckage"
 	turret 0 12 
 	engine -23.5 72.5 
 	engine 23.5 72.5 
+	explode "smoke" 20
+
+ship "C1-B Grainger Wreckage"
+	sprite "ship/mgf wreckage grainger"
+	"swizzle" 0
+	attributes
+		category "Medium Wreckage"
+		"cost" 370000
+		"shields" 0
+		"hull" 943
+		"automaton" 1
+		"mass" 580
+		"drag" 8.7
+		"heat dissipation" .25
+		"fuel capacity" 0
+		"cargo space" 182
+		"outfit space" 250
+		"weapon capacity" 60
+		"engine capacity" 70
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Blaster Turret"
+		"Anti-Missile Turret"
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D14-RN Shield Generator"
+		
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		
+	turret 0 -85.5 
+	turret 0 0.5 
+	engine 0 123 
+	engine -34.5 119 
+		scale .7
+	engine 34.5 119 
+		scale .7
 	explode "smoke" 20
 
 ship "E-FD23 Kanran Wreckage"
@@ -6821,6 +8553,76 @@ ship "E-FD23 Kanran Wreckage"
 	engine 0 159 
 	explode "smoke" 20
 
+ship "KS-46 Nikolayev Wreckage"
+	sprite "ship/mgf wreckage nikolayev"
+	# thumbnail "thumbnail/mgf kdb nikolayev thumb"
+	attributes
+		category "Large Wreckage"
+		"cost" 780000
+		"hull" 2537
+		"automaton" 1
+		"mass" 1370
+		"drag" 25.0
+		"heat dissipation" .5
+		"fuel capacity" 0
+		"cargo space" 43
+		"outfit space" 390
+		"weapon capacity" 220
+		"engine capacity" 65
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"ShiKv-86 Turret" 1
+		"AK230 CIWS Turret" 2
+		
+		"nGVF-DD Fuel Cell"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"RD-550 Plasma Thruster"
+		"RD-550 Plasma Steering"
+		"Hyperdrive"
+		
+	gun -35.5 -83 
+	gun 35.5 -83 
+	gun -53 -41 
+	gun 53 -41 
+	turret 0 -116.5 
+		arc -165 165
+	turret 21.5 -56
+		angle 90
+		arc -125 85
+	turret -21.5 -56
+		angle -90
+		arc -85 125
+	turret 21.5 45 
+		angle 90
+		arc -85 85
+	turret -21.5 45 
+		angle -90
+		arc -85 85
+	turret 21.5 72 "AK230 CIWS Turret"
+		angle 90
+		arc -85 85
+	turret -21.5 72 
+		angle -90
+		arc -85 85
+	turret 0 16 "AK230 CIWS Turret"
+		arc -135 135
+	turret 0 57.5 "ShiKv-86 Turret"
+	turret 0 101.5 
+		angle 180
+		arc -125 125
+	engine -47 130 
+	engine 47 130 
+	engine -18.5 136 
+	engine 18.5 136 
+	leak "leak" 60 50
+	leak "flame" 50 80
+	explode "smoke" 30
 
 ship "LPC-2 Atletha Wreckage"
 	sprite "ship/mgf wreckage atletha"
@@ -6871,6 +8673,54 @@ ship "LPC-2 Atletha Wreckage"
 	"final explode" "final explosion large"
 	description ``
 
+ship "F-HF51 Kinesaki Wreckage"
+	sprite "ship/mgf wreckage kinesaki"
+	#thumbnail "thumbnail/mgf lavaka thumb"
+	swizzle 0
+	attributes
+		category "Huge Wreckage"
+		"cost" 2200000
+		"shields" 0
+		"hull" 3561
+		"automaton" 1
+		"mass" 8220
+		"drag" 16.2
+		"heat dissipation" .5
+		"fuel capacity" 0
+		"cargo space" 20
+		"outfit space" 640
+		"weapon capacity" 180
+		"engine capacity" 150
+		weapon
+			"blast radius" 140
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		"Blaster Turret" 3
+		"Anti-Missile Turret" 2
+		
+		"Liquid Nitrogen Cooler"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Laser Rifle" 3
+		
+		"X3700 Ion Thruster"
+		"X4200 Ion Steering"
+		
+	turret 0 -190 
+	turret 0 -166.5 "Anti-Missile Turret"
+	turret 0 -68 "Anti-Missile Turret"
+	turret 0 141.5 
+	turret 0 196 
+	gun 27 -172.5 
+	gun -27 -172.5 
+	engine -13.5 239 
+	engine 13.5 239 
+	explode "smoke" 20
+	"final explode" "final explosion large"
+	description ``
+
 ship "AFFR-3 Fylla"
 	sprite "ship/mgf fylla"
 	thumbnail "thumbnail/mgf fylla thumb"
@@ -6914,7 +8764,7 @@ ship "AFFR-3 Fylla"
 		under
 	explode "tiny explosion" 15
 	explode "small explosion" 5
-	description `Old refuelling fighter design from earlier days of space travel, often carried by the largest ships or a fleet tanker to refuel other ships in the fleet.`
+	description `An old refuelling fighter design from earlier days of space travel, often carried by the largest ships or a fleet tanker to refuel other ships in the fleet.`
 
 ship "CK10C Liathtar"
 	sprite "ship/mgf liathtar"
@@ -6957,7 +8807,7 @@ ship "CK10C Liathtar"
 	engine 17.5 49.5 
 	explode "tiny explosion" 15
 	explode "small explosion" 5
-	description `Inspired by Syndicate G-Class and its companion Porter drone the MarStel shipyard developed a new fighter to assist with its freighter when unloading cargo, specifically its carrier variant of Tlielart-class.`
+	description `Inspired by Syndicate G-Class and its companion Porter drone, the MarStel shipyard developed a new fighter to assist its freighter when unloading cargo, specifically its carrier variant of Tlielart-class.`
 
 ship "EP-2 Marmot"
 	sprite "ship/mgf epn marmot"
@@ -7004,7 +8854,7 @@ ship "EP-2 Marmot"
 		under
 	explode "tiny explosion" 15
 	explode "small explosion" 5
-	description `Piloted mining fighter developed and used by Espion Mining Co. Due to their specialized nature these fighters comes with built-in asteroid scanner.`
+	description `A piloted mining fighter developed and used by Espion Mining Co. Due to their specialized nature these fighters come with built-in asteroid scanners.`
 	
 ship "EP-1 Mole"
 	sprite "ship/mgf epn mole"
@@ -7049,7 +8899,7 @@ ship "EP-1 Mole"
 		under
 	explode "tiny explosion" 15
 	explode "small explosion" 5
-	description `Automated mining drone developed and used by Espion Mining Co. Due to their specialized nature these drones comes with built-in asteroid scanner.`
+	description `An automated mining drone developed and used by Espion Mining Co. Due to their specialized nature these drones come with built-in asteroid scanners.`
 
 ship "EP-3 Rat"
 	sprite "ship/mgf epn rat"
@@ -7151,11 +9001,20 @@ ship "AYS-17 Proetida"
 	gun -40.5 -244.5 
 	gun 40.5 -244.5 
 	turret 0 -136.5 "Pulse Turret"
+		arc -145 145
 	turret -41.5 -109.5 
+		angle -85
+		arc -90 90
 	turret 41.5 -109.5 
+		angle 85
+		arc -90 90
 	turret 0 186 "Pulse Turret"
 	turret -38 197 
+		angle -95
+		arc -90 90
 	turret 38 197 
+		angle 95
+		arc -90 90
 	engine -80.5 309 
 		zoom .8
 	engine 80.5 309 
@@ -7172,7 +9031,7 @@ ship "AYS-17 Proetida"
 	explode "large explosion" 50
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "Not long after the development of Geocoris the Hai find their freighters outmatched again with the arrival of a new human fleet with even larger freighters forcing them to develop a newer, and even bigger ship to match. While not being able to match the largest of human freighters yet due to their shipyard being highly optimized for smaller ships and this being the largest design they've made for a long time, the Proetida is able to carry more than most human freighters and significantly more than the Geocoris thanks to redesigned cargo pod and spacious internal area. For that it fits in to the gap between larger human freighters like Bluewhale and Conveyor."
+	description "Not long after the development of the Geocoris the Hai found their freighters outmatched again with the arrival of a new human fleet that has even larger freighters, forcing them to develop a newer and even bigger ship to match. While not being able to match the largest of human freighters yet due to their shipyard being highly optimized for smaller ships and this being the largest design they've made for a long time, the Proetida is able to carry more than most human freighters and significantly more than the Geocoris thanks to redesigned cargo pods and spacious internal areas. For that it fits into the gap between larger human freighters like Bluewhale and Conveyor."
 
 ship "AYS-19 Peytoia"
 	sprite "ship/mgf hai peytoia"
@@ -7221,26 +9080,68 @@ ship "AYS-19 Peytoia"
 	gun -77.5 -289.5 
 	gun 77.5 -289.5 
 	turret -35.5 -236.5 "Pulse Turret"
+		angle 0 #angle 0 to force idle angle forward instead of between the arcs.
+		arc -150 45
 	turret 35.5 -236.5 "Pulse Turret"
-	turret 41 -157 "Bullfrog Anti-Missile"
-	turret -41 -157 "Bullfrog Anti-Missile"
+		angle 0
+		arc -45 150
+	turret 34 -157 "Bullfrog Anti-Missile"
+		angle 45
+		arc -55 110
+	turret -34 -157 "Bullfrog Anti-Missile"
+		angle -45
+		arc -110 55
 	turret 51 -127 "Pulse Turret"
+		angle 50
+		arc -105 60
 	turret -51 -127 "Pulse Turret"
+		angle -50
+		arc -60 105
 	turret 0 -141.5 "Mi3 Ion Cannon Turret"
+		arc -145 145
 	turret 136.5 -70.5 "MYi2 Railgun Turret"
+		angle 60
+		arc -70 80
 	turret -136.5 -70.5 "MYi2 Railgun Turret"
+		angle -60
+		arc -80 70
 	turret 147.5 -41.5 "Bullfrog Anti-Missile"
+		angle 60
+		arc -65 90
 	turret -147.5 -41.5 "Bullfrog Anti-Missile"
+		angle -60
+		arc -90 65
+
 	turret 42.5 -20.5 "MYi2 Railgun Turret"
+		angle 60
+		arc -95 45
 	turret -42.5 -20.5 "MYi2 Railgun Turret"
+		angle -60
+		arc -45 95
 	turret 82 32.5 "Bullfrog Anti-Missile"
+		angle 60
+		arc -55 80
 	turret -82 32.5 "Bullfrog Anti-Missile"
+		angle -60
+		arc -80 55
 	turret 82 178 "MYi2 Railgun Turret"
+		angle 70
+		arc -70 110
 	turret -82 178 "MYi2 Railgun Turret"
+		angle -70
+		arc -110 70
 	turret 46 185 "Bullfrog Anti-Missile"
+		angle 70
+		arc -70 110
 	turret -46 185 "Bullfrog Anti-Missile"
+		angle -70
+		arc -110 70
 	turret 63.5 327.5 "Pulse Turret"
+		angle 180
+		arc -45 160
 	turret -63.5 327.5 "Pulse Turret"
+		angle -180
+		arc -160 45
 	bay "Drone" 222 53 
 		"launch effect" "hai launch"
 		angle 70
@@ -7312,7 +9213,7 @@ ship "AYS-19 Peytoia"
 	explode "large explosion" 50
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "With the recent development of new Unfettered ships and deployment of Pond Strider and Fleas to counter them, the Hai soon developed a new heavily armed heavy freighter that is also capable of carrying the drones to defend itself when flying past risky area."
+	description "With the recent development of new Unfettered ships and the deployment of Pond Striders and Fleas to counter them, the Hai soon developed a new heavily armed heavy freighter that is also capable of carrying drones to defend itself when flying past risky areas."
 
 ship "Type-13 Sea Strait"
 	sprite "ship/mgf wanderer sea strait"
@@ -7326,7 +9227,7 @@ ship "Type-13 Sea Strait"
 		"hull" 112500
 		"required crew" 22
 		"bunks" 38
-		"mass" 2480
+		"mass" 4960
 		"drag" 12.8
 		"heat dissipation" .6
 		"fuel capacity" 800
@@ -7356,15 +9257,35 @@ ship "Type-13 Sea Strait"
 		"Hyperdrive"
 		
 	turret 135 -444.5 "Dual Sunbeam Turret"
+		angle 0
+		arc -170 85
 	turret -135 -444.5 "Dual Sunbeam Turret"
+		angle 0
+		arc -85 170
 	turret 37.5 114.5 "Wanderer Anti-Missile"
+		angle 60
+		arc -60 60
 	turret -37.5 114.5 "Wanderer Anti-Missile"
+		angle -60
+		arc -60 60
 	turret 55 169.5 
+		angle 60
+		arc -60 60
 	turret -55 169.5 
+		angle -60
+		arc -60 60
 	turret 80 303.5 "Dual Sunbeam Turret"
+		angle 90
+		arc -90 90
 	turret -80 303.5 "Dual Sunbeam Turret"
+		angle -90
+		arc -90 90
 	turret 49 380.5 "Wanderer Anti-Missile"
+		angle 90
+		arc -90 90
 	turret -49 380.5 "Wanderer Anti-Missile"
+		angle -90
+		arc -90 90
 	gun -67.5 -520 
 	gun 67.5 -520 
 	gun -41 -515.5 
@@ -7385,4 +9306,4 @@ ship "Type-13 Sea Strait"
 	explode "large explosion" 30
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description `A large Wanderer freighter iterated from the Deep River using the same style of cargo pod and arrangement but twice doubling the capacity while also more well armed than Deep River to protect itself during evacuation though still not really enough to operate alone.`
+	description `A large Wanderer freighter iterated from the Deep River using the same style of cargo pod and arrangement but twice doubling the capacity. It is also better armed than Deep River to protect itself during evacuations, though it is considered by many captains to still be insufficient to fly alone.`
