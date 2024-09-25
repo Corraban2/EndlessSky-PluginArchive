@@ -27,6 +27,13 @@ effect "glow blood"
 	"random velocity" 1
 	"random spin" 5
 
+effect "jump drive flare"
+	sprite "effect/explosion/pug/small"
+		"no repeat"
+		"frame rate" 22
+	"lifetime" 200
+	"random spin" 2
+	"velocity scale" 0.
 
 
 ship "Nova Firefly"
@@ -36,15 +43,17 @@ ship "Nova Firefly"
 	attributes
 		"automaton" 1
 		category "Interceptor"
+		"cost" 500000
 		"hull" 3500
-		"mass" 220
-		"drag" 5.3
-		"heat dissipation" 1.8
+		"mass" 330
+		"drag" 7.95
+		"heat dissipation" 1.22
 		"heat generation" 0.6
 		"heat capacity" 220
 		"cargo space" 32
-		"thrust" 22
-		"turn" 500
+		"thrust" 33
+		"reverse thrust" 16.5
+		"turn" 750
 		"hull repair rate" 2
 		"hull protection" 1
 		"burn protection" 3
@@ -61,7 +70,8 @@ ship "Nova Firefly"
 		"gaslining" 1
 		"jump drive" 1
 		"jump speed" 1
-		"jump effect" "flare belcher die"
+		"jump effect" "jump drive flare"
+		"jump sound" "hyperspace-ver8"
 		"jump in sound" "hyperspace-ver8"
 		"jump out sound" "hyperspace-ver8"
 		"ramscoop" 2
@@ -86,8 +96,9 @@ ship "Nova Firefly"
 
 
 outfit "Flare Belcher?"
-	category "Guns"
+	category "Secondary Weapons"
 	thumbnail "outfit/unknown"
+	cost 300000
 	"gun ports" -1
 	"unplunderable" 1
 	weapon
@@ -95,6 +106,7 @@ outfit "Flare Belcher?"
 			"frame rate" 60
 			"no repeat"
 		sound "flamethrower"
+		icon "icon/flamethrower"
 		"submunition" "Flare Belcher Projectile"
 		"inaccuracy" 12
 		"velocity" 9
@@ -106,16 +118,18 @@ outfit "Flare Belcher?"
 
 outfit "Flare Belcher Projectile"
 	weapon
-		sprite "projectile/flamethrower"
+		sprite "projectile/pug flamethrower"
 			"frame rate" 17
 			"random start frame"
 		"hit effect" "flare belcher hit"
 		"die effect" "flare belcher die"
 		"inaccuracy" 20
-		"lifetime" 22
+		"lifetime" 18
+		"random lifetime" 8
 		"shield damage" .8
 		"hull damage" .7
-		"heat damage" 200
+		"heat damage" 125
+		"burn damage" 0.75
 
 effect "flare belcher die"
 	sprite "effect/explosion/pug/small"
@@ -149,9 +163,9 @@ ship "Egg Pouch"
 		category "Transport"
 		"automaton" 1
 		"hull" 7000
-		"mass" 180
-		"drag" 9.3
-		"heat dissipation" .1
+		"mass" 300
+		"drag" 13.95
+		"heat dissipation" .068
 		"energy capacity" 100
 		"fuel capacity" 99
 		"hull repair rate" 1
@@ -192,12 +206,13 @@ ship "Firefly Young"
 		"automaton" 1
 		category "Drone"
 		"hull" 3000
-		"mass" 180
-		"drag" 3.3
-		"heat dissipation" 1.2
+		"mass" 270
+		"drag" 4.95
+		"heat dissipation" .81
 		"cargo space" 20
-		"thrust" 18
-		"turn" 400
+		"thrust" 27
+		"reverse thrust" 13.5
+		"turn" 600
 		"hull repair rate" 1
 		"burn protection" 2
 		"heat protection" 2
@@ -294,12 +309,13 @@ ship "Star Gazer"
 	"never disabled"
 	attributes
 		category "Heavy Warship"
+		"cost" 500000
 		"hull" 24000
 		"automaton" 1
-		"mass" 700
+		"mass" 1050
 		"cargo space" 35
-		"drag" 8.2
-		"heat dissipation" .8
+		"drag" 12.3
+		"heat dissipation" .54
 		"fuel capacity" 250
 		"thrust" 10
 		"reverse thrust" 10
@@ -319,6 +335,7 @@ ship "Star Gazer"
 		"jump fuel" 250
 		"jump range" 150
 		"jump effect" "jump drive wisp"
+		"jump sound" "jump_drive-ver8"
 		"jump in sound" "jump_drive-ver8"
 		"jump out sound" "jump_drive-ver8"
 		"ramscoop" 1
@@ -351,11 +368,11 @@ effect "jump drive wisp"
 	"lifetime" 200
 	"random spin" 180
 	"velocity scale" 0.
-	"sound" "jump_drive-ver8"
 
 outfit "Quill Launcher?"
 	category "Turrets"
 	thumbnail "outfit/unknown"
+	cost 672000
 	"turret mounts" -1
 	"unplunderable" 1
 	weapon

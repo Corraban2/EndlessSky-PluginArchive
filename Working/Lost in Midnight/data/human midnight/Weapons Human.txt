@@ -64,12 +64,12 @@ outfit "Asteroid Catapult"
 		"lifetime" 200
 		"reload" 350
 		"firing energy" 710
-		"firing force" 90
+		"firing force" 135
 		"firing heat" 160
 		"shield damage" 4000
 		"hull damage" 7000
 		"piercing" .5
-		"hit force" 9000
+		"hit force" 13500
 		"submunition" "Asteroid Deterioration" 1
 
 outfit "Asteroid Deterioration"
@@ -263,19 +263,18 @@ outfit "Inferno Rocket Launcher"
 		"hit effect" "inferno rocket burn small" 20
 		"die effect" "medium explosion"
 		"inaccuracy" 1
-		"velocity" 0
-		"velocity override" 8
+		"velocity" 8
 		"lifetime" 125
 		"reload" 240
 		"firing energy" 1
 		"firing heat" 250
-		"acceleration" .2
-		"drag" .025
+		"acceleration" .8
+		"drag" .1
 		"trigger radius" 20
 		"blast radius" 50
 		"shield damage" 192
 		"hull damage" 168
-		"hit force" 60
+		"hit force" 90
 		"missile strength" 8
 		"heat damage" 24000
 		"burn damage" 240
@@ -302,22 +301,20 @@ outfit "Inferno Rocket Pod"
 		"hit effect" "inferno rocket burn small" 20
 		"die effect" "medium explosion"
 		"inaccuracy" 1
-		"velocity" 0
-		"velocity override" 8
+		"velocity" 8
 		"lifetime" 125
 		"reload" 500
-		"range override" 1000
 		"burst count" 2
 		"burst reload" 240
 		"firing energy" 1
 		"firing heat" 250
-		"acceleration" .2
-		"drag" .025
+		"acceleration" .8
+		"drag" .1
 		"trigger radius" 20
 		"blast radius" 50
 		"shield damage" 192
 		"hull damage" 168
-		"hit force" 60
+		"hit force" 90
 		"missile strength" 8
 		"heat damage" 24000
 		"burn damage" 240
@@ -676,10 +673,11 @@ outfit "Twin Particle Cannon"
 		"range override" 750
 		"reload" 20
 		"firing energy" 70
-		"firing force" 20
+		"firing force" 30
 		"firing heat" 240
 		"cluster"
 	description "Both barrels of the Twin Particle Cannon fire similtaneously, releasing double the force of a single Particle Cannon all at once. The size of this weapon is its main drawback, as few ships can accomodate it. While this product is fully functional, the sales department has raised concerns about its viability in the marketplace."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 outfit "Particle Submunition"
 	weapon
@@ -687,7 +685,7 @@ outfit "Particle Submunition"
 		"hit effect" "particle impact"
 		"velocity" 30
 		"lifetime" 25
-		"hit force" 80
+		"hit force" 120
 		"shield damage" 65
 		"hull damage" 62
 
@@ -695,9 +693,9 @@ outfit "Particle Burst Turret"
 	category "Turrets"
 	cost 330000
 	thumbnail "outfit/particle burst turret"
-	"mass" 45
-	"outfit space" -45
-	"weapon capacity" -45
+	"mass" 42
+	"outfit space" -42
+	"weapon capacity" -42
 	"turret mounts" -1
 	"required crew" 1
 	weapon
@@ -707,20 +705,21 @@ outfit "Particle Burst Turret"
 		sound "particle"
 		"hit effect" "particle impact"
 		"inaccuracy" .5
-		"turret turn" 0.6
+		"turret turn" 1.0
 		"velocity" 30
 		"lifetime" 25
-		"reload" 26
+		"reload" 30
 		"burst count" 3
 		"burst reload" 20
 		"firing energy" 35
-		"firing force" 10
+		"firing force" 15
 		"firing heat" 120
-		"hit force" 80
+		"hit force" 120
 		"shield damage" 65
 		"hull damage" 62
-	description "One of the most frequent product requests submitted to Lovelace Labs is for a turreted version of the Particle Cannon. While none have made it past the prototype testing phase before, this version looks promising. A major issue in previous designs was jamming in the turret turning mechanism due to the stress of the firing recoil. In addition to reinforcing the turret mount, the Particle Burst Turret limits the rate of fire to a three shot burst. While lab results have been satisfactory so far, actual field testing is required to determine if this approach has fully eliminated the turret turning issue."
-	description "This weapon is still in development at Lovelace Labs and is unavailable to the general public. A few lucky pilots with connections within the company have been given access to prototypes for field testing."
+	description "One of the most frequent product requests submitted to Lovelace Labs is for a turreted version of the Particle Cannon. While none have made it past the prototype testing phase before, this version looks promising."
+	description "	An issue with previous designs was jamming in the turret turning mechanism due to stress from the recoil. In addition to a reinforced turret mount, the Particle Burst Turret limits the rate of fire to a three shot burst. Lab results have been satisfactory so far, but actual combat testing is needed."
+	description "	This weapon is still in development and is unavailable to the general public. A few lucky pilots with connections within the company have been given access to prototypes for field testing."
 
 
 
@@ -744,12 +743,12 @@ outfit "Plasma Cluster Cannon"
 		"reload" 36
 		"firing energy" 60
 		"firing heat" 360
-		"hit force" 60
+		"hit force" 90
 		"shield damage" 126
 		"hull damage" 50
 		"heat damage" 680
 		"cluster"
-	description `The Plasma Charge Cannon has been modified to take advantage of the concentrated firing mount. The power and range of each shot has increased at the expense of increasing the weapon's charge up time.`
+	description `The Plasma Charge Cannon has been modified to take advantage of concentrated firing mounts. The power and range of each shot has increased at the expense of increasing the weapon's charge up time.`
 	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
 
 effect "plasma cluster explosion"
@@ -782,7 +781,7 @@ outfit "Proton Gun-CF8"
 		"lifetime" 2
 		"reload" 8
 		"firing energy" 15
-		"firing force" 2
+		"firing force" 3
 		"firing heat" 60
 		"cluster"
 	description `Four out of five reviewers at Stars and Starships Magazine criticized the Proton Gun-CF8 as a blatant marketing gimmick meant to appeal to Vanguard aficionados. The lone dissenting review praised the aesthetic appeal of its projectile firing pattern.`
@@ -796,7 +795,7 @@ outfit "Proton CF-8 Fragment"
 		"hit effect" "proton impact"
 		"inaccuracy" 3
 		"lifetime" 24
-		"hit force" 3
+		"hit force" 4.5
 		"shield damage" 5.05
 		"hull damage" 4.2
 
@@ -821,7 +820,7 @@ outfit "Proton Turret-ATS"
 		"lifetime" 2
 		"reload" 8
 		"firing energy" 15
-		"firing force" 2
+		"firing force" 3
 		"firing heat" 60
 	description `The Syndicate Proton Turret-ATS was designed for the cost conscious captain concerned about keeping crew wages under control. No gunner is required to operate this turret. Instead, aiming is accomplished by utilizing an advanced automated targeting system which has been in development for several years. Critics note it has lower accuracy and response times than a skilled human gunner. Despite this, some captains consider the trade off worthwhile.`
 
@@ -887,6 +886,56 @@ effect "silencer beam impact"
 
 
 
+outfit "Spotlight"
+	category "Secondary Weapons"
+	cost 3000
+	thumbnail "outfit/spotlight"
+	"mass" 1
+	"outfit space" -1
+	"weapon capacity" -1
+	"gun ports" -1
+	weapon
+		"fire effect" "spotlight"
+		icon "icon/spotlight"
+		"velocity" 150
+		"lifetime" 1
+		"reload" 1
+		"firing energy" .067
+		"firing heat" .16
+		"phasing"
+	description "This powerful light source can be installed into one of your ship's gun ports."
+	description "	Despite doing no damage, targeting other ships with this can still provoke them..."
+
+outfit "Search Light"
+	category "Secondary Weapons"
+	cost 6000
+	thumbnail "outfit/search light"
+	"mass" 2
+	"outfit space" -2
+	"weapon capacity" -2
+	"turret mounts" -1
+	weapon
+		"fire effect" "spotlight"
+		"hardpoint sprite" "hardpoint/search light"
+		"hardpoint offset" 2.
+		icon "icon/search light"
+		"turret turn" 1
+		"velocity" 150
+		"lifetime" 1
+		"reload" 1
+		"firing energy" .067
+		"firing heat" .16
+		"phasing"
+	description "A Spotlight mounted onto a rotating turret platform provides a wider area of coverage."
+	description "	Despite doing no damage, targeting other ships with this can still provoke them..."
+
+effect "spotlight"
+	sprite "effect/spotlight"
+		"frame rate" 1
+	"lifetime" 1
+
+
+
 outfit "Stinger Missile"
 	category "Ammunition"
 	cost 1000
@@ -926,22 +975,21 @@ outfit "Stinger Missile Launcher"
 		"die effect" "glow blood" 3
 		"hit effect" "stinger splatter" 5
 		"inaccuracy" 5
-		"velocity" 0
-		"velocity override" 14
+		"velocity" 11
 		"lifetime" 350
-		"range override" 4900
 		"reload" 120
 		"firing energy" 1
 		"firing heat" 20
-		"acceleration" .3
-		"drag" .021
-		"turn" 2
+		"acceleration" 1.2
+		"drag" .1
+		"turn" 1.8
 		"homing" 1
 		"radar tracking" .65
-		"shield damage" 900
+		"shield damage" 230
+		"discharge damage" 6.7
 		"hull damage" 60
 		"corrosion damage" 10
-		"hit force" 60
+		"hit force" 90
 		"missile strength" 6
 	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are one example of this. Devoloped during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
 	description "	If it is able to get past the shields and splatter the target with its dangerous payload, the residue will continue to corrode the hull for some time after the initial impact."
@@ -965,24 +1013,22 @@ outfit "Stinger Missile Pod"
 		"die effect" "glow blood" 3
 		"hit effect" "stinger splatter" 5
 		"inaccuracy" 5
-		"velocity" 0
-		"velocity override" 14
+		"velocity" 11
 		"lifetime" 350
-		"range override" 4900
 		"reload" 250
 		"burst count" 7
 		"burst reload" 120
 		"firing energy" 1
 		"firing heat" 20
-		"acceleration" .3
-		"drag" .021
-		"turn" 2
+		"acceleration" 1.2
+		"drag" .1
+		"turn" 1.8
 		"homing" 1
 		"radar tracking" .65
-		"shield damage" 900
+		"shield damage" 670
 		"hull damage" 60
 		"corrosion damage" 10
-		"hit force" 60
+		"hit force" 90
 		"missile strength" 6
 	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are one example of this. Devoloped during the early turf wars, the materials used to make them are readily available and there is no shortage of suppliers."
 	description "	If it is able to get past the shields and splatter the target with its dangerous payload, the residue will continue to corrode the hull for some time after the initial impact."
@@ -1039,14 +1085,13 @@ outfit "Swingfire Missile Launcher"
 		"fire effect" "sidewinder fire"
 		"hit effect" "missile hit"
 		"inaccuracy" 4
-		"velocity" 0
-		"velocity override" 14
+		"velocity" 14
 		"lifetime" 35
 		"reload" 60
 		"firing energy" 1
 		"firing heat" 15
-		"acceleration" .1
-		"drag" .025
+		"acceleration" 1.2
+		"drag" .1
 		"turn" 4.5
 		"homing" 4
 		"radar tracking" .9
@@ -1062,7 +1107,7 @@ outfit "Swingfire Missile Pod"
 	"outfit space" -4
 	"weapon capacity" -4
 	"gun ports" -1
-	"swingfire capacity" 3
+	"swingfire capacity" 4
 	weapon
 		sprite "projectile/swingfire"
 			"no repeat"
@@ -1073,21 +1118,20 @@ outfit "Swingfire Missile Pod"
 		"fire effect" "sidewinder fire"
 		"hit effect" "missile hit"
 		"inaccuracy" 4
-		"velocity" 0
-		"velocity override" 14
+		"velocity" 14
 		"lifetime" 35
 		"reload" 150
 		"burst count" 4
 		"burst reload" 60
 		"firing energy" 1
 		"firing heat" 15
-		"acceleration" .1
-		"drag" .025
+		"acceleration" 1.2
+		"drag" .1
 		"turn" 4.5
 		"homing" 4
 		"radar tracking" .9
 		"submunition" "Swingfire Locked"
-		"missile strength" 13
+		"missile strength" 19
 	description "An upgrade from Lovelace Labs popular Sidewinders, the Swingfire Missile is equipped with additional maneuvering thrusters and an enhanced targeting system. After being launched, it will recalculate a target's trajectory relative to its original position before activating its main rocket to pursue it. This increases the missile's accuracy while extending its range."
 	description "	Pods enable fighters and other light craft to carry small quantities of missiles into battle while retaining enough space for other weapons. Large ships are better off with full-size launchers."
 
@@ -1099,17 +1143,17 @@ outfit "Swingfire Locked"
 		"die effect" "missile death"
 		"hit effect" "missile hit"
 		"inaccuracy" 2
-		"velocity" .3
+		"velocity" 1.2
 		"lifetime" 350
-		"acceleration" .3
-		"drag" .021
+		"acceleration" 1.2
+		"drag" .1
 		"turn" 4
 		"homing" 4
 		"radar tracking" .9
 		"shield damage" 286
 		"hull damage" 198
-		"hit force" 187
-		"missile strength" 13
+		"hit force" 280.5
+		"missile strength" 19
 
 
 
@@ -1138,7 +1182,7 @@ outfit "Thermo Detonator"
 		"blast radius" 150
 		"shield damage" 9000
 		"hull damage" 7000
-		"hit force" 40
+		"hit force" 60
 		"missile strength" 2000
 	description "WARNING: This device is a one-shot weapon. It will destroy your ship when detonated. A security override prevents activation unless hostiles are nearby."
 	description "	It should be noted that any evidence suggesting this outfit was installed on your ship at the time of its destruction voids any insurance policy that would have paid compensation otherwise."
@@ -1370,16 +1414,16 @@ outfit "Meteor Submunition"
 			"frame rate" .25
 		"die effect" "missile death"
 		"hit effect" "missile hit"
-		"velocity" 0
+		"velocity" 11
 		"lifetime" 192
-		"acceleration" .4
-		"drag" .02
-		"turn" 2
+		"acceleration" 1
+		"drag" .1
+		"turn" 1.8
 		"homing" 1
 		"infrared tracking" .65
 		"shield damage" 360
 		"hull damage" 220
-		"hit force" 220
+		"hit force" 330
 		"missile strength" 6
 
 
@@ -1426,14 +1470,14 @@ outfit "Torpedo Submunition"
 			"random start frame"
 		"hit effect" "torpedo hit"
 		"die effect" "tiny explosion"
-		"velocity" 0
+		"velocity" 7
 		"lifetime" 900
-		"acceleration" .1
-		"drag" .015
+		"acceleration" .15
+		"drag" .025
 		"turn" 1.5
 		"homing" 3
 		"optical tracking" .8
 		"shield damage" 820
 		"hull damage" 820
-		"hit force" 300
+		"hit force" 450
 		"missile strength" 30

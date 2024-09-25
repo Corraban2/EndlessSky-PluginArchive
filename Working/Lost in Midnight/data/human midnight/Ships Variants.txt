@@ -69,12 +69,11 @@ ship "Kestrel" "Kestrel (Battle Bays)"
 	bay "Fighter" 56 70
 		"launch effect" "human internal"
 
-
 ship "Kestrel" "Kestrel (Battle Engines)"
 	sprite "ship/kestrele"
 	thumbnail "thumbnail/kestrele"
 	add attributes
-		"drag" -1.0
+		"drag" -1.9
 		"fuel capacity" 100
 		"engine capacity" 30
 	outfits
@@ -114,7 +113,7 @@ ship "Kestrel" "Kestrel (Battle Shields)"
 	add attributes
 		"shields" 3000
 		"hull" 1500
-		"heat dissipation" .06
+		"heat dissipation" .032
 	outfits
 		"Particle Cannon" 4
 		"Torpedo Pod" 2
@@ -182,6 +181,138 @@ ship "Kestrel" "Kestrel (Battle Weapons)"
 	gun 75 57 "Particle Cannon"
 	gun -75 57 "Meteor Missile Pod"
 	gun 75 57 "Meteor Missile Pod"
+	turret -7 -4 "Heavy Laser Turret"
+	turret 7 -4 "Heavy Laser Turret"
+	turret -23 14 "Heavy Laser Turret"
+	turret 23 14 "Heavy Laser Turret"
+
+ship "Kestrel" "Kestrel (Merchant Bays)"
+	sprite "ship/kestrelc"
+	thumbnail "thumbnail/kestrelc"
+	add attributes
+		"mass" 60
+		"weapon capacity" -20
+	outfits
+		"Particle Cannon" 2
+		"Torpedo Launcher" 2
+		"Torpedo Storage Rack" 2
+		"Torpedo" 90
+		"Heavy Laser Turret" 4
+		"Javelin Storage Crate" 12
+		"Javelin" 1200
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		"Cargo Expansion"
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+	gun -73.5 46 "Torpedo Launcher"
+	gun 73.5 46 "Torpedo Launcher"
+	gun -29.5 52 "Particle Cannon"
+	gun 29.5 52 "Particle Cannon"
+	turret -8 -10.5 "Heavy Laser Turret"
+	turret 8 -10.5 "Heavy Laser Turret"
+	turret -20.5 9 "Heavy Laser Turret"
+	turret 20.5 9 "Heavy Laser Turret"
+	bay "Fighter" -46 106
+		"launch effect" "human internal"
+	bay "Fighter" 46 106
+		"launch effect" "human internal"
+	bay "Fighter" -62 78
+		"launch effect" "human internal"
+	bay "Fighter" 62 78
+		"launch effect" "human internal"
+	bay "Fighter" -56 70
+		"launch effect" "human internal"
+	bay "Fighter" 56 70
+		"launch effect" "human internal"
+
+ship "Kestrel" "Kestrel (Merchant Engines)"
+	sprite "ship/kestrele"
+	thumbnail "thumbnail/kestrele"
+	add attributes
+		"drag" -1.9
+		"fuel capacity" 100
+		"engine capacity" 30
+	outfits
+		"Particle Cannon" 4
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Heavy Laser Turret" 4
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		"Cargo Expansion"
+		"Volcano Afterburner"
+		"Capybara Reverse Thruster"
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+	engine 13 170
+	engine -13 170
+	engine 24.5 160 0.4
+	engine -24.5 160 0.4
+
+ship "Kestrel" "Kestrel (Merchant Shields)"
+	sprite "ship/kestrels"
+	thumbnail "thumbnail/kestrels"
+	add attributes
+		"shields" 3000
+		"hull" 1500
+		"heat dissipation" .032
+	outfits
+		"Particle Cannon" 4
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Heavy Laser Turret" 4
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D41-HY Shield Generator"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		"Cargo Expansion"
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+
+ship "Kestrel" "Kestrel (Merchant Weapons)"
+	sprite "ship/kestrelw"
+	thumbnail "thumbnail/kestrelw"
+	add attributes
+		"weapon capacity" 40
+	outfits
+		"Energy Blaster" 6
+		"Particle Cannon" 4
+		"Torpedo Launcher" 2
+		"Torpedo" 60
+		"Heavy Laser Turret" 4
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
+		"Liquid Nitrogen Cooler"
+		"Tactical Scanner" 2
+		"Cargo Expansion"
+		"Orca Plasma Thruster"
+		"Orca Plasma Steering"
+		"Hyperdrive"
+	gun -73.5 46 "Torpedo Launcher"
+	gun -76.5 49 "Energy Blaster"
+	gun 73.5 46 "Torpedo Launcher"
+	gun 76.5 49 "Energy Blaster"
+	gun -51 49.5 "Particle Cannon"
+	gun -55.5 52.5 "Energy Blaster"
+	gun 51 49.5 "Particle Cannon"
+	gun 55.5 52.5 "Energy Blaster"
+	gun -29.5 52 "Particle Cannon"
+	gun -33 55 "Energy Blaster"
+	gun 29.5 52 "Particle Cannon"
+	gun 33 55 "Energy Blaster"
 	turret -7 -4 "Heavy Laser Turret"
 	turret 7 -4 "Heavy Laser Turret"
 	turret -23 14 "Heavy Laser Turret"
@@ -314,7 +445,7 @@ ship "Argosy" "Argosy (Quad Mod Blaster)"
 
 
 ship "Auxiliary" "Auxiliary (Battle)"
-	"crew" 250
+	"crew" 264
 	outfits
 		"Sidewinder Missile Launcher" 2
 		"Sidewinder Missile" 100
@@ -378,7 +509,7 @@ ship "Auxiliary" "Auxiliary (Troops)"
 	plural "Auxiliaries"
 	sprite "ship/auxiliaryt"
 	thumbnail "thumbnail/auxiliaryt"
-	"crew" 362
+	"crew" 366
 	add attributes
 		"bunks" 112
 		"cargo space" -200
@@ -398,7 +529,7 @@ ship "Auxiliary" "Auxiliary (Troops)"
 		"X1700 Ion Thruster"
 		"X5200 Ion Steering"
 		"Scram Drive"
-		Barracks 7
+		Barracks 2
 		"Security Station (Staffed)"
 		"Engineering Room"
 		"Medical Bay"
@@ -923,6 +1054,32 @@ ship "Blackbird" "Blackbird (Isochronal)"
 		"S3 Thermionic"
 		"Small Radar Jammer"
 
+ship "Blackbird" "Blackbird (Spotlight)"
+	outfits
+		"Search Light" 2
+		"S3 Thermionic"
+		"KP-6 Photovoltaic Array" 3
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		"Small Radar Jammer"
+		"Luxury Accommodations"
+		"Impala Plasma Thruster"
+		"Impala Plasma Steering"
+		"Hyperdrive"
+
+
+
+ship "Bounder" "Bounder (Spotlight)"
+	outfits
+		"Search Light" 2
+		"nGVF-CC Fuel Cell"
+		"KP-6 Photovoltaic Array"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+
 
 
 ship "Broadsword" "Basket-hilt"
@@ -977,8 +1134,8 @@ ship "Broadsword" "Basket-hilt (CCOR)"
 	gun "Gatling Gun"
 	gun "Twin Modified Blaster"
 	gun "Twin Modified Blaster"
-	bay "Fighter" 44 17 
-		under
+	bay "Fighter" 44 17 under
+		"launch effect" "human external"
 	description "Most Basket-hilts still in use are operated by captains who weren't able to afford the full Broadsword upgrade or were forced to launch while the upgrade was still in the process of being completed."
 
 ship "Broadsword" "Basket-hilt b"
@@ -1004,8 +1161,8 @@ ship "Broadsword" "Basket-hilt b"
 	gun "Beam Laser"
 	gun "Javelin Pod"
 	gun "Javelin Pod"
-	bay "Fighter" -44 17 
-		under
+	bay "Fighter" -44 17 under
+		"launch effect" "human external"
 	description "Most Basket-hilts still in use are operated by captains who weren't able to afford the full Broadsword upgrade or were forced to launch while the upgrade was still in the process of being completed."
 
 ship "Broadsword" "Basket-hilt b (CCOR)"
@@ -1033,8 +1190,8 @@ ship "Broadsword" "Basket-hilt b (CCOR)"
 	gun "Gatling Gun"
 	gun "Twin Modified Blaster"
 	gun "Twin Modified Blaster"
-	bay "Fighter" -44 17 
-		under
+	bay "Fighter" -44 17 under
+		"launch effect" "human external"
 	description "Most Basket-hilts still in use are operated by captains who weren't able to afford the full Broadsword upgrade or were forced to launch while the upgrade was still in the process of being completed."
 
 
@@ -1125,27 +1282,8 @@ ship "Broadsword" "Broadsword (Modified Blaster)"
 
 
 
-ship "Bulk Freighter" "Bulk Freighter (Biohazard)"
-	attributes
-		category "Heavy Warship"
-		"cost" 13400000
-		"shields" 13500
-		"hull" 7600
-		"required crew" 18
-		"bunks" 43
-		"mass" 880
-		"drag" 14
-		"heat dissipation" .4
-		"fuel capacity" 900
-		"cargo space" 20
-		"outfit space" 410
-		"weapon capacity" 150
-		"engine capacity" 85
-		weapon
-			"blast radius" 200
-			"shield damage" 2000
-			"hull damage" 1000
-			"hit force" 3000
+ship "Class C Freighter" "Bulk Freighter (Biohazard)"
+	"display name" "Bulk Freighter"
 	outfits
 		"Quad Blaster Turret" 3
 		"Anti-Missile Turret" 2
@@ -1167,59 +1305,18 @@ ship "Bulk Freighter" "Bulk Freighter (Biohazard)"
 		"A250 Atomic Thruster"
 		"A255 Atomic Steering"
 		"Scram Drive"
-	engine -20 195.5
-	engine 20 195.5
-	gun -20 -175 "Stinger Missile Pod"
-	gun 20 -175 "Stinger Missile Pod"
-	turret -12 -155 "Quad Blaster Turret"
-	turret 12 -155 "Anti-Missile Turret"
-	turret 0 5 "Quad Blaster Turret"
-	turret 30 175 "Quad Blaster Turret"
-	turret -30 175 "Anti-Missile Turret"
-	bay "Drone" -66 -115 left
-	bay "Drone" -66 -65 left
-	bay "Drone" -66 -15 left
-	bay "Drone" -66 35 left
-	bay "Drone" -66 85 left
-	bay "Drone" -66 135 left
-	bay "Drone" 66 -115 right
-	bay "Drone" 66 -65 right
-	bay "Drone" 66 -15 right
-	bay "Drone" 66 35 right
-	bay "Drone" 66 85 right
-	bay "Drone" 66 135 right
-	leak "leak" 30 50
-	leak "flame" 50 80
-	leak "big leak" 40 30
-	explode "small explosion" 15
-	explode "medium explosion" 25
-	explode "large explosion" 35
-	explode "huge explosion" 20
-	"final explode" "final explosion large"
+	gun "Stinger Missile Pod"
+	gun "Stinger Missile Pod"
+	turret "Quad Blaster Turret"
+	turret "Anti-Missile Turret"
+	turret "Quad Blaster Turret"
+	turret "Quad Blaster Turret"
+	turret "Anti-Missile Turret"
 	description `This drone carrier has been disguised as an ordinary bulk freighter.`
 	description `	Inside, a layer of interference plating hides its military-grade equipment and a dozen combat drones secreted away in its converted cargo holds, while its faux gearing conceals extra shield emitters.`
 
-ship "Bulk Freighter" "Bulk Freighter (Secret Cargo) "
-	attributes
-		category "Heavy Warship"
-		"cost" 13400000
-		"shields" 13500
-		"hull" 7600
-		"required crew" 18
-		"bunks" 43
-		"mass" 880
-		"drag" 14
-		"heat dissipation" .4
-		"fuel capacity" 900
-		"cargo space" 20
-		"outfit space" 410
-		"weapon capacity" 150
-		"engine capacity" 85
-		weapon
-			"blast radius" 200
-			"shield damage" 2000
-			"hull damage" 1000
-			"hit force" 3000
+ship "Class C Freighter" "Bulk Freighter (Secret Cargo) "
+	"display name" "Bulk Freighter"
 	outfits
 		"Proton Turret"
 		"Quad Blaster Turret" 2
@@ -1241,50 +1338,11 @@ ship "Bulk Freighter" "Bulk Freighter (Secret Cargo) "
 		"A250 Atomic Thruster"
 		"A255 Atomic Steering"
 		"Scram Drive"
-		
-	engine -20 195.5
-	engine 20 195.5
-	gun -20 -175 "Sidewinder Missile Launcher"
-	gun 20 -175
-	turret -12 -155 "Quad Blaster Turret"
-	turret 12 -155 "Heavy Anti-Missile Turret"
-	turret 0 5 "Proton Turret"
-	turret 30 175 "Quad Blaster Turret"
-	turret -30 175 "Anti-Missile Turret"
-	bay "Drone" -66 -115 left
-		"launch effect" "human internal"
-	bay "Drone" -66 -65 left
-		"launch effect" "human internal"
-	bay "Drone" -66 -15 left
-		"launch effect" "human internal"
-	bay "Drone" -66 35 left
-		"launch effect" "human internal"
-	bay "Drone" -66 85 left
-		"launch effect" "human internal"
-	bay "Drone" -66 135 left
-		"launch effect" "human internal"
-	bay "Drone" 66 -115 right
-		"launch effect" "human internal"
-	bay "Drone" 66 -65 right
-		"launch effect" "human internal"
-	bay "Drone" 66 -15 right
-		"launch effect" "human internal"
-	bay "Drone" 66 35 right
-		"launch effect" "human internal"
-	bay "Drone" 66 85 right
-		"launch effect" "human internal"
-	bay "Drone" 66 135 right
-		"launch effect" "human internal"
-	leak "leak" 30 50
-	leak "flame" 50 80
-	leak "big leak" 40 30
-	explode "small explosion" 15
-	explode "medium explosion" 25
-	explode "large explosion" 35
-	explode "huge explosion" 20
-	"final explode" "final explosion large"
-	description `The Class C "Freighter" is a Q-ship, a stealth warship designed by the Syndicate for baiting pirates with the offer of what appears to be a helpless, ordinary Bulk Freighter.`
-	description `	Inside, a layer of Interference Plating hides its military-grade equipment and a dozen combat drones secreted away in its converted cargo holds, while its faux gearing conceals extra shield emitters.`
+	turret "Quad Blaster Turret"
+	turret "Heavy Anti-Missile Turret"
+	turret "Proton Turret"
+	turret "Quad Blaster Turret"
+	turret "Anti-Missile Turret"
 
 ship "Bulk Freighter" "Bulk Freighter (hai drones)"
 	"display name" "Bulk Freighter"
@@ -2435,7 +2493,7 @@ ship "Firebird" "Firebird (Lovelace Lab)"
 		"Particle Burst Turret"
 		"Particle Cannon" 2
 		"RT-I Radiothermal"
-		"Swingfire Missile" 106
+		"Swingfire Missile" 108
 		"Swingfire Missile Pod" 2
 		"Swingfire Missile Rack" 5
 		"X3200 Ion Steering"
@@ -2621,7 +2679,6 @@ ship "Frigate" "Frigate (Pug)"
 	outfits
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
-		Barracks
 		"Dwarf Core"
 		"Engineering Room"
 		"Fragmentation Grenades" 8
@@ -2673,10 +2730,12 @@ ship "Freighter" "Freighter (Turner Power)"
 
 ship "Fury" "Fury (Bomber Limit Break)"
 	outfits
-		"Stinger Missile Pod"
-		"Stinger Missile" 7
+		"Stinger Missile Pod" 2
+		"Stinger Missile" 44
+		"Stinger Missile Rack" 2
 		"Meteor Missile Pod" 2
-		"Meteor Missile" 14
+		"Meteor Missile" 44
+		"Meteor Missile Box" 2
 		"nGVF-BB Fuel Cell"
 		"Supercapacitor"
 		"D14-RN Shield Generator"
@@ -2686,10 +2745,10 @@ ship "Fury" "Fury (Bomber Limit Break)"
 		"Chipmunk Plasma Steering"
 		"Hyperdrive"
 	gun
-	gun
+	gun "Stinger Missile Pod"
 	gun "Meteor Missile Pod"
 	gun "Meteor Missile Pod"
-	gun 
+	gun "Stinger Missile Pod"
 	gun 
 
 ship "Fury" "Fury (Atomic Miner)"
@@ -2715,12 +2774,13 @@ ship "Fury" "Fury (Hai)"
 		"Pebble Core"
 		"Pulse Cannon" 2
 		"Small Radar Jammer" 2
+		"Spotlight" 2
 		"Dual Pulse Pistols"
 	gun 
-	gun 
 	gun "Pulse Cannon"
+	gun "Spotlight"
+	gun "Spotlight"
 	gun "Pulse Cannon"
-	gun 
 	gun 
 
 ship "Fury" "Fury (Inferno Rockets)"
@@ -2746,14 +2806,22 @@ ship "Fury" "Fury (Inferno Rockets)"
 
 ship "Fury" "Fury (Kludge Blaster)"
 	outfits
+		"Asteroid Scanner"
+		"Spotlight" 2
 		"D14-RN Shield Generator"
 		Hyperdrive
-		"Kludge Blaster" 6
+		"Kludge Blaster" 4
 		"LP036a Battery Pack"
 		"Small Radar Jammer" 2
 		"X2200 Ion Steering"
 		"X2700 Ion Thruster"
 		"nGVF-BB Fuel Cell"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
+	gun "Spotlight"
+	gun "Spotlight"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
 
 ship "Fury" "Fury (Korath)"
 	outfits
@@ -2807,7 +2875,7 @@ ship "Gremlin" "Gremlin (Luxury)"
 		"Fuel Pod" 2
 		"Bunk Room" 2
 		"Luxury Accommodations"
-		Afterburner
+		"Volcano Afterburner"
 		"X2700 Ion Thruster"
 		"X3200 Ion Steering"
 		"Scram Drive"
@@ -2821,7 +2889,7 @@ ship "Gremlin" "Gremlin (Smuggler)"
 		"Interference Plating" 5
 		"Small Radar Jammer"
 		"Smuggler's Hideaway"
-		Afterburner
+		"Volcano Afterburner"
 		"X2700 Ion Thruster"
 		"X3200 Ion Steering"
 		"Scram Drive"
@@ -2835,7 +2903,7 @@ ship "Gremlin" "Gremlin (Hai)"
 		"Cargo Expansion"
 		"Small Radar Jammer"
 		Ramscoop
-		Afterburner
+		"Volcano Afterburner"
 		`"Benga" Atomic Thruster`
 		`"Biroo" Atomic Steering`
 		"Scram Drive"
@@ -3340,6 +3408,37 @@ ship "Heavy Enforcer" "Heavy Enforcer (Turbo Blaster)"
 
 
 
+ship "Heavy Shuttle" "Heavy Shuttle (Spotlight)"
+	outfits
+		"Spotlight" 2
+		"nGVF-AA Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+
+
+
+ship "Hogshead" "Hogshead (Hijacked)"
+	"crew" 66
+	outfits
+		"Heavy Anti-Missile Turret"
+		"Anti-Missile Turret"
+		"S3 Thermionic"
+		"KP-6 Photovoltaic Array" 2
+		"LP036a Battery Pack"
+		"D41-HY Shield Generator"
+		"Small Radar Jammer" 2
+		"Luxury Accommodations"
+		"Laser Rifle" 65
+		"Sniper Rifle"
+		"Greyhound Plasma Thruster"
+		"Greyhound Plasma Steering"
+		"Hyperdrive"
+
+
+
 ship "Leviathan" "Leviathan (Inferno Rockets)"
 	outfits
 		"Particle Cannon" 2
@@ -3678,6 +3777,60 @@ ship "Manta" "Manta (Korath)"
 
 
 
+ship "Mega Freighter" "Mega Freighter (Blaster)"
+	outfits
+		"Quad Blaster Turret" 5
+		"Meteor Missile Launcher"
+		"Meteor Missile" 30
+		"RT-I Radiothermal"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Large Radar Jammer"
+		"Laser Rifle"
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+		"Scram Drive"
+
+ship "Mega Freighter" "Mega Freighter (Heavy)"
+	outfits
+		"Laser Turret" 2
+		"Heavy Laser Turret" 2
+		"Heavy Anti-Missile Turret"
+		"Sidewinder Missile Launcher"
+		"Sidewinder Missile" 45
+		"Fission Reactor"
+		"LP072a Battery Pack"
+		"KP-6 Photovoltaic Panel" 2
+		"D94-YV Shield Generator"
+		"Outfits Expansion"
+		"Laser Rifle" 3
+		"A250 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Scram Drive"
+	turret "Laser Turret"
+	turret "Heavy Laser Turret"
+	turret "Heavy Anti-Missile Turret"
+	turret "Heavy Laser Turret"
+	turret "Laser Turret"
+
+ship "Mega Freighter" "Mega Freighter (Proton)"
+	outfits
+		"Sidewinder Missile Launcher"
+		"Sidewinder Missile" 45
+		"Proton Turret" 3
+		"Anti-Missile Turret" 2
+		"RT-I Radiothermal"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Laser Rifle"
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+		"Scram Drive"
+
+
+
 ship "Missileboat" "Missileboat (Inferno Rockets)"
 	outfits
 		Hyperdrive
@@ -3746,407 +3899,6 @@ ship "Missileboat" "Missileboat (Turbo Blaster)"
 	gun "Stinger Missile Pod"
 	gun "Stinger Missile Pod"
 	gun "Stinger Missile Pod"
-
-
-
-ship "Modified Argosy" "Modified Argosy (Flamethrower)"
-	outfits
-		"Heavy Laser" 2
-		"Flamethrower" 2
-		"Heavy Anti-Missile Turret" 2
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Outfits Expansion"
-		"Water Coolant System"
-		"Laser Rifle" 5
-		"Fragmentation Grenades" 3
-		"Sniper Rifle"
-		"Fuel Pod" 2
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		"Scram Drive"
-	gun "Heavy Laser"
-	gun "Heavy Laser"
-	gun "Flamethrower"
-	gun "Flamethrower"
-
-ship "Modified Argosy" "Modified Argosy (Inferno Rocket)"
-	outfits
-		Brig
-		"Fragmentation Grenades"
-		"Greyhound Plasma Steering"
-		"Heavy Anti-Missile Turret"
-		"Heavy Laser Turret"
-		Hyperdrive
-		"Inferno Rocket" 64
-		"Inferno Rocket Pod" 2
-		"Inferno Rocket Rack" 6
-		"LP072a Battery Pack"
-		"Laser Rifle"
-		"Meteor Missile" 89
-		"Meteor Missile Box" 5
-		"Meteor Missile Pod" 2
-		"Modified D41-HY Shielding"
-		"Modified RT-I Radiothermal"
-		"Outfits Expansion"
-		"Sniper Rifle"
-		"Water Coolant System"
-		"X3700 Ion Thruster"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Kludge Blaster)"
-	outfits
-		"Triple Kludge Blaster" 4
-		"Hex Kludge Blaster Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D41-HY Shielding"
-		"Liquid Nitrogen Cooler"
-		"Brig"
-		"Laser Rifle" 3
-		"Greyhound Plasma Thruster"
-		"X3200 Ion Steering"
-		"Hyperdrive"
-	turret "Hex Kludge Blaster Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Korath)"
-	outfits
-		"Heavy Laser" 2
-		"Meteor Missile Pod" 2
-		"Meteor Missile Box" 2
-		"Meteor Missile" 44
-		"Heavy Laser Turret"
-		"Warder Anti-Missile"
-		"NT-200 Nucleovoltaic"
-		"Systems Core (Medium)"
-		"Small Heat Shunt"
-		"Interference Plating"
-		"Brig"
-		"Thermal Repeater Rifle" 2
-		"Laser Rifle" 5
-		"Greyhound Plasma Thruster"
-		"X3200 Ion Steering"
-		"Jump Drive"
-	gun "Heavy Laser"
-	gun "Heavy Laser"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	turret "Heavy Laser Turret"
-	turret "Warder Anti-Missile"
-
-ship "Modified Argosy" "Modified Argosy (Nuclear)"
-	outfits
-		"Nuclear Missile" 2
-		"Stinger Missile Launcher" 2
-		"Stinger Missile Rack" 2
-		"Stinger Missile" 90
-		"Heavy Anti-Missile Turret" 2
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Outfits Expansion"
-		"Water Coolant System"
-		"Laser Rifle" 5
-		"Fragmentation Grenades" 3
-		"Sniper Rifle"
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		"Scram Drive"
-	gun "Nuclear Missile"
-	gun "Nuclear Missile"
-	gun "Stinger Missile Launcher"
-	gun "Stinger Missile Launcher"
-
-ship "Modified Argosy" "Modified Argosy (Shields)"
-	outfits
-		"Heavy Laser" 2
-		"Meteor Missile Launcher" 2
-		"Meteor Missile" 60
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"NT-200 Nucleovoltaic"
-		"LP072a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Small Radar Jammer"
-		"Brig"
-		"Laser Rifle" 2
-		"Greyhound Plasma Thruster"
-		"X3200 Ion Steering"
-		"Hyperdrive"
-	gun "Heavy Laser"
-	gun "Heavy Laser"
-	gun "Meteor Missile Launcher"
-	gun "Meteor Missile Launcher"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Shields Blaster)"
-	outfits
-		"Modified Blaster" 4
-		"Quad Blaster Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP072a Battery Pack"
-		"LP036a Battery Pack"
-		"Modified D67-TM Shielding"
-		"Liquid Nitrogen Cooler"
-		"Brig"
-		"Limit Breaker"
-		"Laser Rifle" 3
-		"Greyhound Plasma Thruster"
-		"X3200 Ion Steering"
-		"Hyperdrive"
-	turret "Quad Blaster Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Shields Heavy)"
-	outfits
-		"Heavy Laser" 4
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Water Coolant System"
-		"Brig"
-		"Laser Rifle" 3
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		"Hyperdrive"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Shields Missile)"
-	outfits
-		"Meteor Missile Pod" 2
-		"Meteor Missile" 89
-		"Meteor Missile Box" 5
-		"Torpedo Pod" 2
-		"Torpedo" 66
-		"Torpedo Storage Rack" 4
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"S3 Thermionic"
-		"LP072a Battery Pack"
-		"Modified D41-HY Shielding"
-		"Brig"
-		"Outfits Expansion"
-		"Laser Rifle"
-		"X3700 Ion Thruster"
-		"Greyhound Plasma Steering"
-		"Hyperdrive"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	gun "Torpedo Pod"
-	gun "Torpedo Pod"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Shields Smuggler)"
-	outfits
-		"Beam Laser" 4
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Water Coolant System"
-		"Interference Plating" 3
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		"Scram Drive"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Smuggled Cargo)"
-	outfits
-		"Beam Laser" 4
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Water Coolant System"
-		"Interference Plating" 3
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		"Scram Drive"
-		"Smuggled Cargo"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Stinger)"
-	outfits
-		Brig
-		"Greyhound Plasma Steering"
-		"Heavy Anti-Missile Turret"
-		"Heavy Laser Turret"
-		Hyperdrive
-		"LP072a Battery Pack"
-		"Laser Rifle"
-		"Meteor Missile" 89
-		"Meteor Missile Box" 5
-		"Meteor Missile Pod" 2
-		"Modified D41-HY Shielding"
-		"Modified RT-I Radiothermal"
-		"Outfits Expansion"
-		"Stinger Missile" 104
-		"Stinger Missile Pod" 2
-		"Stinger Missile Rack" 6
-		"Water Coolant System"
-		"X3700 Ion Thruster"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	gun "Stinger Missile Pod"
-	gun "Stinger Missile Pod"
-	turret "Heavy Laser Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Turbo Blaster)"
-	outfits
-		"Anti-Missile Turret"
-		Brig
-		"D41-HY Shield Generator"
-		Hyperdrive
-		"LP072a Battery Pack"
-		"Laser Rifle" 3
-		"Liquid Nitrogen Cooler"
-		"Meteor Missile" 90
-		"Meteor Missile Box" 2
-		"Meteor Missile Launcher" 2
-		"Modified D41-HY Shielding"
-		"Modified RT-I Radiothermal"
-		"Turbo Blaster Turret"
-		"Twin Turbo Blaster" 2
-		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
-	gun "Twin Turbo Blaster"
-	gun "Twin Turbo Blaster"
-	gun "Meteor Missile Launcher"
-	gun "Meteor Missile Launcher"
-	turret "Turbo Blaster Turret"
-	turret "Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Turbo Stinger)"
-	outfits
-		"Anti-Missile Turret"
-		Brig
-		Hyperdrive
-		"LP072a Battery Pack"
-		"Laser Rifle" 3
-		"Liquid Nitrogen Cooler"
-		"Modified D41-HY Shielding"
-		"Modified RT-I Radiothermal"
-		"Stinger Missile" 90
-		"Stinger Missile Launcher" 2
-		"Stinger Missile Rack" 2
-		"Turbo Blaster Turret"
-		"Twin Turbo Blaster" 2
-		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
-	gun "Twin Turbo Blaster"
-	gun "Twin Turbo Blaster"
-	gun "Stinger Missile Launcher"
-	gun "Stinger Missile Launcher"
-	turret "Turbo Blaster Turret"
-	turret "Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Quad Mod Blaster)"
-	outfits
-		"Modified Blaster" 4
-		"Quad Mod Blaster Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP072a Battery Pack"
-		"LP036a Battery Pack"
-		"Modified D67-TM Shielding"
-		"Liquid Nitrogen Cooler"
-		"Brig"
-		"Laser Rifle" 3
-		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
-		"Hyperdrive"
-	turret "Quad Mod Blaster Turret"
-	turret "Heavy Anti-Missile Turret"
-
-ship "Modified Argosy" "Modified Argosy (Twin Torpedo Pod)"
-	outfits
-		Brig
-		"Greyhound Plasma Steering"
-		"Heavy Anti-Missile Turret"
-		Hyperdrive
-		"LP072a Battery Pack"
-		"Laser Rifle"
-		"Meteor Missile" 74
-		"Meteor Missile Box" 4
-		"Meteor Missile Pod" 2
-		"Modified Blaster Turret"
-		"Modified D41-HY Shielding"
-		"Modified RT-I Radiothermal"
-		"Outfits Expansion"
-		Torpedo 87
-		"Torpedo Storage Rack" 5
-		"Twin Torpedo Pod" 2
-		"Water Coolant System"
-		"X3700 Ion Thruster"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	gun "Twin Torpedo Pod"
-	gun "Twin Torpedo Pod"
-	turret "Modified Blaster Turret"
-	turret "Heavy Anti-Missile Turret"
-
-
-
-# Based on vanilla "Modified Dromedary Wreck"
-ship "Modified Dromedary" "Modified Dromedary (Metro)"
-	"crew" 300
-	outfits
-		"Laser Turret" 2
-		"Quad Mod Blaster Turret"
-		"Anti-Missile Turret" 2
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"Modified D94-YV Shielding"
-		"Large Radar Jammer"
-		Ramscoop
-		"Laser Rifle" 150
-		"X4700 Ion Thruster"
-		"X5200 Ion Steering"
-		Hyperdrive
-		"Twin Meteor Launcher" 4
-		"Meteor Missile" 240
-		"KP-6 Photovoltaic Array"
-		"Modified D41-HY Shielding"
-		"Modified D67-TM Shielding"
-		"Asteroid Scanner"
-		"Broadband Amplifier"
-		"Cargo Scanner"
-		"Engineering Room"
-		"Outfit Scanner"
-		"Outfits Expansion" 3
-		"Small Radar Jammer" 2
-		"Tactical Scanner"
-		"Antique Rifle"
-		"Blaster Pistol" 2
-		"DFN-53 Android" 5
-		"Fragmentation Grenades" 75
-		"Medical Bay"
-		"Security Station (Staffed)" 2
-		"Volcano Afterburner"
-	gun "Twin Meteor Launcher"
-	gun "Twin Meteor Launcher"
-	gun "Twin Meteor Launcher"
-	gun "Twin Meteor Launcher"
-	turret "Laser Turret"
-	turret "Anti-Missile Turret"
-	turret "Quad Mod Blaster Turret"
-	turret "Laser Turret"
-	turret "Anti-Missile Turret"
 
 
 
@@ -4404,6 +4156,38 @@ ship "Outrider" "Outrider (Turbo Blaster)"
 
 
 
+ship "Palisade" "Palisade (Hijacked)"
+	"crew" 42
+	outfits
+		"Anti-Missile Turret" 3
+		"nGVF-CC Fuel Cell"
+		"KP-6 Photovoltaic Array"
+		"LP036a Battery Pack"
+		"D41-HY Shield Generator"
+		"Small Radar Jammer"
+		"Laser Rifle" 41
+		"Sniper Rifle"
+		"X1100 Ion Reverse Thruster"
+		"X2700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+
+
+
+ship "Parapet" "Parapet (Spotlight)"
+	outfits
+		"Search Light"
+		"nGVF-CC Fuel Cell"
+		"KP-6 Photovoltaic Array"
+		"LP036a Battery Pack"
+		"D41-HY Shield Generator"
+		"Small Radar Jammer"
+		"X2700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+
+
+
 ship "Patrolboat" "Patrolboat (Turbo Blaster)"
 	outfits
 		Brig
@@ -4431,11 +4215,12 @@ ship "Patrolboat" "Patrolboat (Turbo Blaster)"
 
 ship "Pirate Drone" "Pirate Drone (Modified)"
 	outfits
-		"Supercapacitor"
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
 		"Modified Blaster"
 		"nGVF-AA Fuel Cell"
+		"Supercapacitor"
+		"Cargo Scanner"
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
 
 
 
@@ -4840,6 +4625,19 @@ ship "Saber" "Saber (Turbo Blaster)"
 	gun "Meteor Missile Launcher"
 
 
+ship "Science Drone" "Science Drone (Derelict Supercapacitor)"
+	"uncapturable"
+	add attributes
+		"outfit space" 2
+	outfits
+		Supercapacitor
+
+ship "Science Drone" "Science Drone (Derelict Photovoltaic)"
+	"uncapturable"
+	add attributes
+		"outfit space" 2
+	outfits
+		"KP-6 Photovoltaic Panel"
 
 ship "Scout" "Scout (Bounty Hunter)"
 	outfits
@@ -4872,6 +4670,38 @@ ship "Scout" "Scout (Hai)"
 		Ramscoop
 		"Small Radar Jammer"
 		"Dual Pulse Pistols"
+
+ship "Scout" "Scout (Isochronal)"
+	outfits
+		"A255 Atomic Steering"
+		"A370 Atomic Thruster"
+		"Anti-Missile Turret"
+		Brig
+		"D41-HY Shield Generator"
+		Hyperdrive
+		"Isochronal Laser" 2
+		"Laser Rifle"
+		"NT-200 Nucleovoltaic"
+		"Outfits Expansion" 2
+		Supercapacitor
+		"Tactical Scanner"
+		"Water Coolant System"
+
+ship "Scout" "Scout (Spotlight)"
+	outfits
+		"Spotlight" 2
+		"Search Light"
+		"nGVF-CC Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"Small Radar Jammer"
+		"Cargo Scanner" 2
+		"Outfit Scanner" 2
+		"Ramscoop"
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+
 
 ship "Scout" "Scout (Turbo Blaster)"
 	outfits
@@ -4907,6 +4737,7 @@ ship "Scrapper" "Scrapper (Kludge Blaster)"
 	outfits
 		Hyperdrive
 		"Modified nGVF-AA Fuel Cell"
+		"Supercapacitor"
 		"Twin Kludge Blaster"
 		"X2200 Ion Steering"
 		"X2700 Ion Thruster"
@@ -4916,6 +4747,15 @@ ship "Scrapper" "Scrapper (Mod Shielding)"
 		"Modified Blaster"
 		"Modified nGVF-AA Fuel Cell"
 		"Modified D14-RN Shielding"
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+
+ship "Scrapper" "Scrapper (Spotlight)"
+	outfits
+		"Spotlight"
+		"KP-6 Photovoltaic Panel" 4
+		"LP036a Battery Pack"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
@@ -4946,6 +4786,75 @@ ship "Scrounger" "Scrounger (Tractor)"
 		"Modified D14-RN Shielding"
 		"Modified nGVF-AA Fuel Cell"
 		"Tractor Beam"
+		"X1200 Ion Steering"
+		"X1700 Ion Thruster"
+
+
+
+ship "Shuttle" "Shuttle (Spotlight)"
+	outfits
+		"Spotlight"
+		"nGVF-AA Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"Hyperdrive"
+
+
+
+ship "Shuttle Pod" "Shuttle Pod (Beam Laser)"
+	outfits
+		"Beam Laser"
+		"nGVF-BB Fuel Cell"
+		Supercapacitor
+		"Modified D23-QP Shielding"
+		"Laser Rifle"
+		"X1200 Ion Steering"
+		"X1700 Ion Thruster"
+
+ship "Shuttle Pod" "Shuttle Pod (Passenger)"
+	outfits
+		"Energy Blaster"
+		"KP-6 Photovoltaic Array"
+		Supercapacitor
+		"D14-RN Shield Generator"
+		"Small Radar Jammer"
+		"Bunk Room"
+		"X1700 Ion Thruster"
+		"X1200 Ion Steering"
+
+ship "Shuttle Pod" "Shuttle Pod (Fire Support)"
+	outfits
+		"Meteor Missile Pod"
+		"Meteor Missile Box"
+		"Meteor Missile" 22
+		"KP-6 Photovoltaic Array"
+		Supercapacitor
+		"D23-QP Shield Generator"
+		"Large Radar Jammer"
+		"Laser Rifle"
+		"X1200 Ion Steering"
+		"X1700 Ion Thruster"
+
+ship "Shuttle Pod" "Shuttle Pod (Pirate)"
+	outfits
+		"Twin Blaster"
+		"KP-6 Photovoltaic Array"
+		Supercapacitor
+		"Modified D23-QP Shielding"
+		"Limit Breaker"
+		"Laser Rifle"
+		"Chipmunk Plasma Thruster"
+		"Chipmunk Plasma Steering"
+
+ship "Shuttle Pod" "Shuttle Pod (Turbo Blaster)"
+	outfits
+		"Turbo Blaster"
+		"nGVF-BB Fuel Cell"
+		Supercapacitor
+		"Modified D23-QP Shielding"
+		"Laser Rifle"
 		"X1200 Ion Steering"
 		"X1700 Ion Thruster"
 
@@ -5056,6 +4965,7 @@ ship "Sparrow" "Sparrow (Gatling Limit Break)"
 ship "Sparrow" "Sparrow (Modified Blaster)"
 	outfits
 		"Modified Blaster" 2
+		"Spotlight" 2
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
@@ -5065,8 +4975,8 @@ ship "Sparrow" "Sparrow (Modified Blaster)"
 		"Hyperdrive"
 	gun "Modified Blaster"
 	gun "Modified Blaster"
-	gun 
-	gun 
+	gun "Spotlight"
+	gun "Spotlight"
 
 ship "Sparrow" "Sparrow (Isochronal)"
 	outfits
@@ -5198,63 +5108,6 @@ ship "Splinter" "Splinter (Quad Mod Blaster)"
 
 
 
-ship "Shuttle Pod" "Shuttle Pod (Beam Laser)"
-	outfits
-		"Beam Laser"
-		"nGVF-BB Fuel Cell"
-		Supercapacitor
-		"Modified D23-QP Shielding"
-		"Laser Rifle"
-		"X1200 Ion Steering"
-		"X1700 Ion Thruster"
-
-ship "Shuttle Pod" "Shuttle Pod (Passenger)"
-	outfits
-		"Energy Blaster"
-		"KP-6 Photovoltaic Array"
-		Supercapacitor
-		"D14-RN Shield Generator"
-		"Small Radar Jammer"
-		"Bunk Room"
-		"X1700 Ion Thruster"
-		"X1200 Ion Steering"
-
-ship "Shuttle Pod" "Shuttle Pod (Fire Support)"
-	outfits
-		"Meteor Missile Pod"
-		"Meteor Missile Box"
-		"Meteor Missile" 22
-		"KP-6 Photovoltaic Array"
-		Supercapacitor
-		"D23-QP Shield Generator"
-		"Large Radar Jammer"
-		"Laser Rifle"
-		"X1200 Ion Steering"
-		"X1700 Ion Thruster"
-
-ship "Shuttle Pod" "Shuttle Pod (Pirate)"
-	outfits
-		"Twin Modified Blaster"
-		"KP-6 Photovoltaic Array"
-		Supercapacitor
-		"Modified D23-QP Shielding"
-		"Limit Breaker"
-		"Laser Rifle"
-		"Chipmunk Plasma Thruster"
-		"Chipmunk Plasma Steering"
-
-ship "Shuttle Pod" "Shuttle Pod (Turbo Blaster)"
-	outfits
-		"Turbo Blaster"
-		"nGVF-BB Fuel Cell"
-		Supercapacitor
-		"Modified D23-QP Shielding"
-		"Laser Rifle"
-		"X1200 Ion Steering"
-		"X1700 Ion Thruster"
-
-
-
 ship "Starbus" "Starbus (Meteor)"
 	outfits
 		"Anti-Missile Turret" 2
@@ -5281,6 +5134,19 @@ ship "Starbus" "Starbus (Javelin)"
 		"Small Radar Jammer"
 		"nGVF-AA Fuel Cell"
 		"Laser Rifle"
+
+ship "Starbus" "Starbus (Spotlight)"
+	outfits
+		"Spotlight" 2
+		"Search Light" 2
+		"nGVF-AA Fuel Cell"
+		"LP036a Battery Pack"
+		"D14-RN Shield Generator"
+		"Small Radar Jammer" 2
+		"Greyhound Plasma Thruster"
+		"Greyhound Plasma Steering"
+		"Hyperdrive"
+
 
 ship "Starbus" "Starbus (Troops)"
 	"crew" 18
@@ -5320,7 +5186,7 @@ ship "Star Explorer" "Star Explorer (Biohazard)"
 		"Tactical Scanner"
 		"Medical Bay"
 		"Purger Rifle" 75
-		Afterburner
+		"Volcano Afterburner"
 		"AR120 Reverse Thruster"
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
@@ -5351,7 +5217,7 @@ ship "Star Explorer" "Star Explorer (Hai)"
 		Ramscoop
 		"Tactical Scanner"
 		"Pulse Rifle" 75
-		Afterburner
+		"Volcano Afterburner"
 		`"Biroo" Atomic Thruster`
 		"A375 Atomic Steering"
 		"AR120 Reverse Thruster"
@@ -5380,7 +5246,7 @@ ship "Star Explorer" "Star Explorer (Jump)"
 		"Tactical Scanner"
 		"Medical Bay"
 		"Laser Rifle" 60
-		Afterburner
+		"Volcano Afterburner"
 		"AR120 Reverse Thruster"
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
@@ -5412,7 +5278,7 @@ ship "Star Explorer" "Star Explorer (Korath)"
 		"Medical Bay"
 		"Laser Rifle" 60
 		"Thermal Repeater Rifle" 60
-		Afterburner
+		"Volcano Afterburner"
 		"AR120 Reverse Thruster"
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
@@ -5442,7 +5308,7 @@ ship "Star Explorer" "Star Explorer (Pirate)"
 		"Medical Bay"
 		"Laser Rifle" 60
 		"Fragmentation Grenades" 15
-		Afterburner
+		"Volcano Afterburner"
 		"AR120 Reverse Thruster"
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
@@ -5451,6 +5317,41 @@ ship "Star Explorer" "Star Explorer (Pirate)"
 ship "Star Explorer" "Star Explorer (Transport)"
 	"crew" 165
 
+
+
+ship "Star King" "Star King (Hijacked)"
+	"crew" 169
+	outfits
+		"Heavy Anti-Missile Turret" 4
+		"Sidewinder Missile Launcher"
+		"Sidewinder Missile" 45
+		"KP-6 Photovoltaic Array" 6
+		"LP036a Battery Pack"
+		"D94-YV Shield Generator"
+		"Luxury Accommodations"
+		"Small Radar Jammer" 5
+		"Laser Rifle" 168
+		"Sniper Rifle"
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+
+ship "Star King" "Star King (Hai Engines)"
+	outfits
+		"Heavy Anti-Missile Turret" 4
+		"KP-6 Photovoltaic Array" 6
+		"LP036a Battery Pack"
+		"D94-YV Shield Generator"
+		"Hai Corundum Regenerator"
+		"Hai Cuttlefish Jammer"
+		"Luxury Accommodations"
+		"Quantum Keystone"
+		Ramscoop
+		"Small Radar Jammer" 3
+		`"Biroo" Atomic Steering`
+		`"Biroo" Atomic Thruster`
+		"AR120 Reverse Thruster"
+		Hyperdrive
 
 
 
@@ -5507,7 +5408,6 @@ ship "Starcadia" "Starcadia (Prototype)"
 		Ramscoop
 		"Security Station" 2
 		"Small Radar Jammer" 3
-		"Test Drive"
 		"Tri Laser Turret" 6
 		"Water Coolant System"
 		"X1100 Ion Reverse Thruster"
@@ -5573,22 +5473,23 @@ ship "Stingray" "Stingray (Limit Breaker)"
 
 ship "Stingray" "Stingray (Miner)"
 	outfits
+		"Asteroid Scanner"
 		"Blaster Pistol"
 		"Cargo Expansion"
 		"D14-RN Shield Generator"
 		Hyperdrive
-		"KP-6 Photovoltaic Panel" 3
-		"Kludge Blaster" 2
+		"KP-6 Photovoltaic Panel" 4
 		"LP036a Battery Pack"
-		"Particle Cannon"
+		"Mining Laser" 2
 		"Small Radar Jammer"
+		Spotlight
 		"Volcano Afterburner"
 		"X2200 Ion Steering"
 		"X2700 Ion Thruster"
 		"nGVF-BB Fuel Cell"
-	gun "Particle Cannon"
-	gun "Kludge Blaster"
-	gun "Kludge Blaster"
+	gun Spotlight
+	gun "Mining Laser"
+	gun "Mining Laser"
 
 ship "Stingray" "Stingray (Modified Blaster)"
 	outfits
@@ -5886,6 +5787,17 @@ ship "Quicksilver" "Quicksilver (Korath)"
 		"Thermal Repeater Rifle"
 		"Thruster (Asteroid Class)" 2
 
+ship "Quicksilver" "Quicksilver (Plasma)"
+	outfits
+		"Particle Cannon" 2
+		"nGVF-DD Fuel Cell"
+		"LP036a Battery Pack"
+		"Water Coolant System"
+		"Capybara Reverse Thruster"
+		"Greyhound Plasma Thruster"
+		"Greyhound Plasma Steering"
+		"Hyperdrive"
+
 
 
 ship "Vanguard" "Vanguard (Inferno Rockets)"
@@ -6055,13 +5967,19 @@ ship "Wasp" "Wasp (Kludge Blaster)"
 	outfits
 		"D14-RN Shield Generator"
 		Hyperdrive
-		"Kludge Blaster" 5
+		"Kludge Blaster" 4
 		"LP036a Battery Pack"
 		"Small Radar Jammer"
+		"Spotlight"
 		"Blaster Pistol"
 		"X2200 Ion Steering"
 		"X2700 Ion Thruster"
 		"nGVF-BB Fuel Cell"
+	gun "Spotlight"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
 
 ship "Wasp" "Wasp (Korath)"
 	outfits
@@ -6085,8 +6003,9 @@ ship "Wasp" "Wasp (Korath)"
 ship "Wasp" "Wasp (Limit Break)"
 	outfits
 		"Energy Blaster" 2
-		"Sidewinder Missile Pod"
-		"Sidewinder Missile" 4
+		"Spotlight"
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile" 12
 		"nGVF-BB Fuel Cell"
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
@@ -6096,11 +6015,11 @@ ship "Wasp" "Wasp (Limit Break)"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
+	gun "Spotlight"
+	gun "Energy Blaster"
+	gun "Energy Blaster"
 	gun "Sidewinder Missile Pod"
-	gun "Energy Blaster"
-	gun "Energy Blaster"
-	gun 
-	gun 
+	gun "Sidewinder Missile Pod"
 
 ship "Wasp" "Wasp (Miner)"
 	outfits

@@ -13,6 +13,8 @@
 
 person "Lure"
 	government "Indigenous Lifeform"
+	system
+		attributes "core"
 	frequency 100
 	personality
 		timid mute uninterested unconstrained
@@ -41,16 +43,20 @@ person "Lure"
 
 person "Gray Eye"
 	government "Indigenous Lifeform"
+	system
+		attributes "core"
 	frequency 100
 	personality
 		timid uninterested mining harvests mute unconstrained
-	ship "Gray Eye" "Gray Eye"
+	ship "Gray Eye" "Gray Eyed"
 		"never disabled"
 
 
 
 person "Old Crusty"
 	government "Indigenous Lifeform"
+	system
+		attributes "rim"
 	frequency 100
 	personality
 		timid uninterested mining harvests mute unconstrained
@@ -73,6 +79,8 @@ ship "Astero Nautilus" "Elder Astero Nautilus"
 
 person "Night Light"
 	government "Swarming Lifeform"
+	system
+		attributes "ccor" "rim" "south"
 	frequency 100
 	personality
 		swarming harvests mute unconstrained
@@ -83,6 +91,8 @@ person "Night Light"
 
 person "Sea of Stars"
 	government "Swarming Lifeform"
+	system
+		attributes "ccor" "rim" "south"
 	frequency 100
 	personality
 		swarming harvests mute unconstrained
@@ -139,6 +149,8 @@ person "Sea of Stars"
 
 person "Serial No. 0000013"
 	government "Indigenous Lifeform"
+	system
+		attributes "dirt belt"
 	frequency 100
 	personality
 		timid uninterested mining harvests unconstrained
@@ -152,6 +164,8 @@ person "Serial No. 0000013"
 
 person "Midnight Candle"
 	government "Invasive Lifeform (Passive)"
+	system
+		attributes "dirt belt"
 	frequency 100
 	personality disables mining harvests unconstrained mute
 	ship "Nova Firefly" "Midnight Candle"
@@ -164,6 +178,18 @@ person "Silent Observer"
 	frequency 100
 	personality surveillance opportunistic mute
 	ship "Star Gazer" "Silent Observer"
+		"never disabled"
+
+
+
+person "Lurker in Darkness"
+	government "Indigenous Lifeform"
+	system
+		attributes "umbral reach"
+	frequency 100
+	personality
+		timid mute uninterested unconstrained marked
+	ship "Corpse Trickster" "Lurker in Darkness"
 		"never disabled"
 
 
@@ -544,6 +570,7 @@ person "Midnight Predator"
 			"a Firefly Specimen"
 			"a Gazer Specimen"
 			"a Gray Eye Specimen"
+			"a Hai Nutcracker"
 			"a Leech Specimen"
 			"a Luminazoa Specimen"
 			"a Microwave Cannon"
@@ -592,6 +619,7 @@ person "Midnight Predator"
 			"Kwish."
 			"Quoosh."
 			"Kwoosh."
+			"Kuwash."
 	phrase
 		word
 			"When capturing enemy ships "
@@ -688,7 +716,11 @@ person "Midnight Predator"
 			"Genesis Thermionics"
 			"Gnome Cores"
 			"H6 Refrigeration Modules"
+			"Hai Heliotrope Regenerators"
+			"Hai Mistral Cooling"
+			"Hai Nutcrackers"
 			"Heavy Fusion Cores"
+			"Heavy Pulse Cannons"
 			"High Calibur Guns"
 			"Hybrid Afterburners"
 			"Hydrogen Collectors"
@@ -699,9 +731,11 @@ person "Midnight Predator"
 			"Infiltrator Tech"
 			"Modified Inhibitor"
 			"Ion Pulse Cannons"
+			"Ion Pulse Turrets"
 			"Isochronal Lasers"
 			"Kahet Scanners"
 			"Kludge Blasters"
+			"Komodo Anti-Missiles"
 			"Korath Eliminators"
 			"Korath Fireswarms"
 			"Korath Grapplers"
@@ -713,6 +747,8 @@ person "Midnight Predator"
 			"Lightning Tendrils"
 			"Liquid Metal Hulls"
 			"Medical Bays"
+			"Medium EM Batteries"
+			"Medium Hybrid Coolings"
 			"Meteor Class Afterburners"
 			"Microbot Fabricators"
 			"Modified D14-RN Shielding"
@@ -736,6 +772,8 @@ person "Midnight Predator"
 			"Prototype Anti-Missile"
 			"Prototype D122-ZX Shielding"
 			"Prototype T88-AO Shielding"
+			"Pulse Repeaters"
+			"Pulse Repeater Turrets"
 			"Pug Afterburners"
 			"Pug Akcorlo Engines"
 			"Pug Dual Seekers"
@@ -745,10 +783,12 @@ person "Midnight Predator"
 			"Pug Shield Supplementer"
 			"Pug Shield Reinforcer"
 			"Pug Thunder Seekers"
+			"Pulse Repeaters"
 			"QT-800 Nucleovoltaics"
 			"Quad Mod Blaster Turrets"
 			"Quarg Skytridents"
 			"Quill Launchers"
+			"Reactor Drives"
 			"Rusty Asteroid Scanners"
 			"Scavenger Turrets"
 			"Security Circuits"
@@ -806,10 +846,12 @@ person "Midnight Predator"
 			"I'm not sure what to do with the "
 		word
 			"Alien Artifact "
+			"Ancient Pictograph "
 			"Balthazar Model "
 			"Blaster Charger "
 			"Builder IFF Transmitter "
 			"Celestial Compass "
+			"Crystal Key "
 			"Drone Hacking "
 			"Earth Artifact "
 			"Fossil "
@@ -880,6 +922,7 @@ person "Midnight Predator"
 			"Heavy Freighter"
 			"Heavy Hauler"
 			"Hipparion"
+			"Hoseshoe Crab"
 			"Infiltrator"
 			"Ikatila'ej Eldar"
 			"Kestrel Prototype"
@@ -930,6 +973,7 @@ person "Midnight Predator"
 			"Modified Roost"
 			"Modified Quicksilver"
 			"Modified Saber"
+			"Modified Star Barge"
 			"Ogopogo"
 			"Ool'mar"
 			"Outrider"
@@ -992,6 +1036,7 @@ person "Midnight Predator"
 			"Veliante'ixis"
 			"Vindicator"
 			"War Hauler"
+			"Water Scorpion"
 			"Wretched Hive"
 		word
 			" is a ship I recently added to my collection!"
@@ -1035,6 +1080,7 @@ ship "Korath Devourer" "Korath Predator"
 		"Execution Chamber"
 		"Fossil"
 		"Fragmentation Grenades"
+		"Fuel Canister (Reinforced)"
 		"Fuel Pod (Reinforced)"
 		"Fuel Processor"
 		"Guncraft"
@@ -1049,6 +1095,7 @@ ship "Korath Devourer" "Korath Predator"
 		"Korath Incinerator"
 		"Korath Scanner"
 		"Korath Sentinel"
+		"Krypton"
 		"Large Heat Shunt"
 		"Laser Rifle"
 		"Lasher Pistol"
@@ -1057,15 +1104,18 @@ ship "Korath Devourer" "Korath Predator"
 		"Microbot Defense Station"
 		"Mysterious Treasure"
 		"Nerve Gas"
-		"Outfits Expansion"
+		"Outfits Expansion" 3
 		"Plasma Grenades"
 		"Plasmasickle"
+		"Popcorn Box"
 		"Pug Biodefenses"
 		"Pug Peacekeeping Staff"
 		"Pulse Rifle"
 		"Purger Rifle"
 		"Pyrite"
 		"Quantumium"
+		"Radon"
+		"Reverser (Comet Class)"
 		"Riot Containment Barrier"
 		"Saryd Light Lance"
 		"Savagery Pike"
@@ -1085,15 +1135,16 @@ ship "Korath Devourer" "Korath Predator"
 		"Triple Plasma Core"
 		"Tuning Rifle"
 		"Warder Anti-Missile" 3
+		"Xenon"
 	turret "Scavenger Turret"
 	turret "Shield Disruptor Turret"
 	turret "Husk-Slice Turret"
 	turret "Shock-Strike Turret"
 	turret "Shock-Strike Turret"
-	turret "Digger Mining Turret"
-	turret "Warder Anti-Missile"
 	turret "Warder Anti-Missile"
 	turret "Digger Mining Turret"
+	turret "Digger Mining Turret"
+	turret "Warder Anti-Missile"
 	turret "Warder Anti-Missile"
 
 outfit "Hackerz Plugin Omega"
@@ -1127,4 +1178,13 @@ outfit "Hackerz Plugin Sigma"
 	"unique" 1
 	description "Installing this onto a ship disables its spinal mount. Why anyone would do this is unknown."
 	description "	This cannot be installed onto a ship that doesn't have a spinal mount or if something is already installed in its spinal mount."
+
+outfit "Popcorn Box"
+	category "Unique"
+	thumbnail "outfit/popcorn box"
+	"unplunderable" 1
+	"unique" 1
+	"butter and salt" 1
+	description "A box filled with golden buttery popcorn to enjoy while watching a story unfold."
+	description "	Certain rare missions are more likely to trigger while this is installed on your flagship."
 

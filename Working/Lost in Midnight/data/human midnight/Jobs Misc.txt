@@ -87,11 +87,6 @@ mission "Bounty Hunting: Jabberwocky"
 
 
 
-ship "Firebird" "Firebird Test Dummy"
-	add attributes
-		"automaton" 1
-		"self destruct" 1
-
 mission "Engineering Room: Prototype Test 1"
 	name "Prototype Test"
 	job
@@ -418,6 +413,9 @@ mission "Executive Guard: Syndicated Systems"
 				"Manta (Proton)" 4
 				"Quicksilver (Proton)" 5
 				"Wasp (Proton)" 5
+				"Palisade" 2
+				"Rampart" 4
+				"Parapet" 6
 
 	npc
 		government "Syndicate"
@@ -511,6 +509,9 @@ mission "Executive Guard: Syndicated Shipyards"
 				"Manta (Proton)" 4
 				"Quicksilver (Proton)" 5
 				"Wasp (Proton)" 5
+				"Palisade" 2
+				"Rampart" 4
+				"Parapet" 6
 	npc
 		government "Syndicate"
 		system Markab
@@ -612,21 +613,21 @@ mission "Holiday: Saint Nick"
 		ship "Fury (Bomber)" "Bah Humbug"
 	npc
 		to spawn
-			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" > 1
+			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 1
 		government "Pirate"
 		system destination
 		personality waiting staying plunders harvests
 		ship "Marauder Falcon (Weapons)" "Krampus"
 	npc
 		to spawn
-			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" > 2
+			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 2
 		government "Pirate"
 		system destination
 		personality waiting staying plunders harvests
 		ship "Marauder Leviathan (Weapons)" "Scrooge"
 	npc
 		to spawn
-			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" > 3
+			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 3
 		government "Pirate"
 		system destination
 		personality waiting staying plunders harvests
@@ -1142,9 +1143,15 @@ mission "Hijacked Escort"
 		fleet
 			names "civilian"
 			variant 1
-				"Bactrian (Hijacked)"
+				"Star King (Hijacked)"
 			variant 2
+				"Bactrian (Hijacked)"
+			variant 4
 				"Star Queen (Hijacked)"
+			variant 6
+				"Hogshead (Hijacked)"
+			variant 8
+				"Palisade (Hijacked)"
 		dialog `You've taken control of the <npc> from the hijackers. Bring the rescued passengers to <destination>.`
 	on abort
 		"reputation: Bounty (Disguised)" >?= 1
@@ -1158,7 +1165,8 @@ mission "Hijacked Escort"
 		dialog `The <npc> is still under the control of hijackers. Retake the ship to rescue the passengers!`
 	on complete
 		"reputation: Bounty (Disguised)" >?= 1
-		payment 300000
+		payment
+		payment 150000
 		dialog `While it is unfortunate that the crew of the <npc> died, the passengers are grateful for your efforts to rescue and transport them to <planet>. With the bonus pay they offer, your reward for this job comes to <payment>.`
 
 
@@ -1434,6 +1442,206 @@ mission "Midnight Cargo Trap (South) [Kludge]"
 		outfit "Secret Cargo" -1
 		payment 1500000
 		dialog "The pirates of <planet> take the secret cargo from your cargo hold and pay you <payment>."
+
+
+
+mission "Midnight: Search For Survivors (Free Worlds)"
+	job
+	repeat
+	deadline 7
+	name "Search For Survivors"
+	description "The <npc> was destroyed in the <system> system. The Free Worlds is asking for volunteers with at least <bunks> bunks available to help in the search for survivors. The search will end on <date>."
+	passengers 4 15
+	source
+		government "Free Worlds"
+		attributes "spaceport"
+		not attributes "uninhabited"
+	destination
+		government "Free Worlds"
+		not attributes "uninhabited" "station"
+		distance 3 4
+	to offer
+		"reputation: Free Worlds" >= 1
+		random < 5
+	npc
+		government "Merchant"
+		system destination
+		personality waiting staying mining marked
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Blackbird (Spotlight)"
+				"Shuttle (Spotlight)"
+				"Starbus (Spotlight)"
+			variant
+				"Blackbird (Spotlight)"
+				"Shuttle (Spotlight)" 2
+			variant
+				"Shuttle (Spotlight)" 2
+				"Starbus (Spotlight)"
+	npc disable
+		government "Test Dummy"
+		system destination
+		personality waiting staying unconstrained heroic nemesis
+		fleet
+			names "free worlds capital"
+			cargo 0
+			variant
+				"Phantom Drone Timer"
+		on disable
+			dialog "After several hours spent searching the system, you've located several escape pods with survivors from the <npc>. After checking in with the Free Worlds, they ask that these survivors be transported to <planet> for medical attention."
+	on visit
+		dialog "The search for survivors from the <npc> is ongoing..."
+	on complete
+		payment 4000
+		payment
+		"reputation: Free Worlds" += 2
+		dialog "The Free Worlds appreciates your assistance with this rescue operation. The surviving passengers and crew from the <npc> thank you for their rescue. A few of them hastily pool together <payment> in gratitude."
+
+mission "Midnight: Search For Survivors (Republic)"
+	job
+	repeat
+	deadline 7
+	name "Search For Survivors"
+	description "The <npc> was destroyed in the <system> system. The Free Worlds is asking for volunteers with at least <bunks> bunks available to help in the search for survivors. The search will end on <date>."
+	passengers 4 15
+	source
+		government "Republic"
+		attributes "spaceport"
+		not attributes "uninhabited"
+	destination
+		government "Republic"
+		not attributes "uninhabited" "station"
+		distance 3 4
+	to offer
+		"reputation: Republic" >= 1
+		random < 5
+	npc
+		government "Merchant"
+		system destination
+		personality waiting staying mining marked
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Heavy Shuttle (Spotlight)"
+				"Scout (Spotlight)"
+				"Shuttle (Spotlight)"
+			variant
+				"Shuttle (Spotlight)" 2
+				"Heavy Shuttle (Spotlight)"
+			variant
+				"Scout (Spotlight)"
+				"Shuttle (Spotlight)" 2
+	npc disable
+		government "Test Dummy"
+		system destination
+		personality waiting staying unconstrained heroic nemesis
+		fleet
+			names "republic capital"
+			cargo 0
+			variant
+				"Phantom Drone Timer"
+		on disable
+			dialog "After several hours spent searching the system, you've located several escape pods with survivors from the <npc>. After checking in with the Republic, they ask that these survivors be transported to <planet> for medical attention."
+	on visit
+		dialog "The search for survivors from the <npc> is ongoing..."
+	on complete
+		payment 4000
+		payment
+		"reputation: Republic" += 2
+		dialog "The Republic appreciates your assistance with this rescue operation. The surviving passengers and crew from the <npc> thank you for their rescue. A few of them hastily pool together <payment> in gratitude."
+
+mission "Midnight: Search For Survivors (Syndicate)"
+	job
+	repeat
+	deadline 7
+	name "Search For Survivors"
+	description "The <npc> was destroyed in the <system> system. The Free Worlds is asking for volunteers with at least <bunks> bunks available to help in the search for survivors. The search will end on <date>."
+	passengers 4 15
+	source
+		government "Syndicate"
+		attributes "spaceport"
+		not attributes "uninhabited"
+	destination
+		government "Syndicate"
+		not attributes "uninhabited" "station"
+		distance 3 4
+	to offer
+		"reputation: Syndicate" >= 1
+		random < 5
+	npc
+		government "Merchant"
+		system destination
+		personality waiting staying mining marked
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Bounder (Spotlight)"
+				"Shuttle (Spotlight)"
+				"Parapet (Spotlight)"
+			variant
+				"Bounder (Spotlight)"
+				"Shuttle (Spotlight)" 2
+			variant
+				"Shuttle (Spotlight)" 2
+				"Parapet (Spotlight)"
+	npc disable
+		government "Test Dummy"
+		system destination
+		personality waiting staying unconstrained heroic nemesis
+		fleet
+			names "syndicate capital"
+			cargo 0
+			variant
+				"Phantom Drone Timer"
+		on disable
+			dialog "After several hours spent searching the system, you've located several escape pods with survivors from the <npc>. After checking in with the Syndicate, they ask that these survivors be transported to <planet> for medical attention."
+	on visit
+		dialog "The search for survivors from the <npc> is ongoing..."
+	on complete
+		payment 5000
+		payment
+		"reputation: Syndicate" ++
+		dialog "The Syndicate appreciates your assistance with this rescue operation. The surviving passengers and crew from the <npc> thank you for their rescue. A few of them hastily pool together <payment> in gratitude."
+
+
+
+mission "Midnight Spaceport Nuisance"
+	job
+	repeat
+	deadline 2
+	name "Spaceport Nuisance"
+	description "An old Scrapper named <npc> has been using a Spotlight to harass pilots arriving and leaving the <origin> spaceport. Disable the ship without destroying it. Payment is 5,000 credits."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
+		attributes "spaceport"
+		not attributes "uninhabited"
+	to offer
+		not "killed spaceport nuisance"
+		"combat rating" < 300
+		"ships: Light Warship" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Superheavy" + "ships: Utility" + "ships: Heavy Freighter" + "Space Liner" + "ships: Superheavy" == 0
+		random < 70
+	npc disable
+		government "Bounty"
+		personality target entering heroic coward marked
+		fleet
+			names "pirate"
+			cargo 0
+			variant
+				"Scrapper (Spotlight)"
+		on disable
+			payment 5000
+			"combat rating" ++
+			dialog "The government of <origin> pays you 10,000 credits for disabling the <npc>. The local authorities will handle the rest."
+			fail
+		on kill
+			set "killed spaceport nuisance"
+			"combat rating" -= 10
+			dialog "The government of <origin> has barred you from accepting any more jobs handling spaceport nuisances due to the destruction of the <npc>."
+			fail
 
 
 
@@ -2604,6 +2812,7 @@ mission "Protection: Heavy"
 		random < 20
 		"ships: Medium Warship" < 5
 		"ships: Heavy Warship" + "ships: Utility" <= 1
+		"ships: Superheavy" == 0
 	on accept
 		payment -125000
 		dialog `You pay the <npc> 125,000 credits to escort your fleet until <date>.`
@@ -2613,6 +2822,9 @@ mission "Protection: Heavy"
 		government "Merchant"
 		personality heroic
 		fleet "Protection Heavy"
+		on provoke
+			"reputation: Merchant" -= 500
+			dialog `The <npc> sends a distress signal to other captains, warning them of your treachery!`
 	to complete
 		never
 
@@ -2629,6 +2841,7 @@ mission "Protection: Medium"
 		"ships: Medium Warship" <= 1
 		not "ships: Heavy Warship"
 		not "ships: Utility"
+		not "ships: Superheavy" 
 	on accept
 		payment -100000
 		dialog `You pay the <npc> 100,000 credits to escort your fleet until <date>.`
@@ -2638,6 +2851,9 @@ mission "Protection: Medium"
 		government "Merchant"
 		personality heroic
 		fleet "Protection Medium"
+		on provoke
+			"reputation: Merchant" -= 250
+			dialog `The <npc> sends a distress signal to other captains, warning them of your treachery!`
 	to complete
 		never
 
@@ -2655,6 +2871,7 @@ mission "Protection: Light"
 		not "ships: Medium Warship"
 		not "ships: Heavy Warship"
 		not "ships: Utility"
+		not "ships: Superheavy" 
 	on accept
 		payment -80000
 		dialog `You pay the <npc> 80,000 credits to escort your fleet until <date>.`
@@ -2664,6 +2881,9 @@ mission "Protection: Light"
 		government "Merchant"
 		personality heroic
 		fleet "Protection Light"
+		on provoke
+			"reputation: Merchant" -= 125
+			dialog `The <npc> sends a distress signal to other captains, warning them of your treachery!`
 	to complete
 		never
 
@@ -2678,14 +2898,17 @@ mission "Protection: Marauder"
 	to offer
 		random < 30
 	on accept
-		payment -100000
-		dialog `You pay the <npc> 100,000 credits to escort your fleet until <date>.`
+		payment -150000
+		dialog `You pay the <npc> 150,000 credits to escort your fleet until <date>.`
 	on fail
 		dialog `The protection contract with <npc> has expired.`
 	npc kill
 		government "Merchant"
 		personality plunders heroic
 		fleet "Marauder Independent"
+		on provoke
+			"reputation: Merchant" -= 1000
+			dialog `The <npc> sends a distress signal to other captains, warning them of your treachery!`
 	to complete
 		never
 
@@ -2702,7 +2925,7 @@ mission "Sketchy Cargo [Geminus]"
 		or
 			"year" < 3014
 			and
-				"year" = 3014
+				"year" == 3014
 				"month" < 6
 		random < 15
 	source
@@ -2729,7 +2952,7 @@ mission "Sketchy Cargo [Martini]"
 		or
 			"year" < 3014
 			and
-				"year" = 3014
+				"year" == 3014
 				"month" < 6
 		random < 15
 	source
@@ -2913,7 +3136,7 @@ mission "Syndicate Uranium Mining [small]"
 		or
 			"year" < 3014
 			and
-				"year" = 3014
+				"year" == 3014
 				"month" < 5
 	on complete
 		"mining jobs done" ++
@@ -2935,7 +3158,7 @@ mission "Syndicate Uranium Mining [medium]"
 		or
 			"year" < 3014
 			and
-				"year" = 3014
+				"year" == 3014
 				"month" < 5
 		random < 2
 	on complete
@@ -2965,7 +3188,7 @@ mission "Syndicate Uranium Mining [large]"
 		or
 			"year" < 3014
 			and
-				"year" = 3014
+				"year" == 3014
 				"month" < 5
 	on complete
 		"mining jobs done" ++

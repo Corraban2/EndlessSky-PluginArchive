@@ -609,6 +609,23 @@ ship "Subsidurial" "Subsidurial Weaponized C"
 		"weapon capacity" 80
 	outfits
 		Mandibles? 3
+		"Modified Blaster Turret" 2
+	gun Mandibles?
+	gun Mandibles?
+	gun Mandibles?
+	turret "Modified Blaster Turret"
+	turret "Modified Blaster Turret"
+
+ship "Subsidurial" "Subsidurial Weaponized D"
+	sprite "ship/subsidurial weaponized"
+	"never disabled"
+	"swizzle" 0
+	add attributes
+		"cargo space" -35
+		"outfit space" 80
+		"weapon capacity" 80
+	outfits
+		Mandibles? 3
 		"Quad Mod Blaster Turret" 2
 	gun Mandibles?
 	gun Mandibles?
@@ -651,6 +668,8 @@ mission "Day of Subsidurius"
 		personality heroic disables
 		fleet "Small Militia"
 	npc evade
+		to spawn
+			"ships: Heavy Freighter" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 1
 		government "Pirate"
 		personality target waiting vindictive coward mute
 			confusion 120
@@ -658,9 +677,50 @@ mission "Day of Subsidurius"
 			names subsidurial
 			cargo 0
 			variant
-				"Subsidurial Weaponized A" 4
-				"Subsidurial Weaponized B" 4
-				"Subsidurial Weaponized C" 8
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized C"
+				"Subsidurial Weaponized D"
+	npc evade
+		to spawn
+			"ships: Heavy Freighter" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 3
+		government "Pirate"
+		personality target waiting vindictive coward mute
+			confusion 120
+		fleet
+			names subsidurial
+			cargo 0
+			variant
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized C"
+				"Subsidurial Weaponized D"
+	npc evade
+		to spawn
+			"ships: Heavy Freighter" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 5
+		government "Pirate"
+		personality target waiting vindictive coward mute
+			confusion 120
+		fleet
+			names subsidurial
+			cargo 0
+			variant
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized C"
+				"Subsidurial Weaponized D"
+	npc evade
+		government "Pirate"
+		personality target waiting vindictive coward mute
+			confusion 120
+		fleet
+			names subsidurial
+			cargo 0
+			variant
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized C"
+				"Subsidurial Weaponized D"
 	npc kill
 		government "Pirate"
 		personality target waiting staying vindictive
@@ -682,7 +742,7 @@ mission "Weaponized Subsidurial Bounty"
 	deadline 14
 	name "Weaponized Subsidurials near <system>"
 	description "The <npc> and its herd of weaponized Subsidurials are attacking merchants near <system>. Destroy it by <day> for payment (<payment>)."
-	"apparent payment" 250000
+	"apparent payment" 150000
 	source
 		government "Free Worlds"
 	to offer
@@ -690,23 +750,27 @@ mission "Weaponized Subsidurial Bounty"
 		random < 5
 	npc
 		government "Bounty"
-		personality target entering harvests mute
+		personality target entering harvests mute coward
 			confusion 120
 		fleet
 			names subsidurial
 			cargo 0
 			variant
-				"Subsidurial Weaponized A" 1
-				"Subsidurial Weaponized B" 2
-				"Subsidurial Weaponized C" 4
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized C"
 			variant
-				"Subsidurial Weaponized A" 2
-				"Subsidurial Weaponized B" 1
-				"Subsidurial Weaponized C" 4
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized D"
 			variant
-				"Subsidurial Weaponized A" 2
-				"Subsidurial Weaponized B" 2
-				"Subsidurial Weaponized C" 3
+				"Subsidurial Weaponized A"
+				"Subsidurial Weaponized C"
+				"Subsidurial Weaponized D"
+			variant
+				"Subsidurial Weaponized B"
+				"Subsidurial Weaponized C"
+				"Subsidurial Weaponized D"
 	npc kill
 		government "Bounty"
 		personality target entering staying vindictive
@@ -714,7 +778,7 @@ mission "Weaponized Subsidurial Bounty"
 		fleet "Poachers"
 		dialog phrase "generic hunted bounty eliminated and payment dialog"
 		on kill
-			payment 250000
+			payment 150000
 			fail
 
 
@@ -1147,10 +1211,10 @@ ship "Subsidurial" "Subsidurial (Infant)"
 		category "Light Freighter"
 		"hull" 5800
 		"automaton" 1
-		"mass" 350
+		"mass" 525
 		"cargo space" 35
-		"drag" 4.1
-		"heat dissipation" .4
+		"drag" 6.15
+		"heat dissipation" .27
 		"fuel capacity" 100
 		"thrust" 6
 		"turn" 450
@@ -1223,10 +1287,10 @@ ship "Subsidurial Titan"
 		category "Heavy Freighter"
 		"hull" 23200
 		"automaton" 1
-		"mass" 1400
+		"mass" 2100
 		"cargo space" 140
-		"drag" 16.4
-		"heat dissipation" 1.6
+		"drag" 24.6
+		"heat dissipation" 1.08
 		"fuel capacity" 200
 		"thrust" 20
 		"turn" 1600

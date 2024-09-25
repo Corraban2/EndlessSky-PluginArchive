@@ -23,9 +23,9 @@ ship "Ancient Raider"
 		"hull" 9000
 		"required crew" 145
 		"bunks" 250
-		"mass" 720
-		"drag" 12
-		"heat dissipation" .5
+		"mass" 1770
+		"drag" 20.4
+		"heat dissipation" .3
 		"fuel capacity" 600
 		"cargo space" 175
 		"outfit space" 721
@@ -41,15 +41,15 @@ ship "Ancient Raider"
 		"Korath Banisher"
 		"Korath Warder"
 		
-		"Triple Plasma Core"
+		"Korath Reactor (Large)"
+		"Korath Generator (Small)"
 		"Systems Core (Medium)"
-		"Large Heat Shunt" 2
-		"Small Heat Shunt"
+		"Korath Heat Shunt (Huge)"
 		"Fuel Processor"
 		"Korath Repeater Rifle" 196
 		
-		"Thruster (Planetary Class)"
-		"Steering (Planetary Class)"
+		"Korath Thruster (Large)"
+		"Korath Steering (Large)"
 		"Jump Drive"
 	
 	engine -20 130
@@ -86,9 +86,9 @@ ship "Kor Explorer"
 		hull 17000
 		"required crew" 100
 		"bunks" 112
-		"mass" 443
-		"drag" 6
-		"heat dissipation" .4
+		"mass" 888
+		"drag" 9
+		"heat dissipation" .3
 		"fuel capacity" 800
 		"cargo space" 528
 		"outfit space" 512
@@ -138,6 +138,28 @@ ship "Kor Explorer"
 	explode "large explosion" 40
 	"final explode" "final explosion large"
 	description `Kor Explorers were originally made to escape the harsh gravitional forces of Sagittarius A*. It is an exploration vessel designed for gathering data and resources.`
+
+
+
+ship "Tubfalet" "Tubfalet (flip)"
+	sprite "ship/tubfalet flip"
+	gun 45 -150 "Fire-Lance"
+	gun 32.5 -1 "Firelight Missile Bank"
+		angle 60
+	gun -32.5 -1 "Firelight Missile Bank"
+		angle 300
+	turret -10 -143 "Grab-Strike Turret"
+	turret 10 -143 "Grab-Strike Turret"
+	turret -36 -141 "Grab-Strike Turret"
+	turret 36 -141 "Grab-Strike Turret"
+	turret 0 41 "Banisher Grav-Turret"
+	turret 0 94 "Warder Anti-Missile"
+	bay "Fighter" -80 151 back
+		"launch effect" "korath internal"
+	bay "Fighter" 80 151 back
+		"launch effect" "korath internal"
+	bay "Fighter" -28.5 145 back
+		"launch effect" "korath internal"
 
 
 

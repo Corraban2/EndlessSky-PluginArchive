@@ -25,14 +25,14 @@ ship "Thermopylae Station"
 	"never disabled"
 	attributes
 		category "Space Station"
-		"cost" 30000000
+		"cost" 40000000
 		"shields" 280000
 		"hull" 240000
 		"required crew" 800
 		"bunks" 1600
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 1000
 		"outfit space" 1500
@@ -132,14 +132,14 @@ ship "Titania Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 600
 		"bunks" 1200
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -231,14 +231,14 @@ ship "Phoenix Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1200
 		"outfit space" 1100
@@ -322,14 +322,14 @@ ship "Triton Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -414,14 +414,14 @@ ship "Fenrir Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -505,14 +505,14 @@ ship "Typhon Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 220000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1200
 		"outfit space" 1100
@@ -594,14 +594,14 @@ ship "Oberon Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 600
 		"bunks" 1200
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -687,14 +687,14 @@ ship "Leviathan Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -784,14 +784,14 @@ ship Alexandria
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 220000
 		"hull" 180000
 		"required crew" 600
 		"bunks" 1600
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 800
 		"cargo space" 800
 		"outfit space" 1200
@@ -881,14 +881,14 @@ ship "Wyvern Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 180000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -974,14 +974,14 @@ ship "Carbuncle Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 180000
 		"required crew" 600
 		"bunks" 1200
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 1000
 		"outfit space" 1200
@@ -1011,7 +1011,7 @@ ship "Carbuncle Station"
 		"Particle Burst Turret" 8
 		"Security Station (Staffed)"
 		"Small Radar Jammer" 10
-		"Swingfire Missile" 429
+		"Swingfire Missile" 432
 		"Swingfire Missile Launcher" 3
 		"Swingfire Missile Pod" 3
 		"Swingfire Missile Rack" 15
@@ -1064,14 +1064,14 @@ ship "Kraken Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 220000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1200
 		"outfit space" 1100
@@ -1170,14 +1170,14 @@ ship "Arachne Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 1000
 		"outfit space" 1200
@@ -1257,14 +1257,14 @@ ship "Muninn Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 240000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 800
 		"outfit space" 1200
@@ -1339,14 +1339,14 @@ ship "Hydra Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 220000
 		"hull" 180000
 		"required crew" 300
 		"bunks" 1200
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 1000
 		"outfit space" 1200
@@ -1426,14 +1426,14 @@ ship "Charon Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 220000
 		"hull" 200000
 		"required crew" 700
 		"bunks" 700
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200
@@ -1509,14 +1509,14 @@ ship "Smuggler's Den"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 220000
 		"hull" 220000
 		"required crew" 700
 		"bunks" 1400
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 1000
 		"outfit space" 1300
@@ -1606,14 +1606,14 @@ ship "Huginn Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 240000
 		"required crew" 700
 		"bunks" 1900
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1000
 		"cargo space" 1000
 		"outfit space" 1200
@@ -1690,14 +1690,14 @@ ship "Charybdis Station"
 	swizzle 0
 	attributes
 		category "Space Station"
-		"cost" 25000000
+		"cost" 35000000
 		"shields" 200000
 		"hull" 200000
 		"required crew" 600
 		"bunks" 1200
-		"mass" 9999
-		"drag" 100
-		"heat dissipation" .4
+		"mass" 14999
+		"drag" 150
+		"heat dissipation" .27
 		"fuel capacity" 1500
 		"cargo space" 1000
 		"outfit space" 1200

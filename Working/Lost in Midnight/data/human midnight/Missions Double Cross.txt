@@ -550,6 +550,40 @@ mission "Protection: Marauder Double Cross"
 
 
 
+# Double cross version of "Independent Refugee"
+mission "Illegal Refugee"
+	name "Passenger to <planet>"
+	repeat
+	description "Help <fare> escape from <origin> to <destination>. Payment is <payment>."
+	minor
+	passengers 1
+	illegal 50000 `Your passenger turns out to be in possession of a forged ID. As he is hauled off to be investigated, you vehemently protest that you know nothing of his shady history. You wind up quite a bit poorer through a combination of fines and bribes (the breakdown remains somewhat unclear).`
+	stealth
+	to offer
+		has "Independent Refugee: done"
+		random < 3 - "rejected illegal jobs"
+	source
+		government "Pirate"
+		not attributes uninhabited
+	destination
+		distance 0 5
+		government "Independent" "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+	on offer
+		dialog phrase "generic refugee offer"
+	on accept
+		"rejected illegal jobs" --
+	on decline
+		"rejected illegal jobs" ++
+	on visit
+		dialog phrase "generic passenger on visit"
+	on complete
+		"getaway driver" ++
+		payment
+		payment 1000
+		dialog phrase "generic refugee dropoff payment"
+
+
+
 mission "Jump Drive Theft 1"
 	landing
 	infiltrating
@@ -666,7 +700,7 @@ mission "Kudgel's Cudgel"
 		distance 2 3
 	to offer
 		combat rating > 400
-		"ships: Heavy Warship" <= 5
+		"ships: Heavy Warship" + "ships: Superheavy" <= 5
 		random < 70 - ( 65 * "randomize Kudgel's Cudgel" )
 	on offer
 		"reputation: Bounty (Disguised)" >?= 1
@@ -962,13 +996,12 @@ mission "Peace Tour 2"
 		payment 1000000
 	npc kill
 		government "Bounty"
-		system
-			distance 2 3
+		system Kugel
 		personality target uninterested fleeing
 		fleet "TMBR Billboard"
 		dialog `You finally stopped the <npc> from distributing nukes across the galaxy. Return to <origin> to collect the bounty.`
 	on complete
-		event "remove nukes of peace" 30
+		event "remove nukes of peace" 180
 		payment 1000000
 		conversation
 			scene "scene/scene-peace bounty"
@@ -1009,16 +1042,10 @@ event "remove nukes of peace"
 		remove fleet NukeSouth
 	system Archipelago
 		remove fleet NukeNorth
-		remove fleet NukeCore
-		remove fleet NukeSouth
 	system Chasm
-		remove fleet NukeNorth
-		remove fleet NukeCore
 		remove fleet NukeSouth
 	system Diyu
-		remove fleet NukeNorth
 		remove fleet NukeCore
-		remove fleet NukeSouth
 
 mission "Midnight Market: Nukes of Peace?"
 	invisible
@@ -1384,7 +1411,7 @@ mission "Pot-o'-honey"
 				"Scout (Hai)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" > 2
+			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 2
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
@@ -1396,7 +1423,7 @@ mission "Pot-o'-honey"
 				"Raven (Hai)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" > 3
+			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 3
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
@@ -1409,7 +1436,7 @@ mission "Pot-o'-honey"
 				"Firebird (Hai Weapons)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" > 4
+			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 4
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
@@ -1420,7 +1447,7 @@ mission "Pot-o'-honey"
 				"Mule (Hai Weapons)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" > 5
+			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 5
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
@@ -1431,7 +1458,7 @@ mission "Pot-o'-honey"
 				"Leviathan (Hai Weapons)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" > 6
+			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 6
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
@@ -1580,6 +1607,7 @@ conversation "microbot defense death"
 	`You park your ship and the docking bay doors open, inviting you in. On the other side the floor of the room is a grate. Below this, a pool of gelatinous sludge glistens, reflecting the bright ceiling lights above. Behind you the door slams shut and a thick cloud of smoke begins filling the room along with a strange buzzing sound. The smoke stings when it touches you and your flesh begins to melt horrifically into a gelatinous goo that filters through the grate into the pool below. Your mind detaches from the shock and you realize that you've been screaming. Although you no longer have ears to listen nor a brain to process the sound, the screaming doesn't stop until the organs that enable you to do so melt away...`
 		die
 
+# lesson learned: the clearance to land is not immediately cancelled when the mission fails
 mission "Thraal: Moreau"
 	landing
 	invisible
@@ -1610,11 +1638,22 @@ mission "Thraal: Moreau"
 				`	"You've got to be kidding!"`
 			scene "planet/station2k"
 			`	Thraal places the cover back on some recently repaired ciruits and says, "Would you like to meet them? I can arrange it." The Korath have been an implacable adversary. This could be a chance to establish peaceful relations with them. Before you respond, Thraal hails Gresku Fodar, the Korath station in this system, and speaks to them in their language. After a short exchange, he smiles at you reassuringly. "They're waiting."`
+			choice
+				`	(Visit Gresku Fodar.)`
+					accept
+				`	(Ignore their invitation.)`
+			action
+				fail "Thraal: Moreau"
+				log "People" "Thraal" `A human who supposedly survived the Korath attack on the Icarus. Thraal claims to get along well with the Korath, but the nature of his relationship with them remains unclear.`
+			`You've decided to ignore Thraal's invitation to meet the Korath. They've proven themselves to be nothing but dangerous and you have little reason to put your trust in Thraal. With no change in their disposition towards you, they will continue on as a hostile foe to be wary of.`
+		on kill
+			set "Thraal killed"
 	on visit
 		conversation "microbot defense death"
 	on complete
 		conversation "microbot defense death"
 
+# This uses accept instead of decline because the player must land on another planet before the clearance to land on Gresku Fodar is cancelled.
 mission "Thraal: Moreau (Cleanup)"
 	landing
 	invisible
@@ -1628,20 +1667,37 @@ mission "Thraal: Moreau (Cleanup)"
 		log "People" "Thraal" `A human who supposedly survived the Korath attack on the Icarus. Thraal claims to get along well with the Korath, but the nature of his relationship with them remains unclear.`
 		conversation
 			scene "planet/station2k"
-			`You decided to ignore Thraal's invitation to meet the Korath. They've proven themselves to be nothing but dangerous and you have little reason to put your trust in Thraal. With no change in their disposition towards you, they will continue on as a hostile foe to be wary of.`
-				decline
+			`You've decided to ignore Thraal's invitation to meet the Korath. They've proven themselves to be nothing but dangerous and you have little reason to put your trust in Thraal. With no change in their disposition towards you, they will continue on as a hostile foe to be wary of.`
+				accept
+	on accept
+		fail
 
+# This exists because the clearance to land on Gresku Fodar is not immediately cancelled after failing the mission that gave that clearance.
+mission "Thrall: Moreau Cleanup Decline"
+	landing
+	invisible
+	source
+		not planet "Gresku Fodar"
+	to offer
+		has "Thraal: Moreau: failed"
+		not "Thraal: Moreau (Cleanup): declined"
+	on offer
+		set "Thraal: Moreau (Cleanup): declined"
+		fail
+
+# This exists because the clearance to land on Gresku Fodar is not immediately cancelled after failing the mission that gave that clearance.
 mission "Thraal: Moreau (Failed)"
 	landing
 	invisible
 	source "Gresku Fodar"
 	to offer
 		has "Thraal: Moreau: failed"
-#		not "Thraal: Moreau (Cleanup): declined"
+		not "Thraal: Moreau (Cleanup): declined"
+		"reputation: Korath" < 0
 	on offer
 		conversation "microbot defense death"
-# This mission still runs even with the cleanup because the station still has clearance after failing the mission.
 
+# This mission is deprecated.
 mission "Thraal: Moreau (Killed)"
 	landing
 	invisible
@@ -1655,7 +1711,7 @@ mission "Thraal: Moreau (Killed)"
 		set "Thraal: Moreau (Failed): offered"
 		set "Thraal: Moreau (Failed): declined"
 		fail
-# This mission is deprecated because the clearance from "Thraal Moreau" remains after the mission is failed.
+
 
 
 mission "Prisoner Bribe Offer (Job)"
@@ -1805,9 +1861,7 @@ mission "Stranded Dirtbelt Saboteur"
 	name "Passenger to <planet>"
 	description "2 freighter crew you found stranded on <origin> have offered a reward of 30,000 credits for transporting them to <destination>."
 	source
-		attributes "uninhabited"
-		attributes "dirt belt"
-		not attributes "outfitter"
+		planet Hope Watcher "Eureka Station" "Cadrelock Rock"
 	destination
 		distance 3 6
 		not attributes "uninhabited"
@@ -1824,14 +1878,14 @@ mission "Stranded Dirtbelt Saboteur"
 				`	(Leave them.)`
 					defer
 			scene "outfit/bunk room"
-			`	The 2 of them thank you and board your ship... But they realize they forgot something and they rush back out. "Go ahead and finish pre-flight preparations. We'll be back aboard when you leave."`
+			`	Both of them thank you and board your ship... But they realize they forgot something and they rush back out. "Go ahead and finish pre-flight preparations. We'll be back aboard when you leave."`
 				accept
 	on accept
 		outfit "Shield Suppressor" 1
 	on enter
 		conversation
 			scene "outfit/shield suppressor"
-			`Something is wrong with your shield generator... You also notice that the 2 passengers who asked to be rescued from <origin> aren't aboard your ship...`
+			`Something is wrong with your shield generator... You also notice that the pair of passengers who asked to be rescued from <origin> aren't aboard your ship...`
 			``
 			`There's large pirate fleet waiting for you... It seems you were set up!`
 	npc evade
@@ -1839,4 +1893,5 @@ mission "Stranded Dirtbelt Saboteur"
 		personality waiting plunders harvests
 			confusion 20
 		fleet "Large Dirt Belt Pirates"
+		fleet "Small Dirt Belt Pirates"
 

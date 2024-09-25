@@ -82,6 +82,7 @@ government "Doomsday Device"
 outfit "Graviton Channeler"
 	category "Turrets"
 	thumbnail outfit/unknown
+	cost 218700
 	"mass" 54
 	"outfit space" -54
 	"weapon capacity" -54
@@ -105,13 +106,14 @@ outfit "Graviton Channeler"
 		"firing heat" 180.8
 		"shield damage" 9
 		"hull damage" 9
-		"firing force" -12
-		"hit force" -12
+		"firing force" -18
+		"hit force" -18
 	description "You have no idea how this works."
 
 outfit "Quantum Paradox Diffusion"
 	category "Turrets"
 	thumbnail outfit/unknown
+	cost 5000000
 	"mass" 500
 	"outfit space" -500
 	"weapon capacity" -500
@@ -135,6 +137,7 @@ outfit "Quantum Paradox Diffusion"
 outfit "Quantum Paradox Inversion"
 	category "System"
 	thumbnail outfit/unknown
+	cost 10530000
 	"mass" 180
 	"outfit space" -180
 	"hull repair rate" 18
@@ -147,19 +150,20 @@ outfit "Quantum Paradox Inversion"
 outfit "Quantum Paradox Propulsion"
 	category "Engines"
 	thumbnail outfit/unknown
+	"cost" 8015000
 	"mass" 270
 	"outfit space" -270
 	"engine capacity" -270
-	"thrust" 270
+	"thrust" 405
 	"thrusting energy" 27
 	"thrusting heat" 27
-	"reverse thrust" 270
+	"reverse thrust" 405
 	"reverse thrusting energy" 27
 	"reverse thrusting heat" 27
-	"turn" 9000
+	"turn" 13500
 	"turning energy" 18
 	"turning heat" 36
-	"afterburner thrust" 360
+	"afterburner thrust" 540
 	"afterburner energy" 36
 	"afterburner heat" 36
 	"afterburner effect" "paradox propulsion"
@@ -179,6 +183,7 @@ effect "paradox propulsion"
 outfit "Imaginary Number Fusion Matrix"
 	category "Power"
 	thumbnail outfit/unknown
+	cost 141500000
 	"mass" 729
 	"outfit space" -729
 	"energy generation" 180
@@ -194,6 +199,7 @@ outfit "Imaginary Number Fusion Matrix"
 outfit "Omni-Directional Photonic Emitter"
 	category "Turrets"
 	thumbnail outfit/unknown
+	cost 36000000
 	"mass" 54
 	"outfit space" -54
 	"weapon capacity" -54
@@ -238,13 +244,14 @@ outfit "Space Differential Stabilizer"
 		"reload" 1
 		"firing energy" 36.6
 		"firing heat" 90
-		"firing force" 6
+		"firing force" 9
 	description "You have no idea how this works."
 
 
 outfit "Zero Division Core"
 	category "Power"
 	thumbnail outfit/unknown
+	cost 7150000
 	"mass" 73
 	"outfit space" -73
 	"energy generation" 90
@@ -268,12 +275,13 @@ ship "Worldcrusher"
 		category "Heavy Warship"
 		licenses
 			Author
+		"cost" 123456789
 		"shields" 999999
 		"hull" 999999
 		"automaton" 1
-		"mass" 9999
-		"drag" 45.0
-		"heat dissipation" 1.8
+		"mass" 14999
+		"drag" 67.5
+		"heat dissipation" 1.215
 		"fuel capacity" 900
 		"cargo space" 0
 		"outfit space" 7360
@@ -374,12 +382,13 @@ ship "Crystal Sentry"
 		category "Drone"
 		licenses
 			Author
+		"cost" 7654321
 		"shields" 99999
 		"hull" 99999
 		"automaton" 1
-		"mass" 999
-		"drag" 9.0
-		"heat dissipation" 1.8
+		"mass" 1490
+		"drag" 13.5
+		"heat dissipation" 1.215
 		"cargo space" 0
 		"outfit space" 172
 		"weapon capacity" 99
@@ -461,6 +470,8 @@ mission "First Contact: Geddonia"
 		personality waiting staying mining vindictive unconstrained
 		ship "Worldcrusher" "???"
 		conversation
+			action
+				set "First Contact: Geddonia: done"
 			`A telepathic voice speaks to you again. "Congratulations. You are one of a very few who have managed to force the Worldcrusher to phase into another quantum space time. None can predict when it will return."`
 			choice
 				`	"You mean it wasn't destroyed?"`
