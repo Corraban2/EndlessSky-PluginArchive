@@ -1,3 +1,5 @@
+2024-10-02 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
+2024-10-02 | updated Plugin 'sensor' by orbitalsupershell | [weapons](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#weapons)<br>
 2024-10-01 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2024-09-30 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2024-09-29 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
