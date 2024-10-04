@@ -7328,9 +7328,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Naltok
 
 
-[Naltok.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Naltok.zip) | 1.95 mb | 2024-09-29 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Naltok/) <br>
+[Naltok.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Naltok.zip) | 1.95 mb | 2024-10-04 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Naltok/) <br>
 Author: Quantumshark | Category: Races <br>
-[https://github.com/Quantumshark/ES-Naltok](https://github.com/Quantumshark/ES-Naltok) (last commit 2024-09-29) <br>
+[https://github.com/Quantumshark/ES-Naltok](https://github.com/Quantumshark/ES-Naltok) (last commit 2024-10-04) <br>
 
 >A new tier 1.5 alien species, the amphibious Naltok. 
 
@@ -12780,9 +12780,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Navy Campaign
 
 
-[Navy.Campaign.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Navy.Campaign.zip) | 4.37 mb | 2024-10-03 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Navy%20Campaign/) <br>
+[Navy.Campaign.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Navy.Campaign.zip) | 4.38 mb | 2024-10-04 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Navy%20Campaign/) <br>
 Author: kestrel1110 | Category: Story <br>
-[https://github.com/kestrel1110/Navy-Campaign](https://github.com/kestrel1110/Navy-Campaign) (last commit 2024-10-03) <br>
+[https://github.com/kestrel1110/Navy-Campaign](https://github.com/kestrel1110/Navy-Campaign) (last commit 2024-10-04) <br>
 
 >My Navy campaign which I hope to get implemented when finished.
 >
@@ -12790,32 +12790,17 @@ Author: kestrel1110 | Category: Story <br>
 <details>
 <summary>:blue_book: Plugin readme</summary>
 <blockquote># Navy-Campaign
-My Navy campaign which I hope to get implemented when finished.
-Thanks to Warlord Mike, Disiuze, Kiko, Moonbeam, and Kat for helping.
 
-TO DO LIST:
+An alternate storyline to the Free Worlds wherein the pilot is commissioned into the Navy and fights the war from the Republic perspective.
+Thanks to Warlord Mike, Disiuze, Kiko, Moonbeam, and Kat for major writing contributions.
+Thanks also to those on Github and Discord for many other things.
 
-[x] intro missions (parallel of southern mutual defense pact)
+Discussion is active on the discord: https://discord.gg/jPr6Fyb
 
-[x] joining the navy
+Current status: Bug free (supposedly) up through Navy weapons development
+Next major task: FW attack and Navy Intelligence Sequence
 
-[x] pirate recon sequence
-
-[x] geminus
-
-[x] Electron sequence
-
-[x] kornephoros attack
-
-[] navy intelligence sequence (when the prowler is developed)
-
-[] infiltrating the FW (stealing data on all new FW tech)
-
-[] counterattacking against FW expansion
-
-
-
-[] to be continued...
+  See attack_outline.txt
 
 </blockquote>
 </details>
