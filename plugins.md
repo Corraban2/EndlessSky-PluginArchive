@@ -176,9 +176,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/captureable.person.ships/icon.png' height='100'></img><br>
 
 
-[captureable.person.ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/captureable.person.ships.zip) | 138.21 kb | 2024-07-14 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/captureable.person.ships/) <br>
+[captureable.person.ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/captureable.person.ships.zip) | 138.32 kb | 2024-10-08 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/captureable.person.ships/) <br>
 Author: zuckung | Category: Cheats <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2024-07-14) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2024-10-08) <br>
 
 >Makes person ships capturable. See the readme for details.
 >
@@ -191,13 +191,13 @@ Author: zuckung | Category: Cheats <br>
 Makes person ships captureable.<br> 
 <br>
 <br>
-Well, technically this plugin disables the person ships, and creates new ones which are captureable (with changed names to "<name> (disable me)", due to limitations of changing parts of the originals). Also adds all of them to the author government, adjusts some personalities and sets all frequencies to 1000. Changed "Tranquility" to have a weapon, so it doesnt flee. And changed "Zitchas" personality to "decloaked", so it doesnt flee and regenerate while cloaked.<br>
+Well, technically this plugin disables the person ships, and creates new ones which are captureable (with changed names to "<name> (disable me)", due to limitations of changing parts of the originals). Also adds all of them to the author government, adjusts some personalities and sets all frequencies to 1000. Changed "Tranquility" to have a weapon, so it doesn't flee. And changed "Zitchas" personality to "decloaked", so it doesn'tflee and regenerate while cloaked.<br>
 So attacking one of them makes all your enemies, they all try to disable instead of destroying, and they all have the same spawn chance which is in average within 10 minutes.<br>
 <br>
-At Earths job board you can find a repeatable job that displays which persons you have already killed, which is alive and where to find it.<br>
+At Earth's job board you can find a repeatable job that displays which persons you have already killed, which are alive, and where to find them.<br>
 After you've killed them all, you receive a small unique gift.<br>
 <br>
-Tested this plugin with 10x KIV349, all equipped with Mereti beam weapons, was probably an overkill on most. Boarding "Zitchas"(1000 crew) needed an Echo-Galleon, and i tried it with hand2hand outfits plugin. Maybe it works with nerve gas too.<br>
+I tested this plugin with 10x KIV349, all equipped with Mereti beam weapons, was probably an overkill on most. Boarding "Zitchas"(1000 crew) needed an Echo-Galleon, and I tried it with hand2hand outfits plugin. Maybe it works with nerve gas too.<br>
 In cap_persons.txt you find the following line under gamerules: "#	"person spawn period" 2000". If you remove the "#" the spawning speed is increased to one spawn in max a  minute.<br>
 <br>
 <img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/capturable.person.ships01.jpg' width='400'>
@@ -222,9 +222,21 @@ In cap_persons.txt you find the following line under gamerules: "#	"person spawn
 <br>
 Changelog:<br>
 <br>
+2024-10-08 <br>
+proofreading and minor text changes (Vemenous-Repentile)<br>
+changed status mission to fail on daily<br>
+changed subsidural (1 outfit space, keystone and 300 fuel)<br>
+<br>
+2024-07-14<br>
+fixed tranquility weapon space error<br>
+removed fines from author government<br>
+<br>
+2024-06-07<br>
+text corrections (thx to TheGiraffe3)<br>
+<br>
 2024-05-28<br>
 adjusted mass and drag to be like in 0.10.7<br>
-removed staying personality ftom tranquillity<br>
+removed staying personality ftom Tranquility<br>
 renamed persons to "name (C)", was "name (Capture me)"<br>
 <br>
 2024-04-06<br>
@@ -11113,9 +11125,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Advanced Starts
 
 
-[Advanced.Starts.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Advanced.Starts.zip) | 11.72 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Advanced%20Starts/) <br>
+[Advanced.Starts.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Advanced.Starts.zip) | 23.75 kb | 2024-10-08 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Advanced%20Starts/) <br>
 Author: Kestrel1110 | Category: Story <br>
-[https://github.com/kestrel1110/ES-Advanced-Starts](https://github.com/kestrel1110/ES-Advanced-Starts) (last commit 2021-06-03) <br>
+[https://github.com/kestrel1110/ES-Advanced-Starts](https://github.com/kestrel1110/ES-Advanced-Starts) (last commit 2024-10-08) <br>
 
 >Adds more starting options.
 >
