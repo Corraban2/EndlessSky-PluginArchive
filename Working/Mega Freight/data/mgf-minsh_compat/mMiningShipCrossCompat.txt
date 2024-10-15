@@ -1,9 +1,10 @@
 mission "MGF-Mining Ship trigger"
 	landing
 	invisible
-	repeat
+	# repeat
 	to offer
 		# has "mgf dev mode"
+		not "mgf-minsh compat active"
 		or
 			"MGF-Mining Ship deactivation: offered" >= "MGF-Mining Ship trigger: offered"
 			not "MGF-Mining Ship trigger: offered"
@@ -24,9 +25,10 @@ event "mgf-minsh: cross-compat activate"
 mission "MGF-Mining Ship deactivation"
 	landing
 	invisible
-	repeat
+	# repeat
 	to offer
 		# has "mgf dev mode"
+		never
 		"mgf-minsh compat active" > 0
 		and
 			not "installed plugin: Mining Ships"
