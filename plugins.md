@@ -16,7 +16,7 @@
 
 [-Omnis.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/-Omnis.zip) | 2.9 mb | 2024-10-13 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/-Omnis/) <br>
 Author: Darcy Manoel | Category: Cheats <br>
-[https://github.com/Adde-Endless-Sky-Mods/-Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis) (last commit 2024-10-13) <br>
+[https://github.com/Adde-Endless-Sky-Mods/-Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis) (last commit 2024-10-17) <br>
 
 >The most extensive all-content plugin to date. It includes many opportunities to test balance or ship builds against AI driven ships or fleets, all vanilla content and the content of many plugins available to use to put together different ship builds. Many more tools are included into Omnis too!
 >
@@ -35,7 +35,8 @@ In order of release, known competitors have been:
 ### What to expect
 There is no need to worry about breaking existing saves when installing, you will be presented with a warning that lets you choose what level of involvement you want that save to have with Omnis. To avoid any interaction, there's an option to abort which will kill the player and disallow saving the interaction.
 
-So how do you use this plugin? Well there are two very simple methods of [accessing Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis/wiki/Access), there is a wormhole in Rutilicus to travel there, and there is a custom start that can be chosen when making a new pilot.
+So how do you use this plugin? Well there are two very simple methods of [accessing Omnis](https://github.com/EndlessSkyCommunity/-Omnis/wiki/Access). 
+There is a wormhole in each of the major factions' systems to travel there, and there is a custom start that can be chosen when making a new pilot.
 
 > [!WARNING]
 > The Omnis custom start will begin your pilot with an impossibly high credit value and brand your save with the Omnis start.
@@ -6562,7 +6563,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Arion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Arion.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Arion/) <br>
 Author: Spectre907YT | Category: Races <br>
-[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-08-09) <br>
+[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-10-17) <br>
 
 >Adds a faction (or 2) that supplies real life fighters and other interesting stuff.
 >
