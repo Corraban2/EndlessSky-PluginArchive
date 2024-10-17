@@ -1,6 +1,7 @@
 galaxy "omnis"
 	pos 0 -10000
-	sprite "sprite/milkyWayHalf"
+	sprite "ui/milky way"
+		scale 0.6
 system "Omnis"
 	"jump range" 3000
 	government "Omnis"
@@ -10,19 +11,71 @@ system "Omnis"
 	pos -268 -9863
 	object
 		sprite "star/nova"
-	object "omnisGateway"
+	object "Everything "
+		sprite "star/nova-core"
+	object "omnisGatewayRutilicus"
+		distance 300
+		offset 22.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewayGammaCorvi"
+		distance 300
+		offset 45
+		sprite "sprite/wispGreen"
+	object "omnisGatewayMarkab"
+		distance 300
+		offset 67.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewaySol"
+		distance 300
+		offset 90
+		sprite "sprite/wispGreen"
+	object "omnisGatewayWanderers"
+		distance 300
+		offset 112.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewayHai"
+		distance 300
+		offset 135
+		sprite "sprite/wispGreen"
+	object "omnisGatewayDeep"
+		distance 300
+		offset 157.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewayUnfettered"
 		distance 300
 		offset 180
 		sprite "sprite/wispGreen"
-	object "Everything "
-		sprite "star/nova-core"
+	object "omnisGatewayRemnant"
+		distance 300
+		offset 202.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewayHet"
+		distance 300
+		offset 225
+		sprite "sprite/wispGreen"
+	object "omnisGatewayIncipias"
+		distance 300
+		offset 247.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewaySuccessor"
+		distance 300
+		offset 270
+		sprite "sprite/wispGreen"
+	object "omnisGatewayGegno"
+		distance 300
+		offset 292.5
+		sprite "sprite/wispGreen"
+	object "omnisGatewayBunrodea"
+		distance 300
+		offset 315
+		sprite "sprite/wispGreen"
 	object "Developer "
 		distance 300
-		offset 60
+		offset 337.5
 		sprite "asteroid/yottrite/spin"
 	object "Deprecated "
 		distance 300
-		offset 300
+		offset 360
 		sprite "asteroid/yottrite/spin"
 	object " Bunrodea"
 		distance 1600
@@ -1781,11 +1834,39 @@ system "Iije "
 		distance 900
 		offset 60
 		sprite "ship/ayym/ayym"
+system "Incipias "
+	"jump range" 3000
+	government "Faction"
+	pos 65 -10303
+	object "  Incipias"
+		sprite "asteroid/yottrite/spin"
+	# Arena
+	object "Gero  "
+		distance 500
+		offset 72
+		sprite "ship/gero"
+	object "Nimbo Cirrus  "
+		distance 500
+		offset 144
+		sprite "ship/cirrus"
+	object "Nimbo Stratus  "
+		distance 500
+		offset 216
+		sprite "ship/stratus"
+	object "Nimbus  "
+		distance 500
+		offset 288
+		sprite "ship/nimbus"
+	object "Venta  "
+		distance 500
+		offset 360
+		sprite "ship/venta"
 system "Ka'het "
 	"jump range" 3000
 	government "Faction"
 	link "Drak "
 	link "Remnant "
+	link "Successors "
 	pos 83 -9721
 	object "  Ka'het"
 		sprite "asteroid/yottrite/spin"
@@ -2089,6 +2170,66 @@ system "Sheragi "
 		distance 900
 		offset 60
 		sprite "ship/blackdiamond"
+system "Successors "
+	"jump range" 3000
+	government "Faction"
+	link "Ka'het "
+	pos -42 -9363
+	object "  Successors"
+		sprite "asteroid/yottrite/spin"
+	# Arena
+	object "Kvelqde  "
+		distance 900
+		offset 30
+		sprite "ship/kvelqde"
+	object "Nnesaarau  "
+		distance 900
+		offset 60
+		sprite "ship/nnesaarau"
+	object "Myaede  "
+		distance 900
+		offset 90
+		sprite "ship/myaede"
+	object "Ejniisde  "
+		distance 900
+		offset 120
+		sprite "ship/ejniisde"
+	object "Ojde  "
+		distance 900
+		offset 150
+		sprite "ship/ojde"
+	object "Kvelqde-Khora  "
+		distance 900
+		offset 180
+		sprite "ship/kvelqde-khora"
+	object "Stolsaqra  "
+		distance 900
+		offset 210
+		sprite "ship/stolsaqra"
+	object "Vujlet  "
+		distance 900
+		offset 240
+		sprite "ship/vujlet"
+	object "Veusade  "
+		distance 900
+		offset 270
+		sprite "ship/veusade"
+	object "Seiitej  "
+		distance 900
+		offset 300
+		sprite "ship/seiitej"
+	object "Aaulqra  "
+		distance 900
+		offset 330
+		sprite "ship/aaulqra"
+	object "Kaskhorade  "
+		distance 900
+		offset 360
+		sprite "ship/kaskhorade"
+	object "Nnaatej  "
+		distance 1500
+		offset 0
+		sprite "ship/nnaatej"
 system "Vyrmeid "
 	"jump range" 3000
 	government "Faction"

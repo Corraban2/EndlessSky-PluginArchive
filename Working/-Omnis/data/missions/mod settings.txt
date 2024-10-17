@@ -1,7 +1,7 @@
 mission "Omnis: mod settings"
-	description `Accept this job to open a settings menu, it's in the title.`
+	description `Accept this job to open a settings menu, as in the title.`
 	invisible
-	name ` Mod Settings: Omnis`
+	name `Mod Settings: Omnis`
 	on offer
 		conversation
 			label 0000
@@ -26,6 +26,24 @@ mission "Omnis: mod settings"
 					goto 1300
 				`	(Max Combat Rating.)`
 					goto 1400
+				`	(Remove faction wormholes.)`
+					goto 1500
+					to display
+						has "omnis: faction wormholes enabled"
+				`	(Add faction wormholes.)`
+					goto 1500
+					to display
+						not "omnis: faction wormholes enabled"
+				`	(Show Plugin Outfits.)`
+					goto 1600
+					to display
+						not "omnis: plugin integration"
+				`	(Hide Plugin Outfits.)`
+					goto 1600
+					to display
+						has "omnis: plugin integration"
+				`	(Storyline Skip Options.)`
+					goto 1700
 				`	(Return.)`
 					goto 0000
 			label 1100
@@ -59,11 +77,13 @@ mission "Omnis: mod settings"
 				"reputation: Bounty Hunter" = -1000
 				"reputation: Bounty Hunter that Won't Enter Hai Space" = -1000
 				"reputation: Coalition" = 1
+				"reputation: Conlatio" = 0
 				"reputation: Deep" = -1000
 				"reputation: Deep Security" = 1
 				"reputation: Derelict" = 0
 				"reputation: Drak" = 1
 				"reputation: Drak (Hostile)" = -1000
+				"reputation: Drak (Incipias)" = 1
 				"reputation: Elenctic Commune" = 1000
 				"reputation: Escort (Betraying)" = 10
 				"reputation: Forest (Prey)" = 1
@@ -87,6 +107,14 @@ mission "Omnis: mod settings"
 				"reputation: Hai (Unfettered Civilians)" = 10
 				"reputation: Heliarch" = 1
 				"reputation: Heliarch Test Dummy" = -1000
+				"reputation: Hicemus" = 0
+				"reputation: House Aqrabe" = 0
+				"reputation: House Chydiyi" = 0
+				"reputation: House Kaatrij" = 0
+				"reputation: House Myurej" = 0
+				"reputation: House Seineq" = 0
+				"reputation: House Sioeora" = 0
+				"reputation: Incipias Civilian" = 0
 				"reputation: Independent" = 10
 				"reputation: Independent (Killable)" = 10
 				"reputation: Indigenous Lifeform" = 1
@@ -111,16 +139,22 @@ mission "Omnis: mod settings"
 				"reputation: Navy Intelligence" = 0
 				"reputation: Navy (Oathkeeper)" = 100
 				"reputation: Neutral" = 1
+				"reputation: New Houses" = 0
+				"reputation: Old Houses" = 0
 				"reputation: Parrot" = 1
+				"reputation: People's Houses" = 0
+				"reputation: People's Houses (Hostile)" = -10
 				"reputation: Pirate" = -10
 				"reputation: Pirate (Devil-Run Gang)" = -1000
 				"reputation: Pirate (Rival)" = -10
+				"reputation: Predecessor" = 0
 				"reputation: Pug" = 1
 				"reputation: Pug (Wanderer)" = 1
 				"reputation: Quarg" = 1
-				"reputation: Quarg (Hai)" = 1
-				"reputation: Quarg (Kor Efret)" = 1
 				"reputation: Quarg (Gegno)" = 1
+				"reputation: Quarg (Hai)" = 1
+				"reputation: Quarg (Incipias)" = 1
+				"reputation: Quarg (Kor Efret)" = 1
 				"reputation: Remnant" = 1
 				"reputation: Remnant (Research)" = 1
 				"reputation: Republic" = 2
@@ -131,6 +165,7 @@ mission "Omnis: mod settings"
 				"reputation: Scar's Legion" = 10
 				"reputation: Scar's Legion (Killable)" = -1000
 				"reputation: Sheragi" = 1
+				"reputation: Silent Ones" = 1
 				"reputation: Smuggler (Hai Trafficker)" = 1
 				"reputation: Syndicate" = 2
 				"reputation: Syndicate (Extremist)" = -1000
@@ -166,11 +201,13 @@ mission "Omnis: mod settings"
 				"reputation: Bounty Hunter" = 1000
 				"reputation: Bounty Hunter that Won't Enter Hai Space" = 1000
 				"reputation: Coalition" = 1000
+				"reputation: Conlatio" = 1000
 				"reputation: Deep" = 1000
 				"reputation: Deep Security" = 1000
 				"reputation: Derelict" = 1000
 				"reputation: Drak" = 1000
 				"reputation: Drak (Hostile)" = 1000
+				"reputation: Drak (Incipias)" = 1000
 				"reputation: Elenctic Commune" = 1000
 				"reputation: Escort (Betraying)" = 1000
 				"reputation: Forest (Prey)" = 1000
@@ -194,6 +231,14 @@ mission "Omnis: mod settings"
 				"reputation: Hai (Unfettered Civilians)" = 1000
 				"reputation: Heliarch" = 1000
 				"reputation: Heliarch Test Dummy" = 1000
+				"reputation: Hicemus" = 1000
+				"reputation: House Aqrabe" = 1000
+				"reputation: House Chydiyi" = 1000
+				"reputation: House Kaatrij" = 1000
+				"reputation: House Myurej" = 1000
+				"reputation: House Seineq" = 1000
+				"reputation: House Sioeora" = 1000
+				"reputation: Incipias Civilian" = 1000
 				"reputation: Independent" = 1000
 				"reputation: Independent (Killable)" = 1000
 				"reputation: Indigenous Lifeform" = 1000
@@ -218,16 +263,21 @@ mission "Omnis: mod settings"
 				"reputation: Navy Intelligence" = 1000
 				"reputation: Navy (Oathkeeper)" = 1000
 				"reputation: Neutral" = 1000
+				"reputation: New Houses" = 1000
+				"reputation: Old Houses" = 1000
 				"reputation: Parrot" = 1000
+				"reputation: People's Houses" = 1000
+				"reputation: People's Houses (Hostile)" = 1000
 				"reputation: Pirate" = 1000
 				"reputation: Pirate (Devil-Run Gang)" = 1000
 				"reputation: Pirate (Rival)" = 1000
 				"reputation: Pug" = 1000
 				"reputation: Pug (Wanderer)" = 1000
 				"reputation: Quarg" = 1000
-				"reputation: Quarg (Hai)" = 1000
-				"reputation: Quarg (Kor Efret)" = 1000
 				"reputation: Quarg (Gegno)" = 1000
+				"reputation: Quarg (Hai)" = 1000
+				"reputation: Quarg (Incipias)" = 1000
+				"reputation: Quarg (Kor Efret)" = 1000
 				"reputation: Remnant" = 1000
 				"reputation: Remnant (Research)" = 1000
 				"reputation: Republic" = 1000
@@ -237,6 +287,7 @@ mission "Omnis: mod settings"
 				"reputation: Rulei" = 1000
 				"reputation: Scar's Legion" = 1000
 				"reputation: Scar's Legion (Killable)" = 1000
+				"reputation: Silent Ones" = 1000
 				"reputation: Sheragi" = 1000
 				"reputation: Smuggler (Hai Trafficker)" = 1000
 				"reputation: Syndicate" = 1000
@@ -484,6 +535,459 @@ mission "Omnis: mod settings"
 				"combat rating" = 1318815735
 			`Your combat rating has been set to max.`
 				goto 0000
+			label 1500
+			branch 1501
+				has "omnis: faction wormholes enabled"
+			action
+				event "omnis: faction wormholes"
+				set "omnis: faction wormholes enabled"
+			`Wormholes have been added to faction systems.`
+				goto 0000
+			label 1501
+			action
+				event "omnis: no faction wormholes"
+				clear "omnis: faction wormholes enabled"
+			`Wormholes have been removed from faction systems.`
+				goto 0000
+			label 1600
+			`Would you like ships and outfits from other plugins to appear on the Omnis planet for that faction? Currently this is set to off.`
+				to display
+					not "omnis: plugin integration"
+			`Would you like ships and outfits from other plugins to appear on the Omnis planet for that faction? Currently this is set to on.`
+				to display
+					has "omnis: plugin integration"
+			choice
+				`	(Turn plugin integration on.)`
+					goto 1601
+					to display
+						not "omnis: plugin integration"
+				`	(Turn plugin integration off.)`
+					goto 1602
+					to display
+						has "omnis: plugin integration"
+				`	(Go back.)`
+					goto 1000
+			label 1601
+			action
+				event "omnis: plugin integration"
+				set "omnis: plugin integration"
+			`Plugin integration has been turned on.`
+				goto 0000
+			label 1602
+			action
+				event "omnis: plugin integration removed"
+				clear "omnis: plugin integration"
+			`Plugin integration has been turned off.`
+				goto 0000
+			label 1700
+			`Which storyline would you like to skip ahead in?`
+			choice
+				`	(Skip the whole Free Worlds storyline.)`
+					goto 1710
+					to display
+						not "main plot completed"
+				`	(Free Worlds to the branch between Reconciliation and Checkmate.)`
+					goto 1711
+					to display
+						not "FW Rand 1B: done"
+				`	(Free Worlds Checkmate.)`
+					goto 1712
+					to display
+						has "FW Rand 1B: done"
+						not "omnis: skipped free worlds checkmate"
+						not "FWC Pug 6: done"
+				`	(Free Worlds Reconciliation.)`
+					goto 1713
+					to display
+						has "FW Rand 1B: done"
+						not "omnis: skipped free worlds reconciliation"
+						not "FW Syndicate Extremists 1B: done"
+				`	(Rim Archaeology Halfway.)`
+					goto 1721
+					to display
+						has "main plot completed"
+						not "Rim Archaeology 5A: done"
+				`	(Rim Archaeology Completion.)`
+					goto 1722
+					to display
+						has "Rim Archaeology 5A: done"
+						not "Sheragi Archaeology Epilogue: done"
+				`	(The Remnant storyline until technology becomes available.)`
+					goto 1731
+				`	(The Wanderer storyline until Defend Ap'arak.)`
+					goto 1741
+					to display
+						has "main plot completed"
+						not "Wanderers Rek 3: done"
+				`	(The Wanderer storyline until the meeting with the Korath Exiles.)`
+					goto 1742
+					to display
+						has "Wanderers Rek 3: done"
+						not "Wanderers: Sestor: Scan Drones: done"
+				`	(Go back to Save Settings.)`
+					goto 1000
+				`	(Go back to Settings.)`
+					goto 0000
+			label 1710
+			action
+				set "main plot completed"
+				set "omnis: skipped free worlds"
+				event "war begins"
+				event "initial deployment 1"
+				event "initial deployment 2"
+				event "central outfitters expansion"
+				event "initial deployment 3"
+				event "initial deployment 4"
+				event "southern carriers 1"
+				event "southern carriers 2"
+				event "southern carriers 3"
+				event "southern carriers 4"
+				event "fw zug expansion underway"
+				event "fw zug expansion complete"
+				event "capture of Kornephoros"
+				event "start of hostilities"
+				event "joined the free worlds"
+				event "recapture of Kornephoros"
+				event "oathkeepers founded"
+				event "syndicate convoys to Tarazed"
+				event "Tarazed neutrality"
+				event "fw dirt belt patrols"
+				event "syndicate assistance"
+				event "tarazed assistance"
+				event "plasma turret available"
+				event "fw conservatory founded"
+				event "Thule becomes independent"
+				event "fw suppressed Greenrock"
+				event "fw abandoned Greenrock"
+				event "Greenrock recovered"
+				event "memorial on Deep"
+				event "flamethrower available"
+				event "navy occupying the south"
+				event "catalytic ramscoop available"
+				event "fw gets catalytic ramscoop"
+				event "navy using mark ii ships"
+				event "fw southern expansion"
+				event "Deep memorial expansion 1"
+				event "fw occupying the north"
+				event "fw northern expansion"
+				event "Poisonwood reverts to Republic"
+				event "dreadnoughts for sale"
+				event "dreadnought deployment"
+				event "bloodsea joins free worlds"
+				event "bloodsea spaceport completed"
+				event "bloodsea independent"
+				event "albatross joins free worlds"
+				event "fw expanded and cut"
+				event "fw at war with Syndicate"
+				event "fw armistice"
+				event "fw tarazed joins"
+				event "deep sky tech available"
+				event "navy expand typhoon sales"
+				event "navy out of rastaban"
+				event "stack core for sale"
+				event "syndicate occupies sol"
+				event "pug invasion"
+				event "pug invasion 2"
+				event "pug invasion 3"
+				event "pug invasion 4"
+				event "fw syndicate welcoming"
+				event "at war with the pug"
+				event "reconnected delta capricorni"
+				event "liberation of altair"
+				event "reconnected altair"
+				event "pug flee"
+				event "pug territory liberated"
+				event "pug link restoration 1"
+				event "pug link restoration 2"
+				event "pug link restoration 3"
+				event "pug link restoration 4"
+				event "navy occupies algenib"
+				event "navy done with algenib"
+				event "Deep memorial completed"
+				event "geminus rebuilt"
+				event "martini recovers"
+			`The Free Worlds plot has been marked as complete.`
+				goto 1700
+			label 1711
+			action
+				set "FW Rand 1B: done"
+				set "main plot completed"
+				set "omnis: skipped free worlds halfway"
+				event "war begins"
+				event "initial deployment 1"
+				event "initial deployment 2"
+				event "central outfitters expansion"
+				event "initial deployment 3"
+				event "initial deployment 4"
+				event "southern carriers 1"
+				event "southern carriers 2"
+				event "southern carriers 3"
+				event "southern carriers 4"
+				event "fw zug expansion underway"
+				event "fw zug expansion complete"
+				event "capture of Kornephoros"
+				event "start of hostilities"
+				event "joined the free worlds"
+				event "recapture of Kornephoros"
+				event "oathkeepers founded"
+				event "syndicate convoys to Tarazed"
+				event "Tarazed neutrality"
+				event "fw dirt belt patrols"
+				event "syndicate assistance"
+				event "tarazed assistance"
+				event "plasma turret available"
+				event "fw conservatory founded"
+				event "Thule becomes independent"
+				event "fw suppressed Greenrock"
+				event "fw abandoned Greenrock"
+				event "Greenrock recovered"
+				event "memorial on Deep"
+				event "flamethrower available"
+				event "navy occupying the south"
+				event "catalytic ramscoop available"
+				event "fw gets catalytic ramscoop"
+				event "navy using mark ii ships"
+				event "fw southern expansion"
+				event "Deep memorial expansion 1"
+				event "fw occupying the north"
+				event "fw northern expansion"
+				event "Poisonwood reverts to Republic"
+				event "dreadnoughts for sale"
+				event "dreadnought deployment"
+				event "bloodsea joins free worlds"
+				event "bloodsea spaceport completed"
+				event "bloodsea independent"
+				event "albatross joins free worlds"
+				event "fw expanded and cut"
+			`You have successfully skipped ahead in the Free Worlds storyline until the branch between Checkmate and Reconciliation. You can either go to Wayfarer and land to continue the Free Worlds storyline or skip further ahead.`
+				goto 1700
+			label 1712
+			action
+				set "FWC Pug 6: done"
+				set "main plot completed"
+				set "omnis: skipped free worlds checkmate"
+				event "war begins"
+				event "initial deployment 1"
+				event "initial deployment 2"
+				event "central outfitters expansion"
+				event "initial deployment 3"
+				event "initial deployment 4"
+				event "southern carriers 1"
+				event "southern carriers 2"
+				event "southern carriers 3"
+				event "southern carriers 4"
+				event "fw zug expansion underway"
+				event "fw zug expansion complete"
+				event "capture of Kornephoros"
+				event "start of hostilities"
+				event "joined the free worlds"
+				event "recapture of Kornephoros"
+				event "oathkeepers founded"
+				event "syndicate convoys to Tarazed"
+				event "Tarazed neutrality"
+				event "fw dirt belt patrols"
+				event "syndicate assistance"
+				event "tarazed assistance"
+				event "plasma turret available"
+				event "fw conservatory founded"
+				event "Thule becomes independent"
+				event "fw suppressed Greenrock"
+				event "fw abandoned Greenrock"
+				event "Greenrock recovered"
+				event "memorial on Deep"
+				event "flamethrower available"
+				event "navy occupying the south"
+				event "catalytic ramscoop available"
+				event "fw gets catalytic ramscoop"
+				event "navy using mark ii ships"
+				event "fw southern expansion"
+				event "Deep memorial expansion 1"
+				event "fw occupying the north"
+				event "fw northern expansion"
+				event "Poisonwood reverts to Republic"
+				event "dreadnoughts for sale"
+				event "dreadnought deployment"
+				event "bloodsea joins free worlds"
+				event "bloodsea spaceport completed"
+				event "bloodsea independent"
+				event "albatross joins free worlds"
+				event "fw expanded and cut"
+				event "fwc southern battle"
+				event "fwc southern liberation"
+				event "fwc capture kaus borealis"
+				event "fwc capture cebalrai"
+				event "fwc solace has nukes"
+				event "fwc defended cebalrai"
+				event "fwc capture menkent"
+				event "fwc pug invasion"
+				event "fwc navy retakes cebalrai"
+				event "fwc peace with the navy"
+				event "fwc battle for rasalhague"
+				event "fwc liberation of rasalhague"
+				event "fwc reconnect ascella"
+				event "fwc reconnect zeta aquilae"
+				event "fwc liberation of vega"
+				event "fwc reconnect vega"
+				event "fwc pug defeated"
+				event "fwc kaus borealis ceded back"
+				event "fwc link restoration 1"
+				event "fwc link restoration 2"
+				event "fwc link restoration 3"
+				event "syndicate tech available"
+				event "Deep memorial completed"
+				event "geminus rebuilt"
+				event "martini recovers"
+			`You have successfully skipped ahead in the Free Worlds Checkmate storyline until the last mission. Land on Pugglemug to get the final mission in Free Worlds Checkmate.`
+				goto 1700
+			label 1713
+			action
+				set "FW Syndicate Extremists 1B: done"
+				set "main plot completed"
+				set "omnis: skipped free worlds reconciliation"
+				event "war begins"
+				event "initial deployment 1"
+				event "initial deployment 2"
+				event "central outfitters expansion"
+				event "initial deployment 3"
+				event "initial deployment 4"
+				event "southern carriers 1"
+				event "southern carriers 2"
+				event "southern carriers 3"
+				event "southern carriers 4"
+				event "fw zug expansion underway"
+				event "fw zug expansion complete"
+				event "capture of Kornephoros"
+				event "start of hostilities"
+				event "joined the free worlds"
+				event "recapture of Kornephoros"
+				event "oathkeepers founded"
+				event "syndicate convoys to Tarazed"
+				event "Tarazed neutrality"
+				event "fw dirt belt patrols"
+				event "syndicate assistance"
+				event "tarazed assistance"
+				event "plasma turret available"
+				event "fw conservatory founded"
+				event "Thule becomes independent"
+				event "fw suppressed Greenrock"
+				event "fw abandoned Greenrock"
+				event "Greenrock recovered"
+				event "memorial on Deep"
+				event "flamethrower available"
+				event "navy occupying the south"
+				event "catalytic ramscoop available"
+				event "fw gets catalytic ramscoop"
+				event "navy using mark ii ships"
+				event "fw southern expansion"
+				event "Deep memorial expansion 1"
+				event "fw occupying the north"
+				event "fw northern expansion"
+				event "Poisonwood reverts to Republic"
+				event "dreadnoughts for sale"
+				event "dreadnought deployment"
+				event "bloodsea joins free worlds"
+				event "bloodsea spaceport completed"
+				event "bloodsea independent"
+				event "albatross joins free worlds"
+				event "fw expanded and cut"
+				event "fw at war with Syndicate"
+				event "fw armistice"
+				event "fw tarazed joins"
+				event "deep sky tech available"
+				event "navy expand typhoon sales"
+				event "navy out of rastaban"
+				event "stack core for sale"
+				event "syndicate occupies sol"
+				event "pug invasion"
+				event "pug invasion 2"
+				event "pug invasion 3"
+				event "pug invasion 4"
+				event "fw syndicate welcoming"
+				event "at war with the pug"
+				event "reconnected delta capricorni"
+				event "liberation of altair"
+				event "reconnected altair"
+				event "pug flee"
+				event "pug territory liberated"
+				event "pug link restoration 1"
+				event "pug link restoration 2"
+				event "pug link restoration 3"
+				event "pug link restoration 4"
+				event "navy occupies algenib"
+				event "navy done with algenib"
+				event "Deep memorial completed"
+				event "geminus rebuilt"
+				event "martini recovers"
+			`You have successfully skipped ahead in the Free Worlds Reconciliation storyline until the last mission. Land on Buccaneer Bay to get the final mission in Free Worlds Reconciliation.`
+				goto 1700
+			label 1721
+			action
+				set "Rim Archaeology 5A: done"
+				event "rim archaeology results"
+			`You have successfully skipped to the halfway point in Rim Archaeology. Land on Zug to continue normally, or skip ahead farther.`
+				goto 1700
+			label 1722
+			action
+				set "Sheragi Archaeology Epilogue: done"
+				event "zubenelhakrabi discovered"
+				give ship "Emerald Sword (Fixed)" "Emerald Sword"
+				give ship "Black Diamond" "Stormheart"
+				give ship "Black Diamond" "Onyx Chariot"
+				give ship "Black Diamond" "Firebrand"
+				give ship "Black Diamond" "Frostherald"
+				give ship "Black Diamond" "Ivory Talon"
+				give ship "Black Diamond" "Skeleton Key"
+			`You have successfully skipped the rest of Rim Archaeology.`
+				goto 1700
+			label 1731
+			action
+				event "remnant: change hail"
+				set "remnant: blood test pure"
+				event "remnant: defense timer"
+				set "Remnant: Defense 2: done"
+				set "Remnant: Key Stones: done"
+				event "remnant: puffin"
+				event "remnant: void sprite research"
+				set "license: Remnant"
+			`You have successfully skipped ahead in the Remnant storyline until you get the license. Fly around and go to the spaceport on Remnant planets to continue the Remnant storyline.`
+				goto 1700
+			label 1741
+			action
+				set "Wanderers Rek 3: done"
+				event "wanderer technology available"
+				event "wanderers: first tech increase"
+				event "battle for ik'kara'ka"
+				event "wanderers: varu mer'ek evacuated"
+				event "capture of ik'kara'ka"
+				event "wanderers: tempest mass production"
+				event "eastern evacuation"
+				event "wanderers: riptide mass production"
+				event "wanderers: vara ke'stai evacuated"
+				event "solifuge deployment"
+				event "wanderers: more systems lost"
+				event "wanderers: the eye begins to open"
+			`You have successfully skipped ahead in the Wanderer storyline until the battle for Ap'arak. Go land on Tik Klai to progress normally or skip ahead further.`
+				goto 1700
+			label 1742
+			action
+				set "Wanderers: Sestor: Scan Drones: done"
+				event "pug defend wanderers"
+				event "wanderers: the eye opens"
+				event "wanderers: derecho mass production"
+				event "wanderers: spera anatrusk colony"
+				set "Wanderers: Quarg Assistance 2: done"
+				event "wanderers: kor mereti friendly"
+				event "wanderers: kor mereti language"
+				event "wanderers: kor mereti transformation"
+				event "wanderers: hurricane mass production"
+				event "wanderers: desi seledrak"
+				event "wanderers: kor sestor are aimless"
+				set "wanderers: found the kor sestor fleet"
+				event "bombed zenith"
+				event "zenith cooling" 50
+				event "liberated zenith"
+			`You have successfully skipped ahead in the Wanderer storyline until the first meeting request with the Korath Exiles. Go land on Desi Seledrak to progress further in the Wanderer storyline.`
+				goto 1700
 			label 2000
 			`WARNING: These options perpetrate all saves that interact with Omnis, consider the effects of each before continuing.`
 			choice
@@ -648,6 +1152,7 @@ event "Omnis: reveal omnis"
 	visit "Rulei "
 	visit "Rutilicus"
 	visit "Sheragi "
+	visit "Successors "
 	visit "Vyrmeid "
 	visit "Wanderer "
 	visit "Whispering Void "
@@ -661,6 +1166,7 @@ event "Omnis: reveal vanilla"
 	"visit planet" "Graveyard Wormhole (Stable)"
 	"visit planet" "Graveyard Wormhole (Unstable)"
 	"visit planet" "Remnant Wormhole"
+	"visit planet" "Successor Wormhole"
 	"visit planet" "Wormhole Alpha"
 	"visit planet" "Wormhole Link"
 	galaxy "label arachi"
@@ -671,12 +1177,16 @@ event "Omnis: reveal vanilla"
 		sprite "label/graveyard"
 	galaxy "label hai"
 		sprite "label/hai"
+	galaxy "label incipias"
+		sprite "label/incipias"
 	galaxy "label kimek"
 		sprite "label/kimek"
 	galaxy "label korath"
 		sprite "label/korath"
 	galaxy "label saryds"
 		sprite "label/saryds"
+	galaxy "label successors"
+		sprite "label/successors"
 	galaxy "label wanderers"
 		sprite "label/wanderers"
 	galaxy "label waste"
@@ -704,6 +1214,7 @@ event "Omnis: reveal vanilla"
 	visit "7 Autumn Rising"
 	visit "8 Winter Below"
 	visit "9 Spring Above"
+	visit "Aaura-Kaska"
 	visit "Ablodab"
 	visit "Ablub"
 	visit "Acamar"
@@ -756,6 +1267,7 @@ event "Omnis: reveal vanilla"
 	visit "Alphard"
 	visit "Alphecca"
 	visit "Alpheratz"
+	visit "Alpherg"
 	visit "Altair"
 	visit "Aludra"
 	visit "Anbrim"
@@ -775,10 +1287,12 @@ event "Omnis: reveal vanilla"
 	visit "Atik"
 	visit "Atria"
 	visit "Auhru"
+	visit "Avasaa-Novaa"
 	visit "Avior"
 	visit "Avo Chigo"
 	visit "Aya'k'k"
 	visit "Beginning"
+	visit "Belenos"
 	visit "Bellatrix"
 	visit "Belonging"
 	visit "Belug"
@@ -809,13 +1323,18 @@ event "Omnis: reveal vanilla"
 	visit "Chirr'ay'akai"
 	visit "Chornifath"
 	visit "Chy'chra"
+	visit "Chyyra-Osolaa"
 	visit "Cinxia"
+	visit "Citadelle"
+	visit "Clepsydra"
 	visit "Coluber"
 	visit "Companion"
 	visit "Convector"
 	visit "Cor Caroli"
 	visit "Cotpoxi"
 	visit "Cshudlye"
+	visit "Cura Dic"
+	visit "Currus"
 	visit "Da Ent"
 	visit "Da Lest"
 	visit "Dabih"
@@ -845,6 +1364,7 @@ event "Omnis: reveal vanilla"
 	visit "Diphda"
 	visit "Dixere"
 	visit "Dokdobaru"
+	visit "Dom'us"
 	visit "Dschubba"
 	visit "Dubhe"
 	visit "Due Yoot"
@@ -870,6 +1390,7 @@ event "Omnis: reveal vanilla"
 	visit "Enif"
 	visit "Eogho"
 	visit "Epsilon Leonis"
+	visit "Equus"
 	visit "Era Natta"
 	visit "Erabu Lemeta"
 	visit "Eragaru Le"
@@ -877,6 +1398,7 @@ event "Omnis: reveal vanilla"
 	visit "Es'sprak'ai"
 	visit "Eshkoshtar"
 	visit "Esix"
+	visit "Eta Carinae"
 	visit "Eteron"
 	visit "Evrae"
 	visit "Fah Root"
@@ -900,6 +1422,7 @@ event "Omnis: reveal vanilla"
 	visit "Fornarep"
 	visit "Four Pillars"
 	visit "Fscher"
+	visit "Fumalsamakah"
 	visit "Furmeliki"
 	visit "G-3191"
 	visit "G-6183"
@@ -939,12 +1462,15 @@ event "Omnis: reveal vanilla"
 	visit "Holeb"
 	visit "Homeward"
 	visit "Host"
+	visit "Hui'uc"
 	visit "Hunter"
 	visit "Huud"
+	visit "Ianua"
 	visit "Iigen"
 	visit "Iinjma"
 	visit "Iise"
 	visit "Ik'kara'ka"
+	visit "Il'le"
 	visit "Ildaria"
 	visit "Iliniza"
 	visit "Ilirco"
@@ -977,11 +1503,18 @@ event "Omnis: reveal vanilla"
 	visit "Kappa Centauri"
 	visit "Karhio"
 	visit "Kashikt"
+	visit "Kasi-Vasa-Novaa"
 	visit "Kasikfar"
+	visit "Kasii-Cavaasa"
+	visit "Kasii-Sola"
 	visit "Kaus Australis"
 	visit "Kaus Borealis"
+	visit "Kella-Uoasa"
+	visit "Khasola-Ryuit"
+	visit "Khosa-Kaska"
 	visit "Ki War Ek"
 	visit "Kifrana Terberah"
+	visit "Kiiraj-Luue"
 	visit "Kilema"
 	visit "Kiluit"
 	visit "Kiro'ku"
@@ -1013,6 +1546,7 @@ event "Omnis: reveal vanilla"
 	visit "Lone Cloud"
 	visit "Lucina"
 	visit "Lurata"
+	visit "Luue-Saqru"
 	visit "M-1188"
 	visit "MC-42"
 	visit "MS-219"
@@ -1020,7 +1554,11 @@ event "Omnis: reveal vanilla"
 	visit "Maoni"
 	visit "Markab"
 	visit "Markeb"
+	visit "Maspa-Cavaasa"
+	visit "Maspa-Mavra"
+	visit "Maspa-Raaqa"
 	visit "Matar"
+	visit "Mavra-Ijsola"
 	visit "Mebla"
 	visit "Meblumem"
 	visit "Mebsuta"
@@ -1050,9 +1588,12 @@ event "Omnis: reveal vanilla"
 	visit "Mohuwo"
 	visit "Moktar"
 	visit "Mora"
+	visit "Mosaa-Iyra"
 	visit "Msalbit"
 	visit "Muhlifain"
 	visit "Muphrid"
+	visit "Myiara-Nnesa"
+	visit "Myruet-Kvelq"
 	visit "Naos"
 	visit "Naper"
 	visit "Nenia"
@@ -1066,10 +1607,13 @@ event "Omnis: reveal vanilla"
 	visit "O-3184"
 	visit "Oblate"
 	visit "Oihaug"
+	visit "Ojstaan-Sola"
+	visit "Oublaa-Khora"
 	visit "Ookmya"
 	visit "Oosuoro"
 	visit "Orbona"
 	visit "Orvala"
+	visit "Osolaa-Uuoru"
 	visit "Ossipago"
 	visit "Over the Rainbow"
 	visit "Paeli"
@@ -1079,6 +1623,9 @@ event "Omnis: reveal vanilla"
 	visit "Patir"
 	visit "Pbelnep"
 	visit "Peacock"
+	visit "Pedita Pri"
+	visit "Pedita Sec"
+	visit "Pelaa-Muora"
 	visit "Pelubta"
 	visit "Peragenor"
 	visit "Peresedersi"
@@ -1096,6 +1643,7 @@ event "Omnis: reveal vanilla"
 	visit "Polerius"
 	visit "Pollux"
 	visit "Porrima"
+	visit "Porta Terra"
 	visit "Postverta"
 	visit "Prakacha'a"
 	visit "Procyon"
@@ -1106,6 +1654,7 @@ event "Omnis: reveal vanilla"
 	visit "Pukako"
 	visit "Quaru"
 	visit "Queri"
+	visit "Raaqa-Ryuit"
 	visit "Rajak"
 	visit "Rasalhague"
 	visit "Rastaban"
@@ -1117,6 +1666,7 @@ event "Omnis: reveal vanilla"
 	visit "Remembrance"
 	visit "Rigel"
 	visit "Ritilas"
+	visit "Rota"
 	visit "Rouseu"
 	visit "Ruchbah"
 	visit "Rutilicus"
@@ -1135,6 +1685,7 @@ event "Omnis: reveal vanilla"
 	visit "Scheat"
 	visit "Schedar"
 	visit "Scija"
+	visit "Sedes"
 	visit "Segesta"
 	visit "Seginus"
 	visit "Seketra"
@@ -1166,22 +1717,27 @@ event "Omnis: reveal vanilla"
 	visit "Statina"
 	visit "Steep Roof"
 	visit "Stercutus"
+	visit "Stiidej-Nnesa"
 	visit "Suhail"
 	visit "Sumar"
 	visit "Sumprast"
+	visit "Supra"
 	visit "Tais"
 	visit "Talita"
 	visit "Tania Australis"
 	visit "Tarazed"
 	visit "Tebuteb"
+	visit "Tectum"
 	visit "Tejat"
 	visit "Terminus"
 	visit "Terra Incognita"
 	visit "Thshybo Le"
+	visit "Thuban"
 	visit "Torbab"
 	visit "Tortor"
 	visit "Tscera"
 	visit "Turais"
+	visit "Tuur-Kella"
 	visit "U-5188"
 	visit "Uelawan"
 	visit "Uhebe"
@@ -1192,11 +1748,16 @@ event "Omnis: reveal vanilla"
 	visit "Unukalhai"
 	visit "Urba Pest"
 	visit "Uttna"
+	visit "Uuoru-Kella"
+	visit "Uuoru-Sossa"
 	visit "Uwa Fahn"
 	visit "Uwo Seija"
 	visit "V-2189"
+	visit "Vade-Staja"
 	visit "Vaiov"
+	visit "Valkraa-Uuoru"
 	visit "Vanguwo"
+	visit "Vasa-Oorua"
 	visit "Vaticanus"
 	visit "Vega"
 	visit "Vesvii"
@@ -1382,6 +1943,7 @@ event "Omnis: shipyard variants all enabled"
 		add shipyard "humanVariantsAll"
 		add shipyard "iijeVariants"
 		add shipyard "iijeVariantsAll"
+		add shipyard "incipiasVariants"
 		add shipyard "kahetVariants"
 		add shipyard "kahetVariantsAll"
 		add shipyard "korathVariants"
@@ -1396,6 +1958,7 @@ event "Omnis: shipyard variants all enabled"
 		add shipyard "ruleiVariantsAll"
 		add shipyard "sheragiVariants"
 		add shipyard "sheragiVariantsAll"
+		add shipyard "successorVariants"
 		add shipyard "vyrmeidVariants"
 		add shipyard "vyrmeidVariantsAll"
 		add shipyard "wandererVariants"
@@ -1447,6 +2010,10 @@ event "Omnis: shipyard variants all enabled"
 	planet "  Iije"
 		add shipyard "iijeVariants"
 		add shipyard "iijeVariantsAll"
+	planet " Incipias"
+		add shipyard "incipiasVariants"
+	planet "  Incipias"
+		add shipyard "incipiasVariants"
 	planet " Ka'het"
 		add shipyard "kahetVariants"
 		add shipyard "kahetVariantsAll"
@@ -1733,6 +2300,10 @@ event "Omnis: shipyard variants disabled"
 	planet "  Iije"
 		remove shipyard "iijeVariants"
 		remove shipyard "iijeVariantsAll"
+	planet " Incipias"
+		remove shipyard "incipiasVariants"
+	planet "  "Incipias"
+		remove shipyard "incipiasVariants"
 	planet " Ka'het"
 		remove shipyard "kahetVariants"
 		remove shipyard "kahetVariantsAll"
