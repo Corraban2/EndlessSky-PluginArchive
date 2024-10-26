@@ -832,13 +832,7 @@ mission "Turner Inc.: Hai Power 7"
 					goto bargain
 				`	(Use the Quantum Keyblade.)`
 					to display
-						or
-							has "outfit (flagship installed): Quantum Key Blade"
-							has "outfit (flagship installed): Quantum Dragon Blade"
-							has "outfit (flagship installed): Quantum Phoenix Blade"
-							has "outfit (flagship installed): Quantum Snake Blade"
-							has "outfit (flagship installed): Quantum Tiger Blade"
-							has "outfit (flagship installed): Quantum Turtle Blade"
+						has "flagship attribute: quantum keyblade"
 					goto keyblade
 				`	(Use T.H.O.R.)`
 					to display
@@ -1002,7 +996,7 @@ mission "Turner Inc.: Hai Power 9"
 		dialog `There's no sign of the Unfettered ship that stole the prototype. Hopefully it wasn't destroyed in the crossfire and is hiding out in one of the nearby systems.`
 	on enter "Imo Dep"
 		conversation
-			scene "ship/hai millipede"
+			scene "thumbnail/hai millipede b-thumb"
 			`That must be the Millipede David mentioned. The Heavy Fusion Core should be on board.`
 	npc board
 		government "Hai (Unfettered)"

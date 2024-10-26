@@ -92,7 +92,8 @@ outfit "Heavy Pulse Cannon"
 	description "An antique rarely seen on modern Hai ships, many consider Heavy Pulse Cannons obsolete. However this weapon would be a valid alternative as a substitute for an Ion Cannon. It may not be able to disrupt an enemy ship's energy systems, but the power of its shots should not be underestimated."
 
 effect "heavy pulse impact"
-	sprite "effect/heavy pulse impact"
+	sprite "effect/pulse impact"
+		scale 2
 		"no repeat"
 		"frame rate" 10
 	"lifetime" 20
@@ -293,6 +294,19 @@ outfit "Ionic Snare"
 	description "	If you find this installed on your ship, get rid of it as soon as possible!"
 
 
+outfit "Modified Nugget Finder"
+	category "Systems"
+	cost 130000
+	thumbnail "outfit/modified nugget finder"
+	"mass" 5
+	"outfit space" -5
+	"outfit scan power" 25
+	"outfit scan efficiency" 15
+	"asteroid scan power" 40
+	"heat generation" 2
+	description "As its name suggests, the Nugget Finder was originally used by the ancient Hai to mine asteroids. However, the Unfettered discovered that a few subtle adjustments allow it to target a ship and identify the outfits it has installed."
+
+
 outfit "Quantum Bloodstone"
 	category "Systems"
 	cost 4800000
@@ -351,6 +365,7 @@ outfit "Quantum Dragon Blade"
 	"energy consumption" 0.03
 	"unplunderable" 1
 	"unique" 1
+	"quantum keyblade" 1
 
 outfit "Quantum Key Blade"
 	category "Hand to Hand"
@@ -361,6 +376,7 @@ outfit "Quantum Key Blade"
 	"energy consumption" 0.03
 	"unplunderable" 1
 	"unique" 1
+	"quantum keyblade" 1
 
 outfit "Quantum Phoenix Blade"
 	category "Hand to Hand"
@@ -375,6 +391,7 @@ outfit "Quantum Phoenix Blade"
 	"unique" 1
 	"illegal" 250000
 	"scan brightness" 1
+	"quantum keyblade" 1
 
 outfit "Quantum Snake Blade"
 	category "Hand to Hand"
@@ -389,6 +406,7 @@ outfit "Quantum Snake Blade"
 	"unique" 1
 	"illegal" 250000
 	"scan brightness" 1
+	"quantum keyblade" 1
 
 outfit "Quantum Tiger Blade"
 	category "Hand to Hand"
@@ -403,6 +421,7 @@ outfit "Quantum Tiger Blade"
 	"unique" 1
 	"illegal" 250000
 	"scan brightness" 1
+	"quantum keyblade" 1
 
 outfit "Quantum Turtle Blade"
 	category "Hand to Hand"
@@ -417,3 +436,4 @@ outfit "Quantum Turtle Blade"
 	"unique" 1
 	"illegal" 250000
 	"scan brightness" 1
+	"quantum keyblade" 1

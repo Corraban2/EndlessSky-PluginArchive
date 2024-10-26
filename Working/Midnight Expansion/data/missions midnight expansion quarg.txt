@@ -17,6 +17,7 @@ mission "Midnight Expansion Quarg Governments Update"
 	on offer
 		event "midnight expansion quarg governments update"
 		set "midnight expansion added quarg ships atrocity"
+		set "midnight expansion quarg incipias patched"
 		fail
 
 event "midnight expansion quarg governments update"
@@ -78,6 +79,57 @@ event "midnight expansion quarg governments update"
 			ship "Quarg Warwyvern"
 			ship "Quarg Skyswift"
 	government "Quarg (Gegno)"
+		add atrocities
+			"Large Graviton Steering"
+			"Small Graviton Steering"
+			"Quarg Ranseur"
+			"Quarg Skydagger"
+			"Quarg Culverin"
+			"Central Repair Hub"
+			"Fluxion Shield Generator"
+			"Infimum Shield Generator"
+			"Peripheral Repair Hub"
+			"Singularity Core"
+			"Tachyon Core"
+			"Large Graviton Thruster"
+			"Small Graviton Thruster"
+			ship "Quarg Seakraken"
+			ship "Quarg Wardrake"
+			ship "Quarg Warwyvern"
+			ship "Quarg Skyswift"
+	government "Quarg (Incipias)"
+		add atrocities
+			"Large Graviton Steering"
+			"Small Graviton Steering"
+			"Quarg Ranseur"
+			"Quarg Skydagger"
+			"Quarg Culverin"
+			"Central Repair Hub"
+			"Fluxion Shield Generator"
+			"Infimum Shield Generator"
+			"Peripheral Repair Hub"
+			"Singularity Core"
+			"Tachyon Core"
+			"Large Graviton Thruster"
+			"Small Graviton Thruster"
+			ship "Quarg Seakraken"
+			ship "Quarg Wardrake"
+			ship "Quarg Warwyvern"
+			ship "Quarg Skyswift"
+
+mission "Midnight Expansion Quarg Incipias Patch"
+	landing
+	invisible
+	to offer
+		has "event: midnight expansion quarg governments update"
+		not "midnight expansion quarg incipias patched"
+	on offer
+		event "midnight expansion quarg incipias patch"
+		set "midnight expansion quarg incipias patched"
+		fail
+
+event "midnight expansion quarg incipias patch"
+	government "Quarg (Incipias)"
 		add atrocities
 			"Large Graviton Steering"
 			"Small Graviton Steering"
@@ -522,7 +574,7 @@ mission "Midnight Expansion: Quarg Seakraken"
 			`	As you launch you witness a stunning sight. A large Quarg vessel you've never seen before is being escorted into the system by a fleet of smaller ships.`
 	npc kill
 		government "Quarg"
-		personality entering staying uninterested timid
+		personality waiting staying uninterested timid
 		fleet
 			names "quarg"
 			variant
@@ -1000,6 +1052,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Quarg Skydagger"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Quarg Skydagger"
 	on complete
 		outfit "Quarg Skydagger" -1
 		conversation
@@ -1084,6 +1138,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Quarg Anti-Missile"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Quarg Anti-Missile"
 	on complete
 		outfit "Quarg Anti-Missile" -1
 		conversation
@@ -1168,6 +1224,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Quarg Culverin"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Quarg Culverin"
 	on complete
 		outfit "Quarg Culverin" -1
 		conversation
@@ -1252,6 +1310,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Medium Graviton Steering"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Medium Graviton Steering"
 	on complete
 		outfit "Medium Graviton Steering" -1
 		conversation
@@ -1312,6 +1372,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Medium Graviton Thruster"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Medium Graviton Thruster"
 	on complete
 		outfit "Medium Graviton Thruster" -1
 		conversation
@@ -1372,6 +1434,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Tachyon Core"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Tachyon Core"
 	on complete
 		outfit "Tachyon Core" -1
 		conversation
@@ -1448,6 +1512,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Singularity Core"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Singularity Core"
 	on complete
 		outfit "Singularity Core" -1
 		conversation
@@ -1523,6 +1589,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Nanotech Battery"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Nanotech Battery"
 	on complete
 		outfit "Nanotech Battery" -1
 		conversation
@@ -1654,6 +1722,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Infimum Shield Generator"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Infimum Shield Generator"
 	on complete
 		outfit "Infimum Shield Generator" -1
 		conversation
@@ -1738,6 +1808,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Peripheral Repair Hub"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Peripheral Repair Hub"
 	on complete
 		outfit "Peripheral Repair Hub" -1
 		conversation
@@ -1826,6 +1898,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Central Repair Hub"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Central Repair Hub"
 	on complete
 		outfit "Central Repair Hub" -1
 		conversation
@@ -1912,6 +1986,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Intrusion Countermeasures"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Intrusion Countermeasures"
 	on complete
 		outfit "Intrusion Countermeasures" -1
 		conversation
@@ -1950,6 +2026,8 @@ mission "Midnight Expansion: Quarg Warwyvern - Quarg Ranseur"
 	destination "Querii'ka"
 	to offer
 		has "Midnight Expansion: Quarg Warwyvern: active"
+	to complete
+		has "outfit (cargo): Quarg Ranseur"
 	on complete
 		outfit "Quarg Ranseur" -1
 		conversation

@@ -20,6 +20,7 @@
 
 # This ship was derived from the "Kar Ik Vot 637"
 ship "Korath Warlord"
+	"display name" "Lor'owar"
 	sprite "ship/AESmisc kar_ik_vot_637"
 	thumbnail "thumbnail/AESmisc kar_ik_vot_637"
 	attributes
@@ -30,9 +31,9 @@ ship "Korath Warlord"
 		"required crew" 4
 		bunks 24
 		"crew equivalent" 200
-		mass 1850
-		drag 24.6
-		"heat dissipation" .45
+		"mass" 4890
+		"drag" 50.4
+		"heat dissipation" .3
 		"fuel capacity" 600
 		"cargo space" 63
 		"outfit space" 1239
@@ -98,7 +99,7 @@ ship "Korath Warlord"
 	explode "small explosion" 70
 	explode "tiny explosion" 140
 	"final explode" "final explosion large"
-	description `After gaining access to Sestor and Mereti technology, the Exiles have developed this new ship. Unlike the Raider or Dredger, this is a true war machine.`
+	description `After gaining access to Sestor and Mereti technology, the Exiles have developed this new ship. Unlike the Palavret or Rano'erek, this is a true war machine.`
 
 
 ship "Korath Warlord" "Korath Warlord (Artillery)"
@@ -143,9 +144,9 @@ ship "Prateskar 711"
 		hull 82100
 		automaton 1
 		"crew equivalent" 200
-		mass 2410
-		drag 30.6
-		"heat dissipation" .4
+		mass 6789
+		drag 39
+		"heat dissipation" .31
 		"fuel capacity" 700
 		"cargo space" 56
 		"outfit space" 1461
@@ -213,7 +214,7 @@ ship "Prateskar 711"
 	explode "small explosion" 70
 	explode "tiny explosion" 140
 	"final explode" "final explosion large"
-	description `An unfinished protoype being developed by the Kor Sestor at the time their network was shut down. Its deployment into the Sestor fleets could have shifted the balance of power in their war with the Mereti.`
+	description `An unfinished prototype under development by the Kor Sestor at the time their network was shut down. Its deployment into the Sestor fleets could have shifted the balance of power in their war with the Mereti.`
 
 
 
@@ -228,9 +229,9 @@ ship "Model 1024"
 		hull 37900
 		automaton 1
 		"crew equivalent" 200
-		mass 1300
-		drag 19.1
-		"heat dissipation" .8
+		mass 3654
+		drag 39.2
+		"heat dissipation" .54
 		"fuel capacity" 500
 		"cargo space" 669
 		"outfit space" 819
@@ -322,9 +323,9 @@ ship "Model 1024" "Model 1024 (Infested)"
 		category "Heavy Warship"
 		"hull" 6
 		"automaton" 1
-		"mass" 1150
-		"drag" 17.4
-		"heat dissipation" .8
+		mass 3654
+		drag 39.2
+		"heat dissipation" .54
 		"self destruct" 1
 		"turn" 1
 		"turning energy" 1
@@ -366,18 +367,19 @@ ship "Model 1024" "Model 1024 (Infested)"
 
 # This ship is derived from the Korath Stalker
 ship "Korath Forager"
+	"display name" "For'ajar"
 	sprite "ship/AESmisc korath_stalker"
 	thumbnail "thumbnail/AESmisc korath_stalker"
 	attributes
 		category "Interceptor"
-		cost 1786000
-		shields 5000
-		hull 2800
+		"cost" 1786000
+		"shields" 5000
+		"hull" 2800
 		"required crew" 2
-		bunks 3
-		mass 140
-		drag 2
-		"heat dissipation" 2.6
+		"bunks" 3
+		"mass" 190
+		"drag" 2.2
+		"heat dissipation" 1.7
 		"fuel capacity" 200
 		"cargo space" 20
 		"outfit space" 172
@@ -435,9 +437,9 @@ ship "Quarg Seakraken"
 		"hull" 132000
 		"required crew" 122
 		"bunks" 404
-		"mass" 980
-		"drag" 15
-		"heat dissipation" 1.34
+		"mass" 1090
+		"drag" 26.2
+		"heat dissipation" 1.09
 		"fuel capacity" 1000
 		"cargo space" 92
 		"outfit space" 600
@@ -506,13 +508,13 @@ ship "Quarg Wardrake"
 	attributes
 		category "Light Warship"
 		cost 33960000
-		shields 94500
-		hull 45000
+		"shields" 94500
+		"hull" 45000
 		"required crew" 32
-		bunks 56
-		mass 260
-		drag 2.8
-		"heat dissipation" .7
+		"bunks" 56
+		"mass" 561
+		"drag" 3.2
+		"heat dissipation" .61
 		"fuel capacity" 1200
 		"cargo space" 60
 		"outfit space" 380
@@ -565,9 +567,9 @@ ship "Quarg Warwyvern"
 		"hull" 95000
 		"required crew" 89
 		"bunks" 118
-		"mass" 610
-		"drag" 9.2
-		"heat dissipation" .52
+		"mass" 1240
+		"drag" 16.3
+		"heat dissipation" .35
 		"fuel capacity" 800
 		"cargo space" 19
 		"outfit space" 760
@@ -622,9 +624,9 @@ ship "Quarg Skyswift"
 		"hull" 84000
 		"required crew" 58
 		"bunks" 97
-		"mass" 710
-		"drag" 14.6
-		"heat dissipation" .5
+		"mass" 890
+		"drag" 22.6
+		"heat dissipation" .34
 		"fuel capacity" 1000
 		"cargo space" 1253
 		"outfit space" 520

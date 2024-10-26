@@ -107,60 +107,50 @@ mission "Angri Byrds"
 
 event "angri byrds"
 	planet "Varu Tev'kei"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 500
+			threshold 1950
+			fleet "Wanderer Defense" 5
 	planet "Kort Kehai"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 100
+			threshold 1500
+			fleet "Wanderer Defense" 3
 	planet "Vara Rakak"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 2300
+			threshold 6500
+			fleet "Wanderer Defense" 5
 	planet "Tik Klai"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 600
+			threshold 3500
+			fleet "Wanderer Defense" 4
 	planet "Vara Kehi'ki"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 900
+			threshold 3500
+			fleet "Wanderer Defense" 5
 	planet "Vara K'chrai"
-		tribute 10000
-			threshold 20000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 50
+		tribute 8000
+			threshold 14000
+			fleet "Wanderer Defense" 17
 	planet "Varu Ek'lak'lai"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 1300
+			threshold 3400
+			fleet "Wanderer Defense" 4
 	planet "Var' Kayi"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 4500
+			threshold 12500
+			fleet "Wanderer Defense" 12
 	planet "Var' Roi"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 100
+			threshold 1500
+			fleet "Wanderer Defense" 4
 	planet "Varu Tek'kai"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 200
+			threshold 1700
+			fleet "Wanderer Defense" 4
 	planet "Varu K'prai"
-		tribute 2000
-			threshold 5000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 800
+			threshold 1800
+			fleet "Wanderer Defense" 2
+			fleet "Wanderer Freight" 4
 
 
 #-----Worlds in Korath space colonized by Wanderers-----
@@ -177,12 +167,11 @@ mission "Angri Byrds 2"
 		event "Wanderers tribute Spera Anatrusk"
 event "Wanderers tribute Spera Anatrusk"
 	planet "Spera Anatrusk"
-		tribute 1000
-			threshold 3000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 600
+			threshold 1200
+			fleet "Wanderer Defense" 2
 
-		
+
 mission "Angri Byrds 3"
 	landing
 	invisible
@@ -196,10 +185,9 @@ mission "Angri Byrds 3"
 
 event "Wanderer tribute Desi Seledrak"
 	planet "Desi Seledrak"
-		tribute 1000
-			threshold 3000
-			fleet "Wanderer Drones" 5
-			fleet "Wanderer Defense" 10
+		tribute 500
+			threshold 1100
+			fleet "Wanderer Defense" 2
 
 
 # Locked for version 0.9.14. Ready to unlock if colony expands in later version of vanilla game.
@@ -216,10 +204,9 @@ event "Wanderer tribute Desi Seledrak"
 #
 #event "Wanderer tribute Sabira Eseskrai"
 #	planet "Sabira Eseskrai"
-#		tribute 1000
-#			threshold 3000
-#			fleet "Wanderer Drones" 5
-#			fleet "Wanderer Defense" 10
+#		tribute 400
+#			threshold 1000
+#			fleet "Wanderer Defense" 2
 
 
 
@@ -248,6 +235,9 @@ mission "Angri Byrds License Revoked"
 		has "event: angri byrds"
 		not "Angri Byrds: Peace Through Strength 1: offered"
 	on offer
+		clear "license: Wanderer"
+		clear "license: Wanderer Outfits"
+		clear "license: Wanderer Military"
 		log `My reputation with the Wanderers is strained. They became upset after my battle with the Pug in their territory. Restoring peaceful relations may be an impossible task.`
 		conversation
 			`You are viewed with suspicion and anger by several Wanderers here. You did dare to battle their gods afterall. Unsurprisingly, your Wanderer licenses are no longer being honored.`
@@ -452,18 +442,18 @@ mission "Angri Byrds: Peace Through Strength 2"
 		set "license: Wanderer"
 		set "license: Wanderer Military"
 		set "license: Wanderer Outfits"
-		"tribute: Varu Tev'kei" <?= 200
-		"tribute: Kort Kehai" <?= 200
-		"tribute: Vara Rakak" <?= 200
-		"tribute: Tik Klai" <?= 200
-		"tribute: Vara Kehi'ki" <?= 200
-		"tribute: Vara K'chrai" <?= 1000
-		"tribute: Varu Ek'lak'lai" <?= 200
-		"tribute: Var' Kayi" <?= 200
-		"tribute: Var' Roi" <?= 200
-		"tribute: Varu Tek'kai" <?= 200
-		"tribute: Spera Anatrusk" <?= 100
-		"tribute: Desi Seledrak" <?= 100
+		"tribute: Varu Tev'kei" <?= 50
+		"tribute: Kort Kehai" <?= 10
+		"tribute: Vara Rakak" <?= 230
+		"tribute: Tik Klai" <?= 60
+		"tribute: Vara Kehi'ki" <?= 90
+		"tribute: Vara K'chrai" <?= 800
+		"tribute: Varu Ek'lak'lai" <?= 130
+		"tribute: Var' Kayi" <?= 450
+		"tribute: Var' Roi" <?= 10
+		"tribute: Varu Tek'kai" <?= 20
+		"tribute: Spera Anatrusk" <?= 120
+		"tribute: Desi Seledrak" <?= 110
 		fail
 
 event "Angri Byrds Peace Through Strength"
@@ -774,6 +764,8 @@ mission "Angri Byrds: Unfettered Strikers"
 		has "event: wanderers: unfettered invasion starts"
 		random < 20
 	npc kill
+		to spawn
+			not "event: solifuge deployment"
 		government "Hai (Unfettered)"
 		system
 			distance 1 1
@@ -783,13 +775,29 @@ mission "Angri Byrds: Unfettered Strikers"
 			cargo 3
 			commodities "Food" "Medical"
 			variant
-				"Armor Beetle"
-				"Solifuge (Ion Flash)"
-				"Violin Spider" 3
-				"Violin Spider (Pulse)" 3
+				"Armor Beetle (Ion Pulse)"
 				"Shield Beetle (Ion Pulse)" 2
-				"Sea Scorpion (Ion)" 2
+				"Sea Scorpion (Ion Pulse)" 2
 				"Lightning Bug" 4
+	npc kill
+		to spawn
+			has "event: solifuge deployment"
+		government "Hai (Unfettered)"
+		system
+			distance 1 1
+		personality target waiting staying heroic vindictive marked
+		fleet
+			names "hai"
+			cargo 3
+			commodities "Food" "Medical"
+			variant
+				"Armor Beetle (Ion Pulse)"
+				"Solifuge (Komodo)"
+				"Violin Spider" 6
+				"Shield Beetle (Ion Pulse)" 2
+				"Sea Scorpion (Ion Pulse)" 2
+				"Lightning Bug" 4
+
 		dialog `You've eliminated the <npc> and its fleet. Report to <destination> for payment.`
 	on complete
 		payment 1000000
@@ -973,7 +981,7 @@ mission "Angri Byrds: Hai Millipede 1"
 				`	(Ask what's going on.)`
 				`	(Mind your own business.)`
 					defer
-			scene "thumbnail/hai millipede-thumb"
+			scene "thumbnail/hai millipede b-thumb"
 			`	A captain of one of the damaged ships tells you, "The Unfettered have been [using? piloting?] a large transport named the <npc> to board and [steal? capture?] several Wanderer ships at <waypoints>." It might be viewed by the Wanderers as an act of heroism if you hunted down the <npc>. On the other hand, attempting it might get you killed.`
 			choice
 				`	(Offer to hunt the Unfettered ship.)`
@@ -1031,7 +1039,7 @@ mission "Angri Byrds: Hai Millipede 1"
 		"reputation: Wanderer" += 10
 		clear "millipede runs amok"
 		conversation
-			scene "thumbnail/hai millipede-thumb"
+			scene "thumbnail/hai millipede b-thumb"
 			`The Wanderers thank you for the critical role you played in stopping the Millipede from stealing more of their ships. You are rewarded with <payment>.`
 
 mission "Angri Byrds: Hai Millipede 2"
@@ -1053,7 +1061,7 @@ mission "Angri Byrds: Hai Millipede 2"
 				`	(Ask what's going on.)`
 				`	(Mind your own business.)`
 					defer
-			scene "thumbnail/hai millipede-thumb"
+			scene "thumbnail/hai millipede b-thumb"
 			`	A captain of one of the damaged ships tells you, "The Unfettered have been [using? piloting?] another Millipede named the <npc> to board and [steal? capture?] several Wanderer ships at <waypoints>."`
 			choice
 				`	(Offer to hunt the Unfettered ship.)`
@@ -1120,7 +1128,7 @@ mission "Angri Byrds: Hai Millipede 2"
 		"reputation: Wanderer" += 20
 		clear "millipede runs amok"
 		conversation
-			scene "thumbnail/hai millipede-thumb"
+			scene "thumbnail/hai millipede b-thumb"
 			`The Wanderers thank you for the critical role you played in stopping the Millipede from stealing more of their ships. You are rewarded with <payment>.`
 
 
@@ -1445,8 +1453,15 @@ mission "Angri Byrds Surveillance Job"
 			names "hai"
 			cargo 0
 			variant
+				"Armor Beetle (Ion Pulse)"
+				"Shield Beetle (Ion Pulse)" 2
+			variant
 				"Armor Beetle"
 				"Shield Beetle (Ion Pulse)" 2
+			variant
+				"Shield Beetle (Ion Pulse)" 2
+				"Solifuge (Komodo, Tracker)"
+				"Violin Spider (Pulse Repeater)" 6
 	npc
 		government "Hai (Unfettered)"
 		system "Chy'chra"
@@ -1455,10 +1470,15 @@ mission "Angri Byrds Surveillance Job"
 			names "hai"
 			cargo 0
 			variant
+				"Armor Beetle (Ion Pulse)"
 				"Shield Beetle (Ion Pulse)" 2
-				"Solifuge (Tracker)"
-				"Violin Spider" 4
-				"Violin Spider (Pulse)" 2
+			variant
+				"Armor Beetle"
+				"Shield Beetle (Ion Pulse)" 2
+			variant
+				"Shield Beetle (Ion Pulse)" 2
+				"Solifuge (Komodo, Tracker)"
+				"Violin Spider (Pulse Repeater)" 6
 	on complete
 		payment 100000
 		dialog `The Wanderers thank you for retrieving the data and reward you with <payment>.`

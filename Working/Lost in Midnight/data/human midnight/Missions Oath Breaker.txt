@@ -171,8 +171,11 @@ mission "Oathbreaker Strategos Deployed"
 		has "event: geminus rebuilt"
 		random < 70
 	on offer
-		log "People" "Marcus Junius" `Captain of the Strategos class Navy super carrier "R.N.S. Poisonwood." The first of its kind, the ship will be stationed in the Dirt Belt due to increased pirate activity there.`
 		conversation
+			branch spawnpatch
+				has "Oathbreaker Strategos Deployed Patch: offered"
+			action
+				log "People" "Marcus Junius" `Captain of the Strategos class Navy super carrier "R.N.S. Poisonwood." The first of its kind, the ship will be stationed in the Dirt Belt due to increased pirate activity there.`
 			scene "thumbnail/strategos-thumb"
 			`There's a broadcast playing at the bar. They're showing the deployment of the Strategos class Navy super carrier, "R.N.S. Poisonwood." The first of its kind, the ship will be stationed in the Dirt Belt due to increased pirate activity there.`
 			`	There's a low whistle. A spectator in the crowd comments, "The war might've gone differently if the Navy had a few of those in their fleet."`
@@ -180,8 +183,14 @@ mission "Oathbreaker Strategos Deployed"
 			`	Someone else notes, "Even the name Poisonwood refers to that one southern planet that refused to leave the Republic."`
 			`	As the ceremonial wine bottle is about to break over the hull, the captain, Marcus Junius, is asked to comment. "I look forward to a successful campaign." The red wine splatters across the ship's pristine hull.`
 				accept
+			label spawnpatch
+			scene "thumbnail/enforcer drone-thumb"
+			`There's a broadcast playing at the bar. The R.N.S. Poisonwood has been hunting down pirate raiders in the Dirt Belt. The journalist is reporting on the Enforcer drones exclusively assigned to Strategos class super carriers. It almost sounds like a product placement advertisement.`
+				accept
 
 	npc
+		to despawn
+			has "Oathbreaker Poisonwood: offered"
 		government "Republic"
 		system "Delta Velorum"
 		personality waiting staying vindictive
@@ -211,12 +220,26 @@ mission "Oathbreaker Strategos Deployed"
 		ship "Outrider (Mark II)" "Alpha Six"
 		ship "Outrider (Mark II)" "Alpha Seven"
 		ship "Outrider (Mark II)" "Alpha Eight"
-	npc save
+	npc kill
+		to despawn
+			has "Oathbreaker Poisonwood: offered"
 		government "Republic"
 		system "Delta Velorum"
 		personality waiting staying vindictive
 		ship "Strategos" "R.N.S. Poisonwood"
+		on kill
+			set "r.n.s. poisonwood destroyed"
+			fail
 
+mission "Oathbreaker Strategos Deployed Patch"
+	landing
+	invisible
+	to offer
+		has "Oathbreaker Strategos Deployed: done"
+		not "r.n.s. poisonwood destroyed"
+		not "Oathbreaker Poisonwood: offered"
+	on offer
+		clear "Oathbreaker Strategos Deployed: offered"
 
 
 mission "Oathbreaker Siege 1"
@@ -614,13 +637,7 @@ mission "Oathbreaker Supply Run"
 					goto orphan
 				`	(Draw the Quantum Keyblade.)`
 					to display
-						or
-							has "outfit (flagship installed): Quantum Key Blade"
-							has "outfit (flagship installed): Quantum Dragon Blade"
-							has "outfit (flagship installed): Quantum Phoenix Blade"
-							has "outfit (flagship installed): Quantum Snake Blade"
-							has "outfit (flagship installed): Quantum Tiger Blade"
-							has "outfit (flagship installed): Quantum Turtle Blade"
+						has "flagship attribute: quantum keyblade"
 					goto keyblade
 			scene "effect/blood"
 			`	As soon as you open the hatch, a firing squad bathes you in hellfire.`
@@ -664,17 +681,51 @@ mission "Oathbreaker Supply Run"
 		log `Found an Oathbreaker fleet using <planet>, a pirate world, as a base of operations. If I can get this information to the government, I might get a reward.`
 	npc evade
 		government "Oathbreaker"
-		personality launching heroic target unconstrained
-		fleet "Elite Oathbreaker"
-		fleet "Large Oathbreaker"
+		personality waiting heroic target unconstrained
+		fleet
+			names "Oathbreaker"
+			fighters "Oathbreaker fighter"
+			outfitters "Ammo North"
+			variant
+				"Marauder Carrier"
+				"Marauder Cruiser"
+				"Marauder Frigate"
+				"Gunboat (Mark II)"
+				"Rainmaker (Mark II)"
+				"Auxiliary (Battle)"
+				"Lance" 4
+				"Combat Drone" 10
+				"Dropship (Troops)" 4
+				"Outrider (Mark II)" 14
 	npc evade
 		government "Oathbreaker"
-		personality entering heroic target nemesis unconstrained
-		fleet "Small Oathbreaker"
+		personality entering target nemesis coward
+		fleet
+			names "Oathbreaker"
+			fighters "Oathbreaker fighter"
+			outfitters "Ammo North"
+			variant
+				"Missileboat"
+				"Outrider (Pirate)" 2
 	npc evade
 		government "Oathbreaker"
-		personality waiting heroic target nemesis unconstrained
-		fleet "Fugitive Oathbreaker"
+		personality entering target nemesis coward
+		fleet
+			names "Oathbreaker"
+			fighters "Oathbreaker fighter"
+			outfitters "Ammo North"
+			variant
+				"Patrolboat"
+				"Outrider (Pirate)" 2
+	npc evade
+		government "Oathbreaker"
+		personality entering target nemesis coward
+		fleet
+			names "Oathbreaker"
+			fighters "Oathbreaker fighter"
+			outfitters "Ammo North"
+			variant
+				"Outrider (Pirate)" 5
 	to complete
 		never
 
@@ -1708,9 +1759,11 @@ mission "Oathbreaker Poisonwood"
 		has "salary: Free Worlds"
 		has "event: Oathbreaker Random"
 		has "Oathbreaker Strategos Deployed: active"
+		not "r.n.s. poisonwood destroyed"
 		"Oathbreaker escalation" >= 6
 	on offer
 		fail "Oathbreaker Strategos Deployed"
+		log "People" "Marcus Junius" `He has abandoned his mission in the Dirt Belt and is suspected of planning to join the Oathbreakers.`
 		conversation
 			scene thumbnail/strategos-thumb
 			`You receive an urgent message from Alondo on Bourne. "Hello <first>! We've just got confirmation from the Republic that the Strategos class Navy super carrier "R.N.S. Poisonwood" has abandoned its mission in the Dirt Belt and is likely on its way to the south to join the Oathbreakers. We are recruiting every pilot in the area to hunt down that ship and destroy it before that happens.`
@@ -1804,7 +1857,9 @@ mission "Oathbreaker Poisonwood"
 		system Tais
 		personality target waiting staying vindictive
 		ship "Strategos" "R.N.S. Poisonwood"
-		dialog "You've eliminated the R.N.S. Poisonwood. Report to <destination>."
+		on kill
+			set "r.n.s. poisonwood destroyed"
+			dialog "You've eliminated the R.N.S. Poisonwood. Report to <destination>."
 
 	on complete
 		"reputation: Free Worlds" ++
@@ -2028,7 +2083,7 @@ mission "Oathbreaker Thermopylae"
 		system "Wei"
 		government "Oathbreaker"
 		personality target plunders harvests staying 
-		ship "Modified Skein" "F.S. Alpine Larch"
+		ship "Modified Skein" "Alpine Larch"
 		fleet
 			fighters
 				names "free worlds fighter"
@@ -2043,9 +2098,9 @@ mission "Oathbreaker Thermopylae"
 			cargo 1
 			outfitters "Ammo South"
 			variant
-				"Marauder Falcon (Engines)"
-				"Marauder Bastion"
-				"Marauder Osprey"
+				"Marauder Falcon (Engines, Electron Beam)"
+				"Marauder Bastion (Electron Beam)"
+				"Marauder Osprey (Electron Beam)"
 				"Modified Roost"
 				"Modified Nest"
 				"Pirate Drone" 6
@@ -2279,6 +2334,7 @@ mission "Nemesis: Oath Breaker"
 	npc
 		to spawn
 			has "Oathbreaker Poisonwood: aborted"
+			not "r.n.s. poisonwood destroyed"
 		government "Oathbreaker"
 		personality target waiting heroic vindictive
 		system destination

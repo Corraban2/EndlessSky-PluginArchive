@@ -2453,7 +2453,7 @@ start
 		has "main plot completed"
 	on reveal
 		description `Unlocked after completion of the main plot.`
-	description `Ship: Star Barge`
+	description `Ship: Modified Star Barge`
 	description `	For experienced pilots who've already flown the Endless Skies.`
 	description `	You've just been hired by the Syndicate! Your first big job is testing an experimental device called a Jump Drive. It's surprising that they would entrust this job to a new hire like you. Hopefully nothing goes wrong...`
 	thumbnail "outfit/jump drive"
@@ -2507,14 +2507,11 @@ ship "Star Barge" "Star Barge (Conundrum)"
 	description `The Syndicate sometimes modifies their own Star Barges to aid in testing the research and development of new products. Their own internal risk reward analysis has concluded that this is far more economical than designing an entirely new ship for this purpose.`
 	description `	Similarly, the insurance department has determined that the best recruits to crew these vessels are new hires who haven't yet accrued extensive death benefits. The legal department has also suggested using outside contractors on whom the Syndicate can shift any liability burden should the need arise.`
 
-event "midnight conundrum start link"
-	link "Deep Space 19M2" "Deep Space 19MX"
 
 conversation "conundrum intro"
 	scene "scene/lobby"
 	action
 		give ship "Star Barge (Conundrum)" "Conundrum"
-		event "midnight conundrum start link"
 	`"Good luck, uh, what was your name again?" The Syndicate manager asks awkwardly as you board the Conundrum. This is your first big mission since the Syndicate hired you. Everything you do is probably being evaluated to determine your future salary adjustments and potential opportunities for advancement.`
 	name
 	scene "thumbnail/modified star barge-thumb"
@@ -2556,6 +2553,7 @@ conversation "conundrum intro"
 		`	"Let's find our way home."`
 			accept
 
+
 mission "Conundrum Intro [0]"
 	landing
 	name "The Long Detour Home"
@@ -2588,6 +2586,10 @@ mission "Conundrum Intro [0]"
 			label light
 			scene "outfit/search light"
 			`	Target the creature with the Spotlight or Search Light to examine it before trying to climb aboard and carve out a chunk of anything that looks edible. Beware that doing this could make its friends angry...`
+	on enter "Deep Space 1X"
+		conversation
+			scene "ship/nova egg pouch"
+			`James monitors the scanners. "This gas cloud is rich in deuterium. We can refill our fuel here." The scanner beeps, detecting a sizable object in the cloud. James looks at the data and says, "I'm not sure what that is. It doesn't appear hostile, but we should probably keep our distance."`
 	on enter "Devil-Run"
 		conversation
 			branch starvation
@@ -2596,7 +2598,7 @@ mission "Conundrum Intro [0]"
 			scene "planet/forest3"
 			`James checks the sensor data. "<first>, we might be back! <system> appears to be nearby. One more jump and we can be back on <planet>!"`
 			scene "outfit/jump drive (damaged)"
-			`	You'll need to use the Jump Drive. With the state it's currently in, make sure your fuel tanks are full in order to initiate a jump.`
+			`	You inspect the Jump Drive. With the state it's currently in, your fuel storage needs to be full in order to initiate a jump.`
 				accept
 			label starvation
 			scene "scene/scene-guts"
@@ -2606,78 +2608,87 @@ mission "Conundrum Intro [0]"
 		government "Forest (Prey)"
 		system "Deep Space 19M2"
 		personality waiting staying derelict timid mining harvests mute
-		ship "Pincer Beast (Carcass)" " "
+		ship "Pincer Beast (Carcass)" "Pincer Beast"
 		on provoke
 			dialog "Examining the creature's wound, you see what looks like edible meat exposed..."
-		on board
-			set "harvested pincer beast"
 		on assist
 			dialog "The creature suddenly twitches! It seems to be recovering. You won't be able to harvest anything from it now..."
 	npc
 		government "Forest (Prey)"
-		system "Deep Space 1X"
+		system "Deep Space 19MN"
 		personality waiting staying derelict timid mining harvests mute
-		ship "Pincer Beast (Carcass)" " "
+		ship "Pincer Beast (Carcass)" "Pincer Beast"
 		on provoke
 			dialog "Examining the creature's wound, you see what looks like edible meat exposed..."
-		on board
-			set "harvested pincer beast"
 		on assist
 			dialog "The creature suddenly twitches! It seems to be recovering. You won't be able to harvest anything from it now..."
+	npc
+		government "Invasive Lifeform (Passive)"
+		system "Deep Space 1X"
+		personality timid mining harvests uninterested mute
+		fleet
+			names "nova firefly"
+			cargo 0
+			variant 1
+				"Egg Pouch" 1
+				"Firefly Young" 4
 	npc
 		government "Indigenous Lifeform"
 		system "Deep Space 1Q"
 		personality timid mining harvests uninterested mute unconstrained
-		ship "Subsidurial" " "
+		ship "Subsidurial" "Subsidurial"
 	npc
 		government "Forest (Prey)"
 		system "Deep Space 5T"
 		personality waiting staying derelict timid mining harvests mute
-		ship "Pincer Beast (Carcass)" " "
+		ship "Pincer Beast (Carcass)" "Pincer Beast"
 		on provoke
 			dialog "Examining the creature's wound, you see what looks like edible meat exposed..."
-		on board
-			set "harvested pincer beast"
+		on assist
+			dialog "The creature suddenly twitches! It seems to be recovering. You won't be able to harvest anything from it now..."
+	npc
+		government "Forest (Prey)"
+		system "Deep Space 5N"
+		personality waiting staying derelict timid mining harvests mute
+		ship "Pincer Beast (Carcass)" "Pincer Beast"
+		on provoke
+			dialog "Examining the creature's wound, you see what looks like edible meat exposed..."
 		on assist
 			dialog "The creature suddenly twitches! It seems to be recovering. You won't be able to harvest anything from it now..."
 	npc
 		government "Forest (Prey)"
 		system "Deep Space 5J"
 		personality waiting staying derelict timid mining harvests mute
-		ship "Pincer Beast (Carcass)" " "
+		ship "Pincer Beast (Carcass)" "Pincer Beast"
 		on provoke
 			dialog "Examining the creature's wound, you see what looks like edible meat exposed..."
-		on board
-			set "harvested pincer beast"
-		on assist
-			dialog "The creature suddenly twitches! It seems to be recovering. You won't be able to harvest anything from it now..."
-	npc
-		government "Forest (Prey)"
-		system "Deep Space 7F"
-		personality waiting staying derelict timid mining harvests mute
-		ship "Pincer Beast (Carcass)" " "
-		on provoke
-			dialog "Examining the creature's wound, you see what looks like edible meat exposed..."
-		on board
-			set "harvested pincer beast"
 		on assist
 			dialog "The creature suddenly twitches! It seems to be recovering. You won't be able to harvest anything from it now..."
 	npc
 		government "Derelict (Killable)"
 		system "Deep Space 7C"
 		personality target derelict pacifist mute
-		fleet
-			names "civilian"
-			cargo 0
-			variant
-				"Science Drone (Derelict Supercapacitor)"
-			variant
-				"Science Drone (Derelict Photovoltaic)"
+		ship "Science Drone (Derelict Photovoltaic)" "Tamatebako"
 		on board
 			dialog "This drone is too damaged to repair, but one of its components can be salvaged. The fact that it's here could be a sign that you aren't too far from home..."
 	on complete
 		"reputation: Syndicate" <?= -1
 
+mission "Conundrum Intro [0 Failure]"
+	landing
+	invisible
+	to offer
+		not "Conundrum Intro [0]: done"
+		has "flagship base attribute: the conundrum"
+	on offer
+		conversation
+			scene "scene/scene-guts"
+			`The journey to make it this far has been a difficult one. Unfortunately, despite rationing what little food was available, you and James were unable to keep yourselves adequately fed. At some point while you were away from civilization, starvation gnawed away at your last remaining shreds of rational thought. The consuming hunger needed to be sated...`
+			``
+			`...`
+			``
+			`When the spaceport authorities pry open the Conundrum's hatch, they find the leftover scraps of James' remains and a deranged lunatic smeared in James' blood. You spend the rest of your life in a mental institution, never regaining your sanity from whatever happened out there.`
+				die
 
 mission "Conundrum Intro [1]"
 	landing
@@ -2703,8 +2714,8 @@ mission "Conundrum Intro [1]"
 				`	(Launch the Conundrum!)`
 					launch
 				`	(Surrender to the authorities.)`
-			`	"<first>! They're coming! We need to go! NOW!" At this point, James is shouting...`
 			scene "outfit/attention"
+			`	"<first>! They're coming! We need to go! NOW!" At this point, James is shouting...`
 			choice
 				`	(Launch the Conundrum!)`
 					launch
@@ -2767,6 +2778,11 @@ mission "Conundrum Intro [1]"
 
 			label end
 			`	"Best of luck to you, Captain." He hands you a credit chip worth <payment>, and says, "Here's a little something to help now that you're on your own. Remember to check the spaceports wherever you land. You never know who you'll find wandering around there."`
+			choice
+				`	(Let him go.)`
+					accept
+				`	"James, who are you?"`
+			`	He turns back to you and smiles. "As of today, I'm just a retired star ship captain." He gives one last wave and disembarks.`
 
 ship "Pincer Beast" "Pincer Beast (Carcass)"
 	"uncapturable"
@@ -2781,7 +2797,3 @@ outfit "Food?"
 	thumbnail "outfit/unknown"
 	"mass" 1
 	description "This is barely edible, but it should be able to keep you going for another day."
-
-
-
-
