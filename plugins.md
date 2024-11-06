@@ -6563,7 +6563,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Arion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Arion.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Arion/) <br>
 Author: Spectre907YT | Category: Races <br>
-[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-11-05) <br>
+[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-11-06) <br>
 
 >Adds a faction (or 2) that supplies real life fighters and other interesting stuff.
 >
@@ -6596,7 +6596,8 @@ To get access to the content visit Earth, Valhalla, Hephaestus or Bourne. Perhap
 
 There are also some bonus content if you have the lost in midnight, mega freight, czartraks ships, amphibious ships, altera or navycampaign (by kestrel1110) plugin. To access the bonus content, move the respective files from the bonus file to the data file.
 
-(Special thanks to 1010todd, yuyuko_saigyouji. and gefulltetaubenbrust from the Endless Sky discord server for letting me borrow some sprites)
+(Special thanks to 1010todd, thisismyname563 (Yuyuko Saigyouji)
+, gefulltetaubenbrust, jenbones3135 and kitteh_cat from the Endless Sky discord server for letting me borrow some sprites)
 
 </blockquote>
 </details>
