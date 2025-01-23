@@ -5,6 +5,8 @@
 (latest 15 entries):
 <table><tr><td width=800>
 
+2025-01-23 | updated Plugin '-Omnis' by Darcy Manoel | [cheats](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#cheats)<br>
+2025-01-23 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-22 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-21 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-20 | new Plugin '-Omnis' by Darcy Manoel | [cheats](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#cheats)<br>
@@ -18,8 +20,6 @@
 2025-01-13 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-12 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-11 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
-2025-01-10 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
-2025-01-09 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 
 </td></tr></table>
 Provide a direct link to your zipped plugin to enable automatic updating.<br>

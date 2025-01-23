@@ -1,3 +1,5 @@
+2025-01-23 | updated Plugin '-Omnis' by Darcy Manoel | [cheats](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#cheats)<br>
+2025-01-23 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-22 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-21 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2025-01-20 | new Plugin '-Omnis' by Darcy Manoel | [cheats](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#cheats)<br>
