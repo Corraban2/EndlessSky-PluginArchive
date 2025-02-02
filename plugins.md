@@ -14,9 +14,9 @@
 ### -Omnis
 
 
-[-Omnis.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/-Omnis.zip) | 2.9 mb | 2025-01-24 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/-Omnis/) <br>
+[-Omnis.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/-Omnis.zip) | 2.9 mb | 2025-02-02 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/-Omnis/) <br>
 Author: Darcy Manoel | Category: Cheats <br>
-[https://github.com/Adde-Endless-Sky-Mods/-Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis) (last commit 2025-01-24) <br>
+[https://github.com/Adde-Endless-Sky-Mods/-Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis) (last commit 2025-02-02) <br>
 
 >The most extensive all-content plugin to date. It includes many opportunities to test balance or ship builds against AI driven ships or fleets, all vanilla content and the content of many plugins available to use to put together different ship builds. Many more tools are included into Omnis too!
 >
@@ -722,9 +722,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Ruin the Fun/icon.png' height='100'></img><br>
 
 
-[Ruin.the.Fun.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Ruin.the.Fun.zip) | 3.66 mb | 2025-02-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Ruin%20the%20Fun/) <br>
+[Ruin.the.Fun.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Ruin.the.Fun.zip) | 3.55 mb | 2025-02-02 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Ruin%20the%20Fun/) <br>
 Author: Pshy0 | Category: Cheats <br>
-[https://github.com/Pshy0/es-ruin-the-fun](https://github.com/Pshy0/es-ruin-the-fun) (last commit 2025-02-01) <br>
+[https://github.com/Pshy0/es-ruin-the-fun](https://github.com/Pshy0/es-ruin-the-fun) (last commit 2025-02-02) <br>
 
 >A development / cheat plugin for Endless Sky. Access all ships and outfits, change your captain's name, choose the color swizzle of your ships, edit your relation with other governments, set your combat rank, hire a powerful escort, gift yourself pre-outfitted ships, give yourself money, and much more. 
 >
@@ -8351,9 +8351,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Blended Ships/icon.png' height='100'></img><br>
 
 
-[Blended.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Blended.Ships.zip) | 7.57 mb | 2025-02-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Blended%20Ships/) <br>
+[Blended.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Blended.Ships.zip) | 7.57 mb | 2025-02-02 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Blended%20Ships/) <br>
 Author: mOctave | Category: Ships <br>
-[https://github.com/mOctave/blended-ships](https://github.com/mOctave/blended-ships) (last commit 2025-02-01) <br>
+[https://github.com/mOctave/blended-ships](https://github.com/mOctave/blended-ships) (last commit 2025-02-02) <br>
 
 >Blended Ships is the realistic spliced ship plugin. All these ships have thumbnails, believeable stats, and actual potential uses! There is also a greater variety of civilian ships available, to support various playstyles.
 >
