@@ -954,7 +954,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Shipmod
 
 
-[Shipmod.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Shipmod.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Shipmod/) <br>
+[Shipmod.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Shipmod.zip) | 6.67 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Shipmod/) <br>
 Author: Galaucus | Category: Cheats <br>
 [https://github.com/Galaucus/Shipmod](https://github.com/Galaucus/Shipmod) (last commit 2020-09-29) <br>
 
@@ -7807,7 +7807,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### The Evora Navaiya
 
 
-[The.Evora.Navaiya.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Evora.Navaiya.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Evora%20Navaiya/) <br>
+[The.Evora.Navaiya.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Evora.Navaiya.zip) | 6.16 kb | 2023-11-21 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Evora%20Navaiya/) <br>
 Author: Polaria1 | Category: Races <br>
 [https://github.com/Polaria1/The-Evora-Navaiya](https://github.com/Polaria1/The-Evora-Navaiya)  <br>
 
@@ -12537,9 +12537,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Lost in Midnight/icon.png' height='100'></img><br>
 
 
-[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 73.97 mb | 2025-01-26 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
+[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 73.96 mb | 2025-02-07 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
 Author: MidnightPlugins | Category: Story <br>
-[https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2025-01-26) <br>
+[https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2025-02-07) <br>
 
 >A mission focused plugin for Endless Sky.
 >
