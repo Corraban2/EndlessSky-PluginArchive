@@ -2225,9 +2225,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/more.boarding.missions/icon.png' height='100'></img><br>
 
 
-[more.boarding.missions.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/more.boarding.missions.zip) | 1.4 mb | 2024-05-08 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/more.boarding.missions/) <br>
+[more.boarding.missions.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/more.boarding.missions.zip) | 5.63 mb | 2025-02-10 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/more.boarding.missions/) <br>
 Author: zuckung | Category: Gameplay <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2024-05-08) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2025-02-10) <br>
 
 >Adds lots of repeatable boarding and assisting missions for different factions. Boarding bigger ships give higher rewards or higher chances for credits or special items. See the readme for details.
 
@@ -11324,9 +11324,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/bunrodea.missions/icon.png' height='100'></img><br>
 
 
-[bunrodea.missions.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/bunrodea.missions.zip) | 1.29 mb | 2024-12-12 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/bunrodea.missions/) <br>
+[bunrodea.missions.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/bunrodea.missions.zip) | 1.29 mb | 2025-02-10 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/bunrodea.missions/) <br>
 Author: zuckung | Category: Story <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2024-12-12) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2025-02-10) <br>
 
 >Adds some missions and jobs to increase the Bunrodea reputation. The first mission is available after the vanilla first contact mission. Doing more jobs will allow you to get access to all their planets and ships. See the readme for details.
 
@@ -11343,16 +11343,22 @@ Some missions from landing/spaceport unlock jobs. Others just give reputation or
 Averagely you have to do like 50 jobs, less if you take the fighting jobs. Like in vanilla play, hit spaceport often.<br>
 <br>
 Since it's often questioned, here is a guide to the bunrodea first contact mission. Travel through Bunrodea territory till you've killed at least one Bunrodea ship, then fly to a human system, land there and you get a mission that mission brings you back to the Bunrodea. You can land on 4 planets now, and at this point this plugin starts.<br>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions01.jpg' width='400'>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions02.jpg' width='400'>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions03.jpg' width='400'>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions04.jpg' width='400'>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions05.jpg' width='400'>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions06.jpg' width='400'>
-<img src='https://raw.githubusercontent.com/zuckung/endless-sky-plugins/master/screenshots/bunrodea.missions07.jpg' width='400'>
 <br>
 <br>
 Changelog:<br>
+<br>
+2025-02-10<br>
+added @2x images<br>
+changed news portraits, because of a conflict with expert.crew.members<br>
+<br>
+2024-10-08 <br>
+proofreading and minor text changes (Vemenous-Repentile)<br>
+<br>
+2024-06-07<br>
+text correction (thx to Dagroth)<br>
+<br>
+2024-06-07<br>
+text corrections (thx to TheGiraffe3)<br>
 <br>
 2024-04-30<br>
 fixed error on natural spawning korath fleets<br>
@@ -11415,7 +11421,7 @@ added 6 transport/passenger jobs<br>
 added a 2nd mission and a 2nd repeatable job<br>
 <br>
 2023-08-26<br>
-intial release<br>
+initial release<br>
 
 
 </blockquote>
