@@ -3618,9 +3618,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/expert.crew.members/icon.png' height='100'></img><br>
 
 
-[expert.crew.members.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/expert.crew.members.zip) | 7.75 mb | 2025-02-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/expert.crew.members/) <br>
+[expert.crew.members.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/expert.crew.members.zip) | 8.06 mb | 2025-04-13 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/expert.crew.members/) <br>
 Author: zuckung | Category: Outfits <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2025-02-06) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2025-04-13) <br>
 
 >Adds unique crew members, aquireable through low chance spaceport missions. These crew members are technically outfits which require a bunk and a salary, but no outfit space or mass. They add, depending on their technology field, stats to your ship. Like shield regenaration, more thrust, more cargo etc. See the readme for details.
 >
@@ -7381,9 +7381,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Naltok
 
 
-[Naltok.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Naltok.zip) | 6.79 mb | 2025-04-05 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Naltok/) <br>
+[Naltok.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Naltok.zip) | 6.79 mb | 2025-04-13 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Naltok/) <br>
 Author: Quantumshark | Category: Races <br>
-[https://github.com/Quantumshark/ES-Naltok](https://github.com/Quantumshark/ES-Naltok) (last commit 2025-04-05) <br>
+[https://github.com/Quantumshark/ES-Naltok](https://github.com/Quantumshark/ES-Naltok) (last commit 2025-04-13) <br>
 
 >A new tier 1.5 alien species, the amphibious Naltok. 
 
@@ -11352,9 +11352,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/bunrodea.missions/icon.png' height='100'></img><br>
 
 
-[bunrodea.missions.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/bunrodea.missions.zip) | 2.92 mb | 2025-02-13 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/bunrodea.missions/) <br>
+[bunrodea.missions.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/bunrodea.missions.zip) | 2.95 mb | 2025-04-13 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/bunrodea.missions/) <br>
 Author: zuckung | Category: Story <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2025-02-13) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2025-04-13) <br>
 
 >Adds some missions and jobs to increase the Bunrodea reputation. The first mission is available after the vanilla first contact mission. Doing more jobs will allow you to get access to all their planets and ships. See the readme for details.
 
