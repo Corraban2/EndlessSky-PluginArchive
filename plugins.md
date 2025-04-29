@@ -9010,7 +9010,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### IJN Yamato
 
 
-[IJN.Yamato.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/IJN.Yamato.zip) | 997.68 kb | 2023-11-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/IJN%20Yamato/) <br>
+[IJN.Yamato.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/IJN.Yamato.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/IJN%20Yamato/) <br>
 Author: Hiloki Zheng | Category: Ships <br>
 [https://github.com/hilokiyz/IJN-Yamato-Endless-Sky](https://github.com/hilokiyz/IJN-Yamato-Endless-Sky) (last commit 2023-10-31) <br>
 
@@ -9026,7 +9026,7 @@ The creation of the biggest WW2 battleship in Endless Sky
 </details>
 
 Status: N/A <br>
-Daily update check: <img src='res/img/check.png' width='15' ></img><br>
+Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 
 ---
@@ -13221,7 +13221,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Red Cross
 
 
-[Red.Cross.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Red.Cross.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Red%20Cross/) <br>
+[Red.Cross.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Red.Cross.zip) | 9.11 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Red%20Cross/) <br>
 Author: SirRailOfGun | Category: Story <br>
 [https://github.com/SirRailOfGun/ES-Red-Cross](https://github.com/SirRailOfGun/ES-Red-Cross) (last commit 2020-11-08) <br>
 
@@ -13231,7 +13231,7 @@ Author: SirRailOfGun | Category: Story <br>
 
 
 Status: N/A <br>
-Daily update check: <img src='res/img/check.png' width='15' ></img><br>
+Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 
 ---
@@ -14934,7 +14934,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Endless Sky Gauntlet
 
 
-[Endless.Sky.Gauntlet.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Endless.Sky.Gauntlet.zip) | 6.36 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Endless%20Sky%20Gauntlet/) <br>
+[Endless.Sky.Gauntlet.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Endless.Sky.Gauntlet.zip) | 13.62 mb | 2025-04-29 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Endless%20Sky%20Gauntlet/) <br>
 Author: Galaucus | Category: N/A <br>
 [https://github.com/Galaucus/Endless-Sky-Gauntlet](https://github.com/Galaucus/Endless-Sky-Gauntlet) (last commit 2020-10-31) <br>
 
