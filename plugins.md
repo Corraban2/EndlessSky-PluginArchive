@@ -6087,9 +6087,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Undisclosed Plugin
 
 
-[Undisclosed.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Undisclosed.Plugin.zip) | 8.35 mb | 2024-07-22 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Undisclosed%20Plugin/) <br>
+[Undisclosed.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Undisclosed.Plugin.zip) | 827.68 kb | 2025-05-02 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Undisclosed%20Plugin/) <br>
 Author: petervdmeer | Category: Overhauls <br>
-[https://github.com/petervdmeer/endless-sky-undisclosed-plugin](https://github.com/petervdmeer/endless-sky-undisclosed-plugin) (last commit 2024-07-22) <br>
+[https://github.com/petervdmeer/endless-sky-undisclosed-plugin](https://github.com/petervdmeer/endless-sky-undisclosed-plugin) (last commit 2025-05-02) <br>
 
 >Various concept ideas.
 >
@@ -6610,7 +6610,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 [Arion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Arion.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Arion/) <br>
 Author: Spectre907YT | Category: Races <br>
-[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2024-11-06) <br>
+[https://github.com/Spectre907YT/Endless-Sky---Arion](https://github.com/Spectre907YT/Endless-Sky---Arion) (last commit 2025-05-02) <br>
 
 >Adds a faction (or 2) that supplies real life fighters and other interesting stuff.
 >
