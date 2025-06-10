@@ -9995,7 +9995,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Prong/icon.png' height='100'></img><br>
 
 
-[Prong.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Prong.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Prong/) <br>
+[Prong.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Prong.zip) | 195.89 kb | 2023-03-04 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Prong/) <br>
 Author: 1010todd | Category: Ships <br>
 N/A[]()  <br>
 
