@@ -9622,9 +9622,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Mega Freight/icon.png' height='100'></img><br>
 
 
-[Mega.Freight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Mega.Freight.zip) | 144.54 mb | 2025-03-14 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Mega%20Freight/) <br>
+[Mega.Freight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Mega.Freight.zip) | 147.54 mb | 2025-07-03 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Mega%20Freight/) <br>
 Author: 1010todd | Category: Ships <br>
-[https://github.com/1010todd/Mega-Freight](https://github.com/1010todd/Mega-Freight) (last commit 2025-03-14) <br>
+[https://github.com/1010todd/Mega-Freight](https://github.com/1010todd/Mega-Freight) (last commit 2025-07-03) <br>
 
 >Adds several mostly civilian ships for you and npc merchants( and pirates) to use for more variety in human space.
 >
@@ -13143,9 +13143,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Portraits for News/icon.png' height='100'></img><br>
 
 
-[Portraits.for.News.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Portraits.for.News.zip) | 1.09 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Portraits%20for%20News/) <br>
+[Portraits.for.News.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Portraits.for.News.zip) | 15.43 mb | 2025-07-03 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Portraits%20for%20News/) <br>
 Author: Anarchist2 | Category: Story <br>
-[https://github.com/Anarchist2/ES-news-portraits](https://github.com/Anarchist2/ES-news-portraits) (last commit 2023-04-06) <br>
+[https://github.com/Anarchist2/ES-news-portraits](https://github.com/Anarchist2/ES-news-portraits) (last commit 2025-07-03) <br>
 
 >This plugin re-activates the portrait system for news in ES. Many of the images for portraits are already in the game, but became unused after portraits for news was disabled by default. However, some portraits had to be added for news items after 0.9.12. Alien portraits (including transhuman portraits) are not considered canon. 
 >
