@@ -4072,7 +4072,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Mereti
 
 
-[Mereti.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Mereti.zip) | 2.45 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Mereti/) <br>
+[Mereti.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Mereti.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Mereti/) <br>
 Author: N/A | Category: Outfits <br>
 N/A[]()  <br>
 
