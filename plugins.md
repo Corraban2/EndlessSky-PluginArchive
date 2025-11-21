@@ -14,9 +14,9 @@
 ### -Omnis
 
 
-[-Omnis.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/-Omnis.zip) | 2.91 mb | 2025-11-16 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/-Omnis/) <br>
+[-Omnis.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/-Omnis.zip) | 2.91 mb | 2025-11-21 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/-Omnis/) <br>
 Author: Darcy Manoel | Category: Cheats <br>
-[https://github.com/Adde-Endless-Sky-Mods/-Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis) (last commit 2025-11-16) <br>
+[https://github.com/Adde-Endless-Sky-Mods/-Omnis](https://github.com/Adde-Endless-Sky-Mods/-Omnis) (last commit 2025-11-21) <br>
 
 >The most extensive all-content plugin to date. It includes many opportunities to test balance or ship builds against AI driven ships or fleets, all vanilla content and the content of many plugins available to use to put together different ship builds. Many more tools are included into Omnis too!
 >
@@ -3179,7 +3179,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [Realistic.Solar.System.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Realistic.Solar.System.zip) | 9.06 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Realistic%20Solar%20System/) <br>
 Author: beccabunny | Category: Graphics <br>
-[https://github.com/beccabunny/Realistic-Solar-System](https://github.com/beccabunny/Realistic-Solar-System)  <br>
+[https://github.com/beccabunny/Realistic-Solar-System](https://github.com/beccabunny/Realistic-Solar-System) (last commit 2020-08-11) <br>
 
 >This plugin modifies the Sol system adding every planet, large moon (over 20!) and two dwarf planets (Ceres and Pluto with its moon, Charon), each with unique sprites modified from NASA pictures taken during various missions. Everything in Sol has also been resized to a much bigger and realistic size, including the Sun itself.
 >
@@ -13207,7 +13207,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [real.fluff.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/real.fluff.zip) | 2.05 mb | 2024-07-20 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/real.fluff/) <br>
 Author: zuckung | Category: Story <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins)  <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2024-07-20) <br>
 
 >A bunch of side missions which reward unique fluffy pets. See the readme for details.
 >
