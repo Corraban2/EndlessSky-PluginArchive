@@ -642,6 +642,8 @@ mission "Omnis: mod settings"
 						not "Sheragi Archaeology Epilogue: done"
 				`	(The Remnant storyline until technology becomes available.)`
 					goto 1731
+					to display
+						not "Remnant: Defense 2: done"
 				`	(The Wanderer storyline until Defend Ap'arak.)`
 					goto 1741
 					to display
@@ -1826,7 +1828,6 @@ mission "Omnis: mod settings"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 #	Mapping
 mission "Omnis: enable map reveal auto"
 	invisible
@@ -1837,7 +1838,6 @@ mission "Omnis: enable map reveal auto"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 	to offer
 		has "global: Omnis: Automatic Map Reveal"
 mission "Omnis: reveal omnis"
@@ -1849,7 +1849,6 @@ mission "Omnis: reveal omnis"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 mission "Omnis: reveal vanilla"
 	invisible
 	landing
@@ -1860,7 +1859,6 @@ mission "Omnis: reveal vanilla"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 	to offer
 		or
 			has "global: Omnis: Automatic Map Reveal"
@@ -2706,7 +2704,6 @@ mission "Omnis: shipyard variants enabled all"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 	to offer
 		has "global: Omnis: Shipyard VariantsAll"
 mission "Omnis: shipyard variants enabled limited"
@@ -2719,7 +2716,6 @@ mission "Omnis: shipyard variants enabled limited"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 	to offer
 		has "global: Omnis: Shipyard Variants"
 mission "Omnis: shipyard variants disabled"
@@ -2732,7 +2728,6 @@ mission "Omnis: shipyard variants disabled"
 		government
 			"Omnis"
 			"Faction"
-			"Ancillary"
 	to offer
 		and
 			not "global: Omnis: Shipyard Variants"
