@@ -5285,7 +5285,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [Endless.Seas.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Endless.Seas.zip) | 165.55 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Endless%20Seas/) <br>
 Author: Zoura | Category: Overhauls <br>
-[https://github.com/AvianGeneticist/Endless-Seas](https://github.com/AvianGeneticist/Endless-Seas)  <br>
+[https://github.com/AvianGeneticist/Endless-Seas](https://github.com/AvianGeneticist/Endless-Seas) (last commit 2022-10-26) <br>
 
 >A total conversion mod of Endless Sky. The objective of this total conversion is to give Endless Sky a more maritime theme, with all the quirks that come with it. 
 >
