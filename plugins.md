@@ -7390,7 +7390,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [Mata.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Mata.zip) | 29.43 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Mata/) <br>
 Author: Karirawri | Category: Races <br>
-[https://github.com/Karirawri/Mata](https://github.com/Karirawri/Mata)  <br>
+[https://github.com/Karirawri/Mata](https://github.com/Karirawri/Mata) (last commit 2023-05-16) <br>
 
 >Add a new advanced race south east of Ember Waste.
 >
