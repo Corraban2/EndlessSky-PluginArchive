@@ -2652,7 +2652,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Weapon Ranges
 
 
-[Weapon.Ranges.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Weapon.Ranges.zip) | 1.54 kb | 2024-03-23 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Weapon%20Ranges/) <br>
+[Weapon.Ranges.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Weapon.Ranges.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Weapon%20Ranges/) <br>
 Author: EjoThims | Category: Gameplay <br>
 [https://github.com/EjoThims/Weapon-Ranges](https://github.com/EjoThims/Weapon-Ranges) (last commit 2023-05-18) <br>
 
@@ -4550,7 +4550,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Zoura%27s Outfits Expanded/icon.png' height='100'></img><br>
 
 
-[Zoura.s.Outfits.Expanded.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Zoura.s.Outfits.Expanded.zip) | 2.06 mb | 2025-10-15 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Zoura's%20Outfits%20Expanded/) <br>
+[Zoura.s.Outfits.Expanded.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Zoura.s.Outfits.Expanded.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Zoura's%20Outfits%20Expanded/) <br>
 Author: Zoura | Category: Outfits <br>
 [https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded](https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded) (last commit 2025-10-15) <br>
 
@@ -4573,7 +4573,7 @@ This plugin is also accepting community contributions! If you have an outfit you
 </details>
 
 Status: N/A <br>
-Daily update check: <img src='res/img/check.png' width='15' ></img><br>
+Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 
 ---
