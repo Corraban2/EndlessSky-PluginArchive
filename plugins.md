@@ -2652,7 +2652,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Weapon Ranges
 
 
-[Weapon.Ranges.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Weapon.Ranges.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Weapon%20Ranges/) <br>
+[Weapon.Ranges.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Weapon.Ranges.zip) | 1.54 kb | 2024-03-23 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Weapon%20Ranges/) <br>
 Author: EjoThims | Category: Gameplay <br>
 [https://github.com/EjoThims/Weapon-Ranges](https://github.com/EjoThims/Weapon-Ranges) (last commit 2023-05-18) <br>
 
@@ -4550,7 +4550,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Zoura%27s Outfits Expanded/icon.png' height='100'></img><br>
 
 
-[Zoura.s.Outfits.Expanded.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Zoura.s.Outfits.Expanded.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Zoura's%20Outfits%20Expanded/) <br>
+[Zoura.s.Outfits.Expanded.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Zoura.s.Outfits.Expanded.zip) | 2.06 mb | 2025-10-15 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Zoura's%20Outfits%20Expanded/) <br>
 Author: Zoura | Category: Outfits <br>
 [https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded](https://github.com/AvianGeneticist/Zoura-s-Outfits-Expanded) (last commit 2025-10-15) <br>
 
@@ -4573,7 +4573,7 @@ This plugin is also accepting community contributions! If you have an outfit you
 </details>
 
 Status: N/A <br>
-Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
+Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 
 ---
@@ -8436,7 +8436,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Blended Ships/icon.png' height='100'></img><br>
 
 
-[Blended.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Blended.Ships.zip) | 8.53 mb | 2026-01-21 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Blended%20Ships/) <br>
+[Blended.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Blended.Ships.zip) | 8.53 mb | 2026-02-15 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Blended%20Ships/) <br>
 Author: mOctave | Category: Ships <br>
 [https://github.com/mOctave/blended-ships](https://github.com/mOctave/blended-ships) (last commit 2026-01-21) <br>
 
@@ -11889,9 +11889,22 @@ Author: wispborne | Category: Story <br>
 <summary>:blue_book: Plugin readme</summary>
 <blockquote># Dangerous Games missions
 
-This is a mission available from the planet Clark that takes you an a short adventure with the dragons of Skymoot.
+## Missions
+1. The Dragonriders [Complete]
+2. Into The Depths [WIP]
 
-Install in the plugins folder, the location of which can be found here: https://github.com/endless-sky/endless-sky/wiki/CreatingPlugins
+## Intro
+This is a series of missions for the (free) game [Endless Sky](https://endless-sky.github.io/) that take you on high-risk, high-adventure trips around the galaxy.
+
+![Intro](screenshot1.png)
+
+## Installation
+
+Move [the latest release](https://github.com/davidwhitman/endles-sky-dangerous-games/releases), unzipped, to your plugins folder, the location of which can be found here: https://github.com/endless-sky/endless-sky/wiki/CreatingPlugins
+
+## Starting
+To begin, head to the planet Clark in the Seginus system. You must be able to carry at least 10 passengers.
+
 </blockquote>
 </details>
 
