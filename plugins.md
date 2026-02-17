@@ -1516,7 +1516,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [Cargo.Controls.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Cargo.Controls.Plugin.zip) | 3.15 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Cargo%20Controls%20Plugin/) <br>
 Author: petervdmeer | Category: Gameplay <br>
-[https://github.com/petervdmeer/endless-sky-cargo-controls-plugin](https://github.com/petervdmeer/endless-sky-cargo-controls-plugin)  <br>
+[https://github.com/petervdmeer/endless-sky-cargo-controls-plugin](https://github.com/petervdmeer/endless-sky-cargo-controls-plugin) (last commit 2019-11-29) <br>
 
 >Cargo Controls options for Endless Sky.
 
