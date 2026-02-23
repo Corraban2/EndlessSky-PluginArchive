@@ -4434,7 +4434,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Staferfield Mod
 
 
-[Staferfield.Mod.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Staferfield.Mod.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Staferfield%20Mod/) <br>
+[Staferfield.Mod.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Staferfield.Mod.zip) | 140.57 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Staferfield%20Mod/) <br>
 Author: staferfield | Category: Outfits <br>
 [https://github.com/staferfield/ES-Plugins](https://github.com/staferfield/ES-Plugins) (last commit 2018-02-19) <br>
 
