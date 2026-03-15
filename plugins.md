@@ -2605,7 +2605,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Stronger Hulls
 
 
-[Stronger.Hulls.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Stronger.Hulls.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Stronger%20Hulls/) <br>
+[Stronger.Hulls.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Stronger.Hulls.zip) | 34.66 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Stronger%20Hulls/) <br>
 Author: Connor Waterbanks | Category: Gameplay <br>
 N/A[]()  <br>
 
@@ -13745,7 +13745,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/The Legacy/icon.png' height='100'></img><br>
 
 
-[The.Legacy.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Legacy.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Legacy/) <br>
+[The.Legacy.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Legacy.zip) | 633.94 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Legacy/) <br>
 Author: pega3 | Category: Story <br>
 [https://github.com/pega3/endless-sky-the-legacy-plugin](https://github.com/pega3/endless-sky-the-legacy-plugin) (last commit 2020-08-02) <br>
 
@@ -13777,7 +13777,7 @@ To kick off the mission, visit a Spaceport on one of the Paradise planets
 </details>
 
 Status: N/A <br>
-Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
+Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 
 ---
@@ -14877,9 +14877,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Disable Author Ships/icon.png' height='100'></img><br>
 
 
-[Disable.Author.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Disable.Author.Ships.zip) | 93.1 kb | 2025-11-17 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Disable%20Author%20Ships/) <br>
+[Disable.Author.Ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Disable.Author.Ships.zip) | 93.54 kb | 2026-03-15 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Disable%20Author%20Ships/) <br>
 Author: samrocketman | Category: N/A <br>
-[https://github.com/samrocketman/endless-sky-disable-author-ships](https://github.com/samrocketman/endless-sky-disable-author-ships) (last commit 2025-11-17) <br>
+[https://github.com/samrocketman/endless-sky-disable-author-ships](https://github.com/samrocketman/endless-sky-disable-author-ships) (last commit 2026-03-15) <br>
 
 >An endless sky plugin to remove author ships from the game. 
 
