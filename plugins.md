@@ -54,7 +54,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/All Content Plugin/icon.png' height='100'></img><br>
 
 
-[All.Content.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/All.Content.Plugin.zip) | 150.69 kb | 2025-10-10 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/All%20Content%20Plugin/) <br>
+[All.Content.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/All.Content.Plugin.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/All%20Content%20Plugin/) <br>
 Author: Michael Zahniser | Category: Cheats <br>
 [https://github.com/endless-sky/all-content-plugin](https://github.com/endless-sky/all-content-plugin) (last commit 2025-10-10) <br>
 
@@ -584,7 +584,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Kestrel Rework
 
 
-[Kestrel.Rework.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Kestrel.Rework.zip) | 5.53 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Kestrel%20Rework/) <br>
+[Kestrel.Rework.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Kestrel.Rework.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Kestrel%20Rework/) <br>
 Author: MinneIceCube | Category: Cheats <br>
 [https://github.com/MinneIceCube/KestrelRework](https://github.com/MinneIceCube/KestrelRework) (last commit 2022-04-15) <br>
 
@@ -625,7 +625,7 @@ This does not make much sense according to the lore, but I personally prefer the
 </details>
 
 Status: N/A <br>
-Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
+Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 
 ---
