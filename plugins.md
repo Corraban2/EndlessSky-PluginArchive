@@ -10028,7 +10028,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Quaernan
 
 
-[Quaernan.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Quaernan.zip) | 842.46 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Quaernan/) <br>
+[Quaernan.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Quaernan.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Quaernan/) <br>
 Author: Zoura | Category: Ships <br>
 N/A[]()  <br>
 
