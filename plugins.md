@@ -10867,7 +10867,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### The Heroes
 
 
-[The.Heroes.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Heroes.zip) | 1.99 mb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Heroes/) <br>
+[The.Heroes.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/The.Heroes.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/The%20Heroes/) <br>
 Author: Hondolor | Category: Ships <br>
 [https://github.com/Hondolor/The-Heroes-ES-Pluggin](https://github.com/Hondolor/The-Heroes-ES-Pluggin) (last commit 2016-09-08) <br>
 
@@ -10877,7 +10877,7 @@ Author: Hondolor | Category: Ships <br>
 
 
 Status: Playable on 0.9.14, 0.9.15 Continuous. <br>
-Daily update check: <img src='res/img/check.png' width='15' ></img><br>
+Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 
 ---
