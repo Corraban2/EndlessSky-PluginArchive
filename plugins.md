@@ -1073,7 +1073,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Ursa Polaris/icon.png' height='100'></img><br>
 
 
-[Ursa.Polaris.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Ursa.Polaris.zip) | 3.38 mb | 2026-02-18 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Ursa%20Polaris/) <br>
+[Ursa.Polaris.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Ursa.Polaris.zip) | 3.38 mb | 2026-04-26 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Ursa%20Polaris/) <br>
 Author: Local God | Category: Cheats <br>
 [https://github.com/LocalGod79/UrsaPolaris](https://github.com/LocalGod79/UrsaPolaris) (last commit 2026-02-18) <br>
 
@@ -4238,7 +4238,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Science Stuff
 
 
-[Science.Stuff.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Science.Stuff.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Science%20Stuff/) <br>
+[Science.Stuff.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Science.Stuff.zip) | 2.98 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Science%20Stuff/) <br>
 Author: N/A | Category: Outfits <br>
 N/A[]()  <br>
 
@@ -10513,7 +10513,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 [Ship.Testing.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Ship.Testing.zip) | 1.52 mb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Ship%20Testing/) <br>
 Author: loiseeer | Category: Ships <br>
-[https://github.com/loiseeer/Ship-testing](https://github.com/loiseeer/Ship-testing)  <br>
+[https://github.com/loiseeer/Ship-testing](https://github.com/loiseeer/Ship-testing) (last commit 2020-06-13) <br>
 
 >adds several new ships to the game
 >
@@ -13171,7 +13171,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Prometheus-Flame/icon.png' height='100'></img><br>
 
 
-[Prometheus-Flame.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Prometheus-Flame.zip) | 4.06 mb | 2024-04-10 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Prometheus-Flame/) <br>
+[Prometheus-Flame.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Prometheus-Flame.zip) | 4.06 mb | 2026-04-26 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Prometheus-Flame/) <br>
 Author: CruzEli | Category: Story <br>
 [https://github.com/CruzEli/Prometheus-Flame](https://github.com/CruzEli/Prometheus-Flame) (last commit 2024-04-10) <br>
 
@@ -14532,7 +14532,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### OP Thunderhead Lance
 
 
-[OP.Thunderhead.Lance.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/OP.Thunderhead.Lance.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/OP%20Thunderhead%20Lance/) <br>
+[OP.Thunderhead.Lance.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/OP.Thunderhead.Lance.zip) | 281.17 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/OP%20Thunderhead%20Lance/) <br>
 Author: BCPowerhouse | Category: Weapons <br>
 N/A[]()  <br>
 
@@ -14592,7 +14592,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Plasma Mine
 
 
-[Plasma.Mine.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Plasma.Mine.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Plasma%20Mine/) <br>
+[Plasma.Mine.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Plasma.Mine.zip) | 42.73 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Plasma%20Mine/) <br>
 Author: John Abbe | Category: Weapons <br>
 N/A[]()  <br>
 
