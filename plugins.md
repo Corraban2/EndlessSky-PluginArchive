@@ -6377,7 +6377,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### zFW Patch
 
 
-[zFW.Patch.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/zFW.Patch.zip) | 6.34 kb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/zFW%20Patch/) <br>
+[zFW.Patch.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/zFW.Patch.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/zFW%20Patch/) <br>
 Author: N/A | Category: Patches <br>
 N/A[]()  <br>
 
@@ -7506,7 +7506,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Play As Sestor
 
 
-[Play.As.Sestor.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Play.As.Sestor.zip) | 26.44 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Play%20As%20Sestor/) <br>
+[Play.As.Sestor.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Play.As.Sestor.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Play%20As%20Sestor/) <br>
 Author: Zoura (AvianGeneticist) | Category: Races <br>
 [https://github.com/AvianGeneticist/Play-As-Sestor](https://github.com/AvianGeneticist/Play-As-Sestor) (last commit 2023-05-08) <br>
 
@@ -7523,7 +7523,7 @@ Author: Zoura (AvianGeneticist) | Category: Races <br>
 </details>
 
 Status: Playable on 0.9.15/0.9.16. <br>
-Daily update check: <img src='res/img/check.png' width='15' ></img><br>
+Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 
 
 ---
@@ -9944,7 +9944,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 ### Project Olympus
 
 
-[Project.Olympus.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Project.Olympus.zip) | 5.79 mb | 2022-10-06 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Project%20Olympus/) <br>
+[Project.Olympus.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Project.Olympus.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Project%20Olympus/) <br>
 Author: N/A | Category: Ships <br>
 N/A[]()  <br>
 
@@ -12633,9 +12633,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Lost in Midnight/icon.png' height='100'></img><br>
 
 
-[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 89.49 mb | 2025-12-31 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
+[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 89.49 mb | 2026-04-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
 Author: MidnightPlugins | Category: Story <br>
-[https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2025-12-31) <br>
+[https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2026-04-27) <br>
 
 >A mission focused plugin for Endless Sky.
 >
