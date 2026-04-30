@@ -13367,7 +13367,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/SpaceCrate/icon.png' height='100'></img><br>
 
 
-[SpaceCrate.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/SpaceCrate.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/SpaceCrate/) <br>
+[SpaceCrate.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/SpaceCrate.zip) | 137.6 kb | 2024-07-11 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/SpaceCrate/) <br>
 Author: Arnan de Gans | Category: Story <br>
 [https://github.com/adegans/SpaceCrate](https://github.com/adegans/SpaceCrate) (last commit 2024-07-11) <br>
 
