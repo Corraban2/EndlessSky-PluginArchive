@@ -6195,7 +6195,7 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### XtraStuf
 
 
-[XtraStuf.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/XtraStuf.zip) | 10.15 mb | 2023-08-22 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/XtraStuf/) <br>
+[XtraStuf.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/XtraStuf.zip) | N/A | N/A | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/XtraStuf/) <br>
 Author: Ishaname | Category: Overhauls <br>
 [https://www.nexusmods.com/endlesssky/mods/8](https://www.nexusmods.com/endlesssky/mods/8)  <br>
 
@@ -6204,7 +6204,7 @@ Author: Ishaname | Category: Overhauls <br>
 
 
 Status: N/A <br>
-Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
+Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 
 
 </details>
