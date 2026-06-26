@@ -20,7 +20,7 @@ mission "SB-Labs Vindicator 1"
 		not attributes "uninhabited"
 	destination "Rust"
 	to offer
-		has "Sheragi Archaeology: Epilogue: done"
+		has "event: midnight emerald sword timer"
 		not "Oathbreaker Liberator 1: offered"
 		or
 			not "Oathbreaker Siege 1: offered"
@@ -34,14 +34,14 @@ mission "SB-Labs Vindicator 1"
 
 mission "SB-Labs Vindicator 2"
 	name "Vindicator Combat Testing"
-	description "Test the combat capabilities of the new Liberator ship. Do not destroy or capture it. Land on <planet> when done."
+	description "Test the combat capabilities of the new Vindicator ship. Do not destroy or capture it. Land on <planet> when done."
 	source "Rust"
 	to offer
 		has "SB-Labs Vindicator 1: done"
 	on offer
 		conversation
 			`You find Barmy Edwards resting on a bench outside one of Kraz Cybernetics hangar bays. He looks worn out.`
-			`"Hi <first>. This new ship was a beast to work on. I can already tell that it'll require more crew than they were expecting just to handle weapon maintenance." He stands up and stretches. "Well, since you're here, I guess it's time to see what it can do. As usual, we just want you to disable the Liberator, not destroy it. Understood?"`
+			`"Hi <first>. This new ship was a beast to work on. I can already tell that it'll require more crew than they were expecting just to handle weapon maintenance." He stands up and stretches. "Well, since you're here, I guess it's time to see what it can do. As usual, we just want you to disable the Vindicator, not destroy it. Understood?"`
 			choice
 				`	"Of course. So, what kind of ship is it?"`
 				`	"Of course. Is it in this hangar?"`
@@ -155,7 +155,7 @@ mission "SB-Labs Vindicator 4"
 				`	"Nevermind that. What's this about bad news?"`
 			
 			`	"Upper management has decided to cancel the Vindicator project. They aren't even interested in seeing Barmy's test results."`
-			`	"If that's true, then I'm guessing they plan on scrapping the ship?" asks Barmy.`
+			`	"If that's true, then do they plan on scrapping the ship?" asks Barmy.`
 			`	"They are. But maybe Captain <last> can help."`
 			choice
 				`	"What do you mean?"`
@@ -185,7 +185,7 @@ mission "SB-Labs Vindicator 4"
 	on enter
 		conversation
 			scene "scene/scene-navyfleet"
-			`A squad of Militia ships are launching from the planet. But they're not after you. Instead, they're targetting a large pirate fleet that just entered the system! It looks like the pirates are starting a siege. Time for the Vindicator to prove its worth!`
+			`A squad of Militia ships are launching from the planet. But they're not after you. Instead, they're targeting a large pirate fleet that just entered the system! It looks like the pirates are starting a siege. Time for the Vindicator to prove its worth!`
 				accept
 
 	on enter
@@ -238,7 +238,7 @@ mission "SB-Labs Vindicator 4"
 	on complete
 		"reputation: Free Worlds" ++
 		payment 100000
-		log `After a series of adventures, I am now the lawful owner of Southbound Shipyards prototype Vindicator heavy warship. While the concentrated firing mount is an interesting concept, I hope to one day find a gun that truly diplays the potential of this ship.` 
+		log `After a series of adventures, I am now the lawful owner of Southbound Shipyards prototype Vindicator heavy warship. While the concentrated firing mount is an interesting concept, I hope to one day find a gun that truly displays the potential of this ship.` 
 		conversation
 			`Barmy Edwards thanks you for safely returning him home. You receive a few messages when you land. The timing of the pirate attack couldn't have been more fortunate. Ricardo managed to convince everyone that you had taken the Vindicator in order to distract the pirates. Luring away a significant portion of their fleet may have turned the tide of battle in favor of the defenders. Zug is even rewarding you with <payment> for your contribution to the planetary defense. Southbound Shipyards has decided to let you keep the Vindicator to avoid any public backlash for antagonizing the new hero of Zug.`
 
@@ -255,7 +255,7 @@ mission "Oathbreaker Liberator 1"
 		not attributes "uninhabited"
 	destination "Rust"
 	to offer
-		has "Sheragi Archaeology: Epilogue: done"
+		has "event: midnight emerald sword timer"
 		has "Oathbreaker Siege 1: done"
 		not "Oathbreaker Thermopylae: done"
 		not "SB-Labs Vindicator 1: offered"
@@ -387,7 +387,7 @@ mission "Oathbreaker Liberator 4"
 				`	"Nevermind that. What's this about bad news?"`
 			
 			`	"Upper management has decided to cancel the Liberator project. They aren't even interested in seeing Barmy's test results."`
-			`	"If that's true, then I'm guessing they plan on scrapping the ship?" asks Barmy.`
+			`	"If that's true, then do they plan on scrapping the ship?" asks Barmy.`
 			`	"They are. But maybe Captain <last> can help."`
 			choice
 				`	"What do you mean?"`
@@ -417,7 +417,7 @@ mission "Oathbreaker Liberator 4"
 	on enter
 		conversation
 			scene "scene/scene-navyfleet"
-			`A squad of Militia ships are launching from the planet. But they're not after you. Instead, they're targetting a large Oathbreaker fleet that just entered the system! It looks like the Oathbreakers are starting a siege. Time for the Liberator to prove its worth!`
+			`A squad of Militia ships are launching from the planet. But they're not after you. Instead, they're targeting a large Oathbreaker fleet that just entered the system! It looks like the Oathbreakers are starting a siege. Time for the Liberator to prove its worth!`
 				accept
 
 	on enter
@@ -466,7 +466,7 @@ mission "Oathbreaker Liberator 4"
 	on complete
 		"reputation: Free Worlds" ++
 		payment 100000
-		log `After a series of adventures, I am now the lawful owner of Southbound Shipyards prototype Liberator heavy warship. While the concentrated firing mount is an interesting concept, I hope to one day find a gun that truly diplays the potential of this ship.` 
+		log `After a series of adventures, I am now the lawful owner of Southbound Shipyards prototype Liberator heavy warship. While the concentrated firing mount is an interesting concept, I hope to one day find a gun that truly displays the potential of this ship.` 
 		conversation
 			`Barmy Edwards thanks you for safely returning him home. You receive a few messages when you land. The timing of the Oathbreaker attack couldn't have been more fortunate. Ricardo managed to convince everyone that you had taken the Liberator in order to distract the Oathbreakers. Luring away a significant portion of their fleet may have turned the tide of battle in favor of the defenders. Zug is even rewarding you with <payment> for your contribution to the planetary defense. Southbound Shipyards has decided to let you keep the Liberator to avoid any public backlash for antagonizing the new hero of Zug.`
 

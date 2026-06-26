@@ -14,14 +14,16 @@
 ship "Arach Courier" "Arach Courier (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
-		"Small Collector Module"
-		"Small Battery Module"
-		"Small Repair Module"
-		"Small Thrust Module" 2
-		"Small Steering Module" 2
-		"Hyperdrive"
+		Hyperdrive
+		"Interference Plating" 10
 		"Laser Rifle"
-		"Fragmentation Grenades"
+		"Limit Breaker"
+		"Small Battery Module"
+		"Small Collector Module"
+		"Small Repair Module"
+		"Small Reverse Module"
+		"Small Steering Module" 2
+		"Small Thrust Module" 2
 
 ship "Arach Courier" "Arach Courier (Model)"
 	outfits
@@ -50,17 +52,20 @@ ship "Arach Freighter" "Arach Freighter (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret" 2
-		"Small Collector Module" 3
-		"Small Battery Module" 2
-		"Small Shield Module"
-		"Small Repair Module" 2
-		"Large Thrust Module"
-		"Small Thrust Module" 2
-		"Large Steering Module"
-		"Small Steering Module" 2
-		"Hyperdrive"
-		"Laser Rifle" 7
 		"Fragmentation Grenades" 4
+		Hyperdrive
+		"Interference Plating" 10
+		"Large Steering Module"
+		"Large Thrust Module"
+		"Laser Rifle" 6
+		"Limit Breaker"
+		"Small Battery Module" 2
+		"Small Collector Module" 3
+		"Small Repair Module" 2
+		"Small Reverse Module"
+		"Small Shield Module"
+		"Small Steering Module" 2
+		"Small Thrust Module" 2
 
 ship "Arach Freighter" "Arach Freighter (Model)"
 	outfits
@@ -112,19 +117,21 @@ ship "Arach Hulk" "Arach Hulk (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret" 4
-		"Large Collector Module"
+		"Fragmentation Grenades" 3
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Battery Module"
-		"Small Battery Module"
-		"Small Shield Module" 2
+		"Large Collector Module"
 		"Large Repair Module"
-		"Large Thrust Module" 2
-		"Small Thrust Module" 2
 		"Large Steering Module" 2
+		"Large Thrust Module" 2
+		"Laser Rifle" 11
+		"Limit Breaker"
+		"Small Battery Module"
+		"Small Reverse Module"
+		"Small Shield Module" 2
 		"Small Steering Module" 2
-		"Hyperdrive"
-		"Bunk Room"
-		"Laser Rifle" 16
-		"Fragmentation Grenades" 8
+		"Small Thrust Module" 2
 
 ship "Arach Hulk" "Arach Hulk (Model)"
 	outfits
@@ -202,19 +209,22 @@ ship "Arach Spindle" "Arach Spindle (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret" 2
-		"Large Collector Module"
-		"Large Battery Module"
-		"Small Battery Module"
-		"Small Shield Module" 2
-		"Small Repair Module" 3
 		"Cooling Module"
-		"Large Thrust Module" 2
-		"Small Thrust Module" 3
+		"Fragmentation Grenades" 5
+		Hyperdrive
+		"Interference Plating" 10
+		"Large Battery Module"
+		"Large Collector Module"
 		"Large Steering Module" 2
-		"Small Steering Module" 1
-		"Hyperdrive"
-		"Laser Rifle" 8
-		"Fragmentation Grenades" 4
+		"Large Thrust Module" 2
+		"Laser Rifle" 9
+		"Limit Breaker"
+		"Small Battery Module"
+		"Small Repair Module" 3
+		"Small Reverse Module"
+		"Small Shield Module" 2
+		"Small Steering Module"
+		"Small Thrust Module" 3
 
 ship "Arach Spindle" "Arach Spindle (Model)"
 	outfits
@@ -255,16 +265,19 @@ ship "Arach Transport" "Arach Transport (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret"
-		"Small Collector Module" 2
-		"Small Battery Module"
-		"Small Shield Module"
-		"Small Repair Module"
-		"Large Thrust Module"
+		"Fragmentation Grenades" 2
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Steering Module"
+		"Large Thrust Module"
+		"Laser Rifle" 3
+		"Limit Breaker"
+		"Small Battery Module"
+		"Small Collector Module" 2
+		"Small Repair Module"
+		"Small Reverse Module"
+		"Small Shield Module"
 		"Small Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 5
-		"Fragmentation Grenades" 3
 
 ship "Arach Transport" "Arach Transport (Model)"
 	outfits
@@ -299,14 +312,17 @@ ship "Kimek Briar" "Kimek Briar (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret"
-		"Small Collector Module" 2
-		"Small Battery Module" 2
-		"Small Shield Module" 2
-		"Large Thrust Module"
+		"Fragmentation Grenades" 4
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 5
-		"Fragmentation Grenades" 3
+		"Large Thrust Module"
+		"Laser Rifle" 34
+		"Limit Breaker"
+		"Small Battery Module" 2
+		"Small Collector Module" 2
+		"Small Reverse Module"
+		"Small Shield Module" 2
 
 ship "Kimek Briar" "Kimek Briar (Model)"
 	outfits
@@ -337,17 +353,20 @@ ship "Kimek Spire" "Kimek Spire (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret" 4
-		"Large Collector Module"
-		"Small Collector Module"
+		"Fragmentation Grenades" 22
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Battery Module"
+		"Large Collector Module"
 		"Large Shield Module"
-		"Small Shield Module"
-		"Large Thrust Module" 2
 		"Large Steering Module" 2
+		"Large Thrust Module" 2
+		"Laser Rifle" 274
+		"Limit Breaker"
+		"Small Collector Module"
+		"Small Reverse Module"
+		"Small Shield Module"
 		"Small Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 30
-		"Fragmentation Grenades" 15
 
 ship "Kimek Spire" "Kimek Spire (Model)"
 	outfits
@@ -417,18 +436,20 @@ ship "Kimek Spire" "Kimek Spire (smuggler)"
 
 ship "Kimek Thistle" "Kimek Thistle (Blaster)"
 	outfits
-		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret" 2
-		"Large Collector Module"
-		"Small Battery Module"
-		"Small Shield Module" 3
-		"Large Thrust Module"
-		"Small Thrust Module" 2
-		"Large Steering Module"
-		"Small Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 15
 		"Fragmentation Grenades" 8
+		Hyperdrive
+		"Interference Plating" 10
+		"Large Collector Module"
+		"Large Steering Module"
+		"Large Thrust Module"
+		"Laser Rifle" 70
+		"Limit Breaker"
+		"Small Battery Module"
+		"Small Reverse Module"
+		"Small Shield Module" 3
+		"Small Steering Module"
+		"Small Thrust Module" 2
 
 ship "Kimek Thistle" "Kimek Thistle (Model)"
 	outfits
@@ -477,14 +498,16 @@ ship "Kimek Thistle" "Kimek Thistle (pirate)"
 ship "Kimek Thorn" "Kimek Thorn (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
-		"Small Collector Module"
-		"Small Battery Module"
-		"Small Shield Module"
-		"Small Thrust Module" 2
-		"Small Steering Module" 2
-		"Hyperdrive"
-		"Laser Rifle"
 		"Fragmentation Grenades"
+		Hyperdrive
+		"Interference Plating" 8
+		"Laser Rifle" 9
+		"Limit Breaker"
+		"Small Battery Module"
+		"Small Collector Module"
+		"Small Shield Module"
+		"Small Steering Module" 2
+		"Small Thrust Module" 2
 
 ship "Kimek Thorn" "Kimek Thorn (Model)"
 	outfits
@@ -512,14 +535,17 @@ ship "Kimek Thorn" "Kimek Thorn (Barrier)"
 ship "Saryd Runabout" "Saryd Runabout (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
-		"Small Collector Module" 2
+		"Fragmentation Grenades" 2
+		Hyperdrive
+		"Interference Plating" 10
+		"Laser Rifle" 12
+		"Limit Breaker"
 		"Small Battery Module"
+		"Small Collector Module" 2
+		"Small Reverse Module"
 		"Small Shield Module"
-		"Small Thrust Module" 2
 		"Small Steering Module" 3
-		"Hyperdrive"
-		"Laser Rifle" 2
-		"Fragmentation Grenades"
+		"Small Thrust Module" 2
 
 ship "Saryd Runabout" "Saryd Runabout (Model)"
 	outfits
@@ -546,20 +572,22 @@ ship "Saryd Runabout" "Saryd Runabout (Barrier)"
 
 ship "Saryd Sojourner" "Saryd Sojourner (Blaster)"
 	outfits
-		"Camouflaged Blaster" 2
 		"Camouflaged Blaster Turret" 4
-		"Large Collector Module"
-		"Small Collector Module" 3
+		"Fragmentation Grenades" 19
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Battery Module"
+		"Large Collector Module"
 		"Large Shield Module"
-		"Small Repair Module" 2
-		"Large Thrust Module" 2
-		"Small Thrust Module" 3
 		"Large Steering Module" 2
+		"Large Thrust Module" 2
+		"Laser Rifle" 82
+		"Limit Breaker"
+		"Small Collector Module" 3
+		"Small Repair Module" 2
+		"Small Reverse Module"
 		"Small Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 25
-		"Fragmentation Grenades" 13
+		"Small Thrust Module" 3
 
 ship "Saryd Sojourner" "Saryd Sojourner (Model)"
 	outfits
@@ -634,17 +662,20 @@ ship "Saryd Traveler" "Saryd Traveler (Blaster)"
 	outfits
 		"Camouflaged Blaster" 4
 		"Camouflaged Blaster Turret" 2
-		"Small Collector Module" 3
-		"Small Battery Module" 2
-		"Small Shield Module" 2
-		"Small Repair Module"
-		"Large Thrust Module"
-		"Small Thrust Module"
+		"Fragmentation Grenades" 12
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Steering Module"
+		"Large Thrust Module"
+		"Laser Rifle" 42
+		"Limit Breaker"
+		"Small Battery Module" 2
+		"Small Collector Module" 3
+		"Small Repair Module"
+		"Small Reverse Module"
+		"Small Shield Module" 2
 		"Small Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 15
-		"Fragmentation Grenades" 8
+		"Small Thrust Module"
 
 ship "Saryd Traveler" "Saryd Traveler (Model)"
 	outfits
@@ -698,16 +729,20 @@ ship "Saryd Traveler" "Saryd Traveler (pirate)"
 ship "Saryd Visitor" "Saryd Visitor (Blaster)"
 	outfits
 		"Camouflaged Blaster" 2
-		"Camouflaged Blaster Turret" 1
-		"Small Collector Module" 2
-		"Small Battery Module" 2
-		"Small Shield Module"
-		"Small Repair Module"
-		"Small Thrust Module" 3
+		"Camouflaged Blaster Turret"
+		"Fragmentation Grenades" 6
+		Hyperdrive
+		"Interference Plating" 10
 		"Large Steering Module"
-		"Hyperdrive"
-		"Laser Rifle" 7
-		"Fragmentation Grenades" 4
+		"Laser Rifle" 26
+		"Limit Breaker"
+		"Small Battery Module" 2
+		"Small Collector Module" 2
+		"Small Repair Module"
+		"Small Reverse Module"
+		"Small Shield Module"
+		"Small Thrust Module" 3
+
 
 ship "Saryd Visitor" "Saryd Visitor (Model)"
 	outfits
@@ -991,7 +1026,8 @@ ship "Heliarch Interdictor" "Heliarch Interdictor (Evidence)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube"
-		"Finisher Torpedo" 100
+		"Finisher Storage Depot"
+		"Finisher Torpedo" 140
 		"Heliarch Attractor"
 		"Heliarch Repulsor"
 		"Large Reactor Module"
@@ -1016,7 +1052,8 @@ ship "Heliarch Interdictor" "Heliarch Interdictor (Rogue Bombardment)"
 		"self destruct" .25
 	outfits
 		"Finisher Pod" 2
-		"Finisher Torpedo" 80
+		"Finisher Torpedo" 120
+		"Finisher Storage Depot"
 		"Bombardment Turret" 2
 		"Large Reactor Module"
 		"Large Battery Module"
@@ -1058,14 +1095,15 @@ ship "Heliarch Interdictor" "Heliarch Interdictor (Rogue Missile)"
 		"self destruct" .25
 	outfits
 		"Finisher Pod" 2
-		"Finisher Storage Tube" 13
+		"Finisher Storage Tube" 9
+		"Finisher Storage Depot"
 		"Finisher Torpedo" 340
 		"Small Reactor Module" 2
 		"Overcharged Shield Module"
 		"Overclocked Repair Module"
 		"Cooling Module"
 		"Scanning Module" 2
-		"Outfits Expansion" 3
+		"Outfits Expansion"
 		"Enforcer Riot Staff" 25
 		"Enforcer Confrontation Gear" 28
 		"Large Thrust Module" 3
@@ -1148,7 +1186,8 @@ ship "Heliarch Judicator" "Heliarch Judicator (Rogue Missile)"
 		"self destruct" .25
 	outfits
 		"Finisher Pod" 2
-		"Finisher Storage Tube" 14
+		"Finisher Storage Tube" 12
+		"Finisher Storage Depot"
 		"Finisher Torpedo" 360
 		"Small Reactor Module" 2
 		"Small Battery Module"
@@ -1156,7 +1195,7 @@ ship "Heliarch Judicator" "Heliarch Judicator (Rogue Missile)"
 		"Overclocked Repair Module"
 		"Cooling Module" 2
 		"Scanning Module" 5
-		"Outfits Expansion" 6
+		"Outfits Expansion" 4
 		"Enforcer Riot Staff" 81
 		"Enforcer Confrontation Gear" 36
 		"Large Thrust Module" 2
@@ -1170,7 +1209,8 @@ ship "Heliarch Judicator" "Heliarch Judicator (Rogue Repulsor)"
 	outfits
 		"Finisher Pod" 2
 		"Finisher Storage Tube" 3
-		"Finisher Torpedo" 140
+		"Finisher Storage Depot"
+		"Finisher Torpedo" 180
 		"Heliarch Repulsor"
 		"Large Reactor Module"
 		"Large Battery Module"
@@ -1300,7 +1340,8 @@ ship "Heliarch Punisher" "Heliarch Punisher (Evidence)"
 	outfits
 		"Ion Rain Gun" 4
 		"Finisher Pod" 2
-		"Finisher Torpedo" 80
+		"Finisher Storage Depot"
+		"Finisher Torpedo" 120
 		"Bombardment Turret" 4
 		"Large Reactor Module" 2
 		"Large Battery Module"
@@ -1327,7 +1368,8 @@ ship "Heliarch Punisher" "Heliarch Punisher (Rogue Interdicting)"
 	outfits
 		"Bombardment Cannon" 4
 		"Finisher Pod" 2
-		"Finisher Torpedo" 80
+		"Finisher Storage Depot"
+		"Finisher Torpedo" 120
 		"Heliarch Attractor" 2
 		"Heliarch Repulsor"
 		"Bombardment Turret"
@@ -1383,7 +1425,8 @@ ship "Heliarch Punisher" "Heliarch Punisher (Rogue Missile)"
 		"self destruct" .50
 	outfits
 		"Finisher Pod" 6
-		"Finisher Torpedo" 240
+		"Finisher Storage Depot"
+		"Finisher Torpedo" 280
 		"Heliarch Repulsor"
 		"Large Reactor Module"
 		"Small Reactor Module"
@@ -1408,14 +1451,15 @@ ship "Heliarch Punisher" "Heliarch Punisher (Rogue Pure Finishers)"
 		"self destruct" .50
 	outfits
 		"Finisher Pod" 6
-		"Finisher Storage Tube" 21
+		"Finisher Storage Tube" 19
+		"Finisher Storage Depot"
 		"Finisher Torpedo" 660
 		"Large Reactor Module"
 		"Overcharged Shield Module"
 		"Overclocked Repair Module"
 		"Cooling Module" 4
 		"Scanning Module" 4
-		"Outfits Expansion" 4
+		"Outfits Expansion" 2
 		"Enforcer Riot Staff" 71
 		"Enforcer Confrontation Gear" 40
 		"Large Thrust Module" 4

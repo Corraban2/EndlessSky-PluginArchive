@@ -10,9 +10,6 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
-
-
-
 mission "Inferno Dragon: Inferno Rocket Fleets"
 	non-blocking
 	landing
@@ -22,6 +19,7 @@ mission "Inferno Dragon: Inferno Rocket Fleets"
 	on offer
 		event "inferno rocket fleets"
 		set "inferno rocket ccor updated"
+		set "inferno rocket plunder patched"
 	npc kill
 		government "Independent (Killable)"
 		system Merak
@@ -167,6 +165,10 @@ event "inferno rocket fleets"
 			"Bastion (Inferno Rockets)"
 		add variant 1
 			"Falcon (Inferno Rockets)"
+	fleet "Covert Miners"
+		add variant 1
+			"Plunder (Inferno Rocket)"
+			"Pirate Drone (Kludge)" 2
 	fleet "Small Core Pirates"
 		add variant 1
 			"Hawk (Inferno Rockets)"
@@ -383,6 +385,23 @@ event "inferno rocket fleets"
 		add variant 1
 			"Missileboat (Inferno Rockets)"
 			"Patrolboat (Turbo Blaster)"
+
+mission "Midnight Inferno Rocket Plunder Patch"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "event: inferno rocket fleets"
+		not "inferno rocket plunder patched"
+	on offer
+		event "midnight inferno rocket plunder patch"
+		fail
+
+event "midnight inferno rocket plunder patch"
+	fleet "Covert Miners"
+		add variant 1
+			"Plunder (Inferno Rocket)"
+			"Pirate Drone (Kludge)" 2
 
 mission "Midnight Inferno Rocket CCOR Update"
 	non-blocking
@@ -715,6 +734,7 @@ mission "Inferno Dragon: Six Piece Clue"
 				`	"Pairs?"`
 				`	"How?"`
 			action
+				"reputation: Independent" ++
 				log "Inferno Dragon Notes: The six lines of the poem can be divided into three pairs. One pair related to the sky, one pair related to the ocean, and one pair related to the earth."
 			`"Like this:"`
 			``
@@ -783,6 +803,9 @@ mission "Inferno Dragon: Inferno Outfitters"
 					goto wrong
 				`	"The Inferno Dragon's presence causes all to tremble."`
 					goto wrong
+			action
+				"reputation: Independent" ++
+				"Midnight Market" ++
 			`The outfitter clerk says, "We're out of stock on Inferno Rockets at the moment, but a fresh supply should be ready by tomorrow."`
 				decline
 			
@@ -795,6 +818,7 @@ mission "Inferno Dragon: Inferno Outfitters"
 		event "inferno rockets at pirate outfitters"
 		set "license: Inferno Dragon"
 		set "inferno rocket pod patched"
+		set "inferno rocket depot patched"
 		log "Inferno Dragon Notes: The Inferno Dragon poem is a password that gives access to Inferno Rockets at some outfitters."
 	on enter
 		set "Randomize Inferno Dragon: Inferno Outfitters"
@@ -847,6 +871,7 @@ event "inferno rockets at pirate outfitters"
 		add "Inferno Rocket Pod"
 		add "Inferno Rocket"
 		add "Inferno Rocket Rack"
+		add "Inferno Rocket Depot"
 	outfitter "Pirate Basics"
 		add "Inferno Rocket"
 	planet Zenith
@@ -870,6 +895,21 @@ mission "Inferno Dragon: Inferno Rocket Pod Patch"
 event "inferno rocket pod patch"
 	outfitter "Pirate Advanced"
 		add "Inferno Rocket Pod"
+
+mission "Inferno Dragon: Inferno Rocket Depot Patch"
+	non-blocking
+	landing
+	invisible
+	to offer
+		has "event: inferno rockets at pirate outfitters"
+		not "inferno rocket depot patched"
+	on offer
+		event "inferno rocket depot patch"
+		fail
+
+event "inferno rocket depot patch"
+	outfitter "Pirate Advanced"
+		add "Inferno Rocket Depot"
 
 mission "Inferno Dragon License Patch"
 	non-blocking
@@ -1190,7 +1230,7 @@ mission "Holiday: New Year's Fireworks"
 		day == 31
 		has "event: inferno rocket fleets"
 	on enter
-		dialog `A pirate ship hails you: "Remember the Three Skeleton Key? We decided to celebrate the new year by avenging her crew!" The pirates are targetting you with their weapons.`
+		dialog `A pirate ship hails you: "Remember the Three Skeleton Key? We decided to celebrate the new year by avenging her crew!" The pirates are targeting you with their weapons.`
 	npc
 		government "Pirate"
 		personality waiting heroic plunders
@@ -1339,8 +1379,9 @@ mission "Inferno Dragon: FW Bounty [1]"
 			variant
 				"Clipper (Inferno Rockets)"
 		dialog "The <npc> has been destroyed. Bring the scanner data back to <destination> for the reward."
+		on kill
+			"reputation: Independent (Killable)" >?= 10
 	on complete
-		"reputation: Independent (Killable)" >?= 10
 		payment 150000
 		dialog `You hand the scanner data of the <npc> to the Free Worlds government and they pay you <payment> for stopping that shipment.`
 
@@ -1368,6 +1409,7 @@ mission "Inferno Dragon: Dragon Lord"
 		ship "Combat Drone (Turbo Blaster)" "Dragon Fire 5"
 		ship "Combat Drone (Turbo Blaster)" "Dragon Fire 6"
 		on kill
+			"reputation: Independent (Killable)" >?= 10
 			fail "Inferno Dragon: Pirate Dragons"
 			fail
 

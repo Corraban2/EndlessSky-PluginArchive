@@ -10,10 +10,70 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
+# dark nebula concealing quarantine
+hazard "Dark Cloud Cover A"
+	"period" 1
+	"strength" 0.25 0.75
+	"duration" 1000
+	"range" 7000
+	"environmental effect" "dark cloud a" 4
+
+effect "dark cloud a"
+	sprite "effect/dark cloud a"
+		"random start frame"
+	"lifetime" 1000
+	"random velocity" 1
+
+hazard "Dark Cloud Cover B"
+	"period" 1
+	"strength" 0.25 0.75
+	"duration" 900
+	"range" 7000
+	"environmental effect" "dark cloud b" 4
+
+effect "dark cloud b"
+	sprite "effect/dark cloud b"
+	"lifetime" 900
+	"random velocity" 1
+
+hazard "Dark Cloud Cover C"
+	"period" 1
+	"strength" 0.25 0.75
+	"duration" 800
+	"range" 7000
+	"environmental effect" "dark cloud c" 4
+
+effect "dark cloud c"
+	sprite "effect/dark cloud c"
+	"lifetime" 800
+	"random velocity" 1
+
+hazard "Dark Cloud Cover D"
+	"period" 1
+	"strength" 0.25 0.75
+	"duration" 700
+	"range" 7000
+	"environmental effect" "dark cloud d" 4
+
+effect "dark cloud d"
+	sprite "effect/dark cloud d"
+	"lifetime" 700
+	"random velocity" 1
+
+hazard "Dark Cloud Cover E"
+	"period" 1
+	"strength" 0.25 0.75
+	"duration" 600
+	"range" 7000
+	"environmental effect" "dark cloud e" 4
+
+effect "dark cloud e"
+	sprite "effect/dark cloud e"
+	"lifetime" 600
+	"random velocity" 1
+
 
 # Represents colliding heliospheres in the Archipelago star cluster
-
-
 hazard "Heliosphere Plasma Storm"
 	"period" 4
 	"strength" 0.25 0.75
@@ -43,3 +103,82 @@ effect "plasma storm"
 	"lifetime" 240
 	"random spin" 10
 	"random velocity" 2
+
+
+# marsh mist spray in Murk
+hazard "Murk Ring Atmosphere"
+	range 1800 3000
+	"constant strength"
+	weapon
+		"shield damage" 0.3
+		"heat damage" 3
+		"target effect" "murkstream 1" 6
+		"target effect" "murkstream 2" 6
+
+effect "murkstream 1"
+	sprite "effect/remnant leak"
+		"start frame" 2
+		"no repeat"
+		"frame rate" 3
+		"scale" 0.5
+	"lifetime" 60
+	"random lifetime" 60
+	"random angle" 12
+	"random spin" 180
+	"velocity scale" 0
+
+effect "murkstream 2"
+	sprite "effect/remnant leak"
+		"start frame" 2
+		"no repeat"
+		"frame rate" 3
+		"scale" 0.25
+	"lifetime" 60
+	"random lifetime" 90
+	"random angle" 15
+	"random spin" 180
+	"velocity scale" 0
+
+
+# active quarloques
+hazard "Quarloque Anti-Gravity Lock"
+	"constant strength"
+	"range" 8000
+	weapon
+		"gravitational"
+		"hit force" 3
+		"damage dropoff" 0 8000
+		"dropoff modifier" 5
+
+hazard "Quarloque Gravity Lock"
+	"constant strength"
+	"range" 800
+	weapon
+		"gravitational"
+		"hit force" -25
+		"damage dropoff" 0 800
+		"dropoff modifier" 0.2
+
+
+# intermittent ion storms in quarantine
+hazard "Quarantine Ion Burst"
+	"strength" 2 6
+	"duration" 30 150
+	"range" 7000
+	"environmental effect" "ion burst hazard" 10
+	weapon
+		"ion damage" 1
+		"scrambling damage" 1
+		"shield damage" 10
+		"hull damage" 0.02
+
+effect "ion burst hazard"
+	sprite "effect/spark"
+		"frame rate" 30
+		"random start frame"
+		scale 2
+	"lifetime" 12
+	"random lifetime" 6
+	"random spin" 1
+	"random velocity" 1
+	sound "ion impact"

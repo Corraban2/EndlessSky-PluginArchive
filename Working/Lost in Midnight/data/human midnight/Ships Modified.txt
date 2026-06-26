@@ -81,7 +81,7 @@ ship "Modified Aerie"
 	explode "medium explosion" 25
 	explode "large explosion" 10
 	"final explode" "final explosion medium"
-	description "One of the turret mounts and the fighter bays on this Aerie have been replaced with additional gun ports, converting it into a gun ship."
+	description "The fighter bays on this Aerie have been replaced with additional gun ports. With the weapon systems rerouted from the central turret mount to accomodate the new guns, its combat role has shifted to that of a gun ship."
 
 ship "Modified Aerie" "Modified Aerie (Turbo Blaster)"
 	outfits
@@ -269,7 +269,7 @@ ship "Modified Berserker"
 	explode "tiny explosion" 10
 	explode "small explosion" 15
 	"final explode" "final explosion small"
-	description "This Berserker was salvaged from a war zone. Its weapons layout is different from the standard Berserker. The weapons pods on the wingtips have been converted into cargo pods while a gun has been installed in the ship's foreward section."
+	description "This Berserker was salvaged from a war zone. Its weapons layout is different from the standard Berserker. The weapons pods on the wingtips have been converted into cargo space while a gun has been installed in the ship's forward section."
 
 ship "Modified Berserker" "Modified Berserker (Afterburner)"
 	outfits
@@ -362,6 +362,83 @@ ship "Modified Berserker" "Modified Berserker (Used)"
 	gun "Twin Blaster"
 	gun "Energy Blaster"
 	gun "Energy Blaster"
+
+
+ship "Modified Buckler"
+	sprite "ship/modified buckler"
+	thumbnail "thumbnail/modified buckler-thumb"
+	attributes
+		category "Interceptor"
+		"cost" 284000
+		"shields" 2600
+		"hull" 800
+		"required crew" 1
+		"bunks" 1
+		"mass" 160
+		"drag" 1.89
+		"heat dissipation" .67
+		"fuel capacity" 100
+		"cargo space" 1
+		"outfit space" 110
+		"weapon capacity" 20
+		"engine capacity" 35
+		weapon
+			"blast radius" 32
+			"shield damage" 320
+			"hull damage" 160
+			"hit force" 480
+	outfits
+		"Kludge Blaster" 2
+
+		"Modified nGVF-AA Fuel Cell"
+		"Modified D41-HY Shielding"
+
+		"Chimera Junk Steering"
+		"Chimera Junk Thruster"
+		Hyperdrive
+		
+	engine -8 34
+	engine 8 34
+	gun -11 -21
+	gun 11 -21
+	explode "tiny explosion" 20
+	explode "small explosion" 10
+	description "Modified Bucklers are short range interceptors that have had much of their fuel capacity removed to make room for some light weaponry. These ships aren't recommended for first time pilots. All the technical and maintenance documentation has been deleted from the on-board computer to make room for weapon system targeting software."
+
+ship "Modified Buckler" "Modified Buckler (Javelin)"
+	outfits
+		"Javelin Mini Pod" 2
+		"Javelin" 60
+		"nGVF-AA Fuel Cell"
+		"Supercapacitor"
+		"Modified D41-HY Shielding"
+		"Laser Rifle"
+		"Chimera Junk Steering"
+		"Chimera Junk Thruster"
+		Hyperdrive
+
+ship "Modified Buckler" "Modified Buckler (Meteor)"
+	outfits
+		"Meteor Missile Pod" 2
+		"Meteor Missile" 14
+		"nGVF-AA Fuel Cell"
+		"Supercapacitor"
+		"Modified D41-HY Shielding"
+		"Laser Rifle"
+		"Chimera Junk Steering"
+		"Chimera Junk Thruster"
+		Hyperdrive
+
+ship "Modified Buckler" "Modified Buckler (Sidewinder)"
+	outfits
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile" 12
+		"Modified nGVF-AA Fuel Cell"
+		"Modified D41-HY Shielding"
+		"Laser Rifle"
+		"Chimera Junk Steering"
+		"Chimera Junk Thruster"
+		Hyperdrive
 
 
 ship "Modified Clipper"
@@ -486,59 +563,61 @@ ship "Modified Clipper" "Modified Clipper (Miner)"
 ship "Modified Clipper" "Modified Clipper (Smuggler)"
 	outfits
 		"Beam Laser" 2
+		"Cargo Expansion"
 		"Cargo Scanner"
-		"Cooling Ducts"
 		"D41-HY Shield Generator"
 		"Fuel Pod"
-		"Interference Plating" 5
-		Javelin 280
-		"Javelin Mini Pod" 2
-		"Javelin Storage Crate" 2
+		"Griffin Junk Thruster"
+		"Hippogriff Junk Steering"
+		"Interference Plating"
 		"LP072a Battery Pack"
-		"Large Radar Jammer"
 		"Laser Rifle" 4
 		"Modified D41-HY Shielding"
+		"Modified Jammer"
 		"Modified RT-I Radiothermal"
+		"Plunder Catapult" 2
+		"Plunder Depot"
+		"Plunder Mine" 21
 		Ramscoop
 		"Scram Drive"
+		"Small Radar Jammer"
 		"Smuggler's Hideaway"
 		"Volcano Afterburner"
 		"Water Coolant System"
-		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
 	gun "Beam Laser"
 	gun "Beam Laser"
-	gun "Javelin Mini Pod"
-	gun "Javelin Mini Pod"
+	gun "Plunder Catapult"
+	gun "Plunder Catapult"
 
 ship "Modified Clipper" "Modified Clipper (Smuggled Cargo)"
 	outfits
 		"Beam Laser" 2
+		"Cargo Expansion"
 		"Cargo Scanner"
-		"Cooling Ducts"
 		"D41-HY Shield Generator"
 		"Fuel Pod"
-		"Interference Plating" 5
-		Javelin 280
-		"Javelin Mini Pod" 2
-		"Javelin Storage Crate" 2
+		"Griffin Junk Thruster"
+		"Hippogriff Junk Steering"
+		"Interference Plating"
 		"LP072a Battery Pack"
-		"Large Radar Jammer"
 		"Laser Rifle" 4
 		"Modified D41-HY Shielding"
+		"Modified Jammer"
 		"Modified RT-I Radiothermal"
+		"Plunder Catapult" 2
+		"Plunder Depot"
+		"Plunder Mine" 21
 		Ramscoop
 		"Scram Drive"
+		"Small Radar Jammer"
 		"Smuggler's Hideaway"
 		"Volcano Afterburner"
 		"Water Coolant System"
-		"X2700 Ion Thruster"
-		"X3200 Ion Steering"
 		"Smuggled Cargo"
 	gun "Beam Laser"
 	gun "Beam Laser"
-	gun "Javelin Mini Pod"
-	gun "Javelin Mini Pod"
+	gun "Plunder Catapult"
+	gun "Plunder Catapult"
 
 ship "Modified Clipper" "Modified Clipper (Turbo Blaster)"
 	outfits
@@ -616,7 +695,7 @@ ship "Modified Enforcer"
 	explode "tiny explosion" 8
 	explode "small explosion" 12
 	explode "medium explosion" 4
-	description `After centuries of service, some ancient warships have undergone significant modifications to make them more suitable for civilian use. The removal of the turrent mount for more cargo space has effectively turned this Modified Enforcer into a freighter.`
+	description `After centuries of service, some ancient warships have undergone significant modifications to make them more suitable for civilian use. The removal of the turrent mount to allow for more cargo space has effectively turned this Modified Enforcer into a freighter.`
 
 ship "Modified Enforcer" "Modified Enforcer (Inferno Rockets)"
 	outfits
@@ -670,44 +749,46 @@ ship "Modified Enforcer" "Modified Enforcer (Smuggler)"
 	outfits
 		"Antique Rifle"
 		"Cargo Expansion"
-		"Energy Blaster" 2
+		"Griffin Junk Steering"
+		"Griffin Junk Thruster"
 		Hyperdrive
-		"Interference Plating" 4
-		"Meteor Missile" 14
-		"Meteor Missile Pod" 2
+		"Interference Plating"
+		"Kludge Blaster" 2
 		"Modified D14-RN Shielding"
+		"Modified Jammer"
 		"Modified nGVF-CC Fuel Cell"
+		"Plunder Catapult" 2
+		"Plunder Depot"
+		"Plunder Mine" 21
 		"Small Radar Jammer"
 		"Smuggler's Hideaway"
-		"X1200 Ion Steering"
-		"X2200 Ion Steering"
-		"X2700 Ion Thruster"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	gun "Energy Blaster"
-	gun "Energy Blaster"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
+	gun "Plunder Catapult"
+	gun "Plunder Catapult"
 
 ship "Modified Enforcer" "Modified Enforcer (Smuggled Cargo)"
 	outfits
 		"Antique Rifle"
 		"Cargo Expansion"
-		"Energy Blaster" 2
+		"Griffin Junk Steering"
+		"Griffin Junk Thruster"
 		Hyperdrive
-		"Interference Plating" 4
-		"Meteor Missile" 14
-		"Meteor Missile Pod" 2
+		"Interference Plating"
+		"Kludge Blaster" 2
 		"Modified D14-RN Shielding"
+		"Modified Jammer"
 		"Modified nGVF-CC Fuel Cell"
+		"Plunder Catapult" 2
+		"Plunder Depot"
+		"Plunder Mine" 21
 		"Small Radar Jammer"
 		"Smuggler's Hideaway"
-		"X1200 Ion Steering"
-		"X2200 Ion Steering"
-		"X2700 Ion Thruster"
 		"Smuggled Cargo"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	gun "Energy Blaster"
-	gun "Energy Blaster"
+	gun "Kludge Blaster"
+	gun "Kludge Blaster"
+	gun "Plunder Catapult"
+	gun "Plunder Catapult"
 
 ship "Modified Enforcer" "Modified Enforcer (Turbo Blaster)"
 	outfits
@@ -795,7 +876,7 @@ ship "Modified Firebird"
 	explode "medium explosion" 24
 	explode "large explosion" 8
 	"final explode" "final explosion medium"
-	description "This is a Firebird that has been heavily modified for use as a freighter. The weapon capacity has been severely downgraded in order to accomodate more cargo. One of the turret mounts has even been completely removed."
+	description "This is a Firebird that has been heavily modified for use as a freighter. The weapon capacity has been severely downgraded in order to accommodate more cargo. One of the turret mounts has even been completely removed."
 
 ship "Modified Firebird" "Modified Firebird (CCOR)"
 	outfits
@@ -839,8 +920,9 @@ ship "Modified Firebird" "Modified Firebird (Meteor)"
 		"Antique Rifle"
 		Hyperdrive
 		"LP144a Battery Pack"
-		"Meteor Missile" 90
+		"Meteor Missile" 180
 		"Meteor Missile Box" 2
+		"Meteor Missile Depot"
 		"Meteor Missile Launcher" 2
 		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
@@ -907,8 +989,9 @@ ship "Modified Firebird" "Modified Firebird (Sidewinder)"
 		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
 		Ramscoop
-		"Sidewinder Missile" 90
+		"Sidewinder Missile" 182
 		"Sidewinder Missile Launcher" 2
+		"Sidewinder Missile Depot"
 		"Twin Blaster" 2
 		"Water Coolant System"
 		"X3200 Ion Steering"
@@ -924,15 +1007,17 @@ ship "Modified Firebird" "Modified Firebird (Smuggler)"
 		Afterburner
 		"Anti-Missile Turret"
 		"Antique Rifle"
-		"Interference Plating" 2
+		"Interference Plating" 3
 		"LP144a Battery Pack"
 		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
-		"Outfits Expansion"
+		"Plunder Catapult" 2
+		"Plunder Depot" 2
+		"Plunder Mine" 36
 		"Scram Drive"
 		"Small Radar Jammer"
 		"Smuggler's Hideaway"
-		"Twin Blaster" 4
+		"Twin Blaster" 2
 		"Water Coolant System" 2
 		"X3200 Ion Steering"
 		"X3700 Ion Thruster"
@@ -942,15 +1027,17 @@ ship "Modified Firebird" "Modified Firebird (Smuggled Cargo)"
 		Afterburner
 		"Anti-Missile Turret"
 		"Antique Rifle"
-		"Interference Plating" 2
+		"Interference Plating" 3
 		"LP144a Battery Pack"
 		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
-		"Outfits Expansion"
+		"Plunder Catapult" 2
+		"Plunder Depot" 2
+		"Plunder Mine" 36
 		"Scram Drive"
 		"Small Radar Jammer"
 		"Smuggler's Hideaway"
-		"Twin Blaster" 4
+		"Twin Blaster" 2
 		"Water Coolant System" 2
 		"X3200 Ion Steering"
 		"X3700 Ion Thruster"
@@ -958,14 +1045,17 @@ ship "Modified Firebird" "Modified Firebird (Smuggled Cargo)"
 
 ship "Modified Firebird" "Modified Firebird (Turbo Blaster)"
 	outfits
-		"Anti-Missile Turret"
 		Hyperdrive
 		"LP144a Battery Pack"
 		"Laser Rifle"
 		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
-		"Small Radar Jammer"
-		"Twin Turbo Blaster" 4
+		"Plunder Catapult" 2
+		"Plunder Depot" 3
+		"Plunder Mine" 51
+		"Small Radar Jammer" 2
+		"Turbo Blaster Turret"
+		"Twin Turbo Blaster" 2
 		"Water Coolant System" 2
 		"X3200 Ion Steering"
 		"X3700 Ion Thruster"
@@ -1080,17 +1170,19 @@ ship "Modified Hauler"
 ship "Modified Hauler" "Modified Hauler (Turbo Blaster)"
 	outfits
 		"Anti-Missile Turret" 2
+		"Cargo Expansion"
+		"D41-HY Shield Generator"
 		"Greyhound Plasma Thruster"
 		Hyperdrive
-		"KP-6 Photovoltaic Array"
 		"LP072a Battery Pack"
-		"Laser Rifle" 3
+		"Meteor Missile" 60
+		"Meteor Missile Box" 2
+		"Meteor Missile Launcher"
 		"Modified D23-QP Shielding"
-		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
-		"Sidewinder Missile" 136
-		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile Rack" 2
+		"Plunder Catapult"
+		"Plunder Depot"
+		"Plunder Mine" 18
 		"Small Radar Jammer" 2
 		"Turbo Blaster Turret" 2
 		"Water Coolant System"
@@ -1164,18 +1256,19 @@ ship "Modified Hauler II"
 ship "Modified Hauler II" "Modified Hauler II (Turbo Blaster)"
 	outfits
 		"Anti-Missile Turret" 2
+		"Cargo Expansion" 2
+		"D41-HY Shield Generator"
 		"Greyhound Plasma Thruster"
 		Hyperdrive
-		"KP-6 Photovoltaic Array" 2
 		"LP072a Battery Pack"
-		"Laser Rifle" 4
-		"Modified D14-RN Shielding"
+		"Meteor Missile" 90
+		"Meteor Missile Box" 4
+		"Meteor Missile Launcher"
 		"Modified D23-QP Shielding"
-		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
-		"Sidewinder Missile" 136
-		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile Rack" 2
+		"Plunder Catapult"
+		"Plunder Depot" 2
+		"Plunder Mine" 33
 		"Small Radar Jammer" 2
 		"Turbo Blaster Turret" 2
 		"Water Coolant System"
@@ -1251,19 +1344,20 @@ ship "Modified Hauler III"
 ship "Modified Hauler III" "Modified Hauler III (Turbo Blaster)"
 	outfits
 		"Anti-Missile Turret" 2
+		"Cargo Expansion" 3
+		"D41-HY Shield Generator"
 		"Greyhound Plasma Thruster"
 		Hyperdrive
-		"KP-6 Photovoltaic Array" 3
 		"LP072a Battery Pack"
-		"Laser Rifle" 5
-		"Modified D14-RN Shielding"
+		"Meteor Missile" 120
+		"Meteor Missile Box" 6
+		"Meteor Missile Launcher"
 		"Modified D23-QP Shielding"
-		"Modified D41-HY Shielding"
 		"Modified RT-I Radiothermal"
-		"Sidewinder Missile" 136
-		"Sidewinder Missile Launcher" 2
-		"Sidewinder Missile Rack" 2
-		"Small Radar Jammer" 4
+		"Plunder Catapult"
+		"Plunder Depot" 3
+		"Plunder Mine" 48
+		"Small Radar Jammer" 2
 		"Turbo Blaster Turret" 2
 		"Water Coolant System"
 		"X3200 Ion Steering"
@@ -1448,7 +1542,7 @@ ship "Modified Nest"
 	explode "medium explosion" 20
 	explode "large explosion" 5
 	"final explode" "final explosion medium"
-	description `It's no secret that pilots find the fighter bays on a nest inconvenient to access. The previous owner of this Nest attempted to fix this issue by modifying the fighter bays to accomodate drones instead.`
+	description `It's no secret that pilots find the fighter bays on a nest inconvenient to access. The previous owner of this Nest attempted to fix this issue by modifying the fighter bays to accommodate drones instead.`
 
 
 
@@ -1595,7 +1689,7 @@ ship "Modified Roost"
 	explode "medium explosion" 30
 	explode "large explosion" 15
 	"final explode" "final explosion medium"
-	description `The rise of civilian drone use amongst pirates has had unforseen developments. This Roost is just one example of that. The previous owner had the fighter bays modified to accomodate drones instead.`
+	description `The rise of civilian drone use amongst pirates has had unforeseen developments. This Roost is just one example of that. The previous owner had the fighter bays modified to accommodate drones instead.`
 
 
 
@@ -2054,35 +2148,45 @@ ship "Modified Argosy" "Modified Argosy (Shields Missile)"
 
 ship "Modified Argosy" "Modified Argosy (Shields Smuggler)"
 	outfits
-		"Beam Laser" 4
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Water Coolant System"
-		"Interference Plating" 3
-		"Large Radar Jammer"
-		"Smuggler's Hideaway"
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
+		"Beam Laser" 2
+		"Cargo Expansion"
+		"Cooling Ducts"
+		"Fission Reactor"
+		"Heavy Anti-Missile Turret"
+		"Heavy Laser Turret"
+		"Interference Plating" 2
+		"LP036a Battery Pack"
+		"Modified D23-QP Shielding"
+		"Modified Jammer"
+		"Plunder Catapult" 2
+		"Plunder Depot"
+		"Plunder Mine" 21
 		"Scram Drive"
+		"Smuggler's Hideaway"
 	turret "Heavy Laser Turret"
 	turret "Heavy Anti-Missile Turret"
 
 ship "Modified Argosy" "Modified Argosy (Smuggled Cargo)"
 	outfits
-		"Beam Laser" 4
-		"Heavy Laser Turret"
-		"Heavy Anti-Missile Turret"
-		"Fission Reactor"
-		"LP036a Battery Pack"
-		"Modified D23-QP Shielding"
-		"Water Coolant System"
-		"Interference Plating" 3
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
+		"Beam Laser" 2
+		"Cargo Expansion"
+		"Cooling Ducts"
+		"Fission Reactor"
+		"Heavy Anti-Missile Turret"
+		"Heavy Laser Turret"
+		"Interference Plating" 2
+		"LP036a Battery Pack"
+		"Modified D23-QP Shielding"
+		"Modified Jammer"
+		"Plunder Catapult" 2
+		"Plunder Depot"
+		"Plunder Mine" 21
 		"Scram Drive"
+		"Smuggler's Hideaway"
 		"Smuggled Cargo"
 	turret "Heavy Laser Turret"
 	turret "Heavy Anti-Missile Turret"
@@ -2212,7 +2316,7 @@ ship "Modified Argosy" "Modified Argosy (Twin Torpedo Pod)"
 
 # Based on vanilla "Modified Dromedary Wreck"
 ship "Modified Dromedary" "Modified Dromedary (Metro)"
-	"crew" 300
+	"crew" 336
 	outfits
 		"Laser Turret" 2
 		"Quad Mod Blaster Turret"
@@ -2226,35 +2330,36 @@ ship "Modified Dromedary" "Modified Dromedary (Metro)"
 		"X4700 Ion Thruster"
 		"X5200 Ion Steering"
 #	The above outfits loosely mirror the vanilla "Modified Dromedary Wreck"
-		"Modified Hyperdrive"
-		"Twin Meteor Launcher" 2
-		"Meteor Missile" 150
-		"Meteor Missile Box" 2
-		"Torpedo Launcher" 2
-		Torpedo 90
-		"Torpedo Storage Rack" 2
-		"KP-6 Photovoltaic Array"
-		"KP-6 Photovoltaic Panel"
-		Supercapacitor
+		"Antique Rifle"
 		"Asteroid Scanner"
-		Barracks
+		Barracks 6
+		"Blaster Pistol" 2
 		Brig
 		"Broadband Amplifier"
+		"Cargo Expansion" 2
 		"Cargo Scanner"
-		"Engineering Room"
-		"Outfit Scanner"
-		"Outfits Expansion"
-		"Small Radar Jammer"
-		"Tactical Scanner"
-		"Antique Rifle"
-		"Blaster Pistol" 2
 		"DFN-53 Android" 5
+		"Engineering Room"
 		"Fragmentation Grenades" 75
+		"KP-6 Photovoltaic Array"
+		"KP-6 Photovoltaic Panel"
 		"Medical Bay"
+		"Meteor Missile" 210
+		"Meteor Missile Box" 6
+		"Modified Hyperdrive"
+		"Outfit Scanner"
+		"Plunder Catapult" 2
+		"Plunder Depot" 6
+		"Plunder Mine" 96
 		"Security Station (Staffed)"
+		"Small Radar Jammer"
+		Supercapacitor
+		"Tactical Laser Rifle"
+		"Tactical Scanner"
+		"Twin Meteor Launcher" 2
 		"Volcano Afterburner"
-	gun "Torpedo Launcher"
-	gun "Torpedo Launcher"
+	gun "Plunder Catapult"
+	gun "Plunder Catapult"
 	gun "Twin Meteor Launcher"
 	gun "Twin Meteor Launcher"
 	turret "Laser Turret"

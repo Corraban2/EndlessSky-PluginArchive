@@ -16,6 +16,8 @@ ship "Armor Beetle"
 	thumbnail "thumbnail/hai armor beetle-thumb"
 	attributes
 		category "Heavy Warship"
+		licenses
+			"Unfettered Militia"
 		"cost" 19700000
 		"shields" 35000
 		"hull" 11000
@@ -374,6 +376,8 @@ ship "Millipede"
 	thumbnail "thumbnail/hai millipede b-thumb"
 	attributes
 		category "Transport"
+		licenses
+			"Unfettered Militia"
 		"cost" 23100000
 		"shields" 21600
 		"hull" 8000
@@ -412,7 +416,8 @@ ship "Millipede"
 		`"Bondir" Atomic Thruster`
 		`"Bondir" Atomic Steering`
 		"Modified Hyperdrive (Hai)"
-		
+		"Barracks" 4 #must keep 110 cargo space open for Hai Power mission
+
 	engine -5 181 
 	engine 5 181 
 	"steering engine" -64 -113 
@@ -449,7 +454,7 @@ ship "Millipede"
 	description `During the ancient Hai empire, Millipedes operated as troop transports. When the empire fell into decline, Millipedes transported refugees from the ruined Hai worlds to the Hai civilizations current location. Once the Hai settled down, there was no longer a need for such a massive transport ship. Few Millipedes remain today. The ones still in operation are mostly used by the Unfettered as boarding vessels.`
 
 ship "Millipede" "Millipede (Troop Transport)"
-	"crew" 318
+	"crew" 336
 	outfits
 		"Heavy Pulse Cannon"
 		"Hai Tracker Pod"
@@ -470,7 +475,7 @@ ship "Millipede" "Millipede (Troop Transport)"
 		`"Bondir" Atomic Thruster`
 		`"Bondir" Atomic Steering`
 		"Modified Hyperdrive (Hai)"
-		"Barracks" 4
+		"Barracks" 5
 	gun "Heavy Pulse Cannon"
 	gun "Hai Tracker Pod"
 	turret "Pulse Turret"
@@ -488,6 +493,8 @@ ship "Megalocoleus"
 	thumbnail "thumbnail/hai megalocoleus-thumb"
 	attributes
 		category "Heavy Warship"
+		licenses
+			"Unfettered Militia"
 		"cost" 25080000
 		"shields" 26600
 		"hull" 12400

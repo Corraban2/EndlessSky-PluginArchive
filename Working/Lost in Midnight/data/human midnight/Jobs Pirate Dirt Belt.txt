@@ -87,6 +87,7 @@ mission "Cadrelock Rock Maintenance"
 	on fail
 		dialog `[MISSION FAILED] You've lost the replacement equipment for <planet>! If life were a game, you could reload a save file and try again.`
 	on complete
+		"pirate jobs" ++
 		payment 50000
 		"reputation: Pirate" ++
 		dialog `You install the replacement equipment and send a video to your client showing it working. The pirates pay you <payment> for helping keep this waystation operational.`
@@ -119,6 +120,9 @@ mission "Vesta Tribute"
 
 
 mission "Escort Core Pirate Home"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	deadline
 	name "Protection to <planet>"
@@ -176,6 +180,7 @@ mission "Escort Core Pirate Home"
 			variant 1
 				"Falcon"
 	on complete
+		"pirate jobs" ++
 		payment 375000
 		"reputation: Pirate" ++
 		dialog phrase "generic safe escort completion dialog"
@@ -185,6 +190,9 @@ mission "Escort Core Pirate Home"
 
 
 mission "Escort Core Pirate to Dirt Belt"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	deadline
 	name "Protection to <planet>"
@@ -241,6 +249,7 @@ mission "Escort Core Pirate to Dirt Belt"
 			variant 1
 				"Falcon"
 	on complete
+		"pirate jobs" ++
 		payment 375000
 		"reputation: Pirate" ++
 		dialog phrase "generic safe escort completion dialog"
@@ -248,11 +257,13 @@ mission "Escort Core Pirate to Dirt Belt"
 		dialog phrase "generic arrived-without-npc dialog"
 
 mission "Escort North Pirate Home"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	deadline
 	name "Protection to <planet>"
 	description "The captain of the <npc> will pay you <payment> to help them return to their base on <destination> by <date>."
-	source
 	source
 		attributes "pirate"
 		not attributes "uninhabited" "north pirate"
@@ -304,6 +315,7 @@ mission "Escort North Pirate Home"
 			variant 1
 				"Bactrian"
 	on complete
+		"pirate jobs" ++
 		"reputation: Pirate" ++
 		payment 375000
 		dialog phrase "generic safe escort completion dialog"
@@ -311,6 +323,9 @@ mission "Escort North Pirate Home"
 		dialog phrase "generic arrived-without-npc dialog"
 
 mission "Escort North Pirate to Dirt Belt"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	deadline
 	name "Protection to <planet>"
@@ -364,6 +379,7 @@ mission "Escort North Pirate to Dirt Belt"
 			variant 1
 				"Bactrian"
 	on complete
+		"pirate jobs" ++
 		"reputation: Pirate" ++
 		payment 375000
 		dialog phrase "generic safe escort completion dialog"
@@ -373,6 +389,9 @@ mission "Escort North Pirate to Dirt Belt"
 
 
 mission "Escort South Pirate Home"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	deadline
 	name "Protection to <planet>"
@@ -430,6 +449,7 @@ mission "Escort South Pirate Home"
 			variant 1
 				"Falcon"
 	on complete
+		"pirate jobs" ++
 		"reputation: Pirate" ++
 		payment 375000
 		dialog phrase "generic safe escort completion dialog"
@@ -437,6 +457,9 @@ mission "Escort South Pirate Home"
 		dialog phrase "generic arrived-without-npc dialog"
 
 mission "Escort South Pirate to Dirt Belt"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	deadline
 	name "Protection to <planet>"
@@ -495,6 +518,7 @@ mission "Escort South Pirate to Dirt Belt"
 				"Falcon"
 
 	on complete
+		"pirate jobs" ++
 		"reputation: Pirate" ++
 		payment 375000
 		dialog phrase "generic safe escort completion dialog"
@@ -504,11 +528,15 @@ mission "Escort South Pirate to Dirt Belt"
 
 
 mission "Hostage Exchange: easy"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	name "Hostage Exchange"
 	description "Use your Brig to take this prisoner to <stopovers> for a hostage exchange. Then return the released hostage to <destination>. Payment is <payment>."
 	passengers 1
+	illegal 0 `Upon scanning your vessel, law enforcement notice the criminal that you have on board. After a short confrontation, they take the criminal into their custody. The pirates won't be happy to hear about this.`
 	source
 		government "Pirate"
 		attributes "dirt belt pirate"
@@ -532,15 +560,21 @@ mission "Hostage Exchange: easy"
 	on fail
 		"reputation: Pirate" --
 	on complete
+		"pirate jobs" ++
 		payment 200000
+		"reputation: Pirate" ++
 		dialog "The hostage's pirate faction pays you <payment> for the safe return of one of their members."
 
 mission "Hostage Exchange: hard"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	name "Hostage Exchange"
 	description "Use your Brig to take this prisoner to <stopovers> for a hostage exchange. Then return the released hostage to <destination>. Payment is 200,000 credits."
 	passengers 1
+	illegal 0 `Upon scanning your vessel, law enforcement notice the criminal that you have on board. After a short confrontation, they take the criminal into their custody. The pirates won't be happy to hear about this.`
 	source
 		government "Pirate"
 		attributes "dirt belt pirate"
@@ -557,27 +591,27 @@ mission "Hostage Exchange: hard"
 			scene "outfit/laser rifle"
 			`It's a trap! You barely make it back to your ship without losing the hostage. Return your hostage to <destination> and maybe your client will give you something for your efforts.`
 	npc evade
-		to spawn
-			"combat rating" > 500
 		government "Bounty Hunter"
 		personality waiting vindictive unconstrained
 			confusion 10
 		fleet "Bounty Hunters"
 	npc evade
 		to spawn
-			"combat rating" > 750
+			"armament deterrence" >= 2
 		government "Bounty Hunter"
 		personality waiting vindictive unconstrained
 			confusion 10
 		fleet "Bounty Hunters"
 	npc evade
 		to spawn
-			"combat rating" > 1000
+			"armament deterrence" >= 3
 		government "Bounty Hunter"
 		personality waiting vindictive unconstrained
 			confusion 10
 		fleet "Bounty Hunters"
 	npc evade
+		to spawn
+			"armament deterrence" >= 4
 		government "Bounty Hunter"
 		personality waiting vindictive unconstrained
 			confusion 10
@@ -587,19 +621,23 @@ mission "Hostage Exchange: hard"
 	on fail
 		"reputation: Pirate" --
 	on complete
+		"pirate jobs" ++
 		payment 20000
 		conversation
 			scene "outfit/handgun black"
 			"Although the exchange was a failure, your client is grateful you brought their hostage back. As one of their associates pays you <payment>, the hostage is taken through a door to another room. You hear a series of gunshots and muffled screams from the other side of the door as your client continues to congratulate you on a job well done..."
 
 
-
 mission "Jail Break A"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	name "Jail Break"
 	description "A pirate warlord has been taken captive aboard the <npc> and is being transported to the prison on Huginn Station in the <waypoints> system. Disable and board the <npc>, set the warlord free, and bring him to <destination>. The reward for completing this jail break is <payment>."
 	passengers 1
+	illegal 300000 `Law enforcement rush their way onto your ship through the airlocks, suited head to toe in armor and armed to the teeth. Your passenger is quickly made to surrender and is hauled off in cuffs. The officers consider detaining you as well, but eventually decide to minimize their paperwork by only issuing a fine. This doesn't help to establish your reputation as a reliable, no-questions-asked transporter.`
 	source
 		government "Pirate"
 		attributes "dirt belt pirate"
@@ -632,18 +670,21 @@ mission "Jail Break A"
 	on visit
 		dialog phrase "generic bounty hunting boarding on visit"
 	on complete
-		"reputation: Pirate" ++
-		payment 400000
+		"pirate jobs" ++
+		payment 400000 1000
+		"reputation: Pirate" += 5
 		dialog "The pirates thank you for rescuing their warlord and reward you with <payment>."
 
-
-
 mission "Jail Break B"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	minor
 	name "Jail Break"
 	description "A pirate captain has been taken captive aboard the <npc> and is being transported to the prison on Huginn Station in the <waypoints> system. Disable and board the <npc>, set the warlord free, and bring her to <destination>. The reward for completing this jail break is <payment>."
 	passengers 1
+	illegal 300000 `Law enforcement rush their way onto your ship through the airlocks, suited head to toe in armor and armed to the teeth. Your passenger is quickly made to surrender and is hauled off in cuffs. The officers consider detaining you as well, but eventually decide to minimize their paperwork by only issuing a fine. This doesn't help to establish your reputation as a reliable, no-questions-asked transporter.`
 	blocked "Hint: Some missions only appear when you have enough open bunks/cargo space required for the mission."
 	source
 		government "Pirate"
@@ -663,7 +704,7 @@ mission "Jail Break B"
 					decline
 	on waypoint
 		dialog `The <npc> is here! Board the ship and release the pirate warlord.`
-	npc
+	npc accompany save
 		government "Pirate"
 		personality escort launching timid
 		fleet
@@ -702,17 +743,20 @@ mission "Jail Break B"
 	on visit
 		dialog phrase "generic bounty hunting boarding on visit"
 	on complete
-		"reputation: Pirate" ++
-		payment 200000
+		"pirate jobs" ++
+		payment 200000 1000
+		"reputation: Pirate" += 5
 		dialog "The grateful pirates thank you for rescuing their captain and reward you with <payment>."
 
-
-
 mission "Jail Break C"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	name "Jail Break"
 	description "A pirate warlord has been taken captive aboard the <npc> and is being transported to the prison on Huginn Station in the <waypoints> system. Disable and board the <npc>, set the warlord free, and bring him to <destination>. The reward for completing this jail break is <payment>."
 	passengers 1
+	illegal 300000 `Law enforcement rush their way onto your ship through the airlocks, suited head to toe in armor and armed to the teeth. Your passenger is quickly made to surrender and is hauled off in cuffs. The officers consider detaining you as well, but eventually decide to minimize their paperwork by only issuing a fine. This doesn't help to establish your reputation as a reliable, no-questions-asked transporter.`
 	source
 		government "Pirate"
 		attributes "dirt belt pirate"
@@ -770,10 +814,8 @@ mission "Jail Break Fake"
 					goto run
 				`	(Draw your own gun.)`
 					goto shootout
-
 			`	You raise your hands in the air in a show of surrender. The pirates regard your gesture, shrug, and open fire.`
 				die
-
 			label parley
 			`	Your cries for a parley are met with derision and laughter before they open fire.`
 				die
@@ -796,10 +838,8 @@ mission "Jail Break Fake"
 			label "tactical retreat"
 			`	Your crew fights bravely, but the enemy has reinforcements arriving. Time to beat a hasty retreat!`
 				launch
-	
 	on enter
 		dialog `Several ships are following you. The new warlord must really want your head.`
-	
 	npc kill
 		government "Pirate"
 		personality launching heroic plunders harvests
@@ -821,17 +861,14 @@ mission "Jail Break Fake"
 				"Firebird (Plasma)"
 				"Headhunter (Particle)"
 				"Headhunter (Strike)"
-	
 	on decline
 		"Jail Break C: offered" --
 		"Jail Break C: done" --
 		"Jail Break Fake: offered" --
-
 	on complete
 		"Jail Break C: offered" --
 		"Jail Break C: done" --
 		"Jail Break Fake: offered" --
-
 
 
 mission "New China Supplies to Diyu"
@@ -845,7 +882,6 @@ mission "New China Supplies to Diyu"
 	cargo random 5 2 .1
 	on visit
 		dialog phrase "generic cargo on visit"
-
 	npc evade
 		to spawn
 			random < 50
@@ -856,7 +892,6 @@ mission "New China Supplies to Diyu"
 			names "republic capital"
 			variant
 				"Gunboat"
-		
 	on abort
 		"reputation: Pirate" --
 		dialog `Wang Xiang Tai station can't operate without a steady supply line. Your failure does not go unnoticed.`
@@ -881,10 +916,9 @@ mission "New China Supplies to Diyu 2"
 	cargo "Industrial" 25 2 .1
 	to offer
 		has "New China Supplies to Diyu: done"
-		random < 20
+		random < 30
 	on visit
 		dialog phrase "generic cargo on visit"
-
 	npc evade
 		government "Republic"
 		system "Capella"
@@ -893,7 +927,6 @@ mission "New China Supplies to Diyu 2"
 			names "republic capital"
 			variant
 				"Gunboat" 2
-		
 	on abort
 		clear "New China Supplies to Diyu: done"
 		"reputation: Pirate" --
@@ -910,25 +943,30 @@ mission "New China Supplies to Diyu 2"
 		dialog phrase "generic cargo delivery payment"
 
 mission "New China Supplies to Diyu 3"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 4
-	name "Special Delivery Run"
-	description "Bring a shipment of <cargo> to <destination>. If you are caught with this cargo, you may be fined."
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
 	source "Wang Xiang Tai"
-	destination "New China"
-	cargo "Illegal Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> are confiscated from your cargo hold.`
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Highly Illegal Cargo" 5 2 .1
+	illegal 300000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
-		random < 20
+		random < 10
 	on visit
 		dialog phrase "generic cargo on visit"
-
-	npc evade
+	npc
 		government "Republic"
-		system "Capella"
-		personality heroic surveillance opportunistic
+		system destination
+		personality entering heroic surveillance opportunistic
 		fleet
 			names "republic capital"
 			fighters
@@ -936,33 +974,621 @@ mission "New China Supplies to Diyu 3"
 			variant
 				"Cruiser"
 				"Surveillance Drone" 4
-		
 	on abort
 		clear "New China Supplies to Diyu: done"
 		clear "New China Supplies to Diyu 2: done"
-		"reputation: Pirate" --
-		dialog `Your failure does not go unnoticed.`
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
 	on fail
 		clear "New China Supplies to Diyu: done"
 		clear "New China Supplies to Diyu 2: done"
-		"reputation: Pirate" --
-		dialog `Your failure does not go unnoticed.`
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
 	on complete
+		"pirate jobs" ++
 		payment
-		payment 80000
+		payment 60000 300
 		"reputation: Pirate" += 5
-		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
+		dialog phrase "generic completed highly illegal pirate cargo mission"
 
-mission "Smuggler Exchange (Dirt Belt, Terminus)"
+mission "Red Dragon Smuggling (Small) [0]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 15
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 5 2 .1
+	illegal 100000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 25
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Small) [1]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 5 2 .1
+	illegal 100000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 25
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Small) [2]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 5 2 .1
+	illegal 100000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 25
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling [0]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 25 2 .1
+	illegal 200000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 20
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling [1]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 25 2 .1
+	illegal 200000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 20
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling [2]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 25 2 .1
+	illegal 200000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 20
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Large) [0]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 25 2 .05
+	illegal 300000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 15
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Large) [1]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 25 2 .05
+	illegal 300000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 15
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Large) [2]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 25 2 .05
+	illegal 300000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 15
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Bulk) [0]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 40 2 .02
+	illegal 400000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 10
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Bulk) [1]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 40 2 .02
+	illegal 400000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 10
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Red Dragon Smuggling (Bulk) [2]"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	infiltrating
+	stealth
+	deadline
+	name "Red Dragon Smuggling"
+	description "The Red Dragons want <cargo> shipped to <destination> by <date>. If you are scanned or caught by planetary law enforcement, the consequences may be severe. Payment is <payment>."
+	source "Wang Xiang Tai"
+	destination
+		planet "New China" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Illegal Cargo" 40 2 .02
+	illegal 400000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
+	to offer
+		has "New China Supplies to Diyu 2: done"
+		random < 10
+	on visit
+		dialog phrase "generic cargo on visit"
+	npc
+		government "Republic"
+		system destination
+		personality entering heroic surveillance opportunistic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			variant
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on fail
+		clear "New China Supplies to Diyu: done"
+		clear "New China Supplies to Diyu 2: done"
+		"reputation: Pirate" -= 5
+		dialog `Your cargo of <commodity> never arrived at its destination. The Red Dragons won't be happy to hear about this.`
+	on complete
+		"pirate jobs" ++
+		payment 20000 300
+		"reputation: Pirate" += 5
+		dialog phrase "generic completed pirate cargo mission"
+
+mission "Smuggler Exchange (Dirt Belt, Terminus)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Terminus"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 15
@@ -986,7 +1612,7 @@ mission "Smuggler Exchange (Dirt Belt, Terminus)"
 				"Gunboat"
 	on enter "Terminus"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Terminus"
@@ -1003,21 +1629,27 @@ mission "Smuggler Exchange (Dirt Belt, Terminus)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Smuggler Exchange (Dirt Belt, Lolami)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 15
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Lolami"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 15
@@ -1041,7 +1673,7 @@ mission "Smuggler Exchange (Dirt Belt, Lolami)"
 				"Gunboat"
 	on enter "Lolami"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Lolami"
@@ -1058,21 +1690,27 @@ mission "Smuggler Exchange (Dirt Belt, Lolami)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Smuggler Exchange (Dirt Belt, Ipsing)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 15
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Ipsing"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 15
@@ -1096,7 +1734,7 @@ mission "Smuggler Exchange (Dirt Belt, Ipsing)"
 				"Gunboat"
 	on enter "Ipsing"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Ipsing"
@@ -1113,21 +1751,27 @@ mission "Smuggler Exchange (Dirt Belt, Ipsing)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Smuggler Exchange (Dirt Belt, Boral)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 20
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Boral"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 10
@@ -1151,22 +1795,12 @@ mission "Smuggler Exchange (Dirt Belt, Boral)"
 				"Gunboat"
 	on enter "Boral"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Boral"
 		personality target waiting staying timid
-		fleet
-			names "pirate"
-			outfitters "Contraband"
-			variant
-				"Modified Clipper (Smuggler)"
-			variant
-				"Modified Argosy (Shields Smuggler)"
-			variant
-				"Modified Firebird (Smuggler)"
-			variant
-				"Modified Enforcer (Smuggler)"
+		fleet "Smugglers"
 	on abort
 		clear "New China Supplies to Diyu: done"
 		clear "New China Supplies to Diyu 2: done"
@@ -1178,21 +1812,27 @@ mission "Smuggler Exchange (Dirt Belt, Boral)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Smuggler Exchange (Dirt Belt, Hintar)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 20
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Hintar"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 10
@@ -1216,7 +1856,7 @@ mission "Smuggler Exchange (Dirt Belt, Hintar)"
 				"Gunboat"
 	on enter "Hintar"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Hintar"
@@ -1233,21 +1873,27 @@ mission "Smuggler Exchange (Dirt Belt, Hintar)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Smuggler Exchange (Dirt Belt, Orvala)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 30
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Orvala"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 5
@@ -1271,7 +1917,7 @@ mission "Smuggler Exchange (Dirt Belt, Orvala)"
 				"Gunboat"
 	on enter "Orvala"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Orvala"
@@ -1288,21 +1934,27 @@ mission "Smuggler Exchange (Dirt Belt, Orvala)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Smuggler Exchange (Dirt Belt, Naper)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
-	deadline 30
+	stealth
+	deadline
 	name "Rendezvous at <waypoints>"
-	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
+	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Complete the delivery at <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Naper"
-	cargo "Smuggled Cargo" 5 2 .1
-	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
+	destination
+		planet "Wang Xiang Tai" Dancer Dune Harmony Hopper Lichen Lodestone "New Argentina" "New Austria" "New Boston" "New Greenland" "New Iceland" "New India" "New Kansas" "New Portland" "New Sahara" "New Washington" Oasis Oblivion Rand Serpens Sinter Starcross
+	cargo "Contraband" 5 2 .1
+	illegal 60000 `In addition to the fine, your illegal cargo is confiscated. The pirates won't be happy to hear about this.`
 	to offer
 		has "New China Supplies to Diyu 2: done"
 		random < 5
@@ -1326,7 +1978,7 @@ mission "Smuggler Exchange (Dirt Belt, Naper)"
 				"Gunboat"
 	on enter "Naper"
 		"reputation: Bounty (Disguised)" >?= 1
-		dialog "You've located the <npc> and exchanged cargo with it. Return to <destination> for payment."
+		dialog "You've located the <npc> and exchanged cargo with it. Complete the delivery at <destination> for payment."
 	npc
 		government "Bounty (Disguised)"
 		system "Naper"
@@ -1343,10 +1995,10 @@ mission "Smuggler Exchange (Dirt Belt, Naper)"
 		"reputation: Pirate" --
 		dialog `Your failure does not go unnoticed.`
 	on complete
-		payment
-		payment 80000
+		"pirate jobs" ++
+		payment 6000 300
 		"reputation: Pirate" += 5
-		dialog phrase "generic cargo delivery payment"
+		dialog "You find the contact at the edge of the spaceport. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 
 mission "New China Courier"
@@ -1400,12 +2052,16 @@ mission "New China Drug Running"
 		dialog `Some disreputable-looking locals unload the illegal drugs from your cargo bay, and hand you your payment of <payment>.`
 
 mission "Underworld Meeting (easy)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	name "Underworld Meeting"
 	description "Take <fare> to a clandestine meeting in <stopovers>'s underworld. Then return them to <origin>. Payment is <payment>"
 	source "Wang Xiang Tai"
 	stopover "Naihe Qiao"
 	passengers 1
+	illegal 50000 `Upon scanning your vessel, law enforcement notice the criminal that you have on board. Entering your ship to detain them, they carry the criminal out and leave you with a small fine. This doesn't help to establish your reputation as a reliable, no-questions-asked transporter.`
 	to offer
 		has "Cartography: Quarg Hitchhiker 4: done"
 		not "Underworld Meeting (hard): active"
@@ -1421,10 +2077,15 @@ mission "Underworld Meeting (easy)"
 		"reputation: Pirate" --
 	on complete
 		clear "Underworld Meeting (easy): offered"
+		"pirate jobs" ++
 		payment 50000
+		"reputation: Pirate" ++
 		dialog `Your passenger thanks you and pays <payment>. Ferrying people to the underworld is easy work if the job turns out like this.`
 
 mission "Underworld Meeting (hard)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	name "Underworld Meeting"
 	description "Take <fare> to a clandestine meeting in <stopovers>'s underworld. Then return them to <origin>. Payment is 50,000 credits."
@@ -1482,6 +2143,7 @@ mission "Wang Xiang Tai Sketchy Cargo [1]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 0 160
+		"reputation: Pirate" ++
 		dialog "You drop off the unlabeled cargo in a warehouse not too dissimilar to the one you picked it up in. A man dressed in a cloak hands you <payment> after the last crate is removed from your ship."
 
 mission "Wang Xiang Tai Sketchy Cargo [2]"
@@ -1503,6 +2165,7 @@ mission "Wang Xiang Tai Sketchy Cargo [2]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 0 160
+		"reputation: Pirate" ++
 		dialog "You drop off the unlabeled cargo in a warehouse not too dissimilar to the one you picked it up in. A man dressed in a cloak hands you <payment> after the last crate is removed from your ship."
 
 mission "Wang Xiang Tai Sketchy Cargo [3]"
@@ -1524,6 +2187,7 @@ mission "Wang Xiang Tai Sketchy Cargo [3]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 0 160
+		"reputation: Pirate" ++
 		dialog "You drop off the unlabeled cargo in a warehouse not too dissimilar to the one you picked it up in. A man dressed in a cloak hands you <payment> after the last crate is removed from your ship."
 
 mission "Wang Xiang Tai Sketchy Cargo [4]"
@@ -1545,6 +2209,7 @@ mission "Wang Xiang Tai Sketchy Cargo [4]"
 		dialog phrase "generic cargo on visit"
 	on complete
 		payment 0 160
+		"reputation: Pirate" ++
 		dialog "You drop off the unlabeled cargo in a warehouse not too dissimilar to the one you picked it up in. A man dressed in a cloak hands you <payment> after the last crate is removed from your ship."
 
 
@@ -1603,6 +2268,7 @@ mission "Pirate Traitors"
 		"reputation Independent (Killable)" >?= 10
 	on complete
 		payment 150000
+		"reputation: Pirate" ++
 		"reputation Independent (Killable)" >?= 10
 		dialog `The pirates congratulate you for dealing with the traitor and reward you with <payment>.`
 
@@ -1627,6 +2293,7 @@ mission "Rum Cellar Sketchy Passenger [1]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 2000 160
+		"reputation: Pirate" ++
 		dialog "Your passengers ask that you land away from the busy spaceport center. They hand you <payment> and rush out of your ship and away from the spaceport with considerable speed."
 
 mission "Rum Cellar Sketchy Passenger [2]"
@@ -1648,6 +2315,7 @@ mission "Rum Cellar Sketchy Passenger [2]"
 		dialog phrase "generic passenger on visit"
 	on complete
 		payment 2000 160
+		"reputation: Pirate" ++
 		dialog "Your passengers ask that you land away from the busy spaceport center. They hand you <payment> and rush out of your ship and away from the spaceport with considerable speed."
 
 
@@ -1688,7 +2356,7 @@ mission "Rum Cellar Wager"
 	minor
 	repeat
 	name "Fight! Fight! Fight!"
-	description "The <npc> is hunting you down and bets are being placed on whether you'll be able to defeat it. Place a 1,000,000 credit bet on yourself. If you win, collect <payment> at <destination> when you win."
+	description "The <npc> is hunting you down and bets are being placed on whether you can defeat it. You placed a 1,000,000 credit bet on yourself. If you win, collect <payment> at <destination> when you win."
 	"apparent payment" 2000000
 	source "Rum Cellar"
 	to offer
@@ -1783,6 +2451,9 @@ mission "Rum Cellar Wager"
 
 mission "Stealth Cargo Smuggling (Dirt Belt) [0]"
 	name "Highly illegal cargo to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -1833,12 +2504,16 @@ mission "Stealth Cargo Smuggling (Dirt Belt) [0]"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
+		"pirate jobs" ++
 		payment 50000 300
 		"reputation: Pirate" += 5
 		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Stealth Cargo Smuggling (Dirt Belt) [1]"
 	name "Highly illegal cargo to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -1912,12 +2587,16 @@ mission "Stealth Cargo Smuggling (Dirt Belt) [1]"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
+		"pirate jobs" ++
 		payment 75000 300
 		"reputation: Pirate" += 5
 		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Stealth Drug Running (Dirt Belt) [0]"
 	name "Highly illegal drugs to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -1968,12 +2647,16 @@ mission "Stealth Drug Running (Dirt Belt) [0]"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
+		"pirate jobs" ++
 		payment 75000 375
 		"reputation: Pirate" += 5
 		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Stealth Drug Running (Dirt Belt) [1]"
 	name "Highly illegal drugs to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -2047,12 +2730,16 @@ mission "Stealth Drug Running (Dirt Belt) [1]"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
+		"pirate jobs" ++
 		payment 100000 375
 		"reputation: Pirate" += 5
 		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Stealth Smuggling Exchange (Dirt Belt) [0]"
 	name "Bulk illegal cargo to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -2109,12 +2796,16 @@ mission "Stealth Smuggling Exchange (Dirt Belt) [0]"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
+		"pirate jobs" ++
 		payment 100000 375
 		"reputation: Pirate" += 5
 		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
 
 mission "Stealth Smuggling Exchange (Dirt Belt) [1]"
 	name "Bulk illegal cargo to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -2194,6 +2885,7 @@ mission "Stealth Smuggling Exchange (Dirt Belt) [1]"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
+		"pirate jobs" ++
 		payment 125000 375
 		"reputation: Pirate" += 5
 		dialog "You find the contact outside of the main city. Your cargo of <commodity> is removed from your ship and you collect your payment of <payment>."
@@ -2202,6 +2894,9 @@ mission "Stealth Smuggling Exchange (Dirt Belt) [1]"
 
 mission "Highly Wanted Passenger (Dirt Belt)"
 	name "Galactic criminal to <planet>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	infiltrating
@@ -2283,6 +2978,7 @@ mission "Highly Wanted Passenger (Dirt Belt)"
 	on visit
 		dialog phrase "generic passenger on visit"
 	on complete
+		"pirate jobs" ++
 		payment 200000 1000
 		"reputation: Pirate" += 5
 		dialog "You land outside of the main city to avoid any chances of your passenger being seen. They grab their things and make their way off of your ship after paying you <payment>."
@@ -2291,7 +2987,9 @@ mission "Highly Wanted Passenger (Dirt Belt)"
 
 mission "Eliminating Law Enforcement (Dirt Belt, Small)"
 	name "Navy near <system>"
-	repeat
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"	repeat
 	job
 	description "A Navy fleet near the <system> system has halted our raids. Destroy them and return to <planet> for a payment of <payment>."
 	to offer
@@ -2308,12 +3006,16 @@ mission "Eliminating Law Enforcement (Dirt Belt, Small)"
 		fleet "Small Republic" 2
 		dialog "The fleet has been eliminated. You can claim the bounty payment by returning to <destination>."
 	on complete
+		"pirate jobs" ++
 		payment 250000
 		"reputation: Pirate" += 5
 		dialog "The pirates of <planet> gratefully pay you <payment> for eliminating the Navy fleet."
 
 mission "Eliminating Law Enforcement (Dirt Belt, Large)"
 	name "Navy near <system>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	job
 	description "A large Navy fleet near the <system> system has halted our raids. Destroy them and return to <planet> for a payment of <payment>."
@@ -2332,6 +3034,7 @@ mission "Eliminating Law Enforcement (Dirt Belt, Large)"
 		fleet "Small Republic" 2
 		dialog "The fleet has been eliminated. You can claim the bounty payment by returning to <destination>."
 	on complete
+		"pirate jobs" ++
 		payment 400000
 		"reputation: Pirate" += 10
 		dialog "The pirates of <planet> gratefully pay you <payment> for eliminating the Navy fleet."
@@ -2341,6 +3044,9 @@ mission "Eliminating Law Enforcement (Dirt Belt, Large)"
 mission "Eliminating Competition (Dirt Belt, Small)"
 	name "Competition near <system>"
 	description "A small rival gang is causing trouble near the <system> system. Take them out and return to <planet> for a payment of <payment>."
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	job
 	to offer
@@ -2357,12 +3063,16 @@ mission "Eliminating Competition (Dirt Belt, Small)"
 		fleet "pirate raid" 3
 		dialog "The fleet has been eliminated. You can claim the bounty payment by returning to <destination>."
 	on complete
+		"pirate jobs" ++
 		payment 500000
 		dialog "The pirates of <planet> gratefully pay you <payment> for eliminating the rival gang."
 
 mission "Eliminating Competition (Dirt Belt, Large)"
 	name "Competition near <system>"
 	description "A large rival gang is gaining too much power. Their leader is currently near the <system> system. Take them and their escorts out and return to <planet> for a payment of <payment>."
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	job
 	to offer
@@ -2392,6 +3102,7 @@ mission "Eliminating Competition (Dirt Belt, Large)"
 				"Protector" 2
 		dialog "The fleet has been eliminated. You can claim the bounty payment by returning to <destination>."
 	on complete
+		"pirate jobs" ++
 		payment 750000
 		dialog "The pirates of <planet> gratefully pay you <payment> for eliminating the rival gang."
 
@@ -2399,6 +3110,9 @@ mission "Eliminating Competition (Dirt Belt, Large)"
 
 mission "Cargo Theft (Dirt Belt)"
 	name "Convoy near <system>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	description `A merchant convoy has been spotted near the <system> system. A local warlord is interested in having the cargo on the <npc>. Plunder it and return to <planet> for payment of <payment>.`
@@ -2428,6 +3142,7 @@ mission "Cargo Theft (Dirt Belt)"
 	on visit
 		dialog "You land on <planet>, but you don't have the secret cargo! Return to the <npc> and bring the cargo back to <planet>."
 	on complete
+		"pirate jobs" ++
 		outfit "Secret Cargo" -1
 		payment 1500000
 		dialog "The pirates of <planet> take the secret cargo from your cargo hold and pay you <payment>."
@@ -2437,6 +3152,9 @@ mission "Cargo Theft (Dirt Belt)"
 mission "Dirt Belt Assassination [1]"
 	name "Assassinate a political target"
 	description "A Republic politician who is worrying local drug smugglers was spotted in their ship, the <npc>, in a nearby system. Assassinate them in order to send a message to the Republic. Payment is <payment>. Be advised that they may have escorts."
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	job
 	to offer
@@ -2465,6 +3183,7 @@ mission "Dirt Belt Assassination [1]"
 				"Fury" 2
 		dialog "The target has been destroyed. Return to <destination> for your payment."
 	on complete
+		"pirate jobs" ++
 		payment 350000
 		dialog "A band of drug smugglers thank you for eliminating the politician and pay you <payment>."
 		"reputation: Republic" -= 10
@@ -2474,6 +3193,9 @@ mission "Dirt Belt Assassination [1]"
 mission "Dirt Belt Assassination [2]"
 	name "Assassinate a political target"
 	description "A Republic politician who is worrying local weapons smugglers was spotted in their ship, the <npc>, in a nearby system. Assassinate them in order to send a message to the Republic. Payment is <payment>. Be advised that they are heavily defended."
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	job
 	to offer
@@ -2501,6 +3223,7 @@ mission "Dirt Belt Assassination [2]"
 				"Frigate"
 		dialog "The targets have been destroyed. Return to <destination> for payment."
 	on complete
+		"pirate jobs" ++
 		payment 600000
 		dialog "A band of weapons smugglers thank you for eliminating the politician and pay you <payment>."
 		"reputation: Republic" -= 15
@@ -2511,6 +3234,9 @@ mission "Dirt Belt Assassination [2]"
 mission "Dirt Belt Assassination [3]"
 	name "Assassinate a military target"
 	description "A Republic Navy commander who has discovered the hyperlink codes to <system> must be stopped before the data is shared with the Republic. Assassinate them in order to protect the secrecy of the Dirt Belt pirates. Payment is <payment>."
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	minor
 	to offer
@@ -2553,15 +3279,13 @@ mission "Dirt Belt Assassination [3]"
 			variant
 				"Cruiser"
 				"Combat Drone" 4
-				"Frigate" 2
 			variant
 				"Carrier"
 				"Lance" 8
 				"Combat Drone" 6
-				"Gunboat" 2
-				"Rainmaker"
 		dialog "The target has been destroyed. Return to <destination> for your payment."
 	on complete
+		"pirate jobs" ++
 		payment 750000
 		dialog "Pirates on <planet> congratulate you for taking out the Navy commander and pay you <payment>."
 		"reputation: Republic" -= 20
@@ -2584,7 +3308,7 @@ mission "Smuggler Exchange (Dirt Belt, Regulus)"
 	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Regulus"
-	cargo "Smuggled Cargo" 5 2 .1
+	cargo "Contraband" 5 2 .1
 	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
 	to offer
 		never
@@ -2614,17 +3338,7 @@ mission "Smuggler Exchange (Dirt Belt, Regulus)"
 		government "Bounty (Disguised)"
 		system "Regulus"
 		personality target waiting staying timid
-		fleet
-			names "pirate"
-			outfitters "Contraband"
-			variant
-				"Modified Clipper (Smuggler)"
-			variant
-				"Modified Argosy (Shields Smuggler)"
-			variant
-				"Modified Firebird (Smuggler)"
-			variant
-				"Modified Enforcer (Smuggler)"
+		fleet "Smugglers"
 	on abort
 		clear "New China Supplies to Diyu: done"
 		clear "New China Supplies to Diyu 2: done"
@@ -2649,7 +3363,7 @@ mission "Smuggler Exchange (Dirt Belt, Fingol)"
 	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Fingol"
-	cargo "Smuggled Cargo" 5 2 .1
+	cargo "Contraband" 5 2 .1
 	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
 	to offer
 		never
@@ -2704,7 +3418,7 @@ mission "Smuggler Exchange (Dirt Belt, Nocte)"
 	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Nocte"
-	cargo "Smuggled Cargo" 5 2 .1
+	cargo "Contraband" 5 2 .1
 	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
 	to offer
 		never
@@ -2759,7 +3473,7 @@ mission "Smuggler Exchange (Dirt Belt, Umbral)"
 	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Umbral"
-	cargo "Smuggled Cargo" 5 2 .1
+	cargo "Contraband" 5 2 .1
 	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
 	to offer
 		never
@@ -2814,7 +3528,7 @@ mission "Smuggler Exchange (Dirt Belt, Sadr)"
 	description "Exchange cargo with the <npc> at <waypoints>. Do not let law enforcement scan you. Return to <destination> by <date> for payment [<payment>.]"
 	source "Wang Xiang Tai"
 	waypoint "Sadr"
-	cargo "Smuggled Cargo" 5 2 .1
+	cargo "Contraband" 5 2 .1
 	illegal 20000 `In addition to the fine, the <commodity> is confiscated from your cargo hold.`
 	to offer
 		never

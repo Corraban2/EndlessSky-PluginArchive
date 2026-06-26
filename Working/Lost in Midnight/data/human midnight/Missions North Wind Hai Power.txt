@@ -900,12 +900,13 @@ mission "Turner Inc.: Hai Power 7"
 				launch
 			label thor
 			scene "outfit/thor"
-			`	You remotely activate T.H.O.R. A minute passes without anything happening. Then it suddenly crashes through the main entrance! The pirates shoot at it but their weapons have no effect on T.H.O.R.'s armored plating. T.H.O.R. uses it's heavy laser rifle to snipe each pirate with surgical precision. None of the captives were harmed. As you are releasing them, David remarks, "You have a T.H.O.R. test model? I guess your connections with the Free Worlds has some extra benefits."`
+			`	You remotely activate T.H.O.R. A minute passes without anything happening. Then it suddenly crashes through the main entrance! The pirates shoot at it but their weapons have no effect on T.H.O.R.'s armored plating. T.H.O.R. uses it's Tactical Laser Rifle to snipe each pirate with surgical precision. None of the captives were harmed. As you are releasing them, David remarks, "You have a T.H.O.R. test model? I guess your connections with the Free Worlds has some extra benefits."`
 				launch
 			label orphan
 			action
 				outfit "Evidence of ********" 1
 				"captain of atrocity" ++
+				set "license: Nightmare Fuel"
 			scene "outfit/midnight lost orphan"
 			`	You allow Midnight's Lost Orphan to exert its full influence on the pirates. After a few moments, they start arguing among themselves. The arguments give way to violence and a firefight breaks out! Eventually, only one pirate remains. You easily shoot him in the back. Some of the captives were caught in the crossfire. Fortunately, David Turner was unharmed. "Thanks for the save." Shocked and bewildered, he looks upon his blood splattered crew members. "Such senseless violence. I don't understand what came over the pirates. Despite the criminal nature of their work, they seemed like professionals until just a few moments ago."`
 				launch
@@ -1010,7 +1011,7 @@ mission "Turner Inc.: Hai Power 9"
 			cargo 1
 			outfitters "Heavy Fusion Core"
 			variant
-				"Millipede (Troop Transport)"
+				"Millipede"
 		dialog `Once you take the back the Heavy Fusion Core, return to <destination>.`
 	on fail
 		event "millipede restore imo dep"
@@ -1048,7 +1049,7 @@ mission "Turner Inc.: Hai Power 10"
 	on offer
 		conversation
 			scene "outfit/fusion hai"
-			`David is packing up the Heavy Fusion Core when you find him. "Thankfully the protoype wasn't damaged. That would have caused us to be setback for several months. This needs to get to Lovelace Labs on <destination>. Trust me, it will push us to our biggest profits yet!"`
+			`David is packing up the Heavy Fusion Core when you find him. "Thankfully the prototype wasn't damaged. That would have caused us to be setback for several months. This needs to get to Lovelace Labs on <destination>. Trust me, it will push us to our biggest profits yet!"`
 				accept
 	on accept
 		outfit "Heavy Fusion Core" 1

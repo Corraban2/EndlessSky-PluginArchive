@@ -202,7 +202,7 @@ mission "Hackerz"
 		government "Republic" "Syndicate" "Free Worlds"
 		not attributes "uninhabited"
 	to offer
-		has "credits" > 1000000
+		"credits" > 1000000
 		or
 			and
 				not "Hackerz 2B: declined"
@@ -247,7 +247,7 @@ mission "Hackerz"
 				has "Hackerz 5: failed"
 				random < 5
 
-	npc kill
+	npc kill provoke
 		government "Hackerz"
 		personality waiting surveillance
 		ship "Hacker Drone" "Hackerz"
@@ -258,8 +258,9 @@ mission "Hackerz"
 				has "outfit (flagship installed): Security Node"
 			action
 				set "You've been hacked"
+				music ambient/modem
 			scene "ship/science drone"
-			`	Your ship's hyperspace network relay starts making unusual sounds. After a moment it returns to normal...`
+			`	Your ship's hyperspace network relay starts making unusual sounds...`
 				accept
 			label circuit
 			action
@@ -501,7 +502,7 @@ mission "Hackerz 3: Derelict Patch"
 	invisible
 	to offer
 		has "Hackerz 3: failed"
-		has "reputation: Derelict" < 0
+		"reputation: Derelict" < 0
 	on offer
 		"reputation: Derelict" >?= 0
 		fail
@@ -551,7 +552,7 @@ mission "Hackerz 4"
 			`	You narrowly avoid a shotgun slug and jump out the nearest window. Fortunately, the window was already broken, but you still get some minor scrapes from the few shards of glass remaining in the frame. "Better than a shotgun slug to the head," you exclaim to yourself as you run for your ship.`
 				launch
 			label revisit
-			`The angry bountry hunter is still pursuing you in his Headhunter.`
+			`The angry bounty hunter is still pursuing you in his Headhunter.`
 				launch
 	npc
 		government "Independent (Killable)"
@@ -693,7 +694,7 @@ mission "Hackerz 5"
 			`	As you run, several more Subsidurial shaped robots armed with gatling guns appear and open fire. By now, it's obvious that the whole amusement park is rigged with these robots. Once you are safely aboard your ship, you fire up the engines and begin to lift off. As you clear the atmosphere, the warning alarms start blaring. A swarm of drones is headed for you.`
 				launch
 			label revisit
-			`The hostile drones are still targetting you.`
+			`The hostile drones are still targeting you.`
 				launch
 	npc
 		government "Independent (Killable)"
@@ -1033,12 +1034,14 @@ mission "Hackerz 7"
 					has "tribute: I.S.S."
 			action
 				"tribute: Earth" <?= 0
+				"reputation: Republic" >?= 0
 			scene "outfit/unknown"
 			`	Suddenly, you receive a message from Earth's government. "The Republic appreciates that you've released Earth from your tribute requirements." You don't recall making an offer to relinquish the tribute on Earth...`
 				goto syndicate
 			label sol
 			action
 				"tribute: Earth" <?= 0
+				"reputation: Republic" >?= 0
 			scene "outfit/unknown"
 			`	Suddenly, you receive a message from Earth's government. "The Republic appreciates that you've released Earth from your tribute requirements. We ask that you consider releasing the rest of Sol as well." You don't recall making an offer to relinquish the tribute on Earth...`
 			choice
@@ -1051,19 +1054,23 @@ mission "Hackerz 7"
 				"tribute: Mars" <?= 0
 				"tribute: I.S.S." <?= 0
 			`	You release tribute from the rest of Sol...`
+			`	Shortly after, you receive a message of gratitude from the Republic.`
 			label syndicate
 			branch FW
 				not "tribute: Foundry"
+				not "tribute: Hephaestus"
 			branch hephaestus
 				has "tribute: Hephaestus"
 			action
 				"tribute: Foundry" <?= 0
+				"reputation: Syndicate" >?= 0
 			scene "outfit/unknown"
 			`	You get an alert informing you that a message from the Syndicate has arrived. "The Syndicate is grateful that you've released Foundry from your tribute requirements." You don't recall making an offer to relinquish the tribute on Foundry...`
 				goto FW
 			label hephaestus
 			action
 				"tribute: Foundry" <?= 0
+				"reputation: Syndicate" >?= 0
 			scene "outfit/unknown"
 			`	You get an alert informing you that a message from the Syndicate has arrived. "The Syndicate is grateful that you've released Foundry from your tribute requirements. We ask that you release Hephaestus as well." You don't recall making an offer to relinquish the tribute on Foundry...`
 			choice
@@ -1074,13 +1081,17 @@ mission "Hackerz 7"
 				"reputation: Syndicate" >?= 10
 				"tribute: Hephaestus" <?= 0
 			`	You release tribute from Hephaestus...`
+			`	Shortly after, you receive a message of gratitude from the Syndicate.`
 			label FW
 			branch end
-				not "tribute: Bourne"
+				or
+					not "tribute: Bourne"
+					not "event: war begins"
 			branch militia
 				has "license: Militia"
 			action
 				"tribute: Bourne" <?= 0
+				"reputation: Free Worlds" >?= 0
 			scene "outfit/unknown"
 			`	When you get back aboard the <ship>, you receive a message from Bourne. "The Free Worlds appreciates your offer to relinquish Bourne's tribute commitment. We gratefully accept." You don't recall making an offer to relinquish the tribute on Bourne...`
 				goto end
@@ -1095,6 +1106,7 @@ mission "Hackerz 7"
 				"reputation: Free Worlds" >?= 10
 				"tribute: Bourne" <?= 0
 			`	You release tribute from Bourne...`
+			`	Shortly after, you receive a message of gratitude from the Free Worlds.`
 			label end
 			scene "outfit/attention"
 			`	After completing launch preparations you get a message, but the data inside is corrupted...`
@@ -1192,11 +1204,9 @@ mission "Hackerz 7"
 		dialog `You've survived the automated ship assault...`
 
 
-
 ########################
 # Random Science Drones to hack
 ########################
-
 
 
 mission "Hackerz: Add Science Drones"

@@ -16,6 +16,8 @@
 ###############################
 
 
+event "midnight dreams of blood & fire timer"
+
 mission "Midnight Dreams of Blood & Fire 1"
 	minor
 	name "Caju's Clinic"
@@ -44,12 +46,12 @@ mission "Midnight Dreams of Blood & Fire 1"
 			`	The man's eyes suddenly spring open. Looking about wildly, his eyes finally land on you and he screams,"THE BLOOD! THE FIRE! AHH!"`
 			`	"Nurse Peka!" Dr. Caju gives her some instructions in the Hai language as she pulls an exotic looking syringe from her medical bag. With it, she injects the man while the burly nurse holds their patient down without a word. As the patient drifts back into unconsciousness, Caju wipes her brow and puts the syringe away. "As you can see, this man is suffering from some sort of psychological trauma. We must get him to my clinic on <destination> for treatment."`
 			choice
-				`	"Let's get him abord my ship."`
+				`	"Let's get him aboard my ship."`
 					goto allow
 				`	"No, I'm not letting him on my ship."`
 			`	"Is it a matter of money? We can offer <payment>. Please reconsider."`
 			choice
-				`	"Alright, let's get him abord my ship."`
+				`	"Alright, let's get him aboard my ship."`
 					goto allow
 				`	"No, I refuse."`
 			`	After your stern refusal, Caju and Peka wheel Charles away from your ship.`
@@ -69,6 +71,7 @@ mission "Midnight Dreams of Blood & Fire 1"
 	on complete
 		payment
 		payment 12000
+		event "midnight dreams of blood & fire timer" 30
 		log "People" "Dr. Caju" `A Hai who specializes in treating psychological disorders. She runs a clinic on Cloudfire and has a fondness for Quantum Bloodstones.`
 		log "Minor People" "Nurse Peka" `Dr. Caju's muscular assistant. She isn't very talkative. Perhaps she only speaks Hai.`
 		conversation
@@ -80,7 +83,7 @@ mission "Midnight Dreams of Blood & Fire 1"
 			choice
 				`	"Where can I get one?"`
 				`	"Tell me more about them."`
-			`	She opens her mouth to answer, but the sound of glass smashing in the next room interrupts you conversation. You can hear Charles screaming and Nurse Peka calling for Dr. Caju to bring the sedative. Handing you your payment, Dr. Caju apologizes. "Sorry, duty calls. Thank you for your assistance." She ushers you out of her office and closes the door. Your business here is done.`
+			`	She opens her mouth to answer, but the sound of glass smashing in the next room interrupts you conversation. You can hear Charles screaming and Nurse Peka calling for Dr. Caju. Handing you your payment, Caju apologizes. "Sorry, duty calls. Thank you for your assistance." She ushers you out of her office and closes the door. Your business here is done.`
 
 mission "Midnight Dreams of Blood & Fire 2"
 	minor
@@ -93,24 +96,26 @@ mission "Midnight Dreams of Blood & Fire 2"
 		attributes "spaceport"
 	destination Cloudfire
 	to offer
+		has "event: midnight dreams of blood & fire timer"
 		has "outfit (flagship installed): Luxury Accommodations"
 		has "Midnight Dreams of Blood & Fire 1: done"
 		random < 60
 	on offer
+		clear "event: midnight dreams of blood & fire timer"
 		conversation
 			scene "outfit/luxury accommodations"
 			`At the spaceport you encounter Dr. Caju. Nurse Peka is with her and is pushing a wheelchair with what appears to be another patient in it. This one is also a man, but he is well dressed and seems to be in control of himself. Upon noticing you, Caju waves and motions for Peka to wheel their patient towards you.`
 			`	"Hello Captain <last>. We are very fortunate to have run into you. We need to take Dexter to my clinic on <destination>."`
 			`	While Caju is explaining their situation, Dexter eyes you warily. "Looks shabby. Don't want to."`
 			`	"Aww, please be nice Dexter!" Caju turns back to you. "We have spent hours searching the spaceport for a ship befitting Dexter's... station."`
-			`	Dexter harrumphs. Assuming a pompous pose he declares, "That's Lord Dexter the Third, chief metallurgist to the king of New Boston and I'll not ride any ship that does not offer Luxury Accomodations." He makes a move to stand, but Nurse Peka places her hand on his shoulder and he quickly abandons the attempt.`
+			`	Dexter harrumphs. Assuming a pompous pose he declares, "That's Lord Dexter the Third, chief metallurgist to the king of New Boston and I'll not ride any ship that does not offer Luxury Accommodations." He makes a move to stand, but Nurse Peka places her hand on his shoulder and he quickly abandons the attempt.`
 			choice
-				`	"I've got Luxury Accomodations."`
+				`	"I've got Luxury Accommodations."`
 					goto luxury
 				`	"Good luck with this one..."`
 			`	"I am sure Captain <last>'s ship has excellent amenities." Caju looks to you, her eyes seemingly pleading for help.`
 			choice
-				`	"I've got Luxury Accomodations."`
+				`	"I've got Luxury Accommodations."`
 					goto luxury
 				`	"No, you should look elsewhere."`
 			`	"Onward to the next vessel!" Dexter urges Peka to move as if she were his personal steed. Caju, for her part, slumps her shoulders in resignation as they walk away.`
@@ -121,7 +126,7 @@ mission "Midnight Dreams of Blood & Fire 2"
 	on enter "Wah Ki"
 		conversation
 			scene planet/cloud0
-			`Nurse Peka wheels Dexter to the cockpit. Looking at <planet> in the distance he asks,"Do you dream Captain? My dreams are filled with clouds of fire and rains of blood." He turns to you. "Don't let them take me there."`
+			`Nurse Peka wheels Dexter to the cockpit. Looking at <planet> in the distance he asks,"Do you dream Captain? My dreams are filled with clouds of fire and rains of blood." He turns to you. "Don't let them take me there." His tired eyes seem filled with fear...`
 			`	Dr. Caju arrives in the cockpit and whispers something to Peka. The nurse grunts and wheels Dexter away. "Sorry Captain! I should have instructed Peka to keep Dexter away from the cockpit.`
 			choice
 				`	(Tell Dr. Caju about Dexter's dreams.)`
@@ -136,6 +141,7 @@ mission "Midnight Dreams of Blood & Fire 2"
 	on complete
 		payment
 		payment 24000
+		event "midnight dreams of blood & fire timer" 30
 		conversation
 			scene "outfit/bloodstone"
 			`Dexter is asleep in his wheelchair as Nurse Peka takes him away. As before, you need to visit Dr. Caju's office to receive your full payment. It appears much as it did the last time. But you notice that there are now two of the Quantum Bloodstones glittering on her shelf. Before you can ask about them, there is suddenly a shout from the next room. You can hear Dexter yell, "Demons! DEMONS! You stay away from me! AHH!" Caju quickly hands you <payment> and ushers you out of her office. It appears she'll have her hands full with this patient as well.`
@@ -151,10 +157,12 @@ mission "Midnight Dreams of Blood & Fire 3"
 		attributes "spaceport"
 	destination Cloudfire
 	to offer
+		has "event: midnight dreams of blood & fire timer"
 		has "outfit (flagship installed): Brig"
 		has "Midnight Dreams of Blood & Fire 2: done"
 		random < 50
 	on offer
+		clear "event: midnight dreams of blood & fire timer"
 		conversation
 			scene "outfit/unknown"
 			`While you are walking through the spaceport a large Hai emerges from a side alley. You recognize her as Nurse Peka. She seems to be out of breath. Looking around, she points in your direction.`
@@ -168,12 +176,12 @@ mission "Midnight Dreams of Blood & Fire 3"
 			scene "outfit/brig"
 			`	As Peka hefts the unconscious woman onto her shoulder, Caju answers "Ms. Ward, as you may have concluded, is a little more out of control than my previous patients. Would you happen to have a Brig on your ship? It might be necessary to use one in order to safely transport her to my clinic."`
 			choice
-				`	"I have a brig."`
+				`	"I have a Brig."`
 					goto brig
 				`	"I don't want that wild woman on my ship."`
 			`	"Please reconsider. If we are not able to keep her isolated, she may be a danger to herself as well as anyone else we travel with."`
 			choice
-				`	"Alright, use my brig."`
+				`	"Alright, use my Brig."`
 					goto brig
 				`	"No, absolutely not."`
 			`	"That is unfortunate." Caju and Peka haul Ms. Ward away.`
@@ -186,6 +194,7 @@ mission "Midnight Dreams of Blood & Fire 3"
 			scene planet/cloud0
 			`You're almost at <planet>. Ms. Ward is securely locked in the brig. Nurse Peka and Dr. Caju are keeping her under constant surveillance. The journey looks like it will end without incident.`
 	on complete
+		event "midnight dreams of blood & fire timer" 30
 		conversation
 			`Nurse Peka hauls a sedated Ms. Ward away. Dr. Caju pulls 18,000 credits out of her medical bag. "Here's your payment!"`
 			choice
@@ -222,6 +231,7 @@ mission "Midnight Dreams of Blood & Fire Epilogue"
 	invisible
 	source "Cloudfire"
 	to offer
+		has "event: midnight dreams of blood & fire timer"
 		has "Midnight Dreams of Blood & Fire 3: done"
 		random < 10
 	on offer
@@ -242,7 +252,8 @@ mission "Midnight Dreams of Blood & Fire Epilogue"
 				`	(Visit Dr. Caju's clinic.)`
 					goto visit
 				`	(Stay away.)`
-
+			action
+				clear "event: midnight dreams of blood & fire timer"
 			`	For some reason, you hesitate to visit the clinic. Perhaps you have some subconscious fear of becoming one of her patients...`
 				decline
 
@@ -281,6 +292,7 @@ mission "Midnight Bloodstone Murders 1"
 	destination Greenwater
 	to offer
 		has "First Contact: Hai: declined"
+		has "main plot completed"
 		random < 70
 	on offer
 		conversation
@@ -299,7 +311,7 @@ mission "Midnight Bloodstone Murders 1"
 				`	"Sounds good. Do you have special requirements for the cargo?"`
 				`	"No way I'm taking a corpse as cargo."`
 					goto refuse
-			`	Dr. Oaks responds, "Just keep the cargo safe. The corpse has already been embalmed, so there should not be any need for refridgeration." You show Akran and Oaks to their bunks after loading the coffin into your cargo bay.`
+			`	Dr. Oaks responds, "Just keep the cargo safe. The corpse has already been embalmed, so there should not be any need for refrigeration." You show Akran and Oaks to their bunks after loading the coffin into your cargo bay.`
 				accept
 			label refuse
 			`	Akran sighs. "You are not the first to express this sentiment. We have been searching all day for a pilot willing to take on this job. I had hoped a human would be more sympathetic, but I suppose it was a mistake to make such an assumption." He motions for Oaks and his other staff to move on to the next landing pad.`
@@ -333,7 +345,7 @@ mission "Midnight Bloodstone Murders 2"
 			``
 			`...`
 			``
-			`Inspector Akran and Dr. Oaks return to your ship with a grim expressions. "According to the family of the deceased, the relatives of some of their other friends have also died recently. We need to start by visiting <destination> and see what the local authorities there have to say about their deaths."`
+			`Inspector Akran and Dr. Oaks return to your ship with grim expressions. "According to the family of the deceased, the relatives of some of their other friends have also died recently. We need to start by visiting <destination> and see what the local authorities there have to say about their deaths."`
 			choice
 				`	"Alright, get on board."`
 					accept
@@ -356,7 +368,7 @@ mission "Midnight Bloodstone Murders 3"
 		has "Midnight Bloodstone Murders 2: done"
 	on offer
 		conversation
-			`The residents of <planet> are patients undergoing physical therapy. Only relatives of these patients are allowed past the reception area.  Inspector Akran isn't concerned about these restrictions. While Dr. Oaks speaks with the receptionist, Akran pays you and asks if you would be willing to transport them again.`
+			`The residents of <origin> are patients undergoing physical therapy. Only relatives of these patients are allowed past the reception area.  Inspector Akran isn't concerned about these restrictions. While Dr. Oaks speaks with the receptionist, Akran pays you and asks if you would be willing to transport them again.`
 			choice
 				`	"Sure. I'll wait here."`
 				`	"Sorry, I'm not interested."`
@@ -371,7 +383,7 @@ mission "Midnight Bloodstone Murders 3"
 				`	"Spare me the gory details."`
 					goto spare
 			`	Oaks explains, "Both were stabbed in the chest. Whatever the murder weapon was, it did not leave a clean wound. The flesh was violently ripped apart and torn open."`
-			`	Akran wipes is brow. My next stop is <destination>. Can you take me there?"`
+			`	Akran wipes his brow. My next stop is <destination>. Can you take me there?"`
 				goto end
 			label spare
 			`	Akran wipes is brow. "A wise choice." My next stop is <destination>. Can you take us there?"`
@@ -398,7 +410,7 @@ mission "Midnight Bloodstone Murders 4"
 		has "Midnight Bloodstone Murders 3: done"
 	on offer
 		conversation
-			`Inspector Akran breaths in the cool ocean breeze. "How refreshing after being on that stuffy station!" Dr. Oaks hails a taxi while Akran pays you and asks if you would be willing to wait for themm while they interview the local law enforcement officials.`
+			`Inspector Akran breathes in the cool ocean breeze. "How refreshing after being on that stuffy station!" Dr. Oaks hails a taxi while Akran pays you and asks if you would be willing to wait for them while they interview the local law enforcement officials.`
 			choice
 				`	"Sure. I'll wait here."`
 				`	"Sorry, I'm not interested."`
@@ -406,7 +418,7 @@ mission "Midnight Bloodstone Murders 4"
 			``
 			`...`
 			``
-			`You are enjoying the coastal scenery when Inspector Akran and Dr. Oaks return. "As I expected, the third victim also suffered the same cause of death as the other two. It is clear there is a pattern here." He looks around at the scenery while Oaks pays the taxi drive. "Our next stop is <destination>."`
+			`You are enjoying the coastal scenery when Inspector Akran and Dr. Oaks return. "As I expected, the third victim also suffered the same cause of death as the other two. It is clear there is a pattern here." He looks around at the scenery while Oaks pays the taxi driver. "Our next stop is <destination>."`
 			choice
 				`	"Couldn't we have gone there first?"`
 					goto first
@@ -451,7 +463,7 @@ mission "Midnight Bloodstone Murders 5"
 			``
 			`While waiting for Inspector Akran and Dr. Oaks to return, a Hai worker says something in their language and hands you a piece of paper with something written on it. It appears to also be written in the Hai language and you aren't able to read the letters.`
 			``
-			`	When Akron returns his nose is running and Oaks is doing her best to help him. "The station staff say that the victim died in an accident. It seems this one was unrelated to the other deaths." Oaks is out of tissues and motions for him to get back on your ship.`
+			`	When Akran returns his nose is running and Oaks is doing her best to help him. "The station staff say that the victim died in an accident. It seems this one was unrelated to the other deaths." Oaks is out of tissues and motions for him to get back on your ship.`
 			choice
 				`	(Hand him the paper.)`
 			`	He takes the paper from your hands. "Oh, what is this?" Unfolding it, Akran's eyes widen. "Captain <first>, let's get out of here." He quickly boards your ship without specifying a destination. Oaks gives you a confused look before following.`
@@ -481,15 +493,15 @@ mission "Midnight Bloodstone Murders 6"
 				`	"Stay safe."`
 			`	Akran nods and both of them leave. Over an hour passes with no word from them. Then you hear a scream in the distance...`
 			``
-			`	You instinctively rush out towards the source of the scream. When you arrive you find Akran unconscious on the floor while Oaks body is convulsing. The jagged edge of what appears to be a Quantum Keystone just out from a wound in her chest.`
+			`	You instinctively rush out towards the source of the scream. When you arrive you find Akran unconscious on the floor while Oaks body is convulsing. The jagged edge of what appears to be a Quantum Keystone juts out from a wound in her chest.`
 				goto reaction
 
 			label fork
 			`	The three of you head out. After an hour you reach a fork in the hallway. "We should split up to cover more ground. Oaks, you go with Captain <last>. It will be safer for you. Yell if you find anything."`
 			choice
-				`	"I'll keep her safe"`
+				`	"I'll keep her safe."`
 					goto split
-				`	This is a bad idea."`
+				`	"This is a bad idea."`
 			`	Oaks agrees. Sighing with resignation, Akran picks a path and the two of you follow. Suddenly, something rushes out of the darkness and crashes into Oaks! She screams as she collapses onto the floor! Akran yells and tackles the dark shape that was standing over her. You see that Oaks has been stabbed in the chest with the jagged edge of what appears to be a Quantum Keystone. Her body twitches violently as blood gushes from the wound. "<last>!" yells Akran. The dark shape throws Akran aside and scampers down the hallway. The Inspector slams into the wall hard before slumping to the floor, unconscious.`
 				goto reaction
 				
@@ -594,7 +606,7 @@ mission "Midnight Bloodstone Theft 2"
 				`	"Would it be alright if I joined you?"`
 				`	"Farewell. I hope you catch whoever killed her."`
 					goto farewell
-			`	Akran responds warmly, "Of course! Afterall, you are the only other person who was there to witness the attack."`
+			`	Akran responds warmly, "Of course! After all, you are the only other person who was there to witness the attack."`
 			`	It takes about an hour to get to the forensics lab. After explaining to the staff who you are, they agree to allow you into their meeting with Akran.`
 			scene "outfit/bloodstone"
 			`	They have identified the murder weapon as a Quantum Bloodstone, a rare keystone variant that has recently been gaining popularity among some Hai. Though it is clearly not a normal Quantum Keystone, most of its composition is the same. A more thorough examination isn't possible at this facility and they ask Inspector Akran to take it to <destination>.`
@@ -660,9 +672,14 @@ mission "Midnight Bloodstone Theft 3"
 			`You've arrived in <system>, but the Grasshopper you were chasing is nowhere in sight.`
 			`	Akran frowns. "He could have continued on to one of the adjacent systems. Or he could have landed on the planet. Or one of the stations. I am no starship pilot. <last>, what do your instincts tell you he did?`
 			choice
-				`	"Let's move on."`
+				`	"It's pointless to move on."`
 				`	"He's still here."`
+					goto here
+			`	"Unfortunately, you may be right. If the suspect has left, we have no clue what direction he might have gone." Akran strokes his chin. "But what if he's still here?"`
+				goto options
+			label here
 			`	Akran strokes his chin. "But where?"`
+			label options
 			choice
 				`	(Consider the options.)`
 			scene "planet/desert2"
@@ -809,7 +826,7 @@ mission "Midnight Bloodstone Theft 4"
 			`	You quickly Quantum Shift, but the force of the despressurization has already caused you to float out of the station. With no hope of returning to safety, your lungs give out and you die from oxygen deprivation.`
 				die
 			label wall
-			`	You quickly grab a section of wall paneling as the air is drained out of the passage. As the hallway approaches full despressurization, the force of the vaccuum diminishes. Taking advantage of this, you are able to swing yourself back towards the nearest barrier and the safety beyond. Briefly Quantum Shifting through, you land and gasp for air. The alarm continues blaring for a few seconds while you recover. When it stops, an automated voice announces something in Hai. Both Akran and the thief must have heard that...`
+			`	You quickly grab a section of wall paneling as the air is drained out of the passage. As the hallway approaches full despressurization, the force of the vacuum diminishes. Taking advantage of this, you are able to swing yourself back towards the nearest barrier and the safety beyond. Briefly Quantum Shifting through, you land and gasp for air. The alarm continues blaring for a few seconds while you recover. When it stops, an automated voice announces something in Hai. Both Akran and the thief must have heard that...`
 			choice
 				`	(Head back to the docking bay.)`
 			label bay
@@ -858,7 +875,7 @@ mission "Midnight Bloodstone Theft 4"
 					goto bayorphan
 					to display
 						has "outfit (flagship installed): Midnight's Lost Orphan"
-			`	You point your gun at him and open fire. The thief dodges and at you! You manage to block it with your weapon, but in the time it takes you to recover he has already rushed aboard the Grasshopper and is making his escape.`
+			`	You point your gun at him and open fire. The thief dodges and throws a knife at you! You manage to block it with your weapon, but in the time it takes you to recover he has already rushed aboard the Grasshopper and is making his escape.`
 			choice
 				`	(Go after him!)`
 					launch
@@ -881,7 +898,8 @@ mission "Midnight Bloodstone Theft 4"
 				outfit "Quantum Bloodstone" 1
 				outfit "Evidence of ********" 1
 				"captain of atrocity" ++
-			`	Glaring at the thief, you imagine him suffocating. His smirk turns to confusion upon realizing that he is unable to breath. Now matter how hard he struggles, his own lungs have become depressurized and his diaphram is unable to draw air into them. After a few agonizing moments, he dies oxygen deprivation. Collapsing to the floor, he drops the Quantum Bloodstone.`
+				set "license: Nightmare Fuel"
+			`	Glaring at the thief, you imagine him suffocating. His smirk turns to confusion upon realizing that he is unable to breath. Now matter how hard he struggles, his own lungs have become depressurized and his diaphram is unable to draw air into them. After a few agonizing moments, he dies of oxygen deprivation. Collapsing to the floor, he drops the Quantum Bloodstone.`
 			`	Searching the station for Investigator Akran, you find a section that has been depressurized. It appears the thief was not lying about sending Akran out into the void...`
 				decline
 
@@ -987,7 +1005,8 @@ mission "Danger In Darkwaste 1"
 				`	"What superstitions?"`
 					goto superstitions
 			label end
-			`	"Wonderful1! I'll tell the other club members the great news!"`
+			`	"Wonderful! I'll tell the other club members the great news!"`
+			`	A short while later, a small group of Hai outfitted with camping equipment board your ship. The mood is festive as they sing some songs in their language.`
 				accept
 			label superstitions
 			scene "planet/rock18"
@@ -1192,6 +1211,6 @@ mission "Danger In Darkwaste Escape Epilogue"
 				decline
 	on decline
 		event "add quantum bloodstones"
-		log "The authorities claim the existance of the Hai cultists is nothing more than a conspiracy theory. A Hai criminal claims that the Hai cultists are real and that they are associated with Quantum Bloodstones."
+		log "The authorities claim the existence of the Hai cultists is nothing more than a conspiracy theory. A Hai criminal claims that the Hai cultists are real and that they are associated with Quantum Bloodstones."
 
 

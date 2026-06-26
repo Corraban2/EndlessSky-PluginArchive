@@ -10,926 +10,7 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
-
-
 # Contents: new indigenous life forms and predators
-
-
-
-ship "Corpse Trickster"
-	noun "creature"
-	sprite "ship/corpse trickster/corpse trickster head"
-		rewind
-		"frame rate" 2
-	thumbnail "thumbnail/corpse trickster-thumb"
-	"never disabled"
-	swizzle 0
-	attributes
-		category "Fighter"
-		"cost" 50000
-		"automaton" 1
-		"hull" 4000
-		"mass" 300
-		"drag" 7.65
-		"heat dissipation" .405
-		"cargo space" 5
-		"thrust" 27
-		"turn" 900
-		"afterburner thrust" 15
-		"afterburner energy" 5
-		"hull repair rate" 2
-		"ion protection" 3
-		"scramble protection" 3
-		"burn protection" 2
-		"leak protection" 2
-		"energy protection" 2
-		"hull protection" 2
-		"slowing protection" 2
-		"ion resistance" 1
-		"scramble resistance" 1
-		"energy capacity" 50
-		"energy generation" 1
-		"fuel capacity" 150
-		"inscrutable" 1
-		"gaslining" 1
-		"ramscoop" 1
-		"optical jamming" 40
-	outfits
-		Mandibles? 5
-		"Corpse Trickster Ruse?"
-		"Corpse Trickster Illusion?"
-		"Corpse Trickster Mirage?"
-	gun 0 -97 Mandibles?
-	gun -23 -95 Mandibles?
-	gun 0 -95 Mandibles?
-	gun 23 -95 Mandibles?
-	gun 0 -93 Mandibles?
-	gun 0 50
-	gun 0 50
-	gun 0 50
-	leak "blood" 15 25
-	explode "blood" 25
-	"final explode" "blood"
-	description "Although it lacks the ability to travel through Hyperspace on its own, these parasitic predators evolved a means to control the bodily functions of a dead Subsidurial by thrusting its tentacles into the nervous system of the corpse. After doing so, it is able to use the Subsidurial's ability to traverse across Hyperspace."
-	description "	Corpse Tricksters also have the ability to create hypnotic illusions, though the means by which it accomplishes this are a mystery. A favored tactic is creating an image of a Subsidurial to lure a fresh host. Alternatively, it might make multiple images of itself to intimidate and confuse other predators."
-
-outfit "Corpse Trickster Ruse?"
-	category "Secondary Weapons"
-	thumbnail "outfit/unknown"
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		icon "icon/torpedo"
-		"submunition" "Corpse Trickster Submunition"
-			"offset" 50 0
-			"facing" 0.45
-		"submunition" "Corpse Trickster Submunition"
-			"offset" -50 0
-			"facing" -0.45
-		"inaccuracy" 40
-		"lifetime" 0
-		"velocity override" 6
-		"range override" 2700
-		"reload" 450
-		"optical tracking" .5
-		"firing energy" -5
-		"phasing"
-
-outfit "Corpse Trickster Submunition"
-	weapon
-		sprite "ship/corpse trickster/corpse trickster head"
-			rewind
-			"frame rate" 2
-		"hit effect" "corpse trickster sound bite"
-		"fade out" 600
-		"velocity" 0
-		"acceleration" .1
-		"lifetime" 450
-		"drag" .015
-		"turn" 1.5
-		"homing" 2
-		"optical tracking" .5
-		"missile strength" 2000
-		"shield damage" 0.01
-		"hull damage" 0.01
-		"phasing"
-
-outfit "Corpse Trickster Illusion?"
-	category "Secondary Weapons"
-	thumbnail "outfit/unknown"
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		icon "icon/torpedo"
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" 100 0
-			"facing" 0.75
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" 50 0
-			"facing" 0.6
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" -50 0
-			"facing" -0.6
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" -100 0
-			"facing" -0.75
-		"inaccuracy" 40
-		"lifetime" 0
-		"velocity override" 6
-		"range override" 5400
-		"reload" 900
-		"optical tracking" .5
-		"firing energy" -10
-		"phasing"
-
-outfit "Corpse Trickster Mirage?"
-	category "Secondary Weapons"
-	thumbnail "outfit/unknown"
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		icon "icon/javelin"
-		ammo "Corpse Trickster Mirage?"
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" 100 0
-			"facing" .9
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" 100 0
-			"facing" .75
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" 50 0
-			"facing" .6
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" -50 0
-			"facing" .6
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" -100 0
-			"facing" .75
-		"submunition" "Corpse Trickster Submunition (Slow)"
-			"offset" -100 0
-			"facing" .9
-		"inaccuracy" 40
-		"lifetime" 0
-		"velocity override" 6
-		"range override" 5400
-		"reload" 900
-		"optical tracking" .5
-		"firing energy" -20
-		"phasing"
-
-outfit "Corpse Trickster Submunition (Slow)"
-	weapon
-		sprite "ship/corpse trickster/corpse trickster head"
-			rewind
-			"frame rate" 2
-		"hit effect" "corpse trickster sound bite"
-		"fade out" 600
-		"velocity" 0
-		"acceleration" .1
-		"lifetime" 900
-		"drag" .015
-		"turn" 1.5
-		"homing" 3
-		"optical tracking" .5
-		"missile strength" 2000
-		"shield damage" 0.01
-		"hull damage" 0.01
-		"phasing"
-
-effect "corpse trickster sound bite"
-	sound "crunch"
-
-ship "Corpse Trickster Body"
-	"display name" "Subsidurial"
-	noun "creature"
-	sprite "ship/corpse trickster/corpse trickster body"
-	"never disabled"
-	swizzle 0
-	attributes
-		category "Light Freighter"
-		"hull" 2000
-		"automaton" 1
-		"mass" 525
-		"drag" 12.3
-		"heat dissipation" .54
-		"fuel capacity" 150
-		"thrust" 15
-		"thrusting fuel" 25
-		"turn" 150
-		"ion protection" 3
-		"scramble protection" 3
-		"ion resistance" 1
-		"scramble resistance" 1
-		"energy capacity" 1
-		"inscrutable" 1
-		"hyperdrive" 1
-		"jump speed" .2
-	outfits
-		"Aggression?"
-		"Subsidurial Bait?"
-	gun 0 95
-	turret 0 50
-	bay "Fighter" 0 0
-		under
-		"launch effect" "blood" 5
-	leak "blood" 30 50
-	explode "blood" 45
-	"final explode" "blood"
-	description "A dead Subsidurial. The head is missing, but the body has been infused with chemicals that keeps it somewhat functional."
-
-ship "Corpse Trickster Body" "Corpse Trickster Body B"
-	"display name" "Subsidurial"
-	noun "creature"
-	sprite "ship/corpse trickster/corpse trickster body b"
-	"never disabled"
-	swizzle 0
-
-outfit "Aggression?"
-	category "Guns"
-	thumbnail "outfit/unknown"
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		"inaccuracy" 180
-		"velocity" 10
-		"lifetime" 1
-		"reload" 70
-		"shield damage" 0.01
-		"hull damage" 0.01
-
-outfit "Subsidurial Bait?"
-	category "Turrets"
-	thumbnail "outfit/unknown"
-	"turret mounts" -1
-	"unplunderable" 1
-	weapon
-		ammo "Subsidurial Bait?"
-		sprite "ship/subsidurial"
-		"fade out" 11000
-		"hit effect" "corpse trickster sound bite"
-		"velocity" 0
-		"velocity override" 6
-		"lifetime" 11000
-		"range override" 66000
-		"acceleration" .01
-		"inaccuracy" 40
-		"turret turn" 4
-		"reload" 1200
-		"acceleration" .1
-		"drag" .015
-		"turn" 1
-		"homing" 2.5
-		"optical tracking" .5
-		"shield damage" 0.01
-		"hull damage" 0.01
-		"phasing"
-
-fleet "Corpse Trickster"
-	government "Indigenous Predator"
-	personality
-		heroic vindictive ramming mute
-	variant 50
-		"Corpse Trickster Body"
-		"Corpse Trickster"
-	variant 50
-		"Corpse Trickster Body B"
-		"Corpse Trickster"
-	variant 1
-		"Corpse Trickster Body"
-		"Corpse Trickster Body B"
-		"Corpse Trickster" 2
-	variant 1
-		"Corpse Trickster Body" 2
-		"Corpse Trickster" 2
-	variant 1
-		"Corpse Trickster Body B" 2
-		"Corpse Trickster" 2
-	variant 1
-		"Corpse Trickster Body" 2
-		"Corpse Trickster Body B"
-		"Corpse Trickster" 3
-	variant 1
-		"Corpse Trickster Body"
-		"Corpse Trickster Body B" 2
-		"Corpse Trickster" 3
-
-mission "Midnight Corpse Trickster First Contact"
-	landing
-	invisible
-	on enter H-9187
-		event "midnight add corpse tricksters"
-		conversation
-			scene "thumbnail/corpse trickster-thumb"
-			`A strange Subsidurial is moving erratically. Perhaps it is injured...`
-	npc kill
-		government "Indigenous Predator"
-		system H-9187
-		personality waiting staying heroic ramming mute
-		fleet
-			variant
-				"Corpse Trickster Body"
-				"Corpse Trickster"
-		on kill
-			log "Factions" "Corpse Tricksters" `These parasites possess the ability to project simple hallucinations into the minds of other creatures. It lacks the ability to travel between systems on its own, but can attach itself to the dead corpse of a Subsidurial and use it to ride the hyperspace lanes. It's uncertain if the creature evolved to resemble a Subsidurial's head or if it was simply using the head of the dead Subsidurial it was latched onto as a mask.`
-			conversation
-				scene "ship/corpse trickster/corpse trickster head"
-				`It's uncertain if the creature evolved to resemble a Subsidurial's head or if it was simply using the head of the dead Subsidurial it was latched onto as a mask. Either way, the hallucinations stop appearing after the Corpse Trickster dies.`
-			fail
-
-event "midnight add corpse tricksters"
-	system E-4183
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system E-9182
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system G-719
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system G-819
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system H-8188
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system H-9187
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system L-118
-		add fleet "Corpse Trickster" 30000
-		add fleet "Subsidurial" 60000
-	system L-6181
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system M-1188
-		add fleet "Corpse Trickster" 10000
-		add fleet "Subsidurial" 20000
-	system MC-42
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system MS-219
-		add fleet "Corpse Trickster" 10000
-		add fleet "Subsidurial" 20000
-	system O-3184
-		add fleet "Corpse Trickster" 10000
-		add fleet "Subsidurial" 20000
-	system U-5188
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-	system V-2189
-		add fleet "Corpse Trickster" 30000
-		add fleet "Subsidurial" 60000
-	system W-3197
-		add fleet "Corpse Trickster" 20000
-		add fleet "Subsidurial" 40000
-
-
-
-ship "Gray Eye"
-	noun "creature"
-	sprite "ship/grayeye"
-	thumbnail "thumbnail/gray eye-thumb"
-	"never disabled"
-	attributes
-		category "Light Warship"
-		"cost" 50000
-		"hull" 23200
-		"automaton" 1
-		"mass" 1125
-		"cargo space" 65
-		"drag" 12.3
-		"heat dissipation" .54
-		"fuel capacity" 100
-		"thrust" 15
-		"turn" 1200
-		"hull repair rate" 3
-		"ion protection" 3
-		"scramble protection" 3
-		"ion resistance" 1
-		"scramble resistance" 1
-		"energy capacity" 1
-		"inscrutable" 1
-		"gaslining" 1
-		"hyperdrive" 1
-		"jump speed" .2
-	outfits
-		Mandibles? 3
-		Tail? 1
-	gun 0 -97 Mandibles?
-	gun -23 -95 Mandibles?
-	gun 23 -95 Mandibles?
-	gun 0 70 Tail?
-		angle 180
-	turret -28 0
-	turret 28 0
-	leak "blood" 30 50
-	explode "blood" 45
-	"final explode" "subsidurial death"
-	description "Gray Eyes are very old Subsidurials that have developed thicker hides. They have also learned how to make a powerful slap with their tails. While they still retain the peaceful disposition of their younger siblings, Gray Eyes are often vindictive when attacked."
-
-ship "Gray Eye" "Gray Eyed"
-	sprite "ship/grayeye flip"
-	"never disabled"
-
-outfit Tail?
-	category "Guns"
-	thumbnail "outfit/unknown"
-	cost 20000
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		sound "crunch"
-		"inaccuracy" 180
-		"velocity" 10
-		"lifetime" 1
-		"reload" 70
-		"burst reload" 35
-		"burst count" 3
-		"cluster"
-		"shield damage" 300
-		"hull damage" 400
-		"hit force" 120
-
-phrase "gray eye"
-	word
-		"Gray Eye"
-
-fleet "Gray Eye"
-	names "gray eye"
-	government "Indigenous Lifeform"
-	cargo 0
-	personality
-		uninterested mining harvests ramming vindictive mute unconstrained
-	variant 1
-		"Gray Eye"
-	variant 2
-		"Gray Eyed"
-
-mission "Ayab's Revenge"
-	minor
-	name "Hunting Gray Eye"
-	description "Captain Ayab is hunting an ancient subsidurial known as the Gray Eye. You're still not sure how you got roped into this..."
-	source
-		attributes "near earth"
-	to offer
-		has "First Contact: Subsidurials: offered"
-		"combat rating" > 10
-		random < 25
-	on offer
-		log "People" "Captain Ayab" `A starship captain seeking revenge against the Gray Eye that destroyed his previous ship. With his new ship, the Ayab's Revenge, he is recruiting other starship captains to join his fleet.`
-		log "Factions" "Subsidurials" `Very old Subsidurials are known as Gray Eyes. They have thicker hides and can be temperamental, having learned how to deliver a powerful slap with their tail.`
-		conversation
-			`You're at a spaceport bar when a grizzeled old starship captain with a crazed expression on his face approaches your table.`
-			`"You that new hotshot, <last>?"`
-			choice
-				`	"Yes. Who are..."`
-				`	"How did..."`
-				`	"No, you've got the wrong..."`
-			`"Name's Ayab. Captain Ayab. You're just the kind of fresh recruit I need to join my fleet on the hunt."`
-			choice
-				`	"Hunt? What..."`
-				`	"Wait, I'm not..."`
-			scene "thumbnail/gray eye-thumb"
-			`"Gray Eye!" The man screams loudly. "The accursed creature destroyed my first ship! But now I finally have a new ship and am building up my fleet! Soon it will know my revenge!"`
-			choice
-				`	"But I have my own..."`
-				`	"I never agreed..."`
-			`"Welcome to my fleet, <last>! I'll see you up in orbit!" The man stomps off to terrorize other bar patrons. You're still not sure what just happened.`
-				accept
-	npc kill
-		government "Indigenous Lifeform"
-		system Atik
-		personality target waiting staying uninterested mining harvests ramming mute
-		fleet "Gray Eye"
-		dialog `Captain Ayab cheers. "Finally, the Gray Eye is no more! Let's get back to <destination>! Drink's on me!"`
-	npc save
-		government "Creature Hunter"
-		personality escort heroic vindictive
-		ship "Modified Argosy (Shields Missile)" "Ayab's Revenge"
-	on abort
-		dialog `You quietly ditch captain Ayab and his hunt for the Gray Eye...`
-	on fail
-		dialog `Captain Ayab passed away while spending his life on a fruitless quest for revenge. Sometimes it's best to let things go.`
-	on complete
-		dialog `"You did good kid. Someday, you might have a fleet of your own!" True to his word, Captain Ayab treats you and you crew to a drink at the same bar you met him. After a having a few, he passes out. He looks content. As he snores on the bar counter, you quietly leave.`
-
-mission "Ayab's Revenge Epilogue1"
-	landing
-	invisible
-	deadline 2
-	to offer
-		or
-			has "Ayab's Revenge: done"
-			has "Ayab's Revenge: aborted"
-			has "Ayab's Revenge: failed"
-	npc
-		government "Indigenous Lifeform"
-		personality waiting uninterested mining harvests ramming mute unconstrained
-		fleet "Gray Eye"
-
-mission "Ayab's Revenge Epilogue2"
-	landing
-	invisible
-	to offer
-		has "Ayab's Revenge Epilogue1: active"
-	on offer
-		fail "Ayab's Revenge Epilogue1"
-		fail
-
-mission "Ayab's Space Squid"
-	landing
-	name "Captain Ayab"
-	description "Captain Ayab will fight by your side until the horrible squid monsters have been defeated."
-	source
-		government "Pug"
-		attributes "core" "dirt belt" "near earth"
-	destination Pugglemug
-	to offer
-		has "Ayab's Revenge: done"
-		or
-			has "FW Pug 3C: done"
-			has "FWC Pug 3D: done"
-		not "main plot completed"
-	on offer
-		conversation
-			scene "thumbnail/gray eye-thumb"
-			`A grizzled old starship captain stumbles out of a spaceport bar and calls out to you. "Hey kid! Remember me? Captain Ayab!" This was the man who insisted on recruiting you into his fleet to hunt down a Gray Eye. His mood saddens. "It's terrible <first>! Terrible!"`
-			choice
-				`	"Terrible?"`
-				`	"What's terrible?"`
-			scene "thumbnail/pug zibruka"
-			`	"It's the squid, <first>! The squid!" He's shouting uncontrollably as other people back away in fear. "I got stuck in this space swarming with them! We have to kill them! All of them!"`
-			choice
-				`	"Calm down, they're not..."`
-				`	"These squid are actually..."`
-			scene "thumbnail/pug enfolta"
-			`	"Space squid!" He shouts "Those tentacled monsters are a menace!". By now, the streets around you are abandoned, the locals having been scared off by his tirade. "But I'm glad you're here to join me, <first>."`
-			choice
-				`	"Join you?"`
-				`	"Wait a minute..."`
-			scene "thumbnail/pug maboro"
-			`	"As part of my fleet you'll assist me in exterminating this wretched threat to humanity! It'll be more dangerous than our hunt for the Gray Eye, but I'm sure you're up to the task. See you in orbit!"`
-			choice
-				`	"But I have my own..."`
-				`	"I never agreed..."`
-			scene "thumbnail/marauder argosy-thumb"
-			`	 He's already rushing off to the spaceport before you can respond. You watch him board what appears to be an Argosy so heavily modified that it could be classified a Marauder. Maybe he'll be useful in the fight against the Pug...`
-				accept
-	npc accompany save
-		government "Escort"
-		personality heroic escort
-		ship "Marauder Argosy (Sniper)" "Ayab's Revenge"
-	on complete
-		dialog `Ayab thanks you for assisting him to defeat the space squid, but will part ways with your fleet here.`
-
-mission "Gray Eye Corpse (Yranjiu)"
-	landing
-	invisible
-	to offer
-		has "Ayab's Revenge Epilogue1: offered"
-	on enter Yranjiu
-		conversation
-			scene "thumbnail/gray eye-thumb"
-			`Your sensors detect a Gray Eye floating towards the black hole in this system. It appears to be dead.`
-	npc board
-		government "Indigenous Lifeform"
-		system Yranjiu
-		personality derelict waiting staying uninterested mute marked
-		ship "Gray Eye Corpse" "Gray Eye"
-		conversation
-			action
-				fail "Gray Eye Corpse (Yranjiu)"
-			`The Gray Eye has been dead for a long time. Its flesh is horribly rotting away.`
-		on board
-			fail
-
-ship "Gray Eye" "Gray Eye Corpse"
-	"uncapturable"
-	outfits
-		"Silicon"
-
-
-ship "Luminazoa"
-	noun "creature"
-	sprite "ship/luminazoa/luminazoa"
-		rewind
-		"frame rate" 4
-	"never disabled"
-	attributes
-		category "Interceptor"
-		"cost" 500000
-		"automaton" 1
-		"shields" 800
-		"hull" 2400
-		"mass" 270
-		"drag" 7.2
-		"heat dissipation" .81
-		"cargo space" 18
-		"thrust" 6.6
-		"afterburner thrust" 33
-		"afterburner energy" 4.4
-		"turn" 225
-		"shield generation" 1.5
-		"hull repair rate" 1
-		"heat protection" 1
-		"ion protection" 3
-		"scramble protection" 3
-		"ion resistance" 2
-		"scramble resistance" 2
-		"energy capacity" 150
-		"energy generation" 2
-		"fuel capacity" 150
-		"inscrutable" 1
-		"gaslining" 1
-		"hyperdrive" 1
-		"scram drive" .2
-		"atmosphere scan" 100
-		"asteroid scan power" 50
-		weapon
-			"hit force" 30
-			"blast radius" 160
-			"corrosion damage" 480
-	outfits
-		Digester? 3
-		"Lightning Tendril?" 1
-	gun 0 -30 Digester?
-	gun -5 -32 Digester?
-	gun 5 -32 Digester?
-	turret 0 7 "Lightning Tendril?"
-	leak "blue blood" 15 25
-	explode "blue blood" 25
-	"final explode" "blue blood"
-	description "The exposed mantle of Hell's Maw is home to a thriving colony of these creatures. While they are content to harmlessly scavenge for minerals, they can become dangerous when provoked. Their tendrils are able to emit electrical bursts which can disrupt a ship's power systems."
-
-
-effect "blue blood"
-	sprite "effect/blue blood"
-		"no repeat"
-		"frame rate" 10
-		"random start frame"
-	"lifetime" 61
-	"random angle" 20
-	"random velocity" 1
-	"random spin" 5
-
-
-
-outfit "Lightning Tendril?"
-	category "Secondary Weapons"
-	thumbnail "outfit/unknown"
-	cost 1800000
-	"turret mounts" -1
-	"unplunderable" 1
-	weapon
-		sprite "projectile/lightning"
-			"frame rate" 60
-			"random start frame"
-		sound "zapper"
-		icon "icon/lightning"
-		"hit effect" "ion impact" 2
-		"inaccuracy" 3
-		"turret turn" 1
-		"velocity" 320
-		"lifetime" 1
-		"reload" 1
-		"firing energy" 2.7
-		"shield damage" 7.4
-		"hull damage" 5.8
-		"ion damage" .4
-		"scrambling damage" .4
-
-outfit Digester?
-	category "Guns"
-	thumbnail "outfit/unknown"
-	cost 10000
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		"hit effect" "digester splatter"
-		"inaccuracy" 180
-		"velocity" 10
-		"lifetime" 1
-		"reload" 70
-		"burst reload" 35
-		"burst count" 3
-		"cluster"
-		"discharge damage" 3
-		"minable damage" 300
-		"corrosion damage" 6
-
-effect "digester splatter"
-	sound "medium_explosion-ver8"
-
-
-phrase luminazoa
-	word
-		Luminazoa
-
-fleet "Luminazoa"
-	names luminazoa
-	government "Indigenous Lifeform"
-	cargo 0
-	personality
-		mining harvests unconstrained mute ramming lingering
-	variant 90
-		"Luminazoa"
-	variant 10
-		"Luminazoa" 2
-	variant 1
-		"Luminazoa" 3
-
-mission "First Contact: Luminazoa"
-	landing
-	invisible
-	deadline 2
-	source "Hell's Maw"
-	on offer
-		log "Factions" "Luminazoa" `The exposed mantle of Hell's Maw is home to a thriving colony of these creatures. While they are content to harmlessly scavenge for minerals, they can become dangerous when provoked. One of their tendrils is able to emit electrical bursts which can disrupt a ship's power systems.`
-		conversation
-			scene "ship/luminazoa/luminazoa"
-			`You wait until the exposed core is facing away from the sun and pick a landing spot near the edge of the planet's broken crust. Even at night the ambient heat here is intense, with temperatures slightly above the recommended safety limits for your environmental suit. Your ship's scanners alert you to the presence of several large life forms moving about on the rocky terrain below. Their translucent bodies gives them the appearance of ghostly jellyfish. While observing them consume the exposed minerals from the planet's gaping wound, you see occasional flashes of light when they create some form of energy discharge. Between the presence of these creatures and other environmental hazards, it's probably not a good idea to disembark.`
-				accept
-	on accept
-		event "Luminazoa Hell's Maw"
-	npc kill
-		government "Indigenous Lifeform"
-		personality waiting staying timid mining harvests unconstrained mute ramming
-		fleet "Luminazoa"
-
-event "Luminazoa Hell's Maw"
-	system Kalsolli
-		add fleet "Luminazoa" 5000
-
-
-
-ship "Ionic Leech"
-	noun "creature"
-	sprite "ship/ionic leech/ionic leech"
-	"never disabled"
-	attributes
-		category "Interceptor"
-		"cost" 50000
-		"automaton" 1
-		"shields" 1000
-		"hull" 2000
-		"mass" 140
-		"drag" 4.2
-		"heat dissipation" 1.4
-		"cargo space" 16
-		"thrust" 36
-		"turn" 900
-		"afterburner thrust" 18
-		"afterburner energy" 6
-		"shield generation" 2
-		"hull repair rate" 1
-		"energy protection" 1
-		"ion protection" 3
-		"scramble protection" 3
-		"ion resistance" 3
-		"scramble resistance" 3
-		"energy capacity" 150
-		"fuel capacity" 150
-		"inscrutable" 1
-		"gaslining" 1
-		"hyperdrive" 1
-		"scram drive" .2
-		"ramscoop" 1
-		weapon
-			"blast radius" 30
-			"ion damage" 300
-			"hit force" 150
-			"scrambling damage" 450
-	outfits
-		"Ionic Mouthparts?" 1
-	gun 0 -37 "Ionic Mouthparts?"
-	leak "blood" 15 25
-	explode "blood" 25
-	"final explode" "blood"
-	description "These creatures have infested the Northern Passage since before humans colonized the north. They crave the power generated by ships and are somehow able to consume it through the use of organs uniquely evolved for the task. While they're a rare sight, captains who have the misfortune of encountering them will find that they attack in large swarms."
-
-
-outfit "Ionic Mouthparts?"
-	category "Guns"
-	thumbnail "outfit/mouthparts"
-	cost 20000
-	"gun ports" -1
-	"unplunderable" 1
-	weapon
-		sound "zapper"
-		"hit effect" "ionic leeching"
-		"inaccuracy" 180
-		"velocity" 10
-		"lifetime" 1
-		"reload" 70
-		"burst reload" 35
-		"burst count" 3
-		"cluster"
-		"firing energy" -3
-		"shield damage" 400
-		"hull damage" 200
-		"ion damage" 10
-
-effect "ionic leeching"
-	sprite "effect/spark"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 29
-	"random angle" 360
-	"random velocity" .4
-	"random spin" 2
-	"random frame rate" 5
-	"velocity scale" .0001
-
-phrase "ionic leech"
-	word
-		"Ionic Leech"
-
-fleet "Small Ionic Leech"
-	names "ionic leech"
-	government "Indigenous Predator"
-	cargo 0
-	personality heroic disables unconstrained mute ramming
-	variant 3
-		"Ionic Leech" 5
-	variant 2
-		"Ionic Leech" 7
-	variant 1
-		"Ionic Leech" 9
-	variant 1
-		"Ionic Leech" 11
-
-fleet "Large Ionic Leech"
-	names "ionic leech"
-	government "Indigenous Predator"
-	cargo 0
-	personality heroic disables unconstrained mute ramming
-	variant 3
-		"Ionic Leech" 7
-	variant 2
-		"Ionic Leech" 9
-	variant 1
-		"Ionic Leech" 11
-
-mission "First Contact: Ionic Leech"
-	landing
-	invisible
-	deadline 2
-	source 
-		planet "Farpoint" "Maelstrom" "Sunracer" "Skillet" "Prime" "Stormhold"
-	on offer
-		log "Factions" "Ionic Leeches" `These creatures have infested the Northern Passage since before humans colonized the north. They crave the power generated by ships and are somehow able to consume it through the use of organs uniquely evolved for the task. While they're a rare sight, captains who have the misfortune of encountering them will find that they attack in large swarms.`
-		conversation
-			`As you land you notice there are piles of giant creatures that look like leeches at multiple landing pads.`
-			`A dock worker is carting away a pile from your dock. Out of curiosity, you ask what those are.`
-			`"Ionic Leeches. Interstellar vermin that have infested the Northern Passage since before humans colonized the north. If they latch onto the hull, your ship's power systems could be disrupted. They're a rare sight, but several captains have recently had the misfortune of encountering a large swarm of them."`
-				accept
-	on accept
-		event "Ionic Leech North"
-	npc kill
-		government "Indigenous Predator"
-		personality waiting staying uninterested disables unconstrained mute ramming
-		ship "Ionic Leech" "Ionic Leech"
-
-event "Ionic Leech North"
-	system Rigel
-		add fleet "Small Ionic Leech" 40000
-	system Hassaleh
-		add fleet "Small Ionic Leech" 20000
-		add fleet "Large Ionic Leech" 40000
-	system Danoa
-		add fleet "Small Ionic Leech" 40000
-	system Sumar
-		add fleet "Small Ionic Leech" 20000
-		add fleet "Large Ionic Leech" 40000
-	system Rajak
-		add fleet "Small Ionic Leech" 20000
-		add fleet "Large Ionic Leech" 40000
-	system Cardax
-		add fleet "Small Ionic Leech" 20000
-		add fleet "Large Ionic Leech" 40000
-	system Volax
-		add fleet "Small Ionic Leech" 40000
-	system Sospi
-		add fleet "Small Ionic Leech" 40000
-	system Moktar
-		add fleet "Small Ionic Leech" 40000
-	system Oblate
-		add fleet "Small Ionic Leech" 40000
-
-mission "Ionic Leech Oathkeeper Update"
-	landing
-	invisible
-	to offer
-		has "event: oathkeepers founded"
-		has "event: Ionic Leech North"
-	on offer
-		event "ionic leech oathkeeper update"
-		fail
-
-event "ionic leech oathkeeper update"
-	system Rigel
-		add fleet "Small Ionic Leech" 40000
-
 
 
 ship "Astero Nautilus"
@@ -1119,7 +200,6 @@ ship "Astero Nautilus" "Freighter???"
 	explode "medium explosion" 20
 	"final explode" "final explosion small"
 
-
 ship "Astero Nautilus" "Protector?"
 	noun "creature"
 	sprite "ship/asteronautilus p"
@@ -1199,8 +279,6 @@ ship "Astero Nautilus" "Vanguard?"
 	explode "large explosion" 8
 	"final explode" "final explosion medium"
 
-
-
 outfit "Tentacles?"
 	category "Guns"
 	thumbnail "outfit/unknown"
@@ -1233,8 +311,6 @@ effect "tentacle slap"
 	"random spin" 5
 	"random velocity" -2
 	"velocity scale" -.05
-
-
 
 phrase "astero nautilus"
 	word
@@ -1314,7 +390,6 @@ fleet "Large Astero Nautilus"
 		"Astero Nautilus BB"
 		"Astero Nautilus BBB"
 		"Astero Nautilus D"
-
 
 fleet "Mutated Astero Nautilus"
 	names "astero nautilus"
@@ -1422,8 +497,6 @@ event "Astero Nautilus Cross Chasm"
 		add fleet "Small Astero Nautilus" 25000
 	system "Sadr"
 		add fleet "Small Astero Nautilus" 30000
-
-
 
 mission "Investigate Missing Shipment 1"
 	job
@@ -1546,6 +619,1398 @@ mission "Investigate Missing Shipment 3"
 		dialog `You've confirmed that the missing shipment was destroyed. After watching video of your fight with the Mutated Astero Nautilus, the Syndicate representative reluctantly pays you <payment>.`
 
 
+ship "Corpse Trickster"
+	noun "creature"
+	sprite "ship/corpse trickster/corpse trickster head"
+		rewind
+		"frame rate" 2
+	thumbnail "thumbnail/corpse trickster-thumb"
+	"never disabled"
+	swizzle 0
+	attributes
+		category "Fighter"
+		"cost" 50000
+		"automaton" 1
+		"hull" 4000
+		"mass" 300
+		"drag" 7.65
+		"heat dissipation" .405
+		"cargo space" 5
+		"thrust" 27
+		"turn" 900
+		"afterburner thrust" 15
+		"afterburner energy" 5
+		"hull repair rate" 2
+		"ion protection" 3
+		"scramble protection" 3
+		"burn protection" 2
+		"leak protection" 2
+		"energy protection" 2
+		"hull protection" 2
+		"slowing protection" 2
+		"ion resistance" 1
+		"scramble resistance" 1
+		"energy capacity" 50
+		"energy generation" 1
+		"fuel capacity" 150
+		"inscrutable" 1
+		"gaslining" 1
+		"ramscoop" 1
+		"optical jamming" 40
+	outfits
+		Mandibles? 5
+		"Corpse Trickster Ruse?"
+		"Corpse Trickster Illusion?"
+		"Corpse Trickster Mirage?"
+	gun 0 -97 Mandibles?
+	gun -23 -95 Mandibles?
+	gun 0 -95 Mandibles?
+	gun 23 -95 Mandibles?
+	gun 0 -93 Mandibles?
+	gun 0 50
+	gun 0 50
+	gun 0 50
+	leak "blood" 15 25
+	explode "blood" 25
+	"final explode" "blood"
+	description "Although it lacks the ability to travel through Hyperspace on its own, these parasitic predators evolved a means to control the bodily functions of a dead Subsidurial by thrusting its tentacles into the nervous system of the corpse. After doing so, it is able to use the Subsidurial's ability to traverse across Hyperspace."
+	description "	Corpse Tricksters also have the ability to create hypnotic illusions, though the means by which it accomplishes this are a mystery. A favored tactic is creating an image of a Subsidurial to lure a fresh host. Alternatively, it might make multiple images of itself to intimidate and confuse other predators."
+
+outfit "Corpse Trickster Ruse?"
+	category "Secondary Weapons"
+	thumbnail "outfit/unknown"
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		icon "icon/torpedo"
+		"submunition" "Corpse Trickster Submunition"
+			"offset" 50 0
+			"facing" 0.45
+		"submunition" "Corpse Trickster Submunition"
+			"offset" -50 0
+			"facing" -0.45
+		"inaccuracy" 40
+		"lifetime" 0
+		"velocity override" 6
+		"range override" 2700
+		"reload" 450
+		"optical tracking" .5
+		"firing energy" -5
+		"phasing"
+
+outfit "Corpse Trickster Submunition"
+	weapon
+		sprite "ship/corpse trickster/corpse trickster head"
+			rewind
+			"frame rate" 2
+		"hit effect" "corpse trickster sound bite"
+		"fade out" 600
+		"velocity" 0
+		"acceleration" .1
+		"lifetime" 450
+		"drag" .015
+		"turn" 1.5
+		"homing"
+		"optical tracking" .5
+		"missile strength" 2000
+		"shield damage" 0.01
+		"hull damage" 0.01
+		"phasing"
+
+outfit "Corpse Trickster Illusion?"
+	category "Secondary Weapons"
+	thumbnail "outfit/unknown"
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		icon "icon/torpedo"
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" 100 0
+			"facing" 0.75
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" 50 0
+			"facing" 0.6
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" -50 0
+			"facing" -0.6
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" -100 0
+			"facing" -0.75
+		"inaccuracy" 40
+		"lifetime" 0
+		"velocity override" 6
+		"range override" 5400
+		"reload" 900
+		"optical tracking" .5
+		"firing energy" -10
+		"phasing"
+
+outfit "Corpse Trickster Mirage?"
+	category "Secondary Weapons"
+	thumbnail "outfit/unknown"
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		icon "icon/javelin"
+		ammo "Corpse Trickster Mirage?"
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" 100 0
+			"facing" .9
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" 100 0
+			"facing" .75
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" 50 0
+			"facing" .6
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" -50 0
+			"facing" .6
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" -100 0
+			"facing" .75
+		"submunition" "Corpse Trickster Submunition (Slow)"
+			"offset" -100 0
+			"facing" .9
+		"inaccuracy" 40
+		"lifetime" 0
+		"velocity override" 6
+		"range override" 5400
+		"reload" 900
+		"optical tracking" .5
+		"firing energy" -20
+		"phasing"
+
+outfit "Corpse Trickster Submunition (Slow)"
+	weapon
+		sprite "ship/corpse trickster/corpse trickster head"
+			rewind
+			"frame rate" 2
+		"hit effect" "corpse trickster sound bite"
+		"fade out" 600
+		"velocity" 0
+		"acceleration" .1
+		"lifetime" 900
+		"drag" .015
+		"turn" 1.5
+		"homing"
+			"throttle control"
+		"optical tracking" .5
+		"missile strength" 2000
+		"shield damage" 0.01
+		"hull damage" 0.01
+		"phasing"
+
+effect "corpse trickster sound bite"
+	sound "crunch"
+
+ship "Corpse Trickster Body"
+	"display name" "Subsidurial"
+	noun "creature"
+	sprite "ship/corpse trickster/corpse trickster body"
+	"never disabled"
+	swizzle 0
+	attributes
+		category "Light Freighter"
+		"hull" 2000
+		"automaton" 1
+		"mass" 525
+		"drag" 12.3
+		"heat dissipation" .54
+		"fuel capacity" 150
+		"thrust" 15
+		"thrusting fuel" 25
+		"turn" 150
+		"ion protection" 3
+		"scramble protection" 3
+		"ion resistance" 1
+		"scramble resistance" 1
+		"energy capacity" 1
+		"inscrutable" 1
+		"hyperdrive" 1
+		"jump speed" .2
+	outfits
+		"Aggression?"
+		"Subsidurial Bait?"
+	gun 0 95
+	turret 0 50
+	bay "Fighter" 0 0
+		under
+		"launch effect" "blood" 5
+	leak "blood" 30 50
+	explode "blood" 45
+	"final explode" "blood"
+	description "A dead Subsidurial. The head is missing, but the body has been infused with chemicals that keeps it somewhat functional."
+
+ship "Corpse Trickster Body" "Corpse Trickster Body B"
+	"display name" "Subsidurial"
+	noun "creature"
+	sprite "ship/corpse trickster/corpse trickster body b"
+	"never disabled"
+	swizzle 0
+
+outfit "Aggression?"
+	category "Guns"
+	thumbnail "outfit/unknown"
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		"inaccuracy" 180
+		"velocity" 10
+		"lifetime" 1
+		"reload" 70
+		"shield damage" 0.01
+		"hull damage" 0.01
+
+outfit "Subsidurial Bait?"
+	category "Turrets"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	"unplunderable" 1
+	weapon
+		ammo "Subsidurial Bait?"
+		sprite "ship/subsidurial"
+		"fade out" 11000
+		"hit effect" "corpse trickster sound bite"
+		"velocity" 0
+		"velocity override" 6
+		"lifetime" 11000
+		"range override" 66000
+		"acceleration" .01
+		"inaccuracy" 40
+		"turret turn" 4
+		"reload" 1200
+		"acceleration" .1
+		"drag" .015
+		"turn" 1
+		"homing"
+		"optical tracking" .5
+		"shield damage" 0.01
+		"hull damage" 0.01
+		"phasing"
+
+fleet "Corpse Trickster"
+	government "Indigenous Predator"
+	personality
+		heroic vindictive ramming mute
+	variant 50
+		"Corpse Trickster Body"
+		"Corpse Trickster"
+	variant 50
+		"Corpse Trickster Body B"
+		"Corpse Trickster"
+	variant 1
+		"Corpse Trickster Body"
+		"Corpse Trickster Body B"
+		"Corpse Trickster" 2
+	variant 1
+		"Corpse Trickster Body" 2
+		"Corpse Trickster" 2
+	variant 1
+		"Corpse Trickster Body B" 2
+		"Corpse Trickster" 2
+	variant 1
+		"Corpse Trickster Body" 2
+		"Corpse Trickster Body B"
+		"Corpse Trickster" 3
+	variant 1
+		"Corpse Trickster Body"
+		"Corpse Trickster Body B" 2
+		"Corpse Trickster" 3
+
+mission "Midnight Corpse Trickster First Contact"
+	landing
+	invisible
+	on enter H-9187
+		event "midnight add corpse tricksters"
+		conversation
+			scene "thumbnail/corpse trickster-thumb"
+			`A strange Subsidurial is moving erratically. Perhaps it is injured...`
+	npc kill
+		government "Indigenous Predator"
+		system H-9187
+		personality waiting staying heroic ramming mute
+		fleet
+			variant
+				"Corpse Trickster Body"
+				"Corpse Trickster"
+		on kill
+			log "Factions" "Corpse Tricksters" `These parasites possess the ability to project simple hallucinations into the minds of other creatures. It lacks the ability to travel between systems on its own, but can attach itself to the dead corpse of a Subsidurial and use it to ride the hyperspace lanes. It's uncertain if the creature evolved to resemble a Subsidurial's head or if it was simply using the head of the dead Subsidurial it was latched onto as a mask.`
+			conversation
+				scene "ship/corpse trickster/corpse trickster head"
+				`It's uncertain if the creature evolved to resemble a Subsidurial's head or if it was simply using the head of the dead Subsidurial it was latched onto as a mask. Either way, the hallucinations stop appearing after the Corpse Trickster dies.`
+			fail
+
+event "midnight add corpse tricksters"
+	system E-4183
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system E-9182
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system G-719
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system G-819
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system H-8188
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system H-9187
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system L-118
+		add fleet "Corpse Trickster" 30000
+		add fleet "Subsidurial" 60000
+	system L-6181
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system M-1188
+		add fleet "Corpse Trickster" 10000
+		add fleet "Subsidurial" 20000
+	system MC-42
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system MS-219
+		add fleet "Corpse Trickster" 10000
+		add fleet "Subsidurial" 20000
+	system O-3184
+		add fleet "Corpse Trickster" 10000
+		add fleet "Subsidurial" 20000
+	system U-5188
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+	system V-2189
+		add fleet "Corpse Trickster" 30000
+		add fleet "Subsidurial" 60000
+	system W-3197
+		add fleet "Corpse Trickster" 20000
+		add fleet "Subsidurial" 40000
+
+
+ship "Gray Eye"
+	noun "creature"
+	sprite "ship/grayeye"
+	thumbnail "thumbnail/gray eye-thumb"
+	"never disabled"
+	attributes
+		category "Light Warship"
+		"cost" 50000
+		"hull" 23200
+		"automaton" 1
+		"mass" 1125
+		"cargo space" 65
+		"drag" 12.3
+		"heat dissipation" .54
+		"fuel capacity" 100
+		"thrust" 15
+		"turn" 1200
+		"hull repair rate" 3
+		"ion protection" 3
+		"scramble protection" 3
+		"ion resistance" 1
+		"scramble resistance" 1
+		"energy capacity" 1
+		"inscrutable" 1
+		"gaslining" 1
+		"hyperdrive" 1
+		"jump speed" .2
+	outfits
+		Mandibles? 3
+		Tail? 1
+	gun 0 -97 Mandibles?
+	gun -23 -95 Mandibles?
+	gun 23 -95 Mandibles?
+	gun 0 70 Tail?
+		angle 180
+	turret -28 0
+	turret 28 0
+	leak "blood" 30 50
+	explode "blood" 45
+	"final explode" "subsidurial death"
+	description "Gray Eyes are very old Subsidurials that have developed thicker hides. They have also learned how to make a powerful slap with their tails. While they still retain the peaceful disposition of their younger siblings, Gray Eyes are often vindictive when attacked."
+
+ship "Gray Eye" "Gray Eyed"
+	sprite "ship/grayeye flip"
+	"never disabled"
+
+outfit Tail?
+	category "Guns"
+	thumbnail "outfit/unknown"
+	cost 20000
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		sound "crunch"
+		"inaccuracy" 180
+		"velocity" 10
+		"lifetime" 1
+		"reload" 70
+		"burst reload" 35
+		"burst count" 3
+		"cluster"
+		"shield damage" 300
+		"hull damage" 400
+		"hit force" 120
+
+phrase "gray eye"
+	word
+		"Gray Eye"
+
+fleet "Gray Eye"
+	names "gray eye"
+	government "Indigenous Lifeform"
+	cargo 0
+	personality
+		uninterested mining harvests ramming vindictive mute unconstrained
+	variant 1
+		"Gray Eye"
+	variant 2
+		"Gray Eyed"
+
+mission "Ayab's Revenge"
+	minor
+	name "Hunting Gray Eye"
+	description "Captain Ayab is hunting an ancient subsidurial known as the Gray Eye. You're still not sure how you got roped into this..."
+	source
+		attributes "near earth"
+	to offer
+		has "First Contact: Subsidurials: offered"
+		"combat rating" > 10
+		random < 25
+	on offer
+		log "People" "Captain Ayab" `A starship captain seeking revenge against the Gray Eye that destroyed his previous ship. With his new ship, the Ayab's Revenge, he is recruiting other starship captains to join his fleet.`
+		log "Factions" "Subsidurials" `Very old Subsidurials are known as Gray Eyes. They have thicker hides and can be temperamental, having learned how to deliver a powerful slap with their tail.`
+		conversation
+			`You're at a spaceport bar when a grizzeled old starship captain with a crazed expression on his face approaches your table.`
+			`"You that new hotshot, <last>?"`
+			choice
+				`	"Yes. Who are..."`
+				`	"How did..."`
+				`	"No, you've got the wrong..."`
+			`"Name's Ayab. Captain Ayab. You're just the kind of fresh recruit I need to join my fleet on the hunt."`
+			choice
+				`	"Hunt? What..."`
+				`	"Wait, I'm not..."`
+			scene "thumbnail/gray eye-thumb"
+			`"Gray Eye!" The man screams loudly. "The accursed creature destroyed my first ship! But now I finally have a new ship and am building up my fleet! Soon it will know my revenge!"`
+			choice
+				`	"But I have my own..."`
+				`	"I never agreed..."`
+			`"Welcome to my fleet, <last>! I'll see you up in orbit!" The man stomps off to terrorize other bar patrons. You're still not sure what just happened.`
+				accept
+	npc kill
+		government "Indigenous Lifeform"
+		system Kugel
+		personality target waiting staying uninterested mining harvests ramming mute
+		fleet "Gray Eye"
+		dialog `Captain Ayab cheers. "Finally, the Gray Eye is no more! Let's get back to <destination>! Drink's on me!"`
+	npc save
+		government "Creature Hunter"
+		personality escort heroic vindictive
+		ship "Modified Argosy (Shields Missile)" "Ayab's Revenge"
+	on abort
+		dialog `You quietly ditch captain Ayab and his hunt for the Gray Eye...`
+	on fail
+		dialog `Captain Ayab passed away while spending his life on a fruitless quest for revenge. Sometimes it's best to let things go.`
+	on complete
+		dialog `"You did good kid. Someday, you might have a fleet of your own!" True to his word, Captain Ayab treats you and you crew to a drink at the same bar you met him. After a having a few, he passes out. He looks content. As he snores on the bar counter, you quietly leave.`
+
+mission "Ayab's Revenge Epilogue1"
+	landing
+	invisible
+	deadline 2
+	to offer
+		or
+			has "Ayab's Revenge: done"
+			has "Ayab's Revenge: aborted"
+			has "Ayab's Revenge: failed"
+	npc
+		government "Indigenous Lifeform"
+		personality waiting uninterested mining harvests ramming mute unconstrained
+		fleet "Gray Eye"
+
+mission "Ayab's Revenge Epilogue2"
+	landing
+	invisible
+	to offer
+		has "Ayab's Revenge Epilogue1: active"
+	on offer
+		fail "Ayab's Revenge Epilogue1"
+		fail
+
+mission "Ayab's Space Squid"
+	landing
+	name "Captain Ayab"
+	description "Captain Ayab will fight by your side until the horrible squid monsters have been defeated."
+	source
+		government "Pug"
+		attributes "core" "dirt belt" "near earth"
+	destination Pugglemug
+	to offer
+		has "Ayab's Revenge: done"
+		or
+			has "FW Pug 3C: done"
+			has "FWC Pug 3D: done"
+		not "main plot completed"
+	on offer
+		conversation
+			scene "thumbnail/gray eye-thumb"
+			`A grizzled old starship captain stumbles out of a spaceport bar and calls out to you. "Hey kid! Remember me? Captain Ayab!" This was the man who insisted on recruiting you into his fleet to hunt down a Gray Eye. His mood saddens. "It's terrible <first>! Terrible!"`
+			choice
+				`	"Terrible?"`
+				`	"What's terrible?"`
+			scene "thumbnail/pug zibruka"
+			`	"It's the squid, <first>! The squid!" He's shouting uncontrollably as other people back away in fear. "I got stuck in this space swarming with them! We have to kill them! All of them!"`
+			choice
+				`	"Calm down, they're not..."`
+				`	"These squid are actually..."`
+			scene "thumbnail/pug enfolta"
+			`	"Space squid!" He shouts "Those tentacled monsters are a menace!". By now, the streets around you are abandoned, the locals having been scared off by his tirade. "But I'm glad you're here to join me, <first>."`
+			choice
+				`	"Join you?"`
+				`	"Wait a minute..."`
+			scene "thumbnail/pug maboro"
+			`	"As part of my fleet you'll assist me in exterminating this wretched threat to humanity! It'll be more dangerous than our hunt for the Gray Eye, but I'm sure you're up to the task. See you in orbit!"`
+			choice
+				`	"But I have my own..."`
+				`	"I never agreed..."`
+			scene "thumbnail/marauder argosy-thumb"
+			`	 He's already rushing off to the landing pads before you can respond. You watch him board what appears to be an Argosy so heavily modified that it could be classified a Marauder. Maybe he'll be useful in the fight against the Pug...`
+				accept
+	npc accompany save
+		government "Escort"
+		personality heroic escort
+		ship "Marauder Argosy (Sniper)" "Ayab's Revenge"
+	on complete
+		dialog `Ayab thanks you for assisting him to defeat the space squid, but will part ways with your fleet here.`
+
+mission "Gray Eye Corpse (Yranjiu)"
+	landing
+	invisible
+	to offer
+		has "Ayab's Revenge Epilogue1: offered"
+	on enter Yranjiu
+		conversation
+			scene "thumbnail/gray eye-thumb"
+			`Your sensors detect a Gray Eye floating towards the black hole in this system. It appears to be dead.`
+	npc board
+		government "Indigenous Lifeform"
+		system Yranjiu
+		personality derelict waiting staying uninterested mute marked
+		ship "Gray Eye Corpse" "Gray Eye"
+		conversation
+			action
+				fail "Gray Eye Corpse (Yranjiu)"
+			`The Gray Eye has been dead for a long time. Its flesh is horribly rotting away.`
+				launch
+
+ship "Gray Eye" "Gray Eye Corpse"
+	"uncapturable"
+	outfits
+		"Silicon"
+
+
+ship "Ionic Leech"
+	noun "creature"
+	sprite "ship/ionic leech/ionic leech"
+	"never disabled"
+	attributes
+		category "Interceptor"
+		"cost" 50000
+		"automaton" 1
+		"shields" 1000
+		"hull" 2000
+		"mass" 140
+		"drag" 4.2
+		"heat dissipation" 1.4
+		"cargo space" 16
+		"thrust" 36
+		"turn" 900
+		"afterburner thrust" 18
+		"afterburner energy" 6
+		"shield generation" 2
+		"hull repair rate" 1
+		"energy protection" 1
+		"ion protection" 3
+		"scramble protection" 3
+		"ion resistance" 3
+		"scramble resistance" 3
+		"energy capacity" 150
+		"fuel capacity" 150
+		"inscrutable" 1
+		"gaslining" 1
+		"hyperdrive" 1
+		"scram drive" .2
+		"ramscoop" 1
+		weapon
+			"blast radius" 30
+			"ion damage" 300
+			"hit force" 150
+			"scrambling damage" 450
+	outfits
+		"Ionic Mouthparts?" 1
+	gun 0 -37 "Ionic Mouthparts?"
+	leak "blood" 15 25
+	explode "blood" 25
+	"final explode" "blood"
+	description "These creatures have infested the Northern Passage since before humans colonized the north. They crave the power generated by ships and are somehow able to consume it through the use of organs uniquely evolved for the task. While they're a rare sight, captains who have the misfortune of encountering them will find that they attack in large swarms."
+
+outfit "Ionic Mouthparts?"
+	category "Guns"
+	thumbnail "outfit/mouthparts"
+	cost 20000
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		sound "zapper"
+		"hit effect" "ionic leeching"
+		"inaccuracy" 180
+		"velocity" 10
+		"lifetime" 1
+		"reload" 70
+		"burst reload" 35
+		"burst count" 3
+		"cluster"
+		"firing energy" -3
+		"shield damage" 400
+		"hull damage" 200
+		"ion damage" 10
+
+effect "ionic leeching"
+	sprite "effect/spark"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 29
+	"random angle" 360
+	"random velocity" .4
+	"random spin" 2
+	"random frame rate" 5
+	"velocity scale" .0001
+
+phrase "ionic leech"
+	word
+		"Ionic Leech"
+
+fleet "Small Ionic Leech"
+	names "ionic leech"
+	government "Indigenous Predator"
+	cargo 0
+	personality heroic disables unconstrained mute ramming
+	variant 3
+		"Ionic Leech" 5
+	variant 2
+		"Ionic Leech" 7
+	variant 1
+		"Ionic Leech" 9
+	variant 1
+		"Ionic Leech" 11
+
+fleet "Large Ionic Leech"
+	names "ionic leech"
+	government "Indigenous Predator"
+	cargo 0
+	personality heroic disables unconstrained mute ramming
+	variant 3
+		"Ionic Leech" 7
+	variant 2
+		"Ionic Leech" 9
+	variant 1
+		"Ionic Leech" 11
+
+mission "First Contact: Ionic Leech"
+	landing
+	invisible
+	deadline 2
+	source 
+		planet "Farpoint" "Maelstrom" "Sunracer" "Skillet" "Prime" "Stormhold"
+	on offer
+		log "Factions" "Ionic Leeches" `These creatures have infested the Northern Passage since before humans colonized the north. They crave the power generated by ships and are somehow able to consume it through the use of organs uniquely evolved for the task. While they're a rare sight, captains who have the misfortune of encountering them will find that they attack in large swarms.`
+		conversation
+			`As you land you notice there are piles of giant creatures that look like leeches at multiple landing pads.`
+			`A dock worker is carting away a pile from your dock. Out of curiosity, you ask what those are.`
+			`"Ionic Leeches. Interstellar vermin that have infested the Northern Passage since before humans colonized the north. If they latch onto the hull, your ship's power systems could be disrupted. They're a rare sight, but several captains have recently had the misfortune of encountering a large swarm of them."`
+				accept
+	on accept
+		event "Ionic Leech North"
+	npc kill
+		government "Indigenous Predator"
+		personality waiting staying uninterested disables unconstrained mute ramming
+		ship "Ionic Leech" "Ionic Leech"
+
+event "Ionic Leech North"
+	system Rigel
+		add fleet "Small Ionic Leech" 40000
+	system Hassaleh
+		add fleet "Small Ionic Leech" 20000
+		add fleet "Large Ionic Leech" 40000
+	system Danoa
+		add fleet "Small Ionic Leech" 40000
+	system Sumar
+		add fleet "Small Ionic Leech" 20000
+		add fleet "Large Ionic Leech" 40000
+	system Rajak
+		add fleet "Small Ionic Leech" 20000
+		add fleet "Large Ionic Leech" 40000
+	system Cardax
+		add fleet "Small Ionic Leech" 20000
+		add fleet "Large Ionic Leech" 40000
+	system Volax
+		add fleet "Small Ionic Leech" 40000
+	system Sospi
+		add fleet "Small Ionic Leech" 40000
+	system Moktar
+		add fleet "Small Ionic Leech" 40000
+	system Oblate
+		add fleet "Small Ionic Leech" 40000
+
+mission "Ionic Leech Oathkeeper Update"
+	landing
+	invisible
+	to offer
+		has "event: oathkeepers founded"
+		has "event: Ionic Leech North"
+	on offer
+		event "ionic leech oathkeeper update"
+		fail
+
+event "ionic leech oathkeeper update"
+	system Rigel
+		add fleet "Small Ionic Leech" 40000
+
+
+ship "Luminazoa"
+	noun "creature"
+	sprite "ship/luminazoa/luminazoa"
+		rewind
+		"frame rate" 4
+	"never disabled"
+	attributes
+		category "Interceptor"
+		"cost" 500000
+		"automaton" 1
+		"shields" 800
+		"hull" 2400
+		"mass" 270
+		"drag" 7.2
+		"heat dissipation" .81
+		"cargo space" 18
+		"thrust" 6.6
+		"flare sprite" "effect/luminazoa aura/luminazoa aura"
+			"frame rate" 1
+			rewind
+		"afterburner thrust" 33
+		"afterburner energy" 4.4
+		"turn" 225
+		"steering flare sprite" "effect/luminazoa aura/luminazoa aura"
+			"frame rate" 1
+			rewind
+		"shield generation" 1.5
+		"hull repair rate" 1
+		"heat protection" 1
+		"ion protection" 3
+		"scramble protection" 3
+		"ion resistance" 2
+		"scramble resistance" 2
+		"energy capacity" 150
+		"energy generation" 2
+		"fuel capacity" 150
+		"inscrutable" 1
+		"gaslining" 1
+		"hyperdrive" 1
+		"scram drive" .2
+		"atmosphere scan" 100
+		"asteroid scan power" 50
+		weapon
+			"hit force" 30
+			"blast radius" 160
+			"corrosion damage" 480
+	outfits
+		Digester? 3
+		"Lightning Tendril?" 1
+	engine 0 -36
+	"steering engine" 0 -36
+		left
+	"steering engine" 0 -36
+		right
+	gun 0 -34 Digester?
+	gun -5 -32 Digester?
+	gun 5 -32 Digester?
+	turret 0 7 "Lightning Tendril?"
+	leak "blue blood" 15 25
+	explode "blue blood" 25
+	"final explode" "blue blood"
+	description "The exposed mantle of Hell's Maw is home to a thriving colony of these creatures. While they are content to harmlessly scavenge for minerals, they can become dangerous when provoked. Their tendrils are able to emit electrical bursts which can disrupt a ship's power systems."
+
+effect "blue blood"
+	sprite "effect/blue blood"
+		"no repeat"
+		"frame rate" 10
+		"random start frame"
+	"lifetime" 61
+	"random angle" 20
+	"random velocity" 1
+	"random spin" 5
+
+outfit "Lightning Tendril?"
+	category "Secondary Weapons"
+	thumbnail "outfit/unknown"
+	cost 1800000
+	"turret mounts" -1
+	"unplunderable" 1
+	weapon
+		sprite "projectile/lightning"
+			"frame rate" 60
+			"random start frame"
+		sound "zapper"
+		icon "icon/lightning"
+		"hit effect" "ion impact" 2
+		"inaccuracy" 3
+		"turret turn" 1
+		"velocity" 320
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 2.7
+		"shield damage" 7.4
+		"hull damage" 5.8
+		"ion damage" .4
+		"scrambling damage" .4
+
+outfit "Digester?"
+	category "Guns"
+	thumbnail "outfit/unknown"
+	cost 10000
+	"gun ports" -1
+	"unplunderable" 1
+	weapon
+		"hit effect" "digester splatter"
+		"inaccuracy" 180
+		"velocity" 10
+		"lifetime" 1
+		"reload" 70
+		"burst reload" 35
+		"burst count" 3
+		"cluster"
+		"discharge damage" 3
+		"minable damage" 300
+		"corrosion damage" 6
+
+effect "digester splatter"
+	sound "medium_explosion-ver8"
+
+phrase luminazoa
+	word
+		Luminazoa
+
+fleet "Luminazoa"
+	names luminazoa
+	government "Indigenous Lifeform"
+	cargo 0
+	personality
+		mining harvests unconstrained mute ramming lingering
+	variant 90
+		"Luminazoa"
+	variant 10
+		"Luminazoa" 2
+	variant 1
+		"Luminazoa" 3
+
+mission "First Contact: Luminazoa"
+	landing
+	invisible
+	deadline 2
+	source "Hell's Maw"
+	on offer
+		log "Factions" "Luminazoa" `The exposed mantle of Hell's Maw is home to a thriving colony of these creatures. While they are content to harmlessly scavenge for minerals, they can become dangerous when provoked. One of their tendrils is able to emit electrical bursts which can disrupt a ship's power systems.`
+		conversation
+			scene "ship/luminazoa/luminazoa"
+			`You wait until the exposed core is facing away from the sun and pick a landing spot near the edge of the planet's broken crust. Even at night the ambient heat here is intense, with temperatures slightly above the recommended safety limits for your environmental suit. Your ship's scanners alert you to the presence of several large life forms moving about on the rocky terrain below. Their translucent bodies gives them the appearance of ghostly jellyfish. While observing them consume the exposed minerals from the planet's gaping wound, you see occasional flashes of light when they create some form of energy discharge. Between the presence of these creatures and other environmental hazards, it's probably not a good idea to disembark.`
+				accept
+	on accept
+		event "Luminazoa Hell's Maw"
+	npc kill
+		government "Indigenous Lifeform"
+		personality waiting staying timid mining harvests unconstrained mute ramming
+		fleet "Luminazoa"
+
+event "Luminazoa Hell's Maw"
+	system Kalsolli
+		add fleet "Luminazoa" 5000
+
+
+ship "Murkcap"
+	swizzle 0
+	sprite "ship/murkcap"
+	"uncapturable"
+	attributes
+		category "Unclassified"
+		"cost" 1212100
+		"hull" 2300
+		"automaton" 1
+		"mass" 1500
+		"drag" 15
+		"heat dissipation" .65
+		"cargo space" 3600
+		"cooling" 30
+		"overheat damage threshold" 0.66
+		"overheat damage rate" -0.06
+		"disabled recovery time" 720
+		"hull repair rate" 0.1
+		"energy generation" 3
+		"energy capacity" 14400
+		"solar collection" 24
+		"solar heat" 0.3
+		"heat protection" 0.9
+		"atmosphere scan" 1
+		"inscrutable" 1
+		"thrust" 11
+		"flare sprite" "effect/murkcap flare/murkcap"
+			"frame rate" 30
+			"scale" 0.25
+		"flare sound" "plasma large"
+		"turn" 720
+		"steering flare sprite" "effect/murkcap flare/murkcap"
+			"frame rate" 30
+			"scale" 0.1
+		"steering flare sound" "plasma small"
+		weapon
+			"blast radius" 100
+			"shield damage" 1000
+			"hull damage" 500
+			"hit force" 1500
+	outfits
+		"Phenomenon Weapon" 2
+		"Murkmold" 120
+	engine -80 -84
+	engine 80 -84
+	"steering engine" -80 -84
+		right
+	"steering engine" 80 -84
+		left
+	turret -10 -100
+	turret 10 -100
+	bay "Unclassified Minor" -50 -108.5
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" 50 -108.5
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" -66.5 -108
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" -76.5 -118
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" -56.5 -118
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" -86.5 -108
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" -46.5 -108
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" -76.5 -98
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -56.5 -98
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 66.5 -108
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" 76.5 -118
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" 56.5 -118
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" 86.5 -108
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" 46.5 -108
+		"launch effect" "basic launch"
+	bay "Unclassified Minor" 76.5 -98
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 56.5 -98
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -21 -93
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 21 -93
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -12 -88
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 12 -88
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -43.5 -86
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -53.5 -96
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -33.5 -96
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -63.5 -86
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -23.5 -86
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -53.5 -76
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -33.5 -76
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 45.5 -86
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 53.5 -96
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 33.5 -96
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 73.5 -86
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 13.5 -86
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 53.5 -76
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 33.5 -76
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -7 -78
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -2 -68
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 7 -78
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 2 -68
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -24 -67
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -14 -57
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 24 -67
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 14 -57
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -28.5 -45.5
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -18.5 -35.5
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 28.5 -45.5
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 18.5 -35.5
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" -17 -27
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" -12 -17
+		"launch effect" "basic launch"
+		left
+	bay "Unclassified Minor" 17 -27
+		"launch effect" "basic launch"
+		right
+	bay "Unclassified Minor" 12 -17
+		"launch effect" "basic launch"
+		right
+	description "This fungal colony lurks within the dark waters of Murk. The danger of the spores it sprays out isn't immediately obvious."
+
+ship "Murkpod"
+	"never disabled"
+	swizzle 0
+	sprite "ship/murkpod"
+	attributes
+		category "Unclassified Minor"
+		"hull" 1
+		"automaton" 1
+		"mass" 1
+		"drag" .3
+		"heat dissipation" .99
+		"outfit space" 10
+		"cooling" 6
+		"overheat damage threshold" -0.33
+		"overheat damage rate" 0.3
+		"thrust" 1
+		"turn" 14
+		"solar collection" 3
+		"inscrutable" 1
+	outfits
+		"Timer Weapon"
+		"Phenomenon Weapon"
+		"Murkspores" 12
+	gun 0 0
+	turret 0 0
+	description "The mold propagates..."
+
+outfit "Murkspores"
+	plural "Murkspores"
+	category "Special"
+	series "Sabotage"
+	index 007
+	cost 10
+	thumbnail "outfit/murkspores"
+	"flotsam sprite" "effect/flotsam murkspores"
+	"mass" 0.1
+	"flotsam chance" 0.8
+	description "If these spores are left on your ship, Murkmold may eventually start growing there."
+
+outfitter "Murkspores"
+	"Murkspores"
+
+outfit "Murkmold Bay"
+	category "Systems"
+	series "Expansions"
+	index 10
+	cost 0
+	thumbnail "outfit/cargo murkmold"
+	"mass" 5
+	"cargo space" -15
+	"murkmold patch" 15
+	"unplunderable" 1
+	description "This portion of your cargo bay is infested with Murkmold. Most sentient species quickly ban it once they discover its dangerous hallucinogenic effects..."
+
+outfit "Murkmold Bunks"
+	plural "Murkmold Bunks"
+	category "Systems"
+	series "Passenger"
+	index 20
+	cost 0
+	thumbnail "outfit/bunks murkmold"
+	"mass" 5
+	"bunks" -4
+	"murkmold patch" 4
+	"unplunderable" 1
+	description "This bunk room is infested with Murkmold, a protein rich primordial ooze that forms on Murkmold patches. While in this state, it is uninhabitable for your crew."
+
+outfit "Murkmold"
+	category "Special"
+	series "Sabotage"
+	index 007
+	cost 24000
+	thumbnail "outfit/murkmold slime"
+	"flotsam sprite" "effect/flotsam murkmold"
+	"mass" 1
+	"murkmold patch" -1
+	"required crew" 1
+	"flotsam chance" 0.1
+	"illegal" 60000
+	description `You hear a whispering voice:`
+	description `	"Grow the mold..."`
+	description `	"Protect the mold..."`
+	description `	"Spread the mold..."`
+
+mission "Midnight Murkcap"
+	landing
+	invisible
+	non-blocking
+	repeat
+	to complete
+		never
+	to offer
+		not "Midnight Murkcap: active"
+		or
+			not "Midnight Murkcap: offered"
+			and
+				has "Midnight Murkcap: offered"
+				random < 10
+	npc kill
+		government "Indigenous Lifeform"
+		system Murk
+		personality waiting staying appeasing uninterested timid lingering mute
+		fleet
+			names empty
+			cargo 1
+			outfitters "Murkspores"
+			variant
+				"Murkcap"
+				"Murkpod" 50
+		on provoke
+			fail
+
+mission "Midnight Murkmold Bay"
+	landing
+	invisible
+	non-blocking
+	repeat
+	source
+		attributes "outfitter"
+	to offer
+		or
+			has "outfit: Murkspores?"
+			has "outfit: Murkspores"
+			has "outfit: Murkmold"
+			has "outfit: Murkmold Bay"
+			has "outfit: Murkmold Bunks"
+		not "outfit (flagship installed): Murkmold Bay" 
+	on offer
+		conversation
+			action
+				outfit "Murkmold Bay" 1
+			action
+				outfit "Murkspores" 15
+				outfit "Murkmold" 15
+			scene "outfit/cargo murkmold"
+			`Part of your cargo bay became infested with murkmold...`
+				decline
+
+mission "Midnight Murkmold Bunks"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		has "outfit (flagship installed): Murkmold Bay" 
+		or
+			not "flagship attribute: murkmold patch"
+			"flagship required crew" < "flagship bunks"
+		"outfit (flagship installed): Murkmold" < "flagship crew"
+	on offer
+		conversation
+			action
+				outfit "Murkmold Bunks" 1
+			action
+				outfit "Murkspores" 1
+				outfit "Murkmold" 1
+			scene "outfit/bunks murkmold"
+			`A bunk room became infested with murkmold...`
+			branch bunkburst-1
+				"flagship required crew" < "flagship bunks"
+				random < 33
+			``
+				decline
+			label bunkburst-1
+			action
+				outfit "Murkmold Bunks" 1
+			action
+				outfit "Murkspores" 4
+				outfit "Murkmold" 4
+			scene "outfit/bunks murkmold"
+			`A bunk room became infested with murkmold...`
+			branch bunkburst-2
+				"flagship required crew" < "flagship bunks"
+				random < 25
+			``
+				decline
+			label bunkburst-2
+			action
+				outfit "Murkmold Bunks" 1
+			action
+				outfit "Murkspores" 4
+				outfit "Murkmold" 4
+			scene "outfit/bunks murkmold"
+			`A bunk room became infested with murkmold...`
+			branch bunkburst-3
+				"flagship required crew" < "flagship bunks"
+				random < 13
+			``
+				decline
+			label bunkburst-3
+			action
+				outfit "Murkmold Bunks" 1
+			action
+				outfit "Murkspores" 4
+				outfit "Murkmold" 4
+			scene "outfit/bunks murkmold"
+			`A bunk room became infested with murkmold...`
+				decline
+
+mission "Midnight Murkmold Propagation"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		has "flagship attribute: murkmold patch"
+	on offer
+		outfit "Murkspores" 1
+		outfit "Murkmold" 1
+		fail
+
+mission "Midnight Murkmold Propagation 2"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		"flagship attribute: murkmold patch" > 1000
+		random < 50
+	on offer
+		outfit "Murkspores" 1
+		outfit "Murkmold" 1
+		fail
+
+mission "Midnight Murkmold Propagation 3"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		"flagship attribute: murkmold patch" > 2000
+		random < 50
+	on offer
+		outfit "Murkspores" 1
+		outfit "Murkmold" 1
+		fail
+
+mission "Midnight Murkmold Propagation 4"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		"flagship attribute: murkmold patch" > 3000
+		"flagship required crew" < "flagship bunks"
+		random < 50
+	on offer
+		outfit "Murkspores" 1
+		outfit "Murkmold" 1
+		fail
+
+mission "Midnight Murkmold Propagation 5"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		"flagship attribute: murkmold patch" > 4000
+		"flagship required crew" < "flagship bunks"
+		random < 50
+	on offer
+		outfit "Murkspores" 1
+		outfit "Murkmold" 1
+		fail
+
+mission "Midnight Murkmold Death"
+	entering
+	invisible
+	destination Earth
+	repeat
+	to offer
+		"flagship crew" <= "outfit (flagship installed): Murkmold"
+	on offer
+		conversation
+			scene "outfit/murkmold slime"
+			`Murkmold has completely taken over the <ship>.`
+			``
+			`	There is an entire galaxy waiting to be infested.`
+			``
+			`	The mold must spread...`
+				die
+
 
 ship "Rock Scavenger"
 	noun "creature"
@@ -1665,7 +2130,6 @@ mission "First Contact: Rock Scavenger Log Patch"
 	on offer
 		log "Factions" "Rock Scavenger" `Large spaceborne crustaceans, Rock Scavengers are native to the Dirt Belt and their meat is prized as a delicacy on the Paradise Worlds. There was once a failed attempt to hold them in captivity in hopes of cultivating farm raised Rock Scavengers. If attempting to hunt one, bring powerful weapons. Their shells are extremely tough and difficult to crack.`
 		fail
-
 
 mission "Rock Scavengers Flee Astero Nautilus"
 	landing
@@ -1800,7 +2264,6 @@ mission "Rock Scavenger: Kitchen Delivery"
 				decline
 
 
-
 ship "Plasma Parasite"
 	noun "creature"
 	sprite "ship/plasma parasite/plasma parasite"
@@ -1838,7 +2301,7 @@ ship "Plasma Parasite"
 	explode "medium explosion" 5
 	explode "large explosion" 15
 	"final explode" "final explosion large"
-	description "While these creatures are neither aggressive nor malicious, the Heliarchs consider them a nuisance. They are attracted to the exhaust emmissions of starship engines and will swarm over a ship. Unfortunately 90% of their bodies consist of volatile plasma, causing them to explode violently when exposed to weapons fire."
+	description "While these creatures are neither aggressive nor malicious, the Heliarchs consider them a nuisance. They are attracted to the exhaust emissions of starship engines and will swarm over a ship. Unfortunately 90% of their bodies consist of volatile plasma, causing them to explode violently when exposed to weapons fire."
 
 ship "Plasma Parasite" "Plasma Parasite (Large)"
 	sprite "ship/plasma parasite large/plasma parasite large"
@@ -1967,7 +2430,7 @@ mission "First Contact: Plasma Parasite"
 	on offer
 		event "Plasma Parasites Infest Coalition"
 	on enter
-		log "Factions" "Plasma Parasite" `Plasma Parasites are a scourge plaguing the Coalition. They are attracted to starship engine emmissions and will swarm over them. While they are not inherently hostile, they are prone to violently exploding from even minor weapons fire. Appearing only after the Coalition gained their independence, some believe they were unleashed by the Quarg as a form of retribution.`
+		log "Factions" "Plasma Parasite" `Plasma Parasites are a scourge plaguing the Coalition. They are attracted to starship engine emissions and will swarm over them. While they are not inherently hostile, they are prone to violently exploding from even minor weapons fire. Appearing only after the Coalition gained their independence, some believe they were unleashed by the Quarg as a form of retribution.`
 		set "First Contact: Plasma Parasite Log Patched"
 		dialog `A strange creature is following your engine trail. Soon after you notice this, more of them appear...`
 	npc kill
@@ -1984,7 +2447,7 @@ mission "First Contact: Plasma Parasite Log Patch"
 		has "event: Plasma Parasites Infest Coalition"
 		not "First Contact: Plasma Parasite Log Patched"
 	on offer
-		log "Factions" "Plasma Parasite" `Plasma Parasites are a scourge plaguing the Coalition. They are attracted to starship engine emmissions and will swarm over them. While they are not inherently hostile, they are prone to violently exploding from exposure to even minor weapons fire. Appearing only after the Coalition gained their independence, some believe them to be biological weapons unleashed by the Quarg.`
+		log "Factions" "Plasma Parasite" `Plasma Parasites are a scourge plaguing the Coalition. They are attracted to starship engine emissions and will swarm over them. While they are not inherently hostile, they are prone to violently exploding from exposure to even minor weapons fire. Appearing only after the Coalition gained their independence, some believe them to be biological weapons unleashed by the Quarg.`
 		fail
 
 
@@ -2190,8 +2653,6 @@ event "Plasma Parasites Infest Coalition"
 	system Torbab
 		add fleet "Plasma Parasites" 40000
 		add fleet "Volatile Plasma Parasites" 40000
-
-
 
 mission "Coalition: Exterminate Plasma Parasites 1"
 	job

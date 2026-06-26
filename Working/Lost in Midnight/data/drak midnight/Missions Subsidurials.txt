@@ -10,7 +10,6 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
-
 mission "First Contact: Subsidurials"
 	landing
 	invisible
@@ -43,11 +42,13 @@ mission "First Contact: Subsidurials"
 		event "Subsidurial East Buffer"
 		event "Subsidurial Gegno"
 		event "Subsidurial Astral"
+		event "Subsidurial Outer Limits"
+		event "Subsidurial Successor"
+		event "Subsidurial Incipias"
 	npc
 		government "Indigenous Lifeform"
 		personality waiting staying timid mining harvests mute unconstrained
 		fleet "Subsidurial"
-
 
 
 # Based on the default map data, I picked systems that are:
@@ -261,6 +262,63 @@ event "Subsidurial Astral"
 	system "Is Il Z-814"
 		add fleet "Subsidurial" 30000
 
+event "Subsidurial Outer Limits"
+	system Rhapsody
+		add fleet "Subsidurial" 40000
+	system Acapella
+		add fleet "Subsidurial" 40000
+	system Cantata
+		add fleet "Subsidurial" 40000
+	system Serenade
+		add fleet "Subsidurial" 40000
+	system Opera
+		add fleet "Subsidurial" 40000
+	system Chorale
+		add fleet "Subsidurial" 40000
+	system Sonata
+		add fleet "Subsidurial" 40000
+	system Madrigal
+		add fleet "Subsidurial" 40000
+
+event "Subsidurial Successor"
+	system Khosa-Kaska
+		add fleet "Subsidurial" 30000
+	system Luue-Saqru
+		add fleet "Subsidurial" 30000
+	system Maspa-Raaqa
+		add fleet "Subsidurial" 30000
+	system Maspa-Mavra
+		add fleet "Subsidurial" 30000
+	system Osolaa-Uuoru
+		add fleet "Subsidurial" 30000
+
+event "Subsidurial Incipias"
+	system Rota
+		add fleet "Subsidurial" 20000
+	system Equus
+		add fleet "Subsidurial" 20000
+	system Currus
+		add fleet "Subsidurial" 20000
+	system Ianua
+		add fleet "Subsidurial" 20000
+	system Sedes
+		add fleet "Subsidurial" 20000
+	system Tectum
+		add fleet "Subsidurial" 20000
+	system "Pedita Pri"
+		add fleet "Subsidurial" 30000
+	system "Pedita Sec"
+		add fleet "Subsidurial" 30000
+	system Clepsydra
+		add fleet "Subsidurial" 30000
+	system Supra
+		add fleet "Subsidurial" 30000
+	system "Porta Terra"
+		add fleet "Subsidurial" 40000
+	system Hui'uc
+		add fleet "Subsidurial" 40000
+	system Il'le
+		add fleet "Subsidurial" 40000
 
 
 mission "Subsidurial East Update"
@@ -278,6 +336,20 @@ mission "Subsidurial East Update"
 		event "Subsidurial Astral"
 		fail
 
+mission "Subsidurial Outer Limits Update"
+	landing
+	invisible
+	to offer
+		has "First Contact: Subsidurials: offered"
+		or
+			not "event: Subsidurial Outer Limits"
+			not "event: Subsidurial Successor"
+			not "event: Subsidurial Incipias"
+	on offer
+		event "Subsidurial Outer Limits"
+		event "Subsidurial Successor"
+		event "Subsidurial Incipias"
+		fail
 
 
 mission "Bunrodea Subsidurials"
@@ -351,7 +423,6 @@ fleet "Subsidurial Prey"
 		"Subsidurial" 2
 
 
-
 phrase subsidurial
 	word
 		Subsidurial
@@ -374,7 +445,7 @@ mission "Subsidurial Herding Job Easy"
 	destination Greenrock
 	to offer
 		has "First Contact: Subsidurials: offered"
-		random < 10
+		random < 10 - "subsidurial herding failure" - ( "Day of Subsidurius: done" * 5 )
 	on accept
 		dialog "The Subsidurials are shackled with collars. If they stray too far from your ship, the collar inflicts pain on the creature."
 	npc accompany save
@@ -391,10 +462,12 @@ mission "Subsidurial Herding Job Easy"
 				"Subsidurial Tamed" 5
 	on abort
 		"reputation: Pirate" --
+		"subsidurial herding failure" ++
 		conversation
 			scene "thumbnail/subsidurial"
 			`You release the collars and set the Subsidurials free. This will probably ruin your reputation with the client, but at least these creatures won't suffer anymore. Perhaps it's just your imagination, but one of them seems to nod in thanks before departing.`
 	on fail
+		"subsidurial herding failure" ++
 		"reputation: Pirate" --
 		dialog "You failed to safely deliver the herd to your client."
 	on visit
@@ -417,7 +490,7 @@ mission "Subsidurial Herding Job Hard"
 	destination Greenrock
 	to offer
 		has "First Contact: Subsidurials: offered"
-		random < 10
+		random < 10 - "subsidurial herding failure" - ( "Day of Subsidurius: done" * 5 )
 	on accept
 		dialog "The Subsidurials are shackled with collars. If they stray too far from your ship, the collar inflicts pain on the creature."
 	npc accompany save
@@ -434,11 +507,13 @@ mission "Subsidurial Herding Job Hard"
 				"Subsidurial Tamed" 5
 	on abort
 		"reputation: Pirate" --
+		"subsidurial herding failure" ++
 		conversation
 			scene "thumbnail/subsidurial"
 			`You release the collars and set the Subsidurials free. This will probably ruin your reputation with the client, but at least these creatures won't suffer anymore. Perhaps it's just your imagination, but one of them seems to nod in thanks before departing.`
 	on fail
 		"reputation: Pirate" --
+		"subsidurial herding failure" ++
 		dialog "You failed to safely deliver the herd to your client."
 	on visit
 		dialog `You've arrived at <planet>, but some of the Subsidurials are missing! Return to orbit and search for them.`
@@ -478,7 +553,7 @@ mission "Subsidurial Herding Mission Easy"
 	destination Greenrock
 	to offer
 		has "First Contact: Subsidurials: offered"
-		random < 5
+		random < 5 - "subsidurial herding failure" - ( "Day of Subsidurius: done" * 4 )
 	on offer
 		dialog phrase "subsidurial herd offer"
 	on accept
@@ -503,10 +578,12 @@ mission "Subsidurial Herding Mission Easy"
 		fleet "Poachers"
 	on abort
 		"reputation: Pirate" --
+		"subsidurial herding failure" ++
 		conversation
 			scene "thumbnail/subsidurial"
 			`You release the collars and set the Subsidurials free. These creatures won't suffer anymore. Perhaps it's just your imagination, but one of them seems to nod in thanks before departing.`
 	on fail
+		"subsidurial herding failure" ++
 		dialog "You failed to safely deliver the herd to your client."
 	on visit
 		dialog `You've arrived at <planet>, but some of the Subsidurials are missing! Return to orbit and search for them.`
@@ -529,7 +606,7 @@ mission "Subsidurial Herding Mission Hard"
 			has "Subsidurial Herding Mission Easy: done"
 			has "Subsidurial Herding Mission Easy: failed"
 			has "Subsidurial Herding Mission Easy: aborted"
-		random < 5
+		random < 5 - "subsidurial herding failure" - ( "Day of Subsidurius: done" * 4 )
 	on offer
 		dialog phrase "subsidurial herd offer"
 	on accept
@@ -554,10 +631,12 @@ mission "Subsidurial Herding Mission Hard"
 		fleet "Poachers" 2
 	on abort
 		"reputation: Pirate" --
+		"subsidurial herding failure" ++
 		conversation
 			scene "thumbnail/subsidurial"
 			`You release the collars and set the Subsidurials free. These creatures won't suffer anymore. Perhaps it's just your imagination, but one of them seems to nod in thanks before departing.`
 	on fail
+		"subsidurial herding failure" ++
 		dialog "You failed to safely deliver the herd to your client."
 	on visit
 		dialog `You've arrived at <planet>, but some of the Subsidurials are missing! Return to orbit and search for them.`
@@ -648,7 +727,7 @@ mission "Day of Subsidurius"
 			has "Subsidurial Herding Job Hard: done"
 			has "Subsidurial Herding Mission Easy: done"
 			has "Subsidurial Herding Mission Hard: done"
-		random < 40 + "day of subsidurius"
+		random < 70 - ( "day of subsidurius" * 10 )
 		"combat rating" > 300
 	on offer
 		conversation
@@ -736,7 +815,6 @@ mission "Day of Subsidurius"
 		dialog `The government of <planet> pays you <payment> for helping defend against the Subsidurius.`
 
 
-
 mission "Weaponized Subsidurial Bounty"
 	job
 	repeat
@@ -783,7 +861,6 @@ mission "Weaponized Subsidurial Bounty"
 			fail
 
 
-
 mission "Weaponized Subsidurial Stray"
 	job
 	repeat
@@ -812,7 +889,6 @@ mission "Weaponized Subsidurial Stray"
 	on complete
 		payment 100000
 		dialog `The government of <planet> pays you <payment> for helping de-weaponize the Subsidurial.`
-
 
 
 ship "Subsidurial" "Subsidurial Porter"
@@ -899,7 +975,7 @@ mission "Subsidurial Porter"
 			variant
 				"Subsidurial Porter"
 	on fail
-		dialog `Your client muses that perhaps Subsidurial porters aren't a viable business strategy afterall...`
+		dialog `Your client muses that perhaps Subsidurial porters aren't a viable business strategy after all...`
 	on complete
 		clear "Subsidurial Porter: offered"
 		payment 500000
@@ -979,7 +1055,7 @@ mission "Subsidurial Porter (North)"
 			variant
 				"Subsidurial Porter"
 	on fail
-		dialog `Your client muses that perhaps Subsidurial porters aren't a viable business strategy afterall...`
+		dialog `Your client muses that perhaps Subsidurial porters aren't a viable business strategy after all...`
 	on complete
 		clear "Subsidurial Porter (North): offered"
 		payment 500000
@@ -1059,12 +1135,11 @@ mission "Subsidurial Porter (South)"
 			variant
 				"Subsidurial Porter"
 	on fail
-		dialog `Your client muses that perhaps Subsidurial porters aren't a viable business strategy afterall...`
+		dialog `Your client muses that perhaps Subsidurial porters aren't a viable business strategy after all...`
 	on complete
 		clear "Subsidurial Porter (South): offered"
 		payment 500000
 		dialog `The owner of the Subsidurial porter pays you <payment> for safely herding the Subsidurial and its cargo to <planet>.`
-
 
 
 mission "Golden Subsidurials"
@@ -1082,7 +1157,7 @@ mission "Golden Subsidurials"
 		random < 5
 	on offer
 		conversation
-			`The spaceport is in a flurry of activity as pirates are rushing to refuel their ships and take off. If this weren't a pirate world, you'd think the planet was being raided by pirates or something.`
+			`The spaceport is in a flurry of activity as pirates are rushing to refuel their ships and take off. If this weren't a pirate world, you'd think the planet was being raided by pirates.`
 			choice
 				`	(Ask what's going on.)`
 				`	(Ignore them.)`
@@ -1149,7 +1224,6 @@ mission "Golden Subsidurials"
 				"Subsidurial Porter" 3
 
 
-
 mission "Midnight Market: Pet Subsidurial"
 	invisible
 	source "Greenrock"
@@ -1201,7 +1275,6 @@ mission "Midnight Market: Pet Subsidurial"
 		clear "Midnight Market: Pet Subsidurial: offered"
 
 
-
 ship "Subsidurial" "Subsidurial (Infant)"
 	noun "creature"
 	sprite "ship/subsidurial"
@@ -1244,7 +1317,7 @@ mission "A Subsidurial Gives Birth"
 		event "add subsidurial infants"
 		conversation
 			scene "thumbnail/subsidurial"
-			`A rare scene is playing out as a Subsidurial gives birth. Several other ship captains have paused to observe the spectacle. With one last push, the infant is free. If floats about, uncertain of the new universe surrounding it, then flies to join its parents.`
+			`A rare scene is playing out as a Subsidurial gives birth. Several other ship captains have paused to observe the spectacle. With one last push, the infant is free. It floats about, uncertain of the new universe surrounding it, then flies to join its parents.`
 	npc
 		government "Indigenous Lifeform"
 		system "Deneb"

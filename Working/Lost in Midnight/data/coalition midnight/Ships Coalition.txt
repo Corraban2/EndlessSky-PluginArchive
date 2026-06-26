@@ -141,7 +141,8 @@ ship "Saryd Trailblazer" "Saryd Trailblazer (warship)"
 		"Coalition Repulsor" 3
 		"Culminator Pod" 4
 		"Culminator Storage Tube" 4
-		"Culminator Torpedo" 108
+		"Culminator Torpedo" 168
+		"Culminator Storage Depot"
 		"Large Battery Module"
 		"Small Battery Module"
 		"Coalition Reactor Cluster"
@@ -231,3 +232,19 @@ ship "Saryd Trailblazer" "Saryd Trailblazer (Pug)"
 	turret -1 157 "Heavy Anti-Missile Turret"
 
 
+#######################################
+#
+# fleets
+#
+#######################################
+
+fleet "Dissident Saryd (small)"
+	government "Coalition Bounty (Disguised)"
+	names "saryd"
+	cargo 3
+	personality
+		timid
+	variant 60
+		"Saryd Runabout (Blaster)"
+	variant 40
+		"Saryd Visitor (Blaster)"

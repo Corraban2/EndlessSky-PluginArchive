@@ -59,8 +59,10 @@ mission "Biohazard 1: Star Explorer"
 			confusion 10
 		ship "Star Explorer (Biohazard)" "Biohazard-031"
 		conversation
+			action
+				set "license: Nightmare Fuel"
 			scene "outfit/brig"
-			`When you board the ship, no defenders challenge you. Occasional screams can be heard in the distance. Your search for the kidnapped victims leads you to the ships brig. But the prisoners have escaped! A few dead bodies of the prisoners remain. Each has the alphanumeric sequence "BH-031" tatooed onto the back of their neck. You also notice their skin is mottled with greenish patches...`
+			`When you board the ship, no defenders challenge you. Occasional screams can be heard in the distance. Your search for the kidnapped victims leads you to the ships brig. But the prisoners have escaped! A few dead bodies of the prisoners remain. Each has the alphanumeric sequence "BH-031" tattooed onto the back of their neck. You also notice their skin is mottled with greenish patches...`
 			choice
 				`	(Continue your search.)`
 			scene "outfit/medical bay"
@@ -168,12 +170,14 @@ mission "Biohazard 2: Bulk Freighter"
 			confusion 10
 		ship "Bulk Freighter (Biohazard)" "Biohazard-013"
 		conversation
+			action
+				set "license: Nightmare Fuel"
 			scene "outfit/brig"
 			`When you board the ship, no defenders challenge you. The ship is eerily quiet. Your search for the kidnapped victims leads you to the ships brig. But no one is being held here.`
 			choice
 				`	(Continue your search.)`
 			scene "outfit/pug biodefenses"
-			`	You find a relic of the Pug invasion on board. Nearby is a shelf with empty cannisters that are designed to be attached to the Pug Biodefenses and filled with its gas. Several spots on the shelf are empty...`
+			`	You find a relic of the Pug invasion on board. Nearby is a shelf with empty canisters that are designed to be attached to the Pug Biodefenses and filled with its gas. Several spots on the shelf are empty...`
 			choice
 				`	(Continue your search.)`
 			scene "outfit/cargo expansion"
@@ -185,7 +189,7 @@ mission "Biohazard 2: Bulk Freighter"
 		log `Found a ship named "Biohazard-013". This one was kidnapping slaves from pirate slavers and using them for bioweapons experimentation. I put a stop to this operation, earning the gratitude of the pirate slavers. Whether this was a fate worse for the slaves or not is a debate too lengthy to include here.`
 		conversation
 			scene "outfit/biohazard gas"
-			`Although you failed to retrieve any of the stolen slaves, the Biohazard-013 has stopped stealing them from the pirate slavers. The pirates reward you with <payment>. The strange cannisters you spotted aboard the ship could be deadlier than Nerve Gas. Hopefully no other ships were developing this weapon.`
+			`Although you failed to retrieve any of the stolen slaves, the Biohazard-013 has stopped stealing them from the pirate slavers. The pirates reward you with <payment>. The strange canisters you spotted aboard the ship could be deadlier than Nerve Gas. Hopefully no other ships were developing this weapon.`
 
 
 
@@ -280,7 +284,7 @@ mission "Blue Ridge 2"
 				`	"Why isn't there a Hyperdrive?"`
 			scene "outfit/unknown"
 			`	She grins and answers, "It's for security, so thieves can't just take the ship and flee the system." It sounds like a reasonable explanation.`
-			`	But then she leans in and whispers conspiratorially, "There are rumors that Han Sizer got ahold of some alien device, like the ones the Quarg use instead of a Hyperdrive. Supposedly, the government confiscated it after he died." She leans back, "But whether that's true or not, who can say?" She smiles mishieviously and you wonder if that's just a story they tell museum guests to enhance the legend of Han Sizer.`
+			`	But then she leans in and whispers conspiratorially, "There are rumors that Han Sizer got ahold of some alien device, like the ones the Quarg use instead of a Hyperdrive. Supposedly, the government confiscated it after he died." She leans back, "But whether that's true or not, who can say?" She smiles mischievously and you wonder if that's just a story they tell museum guests to enhance the legend of Han Sizer.`
 				decline
 
 
@@ -288,7 +292,7 @@ mission "Blue Ridge 2"
 mission "Bounty Hunting: Angry Chicken"
 	minor
 	name "Wanted Bandit near <system>"
-	description "Help the Sunriser eleminate a Modified Firebird named the <npc> which has been attacking merchants near <system>. Then report to <destination> for payment (<payment>)."
+	description "Help the Sunriser eliminate a Modified Firebird named the <npc> which has been attacking merchants near <system>. Then report to <destination> for payment (<payment>)."
 	source
 		government "Republic" "Free Worlds" "Syndicate"
 	to offer
@@ -352,7 +356,7 @@ mission "Bounty Hunting: Angry Chicken"
 mission "Drunk Pilot"
 	minor
 	name "Drunk Pilot"
-	description "The captain, and possibly the crew, of the <npc> is drunk. There's a small bounty of <payment> to disable their ship. Return to <planet> for payment."
+	description "The captain, and possibly the crew, of the <npc> is drunk. There's a small bounty of <payment> to disable their ship."
 	source
 		government "Republic" "Syndicate" "Free Worlds"
 		attributes spaceport
@@ -383,7 +387,7 @@ mission "Drunk Pilot"
 					goto end
 			label end
 			``
-			`	As you are walking back you hear some spaceport security officers talking about a drunk crew causing mischief. The <npc> took off without clearance, almost colliding with a Bulk Freighter that was trying to land. From what you've witnessed earlier and their behavior now, it's almost certain that the crew is drunk. Spaceport security is issuing a bounty of <payment> to disable their ship. It's an easy job for some petty cash.`
+			`	As you are walking back you hear some spaceport security officers talking about a crew causing mischief. The <npc> took off without clearance, almost colliding with a Bulk Freighter that was trying to land. From what you've witnessed earlier and their behavior now, it's almost certain that the crew is drunk. Spaceport security is issuing a bounty of <payment> to disable their ship. It's an easy job for some petty cash.`
 			choice
 				`	(Knock out the <npc>.)`
 				`	(Don't get involved.)`
@@ -396,17 +400,13 @@ mission "Drunk Pilot"
 		government "Bounty"
 		personality target waiting uninterested forbearing coward appeasing mute
 			confusion 120
-		fleet
-			names "civilian"
-			variant
-				"Modified Clipper (Smuggler)"
-		dialog `You've disabled the <npc>. Leave them to sober up. Return to <destination> to collect your reward.`
-	on fail
-		dialog `[MISSION FAILED]: You failed to disable the <npc> without destroying it.`
-	on complete
-		payment 10000
-		dialog `The spaceport authorities reward you with <payment> for helping to stop the <npc>. That captain will probably have to pay a fine and take a pilot safety class or have his license revoked.`
-
+		ship "Modified Clipper (Smuggler)" "Wild Turkey"
+		on disable
+			payment 10000
+			dialog `You've disabled the Wild Turkey. Leave them to sober up. The authorities reward you with 10,000 credits for helping to stop the Wild Turkey. That captain will probably have to pay a fine and take a pilot safety class or have his license revoked.`
+			fail
+		on kill
+			dialog `[MISSION FAILED]: You failed to disable the Wild Turkey without destroying it.`
 
 
 mission "Executive Guard: Syndicate Extremists"
@@ -450,6 +450,7 @@ mission "Executive Guard: Syndicate Extremists"
 			variant
 				"Vanguard" 2
 	on complete
+		"reputation: Pirate" += 10
 		log "Defeated the S.S. Longinus, an Executive Guard, a heavy warship the Syndicate reserves for use by their corporate VIPs."
 
 mission "Executive Guard: Syndicate Extremist Post War"
@@ -531,11 +532,11 @@ mission "Executive Guard: Syndicate Extremist Post War"
 		ship "Executive Guard" "S.S. Longinus"
 	on complete
 		payment 1000000
+		"reputation: Pirate" += 10
 		log "Defeated the S.S. Longinus, an Executive Guard, a heavy warship the Syndicate reserves for use by their corporate VIPs."
 		conversation
 			scene "ship/executive guard/executive guard"
 			`By the time you finish parking the <ship>, <payment> is deposited into your account. The amount matches what was promised for eliminating the S.S. Longinus.`
-
 
 
 mission "Gremlin Protoype Escort"
@@ -601,7 +602,6 @@ mission "Gremlin Protoype Escort"
 			`"Thanks for the escort. The Gremlin has an important meeting with some Betelgeuse agents. With any luck, you might see it show up in their shipyards soon!" Henrietta pays you <payment> and heads off to present her Gremlin to Betelgeuse.`
 
 
-
 mission "Free Worlds: Katya Surveillance Pod Sale (Pirate)"
 	invisible
 	source
@@ -659,12 +659,13 @@ mission "Free Worlds: Katya Surveillance Pod Sale (Pirate)"
 		set "Randomize Free Worlds: Katya Surveillance Pod Sale (Pirate)"
 	on decline
 		"Midnight Market" ++
+		"reputation: Pirate" ++
 		payment -122500
 		outfit "Surveillance Pod" 1
 	on accept
 		outfit "Surveillance Pod" 1
 	on enter
-		dialog `Looks like the Surveillance Pod dealer's friends were waiting to pay you back for stealing that outfit.`	
+		dialog `Looks like the Surveillance Pod dealer's friends were waiting to pay you back for stealing that outfit.`
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
@@ -726,17 +727,17 @@ mission "Free Worlds: Katya Surveillance Pod Sale (Trinket)"
 		set "Randomize Free Worlds: Katya Surveillance Pod Sale (Trinket)"
 	on decline
 		"Midnight Market" ++
+		"reputation: Independent" ++
 		payment -122500
 		outfit "Surveillance Pod" 1
 	on accept
 		outfit "Surveillance Pod" 1
 	on enter
-		dialog `Looks like the Surveillance Pod dealer's friends were waiting to pay you back for stealing that outfit.`	
+		dialog `Looks like the Surveillance Pod dealer's friends were waiting to pay you back for stealing that outfit.`
 	npc kill
 		government "Bounty Hunter"
 		personality waiting staying vindictive coward
 		fleet "Bounty Hunters"
-
 
 
 mission "Free Worlds Infiltrator 1"
@@ -835,32 +836,38 @@ mission "Free Worlds Infiltrator 2 failure"
 		fail
 
 
-
 mission "Infiltrator: Secret Data"
-	landing
+	entering
 	invisible
 	deadline 30
 	source
 		government "Pirate"
 		not attributes "dirt belt pirate"
 	destination Earth
+	clearance
 	to offer
 		random < 70
-	on enter
+	on offer
 		conversation
 			scene "thumbnail/infiltrator-thumb"
-			`There's a derelict infiltrator nearby. The pirates really shot it up. It's probably already been plundered, but it might still be worth checking out.`
+			`There's a derelict infiltrator nearby. The pirates really shot it up. It's sending you a distress signal.`
+			choice
+				`	(Answer.)`
+				`	(Ignore.)`
+					decline
+			`The pilot is mortally wounded. He asks you to take the Secret Data on an encrypted data chip in his cargo hold to the office of Republic Intelligence on Earth by <date>.`
+				accept
 	npc board
 		government "Derelict (Killable)"
 		personality derelict mute marked
-		ship "Infiltrator (Derelict)" "Conundrum"
-		dialog `The pilot is mortally wounded. He asks you to take the Secret Data on an encrypted data chip in his cargo hold to the office of Republic Intelligence on Earth by <date>.`
+		ship "Infiltrator (Derelict)" "Enigma"
 	on fail
 		outfit "Secret Data" -1
 	on complete
 		log `Found a derelict Infiltrator with a dying Republic Intelligence Agent inside. He asked me to deliver some secret data to their headquarters on Earth. They weren't particularly grateful for the delivery...`
 		payment 15000
 		outfit "Secret Data" -1
+		"reputation: Republic" ++
 		conversation
 			scene "outfit/unknown"
 			`You deliver the encrypted data chip to the office of Republic Intelligence on Earth. The agents interrogate you about how you got it. After a few hours, they let you go with a small reward for your trouble. You never actually learn the contents of the data chip.`
@@ -875,7 +882,6 @@ outfit "Secret Data"
 	category "Special"
 	thumbnail "outfit/unknown"
 	description "Secret data on an encrypted chip. You have no clue what the contents are."
-
 
 
 mission "Infiltrator: War Begins"
@@ -954,7 +960,7 @@ mission "Kraz Adds Twin Torpedo Pods"
 	on offer
 		conversation
 			scene "outfit/twintorpedopod"
-			`You receive a message from Barmy Edwards: "Hi <first>! Reports from the Militia indicate that pirates have developed a new weapon to keep pace with the Navy's Typhoon Torpedos. The Free Worlds wants us to get ahold of one and reverse engineer it for our own use. Do you think you can find a Twin Torpedo Pod and deliver it to <destination>?" You could try to buy one from a pirate outfitter or plunder one off of a pirate ship.`
+			`You receive a message from Barmy Edwards: "Hi <first>! Reports from the Militia indicate that pirates have developed a new weapon to keep pace with the Navy's Typhoon Torpedoes. The Free Worlds wants us to get ahold of one and reverse engineer it for our own use. Do you think you can find a Twin Torpedo Pod and deliver it to <destination>?" You could try to buy one from a pirate outfitter or plunder one off of a pirate ship.`
 			choice
 				`	"Sure, I'll get one for you."`
 				`	"Sorry, I'm not up for that."`
@@ -1068,17 +1074,17 @@ mission "Limit Breaker Syndicate Patrol"
 		dialog `Syphus hails you: "I'll wait in orbit. If the supervisor catches me loitering down there my pay will get docked!"`
 	on complete
 		event "limit breaker syndicate patrols"
+		"reputation: Syndicate" ++
 		conversation
 			scene "thumbnail/wasp"
 			`As you part ways with Syphus he says, "Any patrol you return alive from is a good one. Thanks for the escort."`
 
 
-
 mission "Midnight FW Epilogue: JJ and Brother Greg"
 	minor
-	name "Rescue JJ"
-	description "Transport JJ to <destination>."
-	passengers 1
+	name "Rescue JJ and Greg"
+	description "Transport JJ and Greg to <destination>."
+	passengers 2
 	source
 		attributes "south pirate"
 	destination "Harmony"
@@ -1091,7 +1097,7 @@ mission "Midnight FW Epilogue: JJ and Brother Greg"
 			`While wandering the spaceport, a familiar voice calls to you from a nearby alley.`
 			choice
 				`	"JJ?"`
-			`	"<first>, it's really you! Finally, a familiar face!" Looking at the source of the voice, you see JJ and brother Greg dressed as independent traders. "I'm here on an undercover mission, but I need a lift to <planet>. Can you help us with that?"`
+			`	"<first>, it's really you! Finally, a familiar face!" Looking at the source of the voice, you see JJ and brother Greg dressed as independent traders. "I'm here on an undercover mission, but we need a lift to <planet>. Can you help us with that?"`
 			choice
 				`	"What mission?"`
 				`	"Of course!"`
@@ -1118,9 +1124,189 @@ mission "Midnight FW Epilogue: JJ and Brother Greg"
 		ship "Marauder Falcon (Shields)" "Golden Talons"
 	on complete
 		payment 1000000
+		"reputation: Independent" ++
 		conversation
 			`You and JJ exchanged war stories during the journey. Brother Greg had a few stories of his own to contribute. There were more than a few injured Navy and Militia crash survivors who arrived at the monastery seeking treatment. JJ salutes you. "Thanks again, <first>. I'll make sure you get bonus pay for your assistance." The Free Worlds deposits <payment> into your account.`
 
+
+mission "Midnight FW Pug 2C: Jump Drive (Limit Distance)"
+	landing
+	name "Investigate the Pug"
+	description "Travel to the Deneb system to investigate the Pug; if possible, make contact with them and determine what their goals and desires are."
+	source Hephaestus
+	destination Pugglemug
+	clearance
+	to offer
+		has "FW Pug 2B: done"
+		has "outfit (flagship installed): Jump Drive (Limit Distance)"
+		not "fw given jump drive"
+		not "outfit (flagship installed): Jump Drive"
+	passengers 1
+	on fail
+		dialog `You have failed an essential Free Worlds mission. If you want to complete the story line, revert to the autosave or another earlier snapshot of the game.`
+	on offer
+		outfit "Jump Drive (Limit Distance)" -1
+		conversation
+			scene "outfit/jump drive (damaged)"
+			`You are directed to land in a hangar some distance away from the spaceport, in a cluster of buildings owned by Syndicated Systems. A team of engineers meets you and asks if they can look over your ship; a few minutes later, one of them says in surprise, "You've already got a jump drive! How did you manage that?"`
+			choice
+				`	"Actually, it's malfunctioning."`
+			action
+				outfit "Jump Drive" 1
+				set "fw given jump drive"
+			scene "outfit/jump drive"
+			`	The engineer nods. "It does look odd. We'll swap it out for a fresh one." The Syndicate engineers keep the damaged drive for research...`
+				accept
+	on visit
+		dialog `You land on <planet>, but realize that your escort carrying Alondo hasn't entered the system yet. Better depart and wait for it to arrive.`
+	on complete
+		set "FW Pug 2C: done"
+
+mission "Midnight FW Pug 2C: Jump Drive (Limit Fuel)"
+	landing
+	name "Investigate the Pug"
+	description "Travel to the Deneb system to investigate the Pug; if possible, make contact with them and determine what their goals and desires are."
+	source Hephaestus
+	destination Pugglemug
+	clearance
+	to offer
+		has "FW Pug 2B: done"
+		has "outfit (flagship installed): Jump Drive (Limit Fuel)"
+		not "fw given jump drive"
+		not "outfit (flagship installed): Jump Drive"
+	passengers 1
+	on fail
+		dialog `You have failed an essential Free Worlds mission. If you want to complete the story line, revert to the autosave or another earlier snapshot of the game.`
+	on offer
+		outfit "Jump Drive (Limit Fuel)" -1
+		conversation
+			scene "outfit/jump drive (damaged)"
+			`You are directed to land in a hangar some distance away from the spaceport, in a cluster of buildings owned by Syndicated Systems. A team of engineers meets you and asks if they can look over your ship; a few minutes later, one of them says in surprise, "You've already got a jump drive! How did you manage that?"`
+			choice
+				`	"Actually, it's malfunctioning."`
+			action
+				outfit "Jump Drive" 1
+				set "fw given jump drive"
+			scene "outfit/jump drive"
+			`	The engineer nods. "It does look odd. We'll swap it out for a fresh one." The Syndicate engineers keep the damaged drive for research...`
+				accept
+	on visit
+		dialog `You land on <planet>, but realize that your escort carrying Alondo hasn't entered the system yet. Better depart and wait for it to arrive.`
+	on complete
+		set "FW Pug 2C: done"
+
+mission "Midnight FW Pug 2C: Modified Hyperdrive"
+	landing
+	name "Investigate the Pug"
+	description "Travel to the Deneb system to investigate the Pug; if possible, make contact with them and determine what their goals and desires are."
+	source Hephaestus
+	destination Pugglemug
+	clearance
+	to offer
+		has "FW Pug 2B: done"
+		has "outfit (flagship installed): Modified Hyperdrive"
+		not "fw given jump drive"
+		not "outfit (flagship installed): Jump Drive"
+	passengers 1
+	on fail
+		dialog `You have failed an essential Free Worlds mission. If you want to complete the story line, revert to the autosave or another earlier snapshot of the game.`
+	on offer
+		outfit "Modified Hyperdrive" -1
+		conversation
+			scene "outfit/jump drive"
+			action
+				outfit "Jump Drive" 1
+				set "fw given jump drive"
+			`You are directed to land in a hangar some distance away from the spaceport, in a cluster of buildings owned by Syndicated Systems. A team of engineers meets you and quickly and efficiently removes your hyperdrive and replaces it with a strange, alien-looking device that you assume must be a jump drive. "Now, be careful with your fuel gauge," one of them tells you. "This thing guzzles twice as much fuel per jump as an ordinary hyperdrive, and you don't want to become stranded while outside human space."`
+			choice
+				`	"I'd like to keep that Modified Hyperdrive as well."`
+				`	(Let them take it away.)`
+					accept
+			action
+				outfit "Modified Hyperdrive" 1
+			scene "outfit/modified hyperdrive"
+			`	The engineer nods. "Seems like you've done some custom tinkering with that. If we can find the space for it, we'll reinstall this. Otherwise, we'll just leave it in your cargo bay."`
+				accept
+	on visit
+		dialog `You land on <planet>, but realize that your escort carrying Alondo hasn't entered the system yet. Better depart and wait for it to arrive.`
+	on complete
+		set "FW Pug 2C: done"
+
+mission "Midnight FW Pug 2C: Modified Hyperdrive (Hai)"
+	landing
+	name "Investigate the Pug"
+	description "Travel to the Deneb system to investigate the Pug; if possible, make contact with them and determine what their goals and desires are."
+	source Hephaestus
+	destination Pugglemug
+	clearance
+	to offer
+		has "FW Pug 2B: done"
+		has "outfit (flagship installed): Modified Hyperdrive (Hai)"
+		not "fw given jump drive"
+		not "outfit (flagship installed): Jump Drive"
+	passengers 1
+	on fail
+		dialog `You have failed an essential Free Worlds mission. If you want to complete the story line, revert to the autosave or another earlier snapshot of the game.`
+	on offer
+		outfit "Modified Hyperdrive (Hai)" -1
+		conversation
+			scene "outfit/jump drive"
+			action
+				outfit "Jump Drive" 1
+				set "fw given jump drive"
+			`You are directed to land in a hangar some distance away from the spaceport, in a cluster of buildings owned by Syndicated Systems. A team of engineers meets you and quickly and efficiently removes your hyperdrive and replaces it with a strange, alien-looking device that you assume must be a jump drive. "Now, be careful with your fuel gauge," one of them tells you. "This thing guzzles twice as much fuel per jump as an ordinary hyperdrive, and you don't want to become stranded while outside human space."`
+			choice
+				`	"I'd like to keep that Fluctuator Drive as well."`
+				`	(Let them take it away.)`
+					accept
+			action
+				outfit "Modified Hyperdrive (Hai)" 1
+			scene "outfit/modified hyperdrive"
+			`	The engineer nods. "So you call it a Fluctuator Drive? Seems like you've done some custom tinkering with that. If we can find the space for it, we'll reinstall this. Otherwise, we'll just leave it in your cargo bay."`
+				accept
+	on visit
+		dialog `You land on <planet>, but realize that your escort carrying Alondo hasn't entered the system yet. Better depart and wait for it to arrive.`
+	on complete
+		set "FW Pug 2C: done"
+
+
+mission "Midnight Independent Humanitarian"
+	name "Emergency Supplies to <planet>"
+	description "Bring <cargo> to the lawless world of <destination>, to help alleviate a natural disaster."
+	minor
+	cargo "emergency supplies" 50
+	to offer
+		random < 70
+		"combat rating" > 0
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+	destination
+		government "Pirate" "Independent"
+		distance 2 10
+	clearance
+	on offer
+		conversation
+			`As you are walking through the local market, a woman says, "Captain, do you have room in your hold to bring <commodity> to natural disaster survivors on planet?"`
+			choice
+				`	"Yes, but I hadn't heard news of a large natural disaster recently."`
+				`	"Sorry, not today."`
+					decline
+			`	"No, this one wouldn't be in the news," he says. "It's <planet>, a lawless world. They're desperately in need of food, medicine, and temporary shelters, although corruption and mismanagement of resources probably resulted in them being unable to fend for themselves."`
+			choice
+				`	"I'd be glad to help."`
+				`	"Well, it sounds like they're getting exactly what they deserve. And, I have no intention of risking my life to land on a pirate world."`
+					decline
+			`	"Thank you," she says. "Your contact on <planet> will be a woman called 'White Dove.' Don't let anyone but her trick you into giving them the supplies."`
+				accept
+	
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		"reputation: Independent" += 5
+		dialog
+			`After several shady characters have offered to buy the <commodity> off you, or threatened to rob you, "White Dove" finally shows up and collects them. She thanks you, and pays you <payment>. "Whenever a disaster strikes these distant frontier worlds, few are willing to answer the call for help. While not everyone on this planet will appreciate your efforts, others like myself will remember your kindness."`
 
 
 mission "Midnight Modified Skein"
@@ -1200,7 +1386,6 @@ mission "Midnight Modified Skein"
 		conversation
 			scene "thumbnail/modified skein-thumb"
 			`You deliver the scanner data of the <npc> to JJ. "Thanks <first>. Southbound Shipyard's engineers will take it from here. I've authorized a Free Worlds payment of <payment> to be deposited into your account for assisting in this matter.`
-
 
 
 mission "Midnight Paradise Fortune 1"
@@ -1350,6 +1535,7 @@ mission "Midnight Paradise Fortune 2"
 		dialog `[MISSION FAILED] You failed to bring Diana Howl to safety. If life were a game, you could load a save file and try again.`
 	on complete
 		payment 1000000
+		"reputation: Independent" ++
 		log "People" "Diana Howl" `	After reuniting with Diana on a southern pirate world, I transported her to Haven where she was kidnapped. After being rescued, she decided to remain at the military outpost on Farpoint.`
 		conversation
 			`	On <planet> you find an outstanding bounty of <payment> for the <npc>. After collecting your pay, you find a note from Diana: "Thank you for rescuing me <first>. I've decided to stay on <planet> for a while and see what opportunities I can find." Other than the military, there isn't much on <planet>. But maybe being here will be a good experience for her.`
@@ -1365,6 +1551,301 @@ mission "Midnight Paradise Fortune Patch"
 		fail "Midnight Paradise Fortune 2"
 		fail
 
+
+mission "Midnight Republic Weapons Confiscation"
+	minor
+	invisible
+	source
+		government "Republic"
+		attributes paradise urban rich
+		not attributes station uninhabited
+	to offer
+		"flagship required crew" > 2
+		or
+			"outfit (flagship installed): Fragmentation Grenades" >= 10
+			"outfit (flagship installed): Sniper Rifle" >= 10
+			"outfit (flagship installed): Tactical Laser Rifle" >= 10
+		has "event: war begins"
+		not "chosen sides"
+	on offer
+		conversation
+			scene "outfit/unknown"
+			`When you return to your ship, a Republic Navy security team is gathered around your flagship. Your crew is loading weapons from your ship into a cart. The Navy officer in charge is overseeing this process.`
+			choice
+				`	"What's going on here?"`
+				`	(Draw your gun and point it at the Navy officer.)`
+					goto threaten
+				`	(Watch from a distance.)`
+					goto hide
+			`	The Navy officer notices you. "Are you the captain of this ship? With the destruction of our shipyards on Geminus, we are confiscating weapons to aid in our supply shortage. The Republic appreciates your cooperation in this matter."`
+			choice
+				`	"I understand."`
+					goto end
+				`	"Will I be compensated for my 'cooperation'?"`
+					goto compensation
+				`	"This is a violation of my civil rights!"`
+			label complain
+			scene "outfit/attention"
+			`	The officer scowls. "We are at war! Are you sympathizing with the enemy?" Your crew stops loading weapons onto the cart. The Navy security team tenses. Your next words dance on the edge of violence.`
+			choice
+				`	"Of course not. Sorry, please disregard my complaint."`
+					goto end
+				`	"Death to tyrants!"`
+					goto threaten
+			label threaten
+			`	You draw your gun and raise it towards the Navy officer. The landing pad erupts in weapons fire as the security team and your crew join in the shootout. Both you and the Navy officer are at the center of the fire fight. Your corpses crumple to the ground in a bloody mess as echoes of gunshots and screams echo thoughout the spaceport...`
+				die
+			label hide
+			`	You wait at the edge of the landing pad and watch them finish loading the cart.`
+				goto end
+			label compensation
+			`	"Compensation? Oh... Yes... Of course. We aren't pirates, afterall. I am authorized to offer five percent of each weapon's retail value to Republic citizens who contribute to the war effort."`
+			choice
+				`	"That's reasonable."`
+					goto end
+				`	"That's robbery!"`
+					goto complain
+			label end
+			branch "Fragmentation Grenades"
+				"outfit (flagship installed): Fragmentation Grenades" >= 10
+			branch "Sniper Rifle"
+				"outfit (flagship installed): Sniper Rifle" >= 10
+			scene "outfit/tactical laser rifle"
+			branch "Tactical Laser Rifle 20"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 20
+			action
+				outfit "Tactical Laser Rifle" -10
+				payment 4000
+			`	Your crew finishes loading the cart with 10 Tactical Laser Rifles. The Navy transfers 4,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 20"
+			branch "Tactical Laser Rifle 30"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 30
+			action
+				outfit "Tactical Laser Rifle" -20
+				payment 8000
+			`	Your crew finishes loading the cart with 20 Tactical Laser Rifles. The Navy transfers 9,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 30"
+			branch "Tactical Laser Rifle 40"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 40
+			action
+				outfit "Tactical Laser Rifle" -30
+				payment 12000
+			`	Your crew finishes loading the cart with 30 Tactical Laser Rifles. The Navy transfers 13,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 40"
+			branch "Tactical Laser Rifle 50"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 50
+			action
+				outfit "Tactical Laser Rifle" -40
+				payment 16000
+			`	Your crew finishes loading the cart with 40 Tactical Laser Rifles. The Navy transfers 18,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 50"
+			branch "Tactical Laser Rifle 60"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 60
+			action
+				outfit "Tactical Laser Rifle" -50
+				payment 20000
+			`	Your crew finishes loading the cart with 50 Tactical Laser Rifles. The Navy transfers 22,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 60"
+			branch "Tactical Laser Rifle 70"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 70
+			action
+				outfit "Tactical Laser Rifle" -60
+				payment 24000
+			`	Your crew finishes loading the cart with 60 Tactical Laser Rifles. The Navy transfers 27,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 70"
+			branch "Tactical Laser Rifle 80"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 80
+			action
+				outfit "Tactical Laser Rifle" -70
+				payment 28000
+			`	Your crew finishes loading the cart with 70 Tactical Laser Rifles. The Navy transfers 31,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 80"
+			branch "Tactical Laser Rifle 90"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 90
+			action
+				outfit "Tactical Laser Rifle" -80
+				payment 32000
+			`	Your crew finishes loading the cart with 80 Tactical Laser Rifles. The Navy transfers 36,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 90"
+			branch "Tactical Laser Rifle 100"
+				"outfit (flagship installed): Tactical Laser Rifle" >= 100
+			action
+				outfit "Tactical Laser Rifle" -90
+				payment 36000
+			`	Your crew finishes loading the cart with 90 Tactical Laser Rifles. The Navy transfers 40,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Tactical Laser Rifle 100"
+			action
+				outfit "Tactical Laser Rifle" -100
+				payment 40000
+			`	Your crew finishes loading the cart with 100 Tactical Laser Rifles. The Navy transfers 45,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle"
+			scene "outfit/sniper rifle"
+			branch "Sniper Rifle 20"
+				"outfit (flagship installed): Sniper Rifle" >= 20
+			action
+				outfit "Sniper Rifle" -10
+				payment 6000
+			`	Your crew finishes loading the cart with 10 Sniper Rifles. The Navy transfers 6,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 20"
+			branch "Sniper Rifle 30"
+				"outfit (flagship installed): Sniper Rifle" >= 30
+			action
+				outfit "Sniper Rifle" -20
+				payment 12000
+			`	Your crew finishes loading the cart with 20 Sniper Rifles. The Navy transfers 12,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 30"
+			branch "Sniper Rifle 40"
+				"outfit (flagship installed): Sniper Rifle" >= 40
+			action
+				outfit "Sniper Rifle" -30
+				payment 18000
+			`	Your crew finishes loading the cart with 30 Sniper Rifles. The Navy transfers 18,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 40"
+			branch "Sniper Rifle 50"
+				"outfit (flagship installed): Sniper Rifle" >= 50
+			action
+				outfit "Sniper Rifle" -40
+				payment 24000
+			`	Your crew finishes loading the cart with 40 Sniper Rifles. The Navy transfers 24,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 50"
+			branch "Sniper Rifle 60"
+				"outfit (flagship installed): Sniper Rifle" >= 60
+			action
+				outfit "Sniper Rifle" -50
+				payment 30000
+			`	Your crew finishes loading the cart with 50 Sniper Rifles. The Navy transfers 30,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 60"
+			branch "Sniper Rifle 70"
+				"outfit (flagship installed): Sniper Rifle" >= 70
+			action
+				outfit "Sniper Rifle" -60
+				payment 36000
+			`	Your crew finishes loading the cart with 60 Sniper Rifles. The Navy transfers 36,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 70"
+			branch "Sniper Rifle 80"
+				"outfit (flagship installed): Sniper Rifle" >= 80
+			action
+				outfit "Sniper Rifle" -70
+				payment 42000
+			`	Your crew finishes loading the cart with 70 Sniper Rifles. The Navy transfers 42,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 80"
+			branch "Sniper Rifle 90"
+				"outfit (flagship installed): Sniper Rifle" >= 90
+			action
+				outfit "Sniper Rifle" -80
+				payment 48000
+			`	Your crew finishes loading the cart with 80 Sniper Rifles. The Navy transfers 48,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 90"
+			branch "Sniper Rifle 100"
+				"outfit (flagship installed): Sniper Rifle" >= 100
+			action
+				outfit "Sniper Rifle" -90
+				payment 54000
+			`	Your crew finishes loading the cart with 90 Sniper Rifles. The Navy transfers 54,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Sniper Rifle 100"
+			action
+				outfit "Sniper Rifle" -100
+				payment 60000
+			`	Your crew finishes loading the cart with 100 Sniper Rifles. The Navy transfers 60,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades"
+			scene "outfit/fragmentation grenades"
+			branch "Fragmentation Grenades 20"
+				"outfit (flagship installed): Fragmentation Grenades" >= 20
+			action
+				outfit "Fragmentation Grenades" -10
+				payment 8500
+			`	Your crew finishes loading the cart with 10 Fragmentation Grenades. The Navy transfers 8,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 20"
+			branch "Fragmentation Grenades 30"
+				"outfit (flagship installed): Fragmentation Grenades" >= 30
+			action
+				outfit "Fragmentation Grenades" -20
+				payment 17000
+			`	Your crew finishes loading the cart with 20 Fragmentation Grenades. The Navy transfers 17,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 30"
+			branch "Fragmentation Grenades 40"
+				"outfit (flagship installed): Fragmentation Grenades" >= 40
+			action
+				outfit "Fragmentation Grenades" -30
+				payment 25500
+			`	Your crew finishes loading the cart with 30 Fragmentation Grenades. The Navy transfers 25,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 40"
+			branch "Fragmentation Grenades 50"
+				"outfit (flagship installed): Fragmentation Grenades" >= 50
+			action
+				outfit "Fragmentation Grenades" -40
+				payment 34000
+			`	Your crew finishes loading the cart with 40 Fragmentation Grenades. The Navy transfers 34,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 50"
+			branch "Fragmentation Grenades 60"
+				"outfit (flagship installed): Fragmentation Grenades" >= 60
+			action
+				outfit "Fragmentation Grenades" -50
+				payment 42500
+			`	Your crew finishes loading the cart with 50 Fragmentation Grenades. The Navy transfers 42,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 60"
+			branch "Fragmentation Grenades 70"
+				"outfit (flagship installed): Fragmentation Grenades" >= 70
+			action
+				outfit "Fragmentation Grenades" -60
+				payment 51000
+			`	Your crew finishes loading the cart with 60 Fragmentation Grenades. The Navy transfers 51,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 70"
+			branch "Fragmentation Grenades 80"
+				"outfit (flagship installed): Fragmentation Grenades" >= 80
+			action
+				outfit "Fragmentation Grenades" -70
+				payment 59500
+			`	Your crew finishes loading the cart with 70 Fragmentation Grenades. The Navy transfers 59,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 80"
+			branch "Fragmentation Grenades 90"
+				"outfit (flagship installed): Fragmentation Grenades" >= 90
+			action
+				outfit "Fragmentation Grenades" -80
+				payment 68000
+			`	Your crew finishes loading the cart with 80 Fragmentation Grenades. The Navy transfers 68,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 90"
+			branch "Fragmentation Grenades 100"
+				"outfit (flagship installed): Fragmentation Grenades" >= 100
+			action
+				outfit "Fragmentation Grenades" -90
+				payment 76500
+			`	Your crew finishes loading the cart with 90 Fragmentation Grenades. The Navy transfers 76,500 credits to your account to compensate you for your contribution to the war effort.`
+				decline
+			label "Fragmentation Grenades 100"
+			action
+				outfit "Fragmentation Grenades" -100
+				payment 85000
+			`	Your crew finishes loading the cart with 100 Fragmentation Grenades. The Navy transfers 85,000 credits to your account to compensate you for your contribution to the war effort.`
+				decline
 
 
 mission "Midnight Tanker Shipyard Alfheim"
@@ -1405,6 +1886,7 @@ mission "Midnight Tanker Shipyard Alfheim"
 			`	Jack says, "Unfortunately you'll have to find it on your own. We're about to launch."`
 			label end
 			action
+				"reputation: Merchant" += 2
 				event "midnight tanker shipyard alfheim"
 				clear "Randomize Midnight Tanker Shipyard Alfheim"
 			`	Jill says, "It may be too late in the day to visit them now, but I'm sure they'll be open again tomorrow." After you thank them for the information, the siblings take their new ship out into space.`
@@ -1510,7 +1992,7 @@ event "midnight tanker shipyard new wales"
 mission "Midnight Tanker Shipyard Poseidos"
 	minor
 	name "Escort to <planet>"
-	description "Distrubute flyers advertising the shipyard on <origin> in the spaceports at <stopovers>. Then return to <destination>."
+	description "Distribute flyers advertising the shipyard on <origin> in the spaceports at <stopovers>. Then return to <destination>."
 	source Poseidos
 	stopover Dune
 	stopover Skymoot
@@ -1712,7 +2194,7 @@ mission "Midnight Swarm Lord"
 			scene "thumbnail/starbus-thumb"
 			`A militia officer approaches you. "Captain <last>, a local pirate ship named Swarm Lord has been ambushing Militia ships and building a fleet of captured interceptors. It's starting to get out of hand. Could you help us hunt it down?`
 			choice
-				`	"Sure, I'm in the Militia too afterall."`
+				`	"Sure, I'm in the Militia too after all."`
 				`	"Sorry, I'm busy with something else."`
 					decline
 			`	"Thanks. We've already searched the nearby systems but failed to find it. The Swarm Lord might have moved on to more distant systems."`
@@ -1755,6 +2237,7 @@ mission "Midnight Swarm Lord"
 		dialog "The local Militia rewards you with <payment> for eliminating the Swarm Lord."
 
 
+# The mission can be offered again if the deadline fails the mission without the Wanderlust being killed
 mission "Midnight Wanderlust"
 	minor
 	deadline 4
@@ -1842,6 +2325,7 @@ mission "Midnight Striker"
 	source
 		government "Free Worlds"
 		attributes "spaceport"
+		not planet "Rust"
 	destination "Rust"
 	to offer
 		has "free worlds plot completed"
@@ -1849,12 +2333,12 @@ mission "Midnight Striker"
 	on offer
 		conversation
 			scene "planet/forest6"
-			`You receive a message from Barmy Edwards: "<first>! I'd like you're input on something I've been asked to work on. Drop by <planet> when you can." He must need you to help him with another test.`
+			`You receive a message from Barmy Edwards: "<first>! I'd like your input on something I've been asked to work on. Drop by <planet> when you can." He must need you to help him with another test.`
 				accept
 	on enter Kraz
 		conversation
 			scene "thumbnail/striker drone-thumb"
-			`You receive an pre-recorded hail from some drones: "Hey <first>, Barmy here. We're on a tight scedule, so I'll need you to get started right away. These are some new drones we put together for a secret project. After you're done fighting them meet me planet side and we can discuss how they performed." Maybe Barmy has gotten too comfortable with expecting your assistance in these mock battles...`
+			`You receive an pre-recorded hail from some drones: "Hey <first>, Barmy here. We're on a tight schedule, so I'll need you to get started right away. These are some new drones we put together for a secret project. After you're done fighting them meet me planet side and we can discuss how they performed." Maybe Barmy has gotten too comfortable with expecting your assistance in these mock battles...`
 	npc disable
 		government "Test Dummy"
 		system Kraz
@@ -1906,13 +2390,13 @@ mission "Midnight Striker"
 					goto kludge
 			action
 				set "striker non-missiles"
-			`	Barmy sighs, "Unfortunately, Southbound didn't leave enough weapon space to cram in much more than the smallest of missile pods. I suppose one could try Sidewinders, but we lack the logistical support to ensure a reliable supply of ammo." It seems even a basic Energy Blaster won't fit in the alotted weapon space.`
+			`	Barmy sighs, "Unfortunately, Southbound didn't leave enough weapon space to cram in much more than the smallest of missile pods. I suppose one could try Sidewinders, but we lack the logistical support to ensure a reliable supply of ammo." It seems even a basic Energy Blaster won't fit in the allotted weapon space.`
 			choice
 				`	"How about installing a Kludge Blaster?"`
 				`	"I suppose you're right."`
 					goto final
 			scene "outfit/kludge blaster"
-			`	Barmy frowns. "There's enough space to accomodate one. But despite having a more powerful projectile than regular Energy Blasters, their long recharge time means Kludge Blasters work best when used in multiples. We need to muster more firepower from the Striker's lone gun mount than a single Kludge Blaster can deliver." These drones must be for military use rather than mining. Barmy continues, "So that brings us back to Javelins versus Meteors..."`
+			`	Barmy frowns. "There's enough space to accommodate one. But despite having a more powerful projectile than regular Energy Blasters, their long recharge time means Kludge Blasters work best when used in multiples. We need to muster more firepower from the Striker's lone gun mount than a single Kludge Blaster can deliver." These drones must be for military use rather than mining. Barmy continues, "So that brings us back to Javelins versus Meteors..."`
 				goto final
 			label javelin
 			action
@@ -1978,13 +2462,14 @@ mission "Smuggler's Den Advanced Shields"
 	to offer
 		has "event: add advanced modified shields"
 	on offer
+		"reputation: Independent (Killable)" >?= 10
 		conversation
 			scene "outfit/mod huge shield"
 			`The outfitters here have modified versions of the more advanced shield generators in stock.`
 				accept
 	npc
-		government "Pirate"
-		personality waiting staying plunders harvests
+		government "Independent (Killable)"
+		personality waiting staying plunders harvests uninterested
 		fleet
 			names "pirate"
 			cargo 1
@@ -1995,6 +2480,8 @@ mission "Smuggler's Den Advanced Shields"
 				"Marauder Leviathan (Shields)"
 				"Marauder Manta (Shields)"
 				"Marauder Splinter (Shields)"
+	on fail
+		"reputation: Independent (Killable)" >?= 10
 
 
 mission "Star Explorer Fan Tour"
@@ -2016,6 +2503,7 @@ mission "Star Explorer Fan Tour"
 				has "Randomize Star Explorer Fan Tour"
 				random < 5
 	on offer
+		event "star explorer update"
 		conversation
 			scene "ship/star explorer"
 			`You notice a long line of strangely dressed passengers waiting to board one particular ship.`
@@ -2028,7 +2516,7 @@ mission "Star Explorer Fan Tour"
 			choice
 				`	"Sure. Do you need a pilot?"`
 				`	"Uh, no. No pilot's license here."`
-					decline
+					goto refuse
 			scene "ship/blackbird alien"
 			`	"As a matter of fact, our escort cancelled on us and we're in urgent need of a replacement. Just accompany us to <waypoints>. We'll be engaging in mock battles with 'aliens' flying some custom painted Blackbirds. Of course that's just for show, so make sure not to destroy them. We'll return here when we're done. Oh, and of course we'll need protection in case real pirates show up."`
 			`	Could be an interesting job.`
@@ -2036,14 +2524,13 @@ mission "Star Explorer Fan Tour"
 				`	(Escort the Star Explorer.)`
 					accept
 				`	(Do not escort the Star Explorer.)`
+			label refuse
+			`	"That's too bad. Sorry for wasting your time." He walks off to continue his search for a licensed pilot."`
 					decline
 	on defer
 		set "Randomize Star Explorer Fan Tour"
 	on accept
 		clear "star explorer pirate raid activated"
-		event "star explorer update"
-	on decline
-		event "star explorer update"
 	on enter
 		conversation
 			scene "ship/star explorer"
@@ -2110,7 +2597,13 @@ mission "Star Explorer Fan Tour"
 		personality target escort disables timid
 		ship "Star Explorer (Transport)" "Last Frontier"
 
+	on abort
+		clear "star explorer pirate raid activated"
+		"reputation: Merchant" -= 50
+		dialog `The Merchant ship "Last Frontier" was attacked during its voyage. Rumors that you failed to protect it are whispered amongst the Merchant captains...`
+
 	on fail
+		clear "star explorer pirate raid activated"
 		dialog `[MISSION FAILED]: Either you destroyed one of the mock battle ships or you failed to protect the Last Frontier from a real threat. If life were a game, you could load a save file and try again.`
 
 	on complete
@@ -2140,6 +2633,7 @@ ship "Blackbird" "Alien Blackbird"
 
 
 mission "Star Explorer Korath Raid"
+	non-blocking
 	landing
 	invisible
 	source
@@ -2934,7 +3428,7 @@ mission "Southern Fiance (Parker, Perlman, Hoakes) 2"
 			action
 				set "joined Parker, Perlman, Hoakes lawsuit"
 				log "Minor People" "Parker, Perlman, and Hoakes" `A southern lawfirm that filed a class action lawsuit against Carl Ardwright-Chamberlain for abusing his government power to illegally divert and detain pilots at Cornucopia's spaceport.`
-			`	You do recall being redirected to an alternate landing pad where Carl and his husband Tom, who you previously transported south from the Syndicate, were waiting for you. Although they invited you to dinner, you felt refusing their invitation was not an option you could take. After submitting this testimony, you join the plaintiffs. These are other clients working with the lawfirm. They claim that Carl has abused his government position to delay and detain pilots at the spaceport. The record of your testimonial message is all that they require. No additonal action on your part is needed. Expect a message from Parker, Perlman, and Hoakes once the court proceedings have concluded.`
+			`	You do recall being redirected to an alternate landing pad where Carl and his husband Tom, who you previously transported south from the Syndicate, were waiting for you. Although they invited you to dinner, you felt refusing their invitation was not an option you could take. After submitting this testimony, you join the plaintiffs. These are other clients working with the lawfirm. They claim that Carl has abused his government position to delay and detain pilots at the spaceport. The record of your testimonial message is all that they require. No additional action on your part is needed. Expect a message from Parker, Perlman, and Hoakes once the court proceedings have concluded.`
 				decline
 			label deny
 			action

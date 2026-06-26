@@ -14,6 +14,47 @@
 # Contents: Missions which could lead to betrayal, either from you or your employer.
 
 
+mission "Midnight Dangerous Journey [Counterfeits]"
+	assisting
+	minor
+	name "Delivery to <planet>"
+	description "Deliver <cargo> to <destination>. Payment is <payment>."
+	to offer
+		or
+			has "Midnight Dangerous Journey: done"
+			has "Dangerous Journey: done"
+		credits >= 40000
+		random < 5
+	source
+		government "Merchant"
+		category "Light Freighter" "Heavy Freighter"
+		not attributes "automaton"
+	destination
+		government "Republic" "Syndicate" "Free Worlds"
+		attributes "frontier"
+		distance 2 3
+	cargo random 5 2 .1
+	illegal 40000 `It turns out that the shipment you took on from that distressed merchant were counterfeits. In addition to the fine, your illegal cargo is confiscated.`
+	substitutions
+		"<count>" "fourth"
+		"<count>" "fifth"
+			"random" < 60
+		"<count>" "sixth"
+			"random" < 30
+	on offer
+		conversation
+			`When you repair the <origin>, the captain hails you. "This is the <count> time I've nearly died in the past week doing this job! Here, take this <cargo> to <destination> and finish this job for me. They said the payment is <payment>."`
+			choice
+				`	(Take the cargo.)`
+					accept
+				`	(Don't take the cargo.)`
+			`	The captain begins loudly swearing, so you cut the feed. Hopefully they make it to their destination in one piece.`
+				decline
+	on complete
+		payment 15000
+		clear "Midnight Dangerous Journey: offered"
+		dialog `Some disreputable-looking locals unload the shipment of <commodity> from your cargo bay. The one in charge asks why you have the shipment. You explain how the original merchant who took the job quit and handed off the cargo to you. Satisfied with your explanation, they pay you <payment>.`
+
 
 mission "Destroy Independence (North)"
 	minor
@@ -316,9 +357,9 @@ mission "Escort Requiem Alpha"
 		"reputation: Independent (Killable)" <?= -1000
 		conversation
 			scene "scene/scene-requiemalpha"
-			`Your ship's warning alarm starts soon after entering the system. A fleet of ships that was waiting here has targetted you with their weapons. The <npc> transmits a message to you:`
-			`"Thank you for your help evading those pirates earlier. Unfortunately for you, our own organization was planning to steal the <npc> from the start. If only the owner of the ship hadn't been so cautious, you wouldn't have had to get involved. Nothing personal captain, this is just business."`
-			`The <npc> powers up its weapons.`
+			`Your ship's warning alarm starts soon after entering the system. A fleet of ships that was waiting here has targeted you with their weapons. The <npc> transmits a message to you:`
+			`	"Thank you for your help evading those pirates earlier. Unfortunately for you, our own organization was planning to steal the <npc> from the start. If only the owner of the ship hadn't been so cautious, you wouldn't have had to get involved. Nothing personal captain, this is just business."`
+			`	The <npc> powers up its weapons.`
 	npc
 		government "Pirate"
 		personality entering harvests plunders nemesis
@@ -553,9 +594,9 @@ mission "Protection: Marauder Double Cross"
 
 # Double cross version of "Independent Refugee"
 mission "Illegal Refugee"
-	name "Passenger to <planet>"
+	name "Refugee to <planet>"
 	repeat
-	description "Help <fare> escape from <origin> to <destination>. Payment is <payment>."
+	description "Help <fare> escape from <origin> to <destination>. Payment will be <payment>. If you are caught with him, you may be fined."
 	minor
 	passengers 1
 	illegal 50000 `Your passenger turns out to be in possession of a forged ID. As he is hauled off to be investigated, you vehemently protest that you know nothing of his shady history. You wind up quite a bit poorer through a combination of fines and bribes (the breakdown remains somewhat unclear).`
@@ -568,7 +609,7 @@ mission "Illegal Refugee"
 		not attributes uninhabited
 	destination
 		distance 0 5
-		government "Independent" "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+		government "Republic" "Free Worlds" "Syndicate" "Neutral"
 	on offer
 		dialog phrase "generic refugee offer"
 	on accept
@@ -580,7 +621,7 @@ mission "Illegal Refugee"
 	on complete
 		"getaway driver" ++
 		payment
-		payment 1000
+		payment 30000
 		dialog phrase "generic refugee dropoff payment"
 
 
@@ -622,7 +663,7 @@ mission "Jump Drive Theft 1"
 	on abort
 		"Midnight Market" --
 	on fail
-		"Midnight Market" --	
+		"Midnight Market" --
 	on accept
 		log `Took on a job to steal a research sample from a Syndicate lab for the Midnight Market. I hope I'm not getting in over my head with this one.`
 
@@ -639,13 +680,13 @@ mission "Jump Drive Theft 2"
 		conversation
 			`Someone from planetary security must have been bribed by your employer. No one questions you as you locate a discreet landing location near the facility housing Laboratory 51. Following the instructions you were given, you manage to bypass the facility's security systems and enter the lab. Inside, you find an alien device.`
 			scene "outfit/jump drive"
-			`According to the research notes here, this device is a functional Jump Drive! You load it onto a hover cart and work to remove it from the facility, taking care to avoid the guard patrols with the aid of the scedule your employer provided. Once you get back to your ship, you load the Jump Drive onto it and take off.`
+			`According to the research notes here, this device is a functional Jump Drive! You load it onto a hover cart and work to remove it from the facility, taking care to avoid the guard patrols with the aid of the schedule your employer provided. Once you get back to your ship, you load the Jump Drive onto it and take off.`
 				accept
 	on accept
 		outfit "Jump Drive" 1
 	on abort
 		log `The item I found in the Syndicate lab was a functional Jump Drive. I decided to keep it for myself rather than hand it over to the Midnight Market.`
-		"Midnight Market" -= 2
+		"Midnight Market" -= 5
 
 	on enter
 		dialog `It appears that no one from the lab is pursuing you. Your employer must have spent a considerable sum bribing Syndicate employees to help you slip through their security.`
@@ -671,8 +712,8 @@ mission "Jump Drive Theft 2"
 	
 	on fail
 		log `The item I found in the Syndicate lab was a functional Jump Drive. I decided to keep it for myself rather than hand it over to the Midnight Market.`
-		"Midnight Market" -= 2
-		"reputation: Pirate" --
+		"Midnight Market" -= 5
+		"reputation: Pirate" -= 10
 
 	on visit
 		dialog `The rendezvous location is deserted. The presence of the Syndicate patrol must have scared off your contact.`
@@ -701,7 +742,7 @@ mission "Kudgel's Cudgel"
 		government "Pirate"
 		distance 2 3
 	to offer
-		combat rating > 400
+		"combat rating" > 400
 		"ships: Heavy Warship" + "ships: Superheavy" <= 5
 		random < 70 - ( 65 * "randomize Kudgel's Cudgel" )
 	on offer
@@ -788,10 +829,10 @@ mission "Missing Syndicate Supplies"
 		government "Syndicate"
 		attributes "outfitter"
 	to offer
-		random < 20
+		has "main plot completed"
 		"reputation: Syndicate" > 100
-		"combat rating" > 20
 		not "syndicate tech available"
+		random < 70
 	on accept
 		dialog `When you accept the job, the agent has you fill out a non-disclosure form. If you are successful in locating the vessel, you are not to divulge knowledge of its contents to anyone. It must contain some top secret research.`
 	npc assist accompany save
@@ -865,7 +906,7 @@ mission "Peace Tour 1"
 	destination Farseer
 	to offer
 		has "main plot completed"
-		random < 30
+		random < 5 + ( 25 * "learned nuke deactivation" )
 	on offer
 		"reputation: Bounty (Disguised)" >?= 1
 		conversation
@@ -895,7 +936,7 @@ mission "Peace Tour 1"
 		event "add nukes of peace"
 		conversation
 			scene "portrait/human59"
-			`The captain of the <npc> thanks you for your help. Your payment, and a bonus package, are waiting for you at the spaceport.`
+			`The captain of the <npc> thanks you for your help. Your payment, and a bonus package, are waiting for you in a hangar at the spaceport.`
 		dialog `Go to the spaceport to get your reward.`
 
 event "add nukes of peace"
@@ -923,6 +964,8 @@ event "add nukes of peace"
 		add fleet NukeCore 20000
 	system Oblate
 		add fleet NukeCore 20000
+	system Misam
+		add fleet NukeCore 20000
 	system Antares
 		add fleet NukeSouth 20000
 	system Men
@@ -947,8 +990,14 @@ mission "Peace Tour 2"
 		has "Peace Tour 1: done"
 	on offer
 		conversation
+			scene "outfit/unknown"
+			`A package was left for you by a client in a hangar at the spaceport. Do you want to retrieve it?`
+			choice
+				`	(Retrieve the package.)`
+				`	(Not right now...)`
+					defer
 			scene "outfit/nuke"
-			`A package was left for you by a client. You open it to find a nasty surprise: a nuclear warhead with a countdown timer!`
+			`You locate the hangar. Opening it you find a nasty surprise: a nuclear warhead with a countdown timer that triggers as soon as you find it!`
 			choice
 				`	(Run.)`
 				`	(Try to disarm it.)`
@@ -966,9 +1015,9 @@ mission "Peace Tour 2"
 			label trydisarm
 			branch disarm
 				random < 20
-				
+
 			scene "scene/scene-explosion"
-			`	Despite your effort, you were unable to disarm the warhead before it explodes. If life were a game, you could load a save file and try disarming it again. You might have had better success if you learned how these devices work.`
+			`	Despite your effort, you were unable to disarm the warhead before it explodes. If life were a game, you could load a save file and try disarming it again. You might have better success if you learn how these devices work.`
 				die
 
 			label disarm
@@ -1032,6 +1081,8 @@ event "remove nukes of peace"
 	system Durax
 		remove fleet NukeCore
 	system Gienah
+		remove fleet NukeCore
+	system Misam
 		remove fleet NukeCore
 	system Oblate
 		remove fleet NukeCore
@@ -1165,7 +1216,7 @@ mission "Midnight Market: Nukes of Peace?"
 			action
 				set "learned nuke deactivation"
 				log `Today I learned the activation code for a Nuclear Missile is the number of the beast and deactivation code is "2-3-4". The latter is supposedly inspired by Psalm 23:4 from the Bible.`
-			`	The stranger reaches over and sets the digits to "2-3-4". Closing the panel, the stranger say, "Psalm twenty three four. Well?"`
+			`	The stranger reaches over and sets the digits to "2-3-4". Closing the panel, the stranger says, "Psalm twenty three four. Well?"`
 				goto nukechoice
 			label psalm
 			action
@@ -1177,7 +1228,7 @@ mission "Midnight Market: Nukes of Peace?"
 			action
 				set "learned nuke deactivation"
 				log `Today I learned activation code for a Nuclear Missile is "6-6-6" and the deactivation code is "2-3-4". These are supposedly references to something from the Bible, but the person who taught you never specified what they are.`
-			`	Inside the panel are a set of controls for setting three digits. "The factory default is all zeroes. Activation is six, six, and six." The stranger sets all three digits to "6-6-6". A mechanism within the missile activates and you can hear a low hum that slowly fades away. "Deactivation is two, three, and four." The stranger sets the digits to "2-3-4" and closes the panel. "Well?"`
+			`	Inside the panel are a set of controls for setting three digits. "The factory default is all zeroes. Activation is six, six, and six." The stranger sets all three digits to "6-6-6". A mechanism within the missile activates and you can hear a low hum that slowly fades away. "Deactivation is two, three, and four." The stranger sets the digits to "2-3-4" and the mechanisms within make a few noises before falling silent. Satisfied, the stranger closes the panel. "Well?"`
 				goto nukechoice
 	on decline
 		outfit "Nuclear Missile" 50
@@ -1641,13 +1692,14 @@ mission "Thraal: Moreau"
 				`	"Are you serious?"`
 				`	"You've got to be kidding!"`
 			scene "planet/station2k"
-			`	Thraal places the cover back on some recently repaired ciruits and says, "Would you like to meet them? I can arrange it." The Korath have been an implacable adversary. This could be a chance to establish peaceful relations with them. Before you respond, Thraal hails Gresku Fodar, the Korath station in this system, and speaks to them in their language. After a short exchange, he smiles at you reassuringly. "They're waiting."`
+			`	Thraal places the cover back on some recently repaired circuits and says, "Would you like to meet them? I can arrange it." The Korath have been an implacable adversary. This could be a chance to establish peaceful relations with them. Before you respond, Thraal hails Gresku Fodar, the Korath station in this system, and speaks to them in their language. After a short exchange, he smiles at you reassuringly. "They're waiting."`
 			choice
 				`	(Visit Gresku Fodar.)`
 					accept
 				`	(Ignore their invitation.)`
 			action
 				fail "Thraal: Moreau"
+				set "Thraal: Moreau (Cleanup): failed"
 				log "People" "Thraal" `A human who supposedly survived the Korath attack on the Icarus. Thraal claims to get along well with the Korath, but the nature of his relationship with them remains unclear.`
 			`You've decided to ignore Thraal's invitation to meet the Korath. They've proven themselves to be nothing but dangerous and you have little reason to put your trust in Thraal. With no change in their disposition towards you, they will continue on as a hostile foe to be wary of.`
 		on kill
@@ -1701,6 +1753,19 @@ mission "Thraal: Moreau (Failed)"
 	on offer
 		conversation "microbot defense death"
 
+# This exists because a required condition was not set if you decline Thraal's invitation
+mission "Thraal: Moreau failed but survived patch"
+	landing
+	invisible
+	non-blocking
+	to offer
+		has "Thraal: Moreau: failed"
+		not "Thraal killed"
+		not "Thraal: Moreau (Cleanup): failed"
+	on offer
+		set "Thraal: Moreau (Cleanup): failed"
+		fail
+
 # This mission is deprecated.
 mission "Thraal: Moreau (Killed)"
 	landing
@@ -1736,8 +1801,8 @@ mission "Prisoner Bribe Offer (Job)"
 	on offer
 		require "Brig"
 	on accept
-		log "Minor People" "Dirk Malone" `A notorious felon recently convicted for heinous crimes after the authorities spent years tracking him down. The trial was broadcast thoughout the galaxy.`
-		dialog `Your prisoner is the notorious felon Dirk Malone, recently convicted for heinous crimes after the authorities spent years tracking him down. The trial was broadcast thoughout the galaxy. He smirks as you lock him in your brig..."`
+		log "Minor People" "Dirk Malone" `A notorious felon recently convicted for heinous crimes after the authorities spent years tracking him down. The trial was broadcast throughout the galaxy.`
+		dialog `Your prisoner is the notorious felon Dirk Malone, recently convicted for heinous crimes after the authorities spent years tracking him down. The trial was broadcast throughout the galaxy. He smirks as you lock him in your brig..."`
 	on visit
 		dialog phrase "generic passenger on visit"
 	on complete
@@ -1812,7 +1877,7 @@ mission "Prisoner Bribe Release (Job)"
 		payment 25000 400
 	on enter
 		log `After accepting a bribe to release the notorious felon Dirk Malone, he sent his fleet of pirate raiders to attack me.`
-		dialog 	`You receive a message from the felon you just released: "You got your payment, so technically I've fufilled my part of the agreement. Now we're just going to do what pirates do...`
+		dialog 	`You receive a message from the felon you just released: "You got your payment, so technically I've fulfilled my part of the agreement. Now we're just going to do what pirates do...`
 	npc evade
 		government "Pirate"
 		personality entering nemesis plunders

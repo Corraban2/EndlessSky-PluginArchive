@@ -44,6 +44,8 @@ outfitter "Ka'het Advanced"
 
 outfit "Builder Anti-Missile"
 	category "Turrets"
+	series "Anti-Missile"
+	index 05010
 	cost 55000
 	thumbnail "outfit/builder anti-missile"
 	"mass" 12
@@ -74,6 +76,8 @@ effect "builder anti-missile"
 
 outfit "Builder Negator"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 05030
 	cost 6600000
 	thumbnail "outfit/builder negator"
 	"mass" 78
@@ -113,7 +117,7 @@ outfit "Builder Negator"
 		"hit force" 75
 		"blast radius" 20
 	description "A rapid fire version of the Nullifier, the Negator is so powerful that it impacts the ship it is installed on with some ionic interference. If not used with discretion, it can easily drain its own ships power reserves and even cause its own internal mechanisms to jam."
-	description "	Attempts to train the Ka'het to use this weapon ended with disasterous results. They possessed no sense of restraint, constantly firing the Negator until their own energy storage systems ran dry."
+	description "	Attempts to train the Ka'het to use this weapon ended with disastrous results. They possessed no sense of restraint, constantly firing the Negator until their own energy storage systems ran dry."
 
 
 ###################################
@@ -125,6 +129,8 @@ outfit "Builder Negator"
 
 outfit "Builder Grand Cooling"
 	category "Systems"
+	series "Cooling"
+	index 05030
 	cost 781000
 	thumbnail "outfit/builder grand cooling"
 	"mass" 17
@@ -136,6 +142,8 @@ outfit "Builder Grand Cooling"
 
 outfit "Builder Grand Defense"
 	category "Systems"
+	series "Shields"
+	index 05020
 	cost 1160000
 	thumbnail "outfit/builder grand defense"
 	"mass" 86
@@ -149,6 +157,8 @@ outfit "Builder Grand Defense"
 
 outfit "Builder Grand Generator"
 	category "Power"
+	series "Generators"
+	index 05010
 	cost 6315000
 	thumbnail "outfit/builder grand generator"
 	"mass" 100
@@ -160,6 +170,8 @@ outfit "Builder Grand Generator"
 
 outfit "Builder Grand Accumulator"
 	category "Power"
+	series "Batteries"
+	index 05010
 	cost 270000
 	thumbnail "outfit/builder grand accumulator"
 	"mass" 20
@@ -172,6 +184,8 @@ outfit "Builder Grand Accumulator"
 outfit "Builder Hull Plating (100%)"
 	"display name" "Builder Hull Armor (100%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 100000
 	thumbnail "outfit/builder hull plating"
 	"hull" 7000
@@ -179,14 +193,20 @@ outfit "Builder Hull Plating (100%)"
 	"mass" 8
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (90%)"
 	"display name" "Builder Hull Armor (90%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 90000
 	thumbnail "outfit/builder hull plating"
 	"hull" 7000
@@ -194,14 +214,20 @@ outfit "Builder Hull Plating (90%)"
 	"mass" 7.5
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (80%)"
 	"display name" "Builder Hull Armor (80%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 80000
 	thumbnail "outfit/builder hull plating"
 	"hull" 7000
@@ -209,14 +235,20 @@ outfit "Builder Hull Plating (80%)"
 	"mass" 7.5
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (70%)"
 	"display name" "Builder Hull Armor (70%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 70000
 	thumbnail "outfit/builder hull plating"
 	"hull" 6000
@@ -224,14 +256,20 @@ outfit "Builder Hull Plating (70%)"
 	"mass" 7
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (60%)"
 	"display name" "Builder Hull Armor (60%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 60000
 	thumbnail "outfit/builder hull plating"
 	"hull" 6000
@@ -239,14 +277,20 @@ outfit "Builder Hull Plating (60%)"
 	"mass" 6.5
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (50%)"
 	"display name" "Builder Hull Armor (50%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 50000
 	thumbnail "outfit/builder hull plating"
 	"hull" 5000
@@ -254,14 +298,20 @@ outfit "Builder Hull Plating (50%)"
 	"mass" 6
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (40%)"
 	"display name" "Builder Hull Armor (40%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 40000
 	thumbnail "outfit/builder hull plating"
 	"hull" 4000
@@ -269,14 +319,20 @@ outfit "Builder Hull Plating (40%)"
 	"mass" 5.5
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (30%)"
 	"display name" "Builder Hull Armor (30%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 30000
 	thumbnail "outfit/builder hull plating"
 	"hull" 3000
@@ -284,14 +340,20 @@ outfit "Builder Hull Plating (30%)"
 	"mass" 5
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (20%)"
 	"display name" "Builder Hull Armor (20%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 20000
 	thumbnail "outfit/builder hull plating"
 	"hull" 2000
@@ -299,15 +361,20 @@ outfit "Builder Hull Plating (20%)"
 	"mass" 4.5
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
 	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
 	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this too often will cause it to deteriorate.`
 
 outfit "Builder Hull Plating (10%)"
 	"display name" "Builder Hull Armor (10%)"
 	category "Systems"
+	series "Special Systems"
+	index 05010
 	cost 10000
 	thumbnail "outfit/builder hull plating"
 	"hull" 1000
@@ -315,42 +382,236 @@ outfit "Builder Hull Plating (10%)"
 	"mass" 4
 	"outfit space" -4
 	"builder hull enhancement" -1
+	"scan interference" 0.5
 	"gaslining" 1
-	"flotsam chance" 7
-	"unplunderable" 0.05
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
 	"unique" 1
+	"atmosphere resistance" 0.05
 	description `Builder capital ships have extremely durable hulls. This enhanced hull plating allows a ship it is installed on to survive diving into the harsh atmosphere of a gas giant even if it wasn't specifically designed to do so. Relying on this is risky and will probably destroy it.`
+
+
+outfit "Ka'het Durable Armor (40%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 40000
+	thumbnail "outfit/kahet armor durable"
+	"hull" 4000
+	"drag" 0.7
+	"mass" 4.5
+	"outfit space" -3
+	"builder hull enhancement" -1
+	"scan interference" 1
+	"gaslining" 1
+	"flotsam chance" 0.05
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.25
+	description `The largest Ka'het have extremely tough hulls. This durable hull plating allows the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this too often may cause it to deteriorate.`
+
+outfit "Ka'het Durable Armor (30%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 30000
+	thumbnail "outfit/kahet armor durable"
+	"hull" 3000
+	"drag" 0.8
+	"mass" 4
+	"outfit space" -3
+	"builder hull enhancement" -1
+	"scan interference" 1
+	"gaslining" 1
+	"flotsam chance" 0.10
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.2
+	description `The largest Ka'het have extremely tough hulls. This durable hull plating allows the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this too often may cause it to deteriorate.`
+
+outfit "Ka'het Durable Armor (20%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 20000
+	thumbnail "outfit/kahet armor durable"
+	"hull" 2000
+	"drag" 0.9
+	"mass" 3.5
+	"outfit space" -3
+	"builder hull enhancement" -1
+	"scan interference" 1
+	"gaslining" 1
+	"flotsam chance" 0.15
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.15
+	description `The largest Ka'het have extremely tough hulls. This durable hull plating allows the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this too often may cause it to deteriorate.`
+
+outfit "Ka'het Durable Armor (10%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 10000
+	thumbnail "outfit/kahet armor durable"
+	"hull" 1000
+	"drag" 1
+	"mass" 3
+	"outfit space" -3
+	"builder hull enhancement" -1
+	"scan interference" 1
+	"gaslining" 1
+	"flotsam chance" 0.20
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.1
+	description `The largest Ka'het have extremely tough hulls. This durable hull plating allows the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this is risky and will probably destroy it.`
+
+
+outfit "Ka'het Cloak Armor (20%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 100000
+	thumbnail "outfit/kahet armor cloak"
+	"hull" 1000
+	"drag" 0.1
+	"mass" 4.5
+	"outfit space" -6
+	"builder hull enhancement" -1
+	"cloaking energy" -6
+	"cloaking fuel" -.04
+	"gaslining" 1
+	"flotsam chance" 0.15
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.0001
+	description `This special hull plating can enhance the cloaking abilty of Ka'het that have the ability to do so. It could also allow the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. However, doing so will cause it to deteriorate.`
+
+outfit "Ka'het Cloak Armor (10%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 90000
+	thumbnail "outfit/kahet armor cloak"
+	"hull" 500
+	"drag" 0.2
+	"mass" 4
+	"outfit space" -6
+	"builder hull enhancement" -1
+	"cloaking energy" -6
+	"cloaking fuel" -.04
+	"gaslining" 1
+	"flotsam chance" 0.20
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.0001
+	description `This special hull plating can enhance the cloaking abilty of Ka'het that have the ability to do so. It can also allow the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. However, doing so will definitely destroy it.`
+
+
+outfit "Ka'het Tactical Armor (30%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 60000
+	thumbnail "outfit/kahet armor tactical"
+	"hull" 3000
+	"drag" 0.08
+	"mass" 5
+	"outfit space" -5
+	"builder hull enhancement" -1
+	"scan interference" 0.5
+	"radar jamming" 2
+	"inertia reduction" 0.04
+	"gaslining" 1
+	"flotsam chance" 0.15
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.05
+	description `Ka'het Tactical Armor is designed to facilitate evading enemy weapons fire. This can also allow the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this too often will cause it to deteriorate.`
+
+outfit "Ka'het Tactical Armor (20%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 50000
+	thumbnail "outfit/kahet armor tactical"
+	"hull" 2000
+	"drag" 0.09
+	"mass" 4.5
+	"outfit space" -5
+	"builder hull enhancement" -1
+	"scan interference" 0.5
+	"radar jamming" 2
+	"inertia reduction" 0.04
+	"gaslining" 1
+	"flotsam chance" 0.20
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.05
+	description `Ka'het Tactical Armor is designed to facilitate evading enemy weapons fire. This can also allow the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this too often will cause it to deteriorate.`
+
+outfit "Ka'het Tactical Armor (10%)"
+	category "Systems"
+	series "Special Systems"
+	index 05010
+	cost 40000
+	thumbnail "outfit/kahet armor tactical"
+	"hull" 1000
+	"drag" 0.1
+	"mass" 4
+	"outfit space" -5
+	"builder hull enhancement" -1
+	"scan interference" 0.5
+	"radar jamming" 2
+	"inertia reduction" 0.04
+	"gaslining" 1
+	"flotsam chance" 0.25
+	"flotsam sprite" "effect/flotsam builder plating"
+	"unplunderable" 1
+	"atmosphere resistance" 0.05
+	description `Ka'het Tactical Armor is designed to facilitate evading enemy weapons fire. This can also allow the Ka'het it is installed on to survive diving into the harsh atmosphere of a gas giant. Relying on this is risky and will probably destroy it.`
 
 
 outfit "Builder IFF (Damaged)"
 	category "Systems"
+	series "Special Systems"
+	index 05000
 	thumbnail "outfit/builder iff damaged"
 	description `Normally, this would give you access to restricted areas of the Builder space stations, but this particular unit is damaged.`
 
 outfit "Builder IFF Transmitter"
 	category "Systems"
+	series "Special Systems"
+	index 05000
 	cost 30000
 	thumbnail "outfit/builder iff"
 	description `This device is able to transmit codes which give you access to certain restricted areas of the Builder space stations.`
 
 outfit "Ka'het Scanner"
 	category "Systems"
+	series "Scanners"
+	index 05010
 	cost 410000
 	thumbnail "outfit/kahet scanner"
 	"mass" 12
 	"outfit space" -14
 	"atmosphere scan" 100
-	"asteroid scan power" 40
+	"asteroid scan power" 20
 	"outfit scan power" 50
 	"outfit scan efficiency" 30
 	"cargo scan power" 18
 	"cargo scan efficiency" 10
-	"tactical scan power" 64
+	"range finder power" 1
+	"strategic scan power" 32
+	"thermal scan power" 64
+	"energy scan power" 64
+	"fuel scan power" 64
 	"ion protection" -.2
 	"scramble protection" -.2
 	description "A powerful scanner outfitted onto the Ka'het to gather information on hostile alien species. The Builders never envisioned it being used to gather information on themselves."
 	description "	The Ka'het scanner is incredibly sensitive, but the materials used in its construction can act as a lightning rod, making your ship more vulnerable to the effects of ionization."
-
 
 ###################################
 #
@@ -361,6 +622,8 @@ outfit "Ka'het Scanner"
 
 outfit "Graveyard Map"
 	category "Unique"
+	series "Non-Functional Unique"
+	index 05010
 	cost 0
 	thumbnail "outfit/graveyard map"
 	"unplunderable" 1

@@ -10,6 +10,30 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
+mission "Bounty Hunting: Mock Turtle"
+	job
+	deadline 14
+	name "Wanted Bandit near <system>"
+	description "A Modified Buckler named the Mock Turtle has been attacking merchants near <system>. Destroy it by <day> for payment (<payment>)."
+	"apparent payment" 100000
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Independent" "Neutral"
+		attributes "dirt belt" "south"
+	to offer
+		"combat rating" < 1050
+		"combat rating" >= 50
+		random < 25
+	npc kill
+		government "Bounty"
+		system
+			distance 1 1
+		personality target waiting staying plunders harvests
+			confusion 20
+		ship "Modified Buckler" "Mock Turtle"
+		dialog `The Mock Turtle has been eliminated. Shortly afterwards, the government of <planet> sends you <payment> along with a message of gratitude.`
+		on kill
+			payment 100000
+			fail
 
 mission "Bounty Hunting: Beanstalk"
 	job
@@ -22,14 +46,8 @@ mission "Bounty Hunting: Beanstalk"
 		attributes "dirt belt" "frontier" "deep"
 	to offer
 		"combat rating" < 1150
-		or
-			and
-				"combat rating" >= 50
-				"combat rating" < 150
-				random < 50
-			and
-				"combat rating" >= 150
-				random < 25
+		"combat rating" >= 150
+		random < 25
 	npc kill
 		government "Bounty"
 		system
@@ -39,7 +57,7 @@ mission "Bounty Hunting: Beanstalk"
 		ship "Modified Enforcer (Modified Hyperdrive)" "Beanstalk"
 		dialog `The Beanstalk has been eliminated. Shortly afterwards, the government of <planet> sends you <payment> along with a message of gratitude.`
 		on kill
-			payment 100000
+			payment 125000
 			fail
 
 mission "Bounty Hunting: Mother Goose"
@@ -106,8 +124,8 @@ mission "Bounty Hunting: Jabberwocky"
 		government "Republic" "Free Worlds" "Syndicate"
 		attributes "frontier" "deep" "north"
 	to offer
-		"combat rating" < 1400
-		"combat rating" >= 400
+		"combat rating" < 1450
+		"combat rating" >= 450
 		random < 25
 	npc kill
 		government "Bounty"
@@ -387,6 +405,9 @@ outfit "Prototype Power Converter ECX"
 
 
 mission "Executive Guard: Syndicated Systems"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	passengers 1
 	name "Ransom: Syndicated Systems"
@@ -476,6 +497,7 @@ mission "Executive Guard: Syndicated Systems"
 		"reputation: Syndicate" <?= -1000
 	on complete
 		payment 10000000
+		"pirate jobs" ++
 		"reputation: Pirate" += 100
 		conversation
 			scene "outfit/brig"
@@ -483,6 +505,9 @@ mission "Executive Guard: Syndicated Systems"
 			`	Despite this, the pirates are able to negotiate with the Syndicate. The CEO is easily ransomed off for the requested amount. You claim your share of the ransom money, <payment>. Naturally, this stunt has made you an enemy of the Syndicate. Their security forces will be looking to collect bonus pay for your head.`
 
 mission "Executive Guard: Syndicated Shipyards"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	passengers 1
 	name "Ransom: Syndicated Shipyards"
@@ -571,6 +596,7 @@ mission "Executive Guard: Syndicated Shipyards"
 		"reputation: Syndicate" <?= -1000
 	on complete
 		payment 10000000
+		"pirate jobs" ++
 		"reputation: Pirate" += 100
 		conversation
 			scene "outfit/brig"
@@ -616,7 +642,6 @@ ship "Marauder Arrow" "Cupid's Arrow"
 	add attributes
 		"engine capacity" 20
 		"weapon capacity" 5
-
 
 mission "Holiday: Saint Nick"
 	job
@@ -679,6 +704,17 @@ mission "Holiday: Saint Nick"
 		dialog `You safely delivered the <npc> and its cargo to <planet>! Hopefully the orphans will enjoy their holiday presents along with a happy new year. You are rewarded for your efforts with <payment>.`
 
 
+mission "Stranded In Paradise: Erin Epilogue Timer"
+	landing
+	non-blocking
+	to offer
+		has "free worlds plot completed"
+	on offer
+		event "stranded in paradise: erin epilogue timer" 1800
+		fail
+
+event "stranded in paradise: erin epilogue timer"
+	
 mission "Stranded In Paradise: Erin Epilogue"
 	job
 	name "Passenger transport to <planet>"
@@ -687,9 +723,9 @@ mission "Stranded In Paradise: Erin Epilogue"
 	to offer
 		random < 70
 		has "Stranded In Paradise 2: offered"
-		has "free worlds plot completed"
+		has "event: stranded in paradise: erin epilogue timer"
 	source
-		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
+		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		attributes "rim" "south"
 		not government "Pirate"
 	destination "Winter"
@@ -855,7 +891,7 @@ mission "Bounty Hunting (Secret Prototype)"
 	on fail
 		dialog `[MISSION FAILED]: You failed to recover the Secret Prototype before destroying the <npc>.`
 	on visit
-		dialog "You still havn't disabled the <npc> and recovered the Secret Prototype."
+		dialog "You still haven't disabled the <npc> and recovered the Secret Prototype."
 	on complete
 		outfit "Secret Prototype" -1
 		payment 1500000
@@ -965,14 +1001,12 @@ mission "Energy Cannons [small]"
 	description "Supplies of Energy Cannons are scarce. Deliver <tons> of Damaged Energy Cannons to <destination> where they will be repaired. Payment is <payment>."
 	cargo "Damaged Energy Cannons" 120
 	source Trinket
-	destination
-		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
-		attributes "pirate"
-		attributes "north" "north pirate"
-		attributes "shipyard"
+	destination "Haven"
 	to offer
+		not "event: energy cannon outfitter"
 		random < 30
 	on complete
+		"pirate jobs" ++
 		payment 300000
 		dialog "The shipyard on <planet> pays you <payment> for the shipment of Damaged Energy Cannons."
 
@@ -986,13 +1020,12 @@ mission "Energy Cannons [medium]"
 		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
 		attributes "pirate"
 		not attributes "north" "north pirate"
-	destination
-		attributes "pirate"
-		attributes "north" "north pirate"
-		attributes "shipyard"
+	destination "Haven"
 	to offer
+		not "event: energy cannon outfitter"
 		random < 15
 	on complete
+		"pirate jobs" ++
 		payment 450000
 		dialog "The shipyard on <planet> pays you <payment> for the shipment of Damaged Energy Cannons."
 
@@ -1006,13 +1039,12 @@ mission "Energy Cannons [large]"
 		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
 		attributes "pirate"
 		not attributes "north" "north pirate"
-	destination
-		attributes "pirate"
-		attributes "north" "north pirate"
-		attributes "shipyard"
+	destination "Haven"
 	to offer
+		not "event: energy cannon outfitter"
 		random < 10
 	on complete
+		"pirate jobs" ++
 		payment 600000
 		dialog "The shipyard on <planet> pays you <payment> for the shipment of Damaged Energy Cannons."
 
@@ -1026,23 +1058,24 @@ mission "Energy Cannons [huge]"
 		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
 		attributes "pirate"
 		not attributes "north" "north pirate"
-	destination
-		attributes "pirate"
-		attributes "north" "north pirate"
-		attributes "shipyard"
+	destination "Haven"
 	to offer
+		not "event: energy cannon outfitter"
 		random < 5
 	on complete
+		"pirate jobs" ++
 		payment 1200000
 		dialog "The shipyard on <planet> pays you <payment> for the shipment of Damaged Energy Cannons."
 
 mission "Energy Cannon Outfitter"
+	non-blocking
 	landing
 	invisible
 	to offer
 		"Energy Cannons [small]: done" + "Energy Cannons [medium]: done" + "Energy Cannons [large]: done" + "Energy Cannons [huge]: done" >= 4
 	on offer
 		event "energy cannon outfitter"
+		set "energy cannon outfitter patched"
 		fail
 		
 outfitter "Energy Cannon"
@@ -1054,10 +1087,12 @@ event "energy cannon outfitter"
 		add outfitter "Energy Cannon"
 
 mission "Energy Cannon Outfitter Patch"
+	non-blocking
 	landing
 	invisible
 	to offer
 		has "event: energy cannon outfitter"
+		not "energy cannon outfitter patched"
 	on offer
 		event "energy cannon outfitter patch"
 		fail
@@ -1138,20 +1173,18 @@ mission "Hijacked Escort"
 		system
 			distance 1 2
 		fleet "Small Northern Pirates"
-		fleet "Large Northern Pirates"
 	npc
 		government "Pirate"
 		personality nemesis harvests plunders
 		system
-			distance 1 2
+			distance 2 3
 		fleet "Small Northern Pirates"
 	npc
 		government "Pirate"
 		personality nemesis harvests plunders
 		system
-			distance 1 2
+			distance 3 4
 		fleet "Large Northern Pirates"
-	
 	npc capture
 		government "Bounty (Disguised)"
 		personality target escort marked timid
@@ -1163,9 +1196,9 @@ mission "Hijacked Escort"
 				"Bactrian (Hijacked)"
 			variant 4
 				"Star Queen (Hijacked)"
-			variant 6
-				"Hogshead (Hijacked)"
 			variant 8
+				"Hogshead (Hijacked)"
+			variant 16
 				"Palisade (Hijacked)"
 		dialog `You've taken control of the <npc> from the hijackers. Bring the rescued passengers to <destination>.`
 	on abort
@@ -1284,8 +1317,102 @@ mission "Medical Bay: Patient Transport [family]"
 		dialog `You wish the patient good luck with their surgery. An insurance company deposits <payment> into your account.`
 
 
+mission "Midnight Antique Sunder Escort"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	deadline
+	name "Antique Sunder Escort"
+	description "Escort the Antique Sunder ship <npc> to <destination> by <date>. The Covert Mining Cartel will reward you with <payment> on delivery."
+	source
+		attributes "pirate"
+		not planet "Covert"
+		not near Gienah 3
+	destination "Covert"
+	to offer
+		"reputation: Pirate" > 0
+		"combat rating" > 300
+		not "Midnight Antique Sunder Escort: aborted"
+		not "Midnight Antique Sunder Escort: failed"
+		random < 10
+	npc
+		government "Pirate (Rivals)"
+		system destination
+		personality heroic plunders harvests
+		fleet "pirate raid"
+	npc save accompany
+		government "Pirate"
+		personality target escort timid plunders harvests
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Antique Sunder"
+	on fail
+		"reputation: Pirate" -= 5
+		dialog "Your failure to deliver the <npc> has damaged your reputation with the Covert Mining Cartel."
+	on abort
+		"reputation: Pirate" -= 5
+		dialog "Your failure to deliver the <npc> has damaged your reputation with the Covert Mining Cartel."
+	on complete
+		payment 300000
+		"pirate jobs" ++
+		"reputation: Pirate" += 5
+		dialog "The Covert Mining Cartel pays you <payment> for completing the delivery of the Antique Sunder ship <npc>."
+		
+mission "Midnight Antique Sunder Retrieval"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	deadline 30
+	name "Antique Sunder Retrieval"
+	description "The <npc> was attacked before it could be delivered. Locate the ship somewhere near <system> and escort it safely to <planet> by <date>. The Covert Mining Cartel will pay <payment> on delivery."
+	source "Covert"
+	to offer
+		has "Midnight Antique Sunder Escort: done"
+		"reputation: Pirate" > 0
+		random < 10
+	npc
+		to spawn
+			has "antique sunder pirate raid active"
+		government "Pirate (Rivals)"
+		system destination
+		personality heroic plunders harvests
+		fleet "pirate raid"
+	npc save accompany assist
+		government "Pirate"
+		system
+			distance 2 3
+		personality target derelict timid plunders harvests
+		fleet
+			names "civilian"
+			cargo 1
+			commodities "Metal" "Heavy Metals"
+			variant
+				"Antique Sunder"
+		on assist
+			set "antique sunder pirate raid active"
+	on abort
+		clear "antique sunder pirate raid active"
+	on fail
+		clear "antique sunder pirate raid active"
+	on complete
+		payment 600000
+		"pirate jobs" ++
+		"reputation: Pirate" += 5
+		clear "antique sunder pirate raid active"
+		dialog "The Covert Mining Cartel pays you <payment> for retrieving the Antique Sunder ship <npc>."
+
+
 mission "Midnight Cargo Trap (North)"
 	name "Convoy near <system>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	description `A merchant convoy has been spotted near the <system> system. A local warlord is interested in having the cargo on the <npc>. Plunder it and return to <planet> by <day> for payment of <payment>.`
@@ -1327,10 +1454,15 @@ mission "Midnight Cargo Trap (North)"
 	on complete
 		outfit "Secret Cargo" -1
 		payment 1500000
+		"pirate jobs" ++
+		"reputation: Pirate" ++
 		dialog "The pirates of <planet> take the secret cargo from your cargo hold and pay you <payment>."
 
 mission "Midnight Cargo Trap (South)"
 	name "Convoy near <system>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	description `A merchant convoy has been spotted near the <system> system. A local warlord is interested in having the cargo on the <npc>. Plunder it and return to <planet> by <day> for payment of <payment>.`
@@ -1369,10 +1501,15 @@ mission "Midnight Cargo Trap (South)"
 	on complete
 		outfit "Secret Cargo" -1
 		payment 1500000
+		"pirate jobs" ++
+		"reputation: Pirate" ++
 		dialog "The pirates of <planet> take the secret cargo from your cargo hold and pay you <payment>."
 
 mission "Midnight Cargo Trap (South) [Meteor]"
 	name "Convoy near <system>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	description `A merchant convoy has been spotted near the <system> system. A local warlord is interested in having the cargo on the <npc>. Plunder it and return to <planet> by <day> for payment of <payment>.`
@@ -1411,10 +1548,15 @@ mission "Midnight Cargo Trap (South) [Meteor]"
 	on complete
 		outfit "Secret Cargo" -1
 		payment 1500000
+		"pirate jobs" ++
+		"reputation: Pirate" ++
 		dialog "The pirates of <planet> take the secret cargo from your cargo hold and pay you <payment>."
 
 mission "Midnight Cargo Trap (South) [Kludge]"
 	name "Convoy near <system>"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	description `A merchant convoy has been spotted near the <system> system. A local warlord is interested in having the cargo on the <npc>. Plunder it and return to <planet> by <day> for payment of <payment>.`
@@ -1453,7 +1595,169 @@ mission "Midnight Cargo Trap (South) [Kludge]"
 	on complete
 		outfit "Secret Cargo" -1
 		payment 1500000
+		"pirate jobs" ++
+		"reputation: Pirate" ++
 		dialog "The pirates of <planet> take the secret cargo from your cargo hold and pay you <payment>."
+
+
+phrase "midnight frontier report"
+	word
+		"After a few hours of "
+	word
+		"wandering "
+		"exploring "
+		"investigating "
+	word
+		"the spaceport, you "
+	word
+		"learn "
+		"find out "
+		"discover "
+	word
+		"that the captain of the ${pirate} "
+	word
+		"recently added a heavy warship to his fleet. "
+		"has been smuggling slaves to a buyer in the Paradise Planets. "
+		"has acquired a strange weapon of unknown origin. "
+		"is planning to steal the ${civilian}'s cargo. "
+		"looted a weird artifact from some alien ruins. "
+		"joined forces with the captain of the ${bounty hunter}. "
+		"is secretly working with the crew of the ${civilian}. "
+		"is planning to ambush the ${republic capital}. "
+		"is distributing a new drug through the frontier. "
+		"is currently transporting a person of interest. "
+	word
+		"Hopefully delivering this information will be worth your effort."
+
+phrase "midnight frontier reward"
+	word
+		"You submit your report to Republic Intelligence. After reviewing it, they reward you with <payment>."
+
+mission "Midnight Frontier Report [Core]"
+	job
+	repeat
+	name "Frontier Report"
+	description "Reliable information on pirate activity may be valuable to the Republic. Investigate <stopovers>. Then return to <destination> and file a report with Republic Intelligence."
+	source Earth
+	stopover
+		attributes "core pirate"
+		attributes "spaceport"
+	to offer
+		not "event: joined the free worlds"
+		not "Midnight Frontier Report [Core]: active"
+		"combat rating" >= 1000
+		"reputation: Republic" >= 20
+	to fail
+		has "event: joined the free worlds"
+	on stopover
+		set "midnight frontier snooped"
+		"midnight frontier snooping" ++
+		dialog phrase "midnight frontier report"
+	on complete
+		payment 25000
+		clear "midnight frontier snooped"
+		dialog phrase "midnight frontier reward"
+
+mission "Midnight Frontier Report [North]"
+	job
+	repeat
+	name "Frontier Report"
+	description "Reliable information on pirate activity may be valuable to the Republic. Investigate <stopovers>. Then return to <destination> and file a report with Republic Intelligence."
+	source Earth
+	stopover
+		attributes "north pirate"
+		attributes "spaceport"
+	to offer
+		not "event: joined the free worlds"
+		not "Midnight Frontier Report [North]: active"
+		"combat rating" >= 1000
+		"reputation: Republic" >= 20
+	to fail
+		has "event: joined the free worlds"
+	on stopover
+		set "midnight frontier snooped"
+		"midnight frontier snooping" ++
+		dialog phrase "midnight frontier report"
+	on complete
+		payment 25000
+		clear "midnight frontier snooped"
+		dialog phrase "midnight frontier reward"
+
+mission "Midnight Frontier Report [South]"
+	job
+	repeat
+	name "Frontier Report"
+	description "Reliable information on pirate activity may be valuable to the Republic. Investigate <stopovers>. Then return to <destination> and file a report with Republic Intelligence."
+	source Earth
+	stopover
+		attributes "south pirate"
+		attributes "spaceport"
+	to offer
+		not "event: joined the free worlds"
+		not "Midnight Frontier Report [South]: active"
+		"combat rating" >= 1000
+		"reputation: Republic" >= 20
+	to fail
+		has "event: joined the free worlds"
+	on stopover
+		set "midnight frontier snooped"
+		"midnight frontier snooping" ++
+		dialog phrase "midnight frontier report"
+	on complete
+		payment 25000
+		clear "midnight frontier snooped"
+		dialog phrase "midnight frontier reward"
+
+mission "Midnight Frontier Snooping"
+	landing
+	invisible
+	repeat
+	deadline 3
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Pirate" "Independent" "Neutral"
+		not attributes "near earth"
+	to offer
+		has "midnight frontier snooped"
+		random < "midnight frontier snooping"
+	on enter
+		dialog `A ship entering the system hails you: "Our employer doesn't like rats snooping around his business. So he hired us for pest control."`
+	npc kill
+		government "Bounty Hunter"
+		personality entering heroic coward nemesis
+		fleet "Bounty Hunters"
+		on kill
+			"midnight frontier snooping" --
+			fail
+	npc kill
+		to spawn
+			"combat rating" > 3000
+			random < 50
+		government "Bounty Hunter"
+		personality entering heroic coward nemesis
+		fleet "Bounty Hunters"
+		on kill
+			"midnight frontier snooping" --
+			fail
+	npc kill
+		to spawn
+			"combat rating" > 6000
+			random < 50
+		government "Bounty Hunter"
+		personality entering heroic coward nemesis
+		fleet "Bounty Hunters"
+		on kill
+			"midnight frontier snooping" --
+			fail
+	npc kill
+		to spawn
+			"combat rating" > 9000
+			random < 50
+		government "Bounty Hunter"
+		personality entering heroic coward nemesis
+		fleet "Bounty Hunters"
+		on kill
+			"midnight frontier snooping" --
+			fail
 
 
 mission "Midnight FW Convoy Defense [Bounty Hunters]"
@@ -1483,22 +1787,22 @@ mission "Midnight FW Convoy Defense [Bounty Hunters]"
 		personality nemesis waiting staying heroic
 		system destination
 		fleet "Hired Guns"
-		fleet "Bounty Hunters" 2
+		fleet "Bounty Hunters"
 	npc
 		government "Pirate"
-		personality nemesis harvests plunders
+		personality waiting nemesis harvests plunders
 		system destination
-		fleet "Large Southern Pirates"
 		fleet "Small Southern Pirates"
 	npc
 		government "Pirate"
-		personality nemesis harvests plunders
+		personality entering nemesis harvests plunders
 		fleet "Large Southern Pirates"
 	npc accompany save
 		government "Merchant"
 		personality escort timid
 		"cargo settings"
-			commodities "Ship Alloys" "Ship Systems" "Free Worlds Outfits"
+			cargo 3
+			commodities "Metal" "Heavy Metals" "Equipment" "Industrial"
 		fleet
 			names "civilian"
 			variant
@@ -1579,7 +1883,7 @@ mission "Midnight Grub Delivery"
 	deadline 1
 	name "Rush <commodity> Delivery"
 	description "Someone on <planet> ordered <cargo>. Deliver it by <date> or their order is free! Payment is <payment>."
-	cargo "Restaurant Food" 5 2 .1
+	cargo "Restaurant Food" 1
 	substitutions
 		"<celebration>" "birthday party"
 		"<celebration>" "retirement party"
@@ -1587,8 +1891,6 @@ mission "Midnight Grub Delivery"
 		"<celebration>" "potluck"
 		"<celebration>" "movie night"
 		"<celebration>" "game night"
-	to offer
-		random < 99
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "station"
@@ -1599,7 +1901,7 @@ mission "Midnight Grub Delivery"
 	on visit
 		dialog phrase "generic cargo on visit"
 	on complete
-		payment 4000
+		payment 1000
 		dialog "You deliver the <commodity> just in time for the client's <celebration>. <payment> is deposited into your account."
 
 
@@ -1608,21 +1910,17 @@ mission "Midnight Holiday Delivery Job [New Year]"
 	job
 	repeat
 	deadline
-	description "Deliver <cargo> to <destination> by January 1st in preparation for New Year's celebrations. Payment is <payment>."
+	description "Deliver <cargo> to <destination> by <date> in preparation for New Year's celebrations. Payment is <payment>."
 	cargo "New Year" 5 2 .1
 	to offer
 		random < 90
 		month == 12
-		day > 25
-	to fail
-		or
-			month < 12
-			day <= 25
+		day < 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 3
+		distance 10 15
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -1637,22 +1935,18 @@ mission "Midnight Holiday Bulk Delivery Job [New Year]"
 	job
 	repeat
 	deadline
-	description "Deliver <cargo> to <destination> by January 1st in preparation for New Year's celebrations. Payment is <payment>."
+	description "Deliver <cargo> to <destination> by <date> in preparation for New Year's celebrations. Payment is <payment>."
 	cargo "New Year" 20 6 .1
 	to offer
 		random < 90
 		"cargo space" >= 50
 		month == 12
-		day > 25
-	to fail
-		or
-			month < 12
-			day <= 25
+		day < 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 3
+		distance 10 15
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		attributes "urban"
 		not attributes "uninhabited"
@@ -1672,17 +1966,14 @@ mission "Midnight Holiday Delivery Job [Easter]"
 	cargo "Easter" 5 2 .1
 	to offer
 		random < 60
-		month >= 3
-		month <= 4
-	to fail
-		or
-			month < 3
-			month > 4
+		"cargo space" >= 50
+		month == 4
+		day < 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 7 16
+		distance 5 10
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -1702,17 +1993,13 @@ mission "Midnight Holiday Bulk Delivery Job [Easter]"
 	to offer
 		random < 60
 		"cargo space" >= 50
-		month >= 3
-		month <= 4
-	to fail
-		or
-			month < 3
-			month > 4
+		month == 4
+		day < 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 7 16
+		distance 5 10
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		attributes "urban"
 		not attributes "uninhabited"
@@ -1728,24 +2015,13 @@ mission "Midnight Holiday Delivery Job [Independence Day]"
 	job
 	repeat
 	deadline
-	description "Deliver <cargo> to <destination> by July 4th in preparation for Independence Day celebrations. Payment is <payment>."
+	description "Deliver <cargo> to <destination> by <date> in preparation for Independence Day celebrations. Payment is <payment>."
 	cargo "Independence Day" 5 2 .1
 	to offer
 		has "main plot completed"
 		random < 60
-		or
-			and
-				month == 6
-			and
-				month == 7
-				day < 4
-	to fail
-		or
-			month < 6
-			month > 7
-			and
-				month == 7
-				day > 4
+		month == 6
+		day > 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Free Worlds"
@@ -1765,25 +2041,14 @@ mission "Midnight Holiday Bulk Delivery Job [Independence Day]"
 	job
 	repeat
 	deadline
-	description "Deliver <cargo> to <destination> by July 4th in preparation for Independence Day celebrations. Payment is <payment>."
+	description "Deliver <cargo> to <destination> by <date> in preparation for Independence Day celebrations. Payment is <payment>."
 	cargo "Independence Day" 20 6 .1
 	to offer
 		has "main plot completed"
 		random < 60
 		"cargo space" >= 50
-		or
-			and
-				month == 6
-			and
-				month == 7
-				day < 4
-	to fail
-		or
-			month < 6
-			month > 7
-			and
-				month == 7
-				day > 4
+		month == 6
+		day > 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Free Worlds"
@@ -1804,14 +2069,12 @@ mission "Midnight Holiday Delivery Job [Christmas]"
 	job
 	repeat
 	deadline
-	description "Deliver <cargo> to <destination> by December 25th in preparation for Christmas celebrations. Payment is <payment>."
+	description "Deliver <cargo> to <destination> by <date> in preparation for Christmas celebrations. Payment is <payment>."
 	cargo "Christmas" 5 2 .1
 	to offer
 		random < 60
 		month == 12
-		day < 25
-	to fail
-		month < 12
+		day < 9
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
@@ -1831,15 +2094,13 @@ mission "Midnight Holiday Bulk Delivery Job [Christmas]"
 	job
 	repeat
 	deadline
-	description "Deliver <cargo> to <destination> by December 25th in preparation for Christmas celebrations. Payment is <payment>."
+	description "Deliver <cargo> to <destination> by <date> in preparation for Christmas celebrations. Payment is <payment>."
 	cargo "Christmas" 20 6 .1
 	to offer
 		random < 60
 		"cargo space" >= 50
 		month == 12
-		day < 25
-	to fail
-		month < 12
+		day < 9
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
@@ -1861,20 +2122,16 @@ mission "Midnight Holiday Passenger Job [New Year 1]"
 	job
 	repeat
 	deadline
-	description "Bring <fare> to <destination> by January 1st for New Year's celebrations. Payment is <payment>."
+	description "Bring <fare> to <destination> by <date> for New Year's celebrations. Payment is <payment>."
 	passengers 4 4 .5
 	to offer
 		random < 90
 		month == 12
-		day > 25
-	to fail
-		or
-			month < 12
-			day <= 25
+		day < 15
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 15
+		distance 10 15
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -1888,20 +2145,16 @@ mission "Midnight Holiday Passenger Job [New Year 2]"
 	job
 	repeat
 	deadline
-	description "Bring <fare> to <destination> by January 1st for New Year's celebrations. Payment is <payment>."
+	description "Bring <fare> to <destination> by <date> for New Year's celebrations. Payment is <payment>."
 	passengers 15 5 .1
 	to offer
 		random < 90
 		month == 12
-		day > 25
-	to fail
-		or
-			month < 12
-			day <= 25
+		day < 15
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 15
+		distance 10 15
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -1919,17 +2172,13 @@ mission "Midnight Holiday Passenger Job [Easter 1]"
 	passengers 4 4 .5
 	to offer
 		random < 60
-		month >= 3
-		month <= 4
-	to fail
-		or
-			month < 3
-			month > 4
+		month == 4
+		day <= 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 15
+		distance 5 10
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -1947,17 +2196,13 @@ mission "Midnight Holiday Passenger Job [Easter 2]"
 	passengers 15 5 .1
 	to offer
 		random < 60
-		month >= 3
-		month <= 4
-	to fail
-		or
-			month < 3
-			month > 4
+		month == 4
+		day <= 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 15
+		distance 5 10
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		attributes "urban"
 		not attributes "uninhabited"
@@ -1972,29 +2217,18 @@ mission "Midnight Holiday Passenger Job [Independence Day 1]"
 	job
 	repeat
 	deadline
-	description "Bring <fare> to <destination> by July 4th for Independence Day celebrations. Payment is <payment>."
+	description "Bring <fare> to <destination> by <date> for Independence Day celebrations. Payment is <payment>."
 	passengers 4 4 .5
 	to offer
 		has "main plot completed"
 		random < 60
-		or
-			and
-				month == 6
-			and
-				month == 7
-				day < 4
-	to fail
-		or
-			month < 6
-			month > 7
-			and
-				month == 7
-				day > 4
+		month == 6
+		day < 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Free Worlds"
 	destination
-		distance 1 15
+		distance 10 15
 		government "Free Worlds"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -2008,29 +2242,18 @@ mission "Midnight Holiday Passenger Job [Independence Day 2]"
 	job
 	repeat
 	deadline
-	description "Bring <fare> to <destination> by July 4th for Independence Day celebrations. Payment is <payment>."
+	description "Bring <fare> to <destination> by <date> for Independence Day celebrations. Payment is <payment>."
 	passengers 15 5 .1
 	to offer
 		has "main plot completed"
 		random < 60
-		or
-			and
-				month == 6
-			and
-				month == 7
-				day < 4
-	to fail
-		or
-			month < 6
-			month > 7
-			and
-				month == 7
-				day > 4
+		month == 6
+		day < 15
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Free Worlds"
 	destination
-		distance 1 15
+		distance 10 15
 		government "Free Worlds"
 		attributes "urban"
 		not attributes "uninhabited"
@@ -2045,20 +2268,17 @@ mission "Midnight Holiday Passenger Job [Christmas 1]"
 	job
 	repeat
 	deadline
-	description "Bring <fare> to <destination> by December 25th for Christmas celebrations. Payment is <payment>."
+	description "Bring <fare> to <destination> by <date> for Christmas celebrations. Payment is <payment>."
 	passengers 4 4 .5
 	to offer
 		random < 60
 		month == 12
-		day < 25
-	to fail
-		or
-			month < 12
+		day < 9
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 15
+		distance 7 15
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		not attributes "urban" "uninhabited"
 	on visit
@@ -2072,20 +2292,17 @@ mission "Midnight Holiday Passenger Job [Christmas 2]"
 	job
 	repeat
 	deadline
-	description "Bring <fare> to <destination> by December 25th for Christmas celebrations. Payment is <payment>."
+	description "Bring <fare> to <destination> by <date> for Christmas celebrations. Payment is <payment>."
 	passengers 15 5 .1
 	to offer
 		random < 60
 		month == 12
-		day < 25
-	to fail
-		or
-			month < 12
+		day < 9
 	source
 		attributes "mining" "textiles" "factory" "farming" "fishing" "oil"
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
-		distance 1 15
+		distance 7 15
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 		attributes "urban"
 		not attributes "uninhabited"
@@ -2096,6 +2313,2625 @@ mission "Midnight Holiday Passenger Job [Christmas 2]"
 		dialog phrase "generic passenger dropoff payment"
 
 
+mission "Midnight Independent Humanitarian Job (small)"
+	job
+	repeat
+	name "Emergency Supplies to <planet>"
+	description "Bring <cargo> to the lawless world of <destination>, to help alleviate a natural disaster."
+	cargo "emergency supplies" 25
+	to offer
+		or
+			has "Midnight Independent Humanitarian: done"
+			has "Humanitarian 1: done"
+			has "Humanitarian 2: done"
+		random < 15
+		"combat rating" > 0
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+	destination
+		government "Pirate" "Independent"
+		distance 2 10
+	clearance
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 25000
+		"reputation: Independent" += 3
+		dialog
+			`It takes a while to figure out who exactly is in charge here. You sell off parts of your shipment of food to a few different local leaders, receiving <payment> in exchange.`
+
+mission "Midnight Independent Humanitarian Job (medium)"
+	job
+	repeat
+	name "Emergency Supplies to <planet>"
+	description "Bring <cargo> to the lawless world of <destination>, to help alleviate a natural disaster."
+	cargo "emergency supplies" 50
+	to offer
+		or
+			has "Midnight Independent Humanitarian: done"
+			has "Humanitarian 1: done"
+			has "Humanitarian 2: done"
+		random < 10
+		"combat rating" > 0
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+	destination
+		government "Pirate" "Independent"
+		distance 2 10
+	clearance
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 50000
+		"reputation: Independent" += 5
+		dialog
+			`It takes a while to figure out who exactly is in charge here. You sell off parts of your shipment of food to a few different local leaders, receiving <payment> in exchange.`
+
+mission "Midnight Independent Humanitarian Job (large)"
+	job
+	repeat
+	name "Emergency Supplies to <planet>"
+	description "Bring <cargo> to the lawless world of <destination>, to help alleviate a natural disaster."
+	cargo "emergency supplies" 75
+	to offer
+		or
+			has "Midnight Independent Humanitarian: done"
+			has "Humanitarian 1: done"
+			has "Humanitarian 2: done"
+		random < 5
+		"combat rating" > 0
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+	destination
+		government "Pirate" "Independent"
+		distance 2 10
+	clearance
+	on visit
+		dialog phrase "generic cargo on visit"
+	on complete
+		payment
+		payment 75000
+		"reputation: Independent" += 7
+		dialog
+			`It takes a while to figure out who exactly is in charge here. You sell off parts of your shipment of food to a few different local leaders, receiving <payment> in exchange.`
+
+
+mission "Midnighit Ingots: Silicon [small]"
+	job
+	deadline 30
+	repeat
+	name "Silicon Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Silicon. Deliver 10 Silicon Ingots by <date>. Payment is <payment>, 25% above the retail rate for Silicon Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Silicon Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Silicon Ingot" -10
+		payment 40000
+		dialog `The manufacturers on <planet> accept your delivery of Silicon and pay you <payment>.`
+
+mission "Midnighit Ingots: Silicon"
+	job
+	deadline 30
+	repeat
+	name "Silicon Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Silicon. Deliver 20 Silicon Ingots by <date>. Payment is <payment>, 25% above the retail rate for Silicon Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Silicon Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Silicon Ingot" -20
+		payment 80000
+		dialog `The manufacturers on <planet> accept your delivery of Silicon and pay you <payment>.`
+
+mission "Midnighit Ingots: Silicon [large]"
+	job
+	deadline 30
+	repeat
+	name "Silicon Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Silicon. Deliver 30 Silicon Ingots by <date>. Payment is <payment>, 25% above the retail rate for Silicon Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Silicon Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Silicon Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Silicon Ingot" -30
+		payment 120000
+		dialog `The manufacturers on <planet> accept your delivery of Silicon and pay you <payment>.`
+
+mission "Midnighit Ingots: Lead [small]"
+	job
+	deadline 30
+	repeat
+	name "Lead Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Lead. Deliver 10 Lead Ingots by <date>. Payment is <payment>, 25% above the retail rate for Lead Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Lead Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Lead Ingot" -10
+		payment 90000
+		dialog `The manufacturers on <planet> accept your delivery of Lead and pay you <payment>.`
+
+mission "Midnighit Ingots: Lead"
+	job
+	deadline 30
+	repeat
+	name "Lead Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Lead. Deliver 20 Lead Ingots by <date>. Payment is <payment>, 25% above the retail rate for Lead Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Lead Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Lead Ingot" -20
+		payment 180000
+		dialog `The manufacturers on <planet> accept your delivery of Lead and pay you <payment>.`
+
+mission "Midnighit Ingots: Lead [large]"
+	job
+	deadline 30
+	repeat
+	name "Lead Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Lead. Deliver 30 Lead Ingots by <date>. Payment is <payment>, 25% above the retail rate for Lead Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Lead Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Lead Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Lead Ingot" -30
+		payment 270000
+		dialog `The manufacturers on <planet> accept your delivery of Lead and pay you <payment>.`
+
+mission "Midnighit Ingots: Iron [small]"
+	job
+	deadline 30
+	repeat
+	name "Iron Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Iron. Deliver 10 Iron Ingots by <date>. Payment is <payment>, 25% above the retail rate for Iron Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Iron Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Iron Ingot" -10
+		payment 120000
+		dialog `The manufacturers on <planet> accept your delivery of Iron and pay you <payment>.`
+
+mission "Midnighit Ingots: Iron"
+	job
+	deadline 30
+	repeat
+	name "Iron Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Iron. Deliver 20 Iron Ingots by <date>. Payment is <payment>, 25% above the retail rate for Iron Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Iron Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Iron Ingot" -20
+		payment 240000
+		dialog `The manufacturers on <planet> accept your delivery of Iron and pay you <payment>.`
+
+mission "Midnighit Ingots: Iron [large]"
+	job
+	deadline 30
+	repeat
+	name "Iron Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Iron. Deliver 30 Iron Ingots by <date>. Payment is <payment>, 25% above the retail rate for Iron Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Iron Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Iron Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Iron Ingot" -30
+		payment 360000
+		dialog `The manufacturers on <planet> accept your delivery of Iron and pay you <payment>.`
+
+mission "Midnighit Ingots: Pyrite [small]"
+	job
+	deadline 30
+	repeat
+	name "Pyrite Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Pyrite. Deliver 10 Pyrite Ingots by <date>. Payment is <payment>, 25% above the retail rate for Pyrite Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Pyrite Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Pyrite Ingot" -10
+		payment 150000
+		dialog `The manufacturers on <planet> accept your delivery of Pyrite and pay you <payment>.`
+
+mission "Midnighit Ingots: Pyrite"
+	job
+	deadline 30
+	repeat
+	name "Pyrite Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Pyrite. Deliver 20 Pyrite Ingots by <date>. Payment is <payment>, 25% above the retail rate for Pyrite Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Pyrite Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Pyrite Ingot" -20
+		payment 300000
+		dialog `The manufacturers on <planet> accept your delivery of Pyrite and pay you <payment>.`
+
+mission "Midnighit Ingots: Pyrite [large]"
+	job
+	deadline 30
+	repeat
+	name "Pyrite Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Pyrite. Deliver 30 Pyrite Ingots by <date>. Payment is <payment>, 25% above the retail rate for Pyrite Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Pyrite Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Pyrite Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Pyrite Ingot" -30
+		payment 450000
+		dialog `The manufacturers on <planet> accept your delivery of Pyrite and pay you <payment>.`
+
+mission "Midnighit Ingots: Aluminum [small]"
+	job
+	deadline 30
+	repeat
+	name "Aluminum Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Aluminum. Deliver 10 Aluminum Ingots by <date>. Payment is <payment>, 25% above the retail rate for Aluminum Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Aluminum Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Aluminum Ingot" -10
+		payment 180000
+		dialog `The manufacturers on <planet> accept your delivery of Aluminum and pay you <payment>.`
+
+mission "Midnighit Ingots: Aluminum"
+	job
+	deadline 30
+	repeat
+	name "Aluminum Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Aluminum. Deliver 20 Aluminum Ingots by <date>. Payment is <payment>, 25% above the retail rate for Aluminum Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Aluminum Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Aluminum Ingot" -20
+		payment 360000
+		dialog `The manufacturers on <planet> accept your delivery of Aluminum and pay you <payment>.`
+
+mission "Midnighit Ingots: Aluminum [large]"
+	job
+	deadline 30
+	repeat
+	name "Aluminum Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Aluminum. Deliver 30 Aluminum Ingots by <date>. Payment is <payment>, 25% above the retail rate for Aluminum Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Aluminum Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Aluminum Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Aluminum Ingot" -30
+		payment 540000
+		dialog `The manufacturers on <planet> accept your delivery of Aluminum and pay you <payment>.`
+
+mission "Midnighit Ingots: Titanium [small]"
+	job
+	deadline 30
+	repeat
+	name "Titanium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Titanium. Deliver 10 Titanium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Titanium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Titanium Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Titanium Ingot" -10
+		payment 250000
+		dialog `The manufacturers on <planet> accept your delivery of Titanium and pay you <payment>.`
+
+mission "Midnighit Ingots: Titanium"
+	job
+	deadline 30
+	repeat
+	name "Titanium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Titanium. Deliver 20 Titanium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Titanium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Titanium Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Titanium Ingot" -20
+		payment 500000
+		dialog `The manufacturers on <planet> accept your delivery of Titanium and pay you <payment>.`
+
+mission "Midnighit Ingots: Titanium [large]"
+	job
+	deadline 30
+	repeat
+	name "Titanium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Titanium. Deliver 30 Titanium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Titanium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Titanium Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Titanium Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Titanium Ingot" -30
+		payment 750000
+		dialog `The manufacturers on <planet> accept your delivery of Titanium and pay you <payment>.`
+
+mission "Midnighit Ingots: Copper [small]"
+	job
+	deadline 30
+	repeat
+	name "Copper Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Copper. Deliver 10 Copper Ingots by <date>. Payment is <payment>, 25% above the retail rate for Copper Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Copper Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Copper Ingot" -10
+		payment 300000
+		dialog `The manufacturers on <planet> accept your delivery of Copper and pay you <payment>.`
+
+mission "Midnighit Ingots: Copper"
+	job
+	deadline 30
+	repeat
+	name "Copper Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Copper. Deliver 20 Copper Ingots by <date>. Payment is <payment>, 25% above the retail rate for Copper Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Copper Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Copper Ingot" -20
+		payment 600000
+		dialog `The manufacturers on <planet> accept your delivery of Copper and pay you <payment>.`
+
+mission "Midnighit Ingots: Copper [large]"
+	job
+	deadline 30
+	repeat
+	name "Copper Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Copper. Deliver 30 Copper Ingots by <date>. Payment is <payment>, 25% above the retail rate for Copper Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Copper Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Copper Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Copper Ingot" -30
+		payment 900000
+		dialog `The manufacturers on <planet> accept your delivery of Copper and pay you <payment>.`
+
+mission "Midnighit Ingots: Neodymium [small]"
+	job
+	deadline 30
+	repeat
+	name "Neodymium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Neodymium. Deliver 10 Neodymium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Neodymium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Neodymium Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Neodymium Ingot" -10
+		payment 380000
+		dialog `The manufacturers on <planet> accept your delivery of Neodymium and pay you <payment>.`
+
+mission "Midnighit Ingots: Neodymium"
+	job
+	deadline 30
+	repeat
+	name "Neodymium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Neodymium. Deliver 20 Neodymium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Neodymium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Neodymium Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Neodymium Ingot" -20
+		payment 760000
+		dialog `The manufacturers on <planet> accept your delivery of Neodymium and pay you <payment>.`
+
+mission "Midnighit Ingots: Neodymium [large]"
+	job
+	deadline 30
+	repeat
+	name "Neodymium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Neodymium. Deliver 30 Neodymium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Neodymium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Neodymium Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Neodymium Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Neodymium Ingot" -30
+		payment 1140000
+		dialog `The manufacturers on <planet> accept your delivery of Neodymium and pay you <payment>.`
+
+mission "Midnighit Ingots: Tungsten [small]"
+	job
+	deadline 30
+	repeat
+	name "Tungsten Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Tungsten. Deliver 10 Tungsten Ingots by <date>. Payment is <payment>, 25% above the retail rate for Tungsten Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Tungsten Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Tungsten Ingot" -10
+		payment 450000
+		dialog `The manufacturers on <planet> accept your delivery of Tungsten and pay you <payment>.`
+
+mission "Midnighit Ingots: Tungsten"
+	job
+	deadline 30
+	repeat
+	name "Tungsten Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Tungsten. Deliver 20 Tungsten Ingots by <date>. Payment is <payment>, 25% above the retail rate for Tungsten Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Tungsten Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Tungsten Ingot" -20
+		payment 900000
+		dialog `The manufacturers on <planet> accept your delivery of Tungsten and pay you <payment>.`
+
+mission "Midnighit Ingots: Tungsten [large]"
+	job
+	deadline 30
+	repeat
+	name "Tungsten Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Tungsten. Deliver 30 Tungsten Ingots by <date>. Payment is <payment>, 25% above the retail rate for Tungsten Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Tungsten Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Tungsten Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Tungsten Ingot" -30
+		payment 1350000
+		dialog `The manufacturers on <planet> accept your delivery of Tungsten and pay you <payment>.`
+
+mission "Midnighit Ingots: Uranium [small]"
+	job
+	deadline 30
+	repeat
+	name "Uranium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Uranium. Deliver 10 Uranium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Uranium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Uranium Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Uranium Ingot" -10
+		payment 500000
+		dialog `The manufacturers on <planet> accept your delivery of Uranium and pay you <payment>.`
+
+mission "Midnighit Ingots: Uranium"
+	job
+	deadline 30
+	repeat
+	name "Uranium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Uranium. Deliver 20 Uranium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Uranium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Uranium Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Uranium Ingot" -20
+		payment 1000000
+		dialog `The manufacturers on <planet> accept your delivery of Uranium and pay you <payment>.`
+
+mission "Midnighit Ingots: Uranium [large]"
+	job
+	deadline 30
+	repeat
+	name "Uranium Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Uranium. Deliver 30 Uranium Ingots by <date>. Payment is <payment>, 25% above the retail rate for Uranium Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Uranium Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Uranium Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Uranium Ingot" -30
+		payment 1500000
+		dialog `The manufacturers on <planet> accept your delivery of Uranium and pay you <payment>.`
+
+mission "Midnighit Ingots: Silver [small]"
+	job
+	deadline 30
+	repeat
+	name "Silver Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Silver. Deliver 10 Silver Ingots by <date>. Payment is <payment>, 25% above the retail rate for Silver Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Silver Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Silver Ingot" -10
+		payment 600000
+		dialog `The manufacturers on <planet> accept your delivery of Silver and pay you <payment>.`
+
+mission "Midnighit Ingots: Silver"
+	job
+	deadline 30
+	repeat
+	name "Silver Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Silver. Deliver 20 Silver Ingots by <date>. Payment is <payment>, 25% above the retail rate for Silver Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Silver Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Silver Ingot" -20
+		payment 1200000
+		dialog `The manufacturers on <planet> accept your delivery of Silver and pay you <payment>.`
+
+mission "Midnighit Ingots: Silver [large]"
+	job
+	deadline 30
+	repeat
+	name "Silver Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Silver. Deliver 30 Silver Ingots by <date>. Payment is <payment>, 25% above the retail rate for Silver Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Silver Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Silver Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		"mining jobs done" ++
+		outfit "Silver Ingot" -30
+		payment 1800000
+		dialog `The manufacturers on <planet> accept your delivery of Silver and pay you <payment>.`
+
+mission "Midnighit Ingots: Gold [small]"
+	job
+	deadline 30
+	repeat
+	name "Gold Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Gold. Deliver 10 Gold Ingots by <date>. Payment is <payment>, 25% above the retail rate for Gold Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Gold Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		outfit "Gold Ingot" -10
+		payment 800000
+		dialog `The manufacturers on <planet> accept your delivery of Gold and pay you <payment>.`
+
+mission "Midnighit Ingots: Gold"
+	job
+	deadline 30
+	repeat
+	name "Gold Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Gold. Deliver 20 Gold Ingots by <date>. Payment is <payment>, 25% above the retail rate for Gold Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Gold Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		outfit "Gold Ingot" -20
+		payment 1600000
+		dialog `The manufacturers on <planet> accept your delivery of Gold and pay you <payment>.`
+
+mission "Midnighit Ingots: Gold [large]"
+	job
+	deadline 30
+	repeat
+	name "Gold Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Gold. Deliver 30 Gold Ingots by <date>. Payment is <payment>, 25% above the retail rate for Gold Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Gold Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Gold Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		outfit "Gold Ingot" -30
+		payment 2400000
+		dialog `The manufacturers on <planet> accept your delivery of Gold and pay you <payment>.`
+
+mission "Midnighit Ingots: Platinum [small]"
+	job
+	deadline 30
+	repeat
+	name "Platinum Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Platinum. Deliver 10 Platinum Ingots by <date>. Payment is <payment>, 25% above the retail rate for Platinum Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Platinum Ingot" >= 10
+			random < 10
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		outfit "Platinum Ingot" -10
+		payment 1000000
+		dialog `The manufacturers on <planet> accept your delivery of Platinum and pay you <payment>.`
+
+mission "Midnighit Ingots: Platinum"
+	job
+	deadline 30
+	repeat
+	name "Platinum Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Platinum. Deliver 20 Platinum Ingots by <date>. Payment is <payment>, 25% above the retail rate for Platinum Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Platinum Ingot" >= 20
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		outfit "Platinum Ingot" -20
+		payment 2000000
+		dialog `The manufacturers on <planet> accept your delivery of Platinum and pay you <payment>.`
+
+mission "Midnighit Ingots: Platinum [large]"
+	job
+	deadline 30
+	repeat
+	name "Platinum Ingots to <system>"
+	description "Manufacturers on <destination> have a shortage of Platinum. Deliver 30 Platinum Ingots by <date>. Payment is <payment>, 25% above the retail rate for Platinum Ingots."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes factory manufacturing
+		not attributes mining
+	to offer
+		random < 1
+	npc
+		to spawn
+			"outfit: Platinum Ingot" >= 30
+			random < 20
+		government "Pirate (Rivals)"
+		system destination
+		personality entering heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	npc
+		to spawn
+			"outfit: Platinum Ingot" >= 30
+			random < 30
+		government "Pirate (Rivals)"
+		system destination
+		personality waiting staying heroic plunders harvests coward
+			confusion 20
+		fleet "pirate raid"
+	on complete
+		outfit "Platinum Ingot" -30
+		payment 3000000
+		dialog `The manufacturers on <planet> accept your delivery of Platinum and pay you <payment>.`
+
+
+mission "Midnight Pirate Crew Smuggling (North, Tiny)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -1000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 150 250
+	passengers 2 3
+	source
+		government "Pirate" "Scar's Legion"
+		attributes "north"
+	destination
+		government "Pirate"
+		attributes "south" "core" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Republic" >= 0
+		"reputation: Pirate" >= -10
+		random < 20
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic small"
+			fighters
+				names "republic fighter"
+			cargo 0
+			variant 1
+				"Gunboat"
+	on abort
+		"reputation: Pirate" --
+	on complete
+		payment 500000
+		"reputation: Pirate" ++
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (North, Small)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -2000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 250 750
+	passengers 4 12
+	source
+		government "Pirate" "Scar's Legion"
+		attributes "north"
+	destination
+		government "Pirate"
+		attributes "south" "core" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Republic" >= 0
+		"reputation: Pirate" >= -10
+		random < 15
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic small"
+			cargo 0
+			variant 1
+				"Gunboat" 2
+	on abort
+		"reputation: Pirate" -= 5
+	on complete
+		payment 1000000
+		"reputation: Pirate" += 5
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (North, Medium)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -4000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 750 1000
+	passengers 10 20
+	source
+		government "Pirate" "Scar's Legion"
+		attributes "north"
+	destination
+		government "Pirate"
+		attributes "south" "core" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Republic" >= 0
+		"reputation: Pirate" >= -10
+		random < 10
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic small"
+			cargo 0
+			variant 1
+				"Gunboat"
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic small"
+			cargo 0
+			variant 1
+				"Gunboat"
+	on abort
+		"reputation: Pirate" -= 10
+	on complete
+		payment 2000000
+		"reputation: Pirate" += 10
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (North, Large)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -8000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1000 2000
+	passengers 20 40
+	source
+		government "Pirate" "Scar's Legion"
+		attributes "north"
+	destination
+		government "Pirate"
+		attributes "south" "core" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Republic" >= 0
+		"reputation: Pirate" >= -10
+		random < 5
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			cargo 0
+			variant 1
+				"Cruiser"
+				"Surveillance Drone" 4
+	on abort
+		"reputation: Pirate" -= 20
+	on complete
+		payment 4000000
+		"reputation: Pirate" += 20
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (North, Huge)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -16000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1500 3000
+	passengers 40 80
+	source
+		government "Pirate" "Scar's Legion"
+		attributes "north"
+	destination
+		government "Pirate"
+		attributes "south" "core" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Republic" >= 0
+		"reputation: Pirate" >= -10
+		random < 1
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic fighter"
+			cargo 0
+			variant 1
+				"Cruiser"
+				"Surveillance Drone" 4
+	npc evade
+		government "Republic"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "republic capital"
+			fighters
+				names "republic small"
+			cargo 0
+			variant 1
+				"Gunboat" 2
+	on abort
+		"reputation: Pirate" -= 40
+	on complete
+		payment 8000000
+		"reputation: Pirate" += 40
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+
+mission "Midnight Pirate Crew Smuggling (Core, Tiny)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -1000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 150 250
+	passengers 2 3
+	source
+		government "Pirate"
+		attributes "core"
+	destination
+		government "Pirate"
+		attributes "south" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Syndicate" >= 0
+		"reputation: Pirate" >= -10
+		random < 20
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)"
+	on abort
+		"reputation: Pirate" --
+	on complete
+		payment 500000
+		"reputation: Pirate" ++
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Core, Small)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -2000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 250 750
+	passengers 4 12
+	source
+		government "Pirate"
+		attributes "core"
+	destination
+		government "Pirate"
+		attributes "south" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Syndicate" >= 0
+		"reputation: Pirate" >= -10
+		random < 15
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 3
+	on abort
+		"reputation: Pirate" -= 5
+	on complete
+		payment 1000000
+		"reputation: Pirate" += 5
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Core, Medium)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -4000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 750 1000
+	passengers 10 20
+	source
+		government "Pirate"
+		attributes "core"
+	destination
+		government "Pirate"
+		attributes "south" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Syndicate" >= 0
+		random < 10
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 5
+	on abort
+		"reputation: Pirate" -= 10
+	on complete
+		payment 2000000
+		"reputation: Pirate" += 10
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Core, Large)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -8000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1000 2000
+	passengers 20 40
+	source
+		government "Pirate"
+		attributes "core"
+	destination
+		government "Pirate"
+		attributes "south" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Syndicate" >= 0
+		"reputation: Pirate" >= -10
+		random < 5
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 3
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 3
+	on abort
+		"reputation: Pirate" -= 20
+	on complete
+		payment 4000000
+		"reputation: Pirate" += 20
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Core, Huge)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -16000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1500 3000
+	passengers 40 80
+	source
+		government "Pirate"
+		attributes "core"
+	destination
+		government "Pirate"
+		attributes "south" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Syndicate" >= 0
+		"reputation: Pirate" >= -10
+		random < 1
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 2
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 2
+	npc evade
+		government "Syndicate"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "syndicate small"
+			cargo 0
+			variant 1
+				"Quicksilver (Scanner)" 2
+	on abort
+		"reputation: Pirate" -= 40
+	on complete
+		payment 8000000
+		"reputation: Pirate" += 40
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+
+mission "Midnight Pirate Crew Smuggling (South, Tiny)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -1000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 150 250
+	passengers 2 3
+	source
+		government "Pirate"
+		attributes "south"
+	destination
+		government "Pirate"
+		attributes "core" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Militia" >= 0
+		"reputation: Pirate" >= -10
+		random < 20
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia small"
+			cargo 0
+			variant 1
+				"Sparrow (Patrol)"
+	on abort
+		"reputation: Pirate" --
+	on complete
+		payment 500000
+		"reputation: Pirate" ++
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (South, Small)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -2000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 250 750
+	passengers 4 12
+	source
+		government "Pirate"
+		attributes "south"
+	destination
+		government "Pirate"
+		attributes "core" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Militia" >= 0
+		"reputation: Pirate" >= -10
+		random < 15
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia small"
+			cargo 0
+			variant 1
+				"Sparrow (Patrol)" 2
+	on abort
+		"reputation: Pirate" -= 5
+	on complete
+		payment 1000000
+		"reputation: Pirate" += 5
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (South, Medium)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -4000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 750 1000
+	passengers 10 20
+	source
+		government "Pirate"
+		attributes "south"
+	destination
+		government "Pirate"
+		attributes "core" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Militia" >= 0
+		"reputation: Pirate" >= -10
+		random < 10
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia small"
+			cargo 0
+			variant 1
+				"Sparrow (Patrol)"
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia small"
+			cargo 0
+			variant 1
+				"Sparrow (Patrol)"
+	on abort
+		"reputation: Pirate" -= 10
+	on complete
+		payment 2000000
+		"reputation: Pirate" += 10
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (South, Large)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -8000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1000 2000
+	passengers 20 40
+	source
+		government "Pirate"
+		attributes "south"
+	destination
+		government "Pirate"
+		attributes "core" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Militia" >= 0
+		"reputation: Pirate" >= -10
+		random < 5
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia capital"
+			cargo 0
+			variant 1
+				"Bastion (Scanner)"
+	on abort
+		"reputation: Pirate" -= 20
+	on complete
+		payment 4000000
+		"reputation: Pirate" += 20
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (South, Huge)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -16000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1500 3000
+	passengers 40 80
+	source
+		government "Pirate"
+		attributes "south"
+	destination
+		government "Pirate"
+		attributes "core" "north" "dirt belt"
+		attributes "shipyard"
+	to offer
+		"reputation: Militia" >= 0
+		"reputation: Pirate" >= -10
+		random < 1
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia capital"
+			cargo 0
+			variant 1
+				"Bastion (Scanner)"
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia small"
+			cargo 0
+			variant 1
+				"Sparrow (Patrol)"
+	npc evade
+		government "Militia"
+		system
+			distance 3 4
+		personality waiting surveillance heroic
+		fleet
+			names "militia small"
+			cargo 0
+			variant 1
+				"Sparrow (Patrol)"
+	on abort
+		"reputation: Pirate" -= 40
+	on complete
+		payment 8000000
+		"reputation: Pirate" += 40
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+
+mission "Midnight Pirate Crew Smuggling (Dirt Belt, Tiny)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -1000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 150 250
+	passengers 2 3
+	source
+		government "Pirate"
+		attributes "dirt belt"
+	destination
+		government "Pirate"
+		attributes "core" "north" "south"
+		attributes "shipyard"
+	to offer
+		"reputation: Pirate" >= 0
+		random < 20
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	on abort
+		"reputation: Pirate" --
+	on complete
+		payment 500000
+		"reputation: Pirate" ++
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Dirt Belt, Small)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -2000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 250 750
+	passengers 4 12
+	source
+		government "Pirate"
+		attributes "dirt belt"
+	destination
+		government "Pirate"
+		attributes "core" "north" "south"
+		attributes "shipyard"
+	to offer
+		"reputation: Pirate" >= 0
+		random < 15
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid (rivals)"
+	on abort
+		"reputation: Pirate" -= 5
+	on complete
+		payment 1000000
+		"reputation: Pirate" += 5
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Dirt Belt, Medium)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -4000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 750 1000
+	passengers 10 20
+	source
+		government "Pirate"
+		attributes "dirt belt"
+	destination
+		government "Pirate"
+		attributes "core" "north" "south"
+		attributes "shipyard"
+	to offer
+		"reputation: Pirate" >= 0
+		random < 10
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid (rivals)"
+	on abort
+		"reputation: Pirate" -= 10
+	on complete
+		payment 2000000
+		"reputation: Pirate" += 10
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Dirt Belt, Large)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -8000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1000 2000
+	passengers 20 40
+	source
+		government "Pirate"
+		attributes "dirt belt"
+	destination
+		government "Pirate"
+		attributes "core" "north" "south"
+		attributes "shipyard"
+	to offer
+		"reputation: Pirate" >= 0
+		random < 5
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid (rivals)"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid (rivals)"
+	on abort
+		"reputation: Pirate" -= 20
+	on complete
+		payment 4000000
+		"reputation: Pirate" += 20
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+mission "Midnight Pirate Crew Smuggling (Dirt Belt, Huge)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	deadline
+	repeat
+	name "Pirate Trafficking to <planet>"
+	description "Smuggle <bunks> pirates and the <tons> of parts for their ship to <destination>. Being caught smuggling a pirate crew and their ship will make you a wanted criminal. Payment is <payment>."
+	illegal -16000000 "Being caught smuggling a pirate crew and their ship has caused you to be regarded as a pirate yourself by the local authorities..."
+	cargo "ship parts" 1500 3000
+	passengers 40 80
+	source
+		government "Pirate"
+		attributes "dirt belt"
+	destination
+		government "Pirate"
+		attributes "core" "north" "south"
+		attributes "shipyard"
+	to offer
+		"reputation: Pirate" >= 0
+		random < 5
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid (rivals)"
+	npc evade
+		government "Pirate (Rivals)"
+		system
+			distance 3 4
+		personality waiting vindictive heroic
+		fleet "pirate raid (rivals)"
+	on abort
+		"reputation: Pirate" -= 40
+	on complete
+		payment 8000000
+		"reputation: Pirate" += 40
+		dialog "The pirates pay you <payment> as soon as you land. They waste no time unloading the parts of their ship for reassembly."
+
+
+mission "Midnight Poker"
+	job
+	repeat
+	deadline 2
+	name "Wanted: Poker Players"
+	description `"Ongoing poker game at the bar. Serious players only." Might be a chance to get some easy credits, or lose them...`
+	source
+		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
+		attributes "pirate"
+		not attributes uninhabited
+	to offer
+		"credits" >= 100000
+		random < 50
+	on accept
+		clear pokerscore
+		conversation
+			`You find the group of poker players at the bar.`
+			choice
+				`	"Deal me in."`
+					goto game
+				`	(Forget it.)`
+					decline
+			label game
+			action
+				payment -10000
+				pokerscore -= 10000
+			`	Everyone addss 10,000 credits to the pot. The cards are shuffled and dealt out...`
+			branch pair
+				random < 90
+			scene "scene/scene-pokerjunk"
+			`	After exchanging some cards to improve your hand, you wind up with junk. You could raise 10,000 more credits and try to bluff your way to a win, but the odds are against you...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+					goto bluffhigh
+				`	"Fold."`
+			label fold
+			branch bust
+				"credits" <= 10000
+			`	You forfeit this round. Play again?`
+			label replay
+			branch jackpot
+				pokerscore >= 100000
+			branch bust
+				"credits" <= 10000
+			scene "outfit/unknown"
+			choice
+				`	(Play again.)`
+					goto game
+				`	(Quit.)`
+					decline
+			label bluffhigh
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch bluffhighwin
+				random < 10
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label bluffhighwin
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Luckily, everyone else decided to fold and you win with the high card! You gain 50,000 credits.`
+				goto replay
+			label pair
+			branch twopair
+				random < 80
+			scene "scene/scene-pokerpair"
+			`	After exchanging some cards to improve your hand, you wind up with a single pair. You could raise 10,000 more credits and try to bluff your way to a win, but the odds are against you...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Fold." (forfeit this hand.)`
+					goto fold
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch bluffpairwin
+				random < 20
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label bluffpairwin
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Luckily, everyone else decided to fold and you win with a single pair! You gain 50,000 credits.`
+				goto replay
+			label twopair
+			branch threeofakind
+				random < 70
+			scene "scene/scene-pokertwopair"
+			`	After exchanging some cards to improve your hand, you wind up with two pairs. You could raise 10,000 more credits and try to bluff your way to a win, but the odds are against you...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Fold." (forfeit this hand.)`
+					goto fold
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch blufftwopairwin
+				random < 30
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label blufftwopairwin
+			action
+				payment 80000
+				pokerscore += 80000
+			`	Amazingly, everyone's hand was worse and you win with two pairs! You gain 80,000 credits.`
+				goto replay
+			label threeofakind
+			branch straight
+				random < 60
+			scene "scene/scene-pokerthreeofakind"
+			`	After exchanging some cards to improve your hand, you wind up with three of a kind. It's a decent hand, but there are stronger ones. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callthreeofakind
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch bluffthreeofakindwin
+				random < 40
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label bluffthreeofakindwin
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Luckily, everyone else decided to fold and you win with three of a kind! You gain 50,000 credits.`
+				goto replay
+			label callthreeofakind
+			branch callthreeofakindwin
+				random < 60
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label callthreeofakindwin
+			action
+				payment 40000
+				pokerscore += 40000
+			`	Luckily, everyone's hand was worse and you win with three of a kind! You gain 40,000 credits.`
+				goto replay
+			label straight
+			branch flush
+				random < 50
+			scene "scene/scene-pokerstraight"
+			`	After exchanging some cards to improve your hand, you wind up with a straight. It's a decent hand, but there are stronger ones. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callstraight
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch bluffstraightwin
+				random < 50
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label bluffstraightwin
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Luckily, everyone else decided to fold and you win with a straight! You gain 50,000 credits.`
+				goto replay
+			label callstraight
+			branch callstraightwin
+				random < 50
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label callstraightwin
+			action
+				payment 40000
+				pokerscore += 40000
+			`	Luckily, everyone's hand was worse and you win with a straight! You gain 40,000 credits.`
+				goto replay
+			label flush
+			branch fullhouse
+				random < 40
+			scene "scene/scene-pokerflush"
+			`	After exchanging some cards to improve your hand, you wind up with a flush. It's a strong hand. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callflush
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch raiseflushwin
+				random < 60
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label raiseflushwin
+			branch nobaitflush
+				random < 60
+			action
+				payment 60000
+				pokerscore += 60000
+			`	Luckily, someone took the bait and you win with a flush! You gain 60,000 credits.`
+				goto replay
+			label callflush
+			branch callflushwin
+				random < 60
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label callflushwin
+			action
+				payment 40000
+				pokerscore += 40000
+			`	Luckily, everyone's hand was worse and you win with a flush! You gain 40,000 credits.`
+				goto replay
+			label nobaitflush
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Unfortunately no one took the bait, but you still win with a flush! You gain 50,000 credits.`
+				goto replay
+			label fullhouse
+			branch fourofakind
+				random < 30
+			scene "scene/scene-pokerfullhouse"
+			`	After exchanging some cards to improve your hand, you wind up with a full house. It's a strong hand. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callfullhouse
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch raisefullhousewin
+				random < 70
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label raisefullhousewin
+			branch nobaitfullhouse
+				random < 70
+			action
+				payment 60000
+				pokerscore += 60000
+			`	Luckily, someone took the bait and you win with a full house! You gain 60,000 credits.`
+				goto replay
+			label callfullhouse
+			branch callfullhousewin
+				random < 70
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label callfullhousewin
+			action
+				payment 40000
+				pokerscore += 40000
+			`	Luckily, everyone's hand was worse and you win with a full house! You gain 40,000 credits.`
+				goto replay
+			label nobaitfullhouse
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Unfortunately no one took the bait, but you still win with a full house! You gain 50,000 credits.`
+				goto replay
+			label fourofakind
+			branch straightflush
+				random < 20
+			scene "scene/scene-pokerfourofakind"
+			`	After exchanging some cards to improve your hand, you wind up with four of a kind. It's a strong hand. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callfourofakind
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch raisefourofakindwin
+				random < 80
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label raisefourofakindwin
+			branch nobaitfourofakind
+				random < 80
+			action
+				payment 60000
+				pokerscore += 60000
+			`	Luckily, someone took the bait and you win with four of a kind! You gain 60,000 credits.`
+				goto replay
+			label callfourofakind
+			branch callfourofakindwin
+				random < 80
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label callfourofakindwin
+			action
+				payment 40000
+				pokerscore += 40000
+			`	Luckily, everyone's hand was worse and you win with four of a kind! You gain 40,000 credits.`
+				goto replay
+			label nobaitfourofakind
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Unfortunately no one took the bait, but you still win with four of a kind! You gain 50,000 credits.`
+				goto replay
+			label straightflush
+			branch royalflush
+				random < 10
+			scene "scene/scene-pokerstraightflush"
+			`	After exchanging some cards to improve your hand, you wind up with a straight flush. It's a strong hand. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callstraightflush
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch raisestraightflushwin
+				random < 90
+			`	Unfortunately, one of the other players has a better hand than you.`
+				goto replay
+			label raisestraightflushwin
+			branch nobaitstraightflush
+				random < 90
+			action
+				payment 60000
+				pokerscore += 60000
+			`	Luckily, someone took the bait and you win with a straight flush! You gain 60,000 credits.`
+				goto replay
+			label callstraightflush
+			branch callstraightflushwin
+				random < 90
+			`	Amazingly, one of the other players has a royal flush.`
+				goto replay
+			label callstraightflushwin
+			action
+				payment 40000
+				pokerscore += 40000
+			`	As expected, everyone's hand was worse and you win with a straight flush! You gain 40,000 credits.`
+				goto replay
+			label nobaitstraightflush
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Unfortunately no one took the bait, but you still win with a straight flush! You gain 50,000 credits.`
+				goto replay
+			label royalflush
+			scene "scene/scene-pokerroyalflush"
+			`	After exchanging some cards to improve your hand, you wind up with a royal flush! It's an unbeatable hand. You could raise 10,000 more credits or play it safe with a call...`
+			choice
+				`	"Raise." (pay 10,000 more credits into the pot.)`
+				`	"Call." (try to win with the current bet.)`
+					goto callroyalflush
+			action
+				payment -10000
+				pokerscore -= 10000
+			branch nobaitroyalflush
+				random < 90
+			action
+				payment 60000
+				pokerscore += 60000
+			`	Luckily, someone took the bait and you win with a royal flush! You gain 60,000 credits.`
+				goto replay
+			label callroyalflush
+			action
+				payment 40000
+				pokerscore += 40000
+			`	As expected, everyone's hand was worse and you win with a royal flush! You gain 40,000 credits.`
+				goto replay
+			label nobaitroyalflush
+			action
+				payment 50000
+				pokerscore += 50000
+			`	Unfortunately no one took the bait, but you still win with a royal flush! You gain 50,000 credits.`
+				goto replay
+			label jackpot
+			branch chasm
+				not "event: link chasm"
+			action
+				clear pokerscore
+			`	The other players have had enough and leave you with your winnings.`
+				accept
+			label bust
+			action
+				clear pokerscore
+			`	Unfortunately, you don't have enough credits to continue playing. "Better luck next time!" They continue without you.`
+				decline
+			label chasm
+			action
+				clear pokerscore
+				event "link chasm"
+			scene "outfit/map"
+			`	The other players have had enough and leave you with your winnings. Mixed into the pile of credit chips is a data drive. It contains a map pointing to the western region of the Dirt Belt and a transmission code. There are instruction to transmit the code at either Gacrux or Minkar to access a hidden system.`
+				accept
+			
+	on enter
+		dialog "Looks like at least one of the poker players was upset that you did too well at the card table."
+	npc kill
+		to despawn
+			"armament deterrence" >= 3
+		government "Bounty Hunter"
+		personality heroic unconstrained waiting nemesis plunders harvests
+		fleet "Bounty Hunters"
+		on disable
+			fail
+	npc kill
+		to despawn
+			or
+				"armament deterrence" < 3
+				"armament deterrence" >= 4
+		government "Bounty Hunter"
+		personality heroic unconstrained waiting nemesis plunders harvests
+		fleet "Marauder fleet I"
+		on disable
+			fail
+	npc kill
+		to despawn
+			or
+				"armament deterrence" < 4
+				"armament deterrence" >= 8
+		government "Bounty Hunter"
+		personality heroic unconstrained waiting nemesis plunders harvests
+		fleet "Marauder fleet IV"
+		on disable
+			fail
+	npc kill
+		to despawn
+			or
+				"armament deterrence" < 8
+				"armament deterrence" >= 16
+		government "Bounty Hunter"
+		personality heroic unconstrained waiting nemesis plunders harvests
+		fleet "Marauder fleet VII"
+		on disable
+			fail
+	npc kill
+		to despawn
+			"armament deterrence" < 16
+		government "Bounty Hunter"
+		personality heroic unconstrained waiting nemesis plunders harvests
+		fleet "Marauder fleet X"
+		on disable
+			fail
 
 mission "Midnight: Search For Survivors (Free Worlds)"
 	job
@@ -2323,24 +5159,25 @@ mission "Militia: Joint Operations (Sparrow)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia small"
 			variant
-				"Sparrow" 5
-		conversation
-			action
-				"reputation: Militia" -= 5
-				fail "Militia: Joint Operations (Sparrow)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> and its squadron of interceptors is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+				"Sparrow (Patrol)" 3
+				"Sparrow (Meteor Missile)" 2
+		on kill
+			"reputation: Militia" -= 5
+			fail "Militia: Joint Operations (Sparrow)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> and its squadron of interceptors is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2372,26 +5209,25 @@ mission "Militia: Joint Operations (Hawk)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia small"
 			variant
-				"Hawk (Speedy)"
+				"Hawk (Patrol)" 3
 				"Hawk (Rocket)" 2
-				"Hawk" 2
-		conversation
-			action
-				"reputation: Militia" -= 5
-				fail "Militia: Joint Operations (Hawk)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> and its squadron of interceptors is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+		on kill
+			"reputation: Militia" -= 5
+			fail "Militia: Joint Operations (Hawk)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> and its squadron of interceptors is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2423,27 +5259,28 @@ mission "Militia: Joint Operations (Fury)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
 		fleet "Small Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia small"
 			variant
-				"Fury"
-				"Fury (Laser)"
+				"Fury (Patrol)" 3
 				"Fury (Bomber)" 2
-				"Fury (Missile)"
-		conversation
-			action
-				"reputation: Militia" -= 5
-				fail "Militia: Joint Operations (Fury)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> and its squadron of interceptors is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+			variant
+				"Fury (Patrol)" 3
+				"Fury (Missile)" 2
+		on kill
+			"reputation: Militia" -= 5
+			fail "Militia: Joint Operations (Fury)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> and its squadron of interceptors is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2475,14 +5312,14 @@ mission "Militia: Joint Operations (Argosy)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
-		fleet "Small Southern Pirates"
+		fleet "Large Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia small"
 			variant
@@ -2495,12 +5332,14 @@ mission "Militia: Joint Operations (Argosy)"
 				"Argosy (Missile)"
 			variant
 				"Argosy (Turret)"
-		conversation
-			action
-				"reputation: Militia" -= 10
-				fail "Militia: Joint Operations (Argosy)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+			variant
+				"Argosy (Patrol)"
+		on kill
+			"reputation: Militia" -= 10
+			fail "Militia: Joint Operations (Argosy)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2516,7 +5355,7 @@ mission "Militia: Joint Operations (Osprey)"
 		government "Free Worlds"
 	to offer
 		has "license: Militia"
-		"reputation: Militia" >= 10
+		"reputation: Militia" >= 15
 		random < 20
 	on accept
 		conversation
@@ -2532,14 +5371,14 @@ mission "Militia: Joint Operations (Osprey)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
-		fleet "Small Southern Pirates"
+		fleet "Large Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia capital"
 			variant
@@ -2548,12 +5387,14 @@ mission "Militia: Joint Operations (Osprey)"
 				"Osprey (Missile)"
 			variant
 				"Osprey (Laser)"
-		conversation
-			action
-				"reputation: Militia" -= 10
-				fail "Militia: Joint Operations (Osprey)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+			variant
+				"Osprey (Patrol)"
+		on kill
+			"reputation: Militia" -= 15
+			fail "Militia: Joint Operations (Osprey)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2585,14 +5426,14 @@ mission "Militia: Joint Operations (Bastion)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
-		fleet "Small Southern Pirates"
+		fleet "Large Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia capital"
 			variant
@@ -2601,12 +5442,14 @@ mission "Militia: Joint Operations (Bastion)"
 				"Bastion (Heavy)"
 			variant
 				"Bastion (Laser)"
-		conversation
-			action
-				"reputation: Militia" -= 15
-				fail "Militia: Joint Operations (Bastion)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+			variant
+				"Bastion (Patrol)"
+		on kill
+			"reputation: Militia" -= 15
+			fail "Militia: Joint Operations (Bastion)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2638,14 +5481,14 @@ mission "Militia: Joint Operations (Falcon)"
 				accept
 	npc
 		government "Pirate"
-		personality waiting plunders harvests
+		personality entering plunders harvests
 			confusion 20
-		fleet "Small Southern Pirates"
+		fleet "Large Southern Pirates"
 	npc kill
-		government "Militia"
+		government "Escort"
 		system
 			distance 2
-		personality escort entering heroic
+		personality escort waiting heroic
 		fleet
 			names "militia capital"
 			variant
@@ -2654,12 +5497,14 @@ mission "Militia: Joint Operations (Falcon)"
 				"Falcon (Heavy)"
 			variant
 				"Falcon (Laser)"
-		conversation
-			action
-				"reputation: Militia" -= 20
-				fail "Militia: Joint Operations (Falcon)"
-			scene "scene/scene-explosion"
-			`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
+			variant
+				"Falcon (Patrol)"
+		on kill
+			"reputation: Militia" -= 20
+			fail "Militia: Joint Operations (Falcon)"
+			conversation
+				scene "scene/scene-explosion"
+				`The loss of the <npc> is blamed on your incompetence. Your reputation with the Militia has diminished as a result.`
 	on fail
 		dialog `The Joint Operation with <npc> has ended.`
 	to complete
@@ -2671,677 +5516,664 @@ mission "Mining: Silicon [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Silicon to <system>"
-	description "The outfitter on <destination> has a shortage of Silicon. Bring 5 tons of Silicon to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Silicon."
+	name "Minable Silicon to <system>"
+	description "The minerals exchange on <destination> has a shortage of Silicon. Deliver 5 tons of raw Silicon by <date>. Payment is <payment>, 50% above the usual market rate for minable Silicon."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Silicon" -5
 		payment 3000
-		dialog `The outfitters on <planet> accept your delivery of Silicon and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Silicon and pay you <payment>.`
 
 mission "Mining: Silicon"
 	job
 	deadline 30
 	repeat
-	name "Mining: Silicon to <system>"
-	description "The shipyard on <destination> has a shortage of Silicon. Bring 10 tons of Silicon to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Silicon."
+	name "Minable Silicon to <system>"
+	description "The minerals exchange on <destination> has a shortage of Silicon. Deliver 10 tons of raw Silicon by <date>. Payment is <payment>, 50% above the usual market rate for minable Silicon."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Silicon" -10
 		payment 6000
-		dialog `The shipyards on <planet> accept your delivery of Silicon and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Silicon and pay you <payment>.`
 
 mission "Mining: Silicon [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Silicon to <system>"
-	description "The metals exchange on <destination> has a shortage of Silicon. Deliver 20 tons of Silicon by <date>. Payment is <payment>, 50% above the usual market rate for Silicon."
+	name "Minable Silicon to <system>"
+	description "The minerals exchange on <destination> has a shortage of Silicon. Deliver 20 tons of raw Silicon by <date>. Payment is <payment>, 50% above the usual market rate for minable Silicon."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Silicon" -20
 		payment 12000
-		dialog `The metals exchange on <planet> accept your delivery of Silicon and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Silicon and pay you <payment>.`
 
 mission "Mining: Lead [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Lead to <system>"
-	description "The outfitter on <destination> has a shortage of Lead. Bring 5 tons of Lead to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Lead."
+	name "Minable Lead to <system>"
+	description "The minerals exchange on <destination> has a shortage of Lead. Deliver 5 tons of raw Lead by <date>. Payment is <payment>, 50% above the usual market rate for minable Lead."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Lead" -5
 		payment 6750
-		dialog `The outfitters on <planet> accept your delivery of Lead and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Lead and pay you <payment>.`
 
 mission "Mining: Lead"
 	job
 	deadline 30
 	repeat
-	name "Mining: Lead to <system>"
-	description "The shipyard on <destination> has a shortage of Lead. Bring 10 tons of Lead to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Lead."
+	name "Minable Lead to <system>"
+	description "The minerals exchange on <destination> has a shortage of Lead. Deliver 10 tons of raw Lead by <date>. Payment is <payment>, 50% above the usual market rate for minable Lead."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Lead" -10
 		payment 13500
-		dialog `The shipyards on <planet> accept your delivery of Lead and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Lead and pay you <payment>.`
 
 mission "Mining: Lead [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Lead to <system>"
-	description "The metals exchange on <destination> has a shortage of Lead. Deliver 20 tons of Lead by <date>. Payment is <payment>, 50% above the usual market rate for Lead."
+	name "Minable Lead to <system>"
+	description "The minerals exchange on <destination> has a shortage of Lead. Deliver 20 tons of raw Lead by <date>. Payment is <payment>, 50% above the usual market rate for minable Lead."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Lead" -20
 		payment 27000
-		dialog `The metals exchange on <planet> accept your delivery of Lead and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Lead and pay you <payment>.`
 
 mission "Mining: Iron [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Iron to <system>"
-	description "The outfitter on <destination> has a shortage of Iron. Bring 5 tons of Iron to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Iron."
+	name "Minable Iron to <system>"
+	description "The minerals exchange on <destination> has a shortage of Iron. Deliver 5 tons of raw Iron by <date>. Payment is <payment>, 50% above the usual market rate for minable Iron."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Iron" -5
 		payment 9000
-		dialog `The outfitters on <planet> accept your delivery of Iron and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Iron and pay you <payment>.`
 
 mission "Mining: Iron"
 	job
 	deadline 30
 	repeat
-	name "Mining: Iron to <system>"
-	description "The shipyard on <destination> has a shortage of Iron. Bring 10 tons of Iron to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Iron."
+	name "Minable Iron to <system>"
+	description "The minerals exchange on <destination> has a shortage of Iron. Deliver 10 tons of raw Iron by <date>. Payment is <payment>, 50% above the usual market rate for minable Iron."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Iron" -10
 		payment 18000
-		dialog `The shipyards on <planet> accept your delivery of Iron and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Iron and pay you <payment>.`
 
 mission "Mining: Iron [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Iron to <system>"
-	description "The metals exchange on <destination> has a shortage of Iron. Deliver 20 tons of Iron by <date>. Payment is <payment>, 50% above the usual market rate for Iron."
+	name "Minable Iron to <system>"
+	description "The minerals exchange on <destination> has a shortage of Iron. Deliver 20 tons of raw Iron by <date>. Payment is <payment>, 50% above the usual market rate for minable Iron."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Iron" -20
 		payment 36000
-		dialog `The metals exchange on <planet> accept your delivery of Iron and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Iron and pay you <payment>.`
 
 mission "Mining: Pyrite [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Pyrite to <system>"
-	description "The outfitter on <destination> has a shortage of Pyrite. Bring 5 tons of Pyrite to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Pyrite."
+	name "Minable Pyrite to <system>"
+	description "The minerals exchange on <destination> has a shortage of Pyrite. Deliver 5 tons of raw Pyrite by <date>. Payment is <payment>, 50% above the usual market rate for minable Pyrite."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Pyrite" -5
 		payment 11250
-		dialog `The outfitters on <planet> accept your delivery of Pyrite and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Pyrite and pay you <payment>.`
 
 mission "Mining: Pyrite"
 	job
 	deadline 30
 	repeat
-	name "Mining: Pyrite to <system>"
-	description "The shipyard on <destination> has a shortage of Pyrite. Bring 10 tons of Pyrite to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Pyrite."
+	name "Minable Pyrite to <system>"
+	description "The minerals exchange on <destination> has a shortage of Pyrite. Deliver 10 tons of raw Pyrite by <date>. Payment is <payment>, 50% above the usual market rate for minable Pyrite."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Pyrite" -10
 		payment 22500
-		dialog `The shipyards on <planet> accept your delivery of Pyrite and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Pyrite and pay you <payment>.`
 
 mission "Mining: Pyrite [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Pyrite to <system>"
-	description "The metals exchange on <destination> has a shortage of Pyrite. Deliver 20 tons of Pyrite by <date>. Payment is <payment>, 50% above the usual market rate for Pyrite."
+	name "Minable Pyrite to <system>"
+	description "The minerals exchange on <destination> has a shortage of Pyrite. Deliver 20 tons of raw Pyrite by <date>. Payment is <payment>, 50% above the usual market rate for minable Pyrite."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Pyrite" -20
 		payment 45000
-		dialog `The metals exchange on <planet> accept your delivery of Pyrite and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Pyrite and pay you <payment>.`
 
 mission "Mining: Aluminum [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Aluminum to <system>"
-	description "The outfitter on <destination> has a shortage of Aluminum. Bring 5 tons of Aluminum to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Aluminum."
+	name "Minable Aluminum to <system>"
+	description "The minerals exchange on <destination> has a shortage of Aluminum. Deliver 5 tons of raw Aluminum by <date>. Payment is <payment>, 50% above the usual market rate for minable Aluminum."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Aluminum" -5
 		payment 13500
-		dialog `The outfitters on <planet> accept your delivery of Aluminum and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Aluminum and pay you <payment>.`
 
 mission "Mining: Aluminum"
 	job
 	deadline 30
 	repeat
-	name "Mining: Aluminum to <system>"
-	description "The shipyard on <destination> has a shortage of Aluminum. Bring 10 tons of Aluminum to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Aluminum."
+	name "Minable Aluminum to <system>"
+	description "The minerals exchange on <destination> has a shortage of Aluminum. Deliver 10 tons of raw Aluminum by <date>. Payment is <payment>, 50% above the usual market rate for minable Aluminum."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Aluminum" -10
 		payment 27000
-		dialog `The shipyards on <planet> accept your delivery of Aluminum and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Aluminum and pay you <payment>.`
 
 mission "Mining: Aluminum [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Aluminum to <system>"
-	description "The metals exchange on <destination> has a shortage of Aluminum. Deliver 20 tons of Aluminum by <date>. Payment is <payment>, 50% above the usual market rate for Aluminum."
+	name "Minable Aluminum to <system>"
+	description "The minerals exchange on <destination> has a shortage of Aluminum. Deliver 20 tons of raw Aluminum by <date>. Payment is <payment>, 50% above the usual market rate for minable Aluminum."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Aluminum" -20
 		payment 54000
-		dialog `The metals exchange on <planet> accept your delivery of Aluminum and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Aluminum and pay you <payment>.`
 
 mission "Mining: Titanium [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Titanium to <system>"
-	description "The outfitter on <destination> has a shortage of Titanium. Bring 5 tons of Titanium to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Titanium."
+	name "Minable Titanium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Titanium. Deliver 5 tons of raw Titanium by <date>. Payment is <payment>, 50% above the usual market rate for minable Titanium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Titanium" -5
 		payment 18750
-		dialog `The outfitters on <planet> accept your delivery of Titanium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Titanium and pay you <payment>.`
 
 mission "Mining: Titanium"
 	job
 	deadline 30
 	repeat
-	name "Mining: Titanium to <system>"
-	description "The shipyard on <destination> has a shortage of Titanium. Bring 10 tons of Titanium to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Titanium."
+	name "Minable Titanium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Titanium. Deliver 10 tons of raw Titanium by <date>. Payment is <payment>, 50% above the usual market rate for minable Titanium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Titanium" -10
 		payment 37500
-		dialog `The shipyards on <planet> accept your delivery of Titanium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Titanium and pay you <payment>.`
 
 mission "Mining: Titanium [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Titanium to <system>"
-	description "The metals exchange on <destination> has a shortage of Titanium. Deliver 20 tons of Titanium by <date>. Payment is <payment>, 50% above the usual market rate for Titanium."
+	name "Minable Titanium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Titanium. Deliver 20 tons of raw Titanium by <date>. Payment is <payment>, 50% above the usual market rate for minable Titanium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Titanium" -20
 		payment 75000
-		dialog `The metals exchange on <planet> accept your delivery of Titanium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Titanium and pay you <payment>.`
 
 mission "Mining: Copper [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Copper to <system>"
-	description "The outfitter on <destination> has a shortage of Copper. Bring 5 tons of Copper to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Copper."
+	name "Minable Copper to <system>"
+	description "The minerals exchange on <destination> has a shortage of Copper. Deliver 5 tons of raw Copper by <date>. Payment is <payment>, 50% above the usual market rate for minable Copper."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Copper" -5
 		payment 22500
-		dialog `The outfitters on <planet> accept your delivery of Copper and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Copper and pay you <payment>.`
 
 mission "Mining: Copper"
 	job
 	deadline 30
 	repeat
-	name "Mining: Copper to <system>"
-	description "The shipyard on <destination> has a shortage of Copper. Bring 10 tons of Copper to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Copper."
+	name "Minable Copper to <system>"
+	description "The minerals exchange on <destination> has a shortage of Copper. Deliver 10 tons of raw Copper by <date>. Payment is <payment>, 50% above the usual market rate for minable Copper."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Copper" -10
 		payment 45000
-		dialog `The shipyards on <planet> accept your delivery of Copper and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Copper and pay you <payment>.`
 
 mission "Mining: Copper [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Copper to <system>"
-	description "The metals exchange on <destination> has a shortage of Copper. Deliver 20 tons of Copper by <date>. Payment is <payment>, 50% above the usual market rate for Copper."
+	name "Minable Copper to <system>"
+	description "The minerals exchange on <destination> has a shortage of Copper. Deliver 20 tons of raw Copper by <date>. Payment is <payment>, 50% above the usual market rate for minable Copper."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Copper" -20
 		payment 90000
-		dialog `The metals exchange on <planet> accept your delivery of Copper and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Copper and pay you <payment>.`
 
 mission "Mining: Neodymium [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Neodymium to <system>"
-	description "The outfitter on <destination> has a shortage of Neodymium. Bring 5 tons of Neodymium to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Neodymium."
+	name "Minable Neodymium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Neodymium. Deliver 5 tons of raw Neodymium by <date>. Payment is <payment>, 50% above the usual market rate for minable Neodymium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Neodymium" -5
 		payment 28500
-		dialog `The outfitters on <planet> accept your delivery of Neodymium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Neodymium and pay you <payment>.`
 
 mission "Mining: Neodymium"
 	job
 	deadline 30
 	repeat
-	name "Mining: Neodymium to <system>"
-	description "The shipyard on <destination> has a shortage of Neodymium. Bring 10 tons of Neodymium to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Neodymium."
+	name "Minable Neodymium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Neodymium. Deliver 10 tons of raw Neodymium by <date>. Payment is <payment>, 50% above the usual market rate for minable Neodymium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Neodymium" -10
 		payment 57000
-		dialog `The shipyards on <planet> accept your delivery of Neodymium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Neodymium and pay you <payment>.`
 
 mission "Mining: Neodymium [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Neodymium to <system>"
-	description "The metals exchange on <destination> has a shortage of Neodymium. Deliver 20 tons of Neodymium to by <date>. Payment is <payment>, 50% above the usual market rate for Neodymium."
+	name "Minable Neodymium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Neodymium. Deliver 20 tons of raw Neodymium by <date>. Payment is <payment>, 50% above the usual market rate for minable Neodymium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Neodymium" -20
 		payment 114000
-		dialog `The metals exchange on <planet> accept your delivery of Neodymium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Neodymium and pay you <payment>.`
 
 mission "Mining: Tungsten [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Tungsten to <system>"
-	description "The outfitter on <destination> has a shortage of Tungsten. Bring 5 tons of Tungsten to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Tungsten."
+	name "Minable Tungsten to <system>"
+	description "The minerals exchange on <destination> has a shortage of Tungsten. Deliver 5 tons of raw Tungsten by <date>. Payment is <payment>, 50% above the usual market rate for minable Tungsten."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Tungsten" -5
 		payment 33750
-		dialog `The outfitters on <planet> accept your delivery of Tungsten and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Tungsten and pay you <payment>.`
 
 mission "Mining: Tungsten"
 	job
 	deadline 30
 	repeat
-	name "Mining: Tungsten to <system>"
-	description "The shipyard on <destination> has a shortage of Tungsten. Bring 10 tons of Tungsten to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Tungsten."
+	name "Minable Tungsten to <system>"
+	description "The minerals exchange on <destination> has a shortage of Tungsten. Deliver 10 tons of raw Tungsten by <date>. Payment is <payment>, 50% above the usual market rate for minable Tungsten."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Tungsten" -10
 		payment 67500
-		dialog `The shipyards on <planet> accept your delivery of Tungsten and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Tungsten and pay you <payment>.`
 
 mission "Mining: Tungsten [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Tungsten to <system>"
-	description "The metals exchange on <destination> has a shortage of Tungsten. Deliver 20 tons of Tungsten by <date>. Payment is <payment>, 50% above the usual market rate for Tungsten."
+	name "Minable Tungsten to <system>"
+	description "The minerals exchange on <destination> has a shortage of Tungsten. Deliver 20 tons of raw Tungsten by <date>. Payment is <payment>, 50% above the usual market rate for minable Tungsten."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Tungsten" -20
 		payment 135000
-		dialog `The metals exchange on <planet> accept your delivery of Tungsten and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Tungsten and pay you <payment>.`
 
 mission "Mining: Uranium [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Uranium to <system>"
-	description "The outfitter on <destination> has a shortage of Uranium. Bring 5 tons of Uranium to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Uranium."
+	name "Minable Uranium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Uranium. Deliver 5 tons of raw Uranium by <date>. Payment is <payment>, 50% above the usual market rate for minable Uranium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Uranium" -5
 		payment 37500
-		dialog `The outfitters on <planet> accept your delivery of Uranium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Uranium and pay you <payment>.`
 
 mission "Mining: Uranium"
 	job
 	deadline 30
 	repeat
-	name "Mining: Uranium to <system>"
-	description "The shipyard on <destination> has a shortage of Uranium. Bring 10 tons of Uranium to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Uranium."
+	name "Minable Uranium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Uranium. Deliver 10 tons of raw Uranium by <date>. Payment is <payment>, 50% above the usual market rate for minable Uranium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Uranium" -10
 		payment 75000
-		dialog `The shipyards on <planet> accept your delivery of Uranium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Uranium and pay you <payment>.`
 
 mission "Mining: Uranium [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Uranium to <system>"
-	description "The metals exchange on <destination> has a shortage of Uranium. Deliver 20 tons of Uranium by <date>. Payment is <payment>, 50% above the usual market rate for Uranium."
+	name "Minable Uranium to <system>"
+	description "The minerals exchange on <destination> has a shortage of Uranium. Deliver 20 tons of raw Uranium by <date>. Payment is <payment>, 50% above the usual market rate for minable Uranium."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Uranium" -20
 		payment 150000
-		dialog `The metals exchange on <planet> accept your delivery of Uranium and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Uranium and pay you <payment>.`
 
 mission "Mining: Silver [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Silver to <system>"
-	description "The outfitter on <destination> has a shortage of Silver. Bring 5 tons of Silver to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Silver."
+	name "Minable Silver to <system>"
+	description "The minerals exchange on <destination> has a shortage of Silver. Deliver 5 tons of raw Silver by <date>. Payment is <payment>, 50% above the usual market rate for minable Silver."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Silver" -5
 		payment 90000
-		dialog `The outfitters on <planet> accept your delivery of Silver and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Silver and pay you <payment>.`
 
 mission "Mining: Silver"
 	job
 	deadline 30
 	repeat
-	name "Mining: Silver to <system>"
-	description "The shipyard on <destination> has a shortage of Silver. Bring 10 tons of Silver to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Silver."
+	name "Minable Silver to <system>"
+	description "The minerals exchange on <destination> has a shortage of Silver. Deliver 10 tons of raw Silver by <date>. Payment is <payment>, 50% above the usual market rate for minable Silver."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Silver" -10
 		payment 90000
-		dialog `The shipyards on <planet> accept your delivery of Silver and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Silver and pay you <payment>.`
 
 mission "Mining: Silver [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Silver to <system>"
-	description "The metals exchange on <destination> has a shortage of Silver. Deliver 20 tons of Silver by <date>. Payment is <payment>, 50% above the usual market rate for Silver."
+	name "Minable Silver to <system>"
+	description "The minerals exchange on <destination> has a shortage of Silver. Deliver 20 tons of raw Silver by <date>. Payment is <payment>, 50% above the usual market rate for minable Silver."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Silver" -20
 		payment 180000
-		dialog `The metals exchange on <planet> accept your delivery of Silver and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Silver and pay you <payment>.`
 
 mission "Mining: Gold [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Gold to <system>"
-	description "The outfitter on <destination> has a shortage of Gold. Bring 5 tons of Gold to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Gold."
+	name "Minable Gold to <system>"
+	description "The minerals exchange on <destination> has a shortage of Gold. Deliver 5 tons of raw Gold by <date>. Payment is <payment>, 50% above the usual market rate for minable Gold."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Gold" -5
 		payment 60000
-		dialog `The outfitters on <planet> accept your delivery of Gold and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Gold and pay you <payment>.`
 
 mission "Mining: Gold"
 	job
 	deadline 30
 	repeat
-	name "Mining: Gold to <system>"
-	description "The shipyard on <destination> has a shortage of Gold. Bring 10 tons of Gold to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Gold."
+	name "Minable Gold to <system>"
+	description "The minerals exchange on <destination> has a shortage of Gold. Deliver 10 tons of raw Gold by <date>. Payment is <payment>, 50% above the usual market rate for minable Gold."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Gold" -10
 		payment 120000
-		dialog `The shipyards on <planet> accept your delivery of Gold and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Gold and pay you <payment>.`
 
 mission "Mining: Gold [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Gold to <system>"
-	description "The metals exchange on <destination> has a shortage of Gold. Deliver 20 tons of Gold by <date>. Payment is <payment>, 50% above the usual market rate for Gold."
+	name "Minable Gold to <system>"
+	description "The minerals exchange on <destination> has a shortage of Gold. Deliver 20 tons of raw Gold by <date>. Payment is <payment>, 50% above the usual market rate for minable Gold."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Gold" -20
 		payment 240000
-		dialog `The metals exchange on <planet> accept your delivery of Gold and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Gold and pay you <payment>.`
 
 mission "Mining: Platinum [small]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Platinum to <system>"
-	description "The outfitter on <destination> has a shortage of Platinum. Bring 5 tons of Platinum to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Platinum."
+	name "Minable Platinum to <system>"
+	description "The minerals exchange on <destination> has a shortage of Platinum. Deliver 5 tons of raw Platinum by <date>. Payment is <payment>, 50% above the usual market rate for minable Platinum."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Platinum" -5
 		payment 75000
-		dialog `The outfitters on <planet> accept your delivery of Platinum and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Platinum and pay you <payment>.`
 
 mission "Mining: Platinum"
 	job
 	deadline 30
 	repeat
-	name "Mining: Platinum to <system>"
-	description "The shipyard on <destination> has a shortage of Platinum. Bring 10 tons of Platinum to the shipyard by <date>. Payment is <payment>, 50% above the usual market rate for Platinum."
+	name "Minable Platinum to <system>"
+	description "The minerals exchange on <destination> has a shortage of Platinum. Deliver 10 tons of raw Platinum by <date>. Payment is <payment>, 50% above the usual market rate for minable Platinum."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Platinum" -10
 		payment 150000
-		dialog `The shipyards on <planet> accept your delivery of Platinum and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Platinum and pay you <payment>.`
 
 mission "Mining: Platinum [large]"
 	job
 	deadline 30
 	repeat
-	name "Mining: Platinum to <system>"
-	description "The metals exchange on <destination> has a shortage of Platinum. Deliver 20 tons of Platinum by <date>. Payment is <payment>, 50% above the usual market rate for Platinum."
+	name "Minable Platinum to <system>"
+	description "The minerals exchange on <destination> has a shortage of Platinum. Deliver 20 tons of raw Platinum by <date>. Payment is <payment>, 50% above the usual market rate for minable Platinum."
 	source
-		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes shipyard
-		attributes outfitter
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral" "Pirate"
+		attributes mining
 	to offer
 		random < 1
 	on complete
 		"mining jobs done" ++
 		outfit "Platinum" -20
 		payment 300000
-		dialog `The metals exchange on <planet> accept your delivery of Platinum and pay you <payment>.`
+		dialog `The minerals exchange on <planet> accept your delivery of Platinum and pay you <payment>.`
 
 
 
@@ -3461,7 +6293,7 @@ mission "Protection: Heavy"
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Neutral"
 	to offer
-		random < 20
+		random < 15
 		"ships: Medium Warship" < 5
 		"ships: Heavy Warship" + "ships: Utility" <= 1
 		"ships: Superheavy" == 0
@@ -3489,7 +6321,7 @@ mission "Protection: Medium"
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Neutral"
 	to offer
-		random < 25
+		random < 20
 		"ships: Medium Warship" <= 1
 		not "ships: Heavy Warship"
 		not "ships: Utility"
@@ -3518,7 +6350,7 @@ mission "Protection: Light"
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Neutral"
 	to offer
-		random < 30
+		random < 25
 		"ships: Light Warship" < 5
 		not "ships: Medium Warship"
 		not "ships: Heavy Warship"
@@ -3533,6 +6365,37 @@ mission "Protection: Light"
 		government "Merchant"
 		personality heroic
 		fleet "Protection Light"
+		on provoke
+			"reputation: Merchant" -= 125
+			dialog `The <npc> sends a distress signal to other captains, warning them of your treachery!`
+	to complete
+		never
+
+mission "Protection: Interceptor"
+	job
+	repeat
+	deadline 15
+	name "Protection Escort"
+	description "Pay the <npc> 50,000 credits to escort your fleet until <date>."
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Neutral"
+	to offer
+		random < 30
+		"ships: Interceptor" < 5
+		not "ships: Light Warship"
+		not "ships: Medium Warship"
+		not "ships: Heavy Warship"
+		not "ships: Utility"
+		not "ships: Superheavy" 
+	on accept
+		payment -50000
+		dialog `You pay the <npc> 50,000 credits to escort your fleet until <date>.`
+	on fail
+		dialog `The protection contract with <npc> has expired.`
+	npc kill
+		government "Merchant"
+		personality heroic
+		fleet "Protection Interceptor"
 		on provoke
 			"reputation: Merchant" -= 125
 			dialog `The <npc> sends a distress signal to other captains, warning them of your treachery!`
@@ -3577,10 +6440,11 @@ mission "Sketchy Cargo [Geminus]"
 	to offer
 		or
 			"year" < 3014
+			random < 15
 			and
 				"year" == 3014
 				"month" < 6
-		random < 15
+				random < 50
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
 		attributes "core"
@@ -3605,10 +6469,11 @@ mission "Sketchy Cargo [Martini]"
 	to offer
 		or
 			"year" < 3014
+			random < 15
 			and
 				"year" == 3014
 				"month" < 6
-		random < 15
+				random < 50
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
 		attributes "core"
@@ -3624,61 +6489,57 @@ mission "Sketchy Cargo [Martini]"
 		dialog "You drop off the unlabeled cargo in a warehouse not too dissimilar to the one you picked it up in. A man dressed in a cloak hands you <payment> after the last crate is removed from your ship."
 
 
-
 mission "Star Explorer: Missing Science Vessel"
-	name "Rescue Mission near <waypoints>"
-	description "The science vessel <npc> was last seen on an expedition heading to <waypoints>. It has not been seen since. Locate and rescue the vessel. Then return it safely to <destination> for <payment>."
+	name "Rescue Mission"
+	description "The science vessel <npc> has not returned from an expedition studying interstellar phenomena. It has not been seen since. Locate and rescue the vessel. Then return it safely to <destination> for <payment>."
 	job
 	repeat
 	deadline 60
 	to offer
 		has "event: star explorer update"
-		random < 1
+		random < 5
 		"combat rating" > 100
 	source
-		government "Republic" "Syndicate"
+		government "Republic" "Syndicate" "Free Worlds"
 		attributes "research"
-	waypoint Durax
 	on accept
 		clear "star explorer pirate raid activated"
-	on waypoint
-		set "star explorer pirate raid activated"
-		dialog "You've located the <npc>! Help them repair their ship, then return them safely to <planet>."
 	npc
+		to spawn
+			has "star explorer pirate raid activated"
 		government "Pirate"
-		system Atik
-		personality nemesis waiting staying plunders
+		personality entering heroic plunders harvests
 		fleet "pirate raid"
 	npc
 		to spawn
 			has "star explorer pirate raid activated"
 		government "Pirate"
-		personality nemesis waiting plunders
-		fleet "pirate raid"
-	npc
-		to spawn
-			has "star explorer pirate raid activated"
-		government "Pirate"
-		personality nemesis waiting plunders
+		personality waiting staying plunders harvests
 		system destination
 		fleet "pirate raid"
 	npc assist accompany save
 		government "Merchant"
-		system Atik
+		system
+			distance 5 30
+			government "Republic" "Free Worlds" "Syndicate" "Independent" "Neutral" "Pirate"
+			attributes "wolf-rayet" "wormhole" "nova" "notable star"
 		personality target derelict timid
 		fleet
 			names "intellectuals"
 			variant
 				"Star Explorer"
+		on assist
+			set "star explorer pirate raid activated"
+			dialog `With repairs complete, the captain requests an escort back to <destination>.`
 	on fail
 		clear "star explorer pirate raid activated"
 	on abort
 		clear "star explorer pirate raid activated"
 	on complete
 		clear "star explorer pirate raid activated"
-		dialog "You bid goodbye to the captain of the <npc> and accept your payment of <payment>."
-		payment
+		dialog "The captain of the <npc> thanks you for the rescue and offers to share their research data along with your payment of <payment>."
 		payment 240000
+		outfit "Research Data" 1
 
 
 mission "Star Explorer: Escort"
@@ -3694,7 +6555,7 @@ mission "Star Explorer: Escort"
 		government "Republic" "Free Worlds" "Syndicate" "Independent" "Neutral"
 		attributes "research"
 	waypoint
-		attributes "wolf-rayet" "ringworld" "wormhole" "pleiades" "nova" "notable star"
+		attributes "wolf-rayet" "ringworld" "wormhole" "nova" "notable star"
 		distance 6 100
 	npc
 		government "Pirate"
@@ -3721,16 +6582,18 @@ mission "Star Explorer: Escort"
 	on visit
 		dialog "You have reached <planet>, but you can't complete this mission until the <npc> has visited <waypoints> with you and then joined you here."
 	on complete
-		dialog "You bid goodbye to the captain of the <npc> and accept your payment of <payment>."
-		payment
+		dialog "The captain of the <npc> offers to share their research data in addition to your payment of <payment>."
 		payment 120000
-
+		outfit "Research Data" 1
 
 
 mission "Stealing From Rival Smugglers"
 	name "Rival Smuggler near <system>"
 	description "A rival gang is using the <npc> to smuggle cargo through our territory in <system>. When they do, disable and board the vessel then bring a certain item from their cargo back to <destination>. Your reward is: <payment>."
 	deadline 14
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	repeat
 	job
 	to offer
@@ -3756,6 +6619,7 @@ mission "Stealing From Rival Smugglers"
 				"Modified Enforcer (Smuggled Cargo)"
 		dialog "Take the Smuggled Cargo from the <npc>'s cargo. Then deliver it to <planet>."
 	on complete
+		"pirate jobs" ++
 		"reputation: Bounty (Disguised)" >?= 1
 		outfit "Smuggled Cargo" -1
 		payment 350000
@@ -3769,12 +6633,11 @@ outfit "Smuggled Cargo"
 	description "Cargo stolen from a smuggler which has caught the interest of a pirate warlord."
 
 
-
 mission "Syndicate Uranium Mining [small]"
 	job
 	deadline 15
 	repeat
-	name "Mining: Uranium to <system>"
+	name "Minable Uranium to <system>"
 	description "The outfitter on <destination> has a shortage of Uranium. Bring 10 tons of Uranium to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Uranium."
 	source
 		government "Syndicate"
@@ -3803,7 +6666,7 @@ mission "Syndicate Uranium Mining [medium]"
 	job
 	deadline 15
 	repeat
-	name "Mining: Uranium to <system>"
+	name "Minable Uranium to <system>"
 	description "The outfitter on <destination> has a shortage of Uranium. Bring 20 tons of Uranium to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Uranium."
 	source
 		government "Syndicate"
@@ -3826,7 +6689,7 @@ mission "Syndicate Uranium Mining [large]"
 	job
 	deadline 15
 	repeat
-	name "Mining: Uranium to <system>"
+	name "Minable Uranium to <system>"
 	description "The outfitter on <destination> has a shortage of Uranium. Bring 40 tons of Uranium to the outfitter by <date>. Payment is <payment>, 50% above the usual market rate for Uranium."
 	source
 		government "Syndicate"
@@ -3852,14 +6715,16 @@ mission "Syndicate Uranium Mining [large]"
 		dialog `The outfitter on <planet> accepts your delivery of Uranium and pays you <payment>.`
 
 
-
 mission "Pirate Sabotage: Shield Suppressor (Republic)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	name "Pirate Sabotage"
 	description "The <npc> has been harassing pirates near <system>. Sneak a Shield Suppressor onto the ship to sabotage their defenses. Return to <planet> for payment. (<payment>)."
 	source
-		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
+		government "Pirate"
 		attributes "north pirate" "dirt belt pirate"
 		not attributes uninhabited
 	to offer
@@ -3886,17 +6751,21 @@ mission "Pirate Sabotage: Shield Suppressor (Republic)"
 		"reputation: Pirate" -= 10
 		dialog `The pirates weren't happy to learn that you didn't install the Shield Suppressor onto the <npc>.`
 	on complete
+		"pirate jobs" ++
 		payment 50000
 		"reputation: Pirate" += 10
-		dialog `As you receive your reward for installing the Shield Suppressor onto the <npc>, your employer remarks on how easily that ship was subsequently destroyed thanks to your efforts.`
+		dialog `As you receive your reward for installing the Shield Suppressor onto the <npc>, your employer remarks on how that ship will be at their mercy thanks to your efforts.`
 
 mission "Pirate Sabotage: Shield Suppressor (Free Worlds)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
 	job
 	repeat
 	name "Pirate Sabotage"
 	description "The <npc> has been harassing pirates near <system>. Sneak a Shield Suppressor onto the ship to sabotage their defenses. Return to <planet> for payment. (<payment>)."
 	source
-		government "Republic" "Free Worlds" "Syndicate" "Pirate" "Neutral" "Independent"
+		government "Free Worlds"
 		attributes "south pirate"
 		not attributes uninhabited
 	to offer
@@ -3921,20 +6790,66 @@ mission "Pirate Sabotage: Shield Suppressor (Free Worlds)"
 		"reputation: Pirate" -= 10
 		dialog `The pirates weren't happy to learn that you didn't install the Shield Suppressor onto the <npc>.`
 	on complete
+		"pirate jobs" ++
 		payment 50000
 		"reputation: Pirate" += 10
-		dialog `As you receive your reward for installing the Shield Suppressor onto the <npc>, your employer remarks on how easily that ship was subsequentially destroyed thanks to your efforts.`
+		dialog `As you receive your reward for installing the Shield Suppressor onto the <npc>, your employer remarks on how that ship will be at their mercy thanks to your efforts.`
+
+mission "Pirate Sabotage: Shield Suppressor (Syndicate)"
+	color selected "illegal job: selected"
+	color unselected "illegal job: unselected"
+	color unavailable "illegal job: unavailable"
+	job
+	repeat
+	name "Pirate Sabotage"
+	description "The <npc> has been harassing pirates near <system>. Sneak a Shield Suppressor onto the ship to sabotage their defenses. Return to <planet> for payment. (<payment>)."
+	source
+		government "Syndicate"
+		attributes "core pirate"
+		not attributes uninhabited
+	to offer
+		"reputation: Syndicate" > 0
+	npc assist
+		government "Syndicate"
+		system
+			distance 1 2
+		personality target derelict waiting staying timid
+		fleet
+			names "republic capital"
+			outfitters "Ammo North"
+			variant 1
+				"Vanguard"
+			variant 1
+				"Protector"
+		conversation
+			scene "outfit/shield suppressor"
+			action
+				"reputation: Syndicate" -= 40
+			`While assisting in the repairs of the <npc>, you discreetly attach the Shield Suppressor to their systems. Hopefully they won't realize what you've done until after you get to <destination> for your reward.`
+	on abort
+		"reputation: Pirate" -= 10
+		dialog `The pirates weren't happy to learn that you didn't install the Shield Suppressor onto the <npc>.`
+	on complete
+		"pirate jobs" ++
+		payment 50000
+		"reputation: Pirate" += 10
+		dialog `As you receive your reward for installing the Shield Suppressor onto the <npc>, your employer remarks on how that ship will be at their mercy thanks to your efforts.`
+
 
 mission "Rescue: Sabotaged Ship (Free Worlds)"
 	job
 	name "Rescue Mission"
-	description "The <npc> is missing in action. It was last known to be in <waypoints> hunting pirates. Find the ship and escort it back to <destination>. Payment is <payment>."
+	description "The <npc> is missing in action. It was last known to be in <waypoints> hunting pirates. Find the ship and escort it to <destination>. Payment is <payment>."
 	source
 		government "Free Worlds"
-		attributes "shipyard"
-		attributes "outfitter"
+		attributes "frontier"
 		attributes "south"
 	waypoint "Lesath"
+	destination
+		distance 1 2
+		government "Free Worlds"
+		attributes "outfitter"
+		attributes "south"
 	to offer
 		"reputation: Militia" > 0
 		"combat rating" > 1000
@@ -3979,7 +6894,7 @@ mission "Rescue: Sabotaged Ship (Free Worlds)"
 			action
 				set "sabotaged ship ambush"
 			scene "outfit/shield suppressor"
-			`After inspecting the <npc>, you're certain that a Shield Suppressor was planted somewhere on the ship by saboteurs. Escort them back to <destination> where they will have it removed.`
+			`After inspecting the <npc>, you're certain that a Shield Suppressor was planted somewhere on the ship by saboteurs. Escort them to <destination> where they will have it removed.`
 	on abort
 		clear "sabotaged ship ambush"
 	on fail
@@ -3992,13 +6907,16 @@ mission "Rescue: Sabotaged Ship (Free Worlds)"
 mission "Rescue: Sabotaged Ship (Republic)"
 	job
 	name "Rescue Mission"
-	description "The <npc> is missing in action. It was last known to be in <waypoints> hunting pirates. Find the ship and escort it back to <destination>. Payment is <payment>."
+	description "The <npc> is missing in action. It was last known to be in <waypoints> hunting pirates. Find the ship and escort it to <destination>. Payment is <payment>."
 	source
 		government "Republic"
-		attributes "shipyard"
-		attributes "outfitter"
+		attributes "frontier"
 		attributes "north"
 	waypoint "Hatysa"
+	source
+		government "Republic"
+		attributes "outfitter"
+		attributes "north"
 	to offer
 		"reputation: Republic" > 0
 		"combat rating" > 1000
@@ -4050,7 +6968,7 @@ mission "Rescue: Sabotaged Ship (Republic)"
 			action
 				set "sabotaged ship ambush"
 			scene "outfit/shield suppressor"
-			`After inspecting the <npc>, you're certain that a Shield Suppressor was planted somewhere on the ship by saboteurs. Escort them back to <destination> where they can have it removed.`
+			`After inspecting the <npc>, you're certain that a Shield Suppressor was planted somewhere on the ship by saboteurs. Escort them to <destination> where they can have it removed.`
 	on abort
 		clear "sabotaged ship ambush"
 	on fail
@@ -4060,6 +6978,81 @@ mission "Rescue: Sabotaged Ship (Republic)"
 		payment 1000000
 		dialog "The government of <planet> rewards you with <payment> for rescuing the <npc>."
 
+mission "Rescue: Sabotaged Ship (Syndicate)"
+	job
+	name "Rescue Mission"
+	description "The <npc> is missing in action. It was last known to be in <waypoints> hunting pirates. Find the ship and escort it to <destination>. Payment is <payment>."
+	source
+		government "Syndicate"
+		attributes "frontier"
+		attributes "core"
+	waypoint "Gamma Cassiopeiae"
+	source
+		government "Syndicate"
+		attributes "outfitter"
+		attributes "core"
+	to offer
+		"reputation: Syndicate" > 0
+		"combat rating" > 1000
+		random < 25
+	on enter "Gamma Cassiopeiae"
+		dialog `The <npc> hails you. Their shields are not working properly, making them an easy target for pirates. Their weapons have already been plundered...`
+	npc
+		to spawn
+			has "sabotaged ship ambush"
+		government "Pirate"
+		system destination
+		personality entering harvests plunders
+			confusion 20
+		fleet "pirate raid" 2
+	npc
+		to spawn
+			has "sabotaged ship ambush"
+		government "Pirate"
+		system "Gienah"
+		personality entering harvests plunders
+			confusion 20
+		fleet "Small Core Pirates"
+	npc
+		to spawn
+			has "sabotaged ship ambush"
+		government "Pirate"
+		system "Almach"
+		personality entering harvests plunders
+			confusion 20
+		fleet "Small Core Pirates"
+	npc
+		to spawn
+			has "sabotaged ship ambush"
+		government "Pirate"
+		system "Alcyone"
+		personality entering harvests plunders
+			confusion 20
+		fleet "Large Core Pirates"
+	npc assist accompany save
+		government "Syndicate"
+		system "Gamma Cassiopeiae"
+		personality target derelict waiting staying timid
+		fleet
+			names "syndicate capital"
+			outfitters "Ammo North"
+			variant 1
+				"Vanguard"
+			variant 1
+				"Protector"
+		conversation
+			action
+				set "sabotaged ship ambush"
+			scene "outfit/shield suppressor"
+			`After inspecting the <npc>, you're certain that a Shield Suppressor was planted somewhere on the ship by saboteurs. Escort them back to <destination> where they can have it removed.`
+	on abort
+		clear "sabotaged ship ambush"
+	on fail
+		clear "sabotaged ship ambush"
+	on complete
+		clear "sabotaged ship ambush"
+		payment 1000000
+		dialog "The government of <planet> rewards you with <payment> for rescuing the <npc>."
 
 
 mission "Strike Breakers [station]"
@@ -4086,7 +7079,6 @@ mission "Strike Breakers [station]"
 		dialog "You unload the strike breakers amid an angry crowd of protesters held back by station security. When you return to your ship, you find that the company has transferred the agreed-upon payment of <payment> into your account."
 
 
-
 mission "Transport workers to <planet> [station]"
 	job
 	repeat
@@ -4107,9 +7099,6 @@ mission "Transport workers to <planet> [station]"
 		payment
 		payment 2000
 		dialog "You wish the workers the best of luck on <planet>, and collect your payment of <payment>."
-
-
-
 
 
 ####################
@@ -4191,6 +7180,14 @@ mission "Cryostasis Prisoner (destination)"
 		payment 100000
 		dialog `The cryostasis pod opens with a hiss. Your passenger wakes up and, before he's fully conscious, a team of well-armed guards takes him away. You collect your payment of <payment>.`
 
+
+##############################
+#
+# deprecated
+#
+##############################
+
+
 mission "Cryostasis Organ Transplant (easy)"
 	job
 	repeat
@@ -4202,7 +7199,8 @@ mission "Cryostasis Organ Transplant (easy)"
 		government "Republic" "Free Worlds" "Syndicate"
 		not attributes "uninhabited"
 	to offer
-		random < 25
+#		random < 25
+		never
 	on offer
 		require "Cryostasis Pod"
 	destination
@@ -4223,7 +7221,8 @@ mission "Cryostasis Organ Transplant (medium)"
 		government "Republic" "Free Worlds" "Syndicate"
 		not attributes "uninhabited"
 	to offer
-		random < 20
+#		random < 20
+		never
 	on offer
 		require "Cryostasis Pod"
 	stopover
@@ -4252,7 +7251,8 @@ mission "Cryostasis Organ Transplant (hard)"
 		government "Republic" "Free Worlds" "Syndicate"
 		not attributes "uninhabited"
 	to offer
-		random < 15
+#		random < 15
+		never
 	on offer
 		require "Cryostasis Pod"
 	stopover
@@ -4275,4 +7275,3 @@ mission "Cryostasis Organ Transplant (hard)"
 	on complete
 		payment 25000 175
 		dialog `The cryostasis pod opens with a hiss and you retrieve the last of the donated organs. A medical team rushes it to the intended recipient. Five lives may have been saved with your help. Compared to that, your payment of <payment> is just a bonus.`
-

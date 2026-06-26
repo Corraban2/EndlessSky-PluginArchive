@@ -38,6 +38,7 @@ phrase "friendly civilian"
 phrase "friendly civilian"
 	word
 		"If you think Radar Jammers are useless, you must not have been tortured by Stinger Missiles."
+		"Capitalism, go!"
 
 phrase "friendly civilian"
 	word
@@ -117,6 +118,7 @@ phrase "friendly free worlds"
 		"Those who make peaceful revolution impossible will make violent revolution inevitable."
 		"No one with sense can hesitate in choosing to be free, rather than a slave."
 		"They who give up essential liberty to obtain temporary safety deserve neither liberty nor safety."
+		"Of all tyrannies, a tyranny sincerely exercised for the good of its victims may be the most oppressive."
 
 phrase "disabled free worlds"
 	word
@@ -133,11 +135,64 @@ phrase "disabled free worlds"
 
 
 # Hackerz
+phrase "binary"
+	word
+		"0"
+		"1"
+
+phrase "binary string"
+	phrase
+		"binary"
+	phrase
+		"binary"
+	phrase
+		"binary"
+	phrase
+		"binary"
+	phrase
+		"binary"
+	phrase
+		"binary"
+	phrase
+		"binary"
+	phrase
+		"binary"
+
 phrase "friendly drone"
 	word
 		"Beep boop beep."
-		"110100110100110100110100110100110100110100110100110100110100110100110100110100110100110100110100110100110100110100110100..."
-		"001011001011001011001011001011001011001011001011001011001011001011001011001011001011001011001011001011001011001011001011..."
+
+phrase "friendly drone"
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
+	word
+		" "
+	phrase
+		"binary string"
 
 phrase "hostile hackerz"
 	word
@@ -147,6 +202,7 @@ phrase "hostile hackerz"
 		"Whatever dood. Go ahead and report us. You're the one carrying illegal cargo!"
 		"LOL! U got pwned."
 		"ROTFLMAO! U mad bro? U mad?"
+		"Get rekt!"
 		
 phrase "hostile disabled hackerz"
 	word
@@ -281,38 +337,100 @@ phrase "hostile oathbreaker"
 # Pirate
 phrase "friendly pirate"
 	word
+		"Looking for a safe place to smuggle goods into? "
+		"Are you tired of having your goods confiscated by the authorities? "
+		"Having a hard time with smuggling? "
+	word
+		"Try "
+		"Check out "
+		"Consider "
+	word
+		"delivering "
+		"running "
+		"sneaking "
+	word
+		"shipments into "
+		"goods into "
+	word
+		"Antipode"
+		"Arabia"
+		"Big Sky"
+		"Bounty"
+		"Canyon"
+		"Clark"
+		"Cornucopia"
+		"Darkstone"
+		"Deep"
+		"Furnace"
+		"Hippocrates"
+		"Ingot"
+		"Longjump"
+		"Mere"
+		"New China"
+		"New Holland"
+		"New Switzerland"
+		"New Tibet"
+		"Poseidos"
+		"Shiver"
+		"Silver"
+		"Skymoot"
+		"Sundrinker"
+		"Taylor"
+		"Thunder"
+		"Tundra"
+		"Winter"
+	word
+		". The security scans there are less likely to flag you for carrying ${contraband}."
+		". They aren't as strict with their security scans there."
+		". Their security scans seem less intensive than some other worlds."
+		". I've had good luck avoiding security scans while running ${contraband} there."
+		". I easily passed the security scans when smuggling ${contraband} there."
+
+phrase "contraband"
+	word
+		"contraband"
+		"counterfeit goods"
+		"illegal drugs"
+		"illegal cargo"
+		"illicit goods"
+		"prohibited weapons"
+		"undeclared cargo"
+		"untaxed cargo"
+
+phrase "friendly pirate"
+	word
 		"I need to get to"
 		"I'm looking for"
 	word
 		" "
 	word
-		"Janus"
-		"Vesta"
-		"Lares"
-		"Rum Cellar"
-		"Naihe Qiao"
-		"Wang Xiang Tai"
-		"Thule"
-		"Smuggler's Den"
-		"Bloodsea"
-		"Greenrock"
 		"Albatross"
+		"Alvorada"
+		"Bailey"
+		"Bloodsea"
 		"Buccaneer Bay"
 		"Covert"
 		"Deadman's Cove"
 		"Freedom"
-		"Haven"
-		"Stormhold"
-		"Zenith"
-		"Mutiny"
-		"Trinket"
-		"New Tortuga"
-		"Alvorada"
-		"Bailey"
 		"Gagarin"
+		"Greenrock"
+		"Haven"
 		"Jakobsen"
 		"Mordente-Bridi"
+		"Mutiny"
+		"New Tortuga"
+		"Smuggler's Den"
+		"Stormhold"
+		"Thule"
+		"Trinket"
+		"Zenith"
+		"Janus"
+		"Lares"
+		"Naihe Qiao"
 		"New America"
+		"Rum Cellar"
+		"Vesta"
+		"Wang Xiang Tai"
 	word
 		", but my starmap doesn't list it."
 		"; do you know where I can find it?"
@@ -324,14 +442,19 @@ phrase "friendly pirate"
 	word
 		"Three pirates died on a rock. Three skeletons to open a lock."
 		"If you don't mind killing their crew, capturing ships is the best way to make money."
-		"Don't capture a ship if you don't want to deal with the hassle of escorting it back to a friendly spaceport."
+		"Don't capture a ship unless you're prepared to deal with the hassle of escorting it back to a friendly spaceport."
 		"Sometimes I see ships with strange weapons on them. I wonder where they get their toys."
-		"Cross me and I'll destroy you quicker than Al Pundy!"
+		"Got any good plunder in your cargo hold?"
+		"Once, I plundered a ship only to find it was filled with ${band} audio files. Who would want to buy that?"
+		"Once, I plundered a ship only to find it was filled with ${media name} video files. Who would want to buy that?"
+		"Buckler pilots are crazy. I could never pilot one of those death traps."
+		"If you acquire a Buckler, don't watch the propaganda training video if it's still installed on the ship's computer."
 
 phrase "hostile pirate"
 	word
 		"I'm going to destroy you quicker than Al Pundy!"
-
+		"Cross me and my friends will destroy you quicker than Al Pundy!"
+		"I'll bet you've got somethin' good in yer cargo hold!"
 
 # Republic
 phrase "friendly navy"
@@ -358,11 +481,17 @@ phrase "storm seeker"
 phrase "friendly syndicate"
 	word
 		"Free demonstrations of the Syndicate's weapons are available to certain approved individuals."
+		"Syndicate Systems' Proton Gun is a prime example of our innovation in weapons design."
+		"For centuries, Syndicate Systems' RT-I Radiothermal has proven itself to be a reliable energy solution. Accept no substitutes!"
+		"Use code S-${digit}${digit}${digit}${digit}${digit}${digit}${digit}${digit}${digit}${digit}${digit}${digit} the next time you shop at Syndicate Systems and your product installation will be free!"
+		"Your communication is being monitored in order to provide you with better customer service."
+		"The Syndicate is working on new flavors of Soylent Protein Augmented Meat. Visit our factory worlds in Syndicate space to participate in early taste tests!"
 
 phrase "hostile syndicate"
 	word
 		"Congratulations! You've been approved for a free demonstration of the Syndicate's weapons!"
-
+		"You're about to experience a demonstration of the Syndicate's finest weapons!"
+		"I'll give you a demonstration of Syndicate weaponry, free of charge!"
 
 # Test Dummy
 phrase "test dummy"
@@ -376,3 +505,29 @@ phrase "hostile unfettered"
 		"MORE SACRIFICES FOR THE ACORN GOD!"
 		"I'll crack your nuts!"
 
+
+# Successors (Shadow House)
+phrase "shadow house friendly hail"
+	word
+		`We be the hidden hand, keeping our candle kindled through this darksome age.`
+		`The empty systems of our Predecessors hide many secrets.`
+		`There are nightmares in the void that the Houses fear.`
+		`Hell is empty and all the devils are here. Though this be madness, yet there is method in't.`
+		`There is nothing either good or bad, but thinking makes it so. It is not in the stars to hold our destiny but in ourselves.`
+		`Take him and cut him out in little stars, and he will make the face of heaven so fine that all the world will be in love with night.`
+		`Stars, hide your fires; Let not light see my black and deep desires.`
+		`In time we hate that which we often fear. Conscience doth make cowards of us all.`
+
+phrase "shadow house friendly hail"
+	word
+		`What's past is prologue. Beware the `
+	word
+		`Drak, whose wrath do bringeth ruine.`
+		`Quarg, whose pride shall portend thy doome.`
+		`Coalition, whose envy doth breed tragedy.`
+		`Korath, whose gluttony hath no bounds.`
+		`Hai, whose greed is a bottomless pit.`
+		`Builders, whose sloth summoned monstrous beasts.`
+		`Sheragi, whose folly did prove their undoing.`
+	word
+		` What's done cannot be undone.`

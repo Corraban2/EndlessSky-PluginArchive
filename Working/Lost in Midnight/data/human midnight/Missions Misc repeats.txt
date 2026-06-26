@@ -17,11 +17,14 @@
 
 
 mission "Independent Refugee"
-	name "Passenger to <planet>"
+	name "Refugee to <planet>"
 	repeat
-	description "Help <fare> escape from <origin> to <destination>. Payment is <payment>."
+	description "Help <fare> escape from <origin> to <destination>. Payment will be <payment>. If you are caught with him, you may be fined."
 	minor
 	passengers 1
+	infiltrating
+	stealth
+	illegal 10000 `The authorities discovered your passenger lacks the proper travel paperwork and detains him for a thorough background check. You wind up a bit poorer through a combination of fines and bribes (the breakdown remains somewhat unclear).`
 	to offer
 		random < 5 - "rejected illegal jobs"
 	source
@@ -29,7 +32,7 @@ mission "Independent Refugee"
 		not attributes uninhabited
 	destination
 		distance 0 5
-		government "Independent" "Republic" "Free Worlds" "Syndicate" "Quarg" "Neutral"
+		government "Independent" "Republic" "Free Worlds" "Syndicate" "Neutral"
 	on offer
 		dialog phrase "generic refugee offer"
 	on accept
@@ -42,7 +45,7 @@ mission "Independent Refugee"
 		"reputation: Independent" ++
 		"getaway driver" ++
 		payment
-		payment 1000
+		payment 30000
 		dialog phrase "generic refugee dropoff payment"
 
 
@@ -102,6 +105,7 @@ mission "Midnight Blaster Roulette 1"
 			action
 				payment 5000
 				outfit "Blaster Charger" -1
+				"Midnight Market" ++
 			scene "outfit/blaster charger"
 			`	You decide to ignore the Puppetmaster's challenge and have no problem selling the Blaster Charger to one of the locals. You find a buyer willing to pay 5,000 credits for it, ten times what it's worth elsewhere.`
 				decline
@@ -216,6 +220,7 @@ mission "Midnight Blaster Roulette 1"
 			action
 				outfit "Modified Blaster Pistol" 1
 				outfit "Blaster Charger" -1
+				"reputation: Independent" ++
 				log "Minor People" "The Puppetmaster" `A strange hermit that can be found at the spaceport on Bailey. This person accepts challenges to a deadly game of Blaster Roulette. Those who succeed are rewarded with a Modified Blaster, but the Puppetmaster may be cheating somehow...`
 			scene "outfit/mod blaster pistol"
 			`	There is a bright flash of light. The cloaked figure is slammed back into the darkness. The door behind you opens and a mechanical voice from an unseen speaker says, "Congratulations. The Modified Blaster Pistol and chargers you may take." You return to the <ship> with your prize.`
@@ -307,6 +312,7 @@ mission "Midnight Blaster Roulette 2"
 			action
 				outfit "Modified Blaster Pistol" -1
 				outfit "Dual Mod Blaster Pistols" 1
+				"reputation: Independent" ++
 			scene "outfit/dual mod blaster pistols"
 			`	There is a bright flash of light. The cloaked figure is slammed back into the darkness. The door behind you opens and a mechanical voice from an unseen speaker says, "Congratulations. The Modified Blaster Pistol and chargers you may take." With a second of these Modified Blaster Pistols, you can now dual wield them.`
 				decline
@@ -413,10 +419,175 @@ mission "Midnight Blaster Roulette 3"
 			action
 				clear "blaster roulette doubled"
 				outfit "Dual Mod Blaster Pistols" 1
+				"reputation: Independent" ++
 			scene "outfit/dual mod blaster pistols"
 			`	There is a bright flash of light. The cloaked figure is slammed back into the darkness. The door behind you opens and a mechanical voice from an unseen speaker says, "Congratulations. These Modified Blaster Pistols and chargers you may take." The cloaked figure returns to the table with a second Modified Blaster Pistol. You return to the <ship> with your prize.`
 				decline
 
+
+conversation "Midnight Independent Cargo Salvage Offer"
+	scene "scene/scene-wooden crates"
+	`Some of the locals approach your ship. "We are in desperate need of <cargo>. A shipment was supposed to arrive last week on the <npc> but that ship never arrived. We would be extremely grateful if you would search for the <npc> for us.`
+	choice
+		`	"Sure, I'll find the <npc>."`
+		`	"Sorry, I'm busy with other things."`
+			decline
+	`	These people are relieved to hear that you'll help them. "It must be somewhere in the systems nearby."`
+		accept
+
+phrase "Midnight Independent Cargo Salvage Complete"
+	word
+		"The locals are grateful to you for delivering the missing <commodity> and promise to recommend you to anyone in need of a good starship captain. Since the crew of the <npc> didn't survive, they pass on the full reward of <payment> to you."
+
+mission "Midnight Independent Cargo Salvage (small)"
+	minor
+	repeat
+	name "Cargo Salvage"
+	description "The <npc> went missing. Search the nearby systems for it and recover <cargo> desperately needed by people on <destination>."
+	cargo "emergency supplies" 25
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
+		attributes "frontier"
+		not attributes "uninhabited"
+	to offer
+		"reputation: Pirate" < 0
+		random < 9
+	on offer
+		conversation "Midnight Independent Cargo Salvage Offer"
+	npc board
+		government "Derelict (Killable)"
+		system
+			distance 1 2
+		personality target waiting staying derelict mute
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Derelict Argosy"
+			variant
+				"Derelict Freighter"
+			variant
+				"Derelict Hauler"
+		on board
+			dialog "Fortunately, pirates haven't plundered the <commodity> needed by the people of <destination>. Unfortunately, the crew didn't survive."
+	on complete
+		payment 25000
+		"reputation: Independent" += 3
+		dialog phrase "Midnight Independent Cargo Salvage Complete"
+
+mission "Midnight Independent Cargo Salvage (medium)"
+	minor
+	repeat
+	name "Cargo Salvage"
+	description "The <npc> went missing. Search the nearby systems for it and recover <cargo> desperately needed by people on <destination>."
+	cargo "emergency supplies" 50
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
+		attributes "frontier"
+		not attributes "uninhabited"
+	to offer
+		"reputation: Pirate" < 0
+		random < 5
+	on offer
+		conversation "Midnight Independent Cargo Salvage Offer"
+	npc board
+		government "Derelict (Killable)"
+		system
+			distance 1 2
+		personality target waiting staying derelict mute
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Derelict Argosy"
+			variant
+				"Derelict Freighter"
+			variant
+				"Derelict Hauler"
+		on board
+			dialog "Fortunately, pirates haven't plundered the <commodity> needed by the people of <destination>. Unfortunately, the crew didn't survive."
+	on complete
+		payment 50000
+		"reputation: Independent" += 5
+		dialog phrase "Midnight Independent Cargo Salvage Complete"
+
+mission "Midnight Independent Cargo Salvage (large)"
+	minor
+	repeat
+	name "Cargo Salvage"
+	description "The <npc> went missing. Search the nearby systems for it and recover <cargo> desperately needed by people on <destination>."
+	cargo "emergency supplies" 75
+	source
+		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
+		attributes "frontier"
+		not attributes "uninhabited"
+	to offer
+		"reputation: Pirate" < 0
+		random < 1
+	on offer
+		conversation "Midnight Independent Cargo Salvage Offer"
+	npc board
+		government "Derelict (Killable)"
+		system
+			distance 1 2
+		personality target waiting staying derelict mute
+		fleet
+			names "civilian"
+			cargo 0
+			variant
+				"Derelict Argosy"
+			variant
+				"Derelict Freighter"
+			variant
+				"Derelict Hauler"
+		on board
+			dialog "Fortunately, pirates haven't plundered the <commodity> needed by the people of <destination>. Unfortunately, the crew didn't survive."
+	on complete
+		payment 75000
+		"reputation: Independent" += 7
+		dialog phrase "Midnight Independent Cargo Salvage Complete"
+
+
+mission "Midnight Research Consolidation"
+	entering
+	invisible
+	destination Earth
+	to offer
+		"outfit (flagship installed): Research Data" >= 2
+		random < 1 + ( "flagship attribute: research bonus" / 10 )
+	on offer
+		outfit "Research Data" -2
+		conversation
+			branch physics
+				random < 20
+			branch chemistry
+				random < 30
+			action
+				outfit "Research Data (Bio)" 1
+			scene "outfit/research biology"
+			`Like pieces of a puzzle, random research has consolidated into more focused data.`
+			``
+			`	(Lost 2 Research Data)`
+			`	(Gained 1 Research Data (Bio))`
+				decline
+			label chemistry
+			action
+				outfit "Research Data (Chem)" 1
+			scene "outfit/research chemistry"
+			`Like pieces of a puzzle, random research has consolidated into more focused data.`
+			``
+			`	(Lost 2 Research Data)`
+			`	(Gained 1 Research Data (Chem))`
+				decline
+			label physics
+			action
+				outfit "Research Data (Phys)" 1
+			scene "outfit/research physics"
+			`Like pieces of a puzzle, random research has consolidated into more focused data.`
+			``
+			`	(Lost 2 Research Data)`
+			`	(Gained 1 Research Data (Phys))`
+				decline
 
 
 mission "Midnight Vlad De Drakul"
@@ -443,7 +614,7 @@ mission "Midnight Vlad De Drakul"
 			scene "outfit/coffin"
 			branch returns
 				has "vlad de drakul returns"
-			`It's late at night when you find an odd man wearing strangely outdated and unfashionable clothing waiting at your ship's landing pad with a coffin. He greets you warmly and says he's willing to pay <payment> for passage to <destination> as quickly and discreetly as possible. He introduces himself as Vlad De Drakul and explains that he is making his annual pilgrimage to his ancestral home.  Something doesn't seem right about him, but he's offering a small fortune...`
+			`It's late at night when you find an odd man wearing strangely outdated and unfashionable clothing waiting at your ship's landing pad with a coffin. He greets you warmly and says he's willing to pay <payment> for passage to <destination> as quickly and discreetly as possible. He introduces himself as Vlad De Drakul and explains that he is making his annual pilgrimage to his ancestral home. Something doesn't seem right about him, but he's offering a small fortune...`
 			choice
 				`	(Accept his offer.)`
 				`	(Reject his offer.)`
@@ -475,6 +646,7 @@ mission "Midnight Vlad De Drakul"
 	on complete
 		set "vlad de drakul returns"
 		"getaway driver" ++
+		"reputation: Independent" ++
 		payment 350000
 		clear "Midnight Vlad De Drakul Reset: offered"
 		dialog `You land under a moonlit sky. Vlad De Drakul has spoken hardly a word during the entire trip, seemingly spending the entire journey in his coffin. As soon as you land, he hands you your payment of <payment> and disappears into the night.`
@@ -490,7 +662,6 @@ mission "Midnight Vlad De Drakul Reset"
 	on offer
 		clear "Midnight Vlad De Drakul: offered"
 		fail
-
 
 
 mission "Mining: Claim Jumpers"
@@ -566,7 +737,8 @@ mission "Mining: Iron Challenge"
 		not "ships: Superheavy" 
 		"ships: Interceptor" == 1
 		"flagship attribute: cargo" >= 15000
-		random < 10 ( "iron challenge declined" * 10 )
+		not "iron challenge declined"
+		random < 10
 	on offer
 		conversation
 			`Another pilot approaches you. "Nice ship. Are you a miner?`
@@ -827,6 +999,8 @@ mission "Lares Camping (Bums)"
 				`	(Share.)`
 				`	(Refuse.)`
 					goto bumfight
+			action
+				"reputation: Independent" += 2
 			`	You give each hobo one of the creature's legs. They are overjoyed at the gift and thank you before leaving. You watch them head over to one of the other abandoned cabins.`
 				goto alone
 			
@@ -878,7 +1052,14 @@ mission "Lares Camping (Raiders)"
 
 event "Lares Midnight Crash"
 	planet Lares
-		spaceport `The spaceport is a concrete slab forming a large forest clearing surrounded by some log cabins. The burnt wreckage of a pirate interceptor sits on the edge of the slab. You see no other parked ships and the area looks deserted.`
+		port "Landing Pad"
+			description `The "spaceport" is a concrete slab forming a large forest clearing surrounded by some log cabins. The burnt wreckage of a pirate interceptor sits on the edge of the slab. You see no other parked ships and the area looks deserted.`
+			recharges
+				shields
+				energy
+			services
+				"offers missions"
+			news
 
 mission "Lares Camping (Scavenger)"
 	minor

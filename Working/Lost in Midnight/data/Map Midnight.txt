@@ -15,11 +15,11 @@ system Archipelago
 	hidden
 	pos -705 -126
 	government Neutral
-	attributes "midnight" "giant star" "notable star" "inaccessible"
+	attributes "midnight" "multi-star" "giant star" "notable star" "inaccessible"
 	habitable 8000
 	belt 6000
 	belt 10000
-	haze _menu/haze-yellow
+	haze _menu/haze-yellow-large
 	"jump range" 80
 	asteroids "small rock" 1 2.3296
 	asteroids "medium rock" 2 2.4752
@@ -50,9 +50,10 @@ system Archipelago
 	fleet "Large Dirt Belt Pirates" 3600
 	fleet "pirate raid" 4800
 	fleet "Marauder Independent" 7200
+	fleet "pirate raid (rivals)" 12000
 	fleet "L. Advanced Independent" 50000
 	fleet "Derelict Pirate" 30000
-	fleet "Comet" 40000
+	fleet "Smugglers" 10000
 	object
 		sprite planet/browndwarf-t
 		period 10
@@ -166,7 +167,8 @@ system Aya'arak
 	government Uninhabited
 	attributes "midnight" "notable star" "giant star" "inaccessible"
 	habitable 1080
-	belt 1200
+	belt 1500
+	belt 4500
 	asteroids "small rock" 88 2.016
 	asteroids "medium rock" 10 4.932
 	asteroids "large rock" 4 1.908
@@ -177,6 +179,7 @@ system Aya'arak
 	minables aluminum 15 2
 	minables tungsten 10 2.5
 	minables platinum 5 3
+	minables deuterium 1 1
 	trade Clothing 256
 	trade Electronics 831
 	trade Equipment 595
@@ -187,7 +190,6 @@ system Aya'arak
 	trade Medical 678
 	trade Metal 285
 	trade Plastic 442
-	fleet "Comet" 40000
 	object
 		sprite star/giant
 		period 10
@@ -230,7 +232,8 @@ system Chasm
 	government Pirate
 	attributes "midnight" "inaccessible"
 	habitable 1538.92
-	belt 900
+	belt 1800
+	belt 5400
 	haze _menu/haze-none
 	"jump range" 80
 	asteroids "medium rock" 24 4.5936
@@ -242,6 +245,7 @@ system Chasm
 	minables pyrite 9 3.5
 	minables titanium 6 4
 	minables silver 3 4.5
+	minables deuterium 1 1
 	trade Clothing 266
 	trade Electronics 786
 	trade Equipment 533
@@ -261,7 +265,7 @@ system Chasm
 	fleet "Large Independent" 7200
 	fleet "Marauder Independent" 8400
 	fleet "Derelict Pirate" 10000
-	fleet "Comet" 40000
+	fleet "Smugglers" 10000
 	object
 		sprite star/g0
 		distance 35.3538
@@ -316,12 +320,13 @@ system "Deep Space 19MN"
 	attributes "inaccessible" "notable star" "proto-system"
 	arrival 500
 	habitable 135
-	belt 1977
+	belt 1500
+	belt 4500
 	haze _menu/haze-black
 	link "Deep Space 19M2"
 	asteroids "small rock" 7 1.974
 	asteroids "medium rock" 4 1.484
-	minables pyrite 3 3.5
+	minables deuterium 1 1
 	trade Clothing 252
 	trade Electronics 861
 	trade Equipment 361
@@ -332,7 +337,6 @@ system "Deep Space 19MN"
 	trade Medical 528
 	trade Metal 284
 	trade Plastic 350
-	fleet "Comet" 40000
 	fleet "Pincer Beast" 20000
 	object
 		sprite star/protostar-yellow
@@ -362,6 +366,12 @@ system "Deep Space 19MN"
 			distance 471
 			period 50.3841
 			offset 180.0
+	object "Midnight Cloud (Deep Space 19MN)"
+		sprite planet/smoke
+			scale 2
+		distance 4139.51
+		period 3658.06
+		offset 360
 
 system "Deep Space 19MX"
 	pos -990 -837
@@ -369,7 +379,8 @@ system "Deep Space 19MX"
 	attributes "inaccessible" "notable star" "proto-system"
 	arrival 500
 	habitable 370
-	belt 1977
+	belt 1500
+	belt 4500
 	haze _menu/haze-black
 	link "Deep Space 19M2"
 	asteroids "small rock" 3 1.974
@@ -378,9 +389,11 @@ system "Deep Space 19MX"
 	asteroids "small metal" 3 1.75
 	asteroids "medium metal" 2 1.638
 	asteroids "large metal" 1 1.092
+	minables pyrite 3 3.5
 	minables neodymium 2 2.79327
 	minables silver 1 2.79327
 	minables aluminum 1 1.77981
+	minables deuterium 1 1
 	trade Clothing 252
 	trade Electronics 861
 	trade Equipment 361
@@ -391,7 +404,6 @@ system "Deep Space 19MX"
 	trade Medical 528
 	trade Metal 284
 	trade Plastic 350
-	fleet "Comet" 40000
 	fleet "Pincer Beast" 20000
 	object
 		sprite star/protostar-orange
@@ -417,7 +429,8 @@ system Diyu
 	government Pirate
 	attributes "midnight" "inaccessible"
 	habitable 1148
-	belt 1200
+	belt 1400
+	belt 4200
 	"jump range" 80
 	asteroids "small rock" 2 3.4944
 	asteroids "medium rock" 2 4.7936
@@ -429,6 +442,7 @@ system Diyu
 	minables pyrite 9 2
 	minables aluminum 6 2.5
 	minables titanium 3 3
+	minables deuterium 1 1
 	trade Clothing 310
 	trade Electronics 689
 	trade Equipment 394
@@ -445,8 +459,8 @@ system Diyu
 	fleet "Small Independent" 6000
 	fleet "Large Independent" 7200
 	fleet "Marauder Independent" 8400
-	fleet "Smugglers" 1200
-	fleet "Comet" 40000
+	fleet "pirate raid (rivals)" 12000
+	fleet "Smugglers" 5000
 	object
 		sprite star/g0
 		period 10
@@ -501,6 +515,7 @@ system Ehmahai
 	attributes "midnight" "inaccessible"
 	habitable 625
 	belt 1200
+	belt 3600
 	haze _menu/haze-none
 	link Heiahai
 	asteroids "small rock" 3 7.8
@@ -513,6 +528,7 @@ system Ehmahai
 	minables iron 18 2
 	minables pyrite 12 2.5
 	minables titanium 6 3
+	minables deuterium 1 1
 	trade Clothing 168
 	trade Electronics 765
 	trade Equipment 330
@@ -524,7 +540,6 @@ system Ehmahai
 	trade Metal 488
 	trade Plastic 472
 	fleet "Nova Firefly" 3000
-	fleet "Comet" 40000
 	object
 		sprite star/g5
 		period 10
@@ -577,15 +592,17 @@ system Genesis
 	attributes "midnight" "inaccessible"
 	habitable 1505.92
 	belt 1800
+	belt 5400
 	haze _menu/haze-none
 	asteroids "medium rock" 12 4.16
 	asteroids "large rock" 11 5.4496
 	asteroids "small metal" 9 5.5328
 	asteroids "large metal" 2 3.0784
-	minables silicon 20 1
+	minables silicon 20 1.5
 	minables iron 15 1.5
 	minables pyrite 10 2
 	minables titanium 5 2.5
+	minables deuterium 1 1
 	trade Clothing 314
 	trade Electronics 777
 	trade Equipment 589
@@ -596,7 +613,6 @@ system Genesis
 	trade Medical 641
 	trade Metal 404
 	trade Plastic 336
-	fleet "Comet" 40000
 	object
 		sprite star/g0
 		distance 33.374
@@ -652,7 +668,8 @@ system Hazehai
 	pos -796 -41
 	government Uninhabited
 	attributes "nova" "midnight" "inaccessible"
-	belt 800
+	belt 1200
+	belt 3600
 	haze _menu/haze-blackbody
 	asteroids "small rock" 11 4.872
 	asteroids "small metal" 13 3.528
@@ -661,6 +678,7 @@ system Hazehai
 	minables gold 6 1.38671
 	minables yottrite 3 2.3863
 	minables quantumium 1 3.1863
+	minables deuterium 1 1
 	trade Clothing 243
 	trade Electronics 599
 	trade Equipment 513
@@ -673,7 +691,6 @@ system Hazehai
 	trade Plastic 328
 	fleet "Nova Firefly Hatchery" 900
 	fleet "Nova Firefly" 4000
-	fleet "Comet" 40000
 	object
 		sprite star/nova-core
 		period 10
@@ -693,6 +710,7 @@ system Heiahai
 	government Uninhabited
 	habitable 1250
 	belt 1500
+	belt 4500
 	haze _menu/haze-none
 	link Ehmahai
 	link Zubahai
@@ -703,6 +721,7 @@ system Heiahai
 	minables iron 14 1.5
 	minables titanium 9 2
 	minables silver 4 2.5
+	minables deuterium 1 1
 	trade Clothing 418
 	trade Electronics 695
 	trade Equipment 470
@@ -714,7 +733,6 @@ system Heiahai
 	trade Metal 248
 	trade Plastic 472
 	fleet "Nova Firefly" 3000
-	fleet "Comet" 40000
 	object
 		sprite star/g5
 		distance 58.5
@@ -757,10 +775,10 @@ system Heiahai
 system Kalsolli
 	pos 198.743 -1.1741
 	government Uninhabited
-	attributes "midnight" "geddonia"
+	attributes "midnight" "geddonia" "multi-star"
 	habitable 1073
-	belt 750
 	belt 1300
+	belt 3900
 	haze _menu/haze-full
 	asteroids "small rock" 15 4.37
 	asteroids "medium rock" 13 3.37
@@ -773,6 +791,7 @@ system Kalsolli
 	minables pyrite 10 3.1863
 	minables neodymium 5 2.48669
 	minables quantumium 1 2
+	minables deuterium 1 1
 	trade Clothing 216
 	trade Electronics 857
 	trade Equipment 640
@@ -784,7 +803,6 @@ system Kalsolli
 	trade Metal 217
 	trade Plastic 524
 	fleet "Small Crystal Sentry" 50000
-	fleet "Comet" 40000
 	object
 		sprite star/f5-old
 		distance 31.5287
@@ -866,27 +884,174 @@ system "Mah Duum"
 		period 1299.4
 
 
+system Maspa-Sado
+	pos -404 1591
+	government Uninhabited
+	attributes midnight
+	arrival 2310
+	habitable 320
+	link Kella-Uoasa
+	asteroids "small rock" 2 1
+	asteroids "medium rock" 1 1
+	asteroids "small metal" 2 1
+	asteroids "large metal" 1 1
+	minables pyrite 1 1
+	minables deuterium 1 1
+	fleet "People's Houses Raiders" 5000
+	fleet "People's Shadow" 10000
+	haze _menu/haze-none
+	"starfield density" 0.05
+	object
+		sprite star/m0
+	object
+		sprite planet/rock0
+		distance 1000
+		period 1000
+		object Vade-Kella-Kaska
+			sprite "planet/station successor 3"
+			distance 450
+			period 32
+	object
+		sprite planet/gas4
+		distance 3200
+		period 1678
+		object
+			sprite planet/mercury
+			distance 300
+			period 300
+	object
+		sprite planet/uranus
+		distance 4000
+		period 2272.498
+		object
+			sprite planet/ice0
+			distance 250
+			period 173.691
+
+
+# the invisible objects are bait for ships with atmosphere scan
+system Murk
+	pos -760 887
+	hidden
+	shrouded
+	government Uninhabited
+	attributes "smoke ring" "tangled shroud" "midnight"
+	arrival 2560
+	ramscoop
+		multiplier 3
+	habitable 2560
+	belt 2100
+	"jump range" 40
+	haze _menu/haze-twilight-thick
+	minables "tiny murk droplet" 90 3.9
+	minables "small murk droplet" 120 2.4
+	minables "medium murk droplet" 90 1.5
+	minables "large murk droplet" 30 0.9
+	minables "huge murk droplet" 6 0.6
+	minables "jelly murk droplet" 30 3.9
+	minables "lunker murk droplet" 1 0.6
+	minables "wither tree a" 6 0.9
+	minables "wither tree aa" 6 1.5
+	minables "wither tree aaa" 1 3
+	minables "wither tree b" 9 1.5
+	minables "wither tree bb" 3 0.3
+	minables "wither tree bbb" 1 3
+	hazard "Murk Ring Atmosphere" 1
+	object
+		sprite star/f0
+		period 1
+	object
+		sprite "star/murk ring"
+			scale 1.5
+			"frame rate" 0.15
+			"rewind"
+		period 914.299
+		offset 180
+	object Elos
+		sprite planet/neptune
+		distance 2373.73
+		period 914.298
+	object
+		distance 2373.73
+		period 914.298
+		offset 20
+	object
+		distance 2373.73
+		period 914.298
+		offset 40
+	object
+		distance 2373.73
+		period 914.298
+		offset 60
+	object
+		distance 2373.73
+		period 914.298
+		offset 80
+	object
+		distance 2373.73
+		period 914.298
+		offset 100
+	object
+		distance 2373.73
+		period 914.298
+		offset 120
+	object
+		distance 2373.73
+		period 914.298
+		offset 140
+	object
+		distance 2373.73
+		period 914.298
+		offset 160
+	object
+		distance 2373.73
+		period 914.298
+		offset 180
+	object
+		distance 2373.73
+		period 914.298
+		offset 200
+	object
+		distance 2373.73
+		period 914.298
+		offset 220
+	object
+		distance 2373.73
+		period 914.298
+		offset 240
+	object
+		distance 2373.73
+		period 914.298
+		offset 260
+	object
+		distance 2373.73
+		period 914.298
+		offset 280
+	object
+		distance 2373.73
+		period 914.298
+		offset 300
+	object
+		distance 2373.73
+		period 914.298
+		offset 320
+	object
+		distance 2373.73
+		period 914.298
+		offset 340
+
+
 system Nebulous
 	hidden
 	attributes "midnight" "ringworld" "notable star" "wolf-rayet" "inaccessible"
 	pos -1145.58 432.574
 	government Uninhabited
+	arrival 8000
 	departure 1000
 	haze _menu/haze-blackbody
-	habitable 233.28
+	habitable 812
 	fleet "Plasma Parasites" 3600
 	fleet "Nesting Plasma Parasites" 400
-	trade Clothing 361
-	trade Electronics 800
-	trade Equipment 485
-	trade Food 335
-	trade "Heavy Metals" 806
-	trade Industrial 838
-	trade "Luxury Goods" 1456
-	trade Medical 914
-	trade Metal 297
-	trade Plastic 412
-	fleet "Comet" 40000
 	object
 		sprite star/wr1
 		period 10
@@ -979,6 +1144,50 @@ system Nebulous
 		distance 812
 		period 360
 		offset 340
+	object "Quarloque (Nebulous)"
+		sprite "planet/midnight quarloque c"
+		distance 8000
+		period 360
+	object
+		sprite "planet/midnight quarloque e"
+		distance 8000
+		period 360
+		offset 40
+	object "Quarloque (Nebulous Damaged A)"
+		sprite "planet/midnight quarloque d"
+		distance 8000
+		period 360
+		offset 80
+	object "Quarloque (Nebulous)"
+		sprite "planet/midnight quarloque d"
+		distance 8000
+		period 360
+		offset 120
+	object "Quarloque (Nebulous Damaged B)"
+		sprite "planet/midnight quarloque c"
+		distance 8000
+		period 360
+		offset 160
+	object
+		sprite "planet/midnight quarloque f"
+		distance 8000
+		period 360
+		offset 200
+	object "Quarloque (Nebulous)"
+		sprite "planet/midnight quarloque c"
+		distance 8000
+		period 360
+		offset 240
+	object
+		sprite "planet/midnight quarloque e"
+		distance 8000
+		period 360
+		offset 280
+	object "Quarloque (Nebulous Damaged C)"
+		sprite "planet/midnight quarloque d"
+		distance 8000
+		period 360
+		offset 320
 
 
 system "Pebble Beach"
@@ -988,7 +1197,8 @@ system "Pebble Beach"
 	attributes "midnight" "inaccessible"
 	habitable 711
 	belt 800
-	belt 1300
+	belt 1600
+	belt 4800
 	haze _menu/haze-none
 	"jump range" 80
 	asteroids "small rock" 56 3.384
@@ -1002,6 +1212,7 @@ system "Pebble Beach"
 	minables silver 9 2
 	minables gold 6 2.5
 	minables platinum 3 3
+	minables deuterium 1 1
 	trade Clothing 321
 	trade Electronics 672
 	trade Equipment 455
@@ -1012,7 +1223,6 @@ system "Pebble Beach"
 	trade Medical 811
 	trade Metal 413
 	trade Plastic 408
-	fleet "Comet" 40000
 	object
 		sprite star/g5
 		period 10
@@ -1045,11 +1255,17 @@ system "Pebble Beach"
 
 system Quarantine
 	hidden
+	shrouded
 	pos -188.969 382.99
 	government Uninhabited
 	attributes "midnight" "inaccessible"
 	haze _menu/haze-coal
-	belt 900
+	"starfield density" 0.10
+	arrival 12000
+	departure 1000
+	"jump range" 50
+	belt 8100
+	asteroids "dark matter" 45 0.5
 	asteroids "small metal" 1 1.182
 	asteroids "small rock" 1 1.5614
 	asteroids "ringworld debris a" 1 1
@@ -1060,10 +1276,6 @@ system Quarantine
 	asteroids "ringworld debris f" 1 1.75
 	asteroids "ringworld debris g" 1 1.5
 	asteroids "ringworld debris h" 1 1.25
-	minables silicon 1 1
-	minables lead 1 1.25
-	minables iron 1 1.5
-	minables pyrite 1 1.75
 	trade Clothing 292
 	trade Electronics 793
 	trade Equipment 421
@@ -1074,7 +1286,8 @@ system Quarantine
 	trade Medical 678
 	trade Metal 175
 	trade Plastic 329
-	fleet "Comet" 40000
+	hazard "Quarloque Anti-Gravity Lock" 1
+	hazard "Quarloque Gravity Lock" 1
 	object Orphan
 		sprite planet/ice0
 		distance 1
@@ -1085,6 +1298,229 @@ system Quarantine
 		distance 812
 		period 360
 		offset 70
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+	object
+		distance 8000
+		period 360
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 20
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 40
+	object
+		distance 8000
+		period 360
+		offset 40
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 60
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 80
+	object
+		distance 8000
+		period 360
+		offset 80
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 100
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 120
+	object
+		distance 8000
+		period 360
+		offset 120
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 140
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 160
+	object
+		distance 8000
+		period 360
+		offset 160
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 180
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 200
+	object
+		distance 8000
+		period 360
+		offset 200
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 220
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 240
+	object
+		distance 8000
+		period 360
+		offset 240
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 260
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 280
+	object
+		distance 8000
+		period 360
+		offset 280
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 300
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object "Quarloque"
+		sprite "planet/midnight quarloque a"
+		distance 8000
+		period 360
+		offset 320
+	object
+		distance 8000
+		period 360
+		offset 320
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
+	object
+		distance 8000
+		period 360
+		offset 340
+		hazard "Dark Cloud Cover A" 600
+		hazard "Dark Cloud Cover B" 700
+		hazard "Dark Cloud Cover C" 800
+		hazard "Dark Cloud Cover D" 900
+		hazard "Dark Cloud Cover E" 1000
+		hazard "Quarantine Ion Burst" 5000
 
 
 system Tekochtli
@@ -1092,7 +1528,8 @@ system Tekochtli
 	government Uninhabited
 	attributes "notable star" "nova" "midnight" "geddonia"
 	habitable 886
-	belt 900
+	belt 1500
+	belt 4500
 	haze _menu/haze-full
 	asteroids "small rock" 9 1.9344
 	asteroids "medium rock" 26 1.7784
@@ -1105,6 +1542,7 @@ system Tekochtli
 	minables lead 8 4.8391
 	minables uranium 4 3.48669
 	minables quantumium 2 5.5863
+	minables deuterium 1 1
 	trade Clothing 320
 	trade Electronics 663
 	trade Equipment 371
@@ -1116,7 +1554,6 @@ system Tekochtli
 	trade Metal 517
 	trade Plastic 423
 	fleet "Small Crystal Sentry" 50000
-	fleet "Comet" 40000
 	object
 		sprite star/nova-small
 		period 100
@@ -1148,6 +1585,8 @@ system Temeh
 	attributes "midnight" "carbon" "notable star" "geddonia" "inaccessible"
 	habitable 700
 	belt 900
+	belt 1800
+	belt 5400
 	haze _menu/haze-full
 	asteroids "small rock" 14 5.32
 	asteroids "medium rock" 17 4.83
@@ -1170,6 +1609,7 @@ system Temeh
 	minables gold 2 3.75 
 	minables platinum 1 4
 	minables quantumium 12 4.25
+	minables deuterium 1 1
 	trade Clothing 290
 	trade Electronics 658
 	trade Equipment 588
@@ -1181,7 +1621,6 @@ system Temeh
 	trade Metal 240
 	trade Plastic 531
 	fleet "Small Crystal Sentry" 50000
-	fleet "Comet" 40000
 	object
 		sprite star/carbon
 		period 100
@@ -1212,46 +1651,49 @@ system Temeh
 
 system "Watcher's Nest"
 	hidden
-	attributes "midnight" "inaccessible"
+	attributes "midnight" "inaccessible" "notable star"
 	pos -386.428 -908.93
 	government Uninhabited
 	habitable 320
-	belt 1422
+	belt 1500
+	belt 4500
 	haze _menu/haze-purple
 	minables silicon 24 2
 	minables lead 12 2.5
 	minables iron 6 3
 	minables pyrite 3 1.5
+	minables deuterium 1 1
 	asteroids "small rock" 4 2.2118
 	asteroids "medium rock" 1 1.7684
 	asteroids "small metal" 4 2.578
 	asteroids "medium metal" 1 1.6432
 	fleet "Watcher's Nest Phenomenon (dangerous)" 2000
 	fleet "Watcher's Nest Phenomenon (harmless)" 2000
-	fleet "Comet" 40000
 	object
 		sprite star/p0-old
 		period 10
 	object
 		sprite planet/gas16-b
 		distance 662.245
-		period 446.323
-		offset 173.389
+		period 346.323
 	object
 		sprite planet/gas17
 		distance 1167.25
-		period 1044.39
-		offset 104.729
+		period 644.39
 	object
 		sprite planet/gas14
 		distance 1725.25
-		period 1876.71
-		offset 318.576
+		period 976.71
 	object
 		sprite "planet/collapsed wormhole"
-		distance 1956.39
-		period 1053.25
-		offset 163.793
+		distance 2056.39
+		period 1253.25
+	object "Midnight Cloud (Watcher's Nest)"
+		sprite planet/smoke-purple
+			scale 2
+		distance 3056.39
+		period 1253.25
+		offset 180
 
 
 system Zubahai
@@ -1261,6 +1703,7 @@ system Zubahai
 	attributes "midnight" "inaccessible"
 	habitable 1080
 	belt 1200
+	belt 3600
 	haze _menu/haze-none
 	link Heiahai
 	asteroids "small rock" 110 3.672
@@ -1272,6 +1715,7 @@ system Zubahai
 	minables lead 20 1.5
 	minables copper 10 2
 	minables neodymium 5 2.5
+	minables deuterium 1 1
 	trade Clothing 408
 	trade Electronics 885
 	trade Equipment 730
@@ -1283,7 +1727,6 @@ system Zubahai
 	trade Metal 368
 	trade Plastic 532
 	fleet "Nova Firefly Scout" 10000
-	fleet "Comet" 40000
 	object
 		sprite star/g0
 		period 10
@@ -1326,699 +1769,3 @@ system Zubahai
 			period 23.7634
 
 
-planet "Cadrelock Rock"
-	attributes uninhabited station midnight "dirt belt"
-	landscape land/uclengineering1
-	music ambient/derelict
-	description `Cadrelock Rock is little more than some fuel tanks and a ramscoop bolted onto an asteroid. It is a small hidden waystation often used by pirates. Most of the structure is buried beneath the rocky surface of the asteroid, making the waystation inconspicuous to anyone looking at it from a distance.`
-	port "Fuel Station"
-		recharges fuel
-		description `The equipment for refueling ships is ancient but still in working condition. Either someone has been performing regular maintenance on it or the pirates have an agreement not to trash this remote outpost.`
-	government "Uninhabited"
-
-planet "Checkpoint Geminae"
-	attributes uninhabited "requires: geminae token"
-	landscape land/space0ver8
-	description "Geminae was built only a few years after Solus. Originally, Megaparsec intended for this to allow multiple races to take place at once. Demand for more challenging races lead to the shift towards races that used more than one checkpoint. This formed the basis for the foundation of what became the Geminae League."
-	description "	Asteroids occasionally approach these checkpoints. Because of this, each is equipped with repulsors to either gently push the asteroids away or shift the structure's position to avoid the asteroid. While every effort is made to prevent an asteroid from passing through the center, racers should still be ready to dodge them if necessary."
-	government "Uninhabited"
-
-planet "Checkpoint Solus"
-	attributes uninhabited "requires: solus token"
-	landscape land/space0ver8
-	description "This artificial satellite is the first of the three Sunracer checkpoints. Solus has been in service since Megaparsec started sponsoring racing competitions in Mirfak. It is used in all three racing leagues as well as the qualifiers. Being the oldest checkpoint combined with its high rate of usage means that Solus needs more maintenance than Geminae or Tertio."
-	description "	The checkpoint sends a secure transmission to ships registered in an active race as they pass through. This helps prevent anyone from swapping ships in the middle of a race. If someone were to transfer to a ship that isn't registered in an active race, the checkpoint won't verify it when that ship passes through."
-	government "Uninhabited"
-
-planet "Checkpoint Tertio"
-	attributes uninhabited "requires: tertio token"
-	landscape land/space0ver8
-	description "	Built over a decade after Geminae, Tertio is exclusively used for large races that involve all three checkpoints. Competition in the Tertio League is fierce. Some pilots become desperate enough to turn violent in these high stakes events."
-	description "	While there are concerns of cheaters hacking the verification system, race officials insist that the transmissions are protected by the best secured encryption available. Despite this, some racers claim to have experienced strange engine problems or system failures after passing through Tertio. No hackers have been caught, but the race commission has put rules in place to punish any offenders."
-	government "Uninhabited"
-
-"landing message" "This secured checkpoint only verifies ships registered in official starship races."
-	"planet/checkpoint"
-
-planet Corpse
-	attributes uninhabited midnight
-	landscape land/midnight-asteroid0a
-	music ambient/meteoriteshower
-	description `Several asteroids have formed a cluster at this location. Perhaps they are all that remain of a destroyed planet that once occupied this orbital path. With no atmosphere and the sound of meteorites hitting your hull a reminder of the danger of asteroid collisions, a heavy environmental suit is necessary to explore the area.`
-	government Uninhabited
-	security 0
-
-# This planet only exists as a launch point for Conundrum start
-planet "Deep Space 19MX Arrival Point"
-	attributes uninhabited "requires: conundrum start"
-	description `Wherever this is, you're a long way from home...`
-
-planet Detritus
-	attributes uninhabited midnight station south
-	landscape land/station4ver8
-	music ambient/servo
-	description `This alien artifact is capable of connecting and disconnecting the hyperspace links to the system it is in. How it does this is a mystery. This particular facility has taken heavy damage from asteroid collisions. A hull breach large enough for your ship to enter has granted you access to its inner workings.`
-	description `	The sound of distant mechanisms reverberate through the deserted structure, confirmation that the internal machinery is still functional despite the damage to the exterior.`
-	government Uninhabited
-	security 0
-
-planet Drydust
-	attributes uninhabited midnight
-	landscape land/midnight-unsplash3
-	description `This remote system was not originally part of Hai space. Centuries ago a hyperspace link suddenly appeared connecting to it. From here there was another link to systems farther east and the Korath raids began. Not long after, the link to Korath space mysteriously disappeared. But the Hai's connection to Mah Duum remained.`
-	description `	There are no toxins in this dead planet's atmosphere and it has just barely enough oxygen to sustain a human. But it is completely devoid of water. Evidence suggests this world was once covered by an endless ocean. But something caused it all to disappear.`
-	description `	Trying to breath the air immediately triggers your gag reflex as it seems to leech the moisture from your body out through your lungs. Similarly, your eyes itch uncomfortably when exposed to this harsh environment.`
-	security 0
-	government Uninhabited
-
-planet "Drywaste"
-	attributes uninhabited midnight "hai ancestral lands"
-	landscape land/badlands2ver9
-	music ambient/strongwind
-	description `The wreckage of Hai spacecraft are scattered across the land of this desert world. But they are covered by hills of sand. Occasionally, the desert winds will shift these dunes, revealing the derelicts that lie underneath.`
-
-planet "Eureka Station"
-	attributes uninhabited midnight "dirt belt" station
-	landscape "land/nasa asdf-iss"
-	music ambient/derelict
-	description `Eureka Station was originally built as a processing facility and harvesting outpost during the early Deuterium Rush. It wasn't long before the station attracted the attention of pirates. After being captured, it remained under pirate control until shortly after the foundation of the Republic.`
-	description `	When the Navy began its crackdown on pirate activities, Eureka Station was among the first of the outlaw havens to fall. After the Republic established control of the station, attempts were made to restart deuterium processing operations. Those plans came to an end with the Alpha war. The battle of Ipsing brought about the station's final downfall. A barrage of rocket fire sent Eureka out of its established orbit. Since then it has remained an uninhabited derelict, slowly drifting towards the system's edge.`
-	port "Docking Port"
-		description `The damage that destroyed any hope of returning Eureka to its former glory has caused many sections of the station to either lack an atmosphere or be flooded with toxic chemicals released from the fuel processing equipment. Due to a malfunction in the environmental controls, the temperature in the few habitable areas is also near freezing. You can search the station for leftover fuel, but be wary of sealed doors that could lead to the open void or other hazards.`
-		recharges
-			shields
-			energy
-			fuel
-	government Uninhabited
-	security 0
-
-planet "Firefly Hatchery"
-	attributes uninhabited "requires: youngfirefly" midnight
-	landscape land/nasa24
-	government "Invasive Lifeform (Passive)"
-	bribe 0
-	security 0
-
-"landing message" "This is not something you can land on."
-	"planet/firefly hatchery"
-
-planet Fossil
-	attributes uninhabited midnight
-	landscape "land/midnight-morguefile3"
-	music ambient/windchimes
-	description `Other than some isolated patches of grass and shrubs, you find no signs of life on this desolate world. But signs of an ancient civilization remain. Scattered crystalline ruins stand as a monument to whatever species once called this planet home. The mysterious megaliths tower over you and patterns engraved on some of their surfaces suggest that whoever built them had an understanding of astronomy.`
-	government Uninhabited
-	security 0
-
-planet "Haiguard"
-	attributes station uninhabited midnight "hai ancestral lands"
-	landscape land/midnight-unsplash5
-	music ambient/derelict
-	description `This station was mothballed during the Hai exodus. The docking area has an atmosphere, and a status panel indicates that the station's generators are functional but shut down, with standby mechanisms running on solar power alone.`
-	description `	Bristling with a multitude of weapon mounts, Haiguard appears to be a battle station meant to watch over and protect Oldhome. All the weapons are intact, but non-functional. Whether they were deactivated by the Hai who were operating the station or neutralized by some external force is a matter of contention between Hai and Unfettered historians.`
-
-planet "Hell's Maw"
-	attributes uninhabited midnight
-	landscape land/midnight-USGS01
-	music ambient/lava
-	description `This dying world has been cracked open. The cooled mantle still glows with rivers of lava and the core sheds an eerie light upon the rocky outcroppings. Strange interstellar creatures dart across the planet's innards, feasting on its exposed mineral deposits. While there are small traces of various gasses forming a thin atmosphere, many of them are toxic to a human. When the exposed core faces the sun, the heat below the edge of the broken crust exceeds recommended safety limits. With the additional dangers from the hazardous environment and wildlife, a heavy environmental suit is necessary to explore the area.`
-	government Uninhabited
-	security 0
-
-planet Horizonwatch
-	attributes unfettered station
-	landscape land/midnight-unsplash4
-	music ambient/machinery
-	description `	Fearing a possible return of the Korath raiders, the Hai began construction of this military outpost. However, the post war era saw the rise of the Unfettered. Their strained relationship with the Hai left Horizonwatch unfinished.`
-	description `	Centuries after it was built, this station lies mostly forgotten. A small crew is on standby to protect the system, but the available facilities are inadequate for maintaining a proper garrison or offering services to outsiders. As a result, the station rarely gets visitors and the few Unfettered you encounter watch you with suspicion.`
-	tribute 200
-		threshold 5000
-		fleet "Small Unfettered" 5
-
-planet Janus
-	attributes midnight archipelago pirate "dirt belt pirate" "dirt belt" frontier
-	landscape land/midnight-unsplash1
-	description "When humans first arrived in Archipelago they learned that the alien device orbiting the largest star could shut down the Hyperspace links to the system. Over the centuries, the system would turn into the galaxy's best secret hideout for pirates and anarchists. The almost Earth-like environment of Janus makes it a perfect rendezvous point for the rare instance when different pirate factions need a place to host a council."
-	spaceport `The spaceport is relatively modern for a pirate world. Few of the other pirate spaceports you've visited are as well stocked and equipped. There are enough landing pads to handle traffic for multiple large fleets.`
-	shipyard "Dirt Belt Pirates"
-	shipyard "Advanced Dirt Belt Pirates"
-	outfitter "Common Outfits"
-	outfitter "Ammo North"
-	outfitter "Ammo South"
-	outfitter "Deep Sky Basics"
-	outfitter "Lovelace Basics"
-	outfitter "Pirate Outfits"
-	outfitter "Pirate Basics"
-	outfitter "Pirate Advanced"
-	outfitter "Basic Turbo Blasters"
-	outfitter "Advanced Turbo Blasters"
-	outfitter "Advanced Pirate Power"
-	government Pirate
-	bribe 0.05
-	security 0
-	tribute 2700
-		threshold 6000
-		fleet "Small Southern Pirates" 1
-		fleet "Small Core Pirates" 1
-		fleet "Small Northern Pirates" 1
-		fleet "Small Dirt Belt Pirates" 10
-		fleet "Large Dirt Belt Pirates" 5
-		fleet "Large Southern Pirates" 1
-		fleet "Large Core Pirates" 1
-		fleet "Large Northern Pirates" 1
-		fleet "Marauder I" 4
-		fleet "Marauder II" 3
-		fleet "Marauder III" 2
-		fleet "Marauder IV" 1
-
-planet Lares
-	attributes midnight uninhabited archipelago "dirt belt"
-	landscape land/forest3ver8
-	music ambient/wildlife
-	description "Featuring thick forests nestled between mountains dotted with caves, Lares is an ideal world to hide out in when you don't want to be disturbed. You would think the planet was uninhabited if not for the spaceport and a few nearby log cabins."
-	port "Landing Pad"
-		description `The "spaceport" is a concrete slab forming a large forest clearing surrounded by some log cabins. You see no other parked ships and the area looks deserted.`
-		recharges
-			shields
-			energy
-		services
-			"offers missions"
-		news
-	government Uninhabited
-	security 0
-
-planet "Naihe Qiao"
-	attributes midnight uninhabited "dirt belt"
-	landscape land/midnight-unsplash2
-	description `"The Bridge to the Underworld" appears lifeless on the surface. Much of it is a rocky wasteland riddled with canyons and chasms. Supposedly there are secret tunnels hidden within these crevices which lead to vast underground caverns that various pirate gangs use as hideouts.`
-	security 0
-
-planet "Nearwater"
-	attributes uninhabited midnight "hai ancestral lands"
-	landscape land/sky2ver8
-	music ambient/rainstorm
-	description `Much of this world is covered by a raging ocean. The near constant storms have eroded any Hai structures down to their foundations.`
-
-planet "New America"
-	attributes midnight
-	landscape land/midnight-morguefile4
-	description `During the early era of interstellar colonization, separatists seeking independence from Earth's government used one of the first Hyperdrives to reach New America. The colony remained isolated until more efficient Hyperdrives were developed. By then, explorers curious about the fate of New America traveled there only to find abandoned ruins. The original colonists and their descendants had vanished. No human remains were left, leaving behind an unsolved mystery.`
-	description `	Today, the few inhabitants of New America aren't known for their hospitality towards outsiders. The planet does not have a proper spaceport or anything resembling a central governing body. Scattered across the surface are small independent settlements, many of which are abandoned ghost towns left over from the original colonists who mysteriously disappeared.`
-	government Uninhabited
-	security 0
-
-planet "Oldhome"
-	attributes uninhabited midnight "hai ancestral lands"
-	landscape land/forest1ver8
-	description `The ancestral home of the Hai. Most of the ruins have been hidden away by the encroaching forests, leaving little evidence of their civilization behind.`
-
-planet "Parasite's Nest"
-	attributes uninhabited station ringworld midnight
-	landscape land/station2dark
-	music ambient/windtunnel
-	description `The Wolf-Rayet star in this system is much hotter and brighter than the stars of other Quarg ringworlds, making it clearly visible to Coalition astronomers. Yet, it remains outside their influence. Despite layers of protective shielding and heat resistant hull armor, the internal temperature of the ringworld is still uncomfortably hot.`
-	description `	The ring itself is completely intact with no signs of damage. However, it has been overrun by plasma parasites. The infestation has reached the point where one misplaced blaster shot could set the whole ring on fire...`
-	spaceport `The Quarg left nothing obvious to salvage in the empty rooms and corridors of this ring world. It is as if the evacuation was an orderly planned operation. Many sections of the ring are without power. Whether this is because the energy systems are malfunctioning or because the Quarg shut down the generators to preserve them for their eventual return is unknown.`
-	government Uninhabited
-	security 0
-
-planet Orphan
-	attributes uninhabited frozen midnight
-	landscape "land/nasa pluto surface"
-	music ambient/creepy
-	description `This frozen planet has been separated from its home system and floats free in the empty void. Although the world is uninhabited, there are Quarg ruins here. Most of the buildings have been demolished by some unknown force. As is typical for a Quarg world, the air is too thin for human comfort.`
-	spaceport `Since there is no sun to power your ramscoops, it is fortunate that you are able to find an abandoned spaceport with some stockpiled fuel to salvage here.`
-	government Uninhabited
-	security 0
-
-planet Quiet
-	attributes uninhabited station ringworld midnight
-	landscape land/midnight-station19
-	music ambient/derelict
-	description `This ruined shard orbits the orphan planet as if in mockery of how other Quarg ringworlds orbit stars. Not enough energy is being generated by the power systems for life support to provide an atmosphere. Wearing a heavy environmental suit is necessary for exploring this derelict ruin.`
-	spaceport `The abandoned spaceport barely has any fuel or spare parts to salvage.`
-	government Uninhabited
-	security 0
-
-planet "Rock Cluster"
-	attributes uninhabited midnight
-	landscape land/midnight-asteroid0b
-	music ambient/meteoriteshower
-	description `Several asteroids have formed a cluster at this location. Perhaps they are all that remain of a destroyed planet that once occupied this orbital path. With no atmosphere and the sound of meteorites hitting your hull a reminder of the danger of asteroid collisions, a heavy environmental suit is necessary to explore the area.`
-	government Uninhabited
-	security 0
-
-planet "Rum Cellar"
-	attributes station midnight pirate "dirt belt pirate" "dirt belt"
-	landscape land/midnight-sivael5
-	music ambient/saloon
-	description `During the early days of humanity's expansion into space, the success of a pirate base was determined more by its ability to remain hidden than on the strength of a defensive fleet. Rum Cellar is one of those early success stories, thanks to the alien device orbiting Chasm's sun. The pirates who first found the abandoned artifact quickly learned how to use it to shut down the hyperspace links to the system. This allowed Chasm to remain a secret out of reach from authoritarian governments.`
-	description `	As the only border crossing between the Rim and the Dirt Belt, authority over the station is in constant dispute. Control over it switches hands often between ambitious pirate warlords. Legend has it that someone once managed to their hold over Rum Cellar for an entire year, a historical record that has yet to be broken more than a century after it occured.`
-	spaceport `The spaceport is a ring of docking bays that circle around the station. The internal bulkheads are marred by scorchmarks caused by firefights between rival pirate crews. `
-	shipyard "Dirt Belt Pirates"
-	shipyard "Dirt Belt Pirates (South)"
-	outfitter "Basic Outfits"
-	outfitter "Common Outfits"
-	outfitter "Ammo North"
-	outfitter "Ammo South"
-	outfitter "Delta V Basics"
-	outfitter "Kraz Basics"
-	outfitter "Pirate Outfits"
-	outfitter "Pirate Basics"
-	outfitter "Pirate Advanced"
-	outfitter "Basic Turbo Blasters"
-	bribe 0.05
-	security 0
-	tribute 1900
-		threshold 4000
-		fleet "Small Southern Pirates" 3
-		fleet "Large Southern Pirates" 2
-		fleet "Small Dirt Belt Pirates" 6
-		fleet "Large Dirt Belt Pirates" 3
-		fleet "pirate raid" 4
-		fleet "Marauder fleet X" 1
-
-planet "Season's End"
-	attributes uninhabited station midnight
-	landscape land/midnight-unsplash6
-	music ambient/derelict
-	description `This abandoned station appears to have been overtaken by vegetation. But upon closer inspection, the plants are maintained by small robots which keep their growth in check. The internal architecture also suggests it was designed for a species capable of flight. There are doorways that open into wide open areas which are dangerously high off the floor.`
-	spaceport `Although most of the spaceport is empty, there are a surprising amount of ships still docked here. However, a more thorough examination reveals that most are likely not in working condition. Whoever lived here in the past seemed to leave in a panicked rush. Judging from the condition of the station, the evacuation was chaotic and disorganized. There might be something worth salvaging if you look hard enough. You just have to sift through a lot of rusted decaying junk first.`
-	government Uninhabited
-	security 0
-
-planet "Takerstone"
-	attributes uninhabited midnight "hai ancestral lands"
-	landscape land/rock1ver8
-	music ambient/strongwind
-	description `This planet has a breathable atmosphere, but food and water are scarce. The surface of the planet is dotted with the rotting wreckage of ancient Hai spacecraft. Perhaps this system was once a battlefield, much like Wah Ki is today.`
-
-planet "The Garden"
-	attributes midnight uninhabited
-	landscape land/nasa3ver8
-	description `The inhabitants of Genesis have developed a pre-hyperdrive civilization. They are attempting to explore space, but the object in orbit over their world prevents them from doing so...`
-	"required reputation" 1
-	government "Genesis"
-
-# Titania Station is constructed in the Eteron system in Syndicate Shareholder missions
-planet "Titania Station"
-	attributes "near earth" station uninhabited
-	landscape land/midnight-sivael9dark
-	description `Titania Station is still under construction. Enough of the structure has been completed to generate minimal power and life support. A few docking bays have been opened to allow shipments of construction materials needed to finish the remaining portions of the station.`
-
-planet Vesta
-	attributes midnight archipelago mining "dirt belt"
-	landscape land/midnight-morguefile2
-	description `Mining outposts dot the surface of this dry desert world. The planet looks deserted while everyone takes shelter from the sun during the heat of the day. But after sunset the mines are crawling with activity.`
-	description `	Most Vesta miners are descendants of refugees from the Alpha War who were granted sanctuary by the pirate lords of Janus. While they aren't slaves, they are expected to pay tribute for "protection". While some resent being born into this way of life, most here accept it.`
-	spaceport `The landing strip ends with a gigantic tunnel that allows ships to be parked underground. Much of the rest of the spaceport consists of a series of subterrainian passages and artificially constructed caverns.`
-	shipyard "Basic Ships"
-	shipyard "Common Freighters"
-	outfitter "Basic Outfits"
-	outfitter "Basic Weapons"
-	outfitter "Ammo North"
-	outfitter "Ammo South"
-	government Independent
-	bribe 0.05
-	security 0
-	tribute 1400
-		threshold 3000
-		fleet "S. Advanced Independent (Killable)" 2
-		fleet "L. Advanced Independent (Killable)" 1
-		fleet "Small Southern Pirates" 1
-		fleet "Small Core Pirates" 1
-		fleet "Small Northern Pirates" 1
-		fleet "Small Dirt Belt Pirates" 2
-		fleet "Large Southern Pirates" 1
-		fleet "Large Northern Pirates" 1
-		fleet "Large Dirt Belt Pirates" 2
-		fleet "pirate raid" 1
-		fleet "Marauder Independent (Killable)" 1
-		
-planet "Wang Xiang Tai"
-	attributes midnight pirate station "dirt belt pirate" "dirt belt"
-	landscape land/midnight-sivael4
-	music ambient/guzheng
-	description `The pirates who discovered this isolated system, and the secrets to using the alien device orbiting its sun to activate and deactivate the hyperspace links leading to the system, created this space station as a rest stop for those seeking refuge from Earth's authority. It also serves as a meeting place for those seeking to do business with the underworld or rival pirate factions in need of neutral ground.`
-	description `	Control of the station has switched hands several times over the centuries. Most of the previous transfers of power were violent. However, the current administration, an organization known as the Red Dragons, bought its way in. They are an independent consortium involved in instellar smuggling operations throughout the galaxy.`
-	spaceport `Many of the pirate ships parked here are being repaired. It's a wonder some of them were able to escape the Navy in the condition that they are in. Not everyone here is a pirate. More than a few freighters can be found intermingled with the interceptors and warships. There are also those who conduct business with pirates arriving and departing. Some seek transportation to the planet below while others are engaged in transporation of cargo to and from the station.`
-	shipyard "Dirt Belt Pirates"
-	shipyard "Dirt Belt Pirates (North)"
-	outfitter "Common Outfits"
-	outfitter "Ammo North"
-	outfitter "Ammo South"
-	outfitter "Syndicate Basics"
-	outfitter "Pirate Outfits"
-	outfitter "Pirate Basics"
-	outfitter "Pirate Advanced"
-	outfitter "Basic Turbo Blasters"
-	bribe 0.05
-	security 0
-	tribute 2100
-		threshold 4000
-		fleet "Small Southern Pirates" 1
-		fleet "Small Core Pirates" 1
-		fleet "Small Northern Pirates" 1
-		fleet "Small Dirt Belt Pirates" 3
-		fleet "Large Northern Pirates" 1
-		fleet "Large Dirt Belt Pirates" 3
-		fleet "pirate raid" 8
-
-planet "Wildland"
-	attributes uninhabited midnight "hai ancestral lands"
-	landscape land/city12ver8
-	description `This earth-like planet is covered in decaying ruins. But they don't appear to be Hai ruins. On this world it seems another species evolved, thrived, then died out during the Hai's long absence. Wild animals roam the streets and flying creatures nest in the taller structures. Perhaps this is how Earth would turn out if humans ever abandoned it.`
-
-"landing message" "You cannot enter a collapsed wormhole."
-	"planet/collapsed wormhole"
-
-star "star/p0-old"
-	power 1.4
-	wind 2
-
-star "star/wr1"
-	power 5
-	wind 4
-
-
-# The following missions/events add cosmetic effects to some systems.
-
-mission "Ringworld Debris Fields"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "ringworld debris fields"
-		fail
-
-event "ringworld debris fields"
-	system Queri
-		add asteroids "ringworld debris a" 8 1
-		add asteroids "ringworld debris b" 8 1.25
-		add asteroids "ringworld debris c" 8 1.5
-		add asteroids "ringworld debris d" 8 1.75
-		add asteroids "ringworld debris e" 8 2
-		add asteroids "ringworld debris f" 8 1.75
-		add asteroids "ringworld debris g" 8 1.5
-		add asteroids "ringworld debris h" 8 1.25
-	system "World's End"
-		add asteroids "ringworld debris a" 4 1
-		add asteroids "ringworld debris b" 4 1.25
-		add asteroids "ringworld debris c" 4 1.5
-		add asteroids "ringworld debris d" 4 1.75
-		add asteroids "ringworld debris e" 4 2
-		add asteroids "ringworld debris f" 4 1.75
-		add asteroids "ringworld debris g" 4 1.5
-		add asteroids "ringworld debris h" 4 1.25
-
-
-# This mission/event adds Eureka Station to the Ipsing system.
-mission "Midnight: Add Eureka Station to Ipsing"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "midnight: add eureka station to ipsing"
-		fail
-
-event "midnight: add eureka station to ipsing"
-	system Ipsing
-		add object "Eureka Station"
-			sprite "planet/nasa derelict station1"
-			distance 3724.01
-			period 1708.68
-
-
-# This mission/event adds Cadrelock's Rock's sprite to the Eber system. A separate Skeleton Key mission/event makes it landable.
-mission "Midnight: Add Cadrelock Rock to Eber"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "midnight: add cadrelock rock to eber"
-		fail
-
-event "midnight: add cadrelock rock to eber"
-	system Eber
-		add object
-			sprite "planet/asteroid base2"
-			distance 950
-			period 360
-
-
-
-mission "Midnight Station Docking Ports (Human)"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "midnight station docking ports (human)"
-		fail
-
-event "midnight station docking ports (human)"
-	planet "Arachne Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. Instead of buttons, it features a holographic interface.`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-	planet "Carbuncle Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. In order to use the terminal you are required to scan your Pilot's License and have it verified for legitimacy.`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-	planet "Charybdis Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. Anyone using this system must watch an advertisement for Syndicate products and services before proceeding.`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-	planet "Huginn Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows limited communications with the station crew. A security camera silently observes you while you are here...`
-			recharges
-				shields
-				energy
-	planet "Hydra Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. Several buttons are broken or missing and the outer casing is marred by old scratches and scrapes...`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-	planet "Oberon Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. Anyone using this system must watch an advertisement for Syndicate products and services before proceeding.`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-	planet "Phoenix Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. A cooling fan whirls loudly as it struggles to keep the terminal from overheating.`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-	planet "Typhon Station"
-		port "Docking Port"
-			description `A computer terminal at the docking bay allows access to job postings and communications with the station crew. Delivery jobs to planets serviced by Southbound Shipyards are rarely in short supply.`
-			recharges
-				shields
-				energy
-			services
-				"job board"
-
-
-mission "Midnight Add New America"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "midnight add new america"
-		fail
-
-event "midnight add new america"
-	system Kugel
-		add object "New America"
-			sprite planet/desert4
-			distance 720
-			period 182.444
-			offset 180
-
-
-mission "Midnight Link Mah Duum"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "midnight link mah duum"
-		fail
-
-event "midnight link mah duum"
-	link "Hi Yahr" "Mah Duum"
-
-mission "Conundrum Deep Space 19MN Links"
-	non-blocking
-	landing
-	invisible
-	on offer
-		event "midnight conundrum start link"
-		fail
-
-event "midnight conundrum start link"
-	link "Deep Space 19M2" "Deep Space 19MX"
-	link "Deep Space 19M2" "Deep Space 19MN"
-
-
-
-
-##############################
-#
-# Deprecated
-#
-##############################
-
-# This mission/event gives Hope the "dirt belt" attribute
-mission "Add Hope to Dirt Belt"
-	landing
-	invisible
-	to offer
-		never
-	on offer
-		event "add hope to dirt belt"
-		fail
-
-event "add hope to dirt belt"
-	planet Hope
-		add attributes "dirt belt"
-
-# Removing "dirt belt" attribute added by deprecated mission/event
-mission "Add Hope to Dirt Belt Patch"
-	non-blocking
-	landing
-	invisible
-	to offer
-		has "event: add hope to dirt belt"
-	on offer
-		event "add hope to dirt belt patch"
-		fail
-
-event "add hope to dirt belt patch"
-	planet Hope
-		remove attributes "dirt belt"
-
-
-# Some deprecated missions/events cycled through a series of land images for Season's End. This is no longer supported after the default image was changed.
-
-mission "Season's End: Summer"
-	landing
-	invisible
-	source "Season's End"
-	to offer
-		never
-#		random < 10
-#		or
-#			not "Season's End: Summer: failed"
-#			has "Season's End: Spring: offered"
-	on offer
-		clear "Season's End: Autumn: offered"
-		clear "event: Season's End: Autumn"
-		event "Season's End: Summer"
-		fail
-		
-event "Season's End: Summer"
-	planet "Season's End"
-		landscape land/space2summer
-
-mission "Season's End: Autumn"
-	landing
-	invisible
-	source "Season's End"
-	to offer
-		never
-#		random < 10
-#		has "Season's End: Summer: offered"
-	on offer
-		clear "Season's End: Winter: offered"
-		clear "event: Season's End: Winter"
-		event "Season's End: Autumn"
-		fail
-
-event "Season's End: Autumn"
-	planet "Season's End"
-		landscape land/space2autumn
-
-mission "Season's End: Winter"
-	landing
-	invisible
-	source "Season's End"
-	to offer
-		never
-#		random < 10
-#		has "Season's End: Autumn: offered"
-	on offer
-		clear "Season's End: Spring: offered"
-		clear "event: Season's End: Spring"
-		event "Season's End: Winter"
-		fail
-
-event "Season's End: Winter"
-	planet "Season's End"
-		landscape land/space2winter
-		
-mission "Season's End: Spring"
-	landing
-	invisible
-	source "Season's End"
-	to offer
-		never
-#		random < 10
-#		has "Season's End: Autumn: offered"
-	on offer
-		clear "Season's End: Summer: offered"
-		clear "event: Season's End: Summer"
-		event "Season's End: Spring"
-		fail
-
-event "Season's End: Spring"
-	planet "Season's End"
-		landscape land/space2spring
-
-# This patch updates to the new default image.
-mission "Season's End Atrium Patch"
-	non-blocking
-	landing
-	invisible
-	source "Season's End"
-	to offer
-		or
-			has "event: Season's End: Spring"
-			has "event: Season's End: Summer"
-			has "event: Season's End: Autumn"
-			has "event: Season's End: Winter"
-	on offer
-		clear "Season's End: Spring: offered"
-		clear "event: Season's End: Spring"
-		clear "Season's End: Summer: offered"
-		clear "event: Season's End: Summer"
-		clear "Season's End: Autumn: offered"
-		clear "event: Season's End: Autumn"
-		clear "Season's End: Winter: offered"
-		clear "event: Season's End: Winter"
-		event "Season's End: Atrium"
-		fail
-
-event "Season's End: Atrium"
-	planet "Season's End"
-		landscape land/midnight-unsplash6

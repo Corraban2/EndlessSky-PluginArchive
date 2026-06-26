@@ -9,28 +9,1002 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
+###################################
+# Weapons
+###################################
 
-outfit "Asteroid Storage"
-	category "Ammunition"
-	cost 45000
-	thumbnail "outfit/asteroid storage"
-	"mass" 50
-	"cargo space" -50
-	"asteroid capacity" 10
-	"required crew" 5
-	ammo "Metallic Asteroid"
-	description "This box of rocks holds extra asteroids for the Asteroid Catapult. Since it's basically a cargo container, it occupies your cargo hold rather than your ship's outfit systems. Five crewmembers are needed to transport the asteroids from the ship's cargo bay to the catapult and load it."
+
+outfit "Double Anti-Missile Turret"
+	category "Turrets"
+	series "Anti-Missile"
+	index 01015
+	cost 130000
+	thumbnail "outfit/anti-missile double"
+	"mass" 23
+	"outfit space" -23
+	"weapon capacity" -23
+	"turret mounts" -1
+	weapon
+		"hardpoint sprite" "hardpoint/anti-missile double"
+		"hardpoint offset" 4.
+		"hit effect" "small anti-missile"
+		"anti-missile" 5
+		"velocity" 150
+		"lifetime" 1
+		"reload" 4
+		"firing energy" 5
+		"firing heat" 3
+	description "The Double Anti-Missile Turret fills the role of a medium weight anti-missile weapon. Its high rate of fire makes it an ideal choice for thinning out missile swarms."
+
+
+outfit "Energy Cannon"
+	category "Guns"
+	series "Guns"
+	index 01050
+	cost 124000
+	thumbnail "outfit/energy cannon"
+	"mass" 12
+	"outfit space" -12
+	"weapon capacity" -12
+	"gun ports" -1
+	weapon
+		sprite "projectile/energy cannon"
+		sound "torpedo-ver8"
+		"hit effect" "energy cannon impact"
+		"inaccuracy" 4
+		"velocity" 10
+		"lifetime" 6
+		"range override" 720
+		"reload" 13
+		"firing energy" 13
+		"firing heat" 50.4
+		"shield damage" 2.2
+		"hull damage" 1.467
+		"cluster"
+		"submunition" "Energy Cannon Blast"
+	description "A relic from the Alpha War, Energy Cannons fell into disuse once the war ended. Occasionally they can still be found outfitted on older ships. They are more powerful than Energy Blasters and cover a longer range. But their rate of fire is slower and the effectiveness of the projectiles diminishes the more distant the target."
+#damage per second equal to Twin Modified Blaster (includes all submunitions)
+
+outfit "Energy Cannon Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01010
+	cost 240000
+	thumbnail "outfit/energy cannon turret"
+	"mass" 15
+	"outfit space" -15
+	"weapon capacity" -15
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/energy cannon"
+		"hardpoint sprite" "hardpoint/energy cannon turret"
+		"hardpoint offset" 9.
+		sound "torpedo-ver8"
+		"hit effect" "energy cannon impact"
+		"inaccuracy" 4
+		"turret turn" 1.2
+		"velocity" 10
+		"lifetime" 6
+		"range override" 720
+		"reload" 13
+		"firing energy" 13
+		"firing heat" 50.4
+		"shield damage" 2.2
+		"hull damage" 1.467
+		"cluster"
+		"submunition" "Energy Cannon Blast"
+	description "The turreted version of the Energy Cannon consists of a single Energy Cannon mounted onto a rotating base. If there is any one factor that lead to the decline of this weapon, it might be the relatively slow turret turn rate which made it difficult to aim at fighters that were growing increasingly nimble as newer designs were developed."
+
+outfit "Energy Cannon Blast"
+	weapon
+		sprite "projectile/energy cannon sub"
+		"hit effect" "energy cannon sub impact"
+		"lifetime" 18
+		"shield damage" 5.2
+		"hull damage" 4.4
+		"submunition" "Residual Energy Cannon Blast"
+#damage per shot equal to Twin Modified Blaster (includes subsequent submunitions)
+
+outfit "Residual Energy Cannon Blast"
+	weapon
+		sprite "projectile/energy cannon sub"
+		"hit effect" "energy cannon sub impact"
+		"lifetime" 24
+		"shield damage" 8
+		"hull damage" 4.4
+		"submunition" "Half Energy Cannon Blast"
+#damage per shot equal to Twin Blaster (includes subsequent submunitions)
+
+outfit "Half Energy Cannon Blast"
+	weapon
+		sprite "projectile/mod blaster"
+		"hit effect" "blaster impact"
+		"lifetime" 18
+		"shield damage" 2.6
+		"hull damage" 2.2
+		"submunition" "Half Residual Energy Cannon Blast"
+#damage per shot equal to Modified Blaster (includes subsequent submunition)
+
+outfit "Half Residual Energy Cannon Blast"
+	weapon
+		sprite "projectile/blaster"
+		"hit effect" "blaster impact"
+		"lifetime" 6
+		"shield damage" 10.6
+		"hull damage" 6.6
+#damage per shot equal to Energy Blaster
+
+effect "energy cannon impact"
+	sprite "effect/blaster impact"
+		"scale" 4
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 7
+	"random angle" 40
+	"velocity scale" -.05
+
+effect "energy cannon sub impact"
+	sprite "effect/blaster impact"
+		"scale" 2
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 7
+	"random angle" 40
+	"velocity scale" -.05
+
+
+outfit "Isochronal Laser"
+	category "Guns"
+	series "Guns"
+	index 01050
+	cost 60000
+	thumbnail "outfit/isochronal laser"
+	"mass" 11
+	"outfit space" -11
+	"weapon capacity" -11
+	"gun ports" -1
+	weapon
+		sprite "projectile/isochronal laser"
+			"frame rate" 1
+		sound "modified heavy_laser-ver8"
+		"hit effect" "isochronal impact"
+		"inaccuracy" .4
+		"velocity" 350
+		"lifetime" 1
+		"reload" 2
+		"firing energy" 1.995
+		"firing heat" 4.2
+		"shield damage" 2.55
+		"hull damage" 3.6
+		"cluster"
+	description "The Isochronal Laser was a failed attempt by Tarazed to recreate the Skylances installed on Quarg ships. While their engineers managed to create a powerful beam, they were unable to keep it stable."
+	description "	These were never adopted for widespread use and Tarazed was eventually forced to stop production of them due to poor sales. Ships in the South can sometimes be found with these rare weapons installed. However the vast majority of Isochronal Lasers are still held by Tarazed itself."
+
+outfit "Isochronal Laser Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01045
+	cost 320000
+	thumbnail "outfit/isochronal laser turret"
+	"mass" 31
+	"outfit space" -31
+	"weapon capacity" -31
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/2x isochronal laser"
+			"frame rate" 1
+		"hardpoint sprite" "hardpoint/heavy laser turret"
+		"hardpoint offset" 8.
+		sound "modified heavy_laser-ver8"
+		"hit effect" "isochronal impact"
+		"inaccuracy" .4
+		"turret turn" 3.1
+		"velocity" 350
+		"lifetime" 1
+		"reload" 2
+		"firing energy" 3.99
+		"firing heat" 8.4
+		"shield damage" 5.1
+		"hull damage" 7.2
+		"cluster"
+	description "The Isochronal Laser was a failed attempt by Tarazed to recreate the Skylances installed on Quarg ships. While their engineers managed to create a powerful beam, they were unable to keep it stable."
+	description "	This turreted version of the Isochronal Laser appeals to a very niche market of pilots who want an upgrade to Deep Sky's Laser Turret, but lack the space for Heavy Lasers on their ships."
+
+effect "isochronal impact"
+	sprite "effect/isochronal impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 5
+	"random angle" 2
+	"random spin" 1
+	"random velocity" 1
+	"velocity scale" -.007
+
+
+outfit "Kludge Blaster"
+	category "Guns"
+	series "Guns"
+	index 01010
+	cost 8000
+	thumbnail "outfit/kludge blaster"
+	"mass" 4
+	"outfit space" -4
+	"weapon capacity" -4
+	"gun ports" -1
+	weapon
+		sprite "projectile/kludge"
+		sound "blaster-ver8"
+		"hit effect" "kludge impact"
+		"inaccuracy" 4
+		"velocity" 9.375
+		"lifetime" 48
+		"reload" 15
+		"firing energy" 6.5
+		"firing heat" 22.5
+		"shield damage" 13.2
+		"hull damage" 8.8
+		"minable damage" 10.6
+		"cluster"
+	description "Kludge Blasters started out as a failed attempt at modifying an Energy Blaster. Despite their shady origins, the most basic version eventually gained widespread popularity as a budget alternative mining weapon and are available at many legitimate outfitters across the galaxy."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Twin Kludge Blaster"
+	category "Guns"
+	series "Guns"
+	index 01030
+	cost 20000
+	thumbnail "outfit/twin kludge blaster"
+	"mass" 10
+	"outfit space" -10
+	"weapon capacity" -10
+	"gun ports" -1
+	weapon
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.45
+		"hit effect" "kludge impact" 2
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 13
+		"firing heat" 45
+		"cluster"
+	description "Pirate captains short on cash due to botched raid attempts or an unlucky night at the card tables might resort to mounting Kludge Blasters onto their ship instead of more effective weapons. Jamming two Kludge Blasters into a single gun port was one innovation that spawned copycats among other blaster designers. The localized cluster fire exhibited in them harkens back to this original design."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Kludge Submunition"
+	weapon
+		sprite "projectile/kludge"
+		"hit effect" "kludge impact"
+		"velocity" 9.375
+		"lifetime" 48
+		"shield damage" 13.2
+		"hull damage" 8.8
+		"minable damage" 10.6
+
+outfit "Triple Kludge Blaster"
+	category "Guns"
+	series "Guns"
+	index 01050
+	cost 30000
+	thumbnail "outfit/triple kludge blaster"
+	"mass" 15
+	"outfit space" -15
+	"weapon capacity" -15
+	"gun ports" -1
+	weapon
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" 0 0
+			"facing" 0
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.45
+		"hit effect" "kludge impact" 3
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 19.5
+		"firing heat" 69
+		"cluster"
+	description "The pressures of war inspired weaponsmiths to figure out how to squeeze even more Kludge Blasters into a single gun port. This increases the damage yield at the cost of increased heat buildup."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Kludge Blaster Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01010
+	cost 50000
+	thumbnail "outfit/kludge blaster turret"
+	"mass" 12
+	"outfit space" -12
+	"weapon capacity" -12
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		"hardpoint sprite" "hardpoint/kludge blaster turret"
+		"hardpoint offset" 9.
+		"turret turn" 3.5
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.45
+		"hit effect" "kludge impact" 2
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 13
+		"firing heat" 45
+		"cluster"
+	description "Pirate captains short on cash due to smuggling jobs gone wrong, or an unlucky run at the dog races might resort to mounting Kludge Blasters onto their ship instead of more effective weapons. Unlike other blaster turrets, both barrels of the Kludge Blaster Turret fire simultaneously. It was hoped that launching the projectiles in a volley would help compensate for the weapon's slow rate of fire."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Quad Kludge Blaster Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01030
+	cost 115000
+	thumbnail "outfit/quad kludge blaster turret"
+	"mass" 20
+	"outfit space" -20
+	"weapon capacity" -20
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		"hardpoint sprite" "hardpoint/quad kludge blaster turret"
+		"hardpoint offset" 9.
+		"turret turn" 3
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 2 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.3
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.3
+		"submunition" "Kludge Submunition"
+			"offset" -2 0
+			"facing" -0.45
+		"hit effect" "kludge impact" 4
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 26
+		"firing heat" 90
+		"cluster"
+	description "While the Kludge Blaster is considered a poor man's weapon among pirates, tinkerers continue to see potential in connecting several of them together. All four Kludge Blasters mounted on this turret fire at the same time, launching a deadly volley of projectiles towards the target."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Hex Kludge Blaster Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01035
+	cost 180000
+	thumbnail "outfit/hex kludge blaster turret"
+	"mass" 32
+	"outfit space" -32
+	"weapon capacity" -32
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		"hardpoint sprite" "hardpoint/quad kludge blaster turret"
+		"hardpoint offset" 9.
+		"turret turn" 2.5
+		sound "blaster-ver8"
+		"submunition" "Kludge Submunition"
+			"offset" 3 0
+			"facing" 0.6
+		"submunition" "Kludge Submunition"
+			"offset" 2 0
+			"facing" 0.45
+		"submunition" "Kludge Submunition"
+			"offset" 1 0
+			"facing" 0.3
+		"submunition" "Kludge Submunition"
+			"offset" -1 0
+			"facing" -0.3
+		"submunition" "Kludge Submunition"
+			"offset" -2 0
+			"facing" -0.45
+		"submunition" "Kludge Submunition"
+			"offset" -3 0
+			"facing" -0.6
+		"hit effect" "kludge impact" 6
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 15
+		"firing energy" 39
+		"firing heat" 138
+		"cluster"
+	description "Overzealous weaponsmiths crafted this arrangement of six Kludge Blasters clustered onto a single turret mount. This increases the damage yield at the cost of increased heat buildup. As with other Kludge Blaster configurations, all six fire at the same time, launching a deadly volley of projectiles towards the target."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+effect "kludge impact"
+	sprite "effect/kludge impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 7
+	"random angle" 40
+	"velocity scale" -.05
+
+
+outfit "Modified Plasma Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01090
+	cost 330000
+	thumbnail "outfit/modified plasma turret"
+	"mass" 31
+	"outfit space" -31
+	"weapon capacity" -31
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/plasma"
+			"frame rate" 3
+		"hardpoint sprite" "hardpoint/modified plasma turret"
+		"hardpoint offset" 15.
+		sound "plasma"
+		"hit effect" "plasma explosion"
+		"inaccuracy" 2
+		"turret turn" 1.8
+		"velocity" 12
+		"lifetime" 40
+		"reload" 18
+		"firing energy" 30
+		"firing heat" 180
+		"hit force" 45
+		"shield damage" 63
+		"hull damage" 25
+		"heat damage" 340
+	description "This Plasma Turret only has a single Plasma Cannon mounted on it. While not as fearsome as Kraz's Plasma Turret, it is far more accessible."
+
+
+outfit "Twin Particle Cannon"
+	category "Guns"
+	series "Guns"
+	index 01090
+	cost 530000
+	thumbnail "outfit/twin particle cannon"
+	"mass" 64
+	"outfit space" -64
+	"weapon capacity" -64
+	"gun ports" -1
+	weapon
+		sound "particle"
+		"submunition" "Particle Submunition"
+			"offset" 1 0
+		"submunition" "Particle Submunition"
+			"offset" -1 0
+		"hit effect" "particle impact" 2
+		"inaccuracy" .5
+		"lifetime" 0
+		"velocity override" 30
+		"range override" 750
+		"reload" 20
+		"firing energy" 70
+		"firing force" 30
+		"firing heat" 240
+		"cluster"
+	description "Both barrels of the Twin Particle Cannon fire simultaneously, releasing double the force of a single Particle Cannon all at once. The size of this weapon is its main drawback, as few ships can accommodate it. While this product is fully functional, the sales department has raised concerns about its viability in the marketplace."
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Particle Submunition"
+	weapon
+		sprite "projectile/particle beam"
+		"hit effect" "particle impact"
+		"velocity" 30
+		"lifetime" 25
+		"hit force" 120
+		"shield damage" 65
+		"hull damage" 62
+
+outfit "Particle Burst Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01080
+	cost 330000
+	thumbnail "outfit/particle burst turret"
+	"mass" 42
+	"outfit space" -42
+	"weapon capacity" -42
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/particle beam"
+		"hardpoint sprite" "hardpoint/particle burst turret"
+		"hardpoint offset" 14.
+		sound "particle"
+		"hit effect" "particle impact"
+		"inaccuracy" .5
+		"turret turn" 1.0
+		"velocity" 30
+		"lifetime" 25
+		"reload" 30
+		"burst count" 3
+		"burst reload" 20
+		"firing energy" 35
+		"firing force" 15
+		"firing heat" 120
+		"hit force" 120
+		"shield damage" 65
+		"hull damage" 62
+	description "One of the most frequent product requests submitted to Lovelace Labs is for a turreted version of the Particle Cannon. While none have made it past the prototype testing phase before, this version looks promising."
+	description "	An issue with previous designs was jamming in the turret turning mechanism due to stress from the recoil. In addition to a reinforced turret mount, the Particle Burst Turret limits the rate of fire to a three shot burst. Lab results have been satisfactory so far, but actual combat testing is needed."
+	description "	This weapon is still in development and is unavailable to the general public. A few lucky pilots with connections within the company have been given access to prototypes for field testing."
+
+
+outfit "Plasma Cluster Cannon"
+	"display name" "Plasma Charge Cannon"
+	series "Guns"
+	index 01110
+	category "Guns"
+	cost 209000
+	thumbnail "outfit/plasma cluster cannon"
+	"mass" 25
+	"outfit space" -25
+	"weapon capacity" -25
+	"gun ports" -1
+	weapon
+		sprite "projectile/plasma cluster"
+			"frame rate" 3
+		sound "plasma"
+		"hit effect" "plasma cluster explosion"
+		"inaccuracy" 1
+		"velocity" 12
+		"lifetime" 45
+		"reload" 36
+		"firing energy" 60
+		"firing heat" 360
+		"hit force" 90
+		"shield damage" 126
+		"hull damage" 50
+		"heat damage" 680
+		"cluster"
+	description `The Plasma Charge Cannon has been modified to take advantage of concentrated firing mounts. The power and range of each shot has increased at the expense of increasing the weapon's charge up time.`
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+effect "plasma cluster explosion"
+	sprite "effect/plasma explosion"
+		scale 2
+		"no repeat"
+		"frame rate" 20
+	sound "explosion tiny"
+	"lifetime" 21
+	"random angle" 360
+	"random spin" 4
+	"random velocity" .1
+	"velocity scale" -.05
+
+
+outfit "Proton Gun-CF8"
+	category "Guns"
+	series "Guns"
+	index 01100
+	cost 165000
+	thumbnail "outfit/proton gun-cf8"
+	"mass" 28
+	"outfit space" -28
+	"weapon capacity" -28
+	"gun ports" -1
+	weapon
+		sprite "projectile/proton"
+		sound "proton"
+		"hit effect" "proton impact" 6
+		"inaccuracy" 3
+		"submunition" "Proton CF-8 Fragment" 6
+		"velocity" 24
+		"lifetime" 2
+		"reload" 8
+		"firing energy" 15
+		"firing force" 3
+		"firing heat" 60
+		"cluster"
+	description `Four out of five reviewers at Stars and Starships Magazine criticized the Proton Gun-CF8 as a blatant marketing gimmick meant to appeal to Vanguard aficionados. The lone dissenting review praised the aesthetic appeal of its projectile firing pattern.`
+	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
+
+outfit "Proton CF-8 Fragment"
+	weapon
+		sprite "projectile/proton fragment"
+			"no repeat"
+			"frame rate" 2
+		"hit effect" "proton impact"
+		"inaccuracy" 3
+		"lifetime" 24
+		"hit force" 4.5
+		"shield damage" 5.05
+		"hull damage" 4.2
+
+outfit "Proton Turret-ATS"
+	category "Turrets"
+	series "Turrets"
+	index 01080
+	cost 390000
+	thumbnail "outfit/proton turret-ats"
+	"mass" 34
+	"outfit space" -34
+	"weapon capacity" -34
+	"turret mounts" -1
+	weapon
+		sprite "projectile/proton"
+		"hardpoint sprite" "hardpoint/proton turret"
+		"hardpoint offset" 14.
+		sound "proton"
+		"hit effect" "proton impact" 3
+		"inaccuracy" 8
+		"turret turn" 1.2
+		"submunition" "Proton Fragment" 3
+		"velocity" 24
+		"lifetime" 2
+		"reload" 8
+		"firing energy" 15
+		"firing force" 3
+		"firing heat" 60
+	description `The Syndicate Proton Turret-ATS was designed for the cost conscious captain concerned about keeping crew wages under control. No gunner is required to operate this turret. Instead, aiming is accomplished by utilizing an advanced automated targeting system which has been in development for several years. Critics note it has lower accuracy and response times than a skilled human gunner. Despite this, some captains consider the trade off worthwhile.`
+
+
+outfit "Prototype Anti-Missile"
+	category "Turrets"
+	series "Anti-Missile"
+	index 01020
+	cost 90000
+	thumbnail "outfit/prototype anti-missile"
+	"mass" 24
+	"outfit space" -24
+	"weapon capacity" -24
+	"turret mounts" -1
+	"required crew" 1
+	"unique" 1
+	weapon
+		"hardpoint sprite" "hardpoint/heavy anti-missile"
+		"hardpoint offset" 5.
+		"hit effect" "small anti-missile"
+		"anti-missile" 6
+		"velocity" 150
+		"lifetime" 1
+		"reload" 7
+		"firing energy" 7
+		"firing heat" 4
+	description "This Prototype Anti-Missile requires a crewmember to manually aim and fire the turret. It was more effective than most other attempts at early anti-missile systems, which were slow to reload and rarely hit their target."
+
+
+outfit "Silencer Beam"
+	category "Guns"
+	series "Guns"
+	index 01050
+	cost 31900
+	thumbnail "outfit/silencer beam"
+	"mass" 8
+	"outfit space" -8
+	"weapon capacity" -8
+	"gun ports" -1
+	weapon
+		sprite "projectile/silencer beam"
+			"frame rate" 1
+		sound "laser-ver8"
+		"hit effect" "silencer beam impact"
+		"inaccuracy" .5
+		"velocity" 300
+		"lifetime" 1
+		"reload" 1
+		"firing energy" .67
+		"firing heat" 3.2
+		"shield damage" 1.3
+		"hull damage" 1
+		"disabled damage" 0.7
+	description "A specialized weapon used by Republic Intelligence operatives, the Silencer Beam is optimized for disabling ships instead of destroying them. This comes at the cost of increased heat accumulation."
+
+effect "silencer beam impact"
+	sprite "effect/silencer impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 5
+	"random angle" 2
+	"random spin" 1
+	"velocity scale" -.005
+
+# No vanilla mining weapon is improved by a Spotlight instead of having a second copy of that weapon
+# Combines well with Kludge Blasters since they have no "prospecting" but do have "minable damage"
+# The miniscule mining damage on the Spotlight is to coax AI ships to actually fire it and to display "mining precision" in the outfitter
+outfit "Spotlight"
+	category "Guns"
+	series "Guns"
+	index 01000
+	cost 3000
+	thumbnail "outfit/spotlight"
+	"mass" 1
+	"outfit space" -1
+	"weapon capacity" -1
+	"gun ports" -1
+	weapon
+		"fire effect" "spotlight"
+		"velocity" 150
+		"lifetime" 1
+		"reload" 1
+		"firing energy" .067
+		"firing heat" .16
+		"minable damage" 0.0001
+		"prospecting" 0.53
+	description "This powerful light source can be installed into one of your ship's gun ports. Some miners insist that using a Spotlight to visually inspect asteroids while they work helps them improve their yield by reducing waste."
+	description "	Despite doing no damage, targeting other ships with this can still provoke them..."
+
+# No vanilla mining weapon is improved by a Search Light instead of having a second copy of that weapon
+# Combines well with Kludge Blasters since they have no "prospecting" but do have "minable damage"
+# The miniscule mining damage on the Search Light is to coax AI ships to actually fire it and to display "mining precision" in the outfitter
+outfit "Search Light"
+	category "Turrets"
+	series "Turrets"
+	index 01000
+	cost 6000
+	thumbnail "outfit/search light"
+	"mass" 2
+	"outfit space" -2
+	"weapon capacity" -2
+	"turret mounts" -1
+	weapon
+		"fire effect" "spotlight"
+		"hardpoint sprite" "hardpoint/search light"
+		"hardpoint offset" 2.
+		"turret turn" 1
+		"velocity" 150
+		"lifetime" 1
+		"reload" 1
+		"firing energy" .067
+		"firing heat" .16
+		"minable damage" 0.0001
+		"prospecting" 0.53
+	description "A Spotlight mounted onto a rotating turret platform provides a wider area of coverage. Whether or not this can help you locate anything lurking in the darkness is uncertain."
+	description "	Despite doing no damage, targeting other ships with this can still provoke them..."
+
+effect "spotlight"
+	sprite "effect/spotlight"
+		"frame rate" 1
+	"lifetime" 1
+
+
+outfit "Tri Laser Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01050
+	cost 231000
+	thumbnail "outfit/tri laser turret"
+	"mass" 30
+	"outfit space" -30
+	"weapon capacity" -30
+	"turret mounts" -1
+	"required crew" 1
+	"unique" 1
+	weapon
+		sprite "projectile/3x laser"
+			"frame rate" 1
+		"hardpoint sprite" "hardpoint/tri laser turret"
+		"hardpoint offset" -0.5 8.
+		sound "laser"
+		"hit effect" "beam laser impact"
+		"inaccuracy" .5
+		"turret turn" 3.5
+		"velocity" 300
+		"lifetime" 1
+		"reload" 1
+		"firing energy" 1.995
+		"firing heat" 4.8
+		"shield damage" 3
+		"hull damage" 3.9
+	description "The Tri Laser Turret was an early attempt to produce a more powerful laser turret. Deep Sky abandoned it with the development of the Heavy Laser."
+
+
+outfit "Turbo Blaster"
+	category "Guns"
+	series "Guns"
+	index 01020
+	cost 54000
+	thumbnail "outfit/turbo blaster"
+	"mass" 7
+	"outfit space" -7
+	"weapon capacity" -7
+	"gun ports" -1
+	weapon
+		sprite "projectile/turbo blaster"
+		sound "mod_blaster-ver8"
+		"hit effect" "turbo blaster impact"
+		"inaccuracy" 4
+		"velocity" 9.375
+		"lifetime" 48
+		"reload" 8
+		"firing energy" 6.5
+		"firing heat" 25.2
+		"shield damage" 13.2
+		"hull damage" 8.8
+	description "A new form of Modified Energy Blaster, the Turbo Blaster has been further modified to increase its rate of fire. The result is an incredibly powerful weapon. The heat from this blaster can accumulate quickly, especially when used in multiples."
+	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
+
+outfit "Twin Turbo Blaster"
+	category "Guns"
+	series "Guns"
+	index 01040
+	cost 135000
+	thumbnail "outfit/twin turbo blaster"
+	"mass" 16
+	"outfit space" -16
+	"weapon capacity" -16
+	"gun ports" -1
+	weapon
+		sound "mod_blaster-ver8"
+		"submunition" "Twin Turbo Blaster Submunition"
+			"offset" 1 0
+			"facing" 0.45
+		"submunition" "Twin Turbo Blaster Submunition"
+			"offset" -1 0
+			"facing" -0.45
+		"hit effect" "turbo blaster impact" 2
+		"inaccuracy" 4
+		"lifetime" 0
+		"velocity override" 9.375
+		"range override" 450
+		"reload" 8
+		"firing energy" 13
+		"firing heat" 50.4
+	description "The Twin Turbo Blaster's high rate of fire is capable of launching four projectiles before other twin blasters can fire their second volley. The heat generated from firing both barrels at once is considerable."
+	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
+
+outfit "Twin Turbo Blaster Submunition"
+	weapon
+		sprite "projectile/turbo blaster"
+		"hit effect" "turbo blaster impact"
+		"velocity" 9.375
+		"lifetime" 48
+		"shield damage" 13.2
+		"hull damage" 8.8
+
+outfit "Turbo Blaster Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01020
+	cost 189000
+	thumbnail "outfit/turbo blaster turret"
+	"mass" 21
+	"outfit space" -21
+	"weapon capacity" -21
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/turbo blaster"
+		"hardpoint sprite" "hardpoint/turbo blaster turret"
+		"hardpoint offset" 9.
+		sound "mod_blaster-ver8"
+		"hit effect" "turbo blaster impact"
+		"inaccuracy" 4
+		"turret turn" 3.5
+		"velocity" 9.375
+		"lifetime" 48
+		"reload" 4
+		"firing energy" 6.5
+		"firing heat" 25.2
+		"shield damage" 13.2
+		"hull damage" 8.8
+	description "This is a turreted version of the Turbo Blaster, which is a Modified Energy Blaster enhanced with an increased rate of fire. These mounted blasters can cover a 360 degree arc with double the fire power of a single Turbo Blaster."
+	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
+
+outfit "Quad Turbo Blaster Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01030
+	cost 319000
+	thumbnail "outfit/quad turbo blaster turret"
+	"mass" 35
+	"outfit space" -35
+	"weapon capacity" -35
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/turbo blaster"
+		"hardpoint sprite" "hardpoint/quad turbo blaster turret"
+		"hardpoint offset" 9.
+		sound "mod_blaster-ver8"
+		"hit effect" "turbo blaster impact"
+		"inaccuracy" 4
+		"turret turn" 3
+		"velocity" 9.375
+		"lifetime" 48
+		"reload" 2
+		"firing energy" 6.5
+		"firing heat" 25.2
+		"shield damage" 13.2
+		"hull damage" 8.8
+	description "The combined firepower of the four Turbo Blasters mounted on this turret matches more powerful weapons through sheer overwhelming numbers of projectiles. However, the internal heat generated from this weapon may be more than some ships can handle."
+	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
+
+effect "turbo blaster impact"
+	sprite "effect/turbo blaster impact"
+		"no repeat"
+		"frame rate" 30
+	"lifetime" 7
+	"random angle" 40
+	"velocity scale" -.05
+
+
+outfit "Quad Mod Blaster Turret"
+	category "Turrets"
+	series "Turrets"
+	index 01030
+	cost 300000
+	thumbnail "outfit/quad mod blaster turret"
+	"mass" 30
+	"outfit space" -30
+	"weapon capacity" -30
+	"turret mounts" -1
+	"required crew" 1
+	weapon
+		sprite "projectile/mod blaster"
+		"hardpoint sprite" "hardpoint/quad mod blaster turret"
+		"hardpoint offset" 9.
+		sound "mod blaster"
+		"hit effect" "blaster impact"
+		"inaccuracy" 4
+		"turret turn" 3
+		"velocity" 10
+		"lifetime" 48
+		"reload" 3
+		"firing energy" 6.5
+		"firing heat" 25.2
+		"shield damage" 13.2
+		"hull damage" 8.8
+	description "Four Modified Blasters mounted on a turret base provide double the firepower of a regular Modified Blaster Turret, but also double the heat generated and energy consumed."
+
+
+##############################
+# Secondary Weapons
+##############################
 
 
 outfit "Metallic Asteroid"
 	plural "Metallic Asteroids"
+	series "Ammunition"
+	index 01000
 	category "Ammunition"
 	cost 3000
 	thumbnail "outfit/metallic asteroid"
 	"flotsam sprite" "effect/flotsam metallic"
-	"mass" 5
+	"mass" 3
 	"asteroid capacity" -1
 	description `The most difficult part of operating an Asteroid Catapult is locating ammunition with the right size, shape, density, and magnetic properties.`
+
+outfit "Asteroid Storage"
+	category "Ammunition"
+	series "Ammunition"
+	index 01001
+	cost 45000
+	thumbnail "outfit/asteroid storage"
+	"mass" 40
+	"cargo space" -40
+	"asteroid capacity" 10
+	"required crew" 3
+	ammo "Metallic Asteroid"
+	description "This box of rocks holds extra asteroids for the Asteroid Catapult. Since it's basically a cargo container, it occupies your cargo hold rather than your ship's outfit systems. Three crewmembers are needed to transport the asteroids from the ship's cargo bay to the catapult and load it."
 
 outfitter "Asteroid Ammo"
 	"Metallic Asteroid"
@@ -38,9 +1012,11 @@ outfitter "Asteroid Ammo"
 
 outfit "Asteroid Catapult"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01000
 	cost 1531000
 	thumbnail "outfit/asteroid catapult"
-	description `This is basically a large rail gun that uses exotic ammunition. In other words, a mass driver. Unfortunately, development of asteroid based weapons systems was banned in the Republic, Syndicate, and Free Worlds due to an unexpected development in the field of terraforming.`
+	description `This is basically a large rail gun that uses exotic ammunition. Unfortunately, development of asteroid based weapons systems was banned in the Republic, Syndicate, and Free Worlds due to an unexpected development in the field of terraforming.`
 	"mass" 100
 	"outfit space" -100
 	"weapon capacity" -100
@@ -94,156 +1070,16 @@ outfit "Asteroid Catapult Deterioration"
 		"hit force" 700
 
 
-
-outfit "Double Anti-Missile Turret"
-	category "Turrets"
-	cost 130000
-	thumbnail "outfit/anti-missile double"
-	"mass" 23
-	"outfit space" -23
-	"weapon capacity" -23
-	"turret mounts" -1
-	weapon
-		"hardpoint sprite" "hardpoint/anti-missile double"
-		"hardpoint offset" 4.
-		"hit effect" "small anti-missile"
-		"anti-missile" 5
-		"velocity" 150
-		"lifetime" 1
-		"reload" 4
-		"firing energy" 5
-		"firing heat" 3
-	description "The Double Anti-Missile Turret fills the role of a medium weight anti-missile weapon. Its high rate of fire makes it an ideal choice for thinning out missile swarms."
-
-
-
-outfit "Energy Cannon"
-	category "Guns"
-	cost 124000
-	thumbnail "outfit/energy cannon"
-	"mass" 12
-	"outfit space" -12
-	"weapon capacity" -12
-	"gun ports" -1
-	weapon
-		sprite "projectile/energy cannon"
-		sound "torpedo-ver8"
-		"hit effect" "energy cannon impact"
-		"inaccuracy" 4
-		"velocity" 10
-		"lifetime" 6
-		"range override" 720
-		"reload" 13
-		"firing energy" 13
-		"firing heat" 50.4
-		"shield damage" 2.2
-		"hull damage" 1.467
-		"cluster"
-		"submunition" "Energy Cannon Blast"
-	description "A relic from the Alpha War, Energy Cannons fell into disuse once the war ended. Occasionally they can still be found outfitted on older ships. They are more powerful than Energy Blasters and cover a longer range. But their rate of fire is slower and the effectiveness of the projectiles diminishes the more distant the target."
-#damage per second equal to Twin Modified Blaster
-
-outfit "Energy Cannon Turret"
-	category "Turrets"
-	cost 240000
-	thumbnail "outfit/energy cannon turret"
-	"mass" 15
-	"outfit space" -15
-	"weapon capacity" -15
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		sprite "projectile/energy cannon"
-		"hardpoint sprite" "hardpoint/energy cannon turret"
-		"hardpoint offset" 9.
-		sound "torpedo-ver8"
-		"hit effect" "energy cannon impact"
-		"inaccuracy" 4
-		"turret turn" 1.2
-		"velocity" 10
-		"lifetime" 6
-		"range override" 720
-		"reload" 13
-		"firing energy" 13
-		"firing heat" 50.4
-		"shield damage" 2.2
-		"hull damage" 1.467
-		"cluster"
-		"submunition" "Energy Cannon Blast"
-	description "The turreted version of the Energy Cannon consists of a single Energy Cannon mounted onto a rotating base. If there is any one factor that lead to the decline of this weapon, it might be the relatively slow turret turn rate which made it difficult to aim at fighters that were growing increasingly nimble as newer designs were developed."
-
-outfit "Energy Cannon Blast"
-	weapon
-		sprite "projectile/energy cannon sub"
-		"hit effect" "energy cannon sub impact"
-#		"inaccuracy" 3
-		"lifetime" 18
-		"shield damage" 5.2
-		"hull damage" 4.4
-		"submunition" "Residual Energy Cannon Blast"
-#damage per shot equal to Twin Modified Blaster
-
-outfit "Residual Energy Cannon Blast"
-	weapon
-		sprite "projectile/energy cannon sub"
-		"hit effect" "energy cannon sub impact"
-#		"inaccuracy" 3
-		"lifetime" 24
-		"shield damage" 8
-		"hull damage" 4.4
-		"submunition" "Half Energy Cannon Blast"
-#damage per shot equal to Twin Blaster
-
-outfit "Half Energy Cannon Blast"
-	weapon
-		sprite "projectile/mod blaster"
-		"hit effect" "blaster impact"
-#		"inaccuracy" 2
-		"lifetime" 18
-		"shield damage" 2.6
-		"hull damage" 2.2
-		"submunition" "Half Residual Energy Cannon Blast"
-#damage per shot equal to Modified Blaster
-
-outfit "Half Residual Energy Cannon Blast"
-	weapon
-		sprite "projectile/blaster"
-		"hit effect" "blaster impact"
-#		"inaccuracy" 1
-		"lifetime" 6
-		"shield damage" 10.6
-		"hull damage" 6.6
-#damage per shot equal to Energy Blaster
-
-effect "energy cannon impact"
-	sprite "effect/blaster impact"
-		"scale" 4
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 7
-	"random angle" 40
-	"velocity scale" -.05
-
-effect "energy cannon sub impact"
-	sprite "effect/blaster impact"
-		"scale" 2
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 7
-	"random angle" 40
-	"velocity scale" -.05
-
-
-
 outfit "Hyperspace Nuke"
 	category "Secondary Weapons"
-	cost 1000000
+	series "Secondary Weapons"
+	index 01170
+	cost 1500000
 	thumbnail "outfit/hypernuke"
 	"mass" 10
 	"outfit space" -10
 	"weapon capacity" -10
 	"gun ports" -1
-	"unique" 1
 	weapon
 		sprite "projectile/hypernuke"
 			"no repeat"
@@ -254,6 +1090,7 @@ outfit "Hyperspace Nuke"
 		stream
 		icon "icon/hypernuke"
 		"live effect" "hypernuke trail" 280
+		"live effect" "hypernuke smoke" 320
 		"hit effect" "nuke explosion"
 		"hit effect" "nuke residue fast" 10
 		"hit effect" "nuke residue slow" 10
@@ -270,7 +1107,9 @@ outfit "Hyperspace Nuke"
 		"acceleration" 1.6
 		"drag" .1
 		"turn" 2
-		"homing" 4
+		"homing"
+			"leading"
+			"throttle control"
 		"radar tracking" .5
 		"optical tracking" 1
 		"trigger radius" 30
@@ -279,7 +1118,7 @@ outfit "Hyperspace Nuke"
 		"hull damage" 7000
 		"hit force" 6000
 		"missile strength" 220
-	description "	This Nuclear Missile has been outfitted with an experimental hyperspace fuel afterburner. It can fly faster, and potentially, farther than standard Nuclear Missiles if it doesn't explode prematurely. This increased speed helps it outpace anti-missile systems, but it has difficulty adjusting its trajectory once fired."
+	description "	This Nuclear Missile has been outfitted with an experimental hyperspace fuel afterburner. It can fly faster, and potentially, farther than standard Nuclear Missiles if it doesn't explode prematurely from the hull stress. This increased speed helps it outpace anti-missile systems, but it has difficulty adjusting its trajectory once fired."
 	description "	[Hyperspace nukes are a one-shot weapon: each missile occupies a gun slot, and after it is fired, the slot it was in is left empty.]"
 
 effect "hypernuke trail"
@@ -287,7 +1126,19 @@ effect "hypernuke trail"
 		"no repeat"
 		"frame rate" 30
 	sound "afterburner"
-	"lifetime" 10
+	"lifetime" 20
+	"random angle" 30
+	"random spin" 10
+	"random velocity" 1.
+	"velocity scale" 1.
+	"absolute angle" 180
+	"absolute velocity" 0
+
+effect "hypernuke smoke"
+	sprite "effect/smoke"
+		"no repeat"
+		scale 0.4
+	"lifetime" 40
 	"random angle" 30
 	"random spin" 10
 	"random velocity" 1.
@@ -298,6 +1149,8 @@ effect "hypernuke trail"
 
 outfit "Inferno Rocket"
 	category "Ammunition"
+	series "Ammunition"
+	index 01045
 	licenses
 		"Inferno Dragon"
 	cost 2000
@@ -308,6 +1161,8 @@ outfit "Inferno Rocket"
 
 outfit "Inferno Rocket Rack"
 	category "Ammunition"
+	series "Ammunition"
+	index 01046
 	licenses
 		"Inferno Dragon"
 	cost 20000
@@ -318,8 +1173,25 @@ outfit "Inferno Rocket Rack"
 	ammo "Inferno Rocket"
 	description "The Inferno Rocket Rack is used to store extra ammunition for Inferno Rocket Launchers."
 
+outfit "Inferno Rocket Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01047
+	licenses
+		"Inferno Dragon"
+	cost 40000
+	thumbnail "outfit/inferno rocket depot"
+	"mass" 8
+	"cargo space" -40
+	"inferno rocket capacity" 40
+	ammo "Inferno Rocket"
+	"required crew" 1
+	description "The Inferno Rocket Depot stages extra ammunition in your cargo bay for weapons that use Inferno Rockets. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
 outfit "Inferno Rocket Launcher"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01096
 	licenses
 		"Inferno Dragon"
 	cost 40000
@@ -355,12 +1227,14 @@ outfit "Inferno Rocket Launcher"
 		"hull damage" 168
 		"hit force" 90
 		"missile strength" 8
-		"heat damage" 24000
-		"burn damage" 240
+		"heat damage" 18000
+		"burn damage" 300
 	description "A weapon secretly developed through cooperation between different pirate factions, Inferno Rockets splatter their targets with a highly flammable substance."
 
 outfit "Inferno Rocket Pod"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01095
 	licenses
 		"Inferno Dragon"
 	cost 15000
@@ -398,8 +1272,8 @@ outfit "Inferno Rocket Pod"
 		"hull damage" 168
 		"hit force" 90
 		"missile strength" 8
-		"heat damage" 24000
-		"burn damage" 240
+		"heat damage" 18000
+		"burn damage" 300
 	description "A weapon secretly developed through cooperation between different pirate factions, Inferno Rockets splatter their targets with a highly flammable substance."
 	description "	Pods enable fighters and other light craft to carry small quantities of rockets into battle while retaining enough space for other weapons. Large ships are better off with full-size launchers."
 
@@ -449,623 +1323,101 @@ effect "inferno rocket burn small"
 	"velocity scale" .05
 
 
+outfit "Plunder Mine"
+	category "Ammunition"
+	series "Ammunition"
+	index 01005
+	cost 1000
+	thumbnail "outfit/plunder mine"
+	"mass" 1
+	"flotsam sprite" "effect/flotsam plunder ammo"
+	"plunder mine capacity" -1
+	description "This is ammunition for the Plunder Catapult. Typically the these consist of eight sturdy iron crates filled with pressure triggered explosives, loaded onto a pallet."
+	description "	The practice of spray painting the sides of the crates to differentiate them from normal cargo was quickly adopted when pirate captains noticed their crews would sometimes load the wrong crates into the catapult."
 
-outfit "Isochronal Laser"
-	category "Guns"
-	cost 60000
-	thumbnail "outfit/isochronal laser"
-	"mass" 11
-	"outfit space" -11
-	"weapon capacity" -11
-	"gun ports" -1
-	weapon
-		sprite "projectile/isochronal laser"
-			"frame rate" 1
-		sound "modified heavy_laser-ver8"
-		"hit effect" "isochronal impact"
-		"inaccuracy" .4
-		"velocity" 350
-		"lifetime" 1
-		"reload" 2
-		"firing energy" 1.995
-		"firing heat" 4.2
-		"shield damage" 2.55
-		"hull damage" 3.6
-		"cluster"
-	description "The Isochronal Laser was a failed attempt by Tarazed to recreate the Skylances installed on Quarg ships. While their engineers managed to create a powerful beam, they were unable to keep it stable."
-	description "	These were never adopted for widespread use and Tarazed was eventually forced to stop production of them due to poor sales. Ships in the South can sometimes be found with these rare weapons installed. However the vast majority of Isochronal Lasers are still held by Tarazed itself."
-
-outfit "Isochronal Laser Turret"
-	category "Turrets"
-	cost 320000
-	thumbnail "outfit/isochronal laser turret"
-	"mass" 31
-	"outfit space" -31
-	"weapon capacity" -31
-	"turret mounts" -1
+outfit "Plunder Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01006
+	cost 1000
+	thumbnail "outfit/plunder depot"
+	"mass" 5
+	"cargo space" -15
+	"plunder mine capacity" 15
 	"required crew" 1
-	weapon
-		sprite "projectile/2x isochronal laser"
-			"frame rate" 1
-		"hardpoint sprite" "hardpoint/heavy laser turret"
-		"hardpoint offset" 8.
-		sound "modified heavy_laser-ver8"
-		"hit effect" "isochronal impact"
-		"inaccuracy" .4
-		"turret turn" 3.1
-		"velocity" 350
-		"lifetime" 1
-		"reload" 2
-		"firing energy" 3.99
-		"firing heat" 8.4
-		"shield damage" 5.1
-		"hull damage" 7.2
-		"cluster"
-	description "The Isochronal Laser was a failed attempt by Tarazed to recreate the Skylances installed on Quarg ships. While their engineers managed to create a powerful beam, they were unable to keep it stable."
-	description "	This turreted version of the Isochronal Laser appeals to a very niche market of pilots who want an upgrade to Deep Sky's Laser Turret, but lack the space for Heavy Lasers on their ships."
+	ammo "Plunder Mine"
+	description "Pirates never developed fancy storage solutions for Plunder Mines beyond designating some cargo space for them and assigning a crew member to maintain inventory."
+	description "	If you run out of cargo space and want to carry more Plunder Mines, install a Cargo Expansion to make room for another Plunder Depot."
 
-effect "isochronal impact"
-	sprite "effect/isochronal impact"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 5
-	"random angle" 2
-	"random spin" 1
-	"random velocity" 1
-	"velocity scale" -.007
-
-
-
-outfit "Kludge Blaster"
-	category "Guns"
-	cost 8000
-	thumbnail "outfit/kludge blaster"
+outfit "Plunder Catapult"
+	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01005
+	cost 20000
+	thumbnail "outfit/plunder catapult"
 	"mass" 4
 	"outfit space" -4
 	"weapon capacity" -4
 	"gun ports" -1
+	"plunder mine capacity" 3
+	ammo "Plunder Mine"
 	weapon
-		sprite "projectile/kludge"
-		sound "blaster-ver8"
-		"hit effect" "kludge impact"
-		"inaccuracy" 4
-		"velocity" 9.375
-		"lifetime" 48
-		"reload" 15
-		"firing energy" 6.5
-		"firing heat" 22.5
-		"shield damage" 13.2
-		"hull damage" 8.8
-		"minable damage" 10.6
-		"cluster"
-	description "Kludge Blasters started out as a failed attempt at modifying an Energy Blaster. Despite their shady origins, the most basic version eventually gained widespread popularity as a budget alternative mining weapon and are available at many legitimate outfitters across the galaxy."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Twin Kludge Blaster"
-	category "Guns"
-	cost 20000
-	thumbnail "outfit/twin kludge blaster"
-	"mass" 10
-	"outfit space" -10
-	"weapon capacity" -10
-	"gun ports" -1
-	weapon
-		sound "blaster-ver8"
-		"submunition" "Kludge Submunition"
-			"offset" 1 0
-			"facing" 0.45
-		"submunition" "Kludge Submunition"
-			"offset" -1 0
-			"facing" -0.45
-		"hit effect" "kludge impact" 2
-		"inaccuracy" 4
-		"lifetime" 0
-		"velocity override" 9.375
-		"range override" 450
-		"reload" 15
-		"firing energy" 13
-		"firing heat" 45
-		"cluster"
-	description "Pirate captains short on cash due to botched raid attempts or an unlucky night at the card tables might resort to mounting Kludge Blasters onto their ship instead of more effective weapons. Jamming two Kludge Blasters into a single gun port was one innovation that spawned copycats among other blaster designers. The localized cluster fire exhibited in them harkens back to this original design."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Kludge Submunition"
-	weapon
-		sprite "projectile/kludge"
-		"hit effect" "kludge impact"
-		"velocity" 9.375
-		"lifetime" 48
-		"shield damage" 13.2
-		"hull damage" 8.8
-		"minable damage" 10.6
-
-outfit "Triple Kludge Blaster"
-	category "Guns"
-	cost 30000
-	thumbnail "outfit/triple kludge blaster"
-	"mass" 15
-	"outfit space" -15
-	"weapon capacity" -15
-	"gun ports" -1
-	weapon
-		sound "blaster-ver8"
-		"submunition" "Kludge Submunition"
-			"offset" 1 0
-			"facing" 0.45
-		"submunition" "Kludge Submunition"
-			"offset" 0 0
-			"facing" 0
-		"submunition" "Kludge Submunition"
-			"offset" -1 0
-			"facing" -0.45
-		"hit effect" "kludge impact" 3
-		"inaccuracy" 4
-		"lifetime" 0
-		"velocity override" 9.375
-		"range override" 450
-		"reload" 15
-		"firing energy" 19.5
-		"firing heat" 69
-		"cluster"
-	description "The pressures of war inspired weaponsmiths to figure out how to squeeze even more Kludge Blasters into a single gun port. This increases the damage yield at the cost of increased heat buildup."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Kludge Blaster Turret"
-	category "Turrets"
-	cost 50000
-	thumbnail "outfit/kludge blaster turret"
-	"mass" 12
-	"outfit space" -12
-	"weapon capacity" -12
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		"hardpoint sprite" "hardpoint/kludge blaster turret"
-		"hardpoint offset" 9.
-		"turret turn" 3.5
-		sound "blaster-ver8"
-		"submunition" "Kludge Submunition"
-			"offset" 1 0
-			"facing" 0.45
-		"submunition" "Kludge Submunition"
-			"offset" -1 0
-			"facing" -0.45
-		"hit effect" "kludge impact" 2
-		"inaccuracy" 4
-		"lifetime" 0
-		"velocity override" 9.375
-		"range override" 450
-		"reload" 15
-		"firing energy" 13
-		"firing heat" 45
-		"cluster"
-	description "Pirate captains short on cash due to smuggling jobs gone wrong, or an unlucky run at the dog races might resort to mounting Kludge Blasters onto their ship instead of more effective weapons. Unlike other blaster turrets, both barrels of the Kludge Blaster Turret fire simultaneously. It was hoped that launching the projectiles in a volley would help compensate for the weapon's slow rate of fire."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Quad Kludge Blaster Turret"
-	category "Turrets"
-	cost 115000
-	thumbnail "outfit/quad kludge blaster turret"
-	"mass" 20
-	"outfit space" -20
-	"weapon capacity" -20
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		"hardpoint sprite" "hardpoint/quad kludge blaster turret"
-		"hardpoint offset" 9.
-		"turret turn" 3
-		sound "blaster-ver8"
-		"submunition" "Kludge Submunition"
-			"offset" 2 0
-			"facing" 0.45
-		"submunition" "Kludge Submunition"
-			"offset" 1 0
-			"facing" 0.3
-		"submunition" "Kludge Submunition"
-			"offset" -1 0
-			"facing" -0.3
-		"submunition" "Kludge Submunition"
-			"offset" -2 0
-			"facing" -0.45
-		"hit effect" "kludge impact" 4
-		"inaccuracy" 4
-		"lifetime" 0
-		"velocity override" 9.375
-		"range override" 450
-		"reload" 15
-		"firing energy" 26
-		"firing heat" 90
-		"cluster"
-	description "While the Kludge Blaster is considered a poor man's weapon among pirates, tinkerers continue to see potential in connecting several of them together. All four Kludge Blasters mounted on this turret fire at the same time, launching a deadly volley of projectiles towards the target."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Hex Kludge Blaster Turret"
-	category "Turrets"
-	cost 180000
-	thumbnail "outfit/hex kludge blaster turret"
-	"mass" 32
-	"outfit space" -32
-	"weapon capacity" -32
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		"hardpoint sprite" "hardpoint/quad kludge blaster turret"
-		"hardpoint offset" 9.
-		"turret turn" 2.5
-		sound "blaster-ver8"
-		"submunition" "Kludge Submunition"
-			"offset" 3 0
-			"facing" 0.6
-		"submunition" "Kludge Submunition"
-			"offset" 2 0
-			"facing" 0.45
-		"submunition" "Kludge Submunition"
-			"offset" 1 0
-			"facing" 0.3
-		"submunition" "Kludge Submunition"
-			"offset" -1 0
-			"facing" -0.3
-		"submunition" "Kludge Submunition"
-			"offset" -2 0
-			"facing" -0.45
-		"submunition" "Kludge Submunition"
-			"offset" -3 0
-			"facing" -0.6
-		"hit effect" "kludge impact" 6
-		"inaccuracy" 4
-		"lifetime" 0
-		"velocity override" 9.375
-		"range override" 450
-		"reload" 15
-		"firing energy" 39
-		"firing heat" 138
-		"cluster"
-	description "Overzealous weaponsmiths crafted this arrangement of six Kludge Blasters clustered onto a single turret mount. This increases the damage yield at the cost of increased heat buildup. As with other Kludge Blaster configurations, all six fire at the same time, launching a deadly volley of projectiles towards the target."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-effect "kludge impact"
-	sprite "effect/kludge impact"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 7
-	"random angle" 40
-	"velocity scale" -.05
-
-
-
-outfit "Modified Plasma Turret"
-	category "Turrets"
-	cost 330000
-	thumbnail "outfit/modified plasma turret"
-	"mass" 31
-	"outfit space" -31
-	"weapon capacity" -31
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		sprite "projectile/plasma"
-			"frame rate" 3
-		"hardpoint sprite" "hardpoint/modified plasma turret"
-		"hardpoint offset" 15.
-		sound "plasma"
-		"hit effect" "plasma explosion"
-		"inaccuracy" 2
-		"turret turn" 1.8
-		"velocity" 12
-		"lifetime" 40
-		"reload" 18
-		"firing energy" 30
-		"firing heat" 180
-		"hit force" 45
-		"shield damage" 63
-		"hull damage" 25
-		"heat damage" 340
-	description "This Plasma Turret only has a single Plasma Cannon mounted on it. While not as fearsome as Kraz's Plasma Turret, it is far more accessible."
-
-
-
-outfit "Twin Particle Cannon"
-	category "Guns"
-	cost 530000
-	thumbnail "outfit/twin particle cannon"
-	"mass" 64
-	"outfit space" -64
-	"weapon capacity" -64
-	"gun ports" -1
-	weapon
-		sound "particle"
-		"submunition" "Particle Submunition"
-			"offset" 1 0
-		"submunition" "Particle Submunition"
-			"offset" -1 0
-		"hit effect" "particle impact" 2
-		"inaccuracy" .5
-		"lifetime" 0
-		"velocity override" 30
-		"range override" 750
-		"reload" 20
-		"firing energy" 70
-		"firing force" 30
-		"firing heat" 240
-		"cluster"
-	description "Both barrels of the Twin Particle Cannon fire simultaneously, releasing double the force of a single Particle Cannon all at once. The size of this weapon is its main drawback, as few ships can accomodate it. While this product is fully functional, the sales department has raised concerns about its viability in the marketplace."
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Particle Submunition"
-	weapon
-		sprite "projectile/particle beam"
-		"hit effect" "particle impact"
-		"velocity" 30
-		"lifetime" 25
-		"hit force" 120
-		"shield damage" 65
-		"hull damage" 62
-
-outfit "Particle Burst Turret"
-	category "Turrets"
-	cost 330000
-	thumbnail "outfit/particle burst turret"
-	"mass" 42
-	"outfit space" -42
-	"weapon capacity" -42
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		sprite "projectile/particle beam"
-		"hardpoint sprite" "hardpoint/particle burst turret"
-		"hardpoint offset" 14.
-		sound "particle"
-		"hit effect" "particle impact"
-		"inaccuracy" .5
-		"turret turn" 1.0
-		"velocity" 30
-		"lifetime" 25
-		"reload" 30
-		"burst count" 3
-		"burst reload" 20
-		"firing energy" 35
-		"firing force" 15
-		"firing heat" 120
-		"hit force" 120
-		"shield damage" 65
-		"hull damage" 62
-	description "One of the most frequent product requests submitted to Lovelace Labs is for a turreted version of the Particle Cannon. While none have made it past the prototype testing phase before, this version looks promising."
-	description "	An issue with previous designs was jamming in the turret turning mechanism due to stress from the recoil. In addition to a reinforced turret mount, the Particle Burst Turret limits the rate of fire to a three shot burst. Lab results have been satisfactory so far, but actual combat testing is needed."
-	description "	This weapon is still in development and is unavailable to the general public. A few lucky pilots with connections within the company have been given access to prototypes for field testing."
-
-
-
-outfit "Plasma Cluster Cannon"
-	"display name" "Plasma Charge Cannon"
-	category "Guns"
-	cost 209000
-	thumbnail "outfit/plasma cluster cannon"
-	"mass" 25
-	"outfit space" -25
-	"weapon capacity" -25
-	"gun ports" -1
-	weapon
-		sprite "projectile/plasma cluster"
-			"frame rate" 3
-		sound "plasma"
-		"hit effect" "plasma cluster explosion"
-		"inaccuracy" 1
-		"velocity" 12
-		"lifetime" 45
-		"reload" 36
-		"firing energy" 60
-		"firing heat" 360
-		"hit force" 90
-		"shield damage" 126
-		"hull damage" 50
-		"heat damage" 680
-		"cluster"
-	description `The Plasma Charge Cannon has been modified to take advantage of concentrated firing mounts. The power and range of each shot has increased at the expense of increasing the weapon's charge up time.`
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-effect "plasma cluster explosion"
-	sprite "effect/plasma explosion"
-		scale 2
-		"no repeat"
-		"frame rate" 20
-	sound "explosion tiny"
-	"lifetime" 21
-	"random angle" 360
-	"random spin" 4
-	"random velocity" .1
-	"velocity scale" -.05
-
-
-outfit "Proton Gun-CF8"
-	category "Guns"
-	cost 165000
-	thumbnail "outfit/proton gun-cf8"
-	"mass" 28
-	"outfit space" -28
-	"weapon capacity" -28
-	"gun ports" -1
-	weapon
-		sprite "projectile/proton"
-		sound "proton"
-		"hit effect" "proton impact" 6
-		"inaccuracy" 3
-		"submunition" "Proton CF-8 Fragment" 6
-		"velocity" 24
-		"lifetime" 2
-		"reload" 8
-		"firing energy" 15
-		"firing force" 3
-		"firing heat" 60
-		"cluster"
-	description `Four out of five reviewers at Stars and Starships Magazine criticized the Proton Gun-CF8 as a blatant marketing gimmick meant to appeal to Vanguard aficionados. The lone dissenting review praised the aesthetic appeal of its projectile firing pattern.`
-	description `	This weapon is set to fire in "cluster" mode, synchronizing its rate of fire when multiple copies are installed together.`
-
-outfit "Proton CF-8 Fragment"
-	weapon
-		sprite "projectile/proton fragment"
-			"no repeat"
-			"frame rate" 2
-		"hit effect" "proton impact"
-		"inaccuracy" 3
-		"lifetime" 24
-		"hit force" 4.5
-		"shield damage" 5.05
-		"hull damage" 4.2
-
-outfit "Proton Turret-ATS"
-	category "Turrets"
-	cost 390000
-	thumbnail "outfit/proton turret-ats"
-	"mass" 34
-	"outfit space" -34
-	"weapon capacity" -34
-	"turret mounts" -1
-	weapon
-		sprite "projectile/proton"
-		"hardpoint sprite" "hardpoint/proton turret"
-		"hardpoint offset" 14.
-		sound "proton"
-		"hit effect" "proton impact" 3
-		"inaccuracy" 8
-		"turret turn" 1.0
-		"submunition" "Proton Fragment" 3
-		"velocity" 24
-		"lifetime" 2
-		"reload" 8
-		"firing energy" 15
-		"firing force" 3
-		"firing heat" 60
-	description `The Syndicate Proton Turret-ATS was designed for the cost conscious captain concerned about keeping crew wages under control. No gunner is required to operate this turret. Instead, aiming is accomplished by utilizing an advanced automated targeting system which has been in development for several years. Critics note it has lower accuracy and response times than a skilled human gunner. Despite this, some captains consider the trade off worthwhile.`
-
-
-
-outfit "Prototype Anti-Missile"
-	category "Turrets"
-	cost 90000
-	thumbnail "outfit/prototype anti-missile"
-	"mass" 24
-	"outfit space" -24
-	"weapon capacity" -24
-	"turret mounts" -1
-	"required crew" 1
-	"unique" 1
-	weapon
-		"hardpoint sprite" "hardpoint/heavy anti-missile"
-		"hardpoint offset" 5.
-		"hit effect" "small anti-missile"
-		"anti-missile" 6
-		"velocity" 150
+		sprite "projectile/plunder"
+			"frame rate" 18
+			"random start frame"
+		ammo "Plunder Mine"
+		icon "icon/plunder catapult"
+		"hit effect" "large explosion"
+		"die effect" "flotsam death"
+		"submunition" "plunder mine submunition" 8
+		"inaccuracy" 10
+		"velocity" 0
 		"lifetime" 1
-		"reload" 7
-		"firing energy" 7
-		"firing heat" 4
-	description "This Prototype Anti-Missile requires a crewmember to manually aim and fire the turret. It was more effective than most other early anti-missile systems, which were slow to reload and rarely hit their target."
+		"reload" 360
+		"firing energy" 72
+		"firing heat" 72
+		"acceleration" .16
+		"drag" .04
+		"missile strength" 17
+		"blast radius" 40
+	description "Favored by smugglers, this weapon jettisons crates loaded with explosives to lure unwary pursuers into approaching a deadly trap."
+	description "	These mines can be dangerous to the ship deploying them if they detonate before they've had a chance to disperse."
 
-
-
-outfit "Silencer Beam"
-	category "Guns"
-	cost 31900
-	thumbnail "outfit/silencer beam"
-	"mass" 8
-	"outfit space" -8
-	"weapon capacity" -8
-	"gun ports" -1
+outfit "plunder mine submunition"
 	weapon
-		sprite "projectile/silencer beam"
-			"frame rate" 1
-		sound "laser-ver8"
-		"hit effect" "silencer beam impact"
-		"inaccuracy" .5
-		"velocity" 300
-		"lifetime" 1
-		"reload" 1
-		"firing energy" .67
-		"firing heat" 3.2
-		"shield damage" 1.3
-		"hull damage" 1
-		"disabled damage" 0.7
-	description "A specialized weapon used by Republic Intelligence operatives, the Silencer Beam is optimized for disabling ships instead of destroying them. This comes at the cost of increased heat accumulation."
-	description "	Its name refers to how the weapon produces less sound compared to a regular Beam Laser."
-
-effect "silencer beam impact"
-	sprite "effect/silencer impact"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 5
-	"random angle" 2
-	"random spin" 1
-	"velocity scale" -.005
-
-
-
-outfit "Spotlight"
-#	category "Secondary Weapons"
-	category "Guns"
-	cost 3000
-	thumbnail "outfit/spotlight"
-	"mass" 1
-	"outfit space" -1
-	"weapon capacity" -1
-	"gun ports" -1
-	weapon
-		"fire effect" "spotlight"
-#		icon "icon/spotlight"
-		"velocity" 150
-		"lifetime" 1
-		"reload" 1
-		"firing energy" .067
-		"firing heat" .16
-		"minable damage" 0.0001
-		"prospecting" 0.000025
-	description "This powerful light source can be installed into one of your ship's gun ports. Some miners insist that using a Spotlight to visually inspect asteroids while they work helps them improve their yield by reducing waste."
-	description "	Despite doing no damage, targeting other ships with this can still provoke them..."
-
-outfit "Search Light"
-#	category "Secondary Weapons"
-	category "Turrets"
-	cost 6000
-	thumbnail "outfit/search light"
-	"mass" 2
-	"outfit space" -2
-	"weapon capacity" -2
-	"turret mounts" -1
-	weapon
-		"fire effect" "spotlight"
-		"hardpoint sprite" "hardpoint/search light"
-		"hardpoint offset" 2.
-#		icon "icon/search light"
-		"turret turn" 1
-		"velocity" 150
-		"lifetime" 1
-		"reload" 1
-		"firing energy" .067
-		"firing heat" .16
-		"minable damage" 0.0001
-		"prospecting" 0.000025
-	description "A Spotlight mounted onto a rotating turret platform provides a wider area of coverage. Whether or not this can help you locate anything lurking in the darkness is uncertain."
-	description "	Despite doing no damage, targeting other ships with this can still provoke them..."
-
-effect "spotlight"
-	sprite "effect/spotlight"
-		"frame rate" 1
-	"lifetime" 1
-
+		sprite "projectile/plunder"
+			"frame rate" 18
+			"random start frame"
+		"hit effect" "medium explosion"
+		"die effect" "flotsam death"
+		"inaccuracy" 360
+		"velocity" 0
+		"random velocity" 3
+		"lifetime" 2260
+		"random lifetime" 60
+		"acceleration" .001
+		"drag" .01
+		"shield damage" 175
+		"hull damage" 140
+		"hit force" 150
+		"missile strength" 11
 
 
 outfit "Stinger Missile"
 	category "Ammunition"
+	series "Ammunition"
+	index 01025
 	cost 1000
 	thumbnail "outfit/stinger missile"
 	"mass" .4
 	"stinger capacity" -1
-	description "A Stinger Missile serves as ammunition for the Stinger Missile Launcher. Each missile launcher has its own capacity; you cannot install missiles if you have not first purchased a pod, launcher, or storage to store them in."
+	description "A Stinger Missile serves as ammunition for the Stinger Missile Launcher. You cannot install missiles if you have not first purchased a pod, launcher, or rack to store them in."
 	description "	Mass produced under horrendous conditions on pirate worlds, Stinger Missiles utilize outdated radar tracking technology and are also easily destroyed by anti-missile weapons. Often, the slaves assigned to manufacture them are sick or elderly. In other words, the ones too weak to fight or have low potential future value. Accidental exposure to the toxic materials in these weapons during construction is common, resulting in a high mortality rate among the laborers."
 
 outfit "Stinger Missile Rack"
-	plural "Meteor Missile Boxes"
 	category "Ammunition"
+	series "Ammunition"
+	index 01026
 	cost 18000
 	thumbnail "outfit/stinger storage"
 	"mass" 2
@@ -1074,8 +1426,23 @@ outfit "Stinger Missile Rack"
 	ammo "Stinger Missile"
 	description "The Stinger Missile Rack is used to store extra ammunition for Stinger Missile Launchers."
 
+outfit "Stinger Missile Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01027
+	cost 90000
+	thumbnail "outfit/stinger depot"
+	"mass" 8
+	"cargo space" -40
+	"stinger capacity" 60
+	ammo "Stinger Missile"
+	"required crew" 1
+	description "The Stinger Missile Depot stages extra ammunition in your cargo bay for weapons that use Stinger Missiles. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
 outfit "Stinger Missile Launcher"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01056
 	cost 30000
 	thumbnail "outfit/stinger launcher"
 	"mass" 15
@@ -1101,7 +1468,8 @@ outfit "Stinger Missile Launcher"
 		"acceleration" .8
 		"drag" .1
 		"turn" 1.8
-		"homing" 1
+		"homing"
+			"blindspot"
 		"radar tracking" .65
 		"shield damage" 160
 		"discharge damage" 5.10
@@ -1109,11 +1477,13 @@ outfit "Stinger Missile Launcher"
 		"corrosion damage" 10.00
 		"hit force" 90
 		"missile strength" 6
-	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are an insidious example of this. Devoloped during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
+	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are an insidious example of this. Developed during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
 	description "	Once it splatters the target with its dangerous payload, the residue will continue to discharge the shields or corrode the hull for some time after the initial impact."
 
 outfit "Stinger Missile Pod"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01055
 	cost 10000
 	thumbnail "outfit/stinger pod"
 	"mass" 3
@@ -1141,7 +1511,8 @@ outfit "Stinger Missile Pod"
 		"acceleration" .8
 		"drag" .1
 		"turn" 1.8
-		"homing" 1
+		"homing"
+			"blindspot"
 		"radar tracking" .65
 		"shield damage" 160
 		"discharge damage" 5.10
@@ -1149,7 +1520,7 @@ outfit "Stinger Missile Pod"
 		"corrosion damage" 10.00
 		"hit force" 90
 		"missile strength" 6
-	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are an insidious example of this. Devoloped during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
+	description "The use of hazardous waste as a weapon has long been a popular tactic among anarchists and terrorists. Stinger Missiles are an insidious example of this. Developed during the early turf wars, the materials to make them are readily available and there is no shortage of suppliers."
 	description "	Once it splatters the target with its dangerous payload, the residue will continue to discharge the shields or corrode the hull for some time after the initial impact."
 	description "	Pods enable fighters and other light craft to carry small quantities of rockets into battle while retaining enough space for other weapons. Large ships are better off with full-size launchers."
 
@@ -1166,17 +1537,20 @@ effect "stinger splatter"
 	"velocity scale" .01
 
 
-
 outfit "Swingfire Missile"
 	category "Ammunition"
+	series "Ammunition"
+	index 01035
 	cost 990
 	thumbnail "outfit/swingfire"
 	"mass" .2
 	"swingfire capacity" -1
-	description "The Swingfire Missile is ammunition for the Swingfire Missile Launcher; each launcher that you have installed can be armed with up to 34 of them, while pods can carry 3. You cannot install a missile without a pod or launcher to fire it from."
+	description "The Swingfire Missile is ammunition for the Swingfire Missile Launcher. You cannot install missiles if you have not first purchased a pod, launcher, or rack to store them in."
 
 outfit "Swingfire Missile Rack"
 	category "Ammunition"
+	series "Ammunition"
+	index 01036
 	cost 22000
 	thumbnail "outfit/swingfire storage"
 	"mass" 2.4
@@ -1185,8 +1559,23 @@ outfit "Swingfire Missile Rack"
 	ammo "Swingfire Missile"
 	description "The Swingfire Missile Rack is used to store extra ammunition for Swingfire Missile Launchers."
 
+outfit "Swingfire Missile Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01037
+	cost 110000
+	thumbnail "outfit/swingfire depot"
+	"mass" 9.6
+	"cargo space" -40
+	"swingfire capacity" 80
+	ammo "Swingfire Missile"
+	"required crew" 1
+	description "The Swingfire Missile Depot stages extra ammunition in your cargo bay for weapons that use Swingfire Missiles. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
 outfit "Swingfire Missile Launcher"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01076
 	cost 66000
 	thumbnail "outfit/swingfire launcher"
 	"mass" 11
@@ -1212,21 +1601,25 @@ outfit "Swingfire Missile Launcher"
 		"acceleration" 1.2
 		"drag" .1
 		"turn" 4.5
-		"homing" 4
+		"homing"
+			"leading"
+			"throttle control"
 		"radar tracking" .9
 		"submunition" "Swingfire Locked"
-		"missile strength" 13
+		"missile strength" 19
 	description "An upgrade from Lovelace Labs popular Sidewinders, the Swingfire Missile is equipped with additional maneuvering thrusters and an enhanced targeting system. After being launched, it will recalculate a target's trajectory relative to its original position before activating its main rocket to pursue it. This increases the missile's accuracy while extending its range."
 
 outfit "Swingfire Missile Pod"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01075
 	cost 22000
 	thumbnail "outfit/swingfire pod"
 	"mass" 2
 	"outfit space" -4
 	"weapon capacity" -4
 	"gun ports" -1
-	"swingfire capacity" 4
+	"swingfire capacity" 5
 	weapon
 		sprite "projectile/swingfire"
 			"no repeat"
@@ -1247,7 +1640,9 @@ outfit "Swingfire Missile Pod"
 		"acceleration" 1.2
 		"drag" .1
 		"turn" 4.5
-		"homing" 4
+		"homing"
+			"leading"
+			"throttle control"
 		"radar tracking" .9
 		"submunition" "Swingfire Locked"
 		"missile strength" 19
@@ -1267,7 +1662,9 @@ outfit "Swingfire Locked"
 		"acceleration" 1.2
 		"drag" .1
 		"turn" 4
-		"homing" 4
+		"homing"
+			"leading"
+			"throttle control"
 		"radar tracking" .9
 		"shield damage" 286
 		"hull damage" 198
@@ -1275,9 +1672,10 @@ outfit "Swingfire Locked"
 		"missile strength" 19
 
 
-
 outfit "Thermo Detonator"
 	category "Secondary Weapons"
+	index 01170
+	cost 1000000
 	thumbnail "outfit/thermo detonator"
 	cost 0
 	"turret mounts" -1
@@ -1312,190 +1710,24 @@ effect "fail sound"
 	sound "fail"
 
 
-
-outfit "Tri Laser Turret"
-	category "Turrets"
-	cost 231000
-	thumbnail "outfit/tri laser turret"
-	"mass" 30
-	"outfit space" -30
-	"weapon capacity" -30
-	"turret mounts" -1
-	"required crew" 1
-	"unique" 1
-	weapon
-		sprite "projectile/3x laser"
-			"frame rate" 1
-		"hardpoint sprite" "hardpoint/tri laser turret"
-		"hardpoint offset" -0.5 8.
-		sound "laser"
-		"hit effect" "beam laser impact"
-		"inaccuracy" .5
-		"turret turn" 3.5
-		"velocity" 300
-		"lifetime" 1
-		"reload" 1
-		"firing energy" 1.995
-		"firing heat" 4.8
-		"shield damage" 3
-		"hull damage" 3.9
-	description "The Tri Laser Turret was an early attempt to produce a more powerful laser turret. Deep Sky abandoned it with the development of the Heavy Laser."
-
-
-
-outfit "Turbo Blaster"
-	category "Guns"
+outfit "Meteor Missile Depot"
+	plural "Meteor Missile Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01022
 	cost 54000
-	thumbnail "outfit/turbo blaster"
-	"mass" 7
-	"outfit space" -7
-	"weapon capacity" -7
-	"gun ports" -1
-	weapon
-		sprite "projectile/turbo blaster"
-		sound "mod_blaster-ver8"
-		"hit effect" "turbo blaster impact"
-		"inaccuracy" 4
-		"velocity" 9.375
-		"lifetime" 48
-		"reload" 8
-		"firing energy" 6.5
-		"firing heat" 25.2
-		"shield damage" 13.2
-		"hull damage" 8.8
-	description "A new form of Modified Energy Blaster, the Turbo Blaster has been further modified to increase its rate of fire. The result is an incredibly powerful weapon. The heat from this blaster can accumulate quickly, especially when used in multiples."
-	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
-
-outfit "Twin Turbo Blaster"
-	category "Guns"
-	cost 135000
-	thumbnail "outfit/twin turbo blaster"
-	"mass" 16
-	"outfit space" -16
-	"weapon capacity" -16
-	"gun ports" -1
-	weapon
-		sound "mod_blaster-ver8"
-		"submunition" "Twin Turbo Blaster Submunition"
-			"offset" 1 0
-			"facing" 0.45
-		"submunition" "Twin Turbo Blaster Submunition"
-			"offset" -1 0
-			"facing" -0.45
-		"hit effect" "turbo blaster impact" 2
-		"inaccuracy" 4
-		"lifetime" 0
-		"velocity override" 9.375
-		"range override" 450
-		"reload" 8
-		"firing energy" 13
-		"firing heat" 50.4
-	description "The Twin Turbo Blaster's high rate of fire is capable of launching four projectiles before other twin blasters can fire their second volley. The heat generated from firing both barrels at once is considerable."
-	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
-
-outfit "Twin Turbo Blaster Submunition"
-	weapon
-		sprite "projectile/turbo blaster"
-		"hit effect" "turbo blaster impact"
-		"velocity" 9.375
-		"lifetime" 48
-		"shield damage" 13.2
-		"hull damage" 8.8
-
-outfit "Turbo Blaster Turret"
-	category "Turrets"
-	cost 189000
-	thumbnail "outfit/turbo blaster turret"
-	"mass" 21
-	"outfit space" -21
-	"weapon capacity" -21
-	"turret mounts" -1
+	thumbnail "outfit/meteor depot"
+	"mass" 12
+	"cargo space" -40
+	"meteor capacity" 90
+	ammo "Meteor Missile"
 	"required crew" 1
-	weapon
-		sprite "projectile/turbo blaster"
-		"hardpoint sprite" "hardpoint/turbo blaster turret"
-		"hardpoint offset" 9.
-		sound "mod_blaster-ver8"
-		"hit effect" "turbo blaster impact"
-		"inaccuracy" 4
-		"turret turn" 3.5
-		"velocity" 9.375
-		"lifetime" 48
-		"reload" 4
-		"firing energy" 6.5
-		"firing heat" 25.2
-		"shield damage" 13.2
-		"hull damage" 8.8
-	description "This is a turreted version of the Turbo Blaster, which is a Modified Energy Blaster enhanced with an increased rate of fire. These mounted blasters can cover a 360 degree arc with double the fire power of a single Turbo Blaster."
-	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
-
-outfit "Quad Turbo Blaster Turret"
-	category "Turrets"
-	cost 319000
-	thumbnail "outfit/quad turbo blaster turret"
-	"mass" 35
-	"outfit space" -35
-	"weapon capacity" -35
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		sprite "projectile/turbo blaster"
-		"hardpoint sprite" "hardpoint/quad turbo blaster turret"
-		"hardpoint offset" 9.
-		sound "mod_blaster-ver8"
-		"hit effect" "turbo blaster impact"
-		"inaccuracy" 4
-		"turret turn" 3
-		"velocity" 9.375
-		"lifetime" 48
-		"reload" 2
-		"firing energy" 6.5
-		"firing heat" 25.2
-		"shield damage" 13.2
-		"hull damage" 8.8
-	description "The combined firepower of the four Turbo Blasters mounted on this turret matches more powerful weapons through sheer overwhelming numbers of projectiles. However, the internal heat generated from this weapon may be more than some ships can handle."
-	description "	These weapons first appeared on pirate ships in the Dirt Belt and may hint at hidden pirate bases in the area."
-
-effect "turbo blaster impact"
-	sprite "effect/turbo blaster impact"
-		"no repeat"
-		"frame rate" 30
-	"lifetime" 7
-	"random angle" 40
-	"velocity scale" -.05
-
-
-
-outfit "Quad Mod Blaster Turret"
-	category "Turrets"
-	cost 300000
-	thumbnail "outfit/quad mod blaster turret"
-	"mass" 30
-	"outfit space" -30
-	"weapon capacity" -30
-	"turret mounts" -1
-	"required crew" 1
-	weapon
-		sprite "projectile/mod blaster"
-		"hardpoint sprite" "hardpoint/quad mod blaster turret"
-		"hardpoint offset" 9.
-		sound "mod blaster"
-		"hit effect" "blaster impact"
-		"inaccuracy" 4
-		"turret turn" 3
-		"velocity" 10
-		"lifetime" 48
-		"reload" 3
-		"firing energy" 6.5
-		"firing heat" 25.2
-		"shield damage" 13.2
-		"hull damage" 8.8
-	description "Four Modified Blasters mounted on a turret base provide double the firepower of a regular Modified Blaster Turret, but also double the heat generated and energy consumed."
-
-
+	description "The Meteor Missile Depot stages extra ammunition in your cargo bay for weapons that use Meteor Missiles. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
 
 outfit "Twin Meteor Launcher"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01050
 	cost 35000
 	thumbnail "outfit/twinmeteorlauncher"
 	"mass" 18
@@ -1517,12 +1749,15 @@ outfit "Twin Meteor Launcher"
 		"hit effect" "missile hit" 2
 		"inaccuracy" 5
 		"lifetime" 0
-		"velocity override" 20
 		"range override" 3850
+		"velocity" 11
 		"reload" 80
 		"firing energy" 2
 		"firing heat" 40
 		"missile strength" 6
+		"homing"
+			"blindspot"
+		"infrared tracking" .65
 	description "The Meteor Missile is the cheapest and simplest homing weapon available in human space, with only rudimentary infrared tracking systems that can have trouble homing in on targets with low heat levels. True to its name, the missile reaches a very high speed to leave its target's anti-missile defenses with little time to react. The trade-off is maneuverability, so Meteor Missiles are practically useless against agile targets farther than point-blank range."
 	description "	This alternative to the Meteor Missile Launcher was in common use centuries ago. With the widespread adoption of Torpedo technology, the Twin Meteor Launcher is considered an antiquated design."
 	description "	This weapon will jam if there isn't enough ammunition to fire a full volley."
@@ -1534,12 +1769,12 @@ outfit "Meteor Submunition"
 			"frame rate" .25
 		"die effect" "missile death"
 		"hit effect" "missile hit"
-		"velocity" 11
 		"lifetime" 192
 		"acceleration" 1
 		"drag" .1
 		"turn" 1.8
-		"homing" 1
+		"homing"
+			"blindspot"
 		"infrared tracking" .65
 		"shield damage" 360
 		"hull damage" 220
@@ -1547,9 +1782,23 @@ outfit "Meteor Submunition"
 		"missile strength" 6
 
 
+outfit "Torpedo Storage Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01053
+	cost 63000
+	thumbnail "outfit/torpedo depot"
+	"mass" 9
+	"cargo space" -40
+	"torpedo capacity" 45
+	ammo "Torpedo"
+	"required crew" 1
+	description "The Torpedo Storage Depot stages extra ammunition in your cargo bay for weapons that use Torpedoes. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
 
 outfit "Twin Torpedo Pod"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 01115
 	cost 30000
 	thumbnail "outfit/twintorpedopod"
 	"mass" 12
@@ -1571,7 +1820,7 @@ outfit "Twin Torpedo Pod"
 		"hit effect" "torpedo hit" 2
 		"inaccuracy" 5
 		"lifetime" 0
-		"velocity override" 7
+		"velocity" 7
 		"range override" 6300
 		"reload" 320
 		"burst count" 3
@@ -1579,8 +1828,11 @@ outfit "Twin Torpedo Pod"
 		"firing energy" 4
 		"firing heat" 90
 		"missile strength" 30
+		"homing"
+			"throttle control"
+		"optical tracking" .8
 	description "Torpedoes are the most powerful homing weapon, but they move slowly enough that fast ships can simply outrun them, making them most useful against large targets or against small ships at times when they are too distracted to dodge."
-	description "	At first glance this looks like a regular Torpedo Launcher. But a closer inspection reveals that these are a pair of Torpedo Pods jury rigged to be crammed into a single gunport. Both are programmed to activate simultaneously, launching a pair of Torpedos when fired."
+	description "	At first glance this looks like a regular Torpedo Launcher. But a closer inspection reveals that these are a pair of Torpedo Pods jury rigged to be crammed into a single gunport. Both are programmed to activate simultaneously, launching a pair of Torpedoes when fired."
 	description "	This weapon will jam if there isn't enough ammunition to fire a full volley."
 
 outfit "Torpedo Submunition"
@@ -1590,14 +1842,112 @@ outfit "Torpedo Submunition"
 			"random start frame"
 		"hit effect" "torpedo hit"
 		"die effect" "tiny explosion"
-		"velocity" 7
 		"lifetime" 900
 		"acceleration" .15
 		"drag" .025
 		"turn" 1.5
-		"homing" 3
+		"homing"
+			"throttle control"
 		"optical tracking" .8
 		"shield damage" 820
 		"hull damage" 820
 		"hit force" 450
 		"missile strength" 30
+
+
+outfit "Sidewinder Missile Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01032
+	cost 80000
+	thumbnail "outfit/sidewinder depot"
+	"mass" 9.6
+	"cargo space" -40
+	"sidewinder capacity" 92
+	ammo "Sidewinder Missile"
+	"required crew" 1
+	description "The Sidewinder Missile Depot stages extra ammunition in your cargo bay for weapons that use Sidewinder Missiles. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
+outfit "Javelin Storage Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01012
+	cost 25000
+	thumbnail "outfit/javelin depot"
+	"mass" 10
+	"cargo space" -40
+	"javelin capacity" 500
+	ammo "Javelin"
+	"required crew" 1
+	description "The Javelin Storage Depot stages extra ammunition in your cargo bay for weapons that use Javelins. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
+outfit "Typhoon Storage Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01062
+	cost 121500
+	thumbnail "outfit/typhoon depot"
+	"mass" 7.5
+	"cargo space" -40
+	"typhoon capacity" 45
+	ammo "Typhoon Torpedo"
+	"required crew" 1
+	description "The Typhoon Storage Depot stages extra ammunition in your cargo bay for weapons that use Typhoon Torpedoes. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
+outfit "Heavy Rocket Depot"
+	category "Ammunition"
+	series "Ammunition"
+	index 01042
+	cost 80000
+	thumbnail "outfit/rocket depot"
+	"mass" 8
+	"cargo space" -40
+	"rocket capacity" 40
+	ammo "Heavy Rocket"
+	"required crew" 1
+	description "The Heavy Rocket Depot stages extra ammunition in your cargo bay for weapons that use Heavy Rockets. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
+outfit "Bullet Box Depot"
+	plural "Bullet Boxes"
+	category "Ammunition"
+	series "Ammunition"
+	index 01072
+	cost 18000
+	thumbnail "outfit/bullet depot"
+	"mass" 12
+	"cargo space" -40
+	"gatling round capacity" 9000
+	ammo "Gatling Gun Ammo"
+	"required crew" 1
+	description "The Bullet Box Depot stages extra ammunition in your cargo bay for weapons that use Gatling Gun Ammo. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to maintain inventory."
+
+
+###################################
+# special
+###################################
+
+
+# carryover from Midnight Expansion
+outfit "Timer Turret"
+	category "Turrets"
+	thumbnail "outfit/unknown"
+	"turret mounts" -1
+	"unplunderable" 1
+	weapon
+		"turret turn" 360
+		"velocity" 100
+		"lifetime" 20
+		"reload" 100
+		"blast radius" 100
+		"split range" 200
+		"submunition" "Timer Turret Submunition"
+
+outfit "Timer Turret Submunition"
+	weapon
+		"lifetime" 20
+		"trigger radius" 30000
+		"blast radius" 30000
+		"hull damage" .15
+		"no damage scaling"
+
+
