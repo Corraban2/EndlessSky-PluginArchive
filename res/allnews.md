@@ -1,3 +1,4 @@
+2026-07-03 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2026-07-02 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2026-07-01 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
 2026-06-30 | new Plugin 'Arion' by Spectre907YT | [races](https://github.com/Hecter94/EndlessSky-PluginArchive/blob/main/plugins.md#races)<br>
