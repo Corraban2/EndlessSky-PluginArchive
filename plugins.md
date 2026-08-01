@@ -1539,9 +1539,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 ### Conscience Plugin
 
 
-[Conscience.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Conscience.Plugin.zip) | 24.08 kb | 2023-07-27 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Conscience%20Plugin/) <br>
+[Conscience.Plugin.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Conscience.Plugin.zip) | 25.23 kb | 2026-07-31 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Conscience%20Plugin/) <br>
 Author: mathwhiz1212 | Category: Gameplay <br>
-[https://github.com/mathwhiz1212/ES-conscience-plugin](https://github.com/mathwhiz1212/ES-conscience-plugin) (last commit 2023-03-04) <br>
+[https://github.com/mathwhiz1212/ES-conscience-plugin](https://github.com/mathwhiz1212/ES-conscience-plugin) (last commit 2026-07-31) <br>
 
 >This plugin is meant to allow you to complete Endless Sky story lines without doing things you have an ethical problem with. For now, it just makes it so you don't need to drop a bomb on Zenith and kill civilians.
 
