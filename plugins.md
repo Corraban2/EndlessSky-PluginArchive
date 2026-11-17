@@ -12635,9 +12635,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Lost in Midnight/icon.png' height='100'></img><br>
 
 
-[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 96.75 mb | 2026-11-10 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
+[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 96.76 mb | 2026-11-17 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
 Author: MidnightPlugins | Category: Story <br>
-[https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2026-11-09) <br>
+[https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2026-11-17) <br>
 
 >A mission focused plugin for Endless Sky.
 >
@@ -15081,27 +15081,9 @@ Author: virmitio | Category: N/A <br>
 
 <details>
 <summary>:blue_book: Plugin readme</summary>
-<blockquote>## Intent:
+<blockquote>This is a plugin for Endless Sky which adds a significant large area to fly around and explore.
 
-Performing the below actions should result in a working directory `<work_dir>` which will permit the map editor and game to both correctly load the plugin while still keeping the plugin repository safely seperated from the root game data.
-
-### Assumptions:
-   - The repo was simply cloned to `%appdata%\endless-sky\plugins\ES_ExpandedTerritory`
-   - that steam is installed to the default location `%ProgramFiles(x86)%\Steam`
-   - that Endless Sky is installed to the default install location set by steam (`<steam_dir>\steamapps\common\...`)
-
-### Commands:
-```
-cd <work_dir>
-mklink /J data "%appdata%\endless-sky\plugins\ES_ExpandedTerritory\data"
-mklink /J images "%ProgramFiles(x86)%\Steam\steamapps\common\Endless Sky\images"
-mklink /J repo "%appdata%\endless-sky\plugins\ES_ExpandedTerritory"
-
-cd "%ProgramFiles(x86)%\Steam\steamapps\common\Endless Sky\images"
-mklink es_et "%appdata%\endless-sky\plugins\ES_ExpandedTerritory\images\es_et"
-```
-
-When opening in the map editor, please open files by way of the `<work_dir>\data` directory tree.
+At this time there isn't much to see or do beyond just flying around the pair of newly accessable galaxies (which are not yet fully mapped out or populated).
 
 </blockquote>
 </details>
