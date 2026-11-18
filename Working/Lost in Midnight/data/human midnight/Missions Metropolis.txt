@@ -298,24 +298,24 @@ mission "Balthazar Delivery"
 		system Kugel
 		government "Pirate"
 		personality plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Core Pirates"
 	npc
 		system Acamar
 		government "Pirate"
 		personality plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Core Pirates"
 	npc
 		system Eteron
 		government "Pirate"
 		personality plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Core Pirates"
 	npc accompany save
 		government "Escort"
 		personality target launching escort timid
-			confusion 30
+			#confusion 30
 		ship "District" "Balthazar"
 	on fail
 		dialog `[MISSION FAILED]: You have failed as essential part of the Exodus missions. If life were a game, you could reload a previous save file and try again.`
@@ -486,7 +486,7 @@ mission "Melchior 5"
 			`	"Do you have a crew set up for it?" he asks.`
 			choice
 				`	"I know someone who's able to help with that."`
-			`	"Great. You can hold off on completing the transaction until you bring the crew here. In the meantime, how about helping us test out our new shielding system?"`
+			`	"Great. You can hold off on completing the transaction until you bring the crew here. In the meantime, we will continue to use it for weapons testing..."`
 			choice
 				`	"I think I'll pay for the ship now."`
 			`	You explain, "I wouldn't want it to get blown up in one of your experiments." You complete the transaction and he marks the Melchior as unavailable for all of their future projects.`
@@ -594,24 +594,24 @@ mission "Melchior Delivery"
 		system Ildaria
 		government "Pirate"
 		personality waiting plunders harvests
-			confusion 20
+			#confusion 20
 		fleet "Small Southern Pirates"
 	npc
 		system Sargas
 		government "Pirate"
 		personality waiting plunders harvests
-			confusion 20
+			#confusion 20
 		fleet "Small Southern Pirates"
 	npc
 		system Nocte
 		government "Pirate"
 		personality waiting plunders harvests
-			confusion 20
+			#confusion 20
 		fleet "Small Southern Pirates"
 	npc accompany save
 		government "Escort"
 		personality target launching escort timid
-			confusion 30
+			#confusion 30
 		ship "Prefecture" "Melchior"
 	on fail
 		dialog `[MISSION FAILED]: You have failed as essential part of the Exodus missions. If life were a game, you could reload a previous save file and try again.`
@@ -694,13 +694,13 @@ mission "Caspar 1"
 		system "Alphard"
 		government "Pirate"
 		personality plunders waiting staying
-			confusion 20
+			#confusion 20
 		fleet "Small Southern Pirates"
 	npc	assist accompany
 		system "Alphard"
 		government "Merchant"
 		personality target derelict fleeing marked
-			confusion 30
+			#confusion 30
 		ship "Behemoth (threshold 50%)" "Guiding Star"
 		dialog `"We were attacked by pirates. Thanks for your help! Could you escort us down to the planet? I'll make sure to reward you once we land."`
 	on complete
@@ -729,7 +729,7 @@ mission "Caspar 2"
 				decline
 
 
-
+# Vesta has been renamed to Urd
 mission "Caspar Capture"
 	landing
 	invisible
@@ -737,11 +737,14 @@ mission "Caspar Capture"
 		not planet "Vesta"
 	destination Vesta
 	to offer
-		has "Cartography: Quarg Hitchhiker 1: done"
+		or
+			has "Cartography: Quarg Hitchhiker 1: done"
+			has "Cartography: Quarg Hitchhiker 1.5: done"
 		has "Caspar 2: declined"
 		has "Balthazar Delivery: done"
 		has "Melchior Delivery: done"
 		has "main plot completed"
+		not "Caspar Capture: active"
 	on enter Archipelago
 		"reputation: Independent (Killable)" >?= 10
 		dialog
@@ -762,7 +765,7 @@ mission "Caspar Capture"
 			label recruitment
 			`	"We need guidance and would willingly join your fleet, Captain <last>. However, we demand that all of us be allowed to continue to operate Caspar as its primary crew." From his expression, you can tell he is sincere.`
 			choice
-				`	"Once the ship is operational, your first mission is to follow me to Vesta for refueling and repair."`
+				`	"Once the ship is operational, your first mission is to follow me to Urd for refueling and repair."`
 					accept
 	on accept
 		log `Found the Caspar in the Archipelago. The pirate crew mutinied against their captain and offered to join my fleet.`
@@ -817,25 +820,25 @@ mission "Caspar Delivery"
 		system Lolami
 		government "Bounty Hunter"
 		personality heroic disables
-			confusion 10
+			#confusion 10
 		fleet "Bounty Hunters"
 	npc evade
 		system Regulus
 		government "Bounty Hunter"
 		personality heroic disables
-			confusion 10
+			#confusion 10
 		fleet "Bounty Hunters"
 	npc evade
 		system Fingol
 		government "Bounty Hunter"
 		personality heroic disables
-			confusion 10
+			#confusion 10
 		fleet "Bounty Hunters"
 	npc accompany save
 		system Archipelago
 		government "Escort"
 		personality target launching escort timid
-			confusion 20
+			#confusion 20
 		ship "Municipality" "Caspar"
 	on fail
 		dialog `[MISSION FAILED]: You have failed as essential part of the Exodus missions. If life were a game, you could reload a previous save file and try again.`
@@ -862,7 +865,6 @@ mission "Caspar Standby Reminder"
 			scene "ship/metro municipality"
 			`With the cease in hostilities between you and the Republic, now may be a good time to retrieve Caspar from <destination>.`
 				accept
-
 
 
 mission "Metropolis 2"
@@ -923,7 +925,7 @@ mission "Metropolis 2"
 		government "Pirate"
 		personality target entering disables
 		ship "Kestrel (Battle Bays)" "Dark Reflection"
-			confusion 10
+			#confusion 10
 		fleet
 			fighters
 				names "pirate"
@@ -937,7 +939,7 @@ mission "Metropolis 2"
 		government "Pirate"
 		personality target entering disables
 		ship "Kestrel (Battle Engines)" "Dark Reflection"
-			confusion 10
+			#confusion 10
 		fleet
 			fighters
 				names "pirate"
@@ -951,7 +953,7 @@ mission "Metropolis 2"
 		government "Pirate"
 		personality target entering disables
 		ship "Kestrel (Battle Shields)" "Dark Reflection"
-			confusion 10
+			#confusion 10
 		fleet
 			fighters
 				names "pirate"
@@ -965,7 +967,7 @@ mission "Metropolis 2"
 		government "Pirate"
 		personality target entering disables
 		ship "Kestrel (Battle Weapons)" "Dark Reflection"
-			confusion 10
+			#confusion 10
 		fleet
 			fighters
 				names "pirate"
@@ -979,7 +981,7 @@ mission "Metropolis 2"
 		government "Pirate"
 		personality target entering disables
 		ship "Modified Dromedary (Metro)" "Shard of Light"
-			confusion 20
+			#confusion 20
 		fleet
 			fighters
 				names "pirate"
@@ -1010,7 +1012,7 @@ mission "Metropolis 2"
 		system Sol
 		government "Pirate"
 		personality target entering disables
-			confusion 20
+			#confusion 20
 		ship "Leviathan (Plasma Repeater)" "Chunk"
 
 	npc evade
@@ -1020,7 +1022,7 @@ mission "Metropolis 2"
 		government "Pirate"
 		personality target entering disables
 		ship "Bactrian (Cosmic Devil)" "Cosmic Revenge"
-			confusion 20
+			#confusion 20
 		fleet
 			fighters
 				names "pirate"
@@ -1033,8 +1035,17 @@ mission "Metropolis 2"
 		system Sol
 		government "Pirate"
 		personality target entering disables
-			confusion 20
+			#confusion 20
 		ship "Mammoth (Moonless)" "Moonlit Night"
+
+	npc evade
+		to spawn
+			has "FW Albatross 2A: done"
+		system Sol
+		government "Pirate"
+		personality target entering disables
+			#confusion 20
+		ship "Bulwark (Heavy)" "Nought"
 
 	npc evade
 		to spawn
@@ -1042,7 +1053,7 @@ mission "Metropolis 2"
 		system Sol
 		government "Pirate"
 		personality target entering disables
-			confusion 20
+			#confusion 20
 		ship "Marauder Firebird (Hai)" "Cashew"
 		ship "Marauder Splinter (Hai)" "Pistachio"
 		ship "Marauder Quicksilver (Hai)" "Pecan"
@@ -1054,7 +1065,7 @@ mission "Metropolis 2"
 		system Sol
 		government "Pirate"
 		personality target entering disables
-			confusion 20
+			#confusion 20
 		ship "Osprey (Alien Weapons)" "Silver Beak"
 
 	npc evade
@@ -1063,7 +1074,7 @@ mission "Metropolis 2"
 		system Sol
 		government "Pirate"
 		personality target entering disables
-			confusion 20
+			#confusion 20
 		ship "Vanguard (Plasma Slow)" "Sea Devil"
 
 	npc evade
@@ -1072,21 +1083,21 @@ mission "Metropolis 2"
 		system Sol
 		government "Pirate"
 		personality target entering disables
-			confusion 20
+			#confusion 20
 		ship "Leviathan (Hai Weapons)" "Callus"
 
 	npc evade
 		system Sol
 		government "Pirate"
 		personality target waiting disables
-			confusion 10
+			#confusion 10
 		fleet "Marauder Parade"
 
 	npc
 		system Sol
 		government "Escort"
 		personality launching escort timid
-			confusion 30
+			#confusion 30
 		fleet
 			names "civilian"
 			cargo 0
@@ -1098,7 +1109,7 @@ mission "Metropolis 2"
 		system Sol
 		government "Escort"
 		personality launching escort timid
-			confusion 30
+			#confusion 30
 		ship "Metropolis" "Exodus"
 
 	on fail

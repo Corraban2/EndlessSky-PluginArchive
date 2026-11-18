@@ -116,7 +116,7 @@ outfit "Builder Negator"
 		"scrambling damage" 10
 		"hit force" 75
 		"blast radius" 20
-	description "A rapid fire version of the Nullifier, the Negator is so powerful that it impacts the ship it is installed on with some ionic interference. If not used with discretion, it can easily drain its own ships power reserves and even cause its own internal mechanisms to jam."
+	description "A rapid fire version of the Nullifier, the Negator is so powerful that it impacts the ship it is installed on with some ionic interference. If not used with discretion, it can easily drain its own ship's power reserves and even cause its own internal mechanisms to jam."
 	description "	Attempts to train the Ka'het to use this weapon ended with disastrous results. They possessed no sense of restraint, constantly firing the Negator until their own energy storage systems ran dry."
 
 
@@ -610,7 +610,7 @@ outfit "Ka'het Scanner"
 	"fuel scan power" 64
 	"ion protection" -.2
 	"scramble protection" -.2
-	description "A powerful scanner outfitted onto the Ka'het to gather information on hostile alien species. The Builders never envisioned it being used to gather information on themselves."
+	description "A powerful scanner outfitted onto the Ka'het to gather information on hostile alien species. The Builders never envisioned it being used to gather information on themselves. Notably absent is any means to record and display crew population, as it was considered irrelevant to Ka'het tactical decisions."
 	description "	The Ka'het scanner is incredibly sensitive, but the materials used in its construction can act as a lightning rod, making your ship more vulnerable to the effects of ionization."
 
 ###################################

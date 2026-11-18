@@ -15,11 +15,19 @@
 # - Ships not sold in shipyards but can be captured or received in missions.
 
 
+# Yachts are specialized carriables for the Sliver and Modified Sliver
+category "ship"
+	"Yacht"
+category "bay type"
+	"Yacht"
+
+
 # Dirt Belt pirate heavy war ship
 ship "Battle Barge"
 	sprite "ship/battle barge"
 		delay 2
 	thumbnail "thumbnail/battle barge-thumb"
+	"administrative cost" 5
 	attributes
 		category "Heavy Warship"
 		"cost" 13400000
@@ -81,6 +89,7 @@ ship "Battle Barge"
 ship "Beacon Drone"
 	sprite "ship/beacon drone"
 	thumbnail "thumbnail/beacon drone-thumb"
+	"administrative cost" 0
 	attributes
 		category "Drone"
 		licenses
@@ -120,6 +129,7 @@ ship "Beacon Drone"
 ship "Broadsword"
 	sprite "ship/broadsword"
 	thumbnail "thumbnail/broadsword-thumb"
+	"administrative cost" 2
 	attributes
 		category "Utility"
 		"cost" 3300000
@@ -183,6 +193,7 @@ ship "Broadsword"
 ship "Buckler"
 	sprite "ship/buckler"
 	thumbnail "thumbnail/buckler-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 258000
@@ -226,6 +237,7 @@ ship "Buckler"
 ship "Cannikin"
 	sprite "ship/cannikin"
 	thumbnail "thumbnail/cannikin-thumb"
+	"administrative cost" 1
 	attributes
 		category "Utility"
 		"cost" 190000
@@ -273,6 +285,7 @@ ship "Cannikin"
 ship "Deuterium Tanker"
 	sprite "ship/deuterium tanker"
 	thumbnail "thumbnail/deuterium tanker-thumb"
+	"administrative cost" 3
 	attributes
 		category "Utility"
 		"cost" 11100000
@@ -340,6 +353,7 @@ ship "Deuterium Tanker"
 ship "Gremlin"
 	sprite "ship/gremlin"
 	thumbnail "thumbnail/gremlin-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Freighter"
 		"cost" 1080000
@@ -401,6 +415,7 @@ ship "Midnight Hauler VI"
 	"display name" "Hauler VI"
 	sprite "ship/midnight hauler vi"
 	thumbnail "thumbnail/midnight hauler vi-thumb"
+	"administrative cost" 4
 	attributes
 		category "Heavy Freighter"
 		"cost" 6080000
@@ -463,6 +478,7 @@ ship "Midnight Hauler VI" "Hauler VI"
 ship "Heavy Enforcer"
 	sprite "ship/heavy enforcer"
 	thumbnail "thumbnail/heavy enforcer-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Warship"
 		"cost" 530000
@@ -520,6 +536,7 @@ ship "Heavy Enforcer"
 ship "Heavy Freighter"
 	sprite "ship/heavy freighter"
 	thumbnail "thumbnail/heavy freighter-thumb"
+	"administrative cost" 2
 	attributes
 		category "Heavy Freighter"
 		"cost" 1460000
@@ -573,6 +590,7 @@ ship "Heavy Freighter"
 ship "Heavy Hauler"
 	sprite "ship/heavy hauler i"
 	thumbnail "thumbnail/heavy hauler i-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Freighter"
 		"cost" 1573000
@@ -589,7 +607,7 @@ ship "Heavy Hauler"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 80
-		"cargo scan opacity" 5
+		"cargo scan opacity" 40
 		weapon
 			"blast radius" 60
 			"shield damage" 600
@@ -632,12 +650,13 @@ ship "Heavy Hauler"
 	explode "large explosion" 5
 	"final explode" "final explosion medium"
 	description "While Southbound Shipyards was developing the Nest, pirates near the galactic Core were modifying the cargo container of a salvaged Hauler with armor plating and shield emitters. This gave rise to Heavy Haulers."
-	description "	Although the thick armor plating is not impervious to scanners, it increases the time it takes to complete a scan of the Heavy Hauler's cargo container."
+	description "	Although the thick armor plating is not impervious to scanners, it extends the time it takes to complete a scan of the Heavy Hauler's cargo container by more than a third."
 
 
 ship "Heavy Hauler II"
 	sprite "ship/heavy hauler ii"
 	thumbnail "thumbnail/heavy hauler ii-thumb"
+	"administrative cost" 2
 	attributes
 		category "Heavy Freighter"
 		"cost" 2574000
@@ -654,7 +673,7 @@ ship "Heavy Hauler II"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 80
-		"cargo scan opacity" 10
+		"cargo scan opacity" 80
 		weapon
 			"blast radius" 80
 			"shield damage" 800
@@ -696,12 +715,13 @@ ship "Heavy Hauler II"
 	explode "large explosion" 15
 	"final explode" "final explosion medium"
 	description "As interstellar travel became increasingly dangerous, merchant captains began commissioning their own Heavy Hauler modifications."
-	description "	Although the thick armor plating is not impervious to scanners, it increases the time it takes to complete a scan of the Heavy Hauler's cargo containers."
+	description "	Although the thick armor plating is not impervious to scanners, it extends the time it takes to complete a scan of the Heavy Hauler's cargo containers by more than a third."
 
 
 ship "Heavy Hauler III"
 	sprite "ship/heavy hauler iii"
 	thumbnail "thumbnail/heavy hauler iii-thumb"
+	"administrative cost" 2
 	attributes
 		category "Heavy Freighter"
 		"cost" 3586000
@@ -718,7 +738,7 @@ ship "Heavy Hauler III"
 		"outfit space" 350
 		"weapon capacity" 140
 		"engine capacity" 80
-		"cargo scan opacity" 15
+		"cargo scan opacity" 120
 		weapon
 			"blast radius" 100
 			"shield damage" 1000
@@ -760,12 +780,13 @@ ship "Heavy Hauler III"
 	explode "huge explosion" 5
 	"final explode" "final explosion large"
 	description "It wasn't long before demand for Heavy Hauler conversions lead to them being offered in shipyards."
-	description "	Although the thick armor plating is not impervious to scanners, it increases the time it takes to complete a scan of the Heavy Hauler's cargo containers."
+	description "	Although the thick armor plating is not impervious to scanners, it extends the time it takes to complete a scan of the Heavy Hauler's cargo containers by more than a third."
 
 
 ship "Light Freighter"
 	sprite "ship/light freighter"
 	thumbnail "thumbnail/light freighter-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Freighter"
 		"cost" 400000
@@ -814,6 +835,7 @@ ship "Light Freighter"
 ship "Longsword"
 	sprite "ship/longsword"
 	thumbnail "thumbnail/longsword-thumb"
+	"administrative cost" 2
 	attributes
 		category "Medium Warship"
 		"cost" 2420000
@@ -874,6 +896,7 @@ ship "Longsword"
 ship "Mega Freighter"
 	sprite "ship/mega freighter"
 	thumbnail "thumbnail/mega freighter-thumb"
+	"administrative cost" 5
 	attributes
 		category "Heavy Freighter"
 		"cost" 13800000
@@ -931,13 +954,14 @@ ship "Mega Freighter"
 	explode "large explosion" 35
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "The Syndicate's Mega Freighter is being marketed as a symbol for a new era of peace and prosperity in the post-war galaxy. Despite having double the cargo capacity of a Container Transport, the empty hull isn't much heavier unless it's carrying a full cargo load. In addition to the extra cargo space, this ship offers more flexibility for installing engines, weapons, and other outfits."
+	description "The Syndicate's Mega Freighter is being marketed as a symbol for a new era of peace and prosperity in the post-war galaxy. Despite having double the cargo capacity of a Container Transport, the empty hull isn't much heavier unless it's carrying a full cargo load. In addition to the extra cargo space, the internal wiring offers more flexibility for installing engines, weapons, and other outfits."
 
 
 # The Missileboat is only offered as surplus inventory at the Advanced Navy shipyard on Geminus...
 ship "Missileboat"
 	sprite "ship/missileboat"
 	thumbnail "thumbnail/missileboat-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Warship"
 		"cost" 1580000
@@ -997,6 +1021,7 @@ ship "Missileboat"
 ship "Outrider"
 	sprite "ship/outrider"
 	thumbnail "thumbnail/outrider-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 102000
@@ -1058,6 +1083,7 @@ ship "Outrider" "Outrider (Surplus)"
 ship "Palisade"
 	sprite "ship/palisade"
 	thumbnail "thumbnail/palisade-thumb"
+	"administrative cost" 3
 	attributes
 		category "Transport"
 		"cost" 1900000
@@ -1110,6 +1136,7 @@ ship "Palisade"
 ship "Parapet"
 	sprite "ship/parapet"
 	thumbnail "thumbnail/parapet-thumb"
+	"administrative cost" 1
 	attributes
 		category "Transport"
 		"cost" 950000
@@ -1157,6 +1184,7 @@ ship "Parapet"
 ship "Patrolboat"
 	sprite "ship/patrolboat"
 	thumbnail "thumbnail/patrolboat-thumb"
+	"administrative cost" 2
 	attributes
 		category "Light Warship"
 		"cost" 3200000
@@ -1213,6 +1241,7 @@ ship "Patrolboat"
 # Pirate Drones start showing up in pirate shipyards soon after the formation of the Oathkeepers...
 ship "Pirate Drone"
 	sprite "ship/pirate drone"
+	"administrative cost" 0
 	attributes
 		category Drone
 		"cost" 50000
@@ -1249,6 +1278,7 @@ ship "Pirate Drone"
 ship "Rampart"
 	sprite "ship/rampart"
 	thumbnail "thumbnail/rampart-thumb"
+	"administrative cost" 2
 	attributes
 		category "Transport"
 		"cost" 1425000
@@ -1300,6 +1330,7 @@ ship "Rampart"
 ship "Rancor"
 	sprite "ship/rancor"
 	thumbnail "thumbnail/rancor-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 510000
@@ -1321,17 +1352,21 @@ ship "Rancor"
 			"hull damage" 120
 			"hit force" 360
 	outfits
-		"Energy Cannon" 2
+		"Modified Blaster" 2
 		"Meteor Missile Pod" 2
 		"Meteor Missile Box" 2
 		"Meteor Missile" 44
+
+		"LCT-2 Photovoltaic Rod"
+		"LCT-4 Photovoltaic Wand"
+		"LCT-6 Photovoltaic Staff"
 		"Modified nGVF-CC Fuel Cell"
 		"Modified D23-QP Shielding"
-		"Blaster Pistol"
+		"Limit Breaker"
+
 		"X1200 Ion Steering"
 		"X1700 Ion Thruster"
 		"Hyperdrive"
-
 	engine -18 36
 		zoom 0.35
 		angle 0
@@ -1348,8 +1383,8 @@ ship "Rancor"
 		zoom 0.65
 		angle 0
 		under
-	gun -10 -32 "Energy Cannon"
-	gun 10 -32 "Energy Cannon"
+	gun -10 -32
+	gun 10 -32
 	gun -16 -22 "Meteor Missile Pod"
 	gun 16 -22 "Meteor Missile Pod"
 	leak "flame" 50 80
@@ -1362,6 +1397,7 @@ ship "Rancor"
 ship "Scrounger"
 	sprite "ship/pirate scrounger"
 	thumbnail "thumbnail/pirate scrounger-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Freighter"
 		"cost" 64000
@@ -1383,7 +1419,7 @@ ship "Scrounger"
 			"hull damage" 70
 			"hit force" 210
 	outfits
-		"Search Light"
+		"Junk Tractor"
 		"KP-6 Photovoltaic Panel" 4
 		"LP036a Battery Pack"
 		"D14-RN Shield Generator"
@@ -1399,9 +1435,59 @@ ship "Scrounger"
 	description "Assembled from the burned out remains of wrecked freighters, Scroungers are how some pilots lacking the funds for better options begin their careers. Unfortunately, it is not uncommon for those facing financial desperation to turn to small scale acts of piracy, scavenging parts and cargo from the scraps leftover by larger raiders."
 
 
+# Yachts are unique carriables for Slivers
+ship "Shard"
+	sprite "ship/shard"
+	thumbnail "thumbnail/shard-thumb"
+	"administrative cost" 1
+	attributes
+		category "Yacht"
+		"cost" 836000
+		"shields" 1900
+		"hull" 500
+		"required crew" 1
+		"bunks" 12
+		"mass" 180
+		"drag" 3.4
+		"heat dissipation" .67
+		"cargo space" 35
+		"outfit space" 190
+		"weapon capacity" 50
+		"engine capacity" 70
+		weapon
+			"blast radius" 40
+			"shield damage" 400
+			"hull damage" 200
+			"hit force" 600
+	outfits
+		"Anti-Missile Turret"
+		
+		"KP-6 Photovoltaic Array" 3
+		"LP036a Battery Pack"
+		"D23-QP Shield Generator"
+		"Cooling Ducts"
+		"Small Radar Jammer" 2
+		"Luxury Accommodations"
+
+		"X2700 Ion Thruster"
+		"X2200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+	engine -13.5 55.5
+	engine 13.5 55.5
+	turret 0 44
+	leak "leak" 60 50
+	explode "tiny explosion" 12
+	explode "small explosion" 20
+	explode "medium explosion" 15
+	"final explode" "final explosion small"
+	description "Megaparsec's Shard is a detachable excursion vessel marketed as a luxury yacht."
+	description "	Yachts do not come equipped with a hyperdrive. You cannot carry a yacht unless you have a ship in your fleet with a yacht bay."
+
+
 ship "Shuttle Pod"
 	sprite "ship/shuttle pod"
 	thumbnail "thumbnail/shuttle pod-thumb"
+	"administrative cost" 0
 	attributes
 		category "Fighter"
 		"cost" 80000
@@ -1437,14 +1523,78 @@ ship "Shuttle Pod"
 	leak "leak" 50 40
 	explode "tiny explosion" 10
 	explode "small explosion" 5
-	description "Shuttle Pods were multipurpose light spacecraft that early exploration ships could carry in their fighter bays. While it is no longer in production, a multitude were made. Many are still in use throughout the galaxy despite their antiquated design."
-	description "	This particular Shuttle Pod configuration was the standard for transporting cargo and mining, but other configurations were used as well."
+	description "Shuttle Pods were multipurpose light spacecraft that early exploration ships could carry in their fighter bays. Many are still in use throughout the galaxy despite their antiquated design."
+	description "	Fighters do not come equipped with a hyperdrive. You cannot carry a fighter unless you have a ship in your fleet with a fighter bay."
 
+
+# sold at luxury shipyards in the Paradise Worlds
+ship "Sliver"
+	sprite "ship/sliver"
+	thumbnail "thumbnail/sliver-thumb"
+	"administrative cost" 2
+	attributes
+		category "Space Liner"
+		"cost" 3100000
+		"shields" 4900
+		"hull" 1700
+		"required crew" 12
+		"bunks" 63
+		"mass" 510
+		"drag" 5.6
+		"heat dissipation" .5
+		"fuel capacity" 600
+		"cargo space" 60
+		"outfit space" 350
+		"weapon capacity" 105
+		"engine capacity" 90
+		weapon
+			"blast radius" 60
+			"shield damage" 600
+			"hull damage" 300
+			"hit force" 900
+	outfits
+		"Anti-Missile Turret" 2
+		"Sidewinder Missile Launcher" 2
+		"Sidewinder Missile" 90
+		
+		"KP-6 Photovoltaic Array" 4
+		"LP036a Battery Pack"
+		"nGVF-AA Fuel Cell"
+		"D67-TM Shield Generator"
+		"Small Radar Jammer" 3
+		"Luxury Accommodations"
+		"Laser Rifle"
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"X1100 Ion Reverse Thruster"
+		"Hyperdrive"
+	engine -14 112
+	engine 14 112
+	gun -15 -82
+	gun 15 -82
+	turret -17 -28 "Anti-Missile Turret"
+	turret 17 -28 "Anti-Missile Turret"
+	bay "Yacht" 0 42 over
+		"launch effect" "human external"
+	bay "Yacht" -10 32 under
+		"launch effect" "human external"
+	bay "Yacht" 10 32 under
+		"launch effect" "human external"
+	leak "leak" 25 25
+	explode "tiny explosion" 10
+	explode "small explosion" 25
+	explode "medium explosion" 24
+	explode "large explosion" 8
+	"final explode" "final explosion medium"
+	description "The Sliver was Megaparsec's attempt to enter the luxury space liner market. While it is no longer sold at their main shipyards, some Paradise Worlds keep them in stock for their wealthy clientel. Despite a superficial resemblance to the Splinter, the Sliver is notable for its distinctive ability to have up to three yachts dock with it."
+	description "	(These yachts are sold separately.)"
 
 # sold in shipyards after completing the main human campaign
 ship "Star King"
 	sprite "ship/star king"
 	thumbnail "thumbnail/star king-thumb"
+	"administrative cost" 4
 	attributes
 		category "Space Liner"
 		"cost" 8400000
@@ -1507,6 +1657,7 @@ ship "Starbus"
 	plural "Starbusses"
 	sprite "ship/starbus"
 	thumbnail "thumbnail/starbus-thumb"
+	"administrative cost" 1
 	attributes
 		category "Transport"
 		"cost" 1100000
@@ -1553,94 +1704,73 @@ ship "Starbus"
 # a variant is rewarded at the end Skeleton Key mission chain
 # base model appears in Deep Security fleets after Skeleton Key epilogue
 # technically appears in Valhalla's shipyard, but no Deep Security license is planned
-ship "Starcadia"
-	sprite "ship/starcadia"
-	thumbnail "thumbnail/starcadia-thumb"
+ship "Volary"
+	sprite "ship/volary"
+	thumbnail "thumbnail/volary-thumb"
+	"administrative cost" 4
 	attributes
 		category "Heavy Warship"
 		licenses
 			"Deep Security"
-		"cost" 10400000
-		"shields" 16000
-		"hull" 5000
-		"required crew" 42
-		"bunks" 88
-		"mass" 955
-		"drag" 9.3
-		"heat dissipation" .45
+		"cost" 7000000
+		"shields" 11400
+		"hull" 3800
+		"required crew" 20
+		"bunks" 42
+		"mass" 780
+		"drag" 7
+		"heat dissipation" .4
 		"fuel capacity" 500
-		"cargo space" 40
-		"outfit space" 510
-		"weapon capacity" 250
-		"engine capacity" 110
+		"cargo space" 50
+		"outfit space" 447
+		"weapon capacity" 220
+		"engine capacity" 101
 		weapon
-			"blast radius" 200
-			"shield damage" 2000
-			"hull damage" 1000
-			"hit force" 3000
+			"blast radius" 150
+			"shield damage" 1500
+			"hull damage" 750
+			"hit force" 2200
 	outfits
-		"Heavy Laser" 2
-		"Heavy Laser Turret" 3
-		"Anti-Missile Turret" 3
-		Torpedo 51
-		"Torpedo Pod" 2
-		"Torpedo Storage Rack" 3
-		
-		"Dwarf Core" 2
-		"LP072a Battery Pack"
-		"D67-TM Shield Generator"
+		"Laser Turret" 3
+		"Anti-Missile Turret"
+		"Sidewinder Missile" 90
+		"Sidewinder Missile Launcher" 2
+		Torpedo 60
+		"Torpedo Launcher" 2
+
+		"Dwarf Core"
+		"LP144a Battery Pack"
+		"D94-YV Shield Generator"
 		Ramscoop
-		"Laser Rifle" 20
-		"Security Station (Staffed)" 2
-		
+		"Fragmentation Grenades" 5
+		"Security Station (Staffed)"
+		"Tactical Laser Rifle" 5
+
 		"A370 Atomic Thruster"
 		"A375 Atomic Steering"
 		Hyperdrive
-		
-	engine -41 97
-		zoom .25
-	engine 41 97
-		zoom .25
-	engine -31 103
-		zoom .35
-	engine 31 103
-		zoom .35
-	engine -21 111
-		zoom .40
-	engine 21 111
-		zoom .40
-	"reverse engine" -27 -50
-		zoom 0.6
-		angle 335
-	"reverse engine" 27 -50
-		zoom 0.6
-		angle 25
-	"steering engine" -27 -50
-		zoom 0.5
-		angle 60
-		right
-	"steering engine" 27 -50
-		zoom 0.5
-		angle 300
-		left
-	"steering engine" -52 34
-		zoom 0.5
-		angle 155
-		left
-	"steering engine" 52 34
-		zoom 0.5
-		angle 205
-		right
-	gun -14 -103 "Heavy Laser"
-	gun 14 -103 "Heavy Laser"
-	gun -25 -73 "Torpedo Pod"
-	gun 25 -73 "Torpedo Pod"
-	turret -20 -7 "Anti-Missile Turret"
-	turret 20 -7 "Heavy Laser Turret"
-	turret -30 17.5 "Heavy Laser Turret"
-	turret 30 17.5 "Anti-Missile Turret"
-	turret -20 42.5 "Anti-Missile Turret"
-	turret 20 42.5 "Heavy Laser Turret"
+	engine -9 108.5
+	engine 9 108.5
+	gun -12.5 -90 "Sidewinder Missile Launcher"
+	gun 12.5 -90 "Sidewinder Missile Launcher"
+	gun -69.5 -4
+	gun 69.5 -4
+	turret -17 1 "Laser Turret"
+	turret 17 1 "Laser Turret"
+	turret -17 34
+	turret 17 34
+	bay "Fighter" -43 10
+		"launch effect" "human internal"
+	bay "Fighter" -43 10
+		"launch effect" "human internal"
+	bay "Fighter" -43 10
+		"launch effect" "human internal"
+	bay "Fighter" 43 10
+		"launch effect" "human internal"
+	bay "Fighter" 43 10
+		"launch effect" "human internal"
+	bay "Fighter" 43 10
+		"launch effect" "human internal"
 	leak "leak" 40 50
 	leak "flame" 50 80
 	leak "big leak" 90 30
@@ -1649,30 +1779,31 @@ ship "Starcadia"
 	explode "medium explosion" 24
 	explode "large explosion" 8
 	"final explode" "final explosion medium"
-	description "The technology on the Starcadia, while in line with other modern ships, is surprisingly mundane for a newly deployed ship from the Deep. This has caused some to speculate that the Deep has lost their edge in technological advancement. Alternatively, conspiracy theorists suggest that the Deep has been sitting on this design for some time and is only releasing it now in preparation for some threat unknown to the general public. Deep Security, for its part, has no comment on these rumors."
+	description "The technology on the Volary, while in line with other modern ships, is surprisingly mundane for a newly constructed ship from Lionheart. This has caused some to speculate that the Deep has lost their edge in technological advancement. Alternatively, conspiracy theorists suggest that the Deep has been sitting on this design for some time and has only revealed it now in preparation for some threat unknown to the general public. Deep Security, for its part, has no comment on these rumors."
 
 
 ship "Stingray"
 	sprite "ship/stingray"
 	thumbnail "thumbnail/stingray-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 650000
-		"shields" 2200
+		"shields" 2300
 		"hull" 700
 		"required crew" 2
 		"bunks" 4
 		"mass" 180
 		"drag" 2.7
-		"heat dissipation" .67
-		"fuel capacity" 400
-		"cargo space" 20
+		"heat dissipation" .63
+		"fuel capacity" 300
+		"cargo space" 22
 		"outfit space" 200
 		"weapon capacity" 50
 		"engine capacity" 60
 		weapon
-			"blast radius" 29
-			"shield damage" 290
+			"blast radius" 30
+			"shield damage" 300
 			"hull damage" 150
 			"hit force" 450
 	outfits
@@ -1690,7 +1821,6 @@ ship "Stingray"
 		"X2700 Ion Thruster"
 		"X2200 Ion Steering"
 		"Hyperdrive"
-
 	engine -13.5 21.5 
 	engine 13.5 21.5 
 	gun 0 -59 "Particle Cannon"
@@ -1708,6 +1838,7 @@ ship "Stingray"
 ship "Striker Drone"
 	sprite "ship/striker drone"
 	thumbnail "thumbnail/striker drone-thumb"
+	"administrative cost" 0
 	attributes
 		category "Drone"
 		licenses
@@ -1746,6 +1877,7 @@ ship "Striker Drone"
 ship "Sunracer"
 	sprite "ship/sunracer"
 	thumbnail "thumbnail/sunracer-thumb"
+	"administrative cost" 0
 	attributes
 		category "Fighter"
 		licenses
@@ -1826,6 +1958,7 @@ ship "Amalgam"
 	sprite "ship/amalgam/amalgam"
 		"rewind"
 	thumbnail "thumbnail/amalgam-thumb"
+	"administrative cost" 5
 	attributes
 		category "Light Warship"
 		"cost" 1200000
@@ -1884,6 +2017,7 @@ ship "Amalgam"
 ship "Antique Sunder"
 	sprite "ship/antique sunder"
 	thumbnail "thumbnail/antique sunder-thumb"
+	"administrative cost" 1
 	attributes
 		category "Utility"
 		"cost" 1100000
@@ -1933,10 +2067,11 @@ ship "Antique Sunder"
 	description "Most of these older model Sunders have been upgraded by the Covert Mining Cartel into the Plunder. This has made them increasingly scarce..."
 
 
-# The Carabao is Quash's city ship in the Cartographer missions. It also appears in Ghost Hunting.
+# The Carabao is Quash's city ship in the Cartographer missions. It can trigger some Ghost Hunting events.
 ship "Carabao"
 	sprite "ship/carabao"
 	thumbnail "thumbnail/carabao-thumb"
+	"administrative cost" 7
 	attributes
 		category "Utility"
 		"cost" 18000000
@@ -1994,11 +2129,17 @@ ship "Carabao"
 	turret 28 97.5 "Heavy Laser Turret"
 	turret -4.5 115.5 "Heavy Anti-Missile Turret"
 	bay "Drone" -8 -115
+		"launch effect" "human internal"
 	bay "Drone" 31 -95
+		"launch effect" "human internal"
 	bay "Drone" -43 -37
+		"launch effect" "human internal"
 	bay "Drone" -34 -8
+		"launch effect" "human internal"
 	bay "Drone" -30 83
+		"launch effect" "human internal"
 	bay "Drone" 20 97
+		"launch effect" "human internal"
 	leak "leak" 30 50
 	leak "flame" 30 80
 	leak "big leak" 50 30
@@ -2023,7 +2164,7 @@ ship "Carabao" "Carabao (Quash)"
 		"Drone Hacking"
 		"Electronic Warfare System"
 		"Enforcer Confrontation Gear"
-		"Phalanx System"
+		"Intrusion Countermeasure"
 		"Jump Drive"
 		"Ka'het Annihilator Turret"
 		"Ka'het Ravager Turret"
@@ -2036,6 +2177,7 @@ ship "Carabao" "Carabao (Quash)"
 		"Quantum Vacuum Battery"
 		"Nerve Gas"
 		"Outfits Expansion"
+		"Phalanx System"
 		"Point Defense Turret"
 		"Pug Biodefenses"
 		"Pulse Cannon"
@@ -2071,7 +2213,7 @@ ship "Carabao" "Carabao (Quash Abandoned)"
 		"Drone Hacking"
 		"Electronic Warfare System"
 		"Enforcer Confrontation Gear"
-		"Phalanx System"
+		"Intrusion Countermeasure"
 		"Jump Drive"
 		"Ka'het Annihilator Turret"
 		"Ka'het Ravager Turret"
@@ -2084,6 +2226,7 @@ ship "Carabao" "Carabao (Quash Abandoned)"
 		"Quantum Vacuum Battery"
 		"Nerve Gas"
 		"Outfits Expansion"
+		"Phalanx System"
 		"Point Defense Turret"
 		"Pug Biodefenses"
 		"Pulse Cannon"
@@ -2114,7 +2257,7 @@ ship "Executive Guard"
 	sprite "ship/executive guard/executive guard"
 		"frame rate" 7
 		"delay" 7
-	"crew" 53
+	"administrative cost" 8
 	attributes
 		category "Heavy Warship"
 		"cost" 12700000
@@ -2182,11 +2325,17 @@ ship "Executive Guard"
 	turret 0 88 "Proton Turret-ATS"
 	turret 0 119 "Heavy Anti-Missile Turret"
 	bay "Fighter" -39 -18 under left
+		"launch effect" "human internal"
 	bay "Fighter" 39 -18 under right
+		"launch effect" "human internal"
 	bay "Fighter" -39 43 under left
+		"launch effect" "human internal"
 	bay "Fighter" 39 43 under right
+		"launch effect" "human internal"
 	bay "Fighter" -39 104 under left
+		"launch effect" "human internal"
 	bay "Fighter" 39 104 under right
+		"launch effect" "human internal"
 	leak "leak" 50 40
 	leak "flame" 60 80
 	explode "tiny explosion" 12
@@ -2200,7 +2349,8 @@ ship "Executive Guard"
 # Hipparion can be purchased during a misc. mission
 ship "Hipparion"
 	sprite "ship/hipparion"
-		"delay" 2
+	thumbnail "thumbnail/hipparion-thumb"
+	"administrative cost" 4
 	attributes
 		category "Utility"
 		"cost" 6120000
@@ -2273,7 +2423,9 @@ ship "Hipparion"
 	turret 39 35 "Modified Blaster Turret"
 	turret -9 59 "Prototype Anti-Missile"
 	bay "Fighter" -16 -9
+		"launch effect" "human internal"
 	bay "Fighter" -16 -9
+		"launch effect" "human internal"
 	leak "leak" 60 60
 	leak "flame" 90 90
 	leak "big leak" 90 40
@@ -2289,6 +2441,7 @@ ship "Infiltrator"
 	sprite "ship/infiltrator/infiltrator"
 		"rewind"
 	thumbnail "thumbnail/infiltrator-thumb"
+	"administrative cost" 1
 	attributes
 		category "Transport"
 		"cost" 1700000
@@ -2342,6 +2495,72 @@ ship "Infiltrator"
 	description "Featuring integrated scanning interference and jamming technologies, this is a specialized Scout used by Republic Intelligence operatives for espionage missions. They have rarely been seen in public, leading some to speculate that this ship doesn't actually exist and is nothing more than an urban legend." 
 
 
+# A unique Firebird variant from the Heart of Iron mission.
+ship "Ironbird"
+	sprite "ship/ironbird"
+	thumbnail "thumbnail/ironbird-thumb"
+	"administrative cost" 3
+	attributes
+		category "Heavy Freighter"
+		"cost" 2970000
+		"shields" 6300
+		"hull" 3700
+		"required crew" 5
+		"bunks" 14
+		"mass" 690
+		"drag" 6.75
+		"heat dissipation" .4
+		"fuel capacity" 400
+		"cargo space" 150
+		"outfit space" 320
+		"weapon capacity" 100
+		"engine capacity" 100
+		"cargo scan opacity" 60
+		"scan interference" 0.5
+		weapon
+			"blast radius" 100
+			"shield damage" 1000
+			"hull damage" 500
+			"hit force" 1500
+	outfits
+		"Energy Cannon" 2
+		"Anti-Missile Turret"
+		"Plunder Catapult" 2
+		"Plunder Depot" 2
+		"Plunder Mine" 36
+
+		"LP144a Battery Pack"
+		"Modified RT-I Radiothermal"
+		"Modified D41-HY Shielding"
+		"Water Coolant System"
+		"Brig"
+		"Interference Plating" 2
+		"Modified Jammer"
+		"Smuggler's Hideaway"
+		"Fragmentation Grenades" 4
+		"Nerve Gas"
+
+		Afterburner
+		"X3200 Ion Steering"
+		"X3700 Ion Thruster"
+		"Scram Drive"
+	engine -32.5 60
+	engine 32.5 60
+	gun -26.5 -32 "Energy Cannon"
+	gun 26.5 -32 "Energy Cannon"
+	gun -39 -18 "Plunder Catapult"
+	gun 39 -18 "Plunder Catapult"
+	turret 0 1.5 "Anti-Missile Turret"
+	leak "leak" 50 50
+	leak "flame" 30 80
+	explode "tiny explosion" 18
+	explode "small explosion" 36
+	explode "medium explosion" 24
+	explode "large explosion" 8
+	"final explode" "final explosion medium"
+	description "The Ironbird is the result of centuries of modifications to adapt the Firebird into an ideal smuggler ship. The thick hull plating has been specifically designed to interfere with scanners." 
+
+
 # A unique prototype Kestrel from the Grave Digger missions.
 # The two different versions represent the player's mission path choices.
 ship "Kestrel Prototype"
@@ -2351,6 +2570,7 @@ ship "Kestrel Prototype"
 		delay 6
 	thumbnail "thumbnail/modified kestrel-thumb"
 	"crew" 128
+	"administrative cost" 7
 	attributes
 		category "Heavy Warship"
 		"cost" 14700000
@@ -2401,8 +2621,10 @@ ship "Kestrel Prototype"
 		"Jump Drive"
 	engine -14 177
 	engine 14 177
-	bay "Fighter" -46 106 under
-	bay "Fighter" 46 106 under
+	bay "Fighter" -46 106
+		"launch effect" "human internal"
+	bay "Fighter" 46 106
+		"launch effect" "human internal"
 	gun -75 57 "Inhibitor Cannon"
 	gun 75 57 "Inhibitor Cannon"
 	gun -53 61 "Inhibitor Cannon"
@@ -2461,6 +2683,7 @@ ship "Liberator"
 	sprite "ship/liberator"
 		"delay" 2
 	thumbnail "thumbnail/liberator-thumb"
+	"administrative cost" 7
 	attributes
 		category "Heavy Warship"
 		licenses
@@ -2485,7 +2708,7 @@ ship "Liberator"
 			"hull damage" 1430
 			"hit force" 4290
 	outfits
-		"Plasma Cluster Cannon" 7
+		"Plasma Charge Cannon" 7
 		"Quad Blaster Turret" 2
 		"Heavy Anti-Missile Turret" 2
 		
@@ -2507,19 +2730,19 @@ ship "Liberator"
 		
 	engine -26 176 
 	engine 26 176 
-	gun 0 -167 "Plasma Cluster Cannon"
+	gun 0 -167 "Plasma Charge Cannon"
 		parallel
-	gun -0.5 -167 "Plasma Cluster Cannon"
+	gun -0.5 -167 "Plasma Charge Cannon"
 		parallel
-	gun 0.5 -167 "Plasma Cluster Cannon"
+	gun 0.5 -167 "Plasma Charge Cannon"
 		parallel
-	gun -1 -167 "Plasma Cluster Cannon"
+	gun -1 -167 "Plasma Charge Cannon"
 		parallel
-	gun 1 -167 "Plasma Cluster Cannon"
+	gun 1 -167 "Plasma Charge Cannon"
 		parallel
-	gun -1.5 -167 "Plasma Cluster Cannon"
+	gun -1.5 -167 "Plasma Charge Cannon"
 		parallel
-	gun 1.5 -167 "Plasma Cluster Cannon"
+	gun 1.5 -167 "Plasma Charge Cannon"
 		parallel
 	turret -39 -165 "Quad Blaster Turret"
 	turret 39 -165 "Heavy Anti-Missile Turret"
@@ -2547,6 +2770,7 @@ ship "Liberator" "Vindicator"
 ship "Mastodon"
 	sprite "ship/mastodon"
 	"crew" 460
+	"administrative cost" 9
 	attributes
 		category "Utility"
 		cost 27030000
@@ -2625,11 +2849,17 @@ ship "Mastodon"
 	turret -36.5 125 "Blaster Turret"
 	turret 72 174 "Anti-Missile Turret"
 	bay "Fighter" -53 -57
+		"launch effect" "human internal"
 	bay "Fighter" 61 -57
+		"launch effect" "human internal"
 	bay "Fighter" -53 37
+		"launch effect" "human internal"
 	bay "Fighter" 61 37
+		"launch effect" "human internal"
 	bay "Fighter" -53 135
+		"launch effect" "human internal"
 	bay "Fighter" 61 135
+		"launch effect" "human internal"
 	explode "tiny explosion" 30
 	explode "small explosion" 45
 	explode "medium explosion" 50
@@ -2644,6 +2874,7 @@ ship "Parade Float"
 	sprite "ship/float subsidurial"
 	thumbnail "thumbnail/float subsidurial"
 	"swizzle" 0
+	"administrative cost" 1
 	attributes
 		category "Light Freighter"
 		"cost" 1960000
@@ -2690,6 +2921,7 @@ ship "Plexus"
 	sprite "ship/plexus"
 		"delay" 2
 	thumbnail "thumbnail/plexus-thumb"
+	"administrative cost" 7
 	attributes
 		category "Utility"
 		licenses
@@ -2739,9 +2971,13 @@ ship "Plexus"
 	turret -39 118 "Heavy Anti-Missile Turret"
 	turret 39 118 "Plasma Turret"
 	bay "Fighter" 0 -145 
+		"launch effect" "human internal"
 	bay "Fighter" 0 -145 
+		"launch effect" "human internal"
 	bay "Fighter" 0 -145 
+		"launch effect" "human internal"
 	bay "Fighter" 0 -145 
+		"launch effect" "human internal"
 	leak "leak" 40 50
 	leak "flame" 20 80
 	leak "big leak" 80 30
@@ -2782,6 +3018,7 @@ ship "Plexus" "Plexus (Korath)"
 ship "Plunder"
 	sprite "ship/pirate plunder"
 	thumbnail "thumbnail/pirate plunder-thumb"
+	"administrative cost" 1
 	attributes
 		category "Utility"
 		licenses
@@ -2806,7 +3043,7 @@ ship "Plunder"
 			"hit force" 420
 	outfits
 		"Mining Laser" 2
-		"Tractor Beam"
+		"Plunder Beam"
 		"Sidewinder Missile Pod" 2
 		"Sidewinder Missile" 35
 		"Sidewinder Missile Rack"
@@ -2847,6 +3084,7 @@ ship "Plunder"
 ship "Hacker Drone"
 	"display name" "Science Drone"
 	sprite "ship/science drone"
+	"administrative cost" 0
 	attributes
 		category "Drone"
 		"cost" 50000
@@ -2937,6 +3175,11 @@ ship "Fast Timer Ship"
 	gun 0 0
 	turret 0 0
 
+ship "Fast Timer Ship" "Fast Timer Ship (Tragedy)"
+	"never disabled"
+	add attributes
+		"hull" 10
+
 
 # The Shield Fortress is a unique ship that can be captured in an Oathbreakers mission.
 ship "Shield Fortress"
@@ -2944,6 +3187,7 @@ ship "Shield Fortress"
 	sprite "ship/shield fortress"
 	thumbnail "thumbnail/shield fortress-thumb"
 	"crew" 120
+	"administrative cost" 9
 	attributes
 		category "Heavy Warship"
 		"cost" 21700000
@@ -3012,11 +3256,21 @@ ship "Shield Fortress"
 	turret -55.5 80 "Chameleon Anti-Missile"
 	turret 55.5 80 "Chameleon Anti-Missile"
 	bay "Fighter" -100 78
+		"launch effect" "human internal"
 	bay "Fighter" 100 78
+		"launch effect" "human internal"
+	bay "Fighter" -100 78
+		"launch effect" "human internal"
+	bay "Fighter" 100 78
+		"launch effect" "human internal"
 	bay "Drone" -160 80
+		"launch effect" "human internal"
 	bay "Drone" -135 80
+		"launch effect" "human internal"
 	bay "Drone" 135 80
+		"launch effect" "human internal"
 	bay "Drone" 160 80
+		"launch effect" "human internal"
 	leak "leak" 40 50
 	leak "flame" 50 80
 	leak "big leak" 60 50
@@ -3034,6 +3288,8 @@ ship "Star Explorer"
 	sprite "ship/star explorer"
 		"frame rate" 2
 		"delay" 4
+	thumbnail "thumbnail/star explorer-thumb"
+	"administrative cost" 4
 	attributes
 		category "Utility"
 		"cost" 11000000
@@ -3091,25 +3347,33 @@ ship "Star Explorer"
 	engine 36 151
 	"steering engine" -36 151
 		"right"
+		zoom 0.5
 	"steering engine" 36 52
 		angle 180
 		"right"
+		zoom 0.5
 	"steering engine" 36 151
 		"left"
+		zoom 0.5
 	"steering engine" -36 52
 		angle 180
 		"left"
+		zoom 0.5
 	"reverse engine" -36 52
+		zoom 0.7
 	"reverse engine" 36 52
+		zoom 0.7
 	gun 0 -111
-	turret -20 -110
-	turret 20 -110
-	turret -20 -75
-	turret 20 -75
-	turret -20 -39
-	turret 20 -39
+	turret -20 -90
+	turret 20 -90
+	turret -20 -55
+	turret 20 -55
+	turret -20 -19
+	turret 20 -19
 	bay "Fighter" 0 -86
+		"launch effect" "human internal"
 	bay "Drone" 0 -15
+		"launch effect" "human internal"
 	leak "leak" 50 50
 	leak "big leak" 80 30
 	explode "tiny explosion" 15
@@ -3127,6 +3391,7 @@ ship "Strategos"
 		"delay" 2
 	thumbnail "thumbnail/strategos-thumb"
 	"crew" 250
+	"administrative cost" 9
 	attributes
 		category "Heavy Warship"
 		licenses
@@ -3249,6 +3514,7 @@ ship "Strategos"
 ship "Enforcer Drone"
 	sprite "ship/enforcer drone"
 	thumbnail "thumbnail/enforcer drone-thumb"
+	"administrative cost" 0
 	attributes
 		category "Drone"
 		licenses
@@ -3289,6 +3555,7 @@ ship "Enforcer Drone"
 ship "Subsidurius"
 	plural "Subsidurii"
 	sprite "ship/subsidurius"
+	"administrative cost" 3
 	attributes
 		category "Light Warship"
 		"cost" 1230000
@@ -3367,6 +3634,7 @@ ship "Subsidurius"
 ship "War Hauler"
 	sprite "ship/war hauler"
 	thumbnail "thumbnail/war hauler-thumb"
+	"administrative cost" 3
 	attributes
 		licenses
 			Navy
@@ -3460,6 +3728,7 @@ ship "Metropolis"
 	sprite "ship/metropolis"
 		"delay" 2
 	thumbnail "thumbnail/metropolis-thumb"
+	"administrative cost" 9
 	attributes
 		category "Utility"
 		"cost" 27060000
@@ -3540,11 +3809,17 @@ ship "Metropolis"
 	turret -13.5 284.5 "Heavy Anti-Missile Turret"
 	turret 39.5 313.5 "Quad Blaster Turret"
 	bay "Fighter" 6 -197.5 under
+		"launch effect" "human internal"
 	bay "Fighter" -66.5 -12.5 under
+		"launch effect" "human internal"
 	bay "Fighter" 34 -57 under
+		"launch effect" "human internal"
 	bay "Fighter" 6 222 over
+		"launch effect" "human internal"
 	bay "Drone" -49 -182 under
+		"launch effect" "human internal"
 	bay "Drone" -49.5 -155 under
+		"launch effect" "human internal"
 	leak "leak" 30 50
 	leak "flame" 30 80
 	leak "big leak" 50 30
@@ -3560,6 +3835,7 @@ ship "Metropolis"
 
 ship "District"
 	sprite "ship/metro district"
+	"administrative cost" 4
 	attributes
 		category "Utility"
 		"cost" 14520000
@@ -3617,6 +3893,7 @@ ship "District"
 
 ship "Prefecture"
 	sprite "ship/metro prefecture"
+	"administrative cost" 4
 	attributes
 		category "Utility"
 		"cost" 13860000
@@ -3662,7 +3939,9 @@ ship "Prefecture"
 	turret 78 41
 	turret -37 67.5
 	bay "Fighter" -64 -2
+		"launch effect" "human internal"
 	bay "Fighter" 34 -51
+		"launch effect" "human internal"
 	leak "leak" 30 50
 	leak "flame" 30 80
 	leak "big leak" 50 30
@@ -3675,6 +3954,7 @@ ship "Prefecture"
 
 ship "Municipality"
 	sprite "ship/metro municipality"
+	"administrative cost" 4
 	attributes
 		category "Utility"
 		"cost" 13200000
@@ -3730,8 +4010,11 @@ ship "Municipality"
 	turret 22.5 -25.5 "Anti-Missile Turret"
 	turret -5.5 -7 "Anti-Missile Turret"
 	bay "Fighter" 8 41
+		"launch effect" "human internal"
 	bay "Drone" -42 56
+		"launch effect" "human internal"
 	bay "Drone" -47 56
+		"launch effect" "human internal"
 	leak "leak" 30 50
 	leak "flame" 30 80
 	leak "big leak" 50 30
@@ -3741,3 +4024,110 @@ ship "Municipality"
 	explode "huge explosion" 30
 	"final explode" "final explosion large"
 	description "The Municipality comprises the forward section of a Metropolis ship. It is the only section with forward firing gun ports. However, it has the least cargo and outfit space of the three sections. Special sensor equipment was integrated into the foremost part of the ship to aid in planetary exploration and mapping. One of its two fighter bays was modified to host a pair of drones."
+
+
+############################################
+#
+# deprecated
+#
+############################################
+
+
+ship "Starcadia"
+	sprite "ship/starcadia"
+	thumbnail "thumbnail/starcadia-thumb"
+	"administrative cost" 4
+	attributes
+		category "Heavy Warship"
+		licenses
+			"Deep Security"
+		"cost" 10400000
+		"shields" 16000
+		"hull" 5000
+		"required crew" 42
+		"bunks" 88
+		"mass" 955
+		"drag" 9.3
+		"heat dissipation" .45
+		"fuel capacity" 500
+		"cargo space" 40
+		"outfit space" 510
+		"weapon capacity" 250
+		"engine capacity" 110
+		weapon
+			"blast radius" 200
+			"shield damage" 2000
+			"hull damage" 1000
+			"hit force" 3000
+	outfits
+		"Heavy Laser" 2
+		"Heavy Laser Turret" 3
+		"Anti-Missile Turret" 3
+		Torpedo 51
+		"Torpedo Pod" 2
+		"Torpedo Storage Rack" 3
+		
+		"Dwarf Core" 2
+		"LP072a Battery Pack"
+		"D67-TM Shield Generator"
+		Ramscoop
+		"Laser Rifle" 20
+		"Security Station (Staffed)" 2
+		
+		"A370 Atomic Thruster"
+		"A375 Atomic Steering"
+		Hyperdrive
+		
+	engine -41 97
+		zoom .25
+	engine 41 97
+		zoom .25
+	engine -31 103
+		zoom .35
+	engine 31 103
+		zoom .35
+	engine -21 111
+		zoom .40
+	engine 21 111
+		zoom .40
+	"reverse engine" -27 -50
+		zoom 0.6
+		angle 335
+	"reverse engine" 27 -50
+		zoom 0.6
+		angle 25
+	"steering engine" -27 -50
+		zoom 0.5
+		angle 60
+		right
+	"steering engine" 27 -50
+		zoom 0.5
+		angle 300
+		left
+	"steering engine" -52 34
+		zoom 0.5
+		angle 155
+		left
+	"steering engine" 52 34
+		zoom 0.5
+		angle 205
+		right
+	gun -14 -103 "Heavy Laser"
+	gun 14 -103 "Heavy Laser"
+	gun -25 -73 "Torpedo Pod"
+	gun 25 -73 "Torpedo Pod"
+	turret -20 -7 "Anti-Missile Turret"
+	turret 20 -7 "Heavy Laser Turret"
+	turret -30 17.5 "Heavy Laser Turret"
+	turret 30 17.5 "Anti-Missile Turret"
+	turret -20 42.5 "Anti-Missile Turret"
+	turret 20 42.5 "Heavy Laser Turret"
+	leak "leak" 40 50
+	leak "flame" 50 80
+	leak "big leak" 90 30
+	explode "tiny explosion" 18
+	explode "small explosion" 36
+	explode "medium explosion" 24
+	explode "large explosion" 8
+	"final explode" "final explosion medium"
+	description "The technology on the Starcadia, while in line with other modern ships, is surprisingly mundane for a newly deployed ship from the Deep. This has caused some to speculate that the Deep has lost their edge in technological advancement. Alternatively, conspiracy theorists suggest that the Deep has been sitting on this design for some time and is only releasing it now in preparation for some threat unknown to the general public. Deep Security, for its part, has no comment on these rumors."

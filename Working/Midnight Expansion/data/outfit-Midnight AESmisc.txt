@@ -10,12 +10,41 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
-
 # outfits derived from AES Misc.
 # Copyright: Michael Arsollon
 # License: CC-BY-SA-4.0
 # Comment: Derived from works by Darcy Manoel (under the same license) and Michael Zahniser (under the same license).
 
+
+# adjusted thrust
+# adjusted turn
+outfit "Vector Engine (Reality Class)"
+	plural "Vector Engines (Reality Class)"
+	category "Engines"
+	series "Engines"
+	index 04069
+	cost 5192000
+	thumbnail "outfit/AESmisc vector_engine_reality_class"
+	mass 198
+	"outfit space" -198
+	"engine capacity" -198
+	turn 6399
+	"turning energy" 13.7
+	"turning heat" 34.2
+	thrust 250.35
+	"thrusting energy" 22.7
+	"thrusting heat" 51.6
+	"flare sprite" "effect/korath flare/huge"
+		"frame rate" 6
+	"flare sound" "plasma huge"
+	description `Endless skirmishes among the rival Korath forces have produced a mockery of the word efficiency. Although total power output is increased considerably, the waste energy is very nearly enough to offset the advantages.`
+
+
+#######################
+#
+# Deprecated
+#
+#######################
 
 
 # Removed active cooling
@@ -104,7 +133,7 @@ outfit "Quarg Culverin"
 		"acceleration" 1.8
 		"drag" .3
 		"turn" 1
-		"homing" 2
+		"homing"
 		"tracking" .2
 		"shield damage" 639
 		"hull damage" 123
@@ -125,7 +154,9 @@ outfit "Culverin Submunition"
 		"acceleration" 3
 		"drag" .2
 		"turn" 10
-		"homing" 5
+		"homing"
+			"leading"
+			"throttle control"
 		"infrared tracking" .9
 		"shield damage" 123
 		"hull damage" 639
@@ -148,15 +179,15 @@ effect "culverin impact"
 
 
 # Removed active cooling
-outfit "Central Repair Hub"
-	category "Systems"
-	cost 6120000
-	thumbnail "outfit/AESmisc quarg central repair unit"
-	"mass" 59
-	"outfit space" -59
-	"hull repair rate" 3.94
-	"hull energy" 3.94
-	description "One of the few Quarg systems you can understand. This ancient device controls a set of robots that maintain and repair the hull. Modern Quarg ships integrate this technology directly into the hull."
+#outfit "Central Repair Hub"
+#	category "Systems"
+#	cost 6120000
+#	thumbnail "outfit/AESmisc quarg central repair unit"
+#	"mass" 59
+#	"outfit space" -59
+#	"hull repair rate" 3.94
+#	"hull energy" 3.94
+#	description "One of the few Quarg systems you can understand. This ancient device controls a set of robots that maintain and repair the hull. Modern Quarg ships integrate this technology directly into the hull."
 
 # Removed active cooling
 # Added description
@@ -183,28 +214,28 @@ outfit "Infimum Shield Generator"
 	description "The first humans who met the Quarg thought that their technology worked on magic, and many even think so to this day. The mechanism by which this Quarg shield generator works is completely unknown to humanity, and the Quarg aren't interested in giving up their secrets."
 
 # Removed active cooling
-outfit "Peripheral Repair Hub"
-	category "Systems"
-	cost 2735000
-	thumbnail "outfit/AESmisc quarg peripheral repair unit"
-	"mass" 29
-	"outfit space" -29
-	"hull repair rate" 1.47
-	"hull energy" 1.47
-	description "One of the few Quarg systems you can understand. This ancient device controls a set of robots that maintain and repair the hull. Modern Quarg ships integrate this technology directly into the hull."
+#outfit "Peripheral Repair Hub"
+#	category "Systems"
+#	cost 2735000
+#	thumbnail "outfit/AESmisc quarg peripheral repair unit"
+#	"mass" 29
+#	"outfit space" -29
+#	"hull repair rate" 1.47
+#	"hull energy" 1.47
+#	description "One of the few Quarg systems you can understand. This ancient device controls a set of robots that maintain and repair the hull. Modern Quarg ships integrate this technology directly into the hull."
 
 # Removed active cooling and altered heat generation
 # Added description
-outfit "Singularity Core"
-	category "Power"
-	cost 51350000
-	thumbnail "outfit/AESmisc quarg singularity core"
-	"mass" 79
-	"outfit space" -79
-	"energy generation" 52
-	"heat generation" 13
-	"unplunderable" 1
-	description "Although humanity is now capable of producing antimatter in relatively significant quantities when compared to a thousand years ago, it is still nothing compared to the Quarg. The Quarg can produce enough antimatter to outfit every ship with an extremely efficient antimatter core, producing extreme amounts of energy with surprisingly little waste heat."
+#outfit "Singularity Core"
+#	category "Power"
+#	cost 51350000
+#	thumbnail "outfit/AESmisc quarg singularity core"
+#	"mass" 79
+#	"outfit space" -79
+#	"energy generation" 52
+#	"heat generation" 13
+#	"unplunderable" 1
+#	description "Although humanity is now capable of producing antimatter in relatively significant quantities when compared to a thousand years ago, it is still nothing compared to the Quarg. The Quarg can produce enough antimatter to outfit every ship with an extremely efficient antimatter core, producing extreme amounts of energy with surprisingly little waste heat."
 
 
 # Removed active cooling and altered heat generation
@@ -221,97 +252,3 @@ outfit "Tachyon Core"
 	description "Although humanity is now capable of producing antimatter in relatively significant quantities when compared to a thousand years ago, it is still nothing compared to the Quarg. The Quarg can produce enough antimatter to outfit every ship with an extremely efficient antimatter core, producing extreme amounts of energy with surprisingly little waste heat."
 
 
-# Removed reverse thrust
-# Added description
-# Created flare sprites
-# adjusted thrust
-outfit "Large Graviton Thruster"
-	category "Engines"
-	"cost" 3014000
-	thumbnail "outfit/large quarg thruster"
-	"mass" 97
-	"outfit space" -97
-	"engine capacity" -97
-	"thrust" 142.95
-	"thrusting energy" 14.3
-	"thrusting heat" 9.55
-	"force protection" 0.2
-	"inertia reduction" 0.2
-	"unique" 1
-	"flare sprite" "effect/Midnight large graviton flare"
-	description "Quarg thrusters are extremely powerful for their size, but at the cost of consuming immense amounts of energy."
-
-
-# Removed reverse thrust
-# Added description
-# Created flare sprites
-# adjusted thrust
-outfit "Small Graviton Thruster"
-	category "Engines"
-	"cost" 858000
-	thumbnail "outfit/small quarg thruster"
-	"mass" 47
-	"outfit space" -47
-	"engine capacity" -47
-	"thrust" 57.45
-	"thrusting energy" 6.4
-	"thrusting heat" 4.25
-	"force protection" 0.1
-	"inertia reduction" 0.1
-	"flare sprite" "effect/Midnight small graviton flare"
-	description "Quarg thrusters are extremely powerful for their size, but at the cost of consuming immense amounts of energy."
-
-
-# Added description
-# adjusted turn
-outfit "Large Graviton Steering"
-	category "Engines"
-	"cost" 2512000
-	thumbnail "outfit/large quarg steering"
-	"mass" 73
-	"outfit space" -73
-	"engine capacity" -73
-	"turn" 3811.5
-	"turning energy" 7.1
-	"turning heat" 4.75
-	"force protection" 0.2
-	"inertia reduction" 0.2
-	"unique" 1
-	description "Quarg steering engines are as similarly impressive as their thrusters in how much energy they consume. The Quarg don't seem to be bothered by this cost though, given the unmatched strength of their reactors."
-
-# Added description
-# adjusted turn
-outfit "Small Graviton Steering"
-	category "Engines"
-	"cost" 715000
-	thumbnail "outfit/small quarg steering"
-	"mass" 35
-	"outfit space" -35
-	"engine capacity" -35
-	"turn" 1531.5
-	"turning energy" 3.2
-	"turning heat" 2.15
-	"force protection" 0.1
-	"inertia reduction" 0.1
-	description "Quarg steering engines are as similarly impressive as their thrusters in how much energy they consume. The Quarg don't seem to be bothered by this cost though, given the unmatched strength of their reactors."
-
-# adjusted thrust
-# adjusted turn
-outfit "Vector Engine (Reality Class)"
-	plural "Vector Engines (Reality Class)"
-	category "Engines"
-	cost 5192000
-	thumbnail "outfit/AESmisc vector_engine_reality_class"
-	mass 198
-	"outfit space" -198
-	"engine capacity" -198
-	turn 6399
-	"turning energy" 13.7
-	"turning heat" 34.2
-	thrust 250.35
-	"thrusting energy" 22.7
-	"thrusting heat" 51.6
-	"flare sprite" "effect/korath flare/huge"
-		"frame rate" 6
-	"flare sound" "plasma huge"
-	description `Endless skirmishes among the rival Korath forces have produced a mockery of the word efficiency. Although total power output is increased considerably, the waste energy is very nearly enough to offset the advantages.`

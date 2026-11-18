@@ -59,7 +59,7 @@ mission "Midnight Eureka Map 2"
 	on offer
 		conversation
 			branch eurekamap
-				has "outfit (flagship installed): Eureka Map"
+				has "outfit (removable): Eureka Map"
 			scene "planet/nasa derelict station1"
 			`You've arrived at Eureka Station but forgot to bring the Eureka Map! Try to locate the treasure just using your memory?`
 			choice
@@ -213,17 +213,17 @@ mission "Midnight Eureka Map 2"
 	npc evade
 		government "Pirate"
 		personality target waiting heroic vindictive nemesis
-			confusion 20
+			#confusion 20
 		"cargo settings"
 			cargo 1
 			outfitters "Contraband"
 		fleet "Small Dirt Belt Pirates"
 	npc evade
 		to spawn
-			"armament deterrence" >= 4
+			"armament deterrence" >= 6
 		government "Pirate"
 		personality target waiting heroic vindictive nemesis
-			confusion 20
+			#confusion 20
 		fleet "Large Dirt Belt Pirates"
 
 
@@ -445,9 +445,11 @@ mission "Midnight Hauler VI Upgrade"
 	job
 	repeat
 	name "Hauler VI Recall"
-	description "Southbound Shipyards has issued a recall for the old model Hauler VI to fix a critical issue. Bring a Hauler VI to <destination> to have the this fixed. Make sure to uninstall any outfits you want to keep before doing so."
+	description "Southbound Shipyards has issued a recall for the old model Hauler VI. Set the old model Hauler VI as your flagship and land on <destination> to have it fixed." (Any outfits still installed will be lost.)"
 	source
-		government "Republic" "Syndicate" "Neutral" "Independent"
+		government "Republic" "Syndicate" "Neutral" "Independent" "Pirate"
+		attributes "spaceport"
+		not attributes "uninhabited"
 	destination
 		government "Free Worlds"
 		attributes "shipyard"
@@ -458,12 +460,13 @@ mission "Midnight Hauler VI Upgrade"
 	on accept
 		conversation
 			scene "thumbnail/hauler vi-thumb"
-			`The old model Hauler VI needs to be fixed by an authorized shipyard. Make sure to uninstall any outfits you want to keep from the Hauler VI before taking it to <destination>.`
+			scene "thumbnail/midnight hauler vi-thumb"
+			`You receive a message: "The old model Hauler VI needs to be fixed by an authorized shipyard. Set the Hauler VI as your flagship and land on <destination> to have it fixed." (Any outfits still installed will be lost.)`
 				accept
 	on visit
-		dialog "You need to bring the older model Hauler VI to the shipyard here to have it fixed. Make sure to uninstall any outfits from it that you want to keep."
+		dialog "You need to set the older model Hauler VI as your flagship to have it fixed. Make sure to uninstall any outfits from it that you want to keep."
 	to complete
-		has "ship model: Hauler VI"
+		has "flagship model: Hauler VI"
 	on complete
 		take ship "Hauler VI"
 		give ship "Midnight Hauler VI"
@@ -938,7 +941,7 @@ mission "Midnight Market: Cloaking Device 2"
 mission "Midnight Market: Intrusion Countermeasures 1"
 	minor
 	name "Myserious Sales Pitch"
-	description "An anonymous seller is offering a rare item that would supposedly appeal to you. You must go to a village on <planet> in the <system> system if you want to purchase it for 500,000 credits."
+	description "An anonymous seller is offering a rare item that would supposedly appeal to you. You must go to <destination> if you want to purchase it for 500,000 credits."
 	source
 		government "Republic" "Free Worlds" "Syndicate"
 		not attributes "uninhabited"
@@ -1074,7 +1077,7 @@ mission "Midnight Market: Wanderer Micro-sat"
 	npc disable
 		government "Pirate"
 		personality waiting staying harvests plunders coward
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			outfitters "Pirate Outfits" "Pirate Advanced"

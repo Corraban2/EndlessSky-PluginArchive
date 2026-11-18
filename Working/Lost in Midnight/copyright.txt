@@ -32,6 +32,8 @@ Endless Sky Artwork:
   @Karirawri (CC-BY-SA-4.0)
   Gef. Taubenbrust (CC-BY-SA-4.0)
   Saugia (CC-BY-SA-4.0)
+  Rising Leaf (CC-BY-SA-4.0)
+  Unordered Sigh (CC-BY-SA-3.0)
 
 Photos from Wikimedia Commons
   Berthold Werner (CC-BY-SA-3.0)
@@ -51,6 +53,8 @@ and from public domain sources
   US Army
   morguefile.com
   unsplash.com
+Sounds from public domain sources
+  freesound.org
 
 
 
@@ -82,7 +86,6 @@ Files:
  images/land/nasa*
  images/planet/nasa*
  images/scene/nasa*
- images/ship/nasa*
  images/star/nasa*
  images/ui/nasa*
 Copyright: NASA
@@ -92,6 +95,7 @@ License: public-domain
 
 Files:
  images/land/station2dark
+ images/ship/cthogha prophet
 Copyright: Michael Arsollon
 License: public-domain
  Derived from work by NASA, and therefore in the public domain because they were created by

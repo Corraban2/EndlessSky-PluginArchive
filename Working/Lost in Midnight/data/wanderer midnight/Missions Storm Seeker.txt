@@ -10,6 +10,10 @@
 # PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 
+# Contents:
+# missions
+# fleets
+
 mission "Storm Seeker Raider 1"
 	invisible
 	minor
@@ -31,7 +35,7 @@ mission "Storm Seeker Raider Reminder"
 	landing
 	non-blocking
 	name "Salvage: Raider"
-	description "Bring a Jump Drive in your cargo to a spaceport in the Dirt Belt or the South. Have 145 open bunks for new crew members."
+	description "To Salvage the ship you found at Season's End, bring a Jump Drive in your cargo to a spaceport in the Dirt Belt or the South. Have 145 open bunks for new crew members."
 	destination "Season's End"
 	to complete
 		never
@@ -43,7 +47,7 @@ mission "Storm Seeker Raider Reminder"
 
 mission "Storm Seeker Raider 2"
 	name "Salvage: Raider"
-	description "Bring 145 crew and a Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 145 crew and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	source
 		not planet "Season's End"
 		not attributes "uninhabited"
@@ -87,7 +91,7 @@ mission "Storm Seeker Raider 2"
 mission "Storm Seeker Shallow Pond"
 	minor
 	name "Salvage: Shallow Pond"
-	description "Bring 1 new crewmember and a spare Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 1 new crewmember and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	repeat
 	source "Season's End"
 	to offer
@@ -177,9 +181,10 @@ mission "Storm Seeker Skulduggery"
 				"Shallow Pond (Jump)" 10
 				"Flycatcher" 10
 	on fail
-		dialog `The warship escaped. Whoever that is may have scavenged more ships from Season's End. You're certain this isn't the last time you'll cross paths.`
+		dialog `The warship escaped. Whoever that is may have scavenged more ships from Season's End.  This may not be the last time you'll cross paths.`
 	on complete
-		dialog `The warship escaped. Whoever that is may have scavenged more ships from Season's End. You're certain this isn't the last time you'll cross paths.`
+		dialog `The warship escaped. Whoever that is may have scavenged more ships from Season's End. This may not be the last time you'll cross paths.`
+
 
 mission "Storm Seeker Raid: Free Worlds"
 	invisible
@@ -214,8 +219,20 @@ mission "Storm Seeker Raid: Free Worlds"
 		government "Pirate"
 		personality waiting plunders harvests coward
 		fleet "Marauder fleet X"
+	npc
+		to spawn
+			has "Storm Seeker Raid: Syndicate: done"
+		government "Pirate"
+		personality waiting plunders harvests coward
+		fleet "L. Advanced Independent"
+		fleet "S. Advanced Independent" 2
+	npc
+		to spawn
+			not "Storm Seeker Raid: Free Worlds: done"
+		government "Pirate"
+		personality waiting plunders harvests coward
 		fleet "Coalition Pirate"
-	npc disable
+	npc kill
 		government "Pirate"
 		personality target waiting staying plunders harvests
 		fleet "Storm Seeker Raid"
@@ -225,7 +242,7 @@ mission "Storm Seeker Raid: Free Worlds"
 		clear "Storm Seeker Raid: Paradise: offered"
 		payment 100000
 		conversation
-			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped. In fact you're certain that Alphas are behind this attack.`
+			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped.`
 
 mission "Storm Seeker Raid: Syndicate"
 	invisible
@@ -257,6 +274,16 @@ mission "Storm Seeker Raid: Syndicate"
 		fleet "Large Syndicate"
 		fleet "Small Syndicate"
 	npc
+		to spawn
+			has "Storm Seeker Raid: Syndicate: done"
+		government "Pirate"
+		personality waiting plunders harvests coward
+		fleet "Marauder fleet X"
+		fleet "L. Advanced Independent"
+		fleet "S. Advanced Independent" 2
+	npc
+		to spawn
+			not "Storm Seeker Raid: Syndicate: done"
 		government "Pirate"
 		personality waiting plunders harvests coward
 		fleet
@@ -274,7 +301,7 @@ mission "Storm Seeker Raid: Syndicate"
 				"Splinter (Korath)"
 				"Modified Argosy (Korath)"
 				"Quicksilver (Korath)"
-	npc disable
+	npc kill
 		government "Pirate"
 		personality target waiting staying plunders harvests
 		fleet "Storm Seeker Raid"
@@ -284,7 +311,7 @@ mission "Storm Seeker Raid: Syndicate"
 		clear "Storm Seeker Raid: Deep: offered"
 		payment 100000
 		conversation
-			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped. In fact you're certain that Alphas are behind this attack.`
+			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped.`
 
 mission "Storm Seeker Raid: Deep"
 	invisible
@@ -317,6 +344,16 @@ mission "Storm Seeker Raid: Deep"
 		fleet "Large Deep Security"
 		fleet "Small Deep Security"
 	npc
+		to spawn
+			has "Storm Seeker Raid: Deep: done"
+		government "Pirate"
+		personality waiting plunders harvests coward
+		fleet "Marauder fleet X"
+		fleet "L. Advanced Independent"
+		fleet "S. Advanced Independent" 2
+	npc
+		to spawn
+			has "Storm Seeker Raid: Deep: done"
 		government "Pirate"
 		personality waiting plunders harvests coward		
 		fleet
@@ -326,7 +363,7 @@ mission "Storm Seeker Raid: Deep"
 				"Shadow Osprey" 4
 				"Shadow Raven" 6
 				"Shadow Hawk" 8
-	npc disable
+	npc kill
 		government "Pirate"
 		personality target waiting staying plunders harvests
 		fleet "Storm Seeker Raid"
@@ -336,7 +373,7 @@ mission "Storm Seeker Raid: Deep"
 		clear "Storm Seeker Raid: North: offered"
 		payment 100000
 		conversation
-			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped. In fact you're certain that Alphas are behind this attack.`
+			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped.`
 			
 mission "Storm Seeker Raid: Paradise"
 	invisible
@@ -369,16 +406,27 @@ mission "Storm Seeker Raid: Paradise"
 		fleet "Large Republic"
 		fleet "Small Republic"
 	npc
+		to spawn
+			has "Storm Seeker Raid: Paradise: done"
+		government "Pirate"
+		personality waiting plunders harvests coward
+		fleet "Marauder fleet X"
+		fleet "L. Advanced Independent" 2
+		fleet "S. Advanced Independent" 4
+	npc
+		to spawn
+			not "Storm Seeker Raid: Paradise: done"
 		government "Pirate"
 		personality waiting plunders harvests coward
 		fleet "Marauder Parade"
 	npc
 		to spawn
 			has "event: Grudge Legacy"
+			not "Storm Seeker Raid: Paradise: done"
 		government "Pirate"
 		personality waiting plunders harvests coward
 		fleet "Grudge Parade"
-	npc disable
+	npc kill
 		government "Pirate"
 		personality target waiting staying plunders harvests
 		fleet "Storm Seeker Raid"
@@ -388,7 +436,7 @@ mission "Storm Seeker Raid: Paradise"
 		clear "Storm Seeker Raid: Syndicate: offered"
 		payment 100000
 		conversation
-			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped. In fact you're certain that Alphas are behind this attack.`
+			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped.`
 			
 mission "Storm Seeker Raid: North"
 	invisible
@@ -421,6 +469,16 @@ mission "Storm Seeker Raid: North"
 		fleet "Large Oathkeeper"
 		fleet "Small Oathkeeper"
 	npc
+		to spawn
+			has "Storm Seeker Raid: North: done"
+		government "Pirate"
+		personality waiting plunders harvests coward
+		fleet "Marauder fleet X"
+		fleet "L. Advanced Independent"
+		fleet "S. Advanced Independent" 2
+	npc
+		to spawn
+			not "Storm Seeker Raid: North: done"
 		government "Pirate"
 		personality waiting plunders harvests coward
 		fleet
@@ -441,7 +499,7 @@ mission "Storm Seeker Raid: North"
 				"Corvette (Hai)"
 				"Headhunter (Hai)"
 				"Dagger" 3
-	npc disable
+	npc kill
 		government "Pirate"
 		personality target waiting staying plunders harvests
 		fleet "Storm Seeker Raid"
@@ -451,7 +509,7 @@ mission "Storm Seeker Raid: North"
 		clear "Storm Seeker Raid: Free Worlds: offered"
 		payment 100000
 		conversation
-			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped. In fact you're certain that Alphas are behind this attack.`
+			`The government of <origin> pays you <payment> for eliminating the pirate threat. Unfortunately, you suspect the ringleader escaped.`
 			
 mission "Storm Seeker Counter Attack 1"
 	landing
@@ -460,16 +518,27 @@ mission "Storm Seeker Counter Attack 1"
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Neutral" "Independent"
 		not attributes "uninhabited"
+		not planet "Luna"
 	destination "Luna"
 	to offer
 		has "free worlds plot completed"
-		has "Storm Seeker Raid: North: done"
-		has "Storm Seeker Raid: Paradise: done"
-		has "Storm Seeker Raid: Deep: done"
-		has "Storm Seeker Raid: Syndicate: done"
-		has "Storm Seeker Raid: Free Worlds: done"
+		or
+			has "Storm Seeker Raid: North: done"
+			has "Storm Seeker Raid: North: failed"
+		or
+			has "Storm Seeker Raid: Paradise: done"
+			has "Storm Seeker Raid: Paradise: failed"
+		or
+			has "Storm Seeker Raid: Deep: done"
+			has "Storm Seeker Raid: Deep: failed"
+		or
+			has "Storm Seeker Raid: Syndicate: done"
+			has "Storm Seeker Raid: Syndicate: failed"
+		or
+			has "Storm Seeker Raid: Free Worlds: done"
+			has "Storm Seeker Raid: Free Worlds: failed"
 	on offer
-		dialog `You receive an invitation from Admiral Danforth to join a strategy meeting on <destination> regarding the recent Alpha attacks happening across the galaxy.`
+		dialog `You receive an invitation from Admiral Danforth to join a strategy meeting on <destination> regarding recent Alpha attacks happening across the galaxy.`
 
 mission "Storm Seeker Counter Attack 2"
 	landing
@@ -481,7 +550,7 @@ mission "Storm Seeker Counter Attack 2"
 	on offer
 		conversation
 			scene "scene/scene-stormseekerstrategy"
-			`As soon as you arrive on Luna, Navy Intelligence escorts you to the meeting. There, you and a small group of other elite captains are given a debriefing regarding the raids which have taken place and the Alpha ship, "Rolling Thunder," which was present during all of these attacks. Each of the captains present assisted in defending against these raids. While you feel a sense of pride in defending more planets than the other captains, you note that there were more planets attacked that you were not involved in defending. The captain who successfully eliminates this threat will be granted an honorary Navy License. You are all dismissed.`
+			`As soon as you arrive on Luna, Navy Intelligence escorts you to the meeting. There, you and a small group of other elite captains are given a debriefing regarding the raids which have taken place and the Alpha ship, "Rolling Thunder," which was present during all of these attacks. Each of the captains present assisted in defending against these raids. While you feel a sense of pride in defending more planets than the other individual captain, you note that there were more planets attacked that you were not involved in defending. The captain who successfully eliminates this threat will be granted an honorary Navy License. You are all dismissed.`
 				accept
 	on accept
 		"reputation: Storm Seekers" = 1
@@ -645,14 +714,9 @@ mission "Storm Seeker Counter Attack 3"
 			not "Underworld Meeting (easy): active"
 			not "Underworld Meeting (hard): active"
 	on accept
-		dialog `Your passenger is young hot shot named Kenny. "This meeting is a pretty big deal for me. You were highly recommended. I hope you live up to your reputation. Also, don't be alarmed, but the people we're meeting are a bit unusual...`
+		dialog `Your passenger is a young hot shot named Kenny. "This meeting is a pretty big deal for me. You were highly recommended. I hope you live up to your reputation. Also, don't be alarmed, but the people we're meeting are a bit unusual...`
 	on fail
 		dialog `[MISSION FAILED] Without your passenger to guide you, you fail to find the meeting location for the Alpha ship, Rolling Thunder. If life were a game, you could load a save file and try again.`
-	on complete
-		conversation
-			scene "thumbnail/storm seeker-thumb"
-			`Your passenger, Kenny, directs you through a network of underground caverns to reach the designated meeting spot. After a moment the Rolling Thunder appears. It hails you. "Captain <first> <last>, I'd heard you were part of some elite squad Danforth put together to hunt me down. Kenny, you're not getting out of this alive."`
-			`Kenny curses his luck as you maneuver the <ship> to take evasive action. It doesn't take long for the battle to abandon the cramped Underworld tunnels of Naihe Qiao for open space.`
 
 mission "Storm Seeker Counter Attack 4"
 	landing
@@ -660,7 +724,6 @@ mission "Storm Seeker Counter Attack 4"
 	description "Take <fare> to a clandestine meeting in <origin>'s underworld. Then return them to <destination>. Payment is 50,000 credits."
 	source "Naihe Qiao"
 	destination "Wang Xiang Tai"
-	passengers 1
 	to offer
 		has "Storm Seeker Counter Attack 3: done"
 	on offer
@@ -674,6 +737,12 @@ mission "Storm Seeker Counter Attack 4"
 		fail "Storm Seeker Raid: Deep"
 		fail "Storm Seeker Raid: Syndicate"
 		fail "Storm Seeker Raid: Free Worlds"
+	on offer
+		conversation
+			scene "thumbnail/storm seeker-thumb"
+			`Your passenger, Kenny, directs you through a network of underground caverns to reach the designated meeting spot. After a moment the Rolling Thunder appears. It hails you. "Captain <first> <last>, I'd heard you were part of some elite squad Danforth put together to hunt me down. Kenny, you're not getting out of this alive."`
+			`Kenny curses his luck as you maneuver the <ship> to take evasive action. It doesn't take long for the battle to abandon the cramped Underworld tunnels of Naihe Qiao for open space.`
+				launch
 	on enter
 		conversation
 			scene "scene/scene-badcompany"
@@ -699,7 +768,7 @@ mission "Storm Seeker Counter Attack 4"
 				"Spring Leaf" 9
 				"Shallow Pond" 12
 				"Flycatcher (Laser)" 12
-				"Rainmaker (Wanderer)" 4
+				"Missileboat (Wanderer)" 4
 	npc kill
 		government "Alpha"
 		personality waiting heroic vindictive
@@ -763,7 +832,7 @@ mission "Storm Seeker Reward Expires"
 mission "Storm Seeker Epilogue: Spring Leaf"
 	minor
 	name "Salvage: Spring Leaf"
-	description "Bring 4 new crewmembers and a spare Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 4 new crewmembers and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	source "Season's End"
 	repeat
 	to offer
@@ -827,11 +896,10 @@ mission "Storm Seeker Epilogue: Spring Leaf Crew"
 	on decline
 		fail "Storm Seeker Epilogue: Spring Leaf"
 
-
 mission "Storm Seeker Epilogue: Winter Leaf"
 	minor
 	name "Salvage: Winter Leaf"
-	description "Bring 12 new crewmembers and a spare Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 12 new crewmembers and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	source "Season's End"
 	to offer
 		has "Storm Seeker Epilogue: Spring Leaf: done"
@@ -862,17 +930,6 @@ mission "Storm Seeker Epilogue: Winter Leaf"
 			scene "thumbnail/winter leaf-thumb"
 			`As soon as you arrive, your crew gets to work on installing a jump drive onto the salvaged ship. Once installed, the ship is ready to launch.`
 
-ship "Winter Leaf" "Winter Leaf (Jump)"
-	outfits
-		"Sunbeam" 3
-		"Wanderer Anti-Missile"
-		"White Sun Reactor"
-		"Bright Cloud Shielding"
-		"Wanderer Ramscoop"
-		"Type 3 Radiant Thruster"
-		"Type 4 Radiant Steering"
-		"Jump Drive"
-
 mission "Storm Seeker Epilogue: Winter Leaf Crew"
 	landing
 	invisible
@@ -890,11 +947,10 @@ mission "Storm Seeker Epilogue: Winter Leaf Crew"
 		fail "Storm Seeker Epilogue: Winter Leaf"
 		clear "Storm Seeker Epilogue: Winter Leaf: offered"
 
-
 mission "Storm Seeker Epilogue: Storm Seeker"
 	minor
 	name "Salvage: Storm Seeker"
-	description "Bring 18 new crewmembers and a spare Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 18 new crewmembers and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	source "Season's End"
 	to offer
 		has "Storm Seeker Epilogue: Winter Leaf: done"
@@ -943,11 +999,10 @@ mission "Storm Seeker Epilogue: Storm Seeker Crew"
 		fail "Storm Seeker Epilogue: Storm Seeker"
 		clear "Storm Seeker Epilogue: Storm Seeker: offered"
 
-
 mission "Storm Seeker Epilogue: Tornado"
 	minor
 	name "Salvage: Tornado"
-	description "Bring 41 new crewmembers and a spare Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 41 new crewmembers and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	source "Season's End"
 	to offer
 		has "Storm Seeker Epilogue: Storm Seeker: done"
@@ -978,18 +1033,6 @@ mission "Storm Seeker Epilogue: Tornado"
 			scene "thumbnail/tornado-thumb"
 			`As soon as you arrive, your crew gets to work on installing a jump drive onto the salvaged ship. Once installed, the ship is ready to launch.`
 
-ship "Tornado" "Tornado (Jump)"
-	outfits
-		"Sunbeam" 4
-		"Sunbeam Turret" 2
-		"Wanderer Anti-Missile" 2
-		"Yellow Sun Reactor" 2
-		"Dark Storm Shielding"
-		"Wanderer Ramscoop"
-		"Type 4 Radiant Thruster"
-		"Type 4 Radiant Steering"
-		"Jump Drive"
-
 mission "Storm Seeker Epilogue: Tornado Crew"
 	landing
 	invisible
@@ -1007,11 +1050,10 @@ mission "Storm Seeker Epilogue: Tornado Crew"
 		fail "Storm Seeker Epilogue: Tornado"
 		clear "Storm Seeker Epilogue: Tornado: offered"
 
-
 mission "Storm Seeker Epilogue: Tsunami"
 	minor
 	name "Salvage: Tsunami"
-	description "Bring 152 new crewmembers and a spare Jump Drive to <destination>. (The outfit will automatically be removed if you bring one.)"
+	description "Bring 152 new crewmembers and a Jump Drive in cargo to <destination>. (The outfit will automatically be removed if you bring one.)"
 	source "Season's End"
 	to offer
 		has "Storm Seeker Epilogue: Tornado: done"
@@ -1042,20 +1084,6 @@ mission "Storm Seeker Epilogue: Tsunami"
 			scene "thumbnail/tsunami-thumb"
 			`As soon as you arrive, your crew gets to work on installing a jump drive onto the salvaged ship. Once installed, the ship is ready to launch.`
 
-ship "Tsunami" "Tsunami (Jump)"
-	outfits
-		"Sunbeam" 4
-		"Sunbeam Turret" 5
-		"Blue Sun Reactor"
-		"White Sun Reactor"
-		"Dark Storm Shielding" 2
-		"Wanderer Heat Sink"
-		"Wanderer Ramscoop"
-		"Type 4 Radiant Thruster"
-		"Type 4 Radiant Steering"
-		"Type 2 Radiant Steering"
-		"Jump Drive"
-
 mission "Storm Seeker Epilogue: Tsunami Crew"
 	landing
 	invisible
@@ -1073,7 +1101,6 @@ mission "Storm Seeker Epilogue: Tsunami Crew"
 		fail "Storm Seeker Epilogue: Tsunami"
 		clear "Storm Seeker Epilogue: Tsunami: offered"
 
-
 mission "Storm Seeker Epilogue: Season's End"
 	invisible
 	minor
@@ -1086,7 +1113,6 @@ mission "Storm Seeker Epilogue: Season's End"
 		dialog `After several hours of searching, you fail to find any ship that's salvageable. While you might have overlooked a Shallow Pond or Spring Leaf, you have no doubt that you've checked all the larger derelicts and confirmed that there's nothing left but piles of useless scrap.`
 	on accept
 		fail
-
 
 mission "Storm Seeker Epilogue: Wanderer Shipyards"
 	invisible
@@ -1143,3 +1169,134 @@ mission "Storm Seeker Epilogue: Wanderer Shipyards"
 		fail
 		
 event "Season's End Discovered"
+
+
+###########################
+#
+# fleets
+#
+###########################
+
+fleet "Storm Seeker Raid"
+	government "Pirate"
+	names "pirate"
+	personality harvests plunders
+		#confusion 20
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 2"
+		"Deep River Pirate 3"
+		"Autumn Leaf" 1
+		"Summer Leaf" 6
+		"Deep River Pirate 0"
+		"Deep River Pirate 1"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 2"
+		"Deep River Pirate 3"
+		"Autumn Leaf" 2
+		"Summer Leaf" 4
+		"Deep River Pirate 0"
+		"Deep River Pirate 1"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 2"
+		"Deep River Pirate 3"
+		"Autumn Leaf" 3
+		"Summer Leaf" 2
+		"Deep River Pirate 0"
+		"Deep River Pirate 1"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 3"
+		"Deep River Pirate 4"
+		"Autumn Leaf" 1
+		"Summer Leaf" 6
+		"Deep River Pirate 1"
+		"Deep River Pirate 0"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 3"
+		"Deep River Pirate 4"
+		"Autumn Leaf" 2
+		"Summer Leaf" 4
+		"Deep River Pirate 1"
+		"Deep River Pirate 0"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 3"
+		"Deep River Pirate 4"
+		"Autumn Leaf" 3
+		"Summer Leaf" 2
+		"Deep River Pirate 1"
+		"Deep River Pirate 0"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 4"
+		"Deep River Pirate 2"
+		"Autumn Leaf" 1
+		"Summer Leaf" 6
+		"Deep River Pirate 0"
+		"Deep River Pirate 1"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 4"
+		"Deep River Pirate 2"
+		"Autumn Leaf" 2
+		"Summer Leaf" 4
+		"Deep River Pirate 0"
+		"Deep River Pirate 1"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+	variant
+		"Deep River Rapids"
+		"Deep River Pirate 4"
+		"Deep River Pirate 2"
+		"Autumn Leaf" 3
+		"Summer Leaf" 2
+		"Deep River Pirate 0"
+		"Deep River Pirate 1"
+		"Shallow Pond" 10
+		"Flycatcher" 10
+
+fleet "Coalition Pirate"
+	government "Pirate"
+	names "pirate"
+	cargo 1
+	personality plunders
+		#confusion 20
+	variant 1
+		"Arach Hulk (pirate)"
+		"Arach Freighter (pirate)" 2
+		"Kimek Spire (pirate)"
+		"Kimek Thistle (pirate)" 2
+		"Saryd Sojourner (pirate)"
+		"Saryd Traveler (pirate)" 2
+	variant 1
+		"Kimek Spire (pirate)"
+		"Kimek Thistle (pirate)" 2
+		"Arach Hulk (pirate)"
+		"Arach Freighter (pirate)" 2
+		"Saryd Sojourner (pirate)"
+		"Saryd Traveler (pirate)" 2
+	variant 1
+		"Saryd Sojourner (pirate)"
+		"Saryd Traveler (pirate)" 2
+		"Arach Hulk (pirate)"
+		"Arach Freighter (pirate)" 2
+		"Kimek Spire (pirate)"
+		"Kimek Thistle (pirate)" 2

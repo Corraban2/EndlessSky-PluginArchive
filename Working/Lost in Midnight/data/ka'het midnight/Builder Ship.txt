@@ -17,6 +17,7 @@ ship "Veliante'ixis"
 	plural "Veliante'ixises"
 	sprite "ship/veliante'ixis/veliante'ixis"
 	swizzle 0
+	"administrative cost" 10
 	attributes
 		category "Heavy Warship"
 		cost 676000000
@@ -107,6 +108,7 @@ ship "Kai'xeris"
 	plural "Kai'xerises"
 	sprite "ship/kai'xeris"
 	thumbnail "thumbnail/kai'xeris-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Freighter"
 		"cost" 1055000
@@ -134,6 +136,7 @@ ship "Kai'xeris"
 		"Ka'het MHD Generator"
 		"Ka'het Reserve Accumulator" 3
 		"Ka'het Compact Engine"
+		"Builder IFF Transmitter"
 		"Hyperdrive"
 	gun 0 -66
 	engine 0 62
@@ -145,6 +148,7 @@ ship "Kai'teris"
 	plural "Kai'terises"
 	sprite "ship/kai'teris"
 	thumbnail "thumbnail/kai'teris-thumb"
+	"administrative cost" 1
 	attributes
 		category "Transport"
 		"cost" 1290000
@@ -172,6 +176,7 @@ ship "Kai'teris"
 		"Ka'het MHD Generator"
 		"Ka'het Reserve Accumulator" 2
 		"Ka'het Compact Engine"
+		"Builder IFF Transmitter"
 		"Hyperdrive"
 	
 	engine -7 51
@@ -186,6 +191,7 @@ ship "Kai'teris"
 ship "Rao'xeris"
 	plural "Rao'xerises"
 	sprite "ship/rao'xeris"
+	"administrative cost" 4
 	attributes
 		category "Heavy Freighter"
 		"cost" 11900000
@@ -198,7 +204,7 @@ ship "Rao'xeris"
 		"heat dissipation" .31
 		"fuel capacity" 600
 		"ramscoop" 0.58
-		"cargo space" 34
+		"cargo space" 50
 		"outfit space" 339
 		"weapon capacity" 245
 		"engine capacity" 86
@@ -218,12 +224,12 @@ ship "Rao'xeris"
 		"Ka'het Ravager Beam" 2
 		"Builder Anti-Missile" 2
 
-		"Ka'het Shield Restorer"
 		"Ka'het Support Cooling"
 		"Ka'het Scanner"
-		"Cargo Expansion" 8
+		"Cargo Expansion" 10
+		"Builder IFF Transmitter"
 
-		"Ka'het Compact Engine" 2
+		"Ka'het Compact Engine"
 		Hyperdrive
 	engine -51 58
 	engine 51 58
@@ -242,7 +248,7 @@ ship "Rao'xeris"
 	explode "medium explosion" 25
 	explode "large explosion" 15
 	"final explode" "final explosion medium"
-	description "A deep space mining vessel, the Rao'xeris was used to transport materials harvested in the northern reaches of Builder space to processing facilities in the southern region. When the Ka'het invasion began, many found that it could easily be converted into a capable warship."
+	description "A deep space mining vessel, the Rao'xeris was used to transport materials harvested in the northern reaches of Builder space to processing facilities in the southern region. When the Ka'het invasion began, many found that it could easily be converted into a combat warship."
 	description "	This ship is capable of diving into the harsh atmosphere of a gas giant."
 
 
@@ -250,6 +256,7 @@ ship "Rao'xeris"
 ship "Ool'mar"
 	sprite "ship/ool'mar"
 	thumbnail "thumbnail/ool'mar-thumb"
+	"administrative cost" 0
 	attributes
 		category "Drone"
 		"cost" 1270000
@@ -284,7 +291,7 @@ ship "Ool'mar"
 	engine 0 34.5 1.5
 	explode "tiny explosion" 19
 	explode "small explosion" 16
-	description "Featuring the Builders best ramscoop technology with integrated fuel stabilizers and storage tanks, the Ool'mar was specifically designed for the purpose of harvesting and transporting hyperspace fuel. With the collapse of the Builder civilization, there was no longer any need to harvest fuel. Most Ool'mar can be found wandering aimlessly, unable to off load the contents of their fuel tanks because Builder stations lack the capacity to accept their cargo."
+	description "Featuring the Builders' best ramscoop technology with integrated fuel stabilizers and storage tanks, the Ool'mar was specifically designed for the purpose of harvesting and transporting hyperspace fuel. With the collapse of the Builder civilization, there was no longer any need to harvest fuel. Most Ool'mar can be found wandering aimlessly, unable to off load the contents of their fuel tanks because Builder stations lack the capacity to accept their cargo."
 	description "	Drones do not come equipped with a hyperdrive. You cannot carry a drone unless you have a ship in your fleet with a drone bay."
 	description "	This ship is capable of diving into the harsh atmosphere of a gas giant."
 

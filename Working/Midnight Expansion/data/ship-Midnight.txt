@@ -15,6 +15,7 @@ ship "Avialae"
 	plural "Avialans"
 	sprite "ship/Becca swan"
 	thumbnail "thumbnail/Becca swan"
+	"administrative cost" 8
 	attributes
 		licenses
 			"Remnant Capital"
@@ -96,28 +97,10 @@ ship "Avialae" "Avialae (Disarmed)"
 
 
 
-# Can also be used as a timer ship.
-ship "Fast Timer Ship"
-	"never disabled"
-	attributes
-		"heat dissipation" 1
-		"hull" 1
-		"mass" 100
-		"drag" 5
-		"automaton" 1
-		"thrust" 10
-		"turn" 600
-	outfits
-		"Timer Weapon"
-		"Timer Turret"
-	gun 0 0
-	turret 0 0
-
-
-
 ship "Ekfar Tek 23"
 	sprite "ship/Midnight-Becca-far ek tek 243"
 	thumbnail "thumbnail/Midnight-Becca-far ek tek 243"
+	"administrative cost" 4
 	attributes
 		category "Heavy Freighter"
 		"cost" 16730000
@@ -150,7 +133,6 @@ ship "Ekfar Tek 23"
 		"Systems Core (Medium)"
 		"Large Heat Shunt"
 		"Small Heat Shunt" 2
-		"Fuel Processor"
 		"Obsolete Transceiver"
 
 		"Steering (Lunar Class)"
@@ -180,7 +162,6 @@ ship "Ekfar Tek 23" "Ekfar Tek 23 (Salvaged)"
 		"Systems Core (Medium)"
 		"Large Heat Shunt"
 		"Small Heat Shunt" 2
-		"Fuel Processor"
 		"Obsolete Transceiver"
 		"Steering (Lunar Class)"
 		"Thruster (Lunar Class)"
@@ -191,6 +172,7 @@ ship "Ekfar Tek 23" "Ekfar Tek 23 (Salvaged)"
 ship "Korbatar Makwar"
 	sprite "ship/Midnight X-27 korath battleship"
 	thumbnail "thumbnail/X-27 Korath Battleship thumbnail"
+	"administrative cost" 50
 	attributes
 		category "Superheavy"
 		cost 276900000
@@ -198,15 +180,15 @@ ship "Korbatar Makwar"
 		hull 176770
 		"required crew" 2134
 		"bunks" 3192
-		"mass" 34708
-		"drag" 208
-		"heat dissipation" .09
+		"mass" 25452
+		"drag" 152.4
+		"heat dissipation" .10
 		"solar collection" 3.8
 		"fuel capacity" 1000
 		"cargo space" 932
 		"outfit space" 3830
 		"weapon capacity" 1584
-		"engine capacity" 360
+		"engine capacity" 430
 		"tactical scan power" 90
 		"radar jamming" 60
 		weapon
@@ -217,31 +199,33 @@ ship "Korbatar Makwar"
 	outfits
 		"Afterburner (Stellar Class)"
 		"Banisher Grav-Turret" 4
+		"Cluster Mine" 610
+		"Cluster Mine Layer" 10
 		"Cluster Mine Rack" 10
-		"Cluster Mine" 170
 		"Double Plasma Core"
 		"Firestorm Battery" 3
-		"Firestorm Torpedo" 78
-		"Firestorm Torpedo Rack" 3
-		"Fuel Processor" 4
+		"Firestorm Torpedo" 51
+		"Firestorm Torpedo Rack" 2
+		"Fuel Processor"
 		"Fuel Refiner"
 		"Jump Drive"
 		"Korath Scanner"
-		"Korath Scattermine" 10
 		"Langrage Hyper-Heaver"
-		"Large Heat Shunt" 8
+		"Large Heat Shunt" 9
 		"Liquid Sodium Cooler" 5
-		"Microbot Defense Station" 110
+		"Microbot Defense Station" 105
 		"Plasma Core"
 		"Reverser (Stellar Class)"
 		"Scram Drive"
-		"Small Heat Shunt" 2
+		"Steering (Lunar Class)"
 		"Steering (Stellar Class)"
 		"Systems Core (Huge)"
-		"Systems Core (Large)" 2
-		"Thermal Repeater Rifle" 1200
+		"Systems Core (Large)"
+		"Systems Core (Medium)"
+		"Thermal Repeater Rifle" 1210
 		"Thermal Scorcher" 6
 		"Thermal Scorcher Turret" 6
+		"Thruster (Lunar Class)"
 		"Thruster (Stellar Class)"
 		"Triple Plasma Core" 4
 		"Warder Anti-Missile" 6
@@ -293,25 +277,25 @@ ship "Korbatar Makwar"
 	gun 69 -497 "Thermal Scorcher"
 	gun -55.5 -497 "Thermal Scorcher"
 	gun 55.5 -497 "Thermal Scorcher"
-	gun -180 -135 "Korath Scattermine"
+	gun -180 -135 "Cluster Mine Layer"
 		angle 270
-	gun 180 -135 "Korath Scattermine"
+	gun 180 -135 "Cluster Mine Layer"
 		angle 90
-	gun -180 -97 "Korath Scattermine"
+	gun -180 -97 "Cluster Mine Layer"
 		angle 270
-	gun 180 -97 "Korath Scattermine"
+	gun 180 -97 "Cluster Mine Layer"
 		angle 90
-	gun -180 -59 "Korath Scattermine"
+	gun -180 -59 "Cluster Mine Layer"
 		angle 270
-	gun 180 -59 "Korath Scattermine"
+	gun 180 -59 "Cluster Mine Layer"
 		angle 90
-	gun -180 -21 "Korath Scattermine"
+	gun -180 -21 "Cluster Mine Layer"
 		angle 270
-	gun 180 -21 "Korath Scattermine"
+	gun 180 -21 "Cluster Mine Layer"
 		angle 90
-	gun -180 17 "Korath Scattermine"
+	gun -180 17 "Cluster Mine Layer"
 		angle 270
-	gun 180 17 "Korath Scattermine"
+	gun 180 17 "Cluster Mine Layer"
 		angle 90
 	turret -81.5 -477 "Warder Anti-Missile"
 	turret 81.5 -477 "Warder Anti-Missile"
@@ -350,7 +334,7 @@ ship "Korbatar Makwar" "Korbatar Makwar (Exile Upgrade)"
 		"Firelight Missile" 180
 		"Firelight Missile Bank" 6
 		"Firelight Storage Rack" 6
-		"Fuel Processor" 4
+		"Fuel Processor"
 		"Fuel Refiner"
 		"Jump Drive"
 		"Korath Inferno" 3
@@ -358,20 +342,23 @@ ship "Korbatar Makwar" "Korbatar Makwar (Exile Upgrade)"
 		"Langrage Hyper-Heaver"
 		"Large Heat Shunt" 8
 		"Liquid Sodium Cooler" 4
-		"Magnetic Mine" 170
+		"Magnetic Mine" 520
 		"Magnetic Mine Deployer" 10
 		"Magnetic Mine Rack" 10
-		"Microbot Defense Station" 110
-		"Outfits Expansion" 3
+		"Magnetic Mine Depot" 2
+		"Microbot Defense Station" 105
+		"Outfits Expansion" 2
 		"Plasma Core"
 		"Reverser (Stellar Class)"
 		"Scram Drive"
 		"Shock-Strike Turret" 6
-		"Small Heat Shunt"
+		"Steering (Lunar Class)"
 		"Steering (Stellar Class)"
 		"Systems Core (Huge)"
-		"Systems Core (Large)" 2
+		"Systems Core (Large)"
+		"Systems Core (Medium)"
 		"Thermal Repeater Rifle" 1200
+		"Thruster (Lunar Class)"
 		"Thruster (Stellar Class)"
 		"Triple Plasma Core" 4
 		"Warder Anti-Missile" 6
@@ -415,16 +402,20 @@ ship "Korbatar Makwar" "Korbatar Makwar (Exile Upgrade)"
 ship "Korbatar Makwar" "Korbatar Makwar (Efret Upgrade)"
 	"display name" "Shrine-Battleship"
 	outfits
+		"Arkrof GP Hybrid Steering"
 		"Arkrof GP Hybrid Thruster"
 		"Banisher Grav-Turret" 4
-		"Cluster Mine" 260
+		"Cargo Expansion" 4
+		"Cluster Mine" 610
 		"Cluster Mine Layer" 10
 		"Cluster Mine Rack" 10
-		"Double Plasma Core" 2
+		"Double Plasma Core"
 		"Farves GP Hybrid Steering"
 		"Farves GP Hybrid Thruster"
-		"Fuel Processor" 4
+		"Fuel Processor"
 		"Fuel Refiner"
+		"Gaktem GP Hybrid Steering"
+		"Gaktem GP Hybrid Thruster"
 		"Grab-Strike Turret" 3
 		"Jump Drive (Broken)"
 		"Korath Defense Drone" 1200
@@ -434,19 +425,18 @@ ship "Korbatar Makwar" "Korbatar Makwar (Efret Upgrade)"
 		"Korath Scanner"
 		"Korath Shocker Turret" 6
 		"Langrage Hyper-Heaver"
-		"Large Heat Shunt" 6
-		"Liquid Sodium Cooler" 2
-		"Microbot Defense Station" 110
+		"Large Heat Shunt" 12
+		"Microbot Defense Station" 105
 		"Nelmeb GP Hybrid Reverser"
 		"Nelmeb GP Hybrid Steering"
-		"Nelmeb GP Hybrid Thruster" 2
-		"Outfits Expansion"
+		"Nelmeb GP Hybrid Thruster"
 		"Plasma Core"
 		"Scram Drive"
-		"Small Heat Shunt" 2
+		"Small Heat Shunt" 6
 		"Systems Core (Huge)"
-		"Systems Core (Large)" 2
-		"Triple Plasma Core" 3
+		"Systems Core (Large)"
+		"Systems Core (Medium)"
+		"Triple Plasma Core" 4
 		"Warder Anti-Missile" 6
 	gun "Korath Fireswarm Launcher"
 	gun "Korath Fireswarm Launcher"
@@ -490,6 +480,7 @@ ship "Korbatar Makwar" "Korbatar Makwar (Efret Upgrade)"
 ship "Modified Cargo Star"
 	sprite "ship/AESmisc proto_freighter"
 	thumbnail "thumbnail/AESmisc proto_freighter"
+	"administrative cost" 4
 	attributes
 		category "Heavy Freighter"
 		"cost" 5500000
@@ -581,6 +572,7 @@ ship "Korath Scouter"
 	"display name" "Sku'uta"
 	sprite "ship/Midnight PR4987 ravager"
 	thumbnail "thumbnail/PR4987 ravager"
+	"administrative cost" 2
 	attributes
 		category "Medium Warship"
 		"cost" 8285000
@@ -639,6 +631,7 @@ ship "Korath Scouter"
 ship "Magpie"
 	sprite "ship/Becca robin"
 	thumbnail "thumbnail/Becca robin"
+	"administrative cost" 4
 	attributes
 		category "Medium Warship"
 		licenses
@@ -737,6 +730,7 @@ ship "Magpie" "Magpie (Grave Digger)"
 ship "Locust"
 	sprite "ship/Midnight AESmisc hornet"
 	thumbnail "thumbnail/Midnight AESmisc hornet"
+	"administrative cost" 0
 	attributes
 		category "Drone"
 		licenses
@@ -774,6 +768,7 @@ ship "Locust"
 ship "Ogopogo"
 	sprite "ship/AESmisc hydra"
 	thumbnail "thumbnail/AESmisc hydra"
+	"administrative cost" 6
 	attributes
 		category "Heavy Warship"
 		"cost" 11800000
@@ -844,6 +839,7 @@ ship "Ogopogo"
 ship "Wretched Hive"
 	sprite "ship/AESmisc bulwark"
 	thumbnail "thumbnail/AESmisc bulwark"
+	"administrative cost" 6
 	attributes
 		category "Heavy Warship"
 		cost 6600000

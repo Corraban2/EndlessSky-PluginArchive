@@ -93,7 +93,7 @@ mission "Midnight Blaster Roulette 1"
 	source Bailey
 	to offer
 		has "Midnight Blaster Roulette 0 (Assist): done"
-		has "outfit (flagship installed): Blaster Charger"
+		has "outfit (removable): Blaster Charger"
 	on offer
 		conversation
 			scene "outfit/blaster charger"
@@ -238,7 +238,7 @@ mission "Midnight Blaster Roulette 2"
 	to offer
 		"credits" >= 20000
 		has "Midnight Blaster Roulette 1: offered"
-		has "outfit (flagship installed): Modified Blaster Pistol"
+		has "outfit (removable): Modified Blaster Pistol"
 		random < 50
 	on accept
 		payment -10000
@@ -549,7 +549,7 @@ mission "Midnight Independent Cargo Salvage (large)"
 
 
 mission "Midnight Research Consolidation"
-	entering
+	transition
 	invisible
 	destination Earth
 	to offer
@@ -677,10 +677,10 @@ mission "Mining: Claim Jumpers"
 		random < 5
 		has "flagship attribute: asteroid scan power"
 	on offer
-		"reputation: Bounty (Disguised)" >?= 0
+		"reputation: Bounty (Disguised)" >?= 1
 	npc
 		government "Bounty (Disguised)"
-		personality launching mining harvests timid
+		personality launching mining harvests timid marked
 		fleet
 			names "pirate"
 			cargo 0
@@ -711,11 +711,11 @@ mission "Mining: Claim Jumpers"
 			variant 1
 				"Star Barge (Miner)"
 		on kill
-			"reputation: Bounty (Disguised)" >?= 0
+			"reputation: Bounty (Disguised)" >?= 1
 	on fail
-		"reputation: Bounty (Disguised)" >?= 0
+		"reputation: Bounty (Disguised)" >?= 1
 	on complete
-		"reputation: Bounty (Disguised)" >?= 0
+		"reputation: Bounty (Disguised)" >?= 1
 
 mission "Mining: Iron Challenge"
 	deadline 7
@@ -818,7 +818,7 @@ mission "Rogue Asteroid (Pirate)"
 					decline
 	npc kill
 		government "Bounty"
-		personality target uninterested forbearing waiting staying
+		personality target uninterested forbearing waiting staying mute
 		fleet
 			names "asteroid names"
 			cargo 0
@@ -839,7 +839,7 @@ mission "Rogue Asteroid (Rich World)"
 	"apparent payment" 10000
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		attributes "paradise" "urban" "rich" "tourist"
+		attributes "paradise" "urban" "rich" "tourist" "wealthy"
 		not attributes "uninhabited"
 	to offer
 		"combat rating" > 100
@@ -859,7 +859,7 @@ mission "Rogue Asteroid (Rich World)"
 					decline
 	npc kill
 		government "Bounty"
-		personality target uninterested waiting staying mute
+		personality target uninterested waiting staying mute marked
 		fleet
 			names "asteroid names"
 			cargo 3
@@ -970,7 +970,7 @@ mission "Blackwing Scan Request"
 		dialog `They're not happy with the scanner data of the <npc> and only pay half of the reward...`
 
 
-
+# Lares has been renamed to Verdandi
 mission "Lares Camping (Bums)"
 	minor
 	invisible
@@ -1087,16 +1087,11 @@ mission "Lares Camping (Scavenger)"
 
 mission "Lares Exploring"
 	minor
+	invisible
 	repeat
 	source "Lares"
 	to offer
-		or
-			and
-				not "Lares Exploring: failed"
-				random < 15
-			and
-				has "Lares Exploring: failed"
-				random < 10
+		random < 10
 	on offer
 		conversation
 			`It's a beautiful day for a hike...`
@@ -1239,52 +1234,72 @@ mission "Pirate Raid: Shield Suppressor"
 	npc
 		government "Pirate"
 		personality nemesis harvests plunders entering
-		fleet "pirate raid" 2
+		fleet "pirate raid"
 	npc evade
 		to spawn
-			"combat rating" > 1097
+			"armament deterrence" >= 6
 		government "Pirate"
 		personality nemesis harvests plunders entering
 		fleet "pirate raid" 2
 		fleet "Marauder fleet I"
 	npc evade
 		to spawn
-			"combat rating" > 2981
+			"armament deterrence" >= 10
 		government "Pirate"
 		personality nemesis harvests plunders entering
 		fleet "pirate raid" 2
 		fleet "Marauder fleet II"
 	npc evade
 		to spawn
-			"combat rating" > 8103
+			"armament deterrence" >= 18
 		government "Pirate"
 		personality nemesis harvests plunders entering
-		fleet "Marauder fleet VII"
 		fleet "Marauder fleet III"
 	npc evade
 		to spawn
-			"combat rating" > 22026
+			"armament deterrence" >= 24
 		government "Pirate"
 		personality nemesis harvests plunders entering
-		fleet "Marauder fleet VIII"
 		fleet "Marauder fleet IV"
 	npc evade
 		to spawn
-			"combat rating" > 59874
+			"armament deterrence" >= 30
 		government "Pirate"
 		personality nemesis harvests plunders entering
-		fleet "Marauder fleet IX"
 		fleet "Marauder fleet V"
 	npc evade
 		to spawn
-			"combat rating" > 162755
+			"armament deterrence" >= 36
 		government "Pirate"
 		personality nemesis harvests plunders entering
-		fleet "Marauder fleet X"
 		fleet "Marauder fleet VI"
 	npc evade
 		to spawn
-			"combat rating" > 442413
+			"armament deterrence" >= 42
+		government "Pirate"
+		personality nemesis harvests plunders entering
+		fleet "Marauder fleet VII"
+	npc evade
+		to spawn
+			"armament deterrence" >= 48
+		government "Pirate"
+		personality nemesis harvests plunders entering
+		fleet "Marauder fleet VIII"
+	npc evade
+		to spawn
+			"armament deterrence" >= 54
+		government "Pirate"
+		personality nemesis harvests plunders entering
+		fleet "Marauder fleet IX"
+	npc evade
+		to spawn
+			"armament deterrence" >= 60
+		government "Pirate"
+		personality nemesis harvests plunders entering
+		fleet "Marauder fleet X"
+	npc evade
+		to spawn
+			"armament deterrence" >= 66
 		government "Pirate"
 		personality nemesis harvests plunders entering
 		fleet "Large Southern Pirates"
@@ -1306,8 +1321,7 @@ mission "Rogue Asteroid (Poor World)"
 	description "A rogue asteroid may collide with <destination>. Destroy it, then land on <planet> to claim the reward (<payment>)."
 	source
 		government "Republic" "Syndicate" "Free Worlds" "Independent" "Neutral"
-		not attributes "paradise" "urban" "rich" "tourist"
-		not attributes "uninhabited"
+		not attributes "paradise" "urban" "rich" "tourist" "wealthy" "uninhabited"
 	to offer
 		never
 	on offer
@@ -1325,7 +1339,7 @@ mission "Rogue Asteroid (Poor World)"
 					decline
 	npc kill
 		government "Bounty"
-		personality target uninterested waiting staying mute
+		personality target uninterested waiting staying mute marked
 		fleet
 			names "asteroid names"
 			cargo 3

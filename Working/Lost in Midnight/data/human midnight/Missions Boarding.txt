@@ -1326,6 +1326,7 @@ mission "Midnight Boarding Captives (Core, Small)"
 		payment
 		payment 40000
 		"reputation: Pirate" += 5
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (Core, Medium)"
@@ -1372,6 +1373,7 @@ mission "Midnight Boarding Captives (Core, Medium)"
 		payment
 		payment 80000
 		"reputation: Pirate" += 10
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (Core, Large)"
@@ -1426,6 +1428,7 @@ mission "Midnight Boarding Captives (Core, Large)"
 		payment
 		payment 120000
 		"reputation: Pirate" += 20
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 
@@ -1458,7 +1461,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Small)"
 		system
 			distance 2 3
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1468,6 +1471,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Small)"
 		payment
 		payment 40000
 		"reputation: Pirate" += 5
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (Dirt Belt, Medium)"
@@ -1499,7 +1503,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Medium)"
 		system
 			distance 2 3
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1509,7 +1513,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Medium)"
 		government "Militia"
 		system destination
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia capital"
 			cargo 0
@@ -1519,6 +1523,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Medium)"
 		payment
 		payment 80000
 		"reputation: Pirate" += 10
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (Dirt Belt, Large)"
@@ -1550,7 +1555,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Large)"
 		system
 			distance 2 3
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1560,7 +1565,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Large)"
 		government "Militia"
 		system destination
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia capital"
 			cargo 0
@@ -1569,7 +1574,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Large)"
 	npc
 		government "Militia"
 		personality entering heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1579,6 +1584,7 @@ mission "Midnight Boarding Captives (Dirt Belt, Large)"
 		payment
 		payment 120000
 		"reputation: Pirate" += 20
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 
@@ -1617,6 +1623,7 @@ mission "Midnight Boarding Captives (North, Small)"
 		payment
 		payment 40000
 		"reputation: Pirate" += 5
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (North, Medium)"
@@ -1666,6 +1673,7 @@ mission "Midnight Boarding Captives (North, Medium)"
 		payment
 		payment 80000
 		"reputation: Pirate" += 10
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (North, Large)"
@@ -1723,6 +1731,7 @@ mission "Midnight Boarding Captives (North, Large)"
 		payment
 		payment 120000
 		"reputation: Pirate" += 20
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 
@@ -1754,7 +1763,7 @@ mission "Midnight Boarding Captives (South, Small)"
 		system
 			distance 2 3
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1776,6 +1785,7 @@ mission "Midnight Boarding Captives (South, Small)"
 		payment
 		payment 40000
 		"reputation: Pirate" += 5
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (South, Medium)"
@@ -1806,7 +1816,7 @@ mission "Midnight Boarding Captives (South, Medium)"
 		system
 			distance 2 3
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1818,7 +1828,7 @@ mission "Midnight Boarding Captives (South, Medium)"
 		government "Militia"
 		system destination
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia capital"
 			cargo 0
@@ -1851,6 +1861,7 @@ mission "Midnight Boarding Captives (South, Medium)"
 		payment
 		payment 80000
 		"reputation: Pirate" += 10
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 mission "Midnight Boarding Captives (South, Large)"
@@ -1881,7 +1892,7 @@ mission "Midnight Boarding Captives (South, Large)"
 		system
 			distance 2 3
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1893,7 +1904,7 @@ mission "Midnight Boarding Captives (South, Large)"
 		government "Militia"
 		system destination
 		personality waiting heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia capital"
 			cargo 0
@@ -1904,7 +1915,7 @@ mission "Midnight Boarding Captives (South, Large)"
 			not "event: war begins"
 		government "Militia"
 		personality entering heroic surveillance
-			confusion 20
+			#confusion 20
 		fleet
 			names "militia small"
 			cargo 0
@@ -1947,6 +1958,7 @@ mission "Midnight Boarding Captives (South, Large)"
 		payment
 		payment 120000
 		"reputation: Pirate" += 20
+		set "license: Nightmare Fuel"
 		dialog `You sell the captives taken from the <origin> into slavery. Some will be sent off into a life of hard labor while others are destined be the victims of unspeakable horrors. The slavers look them over and hand you <payment>, what they consider a fair price for fresh inventory.`
 
 
@@ -1958,6 +1970,7 @@ mission "Midnight Boarding Pillagers"
 	source
 		attributes "required crew"
 		not attributes "automaton"
+		not government "Ka'het" "Ka'het (Infighting)" "Ka'sei" "Aberrant"
 		category "Utility" "Medium Warship" "Heavy Warship" "Superheavy"
 	destination Earth
 	to offer
@@ -2095,7 +2108,7 @@ mission "Midnight Boarding Independent Slave Liberation (small)"
 	description "Take <bunks> of freed slaves to <destination>. They can offer no reward other than goodwill."
 	passengers 2 3
 	source
-		government "Pirate" "Pirate (Rivals)"
+		government "Pirate" "Pirate (Rivals)" "Bounty Hunter" "Pirate (Rival)"
 		outfits "Brig"
 	destination
 		distance 1 3
@@ -2118,7 +2131,7 @@ mission "Midnight Boarding Independent Slave Liberation (medium)"
 	description "Take <bunks> of freed slaves to <destination>. They can offer no reward other than goodwill."
 	passengers 4 6
 	source
-		government "Pirate" "Pirate (Rivals)"
+		government "Pirate" "Pirate (Rivals)" "Bounty Hunter" "Pirate (Rival)"
 		outfits "Brig"
 	destination
 		distance 1 3
@@ -2141,7 +2154,7 @@ mission "Midnight Boarding Independent Slave Liberation (large)"
 	description "Take <bunks> of freed slaves to <destination>. They can offer no reward other than goodwill."
 	passengers 7 9
 	source
-		government "Pirate" "Pirate (Rivals)"
+		government "Pirate" "Pirate (Rivals)" "Bounty Hunter" "Pirate (Rival)"
 		outfits "Brig"
 	destination
 		distance 1 3
@@ -2179,14 +2192,14 @@ mission "Midnight Boarding SOS (Bounty)"
 	npc
 		government "Bounty Hunter"
 		personality entering heroic frugal
-			confusion 10
+			#confusion 10
 		fleet "Bounty Hunters"
 	npc
 		to spawn
 			random < 50
 		government "Bounty Hunter"
 		personality entering heroic frugal
-			confusion 10
+			#confusion 10
 		fleet "Bounty Hunters"
 
 mission "Midnight Boarding SOS (Deep)"
@@ -2205,7 +2218,7 @@ mission "Midnight Boarding SOS (Deep)"
 	npc
 		government "Deep Security"
 		personality entering heroic frugal
-			confusion 10
+			#confusion 10
 		fleet "Small Deep Security"
 
 mission "Midnight Boarding SOS (Militia)"
@@ -2224,7 +2237,7 @@ mission "Midnight Boarding SOS (Militia)"
 	npc
 		government "Militia"
 		personality entering heroic frugal
-			confusion 20
+			#confusion 20
 		fleet "Small Militia"
 
 mission "Midnight Boarding SOS (Republic)"
@@ -2243,7 +2256,7 @@ mission "Midnight Boarding SOS (Republic)"
 	npc
 		government "Republic"
 		personality entering heroic frugal
-			confusion 10
+			#confusion 10
 		fleet "Small Republic"
 
 mission "Midnight Boarding SOS (Syndicate)"
@@ -2262,7 +2275,7 @@ mission "Midnight Boarding SOS (Syndicate)"
 	npc
 		government "Syndicate"
 		personality entering heroic frugal
-			confusion 10
+			#confusion 10
 		fleet "Small Syndicate"
 
 

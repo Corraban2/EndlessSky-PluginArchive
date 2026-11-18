@@ -18,16 +18,8 @@ mission "Intro Cargo [0]"
 	source "New Boston"
 	destination "New Greenland"
 	to offer
-		not "ships: Light Warship"
-		not "ships: Medium Warship"
-		not "ships: Heavy Warship"
-		not "ships: Superheavy" 
-		not "ships: Utility"
-		not "ships: Space Liner"
-		not "ships: Heavy Freighter"
-		not "Intro [1 Freighter]: offered"
-		not "Intro [1 Interceptor]: offered"
-		not "Intro [1 Transport]: offered"
+		"days since start" == 0
+		has "start: default"
 	on accept
 		conversation
 			scene "outfit/cooling ducts"
@@ -233,7 +225,7 @@ mission "Intro Escort Add-on [3 Interceptor]"
 	npc
 		government "Pirate"
 		personality nemesis entering harvests plunders
-			confusion 40
+			#confusion 40
 		fleet
 			names "pirate"
 			variant
@@ -241,7 +233,7 @@ mission "Intro Escort Add-on [3 Interceptor]"
 	npc
 		government "Pirate"
 		personality nemesis staying harvests plunders
-			confusion 40
+			#confusion 40
 		system destination
 		fleet
 			names "pirate"
@@ -305,6 +297,7 @@ mission "Intro Bounty Hunting: Tweedledee & Tweedledum"
 		not "Bounty Hunting (Marauder IX): failed"
 		not "Bounty Hunting (Marauder X): failed"
 		"ships: Interceptor" + "ships: Light Warship" >= 1
+		"reputation: Bounty Hunter (licensed)" >= 0
 		"combat rating" < 300
 		random < 70
 	on offer
@@ -330,21 +323,20 @@ mission "Intro Bounty Hunting: Tweedledee & Tweedledum"
 				`	"<first> <last>, pilot of the <ship>."`
 			`	"Nice to meet you <first>! Let's catch those bounties!"`
 				accept
-
 	on enter
 		dialog `Carol hails you: "Bounties tend to be within one or two systems from where the job was offered. Particularly troublesome targets can be a little farther away."`
 	on enter
-		dialog `Carol hails you: "Don't be discouraged if they aren't here. Just keep searching the systems near <system> and you'll find them eventually!"`
+		dialog `Carol hails you: "Back in the old days, we had to blindly search around for bounty targets. We now have eyewitness sightings posted online to guide us. Check the mission screen to see the target's last known location."`
 	npc accompany save
 		government "Bounty Hunter (licensed)"
 		personality escort timid vindictive
 		ship "Scout (Isochronal)" "Cheshire Cat"
 	npc kill
-		government "Bounty"
+		government "Bounty (Midnight)"
 		system
 			distance 1 2
-		personality target waiting staying disables harvests
-			confusion 20
+		personality target waiting staying disables harvests tracked
+			#confusion 20
 		ship "Berserker (Energy Cannons)" "Tweedledee"
 		ship "Berserker (Energy Cannons)" "Tweedledum"
 		dialog `Carol hails you: "Some bounty jobs require you to board and capture the fugitives. But for most it's enough to eliminate the targets. Let's get back to <destination> and claim our reward."`

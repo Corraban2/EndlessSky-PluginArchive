@@ -651,16 +651,18 @@ ship "Subsidurial" "Subsidurial Weaponized A"
 	"swizzle" 0
 	add attributes
 		"cargo space" -35
-		"outfit space" 80
-		"weapon capacity" 80
+		"outfit space" 62
+		"weapon capacity" 44
 	outfits
 		Mandibles? 3
-		"Heavy Laser Turret" 2
+		"Mining Laser Turret" 2
+		"KP-6 Photovoltaic Array"
+		"Supercapacitor"
 	gun Mandibles?
 	gun Mandibles?
 	gun Mandibles?
-	turret "Heavy Laser Turret"
-	turret "Heavy Laser Turret"
+	turret "Mining Laser Turret"
+	turret "Mining Laser Turret"
 
 ship "Subsidurial" "Subsidurial Weaponized B"
 	sprite "ship/subsidurial weaponized"
@@ -668,11 +670,13 @@ ship "Subsidurial" "Subsidurial Weaponized B"
 	"swizzle" 0
 	add attributes
 		"cargo space" -35
-		"outfit space" 80
-		"weapon capacity" 80
+		"outfit space" 62
+		"weapon capacity" 44
 	outfits
 		Mandibles? 3
 		"Laser Turret" 2
+		"KP-6 Photovoltaic Array"
+		"Supercapacitor"
 	gun Mandibles?
 	gun Mandibles?
 	gun Mandibles?
@@ -685,11 +689,13 @@ ship "Subsidurial" "Subsidurial Weaponized C"
 	"swizzle" 0
 	add attributes
 		"cargo space" -35
-		"outfit space" 80
-		"weapon capacity" 80
+		"outfit space" 62
+		"weapon capacity" 44
 	outfits
 		Mandibles? 3
 		"Modified Blaster Turret" 2
+		"KP-6 Photovoltaic Array"
+		"Supercapacitor"
 	gun Mandibles?
 	gun Mandibles?
 	gun Mandibles?
@@ -702,16 +708,32 @@ ship "Subsidurial" "Subsidurial Weaponized D"
 	"swizzle" 0
 	add attributes
 		"cargo space" -35
-		"outfit space" 80
-		"weapon capacity" 80
+		"outfit space" 62
+		"weapon capacity" 44
 	outfits
 		Mandibles? 3
-		"Quad Mod Blaster Turret" 2
+		"Kludge Blaster Turret" 2
+		"KP-6 Photovoltaic Array"
+		"Supercapacitor"
 	gun Mandibles?
 	gun Mandibles?
 	gun Mandibles?
-	turret "Quad Mod Blaster Turret"
-	turret "Quad Mod Blaster Turret"
+	turret "Kludge Blaster Turret"
+	turret "Kludge Blaster Turret"
+
+fleet "Weaponized Subsidurials"
+	government "Indigenous Lifeform"
+	names subsidurial
+	cargo 0
+	personality harvests mute timid
+	variant
+		"Subsidurial Weaponized A"
+	variant
+		"Subsidurial Weaponized B"
+	variant
+		"Subsidurial Weaponized C"
+	variant
+		"Subsidurial Weaponized C"
 
 mission "Day of Subsidurius"
 	minor
@@ -749,50 +771,29 @@ mission "Day of Subsidurius"
 		fleet "Small Militia"
 	npc evade
 		to spawn
-			"ships: Heavy Freighter" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 1
+			"armament deterrence" >= 8
 		government "Pirate"
 		personality target waiting vindictive coward mute
-			confusion 120
-		fleet
-			names subsidurial
-			cargo 0
-			variant
-				"Subsidurial Weaponized A"
-				"Subsidurial Weaponized B"
-				"Subsidurial Weaponized C"
-				"Subsidurial Weaponized D"
+			#confusion 120
+		fleet "Weaponized Subsidurials"
 	npc evade
 		to spawn
-			"ships: Heavy Freighter" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 3
+			"armament deterrence" >= 9
 		government "Pirate"
 		personality target waiting vindictive coward mute
-			confusion 120
-		fleet
-			names subsidurial
-			cargo 0
-			variant
-				"Subsidurial Weaponized A"
-				"Subsidurial Weaponized B"
-				"Subsidurial Weaponized C"
-				"Subsidurial Weaponized D"
+			#confusion 120
+		fleet "Weaponized Subsidurials"
 	npc evade
 		to spawn
-			"ships: Heavy Freighter" + "ships: Medium Warship" + "ships: Heavy Warship" + "ships: Utility" + "ships: Superheavy" > 5
+			"armament deterrence" >= 10
 		government "Pirate"
 		personality target waiting vindictive coward mute
-			confusion 120
-		fleet
-			names subsidurial
-			cargo 0
-			variant
-				"Subsidurial Weaponized A"
-				"Subsidurial Weaponized B"
-				"Subsidurial Weaponized C"
-				"Subsidurial Weaponized D"
+			#confusion 120
+		fleet "Weaponized Subsidurials"
 	npc evade
 		government "Pirate"
 		personality target waiting vindictive coward mute
-			confusion 120
+			#confusion 120
 		fleet
 			names subsidurial
 			cargo 0
@@ -804,7 +805,7 @@ mission "Day of Subsidurius"
 	npc kill
 		government "Pirate"
 		personality target waiting staying vindictive
-			confusion 20
+			#confusion 20
 		ship "Subsidurius" "Subsidurius"
 		dialog `The Subsidurius has been defeated. Return to <planet> to collect your reward.`
 	on visit
@@ -830,7 +831,7 @@ mission "Weaponized Subsidurial Bounty"
 	npc
 		government "Bounty"
 		personality target entering harvests mute coward
-			confusion 120
+			#confusion 120
 		fleet
 			names subsidurial
 			cargo 0
@@ -853,7 +854,7 @@ mission "Weaponized Subsidurial Bounty"
 	npc kill
 		government "Bounty"
 		personality target entering staying vindictive
-			confusion 20
+			#confusion 20
 		fleet "Poachers"
 		dialog phrase "generic hunted bounty eliminated and payment dialog"
 		on kill
@@ -876,7 +877,7 @@ mission "Weaponized Subsidurial Stray"
 		system
 			distance 10
 		personality target mining harvests mute
-			confusion 120
+			#confusion 120
 		fleet
 			names subsidurial
 			cargo 0
@@ -919,53 +920,57 @@ mission "Subsidurial Porter"
 	npc evade
 		government "Pirate"
 		personality entering harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Core Pirates"
-	npc evade
-		to spawn
-			"combat rating" > 600
-		government "Pirate"
-		system
-			distance 1 2
-		personality harvests plunders
-			confusion 10
-		fleet "Large Core Pirates"
 	npc evade
 		government "Pirate"
 		system
 			distance 2 3
 		personality harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Core Pirates"
 	npc evade
+		to spawn
+			"armament deterrence" >= 7
+		government "Pirate"
+		system
+			distance 1 2
+		personality harvests plunders
+			#confusion 10
+		fleet "Large Core Pirates"
+	npc evade
+		to spawn
+			"armament deterrence" >= 9
 		government "Pirate"
 		system
 			distance 3 4
 		personality harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Large Core Pirates"
 	npc evade
 		to spawn
-			"combat rating" > 800
+			"armament deterrence" >= 11
 		government "Pirate"
 		system
 			distance 4 5
 		personality harvests plunders
-			confusion 10
+			#confusion 10
 		fleet "pirate raid"
 	npc evade
+		to spawn
+			"armament deterrence" >= 13
 		government "Pirate"
 		system destination
 		personality staying harvests plunders
-			confusion 20
-		fleet "pirate raid" 2
+			#confusion 20
+		fleet "pirate raid"
 	npc evade
 		to spawn
-			"combat rating" > 1000
+			"armament deterrence" >= 15
 		government "Pirate"
 		system destination
-		personality staying harvests plunders
-			confusion 10
+		personality harvests plunders
+			#confusion 10
 		fleet "pirate raid"
 	npc accompany save
 		government "Merchant"
@@ -998,53 +1003,57 @@ mission "Subsidurial Porter (North)"
 	npc evade
 		government "Pirate"
 		personality entering harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Northern Pirates"
-	npc evade
-		to spawn
-			"combat rating" > 600
-		government "Pirate"
-		system
-			distance 1 2
-		personality harvests plunders
-			confusion 10
-		fleet "Large Northern Pirates"
 	npc evade
 		government "Pirate"
 		system
 			distance 2 3
 		personality harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Northern Pirates"
 	npc evade
+		to spawn
+			"armament deterrence" >= 7
+		government "Pirate"
+		system
+			distance 1 2
+		personality harvests plunders
+			#confusion 10
+		fleet "Large Northern Pirates"
+	npc evade
+		to spawn
+			"armament deterrence" >= 9
 		government "Pirate"
 		system
 			distance 3 4
 		personality harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Large Northern Pirates"
 	npc evade
 		to spawn
-			"combat rating" > 800
+			"armament deterrence" >= 11
 		government "Pirate"
 		system
 			distance 4 5
 		personality harvests plunders
-			confusion 10
+			#confusion 10
 		fleet "pirate raid"
 	npc evade
+		to spawn
+			"armament deterrence" >= 13
 		government "Pirate"
 		system destination
 		personality staying harvests plunders
-			confusion 20
-		fleet "pirate raid" 2
+			#confusion 20
+		fleet "pirate raid"
 	npc evade
 		to spawn
-			"combat rating" > 1000
+			"armament deterrence" >= 15
 		government "Pirate"
 		system destination
-		personality staying harvests plunders
-			confusion 10
+		personality harvests plunders
+			#confusion 10
 		fleet "pirate raid"
 	npc accompany save
 		government "Merchant"
@@ -1078,53 +1087,59 @@ mission "Subsidurial Porter (South)"
 	npc evade
 		government "Pirate"
 		personality entering harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Southern Pirates"
 	npc evade
 		to spawn
-			"combat rating" > 600
-		government "Pirate"
-		system
-			distance 1 2
-		personality harvests plunders
-			confusion 10
-		fleet "Large Southern Pirates"
-	npc evade
+			"armament deterrence" >= 3
 		government "Pirate"
 		system
 			distance 2 3
 		personality harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Small Southern Pirates"
 	npc evade
+		to spawn
+			"armament deterrence" >= 7
+		government "Pirate"
+		system
+			distance 1 2
+		personality harvests plunders
+			#confusion 10
+		fleet "Large Southern Pirates"
+	npc evade
+		to spawn
+			"armament deterrence" >= 9
 		government "Pirate"
 		system
 			distance 3 4
 		personality harvests plunders
-			confusion 20
+			#confusion 20
 		fleet "Large Southern Pirates"
 	npc evade
 		to spawn
-			"combat rating" > 800
+			"armament deterrence" >= 11
 		government "Pirate"
 		system
 			distance 4 5
 		personality harvests plunders
-			confusion 10
+			#confusion 10
 		fleet "pirate raid"
 	npc evade
+		to spawn
+			"armament deterrence" >= 13
 		government "Pirate"
 		system destination
 		personality staying harvests plunders
-			confusion 20
-		fleet "pirate raid" 2
+			#confusion 20
+		fleet "pirate raid"
 	npc evade
 		to spawn
-			"combat rating" > 1000
+			"armament deterrence" >= 15
 		government "Pirate"
 		system destination
-		personality staying harvests plunders
-			confusion 10
+		personality harvests plunders
+			#confusion 10
 		fleet "pirate raid"
 	npc accompany save
 		government "Merchant"
@@ -1168,7 +1183,7 @@ mission "Golden Subsidurials"
 	npc
 		government "Pirate"
 		personality waiting harvests plunders uninterested
-			confusion 20
+			#confusion 20
 		fleet "pirate raid"
 	npc board
 		government "Merchant"

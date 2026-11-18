@@ -22,6 +22,7 @@ ship "Marauder Argosy"
 	plural "Marauder Argosies"
 	sprite "ship/marauder argosy"
 	thumbnail "thumbnail/marauder argosy-thumb"
+	"administrative cost" 2
 	attributes
 		category "Medium Warship"
 		"cost" 2150000
@@ -61,7 +62,6 @@ ship "Marauder Argosy"
 		"A250 Atomic Thruster"
 		"A375 Atomic Steering"
 		Hyperdrive
-		
 	engine -25 93 0.7
 	engine -14 93 0.9
 	engine 14 93 0.9
@@ -82,38 +82,7 @@ ship "Marauder Argosy"
 	explode "medium explosion" 30
 	explode "large explosion" 15
 	"final explode" "final explosion medium"
-	description "What was once a simple Argosy is buried beneath thick plates of additional armored hull plating and shield emitters. Reconfigured gun ports, expanded engine space, and a drone bay leave little room for cargo in this medium warship."
-
-ship "Marauder Argosy" "Marauder Argosy (Sniper)"
-	outfits
-		"Heavy Anti-Missile Turret" 2
-		"Heavy Rocket" 34
-		"Heavy Rocket Pod" 2
-		"Heavy Rocket Rack" 3
-		"Meteor Missile" 59
-		"Meteor Missile Pod" 2
-		"Meteor Missile Box" 3
-		"Sidewinder Missile" 77
-		"Sidewinder Missile Pod" 2
-		"Sidewinder Missile Rack" 3
-		"LP072a Battery Pack"
-		"NT-200 Nucleovoltaic"
-		"Modified D67-TM Shielding"
-		"Outfits Expansion"
-		Supercapacitor
-		"Tactical Scanner"
-		"Laser Rifle" 7
-		"Fragmentation Grenades" 6
-		"Sniper Rifle"
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		Hyperdrive
-	gun "Heavy Rocket Pod"
-	gun "Heavy Rocket Pod"
-	gun "Meteor Missile Pod"
-	gun "Meteor Missile Pod"
-	gun "Sidewinder Missile Pod"
-	gun "Sidewinder Missile Pod"
+	description "What was once a simple Argosy is buried beneath thick plates of additional hull armor and shield emitters. Reconfigured gun ports, expanded engine space, and a drone bay leave little room for cargo in this medium warship."
 
 ship "Marauder Argosy" "Marauder Argosy (Afterburner)"
 	outfits
@@ -176,10 +145,74 @@ ship "Marauder Argosy" "Marauder Argosy (Bounty Hunter)"
 	turret "Heavy Laser Turret"
 	turret "Heavy Anti-Missile Turret"
 
+ship "Marauder Argosy" "Marauder Argosy (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Anti-Missile Turret"
+		"Fragmentation Grenades" 6
+		"Fuel Pod"
+		Hyperdrive
+		"Inferno Rocket" 4
+		"Inferno Rocket Pod" 2
+		"LP072a Battery Pack"
+		"Laser Rifle" 7
+		"Modified D67-TM Shielding"
+		"NT-200 Nucleovoltaic"
+		"Nerve Gas"
+		"Outfits Expansion"
+		"Plasma Cannon" 2
+		"Plasma Turret"
+		"Secret Prototype"
+		"Sniper Rifle"
+		"Stinger Missile" 14
+		"Stinger Missile Pod" 2
+		"Research Data"
+	gun "Inferno Rocket Pod"
+	gun "Inferno Rocket Pod"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Stinger Missile Pod"
+	gun "Stinger Missile Pod"
+	turret "Plasma Turret"
+	turret "Anti-Missile Turret"
+
+ship "Marauder Argosy" "Marauder Argosy (Sniper)"
+	outfits
+		"Heavy Anti-Missile Turret" 2
+		"Heavy Rocket" 34
+		"Heavy Rocket Pod" 2
+		"Heavy Rocket Rack" 3
+		"Meteor Missile" 59
+		"Meteor Missile Pod" 2
+		"Meteor Missile Box" 3
+		"Sidewinder Missile" 77
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile Rack" 3
+		"LP072a Battery Pack"
+		"NT-200 Nucleovoltaic"
+		"Modified D67-TM Shielding"
+		"Outfits Expansion"
+		Supercapacitor
+		"Tactical Scanner"
+		"Laser Rifle" 7
+		"Fragmentation Grenades" 6
+		"Sniper Rifle"
+		"A250 Atomic Thruster"
+		"A375 Atomic Steering"
+		Hyperdrive
+	gun "Heavy Rocket Pod"
+	gun "Heavy Rocket Pod"
+	gun "Meteor Missile Pod"
+	gun "Meteor Missile Pod"
+	gun "Sidewinder Missile Pod"
+	gun "Sidewinder Missile Pod"
+
 
 ship "Marauder Barb"
 	sprite "ship/marauder barb"
 	thumbnail "thumbnail/marauder barb-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 150000
@@ -215,7 +248,6 @@ ship "Marauder Barb"
 
 		"X1050 Ion Engines"
 		"Hyperdrive"
-
 	engine -16 25
 		zoom .5
 	engine 2 25
@@ -276,6 +308,7 @@ ship "Marauder Barb" "Marauder Barb (Proton Gun)"
 ship "Marauder Bastion"
 	sprite "ship/marauder bastion"
 	thumbnail "thumbnail/marauder bastion"
+	"administrative cost" 4
 	attributes
 		category "Medium Warship"
 		"cost" 4246000
@@ -320,7 +353,6 @@ ship "Marauder Bastion"
 		"A370 Atomic Thruster"
 		"A375 Atomic Steering"
 		Hyperdrive
-
 	engine -28 85
 	engine 28 85
 	gun -54 -14 "Plasma Cannon"
@@ -364,10 +396,45 @@ ship "Marauder Bastion" "Marauder Bastion (Electron Beam)"
 		"A375 Atomic Steering"
 		Hyperdrive
 
+ship "Marauder Bastion" "Marauder Bastion (Secret Prototype)"
+	outfits
+		"A370 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Anti-Missile Turret"
+		"Breeder Reactor"
+		"D41-HY Shield Generator"
+		Flamethrower 2
+		"Fragmentation Grenades" 12
+		"Fuel Pod" 2
+		Hyperdrive
+		"Industrial Ramscoop"
+		"KP-6 Photovoltaic Panel"
+		"LCT-2 Photovoltaic Rod"
+		"LP144a Battery Pack"
+		"Large Radar Jammer"
+		"Laser Rifle" 35
+		"Liquid Helium Cooler"
+		"Modified D67-TM Shielding"
+		"Modified Plasma Turret" 2
+		"Outfits Expansion" 2
+		"Plasma Cannon" 2
+		"Secret Prototype"
+		"Sniper Rifle"
+		"Volcano Afterburner"
+		"Research Data"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun Flamethrower
+	gun Flamethrower
+	turret "Anti-Missile Turret"
+	turret "Modified Plasma Turret"
+	turret "Modified Plasma Turret"
+
 
 ship "Marauder Behemoth"
 	sprite "ship/marauder behemoth"
 	thumbnail "thumbnail/marauder behemoth-thumb"
+	"administrative cost" 4
 	attributes
 		category "Heavy Warship"
 		"cost" 11880000
@@ -413,7 +480,6 @@ ship "Marauder Behemoth"
 		"A375 Atomic Steering"
 		"AR120 Reverse Thruster"
 		"Scram Drive"
-
 	engine -34 143 0.8
 	engine 34 143 0.8
 	engine -56 148.5 0.6
@@ -570,55 +636,9 @@ ship "Marauder Behemoth" "Marauder Behemoth (Hai)"
 	turret "Chameleon Anti-Missile"
 	turret "Chameleon Anti-Missile"
 
-ship "Marauder Behemoth" "Marauder Behemoth (Secret Prototype)"
-	sprite "ship/marauder behemothw"
-	thumbnail "thumbnail/marauder behemothw-thumb"
-	add attributes
-		"weapon capacity" 10
-	outfits
-		"A125 Atomic Steering"
-		"A250 Atomic Thruster"
-		"A375 Atomic Steering"
-		"AR120 Reverse Thruster"
-		"Anti-Missile Turret" 2
-		"Cargo Scanner"
-		"Engineering Room"
-		"Fusion Reactor"
-		"Ionic Afterburner"
-		"LP036a Battery Pack"
-		"Laser Rifle" 18
-		"Fragmentation Grenades" 14
-		"Sniper Rifle"
-		"Liquid Nitrogen Cooler"
-		"Outfits Expansion" 8
-		"Particle Burst Turret" 4
-		"Particle Cannon" 2
-		"Prototype D122-ZX Shielding"
-		Ramscoop
-		"Scram Drive"
-		"Swingfire Missile" 36
-		"Swingfire Missile Pod" 4
-		"Swingfire Missile Rack"
-		"Tactical Scanner"
-		"Water Coolant System"
-		"Secret Prototype"
-		"Research Data"
-	gun -47.5 -57.5 "Particle Cannon"
-	gun 47.5 -57.5 "Particle Cannon"
-	turret -31 -50 "Particle Burst Turret"
-	turret 31 -50 "Particle Burst Turret"
-	turret -47.5 33.5 "Particle Burst Turret"
-	turret 47.5 33.5 "Particle Burst Turret"
-	turret -22 66.5 "Anti-Missile Turret"
-	turret 22 66.5 "Anti-Missile Turret"
-	remove bays
-	gun -87 44 "Swingfire Missile Pod"
-	gun 87 44 "Swingfire Missile Pod"
-	gun -93 44 "Swingfire Missile Pod"
-	gun 93 44 "Swingfire Missile Pod"
-	description "Some say the Behemoth would be classified as a warship if it had a few more guns. Someone decided to test that theory by mounting four additional gunports onto its wings."
-
 ship "Marauder Behemoth" "Marauder Behemoth (Insurgent Subjugation Gear)"
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Proton Turret" 4
 		"Heavy Anti-Missile Turret" 2
@@ -642,10 +662,44 @@ ship "Marauder Behemoth" "Marauder Behemoth (Insurgent Subjugation Gear)"
 		"AR120 Reverse Thruster"
 		"Jump Drive"
 
+ship "Marauder Behemoth" "Marauder Behemoth (Secret Prototype)"
+	outfits
+		"A125 Atomic Steering"
+		"A250 Atomic Thruster"
+		"A375 Atomic Steering"
+		"AR120 Reverse Thruster"
+		"Detachable Heat Sink"
+		"Fragmentation Grenades" 13
+		"Fusion Reactor"
+		"Heavy Anti-Missile Turret" 2
+		"KP-6 Photovoltaic Panel"
+		"LP072a Battery Pack"
+		"Laser Rifle" 18
+		"Liquid Helium Cooler"
+		"Nerve Gas"
+		"Outfits Expansion" 6
+		"Proton Turret" 4
+		"Prototype D122-ZX Shielding"
+		Ramscoop
+		"Scram Drive"
+		"Secret Prototype"
+		"Sniper Rifle"
+		"Tactical Scanner"
+		Torpedo 60
+		"Torpedo Launcher" 2
+		"Research Data"
+	turret "Proton Turret"
+	turret "Proton Turret"
+	turret "Proton Turret"
+	turret "Proton Turret"
+	turret "Heavy Anti-Missile Turret"
+	turret "Heavy Anti-Missile Turret"
+
 
 ship "Marauder Carrier"
 	sprite "ship/marauder carrier"
 	thumbnail "thumbnail/marauder carrier-thumb"
+	"administrative cost" 8
 	attributes
 		category "Heavy Warship"
 		"cost" 16720000
@@ -843,6 +897,7 @@ ship "Marauder Carrier" "Marauder Carrier (Weapons)"
 ship "Marauder Cruiser"
 	sprite "ship/marauder cruiser"
 	thumbnail "thumbnail/marauder cruiser-thumb"
+	"administrative cost" 6
 	attributes
 		category "Heavy Warship"
 		licenses
@@ -897,7 +952,6 @@ ship "Marauder Cruiser"
 		"Volcano Afterburner"
 		"A520 Atomic Thruster"
 		"A525 Atomic Steering"
-		
 	engine -29 156
 	engine 29 156
 	gun -31 -63 "Particle Cannon"
@@ -1031,6 +1085,7 @@ ship "Marauder Cruiser" "Marauder Cruiser (Weapons)"
 ship "Marauder Frigate"
 	sprite "ship/marauder frigate"
 	thumbnail "thumbnail/marauder frigate-thumb"
+	"administrative cost" 3
 	attributes
 		category "Medium Warship"
 		licenses
@@ -1081,7 +1136,6 @@ ship "Marauder Frigate"
 		"A370 Atomic Thruster"
 		"A375 Atomic Steering"
 		Hyperdrive
-		
 	engine -26 92
 	engine 26 92
 	gun -10 -83 "Twin Modified Blaster"
@@ -1103,6 +1157,8 @@ ship "Marauder Frigate"
 	description "The Frigate has been in use for centuries. During that time, more than a few have been captured by pirates and undergone significant alterations."
 
 ship "Marauder Frigate" "Marauder Frigate (Kinetic Rail Rifle)"
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Twin Modified Blaster" 4
 		"Heavy Anti-Missile Turret"
@@ -1133,44 +1189,47 @@ ship "Marauder Frigate" "Marauder Frigate (Secret Prototype)"
 	outfits
 		"A370 Atomic Thruster"
 		"A375 Atomic Steering"
-		"Antique Rifle"
+		"Anti-Missile Turret" 2
 		"Cargo Scanner"
-		"Double Anti-Missile Turret"
-		"Engineering Room"
-		"Fragmentation Grenades" 19
+		"Electron Beam" 2
+		"Electron Turret"
+		"Fission Reactor"
+		"Fragmentation Grenades" 18
 		Hyperdrive
-		"Inferno Rocket" 34
-		"Inferno Rocket Pod" 2
-		"Inferno Rocket Rack" 3
-		"KP-6 Photovoltaic Panel"
-		"LP036a Battery Pack"
-		"Laser Rifle" 19
-		"Modified Plasma Turret" 2
-		"North Wind Cooling"
+		"LCT-2 Photovoltaic Rod"
+		"LP144a Battery Pack"
+		"Laser Rifle" 18
+		"Modified D41-HY Shielding"
+		"Nerve Gas"
 		"Outfits Expansion"
-		"Plasma Cannon" 3
-		"QT-800 Nucleovoltaic"
-		"S-270 Regenerator"
-		"S-970 Regenerator"
-		"Security Station (Staffed)"
-		Supercapacitor
-		"Tactical Scanner"
-		"Volcano Afterburner"
 		"Secret Prototype"
+		"Security Station (Staffed)"
+		"Sidewinder Missile" 58
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile Rack" 2
+		"Small Radar Jammer" 2
+		"Tactical Laser Rifle"
+		"Tactical Scanner"
+		"Typhoon Pod"
+		"Typhoon Storage Tube"
+		"Typhoon Torpedo" 18
+		"Volcano Afterburner"
+		"Water Coolant System"
 		"Research Data"
-	gun "Plasma Cannon"
-	gun "Plasma Cannon"
-	gun "Inferno Rocket Pod"
-	gun "Inferno Rocket Pod"
-	gun "Plasma Cannon"
-	turret "Double Anti-Missile Turret"
-	turret "Modified Plasma Turret"
-	turret "Modified Plasma Turret"
+	gun "Electron Beam"
+	gun "Electron Beam"
+	gun "Sidewinder Missile Pod"
+	gun "Sidewinder Missile Pod"
+	gun "Typhoon Pod"
+	turret "Electron Turret"
+	turret "Anti-Missile Turret"
+	turret "Anti-Missile Turret"
 
 
 ship "Marauder Osprey"
 	sprite "ship/marauder osprey"
 	thumbnail "thumbnail/marauder osprey"
+	"administrative cost" 3
 	attributes
 		category "Medium Warship"
 		"cost" 4620000
@@ -1179,8 +1238,8 @@ ship "Marauder Osprey"
 		"required crew" 12
 		"bunks" 32
 		"mass" 640
-		"drag" 5.9
-		"heat dissipation" .8
+		"drag" 8.9
+		"heat dissipation" .54
 		"fuel capacity" 600
 		"cargo space" 20
 		"outfit space" 490
@@ -1254,10 +1313,42 @@ ship "Marauder Osprey" "Marauder Osprey (Electron Beam)"
 		"A375 Atomic Steering"
 		Hyperdrive
 
+ship "Marauder Osprey" "Marauder Osprey (Secret Prototype)"
+	outfits
+		"A370 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Breeder Reactor"
+		"Fragmentation Grenades" 13
+		Hyperdrive
+		"Inferno Rocket" 24
+		"Inferno Rocket Pod" 2
+		"Inferno Rocket Rack" 2
+		"Isochronal Laser Rifle"
+		"KP-6 Photovoltaic Panel"
+		"LCT-4 Photovoltaic Wand"
+		"LP144a Battery Pack"
+		"Large Radar Jammer"
+		"Laser Rifle" 18
+		"Liquid Helium Cooler"
+		"Modified D67-TM Shielding"
+		"Modified Plasma Turret" 2
+		"Nerve Gas"
+		"Outfits Expansion"
+		"Plasma Repeater" 2
+		"Secret Prototype"
+		"Small Radar Jammer"
+		"Volcano Afterburner"
+		"Research Data"
+	gun "Plasma Repeater"
+	gun "Plasma Repeater"
+	gun "Inferno Rocket Pod"
+	gun "Inferno Rocket Pod"
+
 
 ship "Marauder Hauler"
 	sprite "ship/marauder hauler a"
 	thumbnail "thumbnail/marauder hauler A-thumb"
+	"administrative cost" 1
 	attributes
 		category "Light Warship"
 		"cost" 975000
@@ -1301,7 +1392,6 @@ ship "Marauder Hauler"
 		"Hyperdrive"
 		"Fragmentation Grenades"
 		"Laser Rifle" 3
-
 	engine -44.5 103.5
 	engine 44.5 103.5
 	gun -15 -75.5 "Meteor Missile Launcher"
@@ -1344,6 +1434,34 @@ ship "Marauder Hauler" "Marauder Hauler C"
 		"drag" -.5
 	description "Some Haulers are modified to reduce mass and drag by replacing the standard cargo container with something smaller. The previous owner of this Hauler used the hull of a Boxwing as the base for this modification."
 
+ship "Marauder Hauler" "Marauder Hauler (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A375 Atomic Steering"
+		"D41-HY Shield Generator"
+		"Fragmentation Grenades" 4
+		"Heavy Anti-Missile Turret"
+		Hyperdrive
+		"KP-6 Photovoltaic Array"
+		"LP072a Battery Pack"
+		"Laser Rifle" 7
+		"Liquid Nitrogen Cooler"
+		"Modified D41-HY Shielding"
+		"Modified RT-I Radiothermal"
+		"Nerve Gas"
+		"Outfits Expansion"
+		"Plasma Missile" 60
+		"Plasma Missile Launcher" 2
+		"Quad Blaster Turret" 3
+		"Secret Prototype"
+		"Small Radar Jammer"
+		"Sniper Rifle"
+		"Research Data"
+	turret "Quad Blaster Turret"
+	turret "Quad Blaster Turret"
+	turret "Quad Blaster Turret"
+	turret "Heavy Anti-Missile Turret"
+
 
 ship "Marauder Hauler" "Marauder Hauler (engines)"
 	sprite "ship/marauder hauler engines"
@@ -1378,7 +1496,6 @@ ship "Marauder Hauler" "Marauder Hauler (engines)"
 		"Scram Drive"
 		"Fragmentation Grenades" 3
 		"Laser Rifle" 5
-
 	engine -45 86.5
 	engine 44 86.5
 	gun -12.5 -60 "Meteor Missile Pod"
@@ -1393,6 +1510,7 @@ ship "Marauder Hauler" "Marauder Hauler (engines)"
 ship "Marauder Hauler" "Marauder Hauler (weapons)"
 	sprite "ship/marauder hauler weapons"
 	thumbnail "thumbnail/marauder hauler W-thumb"
+	"administrative cost" 2
 	add attributes
 		"cost" 569920
 		"shields" 1000
@@ -1423,7 +1541,6 @@ ship "Marauder Hauler" "Marauder Hauler (weapons)"
 		"Hyperdrive"
 		"Fragmentation Grenades" 4
 		"Laser Rifle" 6
-
 	engine -44 113
 	engine 45.5 113
 	gun -10.5 -87.5 "Meteor Missile Pod"
@@ -1440,6 +1557,7 @@ ship "Marauder Hauler" "Marauder Hauler (weapons)"
 ship "Marauder Protector"
 	sprite "ship/marauder protector"
 	thumbnail "thumbnail/marauder protector"
+	"administrative cost" 5
 	attributes
 		category "Heavy Warship"
 		"cost" 6000000
@@ -1507,6 +1625,8 @@ ship "Marauder Protector"
 
 ship "Marauder Protector" "Marauder Protector (Lasher Pistol)"
 	crew 69
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Meteor Missile Pod" 2
 		"Meteor Missile" 44
@@ -1533,35 +1653,39 @@ ship "Marauder Protector" "Marauder Protector (Secret Prototype)"
 		"A370 Atomic Thruster"
 		"A375 Atomic Steering"
 		"Anti-Missile Turret" 2
-		"Armageddon Core"
 		"Blaster Pistol"
-		"Cargo Scanner"
+		"Fragmentation Grenades" 24
+		"Fusion Reactor"
 		Hyperdrive
-		"LP072a Battery Pack"
-		"Fragmentation Grenades" 25
+		"LCT-4 Photovoltaic Wand"
+		"LP288a Battery Pack"
+		"Large Radar Jammer"
 		"Laser Rifle" 50
 		"Liquid Helium Cooler"
-		"Proton Turret-ATS" 6
-		"S-270 Regenerator"
+		"Meteor Missile" 44
+		"Meteor Missile Box" 2
+		"Meteor Missile Pod" 2
+		"Nerve Gas"
+		"Outfits Expansion"
+		"Proton Turret" 6
 		"S-970 Regenerator"
-		"Swingfire Missile" 48
-		"Swingfire Missile Pod" 2
-		"Swingfire Missile Rack" 2
 		"Secret Prototype"
+		"Tactical Scanner"
 		"Research Data"
-	turret "Proton Turret-ATS"
-	turret "Proton Turret-ATS"
+	turret "Proton Turret"
+	turret "Proton Turret"
 	turret "Anti-Missile Turret"
-	turret "Proton Turret-ATS"
-	turret "Proton Turret-ATS"
+	turret "Proton Turret"
+	turret "Proton Turret"
 	turret "Anti-Missile Turret"
-	turret "Proton Turret-ATS"
-	turret "Proton Turret-ATS"
+	turret "Proton Turret"
+	turret "Proton Turret"
 
 
 ship "Marauder Sparrow"
 	sprite "ship/marauder sparrow"
 	thumbnail "thumbnail/marauder sparrow-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 450000
@@ -1600,7 +1724,6 @@ ship "Marauder Sparrow"
 		"A120 Atomic Thruster"
 		"A125 Atomic Steering"
 		Hyperdrive
-		
 	engine -5 35
 	engine 5 35
 	gun -7 -10 "Beam Laser"
@@ -1759,6 +1882,7 @@ ship "Marauder Sparrow" "Marauder Sparrow (Turbo Blaster)"
 ship "Marauder Vanguard"
 	sprite "ship/marauder vanguard"
 	thumbnail "thumbnail/marauder vanguard"
+	"administrative cost" 4
 	attributes
 		category "Heavy Warship"
 		"cost" 7920000
@@ -1797,7 +1921,6 @@ ship "Marauder Vanguard"
 		"A370 Atomic Thruster"
 		"A525 Atomic Steering"
 		"Hyperdrive"
-	
 	engine -15 127
 	engine 15 127
 	gun 0 -129 "Proton Gun"
@@ -1826,15 +1949,17 @@ ship "Marauder Vanguard"
 
 ship "Marauder Vanguard" "Marauder Vanguard (Lasher Rifle)"
 	crew 49
+	add attributes
+		"self destruct" -.15
 	outfits
 		Brig
 		"Cargo Scanner"
 		"Double Plasma Core"
 		"Engineering Room"
 		Fire-Lance 6
-		"Firelight Missile" 40
+		"Firelight Missile" 24
 		"Firelight Missile Bank"
-		"Firelight Storage Rack" 2
+		"Firelight Storage Rack"
 		"Fuel Processor"
 		"Jump Drive"
 		"Large Heat Shunt"
@@ -1859,8 +1984,27 @@ ship "Marauder Vanguard" "Marauder Vanguard (Lasher Rifle)"
 
 ship "Marauder Vanguard" "Marauder Vanguard (Meltdown Cannon)"
 	crew 49
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Proton Gun" 7
+		"Anti-Missile Turret"
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"Modified D94-YV Shielding"
+		"Liquid Helium Cooler"
+		"Outfits Expansion"
+		"Ramscoop"
+		"Laser Rifle" 30
+		"Fragmentation Grenades" 18
+		"Meltdown Cannon"
+		"A370 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
+
+ship "Marauder Vanguard" "Marauder Vanguard (Plasma Charge)"
+	outfits
+		"Plasma Charge Cannon" 7
 		"Anti-Missile Turret"
 		"Fusion Reactor"
 		"LP144a Battery Pack"
@@ -1878,47 +2022,36 @@ ship "Marauder Vanguard" "Marauder Vanguard (Meltdown Cannon)"
 ship "Marauder Vanguard" "Marauder Vanguard (Secret Prototype)"
 	outfits
 		"A370 Atomic Thruster"
-		"A375 Atomic Steering"
-		"Armageddon Core"
-		"Blaster Pistol"
-		"Cargo Scanner"
-		"Heavy Anti-Missile Turret"
-		Hyperdrive
-		"Ionic Afterburner"
-		"KP-6 Photovoltaic Panel"
-		"LP072a Battery Pack"
-		"Laser Rifle" 30
-		"Fragmentation Grenades" 18
-		"Liquid Helium Cooler"
-		"Outfits Expansion"
-		"Proton Gun-CF8" 7
-		"S-270 Regenerator"
-		"S-970 Regenerator"
-		"Secret Prototype"
-		"Research Data"
-
-ship "Marauder Vanguard" "Marauder Vanguard (Plasma Cluster)"
-	outfits
-		"Plasma Cluster Cannon" 7
-		"Anti-Missile Turret"
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"Modified D94-YV Shielding"
-		"Liquid Helium Cooler"
-		"Outfits Expansion"
-		"Ramscoop"
-		"Laser Rifle" 30
-		"Fragmentation Grenades" 18
-		"Meltdown Cannon"
-		"A370 Atomic Thruster"
 		"A525 Atomic Steering"
-		"Hyperdrive"
-
+		"Anti-Missile Turret"
+		"Blaster Pistol"
+		"Fragmentation Grenades" 18
+		"Fusion Reactor"
+		Hyperdrive
+		"LCT-4 Photovoltaic Wand"
+		"LP144a Battery Pack"
+		"Laser Rifle" 30
+		"Liquid Helium Cooler"
+		"Modified D67-TM Shielding"
+		"Nerve Gas"
+		"Outfits Expansion"
+		"Plasma Cannon" 6
+		"Secret Prototype"
+		"Twin Particle Cannon"
+		"Research Data"
+	gun "Twin Particle Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
 
 
 ship "Marauder Wasp"
 	sprite "ship/marauder wasp"
 	thumbnail "thumbnail/marauder wasp-thumb"
+	"administrative cost" 1
 	attributes
 		category "Interceptor"
 		"cost" 440000
@@ -1954,7 +2087,6 @@ ship "Marauder Wasp"
 		"A120 Atomic Thruster"
 		"A125 Atomic Steering"
 		Hyperdrive
-		
 	engine -6 33
 	engine 6 33
 	gun 0 -38 "Proton Gun"
@@ -2019,12 +2151,25 @@ ship "Marauder Wasp" "Marauder Wasp (Nuke)"
 	gun "Nuclear Missile"
 
 
-
 ###########################
 # Variant Vanilla Marauders
 ###########################
 
 
+#all base model Marauder human shield generators upgraded to Modified Shielding
+
+ship "Marauder Arrow"
+	outfits
+		"Heavy Laser" 2
+		"Quad Blaster Turret"
+		"Dwarf Core"
+		"LP072a Battery Pack"
+		"Modified D14-RN Shielding"
+		"Cooling Ducts"
+		"Laser Rifle" 5
+		"A250 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Hyperdrive"
 
 ship "Marauder Arrow" "Marauder Arrow (Alien Artifact)"
 	sprite "ship/marrowe"
@@ -2045,18 +2190,24 @@ ship "Marauder Arrow" "Marauder Arrow (Alien Artifact)"
 		"Alien Artifact"
 	description "With expanded engine mounts, this Arrow seems more like an oversized missile than a ship. The beefed-up engines, a little extra outfit capacity, extra shield emitters, and thicker hull plating make this vessel a very competent interceptor."
 
-ship "Marauder Arrow" "Marauder Arrow (Shields)"
+ship "Marauder Arrow" "Marauder Arrow (Secret Prototype)"
 	outfits
-		"Heavy Laser" 2
-		"Quad Blaster Turret"
-		"Dwarf Core"
-		"LP072a Battery Pack"
-		"Modified D14-RN Shielding"
-		"Cooling Ducts"
-		"Laser Rifle" 5
 		"A250 Atomic Thruster"
 		"A255 Atomic Steering"
-		"Hyperdrive"
+		"Blaster Pistol"
+		"Cooling Ducts"
+		"Dwarf Core"
+		"Heavy Laser Turret"
+		Hyperdrive
+		"LP072a Battery Pack"
+		"Laser Rifle" 5
+		"Modified D14-RN Shielding"
+		"Nerve Gas"
+		"Secret Prototype"
+		"Swingfire Missile" 30
+		"Swingfire Missile Pod" 2
+		"Swingfire Missile Rack"
+		"Research Data"
 
 
 ship "Marauder Bounder" "Marauder Bounder (Alien Artifact)"
@@ -2083,19 +2234,104 @@ ship "Marauder Bounder" "Marauder Bounder (Alien Artifact)"
 	engine 12 58 .7
 	description "The previous owner of this Bounder has modified an already fast courier-scout into an even faster heavy escort interceptor with some truly enormous engines, giving it incredible maneuverability for its size."
 
+ship "Marauder Bounder" "Marauder Bounder (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Blaster Pistol"
+		"Double Anti-Missile Turret"
+		"Dwarf Core"
+		"Hai Corundum Regenerator"
+		Hyperdrive
+		"LP072a Battery Pack"
+		"Laser Rifle" 17
+		"Nerve Gas"
+		"Outfits Expansion"
+		"Particle Cannon"
+		"Quad Blaster Turret"
+		"Secret Prototype"
+		"Security Station (Staffed)"
+		"Small Radar Jammer"
+		"Volcano Afterburner"
+		"Water Coolant System"
+		"Research Data"
+
+
+ship "Marauder Falcon"
+	outfits
+		"Plasma Cannon" 2
+		"Proton Gun" 2
+		"Modified Blaster Turret" 2
+		"Proton Turret" 2
+		"Fusion Reactor"
+		"Dwarf Core"
+		"LP144a Battery Pack"
+		"Modified D94-YV Shielding"
+		"Large Radar Jammer"
+		"Liquid Helium Cooler"
+		"Outfits Expansion" 3
+		"Laser Rifle" 80
+		"Nerve Gas" 15
+		"Security Station"
+		"A520 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
+
+ship "Marauder Falcon" "Marauder Falcon (Atrocity)"
+	"display name" "Vicious Falcon"
+	sprite "ship/vicious falcon"
+	thumbnail "thumbnail/vicious falcon-thumb"
+	add attributes
+		"weapon capacity" 35
+		"engine capacity" 25
+	outfits
+		"Heavy Laser" 6
+		"Heavy Laser Turret" 3
+		"Heavy Anti-Missile Turret"
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D67-TM Shield Generator"
+		"Liquid Nitrogen Cooler"
+		Brig
+		"Interference Plating"
+		"Limit Breaker"
+		"Modified Jammer"
+		"Outfits Expansion" 2
+		"Smuggler's Hideaway"
+		"Laser Rifle" 80
+		"Nerve Gas" 20
+		"A520 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Volcano Afterburner"
+		"Scram Drive"
+		"Evidence of ********" 5
+	engine -23.5 140 .7
+	engine 0 151
+	engine 23.5 140 .7
+	gun -16 -86.5
+	gun 16 -86.5
+	gun -19 -76.5
+	gun 19 -76.5
+	gun -24.5 -66.5
+	gun 24.5 -66.5
+	turret -16 -29
+	turret 16 -29
+	turret -50 39.5
+	turret 50 39.5
+	description "This Tarazed Falcon has been heavily modified by some very dedicated craftsmen. The hull is riddled with extra shield emitters and expanded equipment bays, adding bulk and definitely voiding the warranty. Major sections of the hull have been reconfigured to accommodate the largest possible engines. Two additional gun ports have also been integrated into the hull, and the ship's interior space has been reconfigured to accommodate nearly any set of weapons you can imagine."
 
 ship "Marauder Falcon" "Marauder Falcon (Engines, Electron Beam)"
 	sprite "ship/mfalcone"
 	thumbnail "thumbnail/mfalcone"
 	add attributes
-		"engine capacity" 55
+		"engine capacity" 25
 	outfits
 		"Electron Beam" 4
 		"Blaster Turret" 2
 		"Modified Blaster Turret" 2
 		"Fusion Reactor"
 		"LP144a Battery Pack"
-		"D41-HY Shield Generator"
+		"Modified D67-TM Shielding"
 		"Large Radar Jammer"
 		"Liquid Helium Cooler"
 		"Outfits Expansion" 3
@@ -2104,7 +2340,7 @@ ship "Marauder Falcon" "Marauder Falcon (Engines, Electron Beam)"
 		"Fragmentation Grenades" 40
 		"Sniper Rifle"
 		"A860 Atomic Thruster"
-		"A865 Atomic Steering"
+		"A525 Atomic Steering"
 		"Hyperdrive"
 	engine -23.5 140 .7
 	engine 0 151
@@ -2121,6 +2357,8 @@ ship "Marauder Falcon" "Marauder Falcon (Engines, Electron Beam)"
 
 ship "Marauder Falcon" "Marauder Falcon (Enforcer Confrontation Gear)"
 	crew 96
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Plasma Cannon" 4
 		"Modified Blaster Turret" 4
@@ -2139,38 +2377,36 @@ ship "Marauder Falcon" "Marauder Falcon (Enforcer Confrontation Gear)"
 
 ship "Marauder Falcon" "Marauder Falcon (Secret Prototype)"
 	outfits
-		"A370 Atomic Thruster"
+		"A520 Atomic Thruster"
 		"A525 Atomic Steering"
-		"Cargo Scanner"
-		Flamethrower 2
-		"Fuel Canister"
-		"Fuel Tank"
 		"Fusion Reactor"
-		"Heavy Anti-Missile Turret" 2
+		"Heavy Anti-Missile Turret"
 		Hyperdrive
-		"Industrial Ramscoop"
-		"Laser Rifle" 80
-		"Fragmentation Grenades" 15
-		"Sniper Rifle"
+		"Ionic Afterburner"
+		"Isochronal Laser" 4
+		"Isochronal Laser Rifle"
+		"Isochronal Laser Turret" 3
+		"LP144a Battery Pack"
+		"Large Radar Jammer"
+		"Laser Rifle" 79
 		"Liquid Helium Cooler"
+		"Modified RT-I Radiothermal"
+		"Nerve Gas" 15
 		"Outfits Expansion" 3
-		"Plasma Cannon" 2
-		"Plasma Turret" 2
 		"Prototype T88-AO Shielding"
 		"Secret Prototype"
-		"TP144q Battery Pack"
+		"Security Station (Staffed)"
+		"Tactical Scanner"
 		"Research Data"
-	gun Flamethrower
-	gun Flamethrower
-	gun "Plasma Cannon"
-	gun "Plasma Cannon"
+	turret "Isochronal Laser Turret"
+	turret "Isochronal Laser Turret"
+	turret "Isochronal Laser Turret"
 	turret "Heavy Anti-Missile Turret"
-	turret "Heavy Anti-Missile Turret"
-	turret "Plasma Turret"
-	turret "Plasma Turret"
 
 ship "Marauder Falcon" "Marauder Falcon (Reverberator Rifle)"
 	crew 96
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Plasma Cannon" 4
 		"Modified Blaster Turret" 4
@@ -2183,23 +2419,6 @@ ship "Marauder Falcon" "Marauder Falcon (Reverberator Rifle)"
 		"Laser Rifle" 80
 		"Fragmentation Grenades" 15
 		"Reverberator Rifle"
-		"A520 Atomic Thruster"
-		"A525 Atomic Steering"
-		"Hyperdrive"
-
-ship "Marauder Falcon" "Marauder Falcon (Shields)"
-	outfits
-		"Plasma Cannon" 4
-		"Modified Blaster Turret" 4
-		"Fusion Reactor"
-		"LP288a Battery Pack"
-		"Modified D67-TM Shielding"
-		"Large Radar Jammer"
-		"Liquid Helium Cooler"
-		"Outfits Expansion" 3
-		"Laser Rifle" 80
-		"Fragmentation Grenades" 15
-		"Sniper Rifle"
 		"A520 Atomic Thruster"
 		"A525 Atomic Steering"
 		"Hyperdrive"
@@ -2225,9 +2444,26 @@ ship "Marauder Falcon" "Marauder Falcon (Boarding)"
 		"Water Coolant System"
 
 
+ship "Marauder Firebird"
+	outfits
+		"Plasma Cannon" 4
+		"Heavy Laser Turret"
+		"Heavy Anti-Missile Turret"
+		"Fusion Reactor"
+		"Supercapacitor"
+		"Modified D41-HY Shielding"
+		"Liquid Helium Cooler"
+		"Outfits Expansion"
+		"Laser Rifle" 25
+		"Nerve Gas" 29
+		"A250 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
 
 ship "Marauder Firebird" "Marauder Firebird (Pulse Rifle)"
 	"crew" 25
+	add attributes
+		"self destruct" -.25
 	outfits
 		"Plasma Cannon" 4
 		"Quad Mod Blaster Turret"
@@ -2244,9 +2480,59 @@ ship "Marauder Firebird" "Marauder Firebird (Pulse Rifle)"
 		"A525 Atomic Steering"
 		"Hyperdrive"
 
+ship "Marauder Firebird" "Marauder Firebird (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Antique Rifle"
+		"Fusion Reactor"
+		"Heavy Anti-Missile Turret"
+		Hyperdrive
+		"Laser Rifle" 24
+		"Liquid Helium Cooler"
+		"Modified D67-TM Shielding"
+		"Nerve Gas" 29
+		"Outfits Expansion"
+		"Particle Burst Turret"
+		"Particle Cannon" 2
+		Ramscoop
+		"Secret Prototype"
+		"Sidewinder Missile" 58
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile Rack" 2
+		Supercapacitor
+		"Research Data"
+	gun "Particle Cannon"
+	gun "Particle Cannon"
+	gun "Sidewinder Missile Pod"
+	gun "Sidewinder Missile Pod"
+	turret "Particle Burst Turret"
+	turret "Heavy Anti-Missile Turret"
+
+
+ship "Marauder Leviathan"
+	outfits
+		"Particle Cannon" 4
+		"Quad Blaster Turret" 2
+		"Heavy Laser Turret" 2
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"Modified D94-YV Shielding"
+		"Modified D67-TM Shielding"
+		"Large Radar Jammer"
+		"Liquid Helium Cooler"
+		"Outfits Expansion" 2
+		"Laser Rifle" 69
+		"Nerve Gas" 15
+		"A370 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Ionic Afterburner"
+		"Hyperdrive"
 
 ship "Marauder Leviathan" "Marauder Leviathan (Ion Pulse Shotgun)"
 	crew 69
+	add attributes
+		"self destruct" -.15
 	outfits
 		"Particle Cannon" 4
 		"Quad Blaster Turret" 4
@@ -2266,61 +2552,39 @@ ship "Marauder Leviathan" "Marauder Leviathan (Ion Pulse Shotgun)"
 
 ship "Marauder Leviathan" "Marauder Leviathan (Secret Prototype)"
 	outfits
-		"A120 Atomic Thruster"
 		"A370 Atomic Thruster"
 		"A525 Atomic Steering"
-		"Cargo Scanner"
-		"Catalytic Ramscoop"
-		"Electron Beam" 2
-		"Electron Turret" 2
-		"Fusion Reactor"
-		"Heavy Anti-Missile Turret" 2
+		"Antique Rifle"
+		"Armageddon Core"
+		"Heavy Anti-Missile Turret"
 		Hyperdrive
-		"LP072a Battery Pack"
-		"Laser Rifle" 43
-		"Fragmentation Grenades" 25
-		"Sniper Rifle"
+		"Ionic Afterburner"
+		"LP144a Battery Pack"
+		"Laser Rifle" 68
 		"Liquid Helium Cooler"
-		"Modified D23-QP Shielding"
-		"Outfit Scanner"
-		"Outfits Expansion"
-		"Prototype D122-ZX Shielding"
+		"Modified D67-TM Shielding"
+		"Modified D94-YV Shielding"
+		"Nerve Gas" 15
+		"Outfits Expansion" 2
+		"Particle Cannon" 2
+		"Quad Mod Blaster Turret" 3
 		"Secret Prototype"
+		"Small Radar Jammer" 3
 		Torpedo 42
 		"Torpedo Storage Rack" 2
 		"Twin Torpedo Pod" 2
 		"Research Data"
+	gun "Particle Cannon"
+	gun "Particle Cannon"
 	gun "Twin Torpedo Pod"
 	gun "Twin Torpedo Pod"
-	gun "Electron Beam"
-	gun "Electron Beam"
+	turret "Quad Mod Blaster Turret"
+	turret "Quad Mod Blaster Turret"
+	turret "Quad Mod Blaster Turret"
 	turret "Heavy Anti-Missile Turret"
-	turret "Heavy Anti-Missile Turret"
-	turret "Electron Turret"
-	turret "Electron Turret"
-
-ship "Marauder Leviathan" "Marauder Leviathan (Shields)"
-	outfits
-		"Particle Cannon" 4
-		"Quad Blaster Turret" 2
-		"Heavy Laser Turret" 2
-		"Fusion Reactor"
-		"LP144a Battery Pack"
-		"Modified D94-YV Shielding"
-		"Large Radar Jammer"
-		"Liquid Helium Cooler"
-		"Outfits Expansion" 2
-		"Laser Rifle" 43
-		"Fragmentation Grenades" 25
-		"Sniper Rifle"
-		"A370 Atomic Thruster"
-		"A525 Atomic Steering"
-		"Ionic Afterburner"
-		"Hyperdrive"
 
 
-
-ship "Marauder Manta" "Marauder Manta (Shields)"
+ship "Marauder Manta"
 	outfits
 		"Plasma Cannon" 4
 		"Meteor Missile Launcher" 2
@@ -2330,20 +2594,56 @@ ship "Marauder Manta" "Marauder Manta (Shields)"
 		"LP144a Battery Pack"
 		"Modified D14-RN Shielding"
 		"Liquid Nitrogen Cooler"
-		"Security Station (Staffed)" 3
+		"Security Station" 3
 		"Laser Rifle" 8
-		"Blaster Pistol"
+		"Nerve Gas" 4
 		"A250 Atomic Thruster"
 		"A525 Atomic Steering"
 		"Hyperdrive"
-	gun "Plasma Cannon"
-	gun "Plasma Cannon"
-	gun "Plasma Cannon"
-	gun "Plasma Cannon"
-	gun "Meteor Missile Launcher"
-	gun "Meteor Missile Launcher"
+
+ship "Marauder Manta" "Marauder Manta (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Blaster Pistol"
+		"Dwarf Core"
+		"Heavy Anti-Missile Turret"
+		Hyperdrive
+		"KP-6 Photovoltaic Panel"
+		"LCT-2 Photovoltaic Rod"
+		"LP144a Battery Pack"
+		"Laser Rifle" 7
+		"Liquid Nitrogen Cooler"
+		"Modified D23-QP Shielding"
+		"Nerve Gas" 4
+		"Proton Gun-CF8" 4
+		"Secret Prototype"
+		"Security Station (Staffed)" 3
+		"Sidewinder Missile" 35
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile Rack"
+		"Research Data"
+	gun "Sidewinder Missile Pod"
+	gun "Sidewinder Missile Pod"
+	gun "Proton Gun-CF8"
+	gun "Proton Gun-CF8"
+	gun "Proton Gun-CF8"
+	gun "Proton Gun-CF8"
 
 
+ship "Marauder Quicksilver"
+	outfits
+		"Heavy Laser" 2
+		"Heavy Anti-Missile Turret"
+		"NT-200 Nucleovoltaic"
+		"Hai Fissure Batteries"
+		"Modified D41-HY Shielding"
+		"Water Coolant System"
+		"Security Station" 3
+		"Laser Rifle"
+		"A250 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Hyperdrive"
 
 ship "Marauder Quicksilver" "Marauder Quicksilver (Alien Artifact)"
 	sprite "ship/mquicksilvere"
@@ -2369,6 +2669,25 @@ ship "Marauder Quicksilver" "Marauder Quicksilver (Alien Artifact)"
 	engine 16 52
 	description "This Quicksilver has even more space available for engine use - and even another thruster port! It's also got a few extra shield projectors, more hull plating, and another bunk. This aftermarket model also features a turret mount, perhaps in response to Lionheart's Headhunter. Whoever modified this ship wanted to chase their prey down with vicious speed."
 
+ship "Marauder Quicksilver" "Marauder Quicksilver (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Blaster Pistol"
+		"Heavy Anti-Missile Turret"
+		"Heavy Laser" 2
+		Hyperdrive
+		"KP-6 Photovoltaic Panel"
+		"LCT-6 Photovoltaic Staff"
+		"LP072a Battery Pack"
+		"Laser Rifle"
+		"NT-200 Nucleovoltaic"
+		"Nerve Gas"
+		"S-270 Regenerator"
+		"Secret Prototype"
+		"Security Station (Staffed)" 3
+		"Water Coolant System"
+		"Research Data"
 
 
 ship "Marauder Raven" "Marauder Raven (Alien Artifact)"
@@ -2395,8 +2714,38 @@ ship "Marauder Raven" "Marauder Raven (Alien Artifact)"
 	engine 12 45 .7
 	description "Lionheart's elegant Raven has gained popularity with pirates because of its agility. This one appears to have been modified for even more of the latter at the expense of the former, and the central hull can only be recognized as a Raven because of the wings. A third engine bay, more outfit space, additional shield emitters, and a turret make this already deadly warship appear even more frightening."
 
+ship "Marauder Raven" "Marauder Raven (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Breeder Reactor"
+		"Catalytic Ramscoop"
+		"Hai Corundum Regenerator"
+		"Heavy Anti-Missile Turret"
+		"Heavy Laser" 2
+		Hyperdrive
+		"Laser Rifle" 13
+		"Liquid Nitrogen Cooler"
+		"Nerve Gas" 3
+		"Outfits Expansion"
+		"Secret Prototype"
+		"Sidewinder Missile" 35
+		"Sidewinder Missile Pod" 2
+		"Sidewinder Missile Rack"
+		Supercapacitor 3
+		"Tactical Laser Rifle"
+		"Volcano Afterburner"
+		"Water Coolant System"
+		"Research Data"
+	gun "Heavy Laser"
+	gun "Heavy Laser"
+	gun "Sidewinder Missile Pod"
+	gun "Sidewinder Missile Pod"
+
 ship "Marauder Raven" "Marauder Raven (Tuning Rifle)"
 	crew 14
+	add attributes
+		"self destruct" -.25
 	outfits
 		"Heavy Laser" 4
 		"Heavy Laser Turret"
@@ -2414,8 +2763,7 @@ ship "Marauder Raven" "Marauder Raven (Tuning Rifle)"
 		"Hyperdrive"
 
 
-
-ship "Marauder Splinter" "Marauder Splinter (Shields)"
+ship "Marauder Splinter"
 	outfits
 		"Plasma Cannon" 2
 		"Heavy Laser Turret" 2
@@ -2424,8 +2772,7 @@ ship "Marauder Splinter" "Marauder Splinter (Shields)"
 		"LP036a Battery Pack"
 		"Modified D67-TM Shielding"
 		"Liquid Nitrogen Cooler"
-		"Blaster Pistol"
-		"Laser Rifle" 19
+		"Laser Rifle" 22
 		"Nerve Gas" 2
 		"A250 Atomic Thruster"
 		"A525 Atomic Steering"
@@ -2433,6 +2780,8 @@ ship "Marauder Splinter" "Marauder Splinter (Shields)"
 
 ship "Marauder Splinter" "Marauder Splinter (Thermal Repeater Rifle)"
 	crew 22
+	add attributes
+		"self destruct" -.25
 	outfits
 		"Plasma Cannon" 2
 		"Heavy Laser Turret" 2
@@ -2448,6 +2797,28 @@ ship "Marauder Splinter" "Marauder Splinter (Thermal Repeater Rifle)"
 		"A525 Atomic Steering"
 		"Hyperdrive"
 
+ship "Marauder Splinter" "Marauder Splinter (Secret Prototype)"
+	outfits
+		"A250 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Blaster Pistol"
+		"Cooling Ducts"
+		"Fusion Reactor"
+		"Heavy Anti-Missile Turret"
+		Hyperdrive
+		"KP-6 Photovoltaic Panel"
+		"LP036a Battery Pack"
+		"Laser Rifle" 20
+		"Liquid Nitrogen Cooler"
+		"Modified D67-TM Shielding"
+		"Nerve Gas" 2
+		"Proton Gun" 2
+		"Proton Turret-ATS" 2
+		"Secret Prototype"
+		"Research Data"
+	turret "Proton Turret-ATS"
+	turret "Heavy Anti-Missile Turret"
+	turret "Proton Turret-ATS"
 
 
 ######################################
@@ -2455,6 +2826,82 @@ ship "Marauder Splinter" "Marauder Splinter (Thermal Repeater Rifle)"
 # Deprecated
 #
 ######################################
+
+
+ship "Marauder Arrow" "Marauder Arrow (Shields)"
+	outfits
+		"Heavy Laser" 2
+		"Quad Blaster Turret"
+		"Dwarf Core"
+		"LP072a Battery Pack"
+		"Modified D14-RN Shielding"
+		"Cooling Ducts"
+		"Laser Rifle" 5
+		"A250 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Hyperdrive"
+
+ship "Marauder Falcon" "Marauder Falcon (Shields)"
+	outfits
+		"Plasma Cannon" 2
+		"Proton Gun" 2
+		"Modified Blaster Turret" 2
+		"Proton Turret" 2
+		"Fusion Reactor"
+		"Dwarf Core"
+		"LP144a Battery Pack"
+		"Modified D94-YV Shielding"
+		"Large Radar Jammer"
+		"Liquid Helium Cooler"
+		"Outfits Expansion" 3
+		"Laser Rifle" 80
+		"Nerve Gas" 15
+		"Security Station"
+		"A520 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
+
+ship "Marauder Leviathan" "Marauder Leviathan (Shields)"
+	outfits
+		"Particle Cannon" 4
+		"Quad Blaster Turret" 2
+		"Heavy Laser Turret" 2
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"Modified D94-YV Shielding"
+		"Large Radar Jammer"
+		"Liquid Helium Cooler"
+		"Outfits Expansion" 2
+		"Laser Rifle" 43
+		"Fragmentation Grenades" 25
+		"Sniper Rifle"
+		"A370 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Ionic Afterburner"
+		"Hyperdrive"
+
+ship "Marauder Manta" "Marauder Manta (Shields)"
+	outfits
+		"Plasma Cannon" 4
+		"Meteor Missile Launcher" 2
+		"Meteor Missile" 60
+		"Quad Blaster Turret"
+		"Dwarf Core"
+		"LP144a Battery Pack"
+		"Modified D14-RN Shielding"
+		"Liquid Nitrogen Cooler"
+		"Security Station (Staffed)" 3
+		"Laser Rifle" 8
+		"Blaster Pistol"
+		"A250 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Plasma Cannon"
+	gun "Meteor Missile Launcher"
+	gun "Meteor Missile Launcher"
 
 ship "Marauder Quicksilver" "Marauder Quicksilver (Shamrock)"
 	sprite "ship/mquicksilvere"
@@ -2479,3 +2926,19 @@ ship "Marauder Quicksilver" "Marauder Quicksilver (Shamrock)"
 	engine 0 52
 	engine 16 52
 	description "This Quicksilver has even more space available for engine use - and even another thruster port! It's also got a few extra shield projectors, more hull plating, and another bunk. This aftermarket model also features a turret mount, perhaps in response to Lionheart's Headhunter. Whoever modified this ship wanted to chase their prey down with vicious speed."
+
+ship "Marauder Splinter" "Marauder Splinter (Shields)"
+	outfits
+		"Plasma Cannon" 2
+		"Heavy Laser Turret" 2
+		"Heavy Anti-Missile Turret"
+		"Fusion Reactor"
+		"LP036a Battery Pack"
+		"Modified D67-TM Shielding"
+		"Liquid Nitrogen Cooler"
+		"Blaster Pistol"
+		"Laser Rifle" 19
+		"Nerve Gas" 2
+		"A250 Atomic Thruster"
+		"A525 Atomic Steering"
+		"Hyperdrive"

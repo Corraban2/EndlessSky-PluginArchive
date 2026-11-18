@@ -12,6 +12,8 @@
 
 outfit "Accelerator Cannon"
 	category "Guns"
+	series "Guns"
+	index 02050
 	cost 660000
 	thumbnail "outfit/midnight becca hai ionic rifle"
 	"mass" 54
@@ -50,6 +52,8 @@ effect "accelerator impact"
 
 outfit `"Biri Biri" Afterburner`
 	category "Engines"
+	series "Afterburners"
+	index 02010
 	"cost" 130000
 	thumbnail "outfit/becca afterburner hai"
 	"mass" 8
@@ -78,6 +82,8 @@ effect "biribiri afterburner"
 
 outfit "Langrage Hyper-Launcher"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 04000
 	cost 3450000
 	thumbnail "outfit/PR4987 shunt bomb launcher"
 	"mass" 46
@@ -111,6 +117,8 @@ outfit "Langrage Hyper-Launcher"
 
 outfit "Radiological Containment"
 	category "Systems"
+	series "Expansions"
+	index 10
 	thumbnail "outfit/Midnight-Becca scavenger"
 	"cost" 1200000
 	"mass" 150
@@ -120,18 +128,19 @@ outfit "Radiological Containment"
 	"cargo space" 360
 	"cooling" 12
 	"scan interference" 99
-	"cargo scan opacity" 150
-	"scan concealment" 180
+	"cargo scan opacity" 180
+	"scan concealment" 90
 	"integrated systems" 1
 	"reinstall" -1
 	"unplunderable" 1
-	description "These cargo storage cylinders are designed to contain hazardous radioactive waste. Their internal structure also interferes with incoming scans enough to almost completely block all of them."
-
+	description "These cargo storage cylinders are designed to contain hazardous radioactive waste. Their internal structure also interferes with incoming scans enough to completely conceal a portion of cargo carried while making the rest harder to scan."
 
 
 outfit "Scattershot Ammo"
 	plural "Scattershot Ammo"
 	category "Ammunition"
+	series "Ammunition"
+	index 99999
 	cost 96
 	thumbnail "outfit/Midnight-Becca accurate gat"
 	"mass" .048
@@ -143,16 +152,34 @@ outfit "Scattershot Ammo"
 outfit "Scattershot Rack"
 	plural "Scattershot Racks"
 	category "Ammunition"
+	series "Ammunition"
+	index 99999
 	cost 3000
-	thumbnail "outfit/Midnight-Becca accurate gat storage"
+	thumbnail "outfit/Midnight-Becca-Zahniser accurate gat storage"
 	"mass" 2
 	"outfit space" -5
 	"scattershot capacity" 62
 	ammo "Scattershot Ammo"
 	description "Scattershot Racks are used to store extra ammunition for Scattershot Guns."
 
+outfit "Scattershot Depot"
+	plural "Scattershot Racks"
+	cost 18000
+	category "Ammunition"
+	series "Ammunition"
+	index 99999
+	thumbnail "outfit/Midnight-Becca-Zahniser accurate gat depot"
+	"mass" 12
+	"cargo space" -40
+	"scattershot capacity" 372
+	ammo "Scattershot Ammo"
+	"required crew" 1
+	description "The Scattershot Depot stages extra ammunition in your cargo bay for weapons that use Scattershot Ammo. The ammunition is ready to be withdrawn for use. Storing it this way uses more cargo space than if it were packed away in sealed crates. An extra crewmember is required to oversee maintenance of the ammunition."
+
 outfit "Scattershot Gun"
 	category "Secondary Weapons"
+	series "Secondary Weapons"
+	index 99999
 	cost 20000
 	thumbnail "outfit/Becca accurate gat"
 	"mass" 2
@@ -167,13 +194,19 @@ outfit "Scattershot Gun"
 		sound "scattershot"
 		ammo "Scattershot Ammo"
 		icon "icon/scattershot"
-		"inaccuracy" 2
+		"inaccuracy" 1
 		"velocity" 16
 		"lifetime" 1
 		"reload" 72
 		"firing energy" .72
 		"firing heat" 60
-		"submunition" "scattershot bullet" 24
+		"submunition" "scattershot bullet" 8
+		"submunition" "scattershot bullet" 8
+			"offset" 1 0
+			"facing" 0.3
+		"submunition" "scattershot bullet" 8
+			"offset" -1 0
+			"facing" -0.3
 		"cluster"
 		"hit effect" "bullet impact"
 	description "The Scattershot Gun racks shells that split into multiple shots which spread out to cover a wide area."
@@ -185,8 +218,10 @@ outfit "scattershot bullet"
 			"delay" 5
 			"random start frame"
 			"frame rate" 0
-		"inaccuracy" 4
+		"inaccuracy" 3
+		"random velocity" 8
 		"lifetime" 20
+		"random lifetime" 5
 		"shield damage" 4
 		"hull damage" 8
 		"hit force" 2
@@ -195,6 +230,8 @@ outfit "scattershot bullet"
 
 outfit "Shock Wave Blaster"
 	category "Guns"
+	series "Guns"
+	index 02055
 	cost 290000
 	thumbnail "outfit/midnight becca ionic blaster"
 	"mass" 16
@@ -209,18 +246,13 @@ outfit "Shock Wave Blaster"
 		"submunition" "Shock Wave Fragment" 6
 		"velocity" 12
 		"lifetime" 10
+		"range override" 480
 		"reload" 14
 		"firing energy" 48
 		"firing heat" 90
 		"firing force" 1.5
-#		"velocity" 12
-#		"lifetime" 40
-#		"shield damage" 31.5
-#		"hull damage" 23.8
-#		"heat damage" 131.6
-#		"hit force" 42
 	description "Shock Wave Blasters were originally the weapon of choice for the Hai Imperial Guard. They eventually fell out of favor as pulse and ion technology rose to prominence."
-	description "	The ionized plasma fired from these weapons is composed of charged particles that are extremely volatile. They lose cohesion after only a short distance of flight, making them less effective against distant targets."
+	description "	The ionized plasma fired from these weapons is composed of charged particles that are extremely volatile. They lose cohesion after only a short distance of flight, making them less accurate against distant targets."
 
 outfit "Shock Wave Fragment"
 	weapon
@@ -235,6 +267,8 @@ outfit "Shock Wave Fragment"
 
 outfit "Shock Wave Blaster Turret"
 	category "Turrets"
+	series "Turrets"
+	index 02030
 	cost 325000
 	thumbnail "outfit/midnight becca ionic turret single"
 	"mass" 20
@@ -250,6 +284,7 @@ outfit "Shock Wave Blaster Turret"
 		sound "particle-ver8"
 		"hit effect" "shock wave explosion"
 		"inaccuracy" 4
+		"range override" 480
 		"submunition" "Shock Wave Fragment" 6
 		"velocity" 12
 		"lifetime" 10
@@ -261,6 +296,8 @@ outfit "Shock Wave Blaster Turret"
 
 outfit "Shock Wave Turret"
 	category "Turrets"
+	series "Turrets"
+	index 02030
 	cost 650000
 	thumbnail "outfit/midnight becca ionic turret"
 	"mass" 42
@@ -276,6 +313,7 @@ outfit "Shock Wave Turret"
 		sound "particle-ver8"
 		"hit effect" "shock wave explosion"
 		"inaccuracy" 4
+		"range override" 480
 		"submunition" "Shock Wave Fragment" 6
 		"velocity" 12
 		"lifetime" 10
@@ -308,31 +346,6 @@ effect "shock wave frag"
 	"random spin" 4
 	"random velocity" .1
 	"velocity scale" -.05
-
-
-
-
-outfit "Timer Turret"
-	category "Turrets"
-	thumbnail "outfit/unknown"
-	"turret mounts" -1
-	"unplunderable" 1
-	weapon
-		"turret turn" 360
-		"velocity" 100
-		"lifetime" 20
-		"reload" 100
-		"blast radius" 100
-		"split range" 200
-		"submunition" "Timer Turret Submunition"
-
-outfit "Timer Turret Submunition"
-	weapon
-		"lifetime" 20
-		"trigger radius" 30000
-		"blast radius" 30000
-		"hull damage" .15
-		"no damage scaling"
 
 
 #########################################

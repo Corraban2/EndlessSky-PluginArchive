@@ -21,6 +21,7 @@
 ship "Tevah-Ark Coracle"
 	sprite "ship/Midnight PR4987 korath haven B"
 	thumbnail "thumbnail/PR4987 korath haven"
+	"administrative cost" 50
 	attributes
 		category "Superheavy"
 		cost 276900000
@@ -59,9 +60,9 @@ ship "Tevah-Ark Coracle"
 		"Gaktem GP Hybrid Steering"
 		"Gaktem GP Hybrid Thruster"
 		"Korath Defense Drone" 1780
-		"Korath Fireswarm" 320
+		"Korath Fireswarm" 310
 		"Korath Fireswarm Launcher" 4
-		"Korath Fireswarm Nest" 24
+		"Korath Fireswarm Nest" 23
 		"Korath Scanner"
 		"Korath Shocker Turret" 6
 		"Langrage Hyper-Heaver" 2
@@ -216,6 +217,7 @@ ship "Tevah-Ark Coracle"
 ship "Ikatila'ej Eldar"
 	sprite "ship/Midnight PR4987 korath refabricator B"
 	thumbnail "thumbnail/PR4987 korath refabricator"
+	"administrative cost" 24
 	attributes
 		category "Superheavy"
 		"cost" 120312000
@@ -317,6 +319,7 @@ ship "Ikatila'ej Eldar"
 ship "Rai'alorej Makwar"
 	sprite "ship/Midnight PR4987 korath refuge B"
 	thumbnail "thumbnail/PR4987 korath refuge"
+	"administrative cost" 11
 	attributes
 		category "Utility"
 		cost 35167000
@@ -349,7 +352,7 @@ ship "Rai'alorej Makwar"
 		"Korath Sentinel" 2
 		"Langrage Hyper-Launcher"
 		"Liquid Sodium Cooler"
-		"Microbot Defense Station" 15
+		"Microbot Defense Station" 14
 		"Reverser (Lunar Class)"
 		"Scram Drive"
 		"Shock-Strike Turret"
@@ -552,7 +555,7 @@ ship "Korath World Forger"
 		"heat dissipation" .325
 		"fuel capacity" 1000
 		"cargo space" 818
-		"outfit space" 1186
+		"outfit space" 1187
 		"weapon capacity" 576
 		"engine capacity" 192
 		"integrated systems" -1
@@ -646,7 +649,7 @@ ship "Korath World Shaper"
 		"heat dissipation" .35
 		"fuel capacity" 1000
 		"cargo space" 1020
-		"outfit space" 2070
+		"outfit space" 2072
 		"weapon capacity" 905
 		"engine capacity" 229
 		"integrated systems" -1

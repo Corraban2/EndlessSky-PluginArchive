@@ -363,12 +363,12 @@ mission "Escort Requiem Alpha"
 	npc
 		government "Pirate"
 		personality entering harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet "Small Northern Pirates"
 	npc
 		government "Pirate"
 		personality waiting harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		system
 			distance 1
 		fleet "Large Northern Pirates"
@@ -376,9 +376,8 @@ mission "Escort Requiem Alpha"
 		government "Independent (Killable)"
 		personality waiting staying plunders nemesis
 		system destination
-		fleet "Large Independent (Killable)"
-		fleet "Small Independent (Killable)"
-
+		ship "Firebird (Energy Cannons)" "Abyssal Fire"
+		ship "Modified Aerie" "Murderous Intent"
 	npc kill
 		government "Independent (Killable)"
 		personality launching escort timid
@@ -422,8 +421,8 @@ mission "Protection: Marauder Double Cross"
 		never
 	npc save
 		government "Bounty (Disguised)"
-		personality harvests plunders heroic
-		fleet "Marauder Bounty (Disguised)"
+		personality harvests plunders heroic marked
+		fleet "Marauder Independent"
 	on enter Mintaka
 		dialog `Treachery! The <npc> turns its weapons on you!`
 		"reputation: Bounty (Disguised)" <?= -1000
@@ -761,15 +760,25 @@ mission "Kudgel's Cudgel"
 			`	"Thanks. The name's Kudgel. My ship is Kudgel's Cudgel, a Mule outfitted for mining."`
 				accept
 	on accept
+		log "Minor People" "Kudgel" `Kudgel is the captain of Kudgel's Cudgel, a Mule outfitted for mining.`
 		clear "randomize Kudgel's Cudgel"
 	on defer
 		set "randomize Kudgel's Cudgel"
 	on waypoint
 		"reputation: Bounty (Disguised)" <?= -1000
+		log "Minor People" "Kudgel" `Kudgel turned out to be a pirate. His request for a protective escort was a lure to ambush my ship.`
 		dialog "Something is wrong. The Kudgel's Cudgel doesn't seem to be interested in mining and isn't responding to hails..."
 	npc
 		to spawn
-			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" >= 2
+			"armament deterrence" >= 6
+		government "Pirate"
+		system
+			distance 2 3
+		personality waiting plunders harvests
+		fleet "pirate raid"
+	npc
+		to spawn
+			"armament deterrence" >= 12
 		government "Pirate"
 		system
 			distance 3 4
@@ -777,22 +786,22 @@ mission "Kudgel's Cudgel"
 		fleet "pirate raid"
 	npc
 		to spawn
-			"ships: Medium Warship" + "ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" >= 3
+			"armament deterrence" >= 18
 		government "Pirate"
 		system
 			distance 4 5
 		personality waiting plunders harvests
-		fleet "pirate raid" 2
+		fleet "pirate raid"
 	npc kill
 		government "Bounty (Disguised)"
-		personality target launching plunders heroic mute
-			confusion 20
+		personality target launching plunders heroic mute marked
+			#confusion 20
 		"cargo settings"
 			cargo 0
 		ship "Mule (Cudgel)" "Kudgel's Cudgel"
 		ship "Dagger (Cudgel)" "Kudgel's Surprise"
 		on kill
-			"reputation: Bounty (Disguised)" >?= 0
+			"reputation: Bounty (Disguised)" >?= 1
 			dialog "You survived the trecherous attack by Kudgel's Cudgel and its fighter escort. Check with the authorities on <destination> for any outstanding bounties on Captain Kudgel's crew."
 	on abort
 		"reputation: Bounty (Disguised)" >?= 1
@@ -802,6 +811,225 @@ mission "Kudgel's Cudgel"
 		payment 300000
 		dialog "You report the incident with Kudgel's Cudgel to the <planet> government and are rewarded with a bounty of <payment>."
 
+
+mission "Midnight Smugglers False Hope 1"
+	minor
+	clearance
+	name "Escort to Freedom"
+	description `Escort the <npc> and the escaped slaves it is transporting to <destination>, far away from their pirate oppressor. The captain promises to give you <payment>.`
+	source "Deadman's Cove"
+	destination "Shroud"
+	to offer
+		has "Pirate Blockade: done"
+		has "license: Militia"
+		random < 70
+	on offer
+		conversation
+			`When you return to the <ship> a man is waiting at the landing pad. As you approach he asks,"Are you the owner of this ship?"`
+			choice
+				`	"Yes. What do you want?"`
+					goto what
+				`	"It's not for sale."`
+			`	He smirks. "It's looks like a good ship, but that's not what I'm after."`
+			label what
+			`	The man gives you a piercing stare. "I need help. Well, my passengers need help." He scratches his head, appearing flustered. "It's complicated. I wasn't planning to take on this job, but I was asked to help free some slaves by transporting them to <planet>." You remember taking on a similar job in the past.`
+			choice
+				`	"So what's the problem?"`
+			`	He winces. "I'm afraid this could technically be seen as human smuggling. Illegal immigration. I see you're with the Free Worlds, so I was hoping you could escort me. Maybe keep the Navy distracted if they get too close. I can pay <payment>." That seems like a reasonable escort fee.`
+			choice
+				`	"Alright, I'll do it."`
+					goto agree
+				`	"Aren't they going to scan you at <planet>?"`
+				`	"Find someone else. I'm not interested."`
+					goto refuse
+			`	He relaxes. "The person who made the request gave me a contact who will let me slip past security. So, how about it?"`
+			choice
+				`	"Alright, I'll do it."`
+					goto agree
+				`	"Find someone else. I'm not interested."`
+			label refuse
+			`	He looks disappointed. "Well, it was worth a shot. Maybe I should reconsider doing this job..." He shakes his head as he walks off.`
+			choice
+				`	"Wait. I'll do it."`
+					goto agree
+				`	(Let him go.)`
+			action
+				set "denied freeing slaves"
+			``
+				decline
+			label agree
+			`	His face lights up. "Thank you!" He reaches out to shake your hand. "The name's Slipstein. Captain of the <npc>.`
+			choice
+				`	"Captain <last>."`
+					accept
+	on accept
+		"reputation Bounty (Disguised)" >?= 1
+	npc accompany save
+		government "Bounty (Disguised)"
+		personality target escort launching timid coward secretive quiet marked
+			#confusion 20
+		"cargo settings"
+			cargo 1
+			outfitters "Contraband"
+		ship "Marauder Falcon (Atrocity)" "Saint James"
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+	on complete
+		payment 120000
+		dialog phrase "generic safe escort completion dialog"
+
+mission "Midnight Smugglers False Hope 2"
+	landing
+	name "Prisoner to <planet>"
+	description "Transport Captain Slipstein and the <bunks> freed slaves to <destination> where he will stand trial."
+	source "Shroud"
+	destination "Bourne"
+	to offer
+		has "Midnight Smugglers False Hope 1: done"
+	on offer
+		conversation
+			`You watch as Slipstein loads the slaves onto a transport truck. They still have their chains on...`
+			choice
+				`	"Why haven't you removed their chains?"`
+			`	He slams the truck's door shut. Turning to you, Slipstein smiles and says "Removing their chains would be dangerous. They've only known life on a pirate world. The locals will reeducate them so that they can assimilate to life here."`
+			choice
+				`	"Alright, that makes sense."`
+				`	"It looks like you're keeping them as slaves."`
+					goto slaves
+				`	"Let them out of the truck."`
+					goto slaves
+			`	Slipstein smirks. "I'm glad you understand Captain <last>. I can tell you are concerned about them, but trust me, they'll be in good hands. You can leave the rest to me."`
+			choice
+				`	"I'll trust you. Goodbye Slipstein."`
+				`	"I don't believe you."`
+					goto slaves
+			action
+				set "trusted slipstein"
+				log `I met another captain who agreed to lead slaves to freedom from pirate oppression. After escorting them to Shroud, the slaves were still in chains. Captain Slipstein assured me that this was a safety measure to protect them and others until the former slaves have been reeducated for assimilation into Shroud's society.`
+			`	One of Slipstein's crew drives the truck away. Whatever fate await its passengers is out of your hands...`
+				decline
+			label slaves
+			`	He scowls. "Looks like you won't let this go. How about another 80,000 credits? Just forget about them and go on with your life." He glances at the rest of his crew...`
+			choice
+				`	(Take the bribe.)`
+				`	(Your crew can easily beat them...)`
+					goto fight
+					to display
+						"flagship required crew" >= 160
+				`	(Your crew might survive a fight...)`
+					goto fight
+					to display
+						"flagship required crew" < 160
+			action
+				payment 80000
+				set "bribed by slipstein"
+				set "license: Nightmare Fuel"
+				log "Minor People" "Captain Slipstein" `A human smuggler who transported slaves to Shroud under the pretense of "liberating" them.`
+				log `I met another captain who agreed to lead slaves to freedom from pirate oppression. After escorting them to Shroud, the slaves were still in chains. I... I probably shouldn't record this. But the credit log shows the deposit into my account. This... It was a bribe. Slipstein paid me to ignore what he was doing and abandon those people. If anyone reads this, just know that I was only a security escort and did not actively participate in capturing his passengers or whatever happened to them after we parted ways. I... I am not involved.`
+			`	Slipstein grins. "I'm glad you're willing to be reasonable." He transfers 80,000 credits to your account. "Have a pleasant day Captain <last>." One of Slipstein's crew drives the truck away. Whatever fate await its passengers is out of your hands...`
+				decline
+			label fight
+			branch "victory"
+				random < ( "flagship required crew" - 60 )
+			`	Your crew fights bravely, but you die during the chaos of battle.`
+				die
+			label victory
+			`	After a vicious battle, Slipstein surrenders. Even as you free the slaves he remains indignant. "I was hoping we could avoid this pointless and messy hassle. But fine. Go ahead, hand me over to the authorities. There isn't a court in the Republic that will convict me."`
+			choice
+				`	"I work for the Free Worlds."`
+			action
+				log "Minor People" "Captain Slipstein" `A human smuggler who transported slaves to Shroud under the pretense of "liberating" them.`
+				log `I met another captain who agreed to lead slaves to freedom from pirate oppression. After escorting them to Shroud, the slaves were still in chains. After a violent confrontation, I arrested Slipstein for human trafficking under my authority as a Militia captain. I'll let the judiciary on Bourne sort out the legal details.`
+			scene "thumbnail/vicious falcon-thumb"
+			`	Slipstein's smug arrogance melts at those words. Some of the freed slaves agree to travel with you to <planet> so that they can testify in court. Fortunately, the evidence can serve as transportation. It even has a brig to hold Slipstein in.`
+			``
+			`	(The replacement crew for the <npc> will cost 6,000 credits per day.)`
+				accept
+	on daily
+		payment -6000
+	npc accompany save
+		government "Merchant"
+		personality target escort launching timid coward marked
+			#confusion 30
+		"cargo settings"
+			cargo 0
+		ship "Marauder Falcon (Atrocity)" "Saint James"
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+	on complete
+		give ship "Marauder Falcon (Atrocity)" "Saint James"
+		log "Minor People" "Captain Slipstein" `Died in custody during transport to Bourne for his involvement in slavery and human trafficking. The crew claims that he killed himself, but the circumstances surrounding his death seem suspicious to some and when word gets out about this it became a sensational news story.`
+		log `Before leaving Shroud I hired a replacement crew for Slipstein's ship. The trip to Bourne was long. After we arrived we found Slipstein's corpse in the Brig of the Saint James. The crew claims he killed himself. The autopsy indicates he died from strangulation. But the video feed in his cell was deleted...`
+		conversation
+			scene "thumbnail/vicious falcon-thumb"
+			`After a long journey, you've finally brought Slipstein to justice. At least, that's what you thought when you arrived. When you try to retrieve him from the brig you find his dead body. The crew piloting his former ship insist he must have killed himself. But the circumstances surrounding his death seem suspicious to some and when word gets out about this it becomes a sensational news story.`
+			`	At least the former slaves who traveled with you testify that he was indeed a slave trafficker. The Free Worlds grants them asylum. As for his ship, they allow you to keep it. A Vicious Falcon is an extremely rare Marauder variant. You should thoroughly inspect it in the outfitter to make sure he didn't leave any nasty surprises hidden inside.`
+
+mission "Midnight Smugglers False Hope 3"
+	minor
+	repeat
+	clearance
+	name "Escort to <planet>"
+	description `Escort the <npc> to <destination>. Captain Slipstein promises to give you <payment> for your assistance and continued silence...`
+	source "Deadman's Cove"
+	destination "Shroud"
+	to offer
+		has "bribed by slipstein"
+		not "destroyed slipstein"
+		not "license: Nightmare Fuel"
+		random < 50
+	on offer
+		conversation
+			`You find Captain Slipstein at your landing pad. "Good to see you again Captain <last>. Come now. I've decided you'll be escorting my fleet to <destination>. You'll receive <payment>, just like before." He starts walking away without waiting for you to respond.`
+			choice
+				`	"..."`
+					accept
+				`	"No I'm not."`
+			`	He turns back in anger. "Oh yes you are you worm! You accepted my bonus payment. The credit log links us now. I own you. Now be an obedient worm and do as you're told." Again, he walks off without waiting for your response. There may be only one way to get out of this...`
+				accept
+	npc
+		to spawn
+			"armament deterrence" >= 6
+		government "Bounty (Disguised)"
+		personality target escort launching timid coward secretive quiet marked
+			#confusion 20
+		fleet
+			names "bounty hunter"
+			cargo 1
+			outfitters "Contraband"
+			variant 1
+				"Sliver (Smuggler)"
+				"Shard (Smuggler)" 3
+	npc
+		to spawn
+			"armament deterrence" >= 5
+		government "Bounty (Disguised)"
+		personality target escort launching timid coward secretive quiet marked
+			#confusion 20
+		fleet
+			names "bounty hunter"
+			cargo 1
+			outfitters "Contraband"
+			variant 1
+				"Modified Sliver (Smuggler)"
+				"Modified Shard (Smuggler)" 3
+	npc accompany save
+		government "Bounty (Disguised)"
+		personality target escort launching timid coward secretive quiet marked
+			#confusion 20
+		"cargo settings"
+			cargo 1
+			outfitters "Contraband"
+		ship "Marauder Falcon (Atrocity)" "Saint James"
+		on kill
+			set "destroyed slipstein"
+			dialog "With Slipstein gone, you may finally be free of the invisible leash the credit log placed on you."
+	on visit
+		dialog phrase "generic arrived-without-npc dialog"
+	on complete
+		payment 200000
+		set "license: Nightmare Fuel"
+		dialog "Slipstein pays you <payment>, buying your silence as his cargo is lead away in chains to an unknown fate."
 
 
 outfitter "Syndicate Research"
@@ -841,7 +1069,7 @@ mission "Missing Syndicate Supplies"
 			attributes "pirate"
 			attributes "core"
 		personality target derelict timid
-			confusion 30
+			#confusion 30
 		fleet "Mega Billboard"
 		conversation
 			scene "scene/scene-syndicate research"
@@ -865,7 +1093,7 @@ phrase "drowned happiness"
 fleet "TMBR Billboard"
 	government "Bounty (Disguised)"
 	names "drowned happiness"
-	personality timid
+	personality timid marked
 	cargo 1
 	outfitters "Nuke"
 	variant
@@ -927,7 +1155,7 @@ mission "Peace Tour 1"
 			`"You're leaving me stranded here? Thanks for nothing."`
 	npc accompany save
 		government "Bounty (Disguised)"
-		personality target timid
+		personality target timid marked
 		fleet "TMBR Billboard"
 	on fail
 		"reputation: Bounty (Disguised)" >?= 1
@@ -980,7 +1208,58 @@ event "add nukes of peace"
 		add fleet NukeSouth 20000
 	system Diyu
 		add fleet NukeCore 20000
+	system Alpherg
+		add fleet NukeCCOR 20000
+	system Belenos
+		add fleet NukeCCOR 20000
+	system Citadelle
+		add fleet NukeCCOR 20000
+	system Fumalsamakah
+		add fleet NukeCCOR 20000
+	system Thuban
+		add fleet NukeCCOR 20000
 
+fleet NukeNorth
+	government "Pirate"
+	names "pirate"
+	cargo 1
+	personality plunders
+		#confusion 20
+	variant 1
+		"Modified Argosy (Nuclear)"
+	variant 1
+		"Missileboat (Nuclear)"
+
+fleet NukeCore
+	government "Pirate"
+	names "pirate"
+	cargo 1
+	personality plunders
+		#confusion 20
+	variant 1
+		"Modified Argosy (Nuclear)"
+	variant 1
+		"Manta (Nuclear)"
+		
+fleet NukeSouth
+	government "Pirate"
+	names "pirate"
+	cargo 1
+	personality plunders
+		#confusion 20
+	variant 1
+		"Modified Argosy (Nuclear)"
+	variant 1
+		"Clipper (Nuclear)"
+
+fleet NukeCCOR
+	government "Pirate"
+	names "pirate"
+	cargo 1
+	personality plunders
+		#confusion 20
+	variant 1
+		"Modified Argosy (Nuclear)"
 
 mission "Peace Tour 2"
 	name "Bounty: <npc>"
@@ -1011,19 +1290,15 @@ mission "Peace Tour 2"
 			scene "scene/scene-explosion"
 			`	Despite your best efforts, there is no escaping the explosion.`
 				die
-
 			label trydisarm
 			branch disarm
 				random < 20
-
 			scene "scene/scene-explosion"
 			`	Despite your effort, you were unable to disarm the warhead before it explodes. If life were a game, you could load a save file and try disarming it again. You might have better success if you learn how these devices work.`
 				die
-
 			label disarm
 			`	Somehow, you managed to safely disarm a nuclear warhead! You hand the disarmed warhead over to the authorities and explain what happened.`
 				goto end
-
 			label trydeactivate
 			`	Recalling what you previously learned about nuke activation settings, you pop open a panel and see the activation code is set at "6-6-6". Enter the deactivation code. It is:`
 			choice
@@ -1035,10 +1310,8 @@ mission "Peace Tour 2"
 			scene "scene/scene-explosion"
 			`	Unfortunately, you must have remembered the deactivation code incorrectly. You barely have time to register this as you are instantly vaporized in the nuclear blast. If this were a game, you could load a save file and search your logbook for a clue.`
 				die
-
 			label deactivate
 			`	Fortunately, you correctly remembered the deactivation code. You hand over the disarmed warhead over to the authorities and explain what happened.`
-
 			label end
 			scene "portrait/human59"
 			`	The government of <origin> is grateful for your assistance and rewards you with 1,000,000 credits. They have issued an additional 1,000,000 credit bounty on the person that left you the rigged nuclear device.`
@@ -1049,7 +1322,7 @@ mission "Peace Tour 2"
 	npc kill
 		government "Bounty"
 		system Kugel
-		personality target uninterested fleeing
+		personality target uninterested fleeing marked
 		fleet "TMBR Billboard"
 		dialog `You finally stopped the <npc> from distributing nukes across the galaxy. Return to <origin> to collect the bounty.`
 	on complete
@@ -1100,6 +1373,16 @@ event "remove nukes of peace"
 		remove fleet NukeSouth
 	system Diyu
 		remove fleet NukeCore
+	system Alpherg
+		remove fleet NukeCCOR
+	system Belenos
+		remove fleet NukeCCOR
+	system Citadelle
+		remove fleet NukeCCOR
+	system Fumalsamakah
+		remove fleet NukeCCOR
+	system Thuban
+		remove fleet NukeCCOR
 
 mission "Midnight Market: Nukes of Peace?"
 	invisible
@@ -1141,24 +1424,19 @@ mission "Midnight Market: Nukes of Peace?"
 					defer
 			branch legitimate
 				random < 75
-				
 			`	Suddenly you are ambushed from behind! There's no room for discussion. These people are out for blood!`
 			choice
 				`	(Fight.)`
 				`	(Run.)`
 					goto death
-			
 			branch death
 				random < 25
-				
 			`	Fortunately you are armed and manage to fight off your attackers. With nothing better to do, you decide to check out some of those shops on the long walk back to the spaceport.`
 				defer
-
 			label death
 			scene "scene/scene-bloodyknife"
 			`	Before you can draw your weapon, sudden pain pierces your back! You turn to see one of your attackers holding a knife covered with your blood. The rest of them close in to finish you off...`
 				die
-
 			label legitimate
 			scene "outfit/nuke"
 			`	After a long walk you arrive at what looks like an abandoned store. The doors and windows are boarded up. Despite this, you notice someone move to hide behind a curtain on the upper floor. The stranger leads you to a side entrance. Inside are a pair of massive crates. The stranger opens one, saying "Behold! Nuclear missiles, a powerful addition to your arsenal. Just confirm payment of 2,000,000 credits on this datapad and they're yours."`
@@ -1174,27 +1452,22 @@ mission "Midnight Market: Nukes of Peace?"
 					goto refuse
 				`	(Steal the Nuclear Missiles.)`
 			`	You pull out your gun and tell the stranger you'll be taking the missiles for free.`
-
 			branch thief
 				random < 20
 			scene "scene/scene-bloodyknife"
 			`	The room explodes in a burst of violence as guards suddenly swarm in from other rooms in the building. You manage to put several down before one of them gets lucky with a knife. Your hands become slick with blood as you grasp at the wound. The surviving guards put a bullet into your head.`
 				die
-
 			label thief
 			`	The room explodes in a burst of violence as guards suddenly swarm in from other rooms in the building. Though you expend all of your bullets in the fire fight, you miraculously come out of that bloodbath unharmed. A search of the building reveals several more crates in a hidden underground bunker. You begin the arduous task of hauling them back to your ship.`
 				decline
-
 			label refuse
 			action
 				"Midnight Market" --
 			`	The stranger puts away the datapad while some guards enter from adjoining rooms. "It appears our negotiations have failed. Please find your own way back to the spaceport." You begin the long walk back. Maybe you can grab something to eat from one of the shops you passed earlier...`
 				defer
-
 			label purchase
 			`	"Good choice captain. We'll help haul them back to your ship." Several burly men appear from other rooms in the building and help load the crates into a truck. The ride back is smooth and uneventful.`
 				accept
-
 			label show
 			`	The seller opens a panel on the missile's side. "Have you read the Bible?"`
 			choice
@@ -1227,7 +1500,7 @@ mission "Midnight Market: Nukes of Peace?"
 			label nobible
 			action
 				set "learned nuke deactivation"
-				log `Today I learned activation code for a Nuclear Missile is "6-6-6" and the deactivation code is "2-3-4". These are supposedly references to something from the Bible, but the person who taught you never specified what they are.`
+				log `Today I learned activation code for a Nuclear Missile is "6-6-6" and the deactivation code is "2-3-4". These are supposedly references to something from the Bible, but the person who taught me never specified what they are.`
 			`	Inside the panel are a set of controls for setting three digits. "The factory default is all zeroes. Activation is six, six, and six." The stranger sets all three digits to "6-6-6". A mechanism within the missile activates and you can hear a low hum that slowly fades away. "Deactivation is two, three, and four." The stranger sets the digits to "2-3-4" and the mechanisms within make a few noises before falling silent. Satisfied, the stranger closes the panel. "Well?"`
 				goto nukechoice
 	on decline
@@ -1282,7 +1555,6 @@ mission "Nuke Deactivation Code"
 				log `Today I learned the activation code for a Nuclear Missile is "6-6-6" and the deactivation is "2-3-4". At least, that's what the sales clerk at the Solace outfitter claimed.`
 			`	The sales clerk closes the panel. "Thanks for listening to this lecture. Please use your Nuclear Missiles responsibly!"`
 				decline
-
 
 
 phrase "subsi tours"
@@ -1454,7 +1726,7 @@ mission "Pot-o'-honey"
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			variant
@@ -1465,11 +1737,11 @@ mission "Pot-o'-honey"
 				"Scout (Hai)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 2
+			"armament deterrence" >= 8
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			variant
@@ -1477,11 +1749,11 @@ mission "Pot-o'-honey"
 				"Raven (Hai)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 3
+			"armament deterrence" >= 16
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			variant
@@ -1491,42 +1763,41 @@ mission "Pot-o'-honey"
 				"Firebird (Hai Weapons)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 4
+			"armament deterrence" >= 24
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			variant
 				"Mule (Hai Weapons)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 5
+			"armament deterrence" >= 32
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			variant
 				"Leviathan (Hai Weapons)"
 	npc
 		to spawn
-			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 6
+			"ships: Heavy Warship" + "ships: Heavy Freighter" + "ships: Utility" + "ships: Superheavy" > 40
 		government "Pirate"
 		system "Waypoint"
 		personality waiting staying harvests plunders nemesis
-			confusion 20
+			#confusion 20
 		fleet
 			names "pirate"
 			variant
 				"Bactrian (Hai Weapons)"
-
 	npc kill
 		government "Bounty (Disguised)"
-		personality target marked launching harvests plunders
-			confusion 20
+		personality target marked launching harvests plunders marked
+			#confusion 20
 		ship "Bulk Freighter (hai drones)" "Pot-o'-honey"
 		fleet
 			fighters
@@ -1538,7 +1809,6 @@ mission "Pot-o'-honey"
 			action
 				"reputation: Bounty (Disguised)" >?= 1
 			`The Pot-o'-honey and its drones have been defeated. You make a mental note to check with the authorities on <destination> to see if there is any reward for your effort.`
-
 	on abort
 		"reputation: Bounty (Disguised)" >?= 1
 	on fail
@@ -1586,8 +1856,8 @@ mission "Escort Trap Freighter (Hai)"
 		fleet "Small Northern Pirates" 4
 	npc kill
 		government "Bounty (Disguised)"
-		personality target marked launching harvests plunders
-			confusion 20
+		personality target marked launching harvests plunders marked
+			#confusion 20
 		fleet
 			names "civilian"
 			fighters
@@ -1636,8 +1906,8 @@ mission "Escort Trap Freighter (Human)"
 		fleet "pirate raid" 5
 	npc kill
 		government "Bounty (Disguised)"
-		personality target marked launching harvests plunders
-			confusion 20
+		personality target marked launching harvests plunders marked
+			#confusion 20
 		fleet
 			names "civilian"
 			fighters
@@ -1654,7 +1924,6 @@ mission "Escort Trap Freighter (Human)"
 		"reputation: Bounty (Disguised)" >?= 1
 		payment 150000
 		dialog `You research the <npc> and find an outstanding bounty for <payment>. With a video recording of your battle in hand, you head for the job board office to claim your reward.`
-
 
 
 conversation "microbot defense death"
@@ -1682,7 +1951,7 @@ mission "Thraal: Moreau"
 		conversation
 			action
 				set "met Thraal"
-			scene "ship/star explorer"
+			scene "thumbnail/star explorer-thumb"
 			`After introductions you learn that the man's name is Thraal. "I was aboard a ship, a Star Explorer named Icarus. We acquired a Jump Drive and were exploring this region of space. I had gone out in the Shuttle Pod to do some asteroid mining when aliens, the Korath, attacked the Icarus. Icarus fled, abandoning me in this system.`
 			choice
 				`	"It's amazing that you survived alone out here!"`
@@ -1782,7 +2051,6 @@ mission "Thraal: Moreau (Killed)"
 		fail
 
 
-
 mission "Prisoner Bribe Offer (Job)"
 	job
 	passengers 1
@@ -1811,21 +2079,21 @@ mission "Prisoner Bribe Offer (Job)"
 	npc
 		government "Bounty Hunter"
 		personality nemesis heroic unconstrained
-			confusion 10
+			#confusion 10
 		system
 			distance 3 4
 		fleet "Hired Guns"
 	npc
 		government "Bounty Hunter"
 		personality nemesis heroic unconstrained
-			confusion 10
+			#confusion 10
 		system
 			distance 6 7
 		fleet "Hired Guns" 2
 	npc
 		government "Bounty Hunter"
 		personality nemesis heroic unconstrained
-			confusion 10
+			#confusion 10
 		system
 			distance 9 10
 		fleet "Hired Guns" 4
@@ -1881,47 +2149,46 @@ mission "Prisoner Bribe Release (Job)"
 	npc evade
 		government "Pirate"
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 2
 	npc evade
 		government "Pirate"
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 2
 	npc evade
 		government "Pirate"
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 2
 	npc evade
 		government "Pirate"
 		system
 			distance 2 3
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 3
 	npc evade
 		government "Pirate"
 		system
 			distance 2 3
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 3
 	npc evade
 		government "Pirate"
 		system
 			distance 2 3
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 3
 	npc evade
 		government "Pirate"
 		system
 			distance 2 3
 		personality entering nemesis plunders
-			confusion 20
+			#confusion 20
 		fleet "pirate raid" 3
-
 
 
 mission "Stranded Dirtbelt Saboteur"
@@ -1960,7 +2227,7 @@ mission "Stranded Dirtbelt Saboteur"
 	npc evade
 		government "Pirate"
 		personality waiting plunders harvests
-			confusion 20
+			#confusion 20
 		fleet "Large Dirt Belt Pirates"
 		fleet "Small Dirt Belt Pirates"
 

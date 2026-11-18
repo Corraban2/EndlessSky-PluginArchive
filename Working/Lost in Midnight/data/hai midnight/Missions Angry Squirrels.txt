@@ -12,11 +12,11 @@
 
 
 # Contents:
+# - misc
 # - Become an arms dealer for the Unfettered.
 # - Offend the Hai when they find out.
 # - Dominate the Unfettered.
 # - Jump Drive trading
-
 
 
 mission "Sabotage: Ionic Snare (boarding)"
@@ -80,8 +80,6 @@ mission "Sabotage: Ionic Snare (Hai) (boarding)"
 		government "Hai (Unfettered)"
 		personality entering heroic plunders
 		fleet "Large Hai"
-
-
 
 mission "Midnight Hai Distress"
 	invisible
@@ -160,6 +158,79 @@ mission "Midnight Unfettered Distress"
 		fleet "Small Unfettered"
 
 
+mission "Midnight Unfettered returning home 1"
+	minor
+	description "Chaka, the Hai you smuggled out of Unfettered space wants to visit his family on <destination>."
+	source "Hai-home"
+	destination "Darkcloak"
+	clearance
+	passengers 1
+	to offer
+		has "Unfettered returning home: done"
+		or
+			has "event: wanderers: sestor eliminated"
+			has "event: wanderers: sestor planets unrestricted"
+		random < 70
+	on offer
+		conversation
+			`A young Hai is waiting for you at the <ship>'s landing pad. "You are the <first> <last>! You remember me? I am one who ask you to take me from the Unfettered space." After a moment you recognize him. His fur is healthier and his clothes are nicer than they were back then. He also seems to have gained some weight.`
+			choice
+				`	"You seem to be doing well."`
+			`	"Hai here are so nice. They give me much since I arrive. But I worry about family I left behind. Could you bring me to them on <destination>?"`
+			choice
+				`	"They may not welcome you."`
+			`	He seems crestfallen. "You think so?" he asks.`
+			choice
+				`	"I am certain. You should stay here."`
+				`	"Perhaps you can come with me and find out, but don't get your hopes up."`
+					goto end
+			label refuse
+			`	Disappointed, the youth leaves. You hope you made the right choice.`
+				decline
+			label end
+			`	"Thank you. I never tell my name before, Chaka." You show Chaka to one of your bunk rooms. He has a larger bag with him this time.`
+				accept
+	on visit
+		dialog `You look for Chaka, but realize that he took a ride on one of your escorts! Better depart and wait for your escorts to arrive in this star system.`
+	on complete
+		payment 50000
+		dialog `Chaka thanks you for transporting him and pays you <payment>.`
+
+mission "Midnight Unfettered returning home 2"
+	landing
+	description "Return Chaka to <destination>."
+	source "Darkcloak"
+	destination "Hai-home"
+	clearance
+	passengers 1
+	to offer
+		has "Midnight Unfettered returning home 1: done"
+	on offer
+		conversation
+			`When Chaka leaves your ship, several Unfettered glare at him. His groomed fur and fine clothes make him stand out at the spaceport...`
+			choice
+				`	"Maybe I should go with you."`
+				`	"Are you going to be okay on your own?"`
+				`	(Shut the hatch and let him fend for himself.)`
+					goto abandon
+			`	"Maybe you come. Meet my family. We share dinner and make festive!" Chaka's family home is some distance away from the spaceport. Along the way, several more Unfettered stare at Chaka like hungry predators catching sight of easy prey. But realizing you are traveling at his side with your weapon makes them lose interest.`
+			`	After a long journey, you finally arrive. The sun is setting as the two of you walk along the path that leads to the entrance to his family's home, a humble shack among many in the factory district. Some young Hai children run out to meet you. Chaka hugs them and lowers his bag. He pulls out some candy and toys which the children gleefully accept. "Tama and Ebuu, my young kin. They grow so much since I last seeing them."`
+			`	Two older Hai step out. "My parents." The children run back to stand at their side. Chaka walks to his father. They speak in Hai. They are standing too far away for your translator to pick out what they are saying. Chaka pulls out a satchel and offers it to his father. The old Hai knocks it out of his hands and a pile of credits spills out onto the ground. He points at you before crossing his arms and turning his back to Chaka. Chaka's mother follows her husband's lead. After a moment's hesitation, the children drop the gifts and follow their parent's example.`
+			`	Chaka's shoulder's slump. After a moment of silence, he walks back to you. "He say I am not True Hai. He say to leave and never return. You can take me back to <planet>, yes?"`
+			choice
+				`	"Of course."`
+			`	You both return to the <ship> in silence.`
+				accept
+			label abandon
+			`	You swiftly shut the hatch and watch as two Unfettered approach Chaka. They begin a brutal fight of bare claws and incisors. After a few minutes Chaka stands alone, bloodied but triumphant in having chased his attackers off. His fur is no longer groomed and the fine clothes are in tatters. A few toys fell out of his bag. He quickly scoops them up and scampers off without looking back. Hopefully he'll fare well on his own...`
+				decline
+	on visit
+		dialog `You look for Chaka, but realize that he took a ride on one of your escorts! Better depart and wait for your escorts to arrive in this star system.`
+	on complete
+		payment 50000
+		log "Minor People" "Chaka" `The young Hai you previously smuggled out of Unfettered space. His family no longer recognizes him as a True Hai and asked him to never return.`
+		log `You took Chaka, the Hai you previously smuggled out of Unfettered space, back to checkup on his family. They did not welcome him, refusing to recognize Chaka as a True Hai. Instead, they told him to return to Hai-home and never return.`
+		dialog `Chaka thanks you for transporting him back to <planet>. He pays you <payment> before departing from your ship.`
 
 
 #################################
@@ -174,7 +245,7 @@ mission "Angry Squirrels: Laser Rifle Deal"
 	source
 		government "Hai (Unfettered)"
 	to offer
-		random < 10
+		random < 20
 	on offer
 		require "Laser Rifle"
 		conversation
@@ -199,109 +270,6 @@ mission "Angry Squirrels: Laser Rifle Deal"
 		conversation
 			scene "outfit/laser rifle"
 			`The Unfettered are grateful for your delivery of 100 Laser Rifles and pay you the agreed amount of <payment>. You can expect orders for more Laser Rifles to appear on the Unfettered job boards.`
-
-mission "Angry Squirrels: Tuning Rifle Deal"
-	minor
-	name "Unfettered Tuning Rifles"
-	description "Deliver 100 Tuning Rifles to your client on <planet>. Payment is <payment>." 
-	source
-		government "Hai (Unfettered)"
-	to offer
-		random < 20
-	on offer
-		require "Tuning Rifle"
-		conversation
-			`One of the Unfettered approaches you. "That is an interesting looking rifle you have there. What kind is it?"`
-			`	"A Tuning Rifle," you reply.`
-			scene "outfit/remnant rifle"
-			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
-			choice
-				`	(Agree.)`
-				`	(Disagree.)`
-					decline
-			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Tuning Rifle. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 rifles in exchange for <payment>. You're certain that some of that is for his own inventory.`
-				accept
-	on accept
-		conversation
-			scene "outfit/remnant rifle"
-			`Tuning Rifles are sold on Remnant worlds. But the cost of buying them outweighs the reward being offered. You'll probably have to steal them from captured ships.`
-	on complete
-		outfit "Tuning Rifle" -100
-		payment 1100000
-		"Unfettered Arms Dealer" ++
-		"reputation: Hai" --
-		conversation
-			scene "outfit/remnant rifle"
-			`The Unfettered are grateful for your delivery of 100 Tuning Rifles and pay you the agreed amount of <payment>. You can expect orders for more Tuning Rifles to appear on the Unfettered job boards.`
-
-mission "Angry Squirrels: Korath Rifle Deal"
-	minor
-	name "Unfettered Korath Rifles"
-	description "Deliver 100 Korath Repeater Rifles to your client on <planet>. Payment is <payment>." 
-	source
-		government "Hai (Unfettered)"
-	to offer
-		random < 20
-	on offer
-		require "Thermal Repeater Rifle"
-		conversation
-			`One of the Unfettered approaches you. "That is an interesting looking rifle you have there. What kind is it?"`
-			`	"A Korath Repeater Rifle," you reply.`
-			scene "outfit/korath rifle"
-			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
-			choice
-				`	(Agree.)`
-				`	(Disagree.)`
-					decline
-			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Korath Repeater Rifle. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 rifles in exchange for <payment>. You're certain that some of that is for his own inventory.`
-				accept
-	on accept
-		conversation
-			scene "outfit/korath rifle"
-			`Korath Repeater Rifles aren't normally in stock at your local outfitter. You'll probably have to steal them from captured ships.`
-	on complete
-		"Angry Squirrels: Korath Rifle Deal: offered" --
-		outfit "Thermal Repeater Rifle" -100
-		payment 2600000
-		"Unfettered Arms Dealer" ++
-		"reputation: Hai" --
-		conversation
-			scene "outfit/korath rifle"
-			`The Unfettered are grateful for your delivery of 100 Korath Repeater Rifles and pay you the agreed amount of <payment>. You can expect orders for more Korath Repeater Rifles to appear on the Unfettered job boards.`
-
-mission "Angry Squirrels: Confrontation Gear Deal"
-	minor
-	name "Unfettered Confrontation Gear"
-	description "Deliver 10 sets of Enforcer Confrontation Gear to your client on <planet>. Payment is <payment>." 
-	source
-		government "Hai (Unfettered)"
-	to offer
-		random < 20
-	on offer
-		require "Enforcer Confrontation Gear"
-		conversation
-			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
-			`	"Enforcer Confrontation Gear," you reply.`
-			scene "outfit/enforcer confrontation gear"
-			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
-			choice
-				`	(Agree.)`
-				`	(Disagree.)`
-					decline
-			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Enforcer Confrontation Gear. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 10 sets of Enforcer Confrontation Gear in exchange for <payment>. You're certain that some of that is for his own inventory.`
-				accept
-	on accept
-		conversation
-			scene "outfit/enforcer confrontation gear"
-			`Sets of Enforcer Confrontation Gear aren't normally in stock at your local outfitter. You'll probably have to steal them from captured ships.`
-	on complete
-		outfit "Enforcer Confrontation Gear" -10
-		payment 3690000
-		"Unfettered Arms Dealer" ++
-		"reputation: Hai" --
-		conversation
-			scene "outfit/enforcer confrontation gear"
-			`The Unfettered are grateful for your delivery of 10 sets of Enforcer Confrontation Gear and pay you the agreed amount of <payment>. You can expect orders for more sets of Enforcer Confrontation Gear to appear on the Unfettered job boards.`
 
 mission "Angry Squirrels: Fragmentation Grenade Deal"
 	minor
@@ -337,19 +305,319 @@ mission "Angry Squirrels: Fragmentation Grenade Deal"
 			scene "outfit/fragmentation grenades"
 			`The Unfettered are grateful for your delivery of 100 sets of Fragmentation Grenades and pay you the agreed amount of <payment>. You can expect orders for more sets of Fragmentation Grenades to appear on the Unfettered job boards.`
 
+mission "Angry Squirrels: Tuning Rifle Deal"
+	minor
+	name "Unfettered Tuning Rifles"
+	description "Deliver 100 Tuning Rifles to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Tuning Rifle"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking rifle you have there. What kind is it?"`
+			`	"A Tuning Rifle," you reply.`
+			scene "outfit/remnant rifle"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Tuning Rifle. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 rifles in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/remnant rifle"
+			`If Tuning Rifles aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Tuning Rifle" -100
+		payment 1100000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/remnant rifle"
+			`The Unfettered are grateful for your delivery of 100 Tuning Rifles and pay you the agreed amount of <payment>. You can expect orders for more Tuning Rifles to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Korath Rifle Deal"
+	minor
+	name "Unfettered Korath Rifles"
+	description "Deliver 100 Korath Repeater Rifles to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Thermal Repeater Rifle"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking rifle you have there. What kind is it?"`
+			`	"A Korath Repeater Rifle," you reply.`
+			scene "outfit/korath rifle"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Korath Repeater Rifle. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 rifles in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/korath rifle"
+			`If Korath Repeater Rifles aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		"Angry Squirrels: Korath Rifle Deal: offered" --
+		outfit "Thermal Repeater Rifle" -100
+		payment 2600000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/korath rifle"
+			`The Unfettered are grateful for your delivery of 100 Korath Repeater Rifles and pay you the agreed amount of <payment>. You can expect orders for more Korath Repeater Rifles to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Confrontation Gear Deal"
+	minor
+	name "Unfettered Confrontation Gear"
+	description "Deliver 10 sets of Enforcer Confrontation Gear to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Enforcer Confrontation Gear"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Enforcer Confrontation Gear," you reply.`
+			scene "outfit/enforcer confrontation gear"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Enforcer Confrontation Gear. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 10 sets of Enforcer Confrontation Gear in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/enforcer confrontation gear"
+			`If sets of Enforcer Confrontation Gear aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Enforcer Confrontation Gear" -10
+		payment 3690000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/enforcer confrontation gear"
+			`The Unfettered are grateful for your delivery of 10 sets of Enforcer Confrontation Gear and pay you the agreed amount of <payment>. You can expect orders for more sets of Enforcer Confrontation Gear to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Anti-Materiel Gun Deal"
+	minor
+	name "Unfettered Anti-Materiel Gun"
+	description "Deliver 10 Anti-Materiel Guns to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Anti-Materiel Gun"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Anti-Materiel Gun." you reply.`
+			scene "outfit/anti-materiel gun"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Anti-Materiel Gun. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 10 Anti-Materiel Guns in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/anti-materiel gun"
+			`If Anti-Materiel Guns aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Anti-Materiel Gun" -10
+		payment 2572000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/anti-materiel gun"
+			`The Unfettered are grateful for your delivery of 10 Anti-Materiel Guns and pay you the agreed amount of <payment>. You can expect orders for more sets of Anti-Materiel Guns to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Optical Laser Deal"
+	minor
+	name "Unfettered Optical Laser"
+	description "Deliver 100 Optical Laser Rifles to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Optical Laser Rifle"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Optical Laser Rifle." you reply.`
+			scene "outfit/optical laser rifle"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Optical Laser Rifle. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 Optical Laser Rifles in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/optical laser rifle"
+			`If Optical Laser Rifles aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Optical Laser Rifle" -100
+		payment 1200000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/optical laser rifle"
+			`The Unfettered are grateful for your delivery of 100 Optical Laser Rifles and pay you the agreed amount of <payment>. You can expect orders for more sets of Optical Laser Rifles to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Lasher Pistol Deal"
+	minor
+	name "Unfettered Lasher Pistol"
+	description "Deliver 100 Lasher Pistols to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Lasher Pistol"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Lasher Pistol." you reply.`
+			scene "outfit/lasher pistol"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Lasher Pistol. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 Lasher Pistols in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/lasher pistol"
+			`If Lasher Pistols aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Lasher Pistol" -100
+		payment 4700000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/lasher pistol"
+			`The Unfettered are grateful for your delivery of 100 Lasher Pistols and pay you the agreed amount of <payment>. You can expect orders for more sets of Lasher Pistols to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Kinetic Rail Rifle Deal"
+	minor
+	name "Unfettered Kinetic Rail Rifle"
+	description "Deliver 100 Kinetic Rail Rifles to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Kinetic Rail Rifle"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Kinetic Rail Rifle." you reply.`
+			scene "outfit/railgun h2h"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Kinetic Rail Rifle. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 Kinetic Rail Rifles in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/railgun h2h"
+			`If Kinetic Rail Rifles aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Kinetic Rail Rifle" -100
+		payment 7200000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/railgun h2h"
+			`The Unfettered are grateful for your delivery of 100 Kinetic Rail Rifles and pay you the agreed amount of <payment>. You can expect orders for more sets of Kinetic Rail Rifles to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Cloud Piercer Deal"
+	minor
+	name "Unfettered Cloud Piercer"
+	description "Deliver 100 Cloud Piercers to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Cloud Piercer"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Cloud Piercer." you reply.`
+			scene "outfit/cloud piercer"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Cloud Piercer. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 Cloud Piercers in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/cloud piercer"
+			`If Cloud Piercers aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Cloud Piercer" -100
+		payment 1000000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/cloud piercer"
+			`The Unfettered are grateful for your delivery of 100 Cloud Piercers and pay you the agreed amount of <payment>. You can expect orders for more sets of Cloud Piercers to appear on the Unfettered job boards.`
+
+mission "Angry Squirrels: Plasma Grenade Deal"
+	minor
+	name "Unfettered Plasma Grenade"
+	description "Deliver 100 Plasma Grenades to your client on <planet>. Payment is <payment>." 
+	source
+		government "Hai (Unfettered)"
+	to offer
+		random < 20
+	on offer
+		require "Plasma Grenades"
+		conversation
+			`One of the Unfettered approaches you. "That is an interesting looking weapon you have there. What kind is it?"`
+			`	"Plasma Grenade." you reply.`
+			scene "outfit/plasma grenades"
+			`	"Interesting. If you would like to sell, I'm looking for something new to add to my arsenal. There is a firing range nearby. Would you be willing to demonstrate it?"`
+			choice
+				`	(Agree.)`
+				`	(Disagree.)`
+					decline
+			`	The Unfettered at the firing range are unfriendly at first but are soon impressed with your demonstration of the Plasma Grenade. Several express an interest in purchasing one. The owner of the firing range organizes the orders and asks that you return with 100 Plasma Grenades in exchange for <payment>. You're certain that some of that is for his own inventory.`
+				accept
+	on accept
+		conversation
+			scene "outfit/plasma grenades"
+			`If Plasma Grenades aren't stocked at your local outfitter you may have to steal them from captured ships.`
+	on complete
+		outfit "Plasma Grenades" -100
+		payment 6000000
+		"Unfettered Arms Dealer" ++
+		"reputation: Hai" --
+		conversation
+			scene "outfit/plasma grenades"
+			`The Unfettered are grateful for your delivery of 100 Plasma Grenades and pay you the agreed amount of <payment>. You can expect orders for more sets of Plasma Grenades to appear on the Unfettered job boards.`
+
 
 mission "Angry Squirrels: Unfettered Weapon Collectors"
 	landing
 	invisible
 	to offer
-		or
-			"Unfettered Arms Dealer" >= 10
-			and
-				has "Angry Squirrels: Laser Rifle Deal: done"
-				has "Angry Squirrels: Tuning Rifle Deal: done"
-				has "Angry Squirrels: Korath Rifle Deal: done"
-				has "Angry Squirrels: Confrontation Gear Deal: done"
-				has "Angry Squirrels: Fragmentation Grenade Deal: done"
+		"Unfettered Arms Dealer" >= 10
 	on offer
 		log `I've become a regular supplier of weapons to the Unfettered. Supposedly, not since the time of their grandparents were they able to import quality weapons from outside their space.`
 		event "unfettered weapon collectors"
@@ -373,8 +641,6 @@ event "unfettered weapon collectors"
 		add fleet "unfettered weapon collectors" 20000
 
 
-
-
 mission "Angry Squirrels: Nerve Gas Smuggling"
 	minor
 	name "Unfettered Nerve Gas Smuggling"
@@ -382,7 +648,7 @@ mission "Angry Squirrels: Nerve Gas Smuggling"
 	source
 		government "Hai (Unfettered)"
 	to offer
-		"Unfettered Arms Dealer" > 2
+		has "Unfettered Arms Dealer"
 		random < 10
 	on offer
 		conversation
@@ -391,14 +657,12 @@ mission "Angry Squirrels: Nerve Gas Smuggling"
 				`	"I have nothing to say about that."`
 					defer
 				`	"Yes. It's a highly illegal substance."`
-			
 			scene "outfit/nerve gas"
 			`	"Interesting. Would you be willing to deliver some to me? I'm looking for something new to add to my arsenal."`
 			choice
 				`	(Agree.)`
 				`	(Disagree.)`
 					defer
-
 			`	The Unfettered asks that you return with 100 sets of Nerve Gas in exchange for <payment>. You're certain that he won't be keeping them idle in a collector's display case.`
 				accept
 	on accept
@@ -415,7 +679,6 @@ mission "Angry Squirrels: Nerve Gas Smuggling"
 			`After testing a random canister on some local wildlife, the Unfettered is satisfied with your delivery of 100 sets of Nerve Gas and pays you the agreed amount of <payment>. You can expect orders for more sets of Nerve Gas to appear on the Unfettered job boards.`
 
 
-
 mission "Angry Squirrels: Nerve Gas Exposed"
 	landing
 	invisible
@@ -425,8 +688,9 @@ mission "Angry Squirrels: Nerve Gas Exposed"
 	to offer
 		"Unfettered Arms Dealer" > 29
 		has "Unfettered Nerve Gas Smuggling: done"
+		has "Angry Squirrels: Nerve Gas Job: done"
 		not "event: angry squirrels"
-		random < 5
+		random < "Unfettered Arms Dealer"
 	on offer
 		conversation
 			`You receive a message from the Hai government.`
@@ -436,7 +700,6 @@ mission "Angry Squirrels: Nerve Gas Exposed"
 	on decline
 		"reputation: Hai" <?= 0
 		event "angry squirrels"
-
 
 
 mission "Angry Squirrels: Mass Smuggling Exposed"
@@ -543,6 +806,7 @@ mission "Angry Squirrels: Countermeasures 2"
 		has "event: battle in arneb end"
 	on offer
 		log "People" "Go Foo Ku" `An Unfettered weapons researcher who purchased a Quarg Phalanx System from me. He seems to really enjoy his work.`
+		set "angry squirrels: countermeasures 2 patched"
 		conversation 
 			scene "outfit/quarg countermeasures"
 			`You receive a message: "Greetings Captain <first> <last>. My name is Go Foo Ku. Some time ago you sold me a Quarg Phalanx System. After experimenting with it, I now have a job for you. If you are interested, we can discuss the details when you come to <destination>."`
@@ -552,12 +816,25 @@ mission "Angry Squirrels: Countermeasures 2"
 					decline
 			scene "planet/cloud4"
 			`	You prepare to make the journey to <destination>.`
+				accept
 	on complete
 		dialog `Meet Go Foo Ku at the spaceport to find out what sort of job he has to offer you.`
+
+mission "Angry Squirrels: Countermeasures 2 Patch"
+	landing
+	invisible
+	to offer
+		has "Angry Squirrels: Countermeasures 2: declined"
+		not "angry squirrels: countermeasures 2 patched"
+	on offer
+		clear "Angry Squirrels: Countermeasures 2: offered"
+		fail
 
 mission "Angry Squirrels: Countermeasures 3"
 	name "Unfettered Intrusion Device"
 	description "Go to <waypoints> and board a suitable target to test out a new Unfettered boarding weapon. Return to <destination> when you are done."
+	passengers 1
+	blocked "Go Foo Ku's job requires you to have a spare bunk. Return when you have one available."
 	source "Darkcloak"
 	waypoint "Almaaz"
 	to offer
@@ -608,7 +885,8 @@ mission "Angry Squirrels: Countermeasures 3"
 			`	"No!" exclaims Go Foo Ku. "It's overloading! Close the blast doors! Close them NOW!"`
 			`	Just as the blast doors close, your ship is rocked by an explosion...`
 				launch
-
+	on fail
+		dialog `[MISSION FAILED] Either Go Foo Ku died or the mission target was destroyed before you could board it.`
 	on complete
 		conversation
 			`Go Foo Ku hasn't said anything since the Intrusion Device blew up. All his energy and excitement is gone. After you open the exit hatch he mutters his thanks and leaves.`
@@ -660,7 +938,7 @@ mission "Midnight Pulse Repeater"
 				`	"If it wouldn't be too much trouble..."`
 			action
 				set "Go Foo Ku pulse repeater agreement"
-			`	Go Foo Ku laughs. "I should have expected a monkey to be interested in that! Sure, I can do that sort of work. I'm busy now, but you can contact me via the job boards and if I have time to spare I'll prepare some for you."`
+			`	Go Foo Ku laughs. "I should have expected a monkey to be interested in that! Sure, I can do that sort of work. I am busy now, but you can contact me through the job boards and if I have time to spare I'll prepare some for you."`
 				decline
 
 mission "Midnight Pulse Repeater Order"
@@ -676,6 +954,7 @@ mission "Midnight Pulse Repeater Order"
 	to offer
 		has "Go Foo Ku pulse repeater agreement"
 		not "Midnight Pulse Repeater Order: active"
+		not "Midnight Phalanx Grenade Order: active"
 		not "Asteroid Catapult: Angry Squirrels: active"
 		credits > 590000
 		random < month + ( day * 2 )
@@ -1075,9 +1354,7 @@ mission "Midnight Expansion Unfettered Displacer Pod"
 	to fail
 		has "Midnight Expansion Unfettered Displacer Pod: active"
 	to accept
-		or
-			has "outfit (flagship installed): Jump Drive"
-			has "outfit (cargo): Jump Drive"
+		has "outfit (removable): Jump Drive"
 	on accept
 		conversation
 			scene "outfit/hai displacer pod"
@@ -1261,8 +1538,8 @@ mission "Midnight Hunted (Unfettered)"
 #########################################
 
 mission "Angry Squirrels: planet Varu Mer'ek"
-	non-blocking
 	landing
+	non-blocking
 	invisible
 	to offer
 		has "event: wanderers: varu mer'ek evacuated"
@@ -1278,8 +1555,8 @@ event "unfettered tribute Varu Mer'ek"
 			fleet "Small Unfettered" 3
 
 mission "Angry Squirrels: planet Kort Vek'kri"
-	non-blocking
 	landing
+	non-blocking
 	invisible
 	to offer
 		or
@@ -1295,10 +1572,10 @@ event "unfettered tribute Vek'kri"
 			threshold 5000
 			fleet "Large Unfettered" 7
 			fleet "Small Unfettered" 3
-			
+
 mission "Angry Squirrels: more planets"
-	non-blocking
 	landing
+	non-blocking
 	invisible
 	to offer
 		has "event: wanderers: more systems lost"
@@ -1331,13 +1608,13 @@ event "unfettered tribute Var' Kar'i'i"
 
 
 mission "Angry Squirrels: planet Varu K'est"
-	non-blocking
 	landing
+	non-blocking
 	invisible
 	to offer
 		has "Wanderers: Alpha Surveillance J: done"
 	on offer
-		event "unfettered tribute Varu K'est" 64
+		event "unfettered tribute Varu K'est"
 		fail
 
 event "unfettered tribute Varu K'est"
@@ -1349,9 +1626,9 @@ event "unfettered tribute Varu K'est"
 
 
 mission "Angry Squirrels: Wanderer Tribute Patch"
+	landing
 	non-blocking
 	invisible
-	landing
 	to offer
 		has "event: wanderer tribute patch"
 	on offer

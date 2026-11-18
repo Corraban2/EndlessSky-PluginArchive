@@ -24,8 +24,8 @@ outfit "Pollen?"
 	description "	Achoo!"
 
 outfit "Murkspores?"
-	plural "Spores?"
 	"display name" "Spores?"
+	plural "Spores?"
 	category "Special"
 	series "Sabotage"
 	index 007
@@ -429,7 +429,7 @@ mission "Midnight Dust Cloud (Bunrodea)"
 	npc
 		government "Korath"
 		personality target waiting harvests plunders coward
-			confusion 10
+			#confusion 10
 		fleet "Korath Raid"
 
 
@@ -1036,6 +1036,11 @@ mission "Midnight Dust Cloud (Ember Shroud)"
 					not "multimode cloak found"
 			branch graviton
 				has "license: Shadow House"
+				not "event: midnight bloodstone portal"
+				random < 5
+			branch blood
+				has "license: Shadow House"
+				has "event: midnight bloodstone portal"
 				random < 5
 			branch regen
 				has "license: Shadow House"
@@ -1084,6 +1089,12 @@ mission "Midnight Dust Cloud (Ember Shroud)"
 			scene "outfit/predecessor armor graviton"
 			`	You find some intact hull armor adrift in the dust cloud. You can take a closer look at it the next time you visit an outfitter.`
 				decline
+			label blood
+			action
+				outfit "Multimode Armor: Blood" 1
+			scene "outfit/predecessor armor bloodstone"
+			`	You find some intact hull armor adrift in the dust cloud. You can take a closer look at it the next time you visit an outfitter.`
+				decline
 			label cloak
 			action
 				outfit "Multimode Armor: Cloak" 1
@@ -1106,7 +1117,7 @@ mission "Midnight Dust Cloud (Ember Shroud)"
 	npc
 		government "Phenomenon (dangerous)"
 		personality launching heroic vindictive opportunistic mute
-			confusion 120
+			#confusion 120
 		fleet "Localized Weft Storm"
 
 mission "Midnight Dust Cloud (Ember Wastes)"
@@ -1248,7 +1259,7 @@ mission "Midnight Dust Cloud (Ember Wastes)"
 	npc
 		government "Phenomenon (dangerous)"
 		personality launching heroic vindictive opportunistic mute
-			confusion 120
+			#confusion 120
 		fleet "Localized Ion Storm"
 
 
@@ -1475,7 +1486,7 @@ mission "Midnight Dust Cloud (Gegno Scin)"
 	npc
 		government "Gegno Scin"
 		personality target waiting vindictive
-			confusion 10
+			#confusion 10
 		fleet "Small Scin"
 
 mission "Midnight Dust Cloud (Gegno Vi)"
@@ -1701,7 +1712,7 @@ mission "Midnight Dust Cloud (Gegno Vi)"
 	npc
 		government "Gegno Vi"
 		personality target waiting heroic vindictive
-			confusion 10
+			#confusion 10
 		fleet "Small Vi"
 
 
@@ -1963,8 +1974,8 @@ mission "Midnight Dust Cloud (Human)"
 		clear "midnight dust scan high"
 	npc
 		government "Bounty (Disguised)"
-		personality target waiting harvests plunders coward
-			confusion 20
+		personality target waiting harvests plunders coward marked
+			#confusion 20
 		fleet "pirate raid"
 
 
@@ -2559,7 +2570,7 @@ mission "Midnight Dust Cloud (Tangle)"
 	npc
 		government "Phenomenon (dangerous)"
 		personality launching heroic vindictive opportunistic mute
-			confusion 120
+			#confusion 120
 		fleet "Localized Weft Storm"
 
 
@@ -2786,7 +2797,7 @@ mission "Midnight Dust Cloud (Twilight)"
 	npc
 		government "Aberrant"
 		personality target hunting coward vindictive harvests mining secretive mute
-			confusion 40
+			#confusion 40
 		fleet "Small Aberrant"
 
 
