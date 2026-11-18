@@ -177,9 +177,9 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/captureable.person.ships/icon.png' height='100'></img><br>
 
 
-[captureable.person.ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/captureable.person.ships.zip) | 196.77 kb | 2026-04-28 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/captureable.person.ships/) <br>
+[captureable.person.ships.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/captureable.person.ships.zip) | 199.69 kb | 2026-11-18 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/captureable.person.ships/) <br>
 Author: zuckung | Category: Cheats <br>
-[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2026-04-28) <br>
+[https://github.com/zuckung/endless-sky-plugins](https://github.com/zuckung/endless-sky-plugins) (last commit 2026-11-17) <br>
 
 >Makes person ships capturable. See the readme for details.
 >
@@ -192,14 +192,14 @@ Author: zuckung | Category: Cheats <br>
 Makes person ships captureable.<br> 
 <br>
 <br>
-Well, technically this plugin disables the person ships, and creates new ones which are captureable (with changed names to "<name> (disable me)", due to limitations of changing parts of the originals). Also adds all of them to the author government, adjusts some personalities and sets all frequencies to 1000. Changed "Tranquility" to have a weapon, so it doesn't flee. And changed "Zitchas" personality to "decloaked", so it doesn't flee and regenerate while cloaked.<br>
-Attacking one of them makes all your enemies, they all try to disable instead of destroying, and they all have the same spawn chance which is in average within 10 minutes.<br>
+New script mechanics make it possible, the person ships ar now overwritten, instead of rplaced :). Also adds all of them to the author government, adjusts some personalities and sets all frequencies to 1000. Changed "Tranquility" to have a weapon, so it doesn't flee. And changed "Zitchas" personality to "decloaked", so it doesn't flee and regenerate while cloaked.<br>
+Attacking one of them makes all your enemies, they all try to disable instead of destroying, and they all have the same spawn chance which is in average 10 minutes.<br>
 <br>
-At Earth's job board you can find a repeatable job that displays which persons you have already killed, which are alive, and where to find them.<br>
+At Earth's job board you can find a repeatable job that displays which persons you have already killed, which are alive, and where to find them. If the plugin control.station is installed you can find the list there, along with this readme.<br>
 After you've killed them all, you receive a small unique gift.<br>
 <br>
 I tested this plugin with 10x KIV349, all equipped with Mereti beam weapons, was probably an overkill on most. Boarding "Zitchas"(1000 crew) needed an Echo-Galleon, and I tried it with hand2hand outfits plugin. Maybe it works with nerve gas too.<br>
-In cap_persons.txt you find the following line under gamerules: "#	"person spawn period" 2000". If you remove the "#" the spawning speed is increased to one spawn in max a minute.<br>
+If you set the gamerules to	"person spawn period" 2000 and "person spawn weight" 0 , the spawning speed is increased to one spawn in around half a minute.<br>
 <ul>
 <li>"vyu-Ir" (not a person ship, but unique | found south-western of Gegno)</li>
 <li>"Michael Zahniser" (found everywhere | Kestrel + Finch)</li>
@@ -220,8 +220,25 @@ In cap_persons.txt you find the following line under gamerules: "#	"person spawn
 <li>"Danau" (found in human space | 1x mod. Hauler IV, 2x Hauler III, 2x Hauler II, 2x Hauler)</li>
 </ul>
 <br>
+Though not really a person ship, the Rulei ship is also made capturable<br>
+<br>
 <br>
 Changelog:<br>
+<br>
+2026-11-17<br>
+fixed not-working capturing (rported by SiegerExtra)
+changed all persons from replaced versions to overwritten originals<br>
+updated person changes from 0.11.4<br>
+updated rulei ship capturing<br>
+<br>
+2026-04-28<br>
+removed gamerules settings<br>
+<br>
+2025-11-20<br>
+changed original vyu-Ir to despawn(thx to nova1422)<br>
+<br>
+2025-06-19<br>
+added control.station support<br>
 <br>
 2025-06-05<br>
 colored the job<br>
@@ -12635,7 +12652,7 @@ Daily update check: <img src='res/img/cross.png' width='15' ></img><br>
 <img src='Working/Lost in Midnight/icon.png' height='100'></img><br>
 
 
-[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 96.76 mb | 2026-11-17 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
+[Lost.in.Midnight.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Lost.in.Midnight.zip) | 96.76 mb | 2026-11-18 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Lost%20in%20Midnight/) <br>
 Author: MidnightPlugins | Category: Story <br>
 [https://github.com/MidnightPlugins/Lost-in-Midnight](https://github.com/MidnightPlugins/Lost-in-Midnight) (last commit 2026-11-17) <br>
 
@@ -12727,9 +12744,9 @@ Daily update check: <img src='res/img/check.png' width='15' ></img><br>
 <img src='Working/Midnight Expansion/icon.png' height='100'></img><br>
 
 
-[Midnight.Expansion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Midnight.Expansion.zip) | 16.07 mb | 2026-11-01 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Midnight%20Expansion/) <br>
+[Midnight.Expansion.zip](https://github.com/Hecter94/EndlessSky-PluginArchive/releases/download/Latest/Midnight.Expansion.zip) | 16.07 mb | 2026-11-18 | [view files](https://github.com/Hecter94/EndlessSky-PluginArchive/tree/main/Working/Midnight%20Expansion/) <br>
 Author: MidnightPlugins | Category: Story <br>
-[https://github.com/MidnightPlugins/Midnight-Expansion](https://github.com/MidnightPlugins/Midnight-Expansion) (last commit 2026-11-01) <br>
+[https://github.com/MidnightPlugins/Midnight-Expansion](https://github.com/MidnightPlugins/Midnight-Expansion) (last commit 2026-11-17) <br>
 
 >Plugin using ships, outfits, or other resources from plugins by other creators or derivatives of their original creations. Some content may require the Lost in Midnight or Midnight Scrapyard plugins to unlock. 
 >
